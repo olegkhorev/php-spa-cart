@@ -1,0 +1,638 @@
+Label,Translation
+Subtotal,Subtotal
+"Discounted subtotal","Discounted subtotal"
+"Shipping cost","Shipping cost"
+home,home
+Login,Login
+OR,OR
+Email,Email
+Password,Password
+Register,Register
+"Recovery password","Recovery password"
+"Zone details","Zone details"
+"Zone name must be entered","Zone name must be entered"
+"Zone name","Zone name"
+Update,Update
+Create,Create
+Clone,Clone
+Countries,Countries
+"Set value","Set value"
+"Unset value","Unset value"
+States,States
+Cities,Cities
+"City mask examples","City mask examples"
+"Zip/Postal codes","Zip/Postal codes"
+"Zipcode mask examples","Zipcode mask examples"
+"Save zone details","Save zone details"
+Membership,Membership
+Active,Active
+Pos,Pos
+"Assigned users","Assigned users"
+"Delete selected","Delete selected"
+"No memberships defined","No memberships defined"
+"Add new","Add new"
+Add,Add
+"Shipping methods","Shipping methods"
+"Manage realtime shipping methods","Manage realtime shipping methods"
+"Shipping options","Shipping options"
+"Shipping charges","Shipping charges"
+"Shipping is disabled. You can manage it <a href=""configuration/Shipping"">here</a>.","Shipping is disabled. You can manage it <a href=""configuration/Shipping"">here</a>."
+"Realtime shipping methods","Realtime shipping methods"
+"Expand all","Expand all"
+"Collapse all","Collapse all"
+"Please, check these new shipping methods","Please, check these new shipping methods"
+Shipping_method,Shipping_method
+"Delivery time","Delivery time"
+Destination,Destination
+"Service code","Service code"
+"Weight limit","Weight limit"
+National,National
+International,International
+Delete,Delete
+"shipping methods are enabled from","shipping methods are enabled from"
+Options,Options
+"Shipping method","Shipping method"
+Weight_limit,Weight_limit
+"Define shipping method","Define shipping method"
+"Realtime shipping calcucation is disabled. You can manage it <a href=""configuration/Shipping"">here</a>","Realtime shipping calcucation is disabled. You can manage it <a href=""configuration/Shipping"">here</a>"
+"Defined shipping methods","Defined shipping methods"
+"Add shipping method","Add shipping method"
+"Apply changes","Apply changes"
+"Shipping markups","Shipping markups"
+"Edit rates for","Edit rates for"
+"All methods","All methods"
+"All zones","All zones"
+"Add shipping rates values","Add shipping rates values"
+"Apply rates to","Apply rates to"
+"Weight range","Weight range"
+"Flat charge","Flat charge"
+"Percent charge","Percent charge"
+"Subtotal range","Subtotal range"
+"Per item charge","Per item charge"
+"No shipping rates defined","No shipping rates defined"
+"No shipping markups defined","No shipping markups defined"
+"Add shipping charges","Add shipping charges"
+"Add shipping markups","Add shipping markups"
+"Select one","Select one"
+Zone,Zone
+"Apply rate to","Apply rate to"
+"User-defined shipping methods are not defined","User-defined shipping methods are not defined"
+"Destination zones","Destination zones"
+"Check all","Check all 2"
+"Uncheck all","Uncheck all"
+"Default zone","Default zone"
+"Add new...","Add new..."
+"Tax details","Tax details"
+Name,Name
+"Tax display name","Tax display name"
+"Tax reg number","Tax reg number"
+"Tax priority","Tax priority"
+Status,Status
+Enabled,Enabled
+Disabled,Disabled
+"Tax apply to","Tax apply to"
+Undo,Undo
+Redo,Redo
+Clear,Clear
+"Tax rates depended on","Tax rates depended on"
+"Shipping address","Shipping address"
+"Billing address","Billing address"
+"Included in product price","Included in product price"
+"Display including tax","Display including tax"
+"Display also","Display also"
+"Display tax none","Display tax none"
+"Display tax rate","Display tax rate"
+"Display tax cost","Display tax cost"
+"Display tax rate and cost","Display tax rate and cost"
+Save,Save
+"Tax rates","Tax rates"
+"Tax rate value","Tax rate value"
+All,All
+"No tax rates defined","No tax rates defined"
+"Apply tax to","Apply tax to"
+Cancel,Cancel
+"Your site URL","Your site URL"
+Testimonial,Testimonial
+"Add testimonial","Add testimonial"
+"Result pages","Result pages"
+"Prev page","Prev page"
+Page,Page
+"Current page","Current page"
+"Next page","Next page"
+"Write testimonial","Write testimonial"
+Testimonials,Testimonials
+URL,URL
+Pending,Pending
+Approved,Approved
+Modify,Modify
+"No testimonials","No testimonials"
+"No membership","No membership"
+"Your profile","Your profile"
+"Orders history","Orders history"
+"You have no orders yet.","You have no orders yet."
+Firstname,Firstname
+Lastname,Lastname
+Phone,Phone
+Address,Address
+City,City
+State,State
+Country,Country
+"Zip/Postal code","Zip/Postal code"
+"Your order placed successfully.","Your order placed successfully."
+"We are unable to process your order.","We are unable to process your order."
+"Print invoice","Print invoice"
+Invoice,Invoice
+Order,Order
+"Delivery method","Delivery method"
+"Company information","Company information"
+"Customer information","Customer information"
+E-mail,E-mail
+Products,Products
+Weight,Weight
+"Coupon discount","Coupon discount"
+Shipping,Shipping
+Tax,Tax
+Total,Total
+Comments,Comments
+"Thank you for your ordering","Thank you for your ordering"
+Hello,Hello
+"recommended you this product","recommended you this product"
+Category,Category
+Product,Product
+"site is temporary closed.","site is temporary closed."
+"Modify category","Modify category"
+"Category products","Category products"
+SKU,SKU
+"Product name","Product name"
+Position,Position
+"No products in this category","No products in this category"
+Code,Code
+"No states defined in this country","No states defined in this country"
+Manage,Manage
+"Contact us","Contact us"
+"Your E-mail","Your E-mail"
+Subject,Subject
+Message,Message
+"Please, enter your E-mail, subject and message.","Please, enter your E-mail, subject and message."
+Send,Send
+"Coupon code","Coupon code"
+"Times to be used","Times to be used"
+"No discount coupons defined","No discount coupons defined"
+"Please, login to use the admin area","Please, login to use the admin area"
+"Please, enter correct email and password","Please, enter correct email and password"
+"Today's statistic","Today's statistic"
+"Today's orders","Today's orders"
+"Today's total","Today's total"
+"Today's paid","Today's paid"
+"Week's statistic","Week's statistic"
+"Week's orders","Week's orders"
+"Week's total","Week's total"
+"Week's paid","Week's paid"
+"Month's statistic","Month's statistic"
+"Month's orders","Month's orders"
+"Month's total","Month's total"
+"Month's paid","Month's paid"
+"Year's statistic","Year's statistic"
+"Year's orders","Year's orders"
+"Year's total","Year's total"
+"Year's paid","Year's paid"
+"General statistic","General statistic"
+"Total orders","Total orders"
+"Orders total","Orders total"
+"Total paid","Total paid"
+"Import language labels","Import language labels"
+Import,Import
+"Export language labels","Export language labels"
+Export,Export
+Taxes,Taxes
+"Tax name","Tax name"
+"Tax rates defined","Tax rates defined"
+"Apply selected taxes to all products","Apply selected taxes to all products"
+"No taxes defined","No taxes defined"
+"Display cart/order totals including tax","Display cart/order totals including tax"
+"Display a tax rate for each product in cart/order","Display a tax rate for each product in cart/order"
+"Enable tax exemption for customers","Enable tax exemption for customers"
+"Allow customers to modify their tax number after tax exemption is enabled","Allow customers to modify their tax number after tax exemption is enabled"
+Statistic,Statistic
+Today,Today
+"This week","This week"
+"This month","This month"
+"This year","This year"
+"All time","All time"
+"Search orders","Search orders"
+"Select service","Select service"
+"Carrier type","Carrier type"
+Packaging,Packaging
+"Dropoff type","Dropoff type"
+"Ship date (days)","Ship date (days)"
+Currency,Currency
+"Package limits","Package limits"
+"Maximum package weight","Maximum package weight"
+"Maximum package dimensions","Maximum package dimensions"
+Length,Length
+Width,Width
+Height,Height
+"Split the shipment into multiple packages if its weight/dimensions exceed the limitations","Split the shipment into multiple packages if its weight/dimensions exceed the limitations"
+"COD value","COD value"
+"COD type","COD type"
+Any,Any
+"Guaranteed funds","Guaranteed funds"
+Cash,Cash
+"Special services","Special services"
+"Dangerous Goods/Accessibility","Dangerous Goods/Accessibility"
+"Accessible dangerous goods","Accessible dangerous goods"
+"Inaccessible dangerous goods","Inaccessible dangerous goods"
+"Signature option","Signature option"
+"No signature","No signature"
+"Indirect signature required","Indirect signature required"
+"Direct signature required","Direct signature required"
+"Adult signature required","Adult signature required"
+"Shipment contains dry ice","Shipment contains dry ice"
+"Shipment is Hold at Location","Shipment is Hold at Location"
+"Shipment is Inside Pickup","Shipment is Inside Pickup"
+"Shipment is Inside Delivery","Shipment is Inside Delivery"
+"Shipment is scheduled for Saturday pickup","Shipment is scheduled for Saturday pickup"
+"Shipment is scheduled for Saturday delivery","Shipment is scheduled for Saturday delivery"
+"Shipment is Residential Delivery","Shipment is Residential Delivery"
+"Nonstandard container is used for a shipment","Nonstandard container is used for a shipment"
+"Additional charges","Additional charges"
+"Send package cost to calculate insurance","Send package cost to calculate insurance"
+"Handling charge amount","Handling charge amount"
+"SmartPost Shipping settings","SmartPost Shipping settings"
+"Add SmartPost Shipping data to request","Add SmartPost Shipping data to request"
+"Specify the indicia type","Specify the indicia type"
+"Specify an endorsement type","Specify an endorsement type"
+"Specify the HubID","Specify the HubID"
+"Fedex is not enabled","Fedex is not enabled"
+"Girth (required for non-rectangular Priority Mail large pieces)","Girth (required for non-rectangular Priority Mail large pieces)"
+"Automatically enable new shipping methods from shipping server response","Automatically enable new shipping methods from shipping server response"
+"Shipping cost conversion rate","Shipping cost conversion rate"
+"International U.S.P.S.","International U.S.P.S."
+"Type of mail","Type of mail"
+"Container (International Rates)","Container (International Rates)"
+"Domestic U.S.P.S.","Domestic U.S.P.S."
+Services,Services
+"Select all","Select all"
+"""Ground Only"" indicator for ""Standard Post"" service","""Ground Only"" indicator for ""Standard Post"" service"
+"Ground transportation required","Ground transportation required"
+"Ground transportation not required","Ground transportation not required"
+Machinable,Machinable
+No,No
+Yes,Yes
+"Container (Express Mail)","Container (Express Mail)"
+None,None
+"Container (Priority Mail)","Container (Priority Mail)"
+Apply,Apply
+"Type of delivery","Type of delivery"
+"Type of pickup","Type of pickup"
+"Package type","Package type"
+"Nature of Shipment Contents","Nature of Shipment Contents"
+"Package CODValue in cents","Package CODValue in cents"
+"Optional services","Optional services"
+"Should not exceed","Should not exceed"
+"Your Canada Post commercial customer number","Your Canada Post commercial customer number"
+"Shipping cost convertion rate","Shipping cost convertion rate"
+"Package options","Package options"
+Coverage,Coverage
+COD,COD
+"Packaging type","Packaging type"
+"Ship in a specified number of days","Ship in a specified number of days"
+"Additional protection type","Additional protection type"
+"Additional protection value in $","Additional protection value in $"
+"Hazardous Materials","Hazardous Materials"
+"COD payment","COD payment"
+"COD value in $","COD value in $"
+"Always use the same package dimensions as specified in the ""Maximum package dimensions"" fields","Always use the same package dimensions as specified in the ""Maximum package dimensions"" fields"
+"Warehouse name","Warehouse name"
+"Change info","Change info"
+"Zip code","Zip code"
+"Business hours","Business hours"
+"Operation days","Operation days"
+Username,Username
+"Ready time","Ready time"
+"Subsidizing rate","Subsidizing rate"
+"1-800Courier options are empty","1-800Courier options are empty"
+"Payment methods","Payment methods"
+"Payment method","Payment method"
+Comment,Comment
+Mode,Mode
+Params,Params
+"Order by","Order by"
+Test,Test
+Live,Live
+"Search again","Search again"
+"Users search results","Users search results"
+"User name","User name"
+"User email","User email"
+"User role","User role"
+Administrator,Administrator
+Customer,Customer
+"Not active","Not active"
+"No users found","No users found"
+"Users management","Users management"
+"Search for","Search for"
+"Search in","Search in"
+Role,Role
+"Pending membership","Pending membership"
+Search,Search
+Fisrtname,Fisrtname
+"Sign up for membership","Sign up for membership"
+"Add to cart","Add to cart"
+"Move product here","Move product here"
+"See more details","See more details"
+"Product details","Product details"
+"List price","List price"
+"Product options","Product options"
+"Please, select all options.","Please, select all options."
+Price,Price
+Qty,Qty
+"Out of stock","Out of stock"
+"Wholesale Price Breaks","Wholesale Price Breaks"
+Description,Description
+"Related products","Related products"
+"Recommended products","Recommended products"
+"Send to friend","Send to friend"
+"Your name","Your name"
+"Friend E-mail","Friend E-mail"
+"Add personal message","Add personal message"
+"No pages","No pages"
+"Page title","Page title"
+"Clean URL","Clean URL"
+"Page content","Page content"
+"Title tag","Title tag"
+"Meta keywords","Meta keywords"
+"Meta description","Meta description"
+"Category disabled","Category disabled"
+"Delete category","Delete category"
+"List of subcategories","List of subcategories"
+"Category name","Category name"
+Subcategories,Subcategories
+"No categories","No categories"
+Edit,Edit
+"Modify selected","Modify selected"
+"Add new category","Add new category"
+"Featured products","Featured products"
+"No featured products in this category","No featured products in this category"
+"Add product","Add product"
+Browse...,Browse...
+Details,Details
+Banners,Banners
+Banner,Banner
+Link,Link
+Alt,Alt
+"No banners for this category","No banners for this category"
+Title,Title
+"Category icon","Category icon"
+"Delete icon","Delete icon"
+"Category location","Category location"
+"Order #ID","Order #ID"
+"Search by date","Search by date"
+"All dates","All dates"
+"Date period","Date period"
+"Reset filter","Reset filter"
+"Search results","Search results"
+"Recent orders","Recent orders"
+Date,Date
+"New blog comment has been posted","New blog comment has been posted"
+"Blog comment(s)","Blog comment(s)"
+"This operation will delete selected blogs with all messages.","This operation will delete selected blogs with all messages."
+Authors,Authors
+"New blog","New blog"
+Author,Author
+Added,Added
+Image,Image
+"Delete image","Delete image"
+"Short description","Short description"
+"Detailed description","Detailed description"
+"Meta title","Meta title"
+"Blog comments","Blog comments"
+"Delete this comment?","Delete this comment?"
+Decline,Decline
+Approve,Approve
+"No blog comments yet","No blog comments yet"
+"Add new/edit","Add new/edit"
+"No brands found","No brands found"
+"Go to comments","Go to comments"
+"Leave a comment","Leave a comment"
+Quote,Quote
+"Comment from","Comment from"
+"Commented on","Commented on"
+"No comments yet","No comments yet"
+"You should be a registered user to leave a comment.","You should be a registered user to leave a comment."
+"Read blog","Read blog"
+"No topics yet","No topics yet"
+"Import search keywords","Import search keywords"
+"Google sitemap","Google sitemap"
+"Generate sitemap","Generate sitemap"
+"No products found","No products found"
+"No banners for  homepage","No banners for  homepage"
+"In stock","In stock"
+"Additional categories","Additional categories"
+Brand,Brand
+Available,Available
+"Not available","Not available"
+"Hidden, but available for sale","Hidden, but available for sale"
+Keywords,Keywords
+drop_files_to_upload,drop_files_to_upload
+Photos,Photos
+Photo,Photo
+"Upload new","Upload new"
+Text,Text
+Type,Type
+"Options group","Options group"
+"Text option","Text option"
+"Display type","Display type"
+"Select box","Select box"
+Squares,Squares
+"Radio buttons list","Radio buttons list"
+"Text area","Text area"
+"Input box","Input box"
+Variant,Variant
+"Group options","Group options"
+"Price modifier","Price modifier"
+"Weight modifier","Weight modifier"
+Percent,Percent
+Absolute,Absolute
+"Add option group","Add option group"
+"Option group","Option group"
+"Options exceptions","Options exceptions"
+"Add exception","Add exception"
+"Filter variants","Filter variants"
+"Product title","Product title"
+"Supplier Code","Supplier Code"
+"Quantity per box","Quantity per box"
+"Supplied As","Supplied As"
+Wholesale,Wholesale
+Default,Default
+Quantity,Quantity
+Restore,Restore
+"New variant","New variant"
+"Create all possible variants","Create all possible variants"
+"Are you sure to delete this image?","Are you sure to delete this image?"
+"Upload images","Upload images"
+"No shipping methods to your area available","No shipping methods to your area available"
+"Your comments","Your comments"
+"Have a discount coupon?","Have a discount coupon?"
+"Place order","Place order"
+Checkout,Checkout
+Continue,Continue
+"Clear cart","Clear cart"
+"Cart is empty","Cart is empty"
+"Continue shopping","Continue shopping"
+"View cart","View cart"
+"All testimonials","All testimonials"
+Bestsellers,Bestsellers
+"Most viewed","Most viewed"
+"New arrivals","New arrivals"
+Account,Account
+"Log out","Log out"
+Brands,Brands
+Blog,Blog
+About,About
+Categories,Categories
+"Terms & Conditions","Terms & Conditions"
+"Search by substring","Search by substring"
+"Advanced search","Advanced search"
+"Search in category","Search in category"
+as,as
+"Main category","Main category"
+"Additional category","Additional category"
+"also search in subcategories","also search in subcategories"
+"Search by brand","Search by brand"
+"Product #ID","Product #ID"
+"Weight (lbs)","Weight (lbs)"
+Availability,Availability
+"Available for sale","Available for sale"
+"New brand","New brand"
+Commercewill,Commercewill
+Profile,Profile
+foot_advertising,foot_advertising
+foot_help,foot_help
+site_terms,site_terms
+foot_about,foot_about
+footer_search,footer_search
+error_error,error_error
+Dashboard,Dashboard
+"Orders and discounts","Orders and discounts"
+"Discount coupons","Discount coupons"
+Discounts,Discounts
+Users,Users
+"Browse users","Browse users"
+"Create new user","Create new user"
+"Membership levels","Membership levels"
+Catalog,Catalog
+"Add new product","Add new product"
+"Import catalog","Import catalog"
+"Export catalog","Export catalog"
+Content,Content
+"Static pages","Static pages"
+Homepage,Homepage
+"Shipping and payment","Shipping and payment"
+Countries/States,Countries/States
+Configuration,Configuration
+"General settings","General settings"
+"Blog settings","Blog settings"
+"Language labels","Language labels"
+Modules,Modules
+"Support desk","Support desk"
+Newsletter,Newsletter
+"Guest book","Guest book"
+"Mass products modifier","Mass products modifier"
+SEO,SEO
+"Search keywords","Search keywords"
+"Back to customer area","Back to customer area"
+public,public
+private,private
+for_subscribers,for_subscribers
+for_friends,for_friends
+for_friends_and_their_friends,for_friends_and_their_friends
+file_too_big,file_too_big
+bad_image_type,bad_image_type
+bad_images,bad_images
+public,public
+private,private
+for_subscribers,for_subscribers
+save,save
+for_friends,for_friends
+for_friends_and_their_friends,for_friends_and_their_friends
+file_too_big,file_too_big
+bad_image_type,bad_image_type
+bad_images,bad_images
+"Select box","Select box"
+Squares,Squares
+"Radio buttons list","Radio buttons list"
+"Text area","Text area"
+"Input box","Input box"
+"Click the <b>Update</b><br />button to complete<br />removing","Click the <b>Update</b><br />button to complete<br />removing"
+"Click the <b>Update</b><br />button to complete<br />removing","Click the <b>Update</b><br />button to complete<br />removing"
+"Please, enter your comment.","Please, enter your comment."
+"Please, enter your name","Please, enter your name"
+"Please, enter your comment.","Please, enter your comment."
+"Please, enter your name","Please, enter your name"
+blog_bbcode_b,blog_bbcode_b
+blog_bbcode_i,blog_bbcode_i
+blog_bbcode_u,blog_bbcode_u
+blog_bbcode_s,blog_bbcode_s
+blog_bbcode_url,blog_bbcode_url
+blog_bbcode_email,blog_bbcode_email
+blog_bbcode_img,blog_bbcode_img
+blog_bbcode_list,blog_bbcode_list
+blog_bbcode_li,blog_bbcode_li
+blog_bbcode_quote,blog_bbcode_quote
+blog_bbcode_code,blog_bbcode_code
+blog_bbcode_b,blog_bbcode_b
+blog_bbcode_i,blog_bbcode_i
+blog_bbcode_u,blog_bbcode_u
+blog_bbcode_s,blog_bbcode_s
+blog_bbcode_url,blog_bbcode_url
+blog_bbcode_email,blog_bbcode_email
+blog_bbcode_img,blog_bbcode_img
+blog_bbcode_list,blog_bbcode_list
+blog_bbcode_li,blog_bbcode_li
+blog_bbcode_quote,blog_bbcode_quote
+blog_bbcode_code,blog_bbcode_code
+"Please, enter category title","Please, enter category title"
+"Please, enter category title","Please, enter category title"
+p_restored,p_restored
+"Your E-mail","Your E-mail"
+p_restored,p_restored
+"Clear all","Clear all"
+"Price Per Unit","Price Per Unit"
+"This options combination is not available","This options combination is not available"
+"Option Not Available in Combination with","Option Not Available in Combination with"
+"Option Not Available","Option Not Available"
+"Please, select options","Please, select options"
+"Clear all","Clear all"
+Quantity,Quantity
+"Price Per Unit","Price Per Unit"
+"This options combination is not available","This options combination is not available"
+Clear,Clear
+"Option Not Available in Combination with","Option Not Available in Combination with"
+"Option Not Available","Option Not Available"
+"Please, select options","Please, select options"
+Firstname,Firstname
+Lastname,Lastname
+E-mail,E-mail
+Password,Password
+Address,Address
+City,City
+"Zip/Postal code","Zip/Postal code"
+Phone,Phone
+are_you_sure,are_you_sure
+ok,ok
+"Please, wait we are connecting you to PayPal","Please, wait we are connecting you to PayPal"
+are_you_sure,are_you_sure
+yes,yes
+no,no
+ok,ok
+"Please, wait we are connecting you to PayPal","Please, wait we are connecting you to PayPal"
+Apply,Apply
+Email,Email
+"Brand name cannot be empty","Brand name cannot be empty"
+"Brand name cannot be empty","Brand name cannot be empty"
+"Site title","Site title"
+"Site description","Site description"
+"Homepage meta title","Homepage meta title"
+"Homepage meta keywords","Homepage meta keywords"
+"Homepage meta description","Homepage meta description"
+Administration,Administration

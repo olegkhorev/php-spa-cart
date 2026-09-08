@@ -1,0 +1,160 @@
+{if $get['2'] != 'print' && !$is_mail} {if $get['2'] == 'success'}<div style="padding: 0 0 20px 0;">{lng[Your order placed successfully.]}</div>
+ {elseif $get['2'] == 'failed'}<div style="padding: 0 0 20px 0; color: red;">{lng[We are unable to process your order.]}</div>
+ {/if}
+<a href="/invoice/{$order['orderid']}/print" target="_blank" onclick="javascript: return print_invoice($(this));">{lng[Print invoice]}</a>
+<br /><br />{/if}
+<div style="width: 650px; margin: 0 auto; background: #fff; padding: 10px; {if $get['2'] != 'print' && !$is_mail}border: 1px solid #ccc;{/if}" class="invoice">
+<h1 style="text-align: center;">{lng[Invoice]}</h1>
+<h1 class="invoice-title"><span style="float: right;">{php echo date($datetime_format, $order['date']);}</span>{lng[Order]} #{$order['orderid']} ({$order_statuses[$order['status']]})</h1>
+<h1 style="font-size: 12px; padding: 10px 0 0 0; margin: 0;">
+<span style="text-align:right; float: right;" class="delivery-method">{if $order['local_pickup']}{lng[Local pickup]}:{if $admin_display} {$order['warehouse']['wcode']},{/if} {$order['warehouse']['title']} ({$order['warehouse']['address']}){else}{lng[Delivery method]}: {$order['shipping_method']['shipping']}{if $order['shipping_method']['shipping_time']} ({$order['shipping_method']['shipping_time']}){/if}{/if}</span>
+{*
+<span style="text-align:right; float: right;" class="delivery-method">{lng[Delivery method]}: {$order['shipping_method']['shipping']}{if $order['shipping_method']['shipping_time']} ({$order['shipping_method']['shipping_time']}){/if}</span>
+*}
+Payment method: {$order['payment_method']}{if $order['payment_details']} ({$order['payment_details']}){/if}</h1>
+<table class="invoice-table" style="width: 100%; margin: 10px auto 10px auto;">
+<tr>
+ <td valign="top" width="50%">
+<h2 style="margin: 0; padding: 10px 0; text-align: center;">{lng[Company information]}</h2>
+<b>{$config['Company']['company_name']}</b><br />
+<a href="{$http_location}" target="_blank">{$http_location}</a><br /><br />
+{$config['Company']['location_address']}, {$config['Company']['location_city']}<br />
+{$config['Company']['location_zipcode']}, {$config['Company']['location_statename']}<br />
+{$config['Company']['location_countryname']}<br />
+{if $config['Company']['company_phone']}CALL US: {$config['Company']['company_phone']}<br />{/if}
+{if $config['Company']['company_phone_2']}International: {$config['Company']['company_phone_2']}<br />{/if}
+{if $config['Company']['company_fax']}Fax: {$config['Company']['company_fax']}<br />{/if}
+{if $config['Company']['orders_department']}Email: {$config['Company']['orders_department']}{/if}
+ </td>
+ <td valign="top"><h2 style="margin: 0; padding: 10px 0; text-align: center;">{lng[Customer information]}</h2>
+<table width="100%">
+<tr>
+ <td><b>{lng[First name]}:</b></td>
+ <td>{$order['firstname']}</td>
+</tr>
+<tr>
+ <td><b>{lng[Last name]}:</b></td>
+ <td>{$order['lastname']}</td>
+</tr>
+<tr>
+ <td><b>{lng[Address]}:</b></td>
+ <td>{$order['address']}</td>
+</tr>
+<tr>
+ <td><b>{lng[City]}:</b></td>
+ <td>{$order['city']}</td>
+</tr>
+<tr>
+ <td><b>{lng[State]}:</b></td>
+ <td>{$order['statename']}</td>
+</tr>
+<tr>
+ <td><b>{lng[Country]}:</b></td>
+ <td>{$order['countryname']}</td>
+</tr>
+<tr>
+ <td><b>{lng[Zip/Postal code]}:</b></td>
+ <td>{$order['zipcode']}</td>
+</tr>
+<tr>
+ <td><b>{lng[Phone]}:</b></td>
+ <td>{$order['phone']}</td>
+</tr>
+<tr>
+ <td><b>{lng[E-mail]}:</b></td>
+ <td>{$order['email']}</td>
+</tr>
+</table>
+ </td>
+</tr>
+</table>
+
+<h3>{lng[Products]}</h3>
+<table width="100%">
+{foreach $products as $v}
+ {php $url = $v['cleanurl'] ? $v['cleanurl'] .'.html' : 'product/'.$v['productid'];}
+	<tr>
+	 <td class="image" valign="top" style="padding-right: 10px;"><a href="{$http_location}/{$url}">
+{if $v['variant_photo']}
+<?php
+$image = $v['variant_photo'];
+$image['new_width'] = 100;
+$image['new_height'] = 100;
+include SITE_ROOT . '/includes/variant_image.php';
+?>
+{elseif $v['photo']}
+<?php
+$image = $v['photo'];
+$image['new_width'] = 100;
+$image['new_height'] = 100;
+include SITE_ROOT . '/includes/image.php';
+?>
+{/if}
+	  </a></td>
+	  <td width="100%" valign="top"><a href="{$http_location}/{$url}">{$v['name']}</a>
+{if $v['weight']}
+<br />
+<small>{lng[Weight]}: {weight $v['weight']}</small>
+{/if}
+{if $v['product_options']}
+<hr />
+<b>{lng[Selected options]}:</b><br />
+<table width="100%">
+ {foreach $v['product_options'] as $o}
+<tr>
+ <td valign="top" width="100">{$o['name']}:</td>
+ <td>{$o['option']['name']}</td>
+</tr>
+ {/foreach}
+</table>
+{/if}
+
+ </td>
+{php $product_subtotal = $v['price'] * $v['quantity'];}
+ <td align="right" valign="top" nowrap>{price $v['price']} x {$v['quantity']} = {price $product_subtotal}</td>
+	</tr>
+ {/foreach}
+</table>
+
+<div align="right">
+<table class="subtotal" cellspacing="0" cellpadding="0">
+<tr>
+ <td width="250" align="right">{lng[Subtotal]}:</td>
+ <td width="70" align="right">{price $order['subtotal']}</td>
+</tr>
+{if $order['coupon']}
+<tr>
+ <td align="right">{lng[Coupon discount]}({$order['coupon']}):</td>
+ <td align="right">{price $order['coupon_discount']}</td>
+</tr>
+{php $discounted_subtotal = $order['subtotal'] - $order['coupon_discount'];}
+<tr>
+ <td align="right">{lng[Discounted subtotal]}:</td>
+ <td width="50" align="right">{price $discounted_subtotal}</td>
+</tr>
+{/if}
+
+<tr>
+ <td align="right">{lng[Shipping]}:</td>
+ <td align="right">{price $order['shipping']}</td>
+</tr>
+{if $order['tax_details']['tax_name']}
+<tr class="totals">
+ <td align="right">{lng[Tax]}({$order['tax_details']['tax_name']}):</td>
+ <td align="right">{price $order['tax']}</td>
+</tr>
+{/if}
+<tr class="totals">
+ <td align="right">{lng[Total]}:</td>
+ <td align="right">{price $order['total']}</td>
+</tr>
+</table>
+</div>
+{if $order['notes']}
+<br />
+{lng[Comments]}:
+<hr />
+{$order['notes']}
+{/if}
+<h2 style="padding: 20px 0; margin: 0; text-align: center;">{lng[Thank you for your ordering]}</h2>
+</div>

@@ -1,0 +1,978 @@
+Label,Translation,"On English"
+Subtotal,Итого,Subtotal
+"Discounted subtotal","Итого со скидкой","Discounted subtotal"
+"Shipping cost","Стоимость доставки ","Shipping cost"
+home,Домой,home
+Login,Вход,Login
+OR,Или,OR
+Email,"Электронная почта",Email
+Password,Пароль,Password
+Register,Регистрация,Register
+"Recovery password","Восстановление пароля ","Recovery password"
+"Zone details","Детали зоны ","Zone details"
+"Zone name must be entered","Название зоны должно быть введено","Zone name must be entered"
+"Zone name","Название зоны ","Zone name"
+Update,Обновить,Update
+Create,Создать,Create
+Clone,Дублировать,Clone
+Countries,Страны,Countries
+"Set value","Установить значение","Set value"
+"Unset value","Сбросить значение","Unset value"
+States,Регионы,States
+Cities,Города,Cities
+"City mask examples","Примеры масок городов ","City mask examples"
+"Zip/Postal codes","Почтовые индексы","Zip/Postal codes"
+"Zipcode mask examples","Примеры масок почтовых индексов","Zipcode mask examples"
+"Save zone details","Сохранять данные о зоне ","Save zone details"
+Membership,Подписка,Membership
+Active,Активна,Active
+Pos,Позиция,Pos
+"Assigned users","Назначенные пользователи","Assigned users"
+"Delete selected","Удалить выбранные","Delete selected"
+"No memberships defined","Членство не найдено","No memberships defined"
+"Add new","Добавить новое","Add new"
+Add,Добавить,Add
+"Shipping methods","Способы доставки ","Shipping methods"
+"Manage realtime shipping methods","Управление способами доставки в реальном времени","Manage realtime shipping methods"
+"Shipping options","Опции доставки ","Shipping options"
+"Shipping charges","Стоимость доставки ","Shipping charges"
+"Shipping is disabled. You can manage it <a href=""configuration/Shipping"">here</a>.","Доставка отключена. Вы можете управлять ей <а href=""конфигурация/доставка"">здесь</a>.","Shipping is disabled. You can manage it <a href=""configuration/Shipping"">here</a>."
+"Realtime shipping methods","Способы доставки в реальном времени ","Realtime shipping methods"
+"Expand all",Развернуть,"Expand all"
+"Collapse all",Свернуть,"Collapse all"
+"Please, check these new shipping methods","Пожалуйста, проверьте новые способы доставки ","Please, check these new shipping methods"
+Shipping_method,"Метод доставка",Shipping_method
+"Delivery time","Сроки доставки ","Delivery time"
+Destination,"Пункт назначения",Destination
+"Service code","Код услуги","Service code"
+"Weight limit","Ограничения по весу ","Weight limit"
+National,Национальная,National
+International,Международная,International
+Delete,Удалить,Delete
+"shipping methods are enabled from","Способы доставки доступны из","shipping methods are enabled from"
+Options,Опции,Options
+"Shipping method","Способ доставки ","Shipping method"
+Weight_limit,"Лимит веса",Weight_limit
+"Define shipping method","Определить способ доставки ","Define shipping method"
+"Realtime shipping calcucation is disabled. You can manage it <a href=""configuration/Shipping"">here</a>","Calcucation реальном времени доставка отключена. Вы можете управлять им <а href=""конфигурация/доставка"">здесь</a>","Realtime shipping calcucation is disabled. You can manage it <a href=""configuration/Shipping"">here</a>"
+"Defined shipping methods","Определенные способы доставки ","Defined shipping methods"
+"Add shipping method","Добавить способ доставки ","Add shipping method"
+"Apply changes","Применить изменения","Apply changes"
+"Shipping markups","Надбавки к доставке","Shipping markups"
+"Edit rates for","Редактирование тарифов для","Edit rates for"
+"All methods","Всех способов","All methods"
+"All zones","Всех зон","All zones"
+"Add shipping rates values","Добавить стоимость тарифов доставки","Add shipping rates values"
+"Apply rates to","Применить тарифы к","Apply rates to"
+"Weight range","Весовому диапазону","Weight range"
+"Flat charge","Фиксированной цене","Flat charge"
+"Percent charge","Процентному сбору","Percent charge"
+"Subtotal range","Промежуточному итогу","Subtotal range"
+"Per item charge","Взимание платы за единицу товара","Per item charge"
+"No shipping rates defined","Тарифы на доставку не указаны","No shipping rates defined"
+"No shipping markups defined","Надбавки к доставке не указаны","No shipping markups defined"
+"Add shipping charges","Добавить стоимость доставки","Add shipping charges"
+"Add shipping markups","Добавить надбавки к доставке","Add shipping markups"
+"Select one","Выберите один","Select one"
+Zone,Зона,Zone
+"Apply rate to","Применить тариф к","Apply rate to"
+"User-defined shipping methods are not defined","Установленные пользователем способы доставки не определяются","User-defined shipping methods are not defined"
+"Destination zones","Зоныа пунктов назначения","Destination zones"
+"Check all","Отметить все","Check all"
+"Uncheck all","Отменить выбор для всех","Uncheck all"
+"Default zone","Зона по умолчанию","Default zone"
+"Add new...","Добавить новую...","Add new..."
+"Tax details","Налоговые данные","Tax details"
+Name,Имя,Name
+"Tax display name","Отображаемое название налога","Tax display name"
+"Tax reg number",ИНН,"Tax reg number"
+"Tax priority","Приоритетность налога","Tax priority"
+Status,Статус,Status
+Enabled,Включено,Enabled
+Disabled,Отключено,Disabled
+"Tax apply to","Налог применяется к","Tax apply to"
+Undo,Отменить,Undo
+Redo,Повторить,Redo
+Clear,Очистить,Clear
+"Tax rates depended on","Ставка налога зависит от","Tax rates depended on"
+"Shipping address","Адрес доставки","Shipping address"
+"Billing address","Платежный адрес","Billing address"
+"Included in product price","Включено в цену товара","Included in product price"
+"Display including tax","Отображать с учетом налога","Display including tax"
+"Display also","Отображать также","Display also"
+"Display tax none","Не отображать налог","Display tax none"
+"Display tax rate","Отображать ставку налога","Display tax rate"
+"Display tax cost","Отображать стоимость налога","Display tax cost"
+"Display tax rate and cost","Отображение ставку и стоимость налога","Display tax rate and cost"
+Save,Сохранить,Save
+"Tax rates","Налоговые ставки","Tax rates"
+"Tax rate value","Значение налоговой ставки","Tax rate value"
+All,Все,All
+"No tax rates defined","Налоговые ставки не указаны","No tax rates defined"
+"Apply tax to","Применить налог к","Apply tax to"
+Cancel,Отменить,Cancel
+"Your site URL","URL вашего сайта","Your site URL"
+Testimonial,Отзыв,Testimonial
+"Add testimonial","Добавить отзыв","Add testimonial"
+"Result pages","Страницы результатов","Result pages"
+"Prev page","Предыдущая страница","Prev page"
+Page,Страница,Page
+"Current page","Текущая страница","Current page"
+"Next page","Следующая страница","Next page"
+"Write testimonial","Написать отзыв","Write testimonial"
+Testimonials,Отзывы,Testimonials
+URL,URL,URL
+Pending,"На рассмотрении",Pending
+Approved,Одобрено,Approved
+Modify,Изменить,Modify
+"No testimonials","Нет отзывов","No testimonials"
+"No membership","Нет членства","No membership"
+"Your profile","Ваш профиль","Your profile"
+"Orders history","История заказов","Orders history"
+"You have no orders yet.","У вас еще нет заказов.","You have no orders yet."
+Firstname,Имя,Firstname
+Lastname,Фамилия,Lastname
+Phone,Телефон,Phone
+Address,Адрес,Address
+City,Город,City
+State,Регион,State
+Country,Страна,Country
+"Zip/Postal code","Почтовый индекс","Zip/Postal code"
+"Your order placed successfully.","Ваш заказ успешно размещен.","Your order placed successfully."
+"We are unable to process your order.","Мы не можем обработать ваш заказ.","We are unable to process your order."
+"Print invoice","Распечатать счет-фактуру","Print invoice"
+Invoice,Счет-фактура,Invoice
+Order,Заказ,Order
+"Delivery method","Способ доставки","Delivery method"
+"Company information","Информация о компании","Company information"
+"Customer information","Информация о клиенте","Customer information"
+E-mail,"Электронная почта",E-mail
+Products,Товары,Products
+Weight,Вес,Weight
+"Coupon discount","Скидка по купону","Coupon discount"
+Shipping,Доставка,Shipping
+Tax,Налог,Tax
+Total,Итого,Total
+Comments,Комментарии,Comments
+"Thank you for your ordering","Спасибо за ваш заказ","Thank you for your ordering"
+Hello,Здравствуйте,Hello
+"recommended you this product","мы рекомендовали вам этот товар","recommended you this product"
+Category,Категория,Category
+Product,Товар,Product
+"site is temporary closed.","сайт временно недоступен.","site is temporary closed."
+"Modify category","Изменить категорию","Modify category"
+"Category products","Товары категории","Category products"
+SKU,SKU,SKU
+"Product name","Название товара","Product name"
+Position,Позиция,Position
+"No products in this category","Нет товаров в этой категории","No products in this category"
+Code,Код,Code
+"No states defined in this country","В этой стране не определены регионы","No states defined in this country"
+Manage,Управление,Manage
+"Contact us","Свяжитесь с нами","Contact us"
+"Your E-mail","Ваш E-mail","Your E-mail"
+Subject,Тема,Subject
+Message,Сообщение,Message
+"Please, enter your E-mail, subject and message.","Пожалуйста, введите ваш E-mail, тему и сообщение.","Please, enter your E-mail, subject and message."
+Send,Отправить,Send
+"Coupon code","Код купона","Coupon code"
+"Times to be used","Сроки для использования","Times to be used"
+"No discount coupons defined","Купоны на скидку не указаны","No discount coupons defined"
+"Please, login to use the admin area","Пожалуйста, войдите в систему, чтобы использовать панель управления ","Please, login to use the admin area"
+"Please, enter correct email and password","Пожалуйста, введите правильный email и пароль","Please, enter correct email and password"
+"Today's statistic","Статистика за сегодня","Today's statistic"
+"Today's orders","Заказы за сегодня","Today's orders"
+"Today's total","Итого за сегодня","Today's total"
+"Today's paid","Оплачено за сегодня","Today's paid"
+"Week's statistic","Статистика за неделю","Week's statistic"
+"Week's orders","Заказы за неделю","Week's orders"
+"Week's total","Итого за неделю","Week's total"
+"Week's paid","Оплачено за неделю","Week's paid"
+"Month's statistic","Статистика за месяц","Month's statistic"
+"Month's orders","Заказы за месяц","Month's orders"
+"Month's total","Итого за месяц","Month's total"
+"Month's paid","Оплачено за месяц","Month's paid"
+"Year's statistic","Статистика за год","Year's statistic"
+"Year's orders","Заказы за год","Year's orders"
+"Year's total","Итого за год","Year's total"
+"Year's paid","Оплачено за год","Year's paid"
+"General statistic","Общая статистика","General statistic"
+"Total orders","Всего заказов","Total orders"
+"Orders total","Общая сумма заказов","Orders total"
+"Total paid","Всего оплачено","Total paid"
+"Import language labels","Импортировать языковые метки","Import language labels"
+Import,Импорт,Import
+"Export language labels","Экспортировать языковые метки","Export language labels"
+Export,Экспорт,Export
+Taxes,Налоги,Taxes
+"Tax name","Название налога","Tax name"
+"Tax rates defined","Налоговые ставки указаны","Tax rates defined"
+"Apply selected taxes to all products","Применить выбранные налоги ко всем товарам","Apply selected taxes to all products"
+"No taxes defined","Налоги не указаны","No taxes defined"
+"Display cart/order totals including tax","Отобразить итоговую стоимость корзины/заказа с учетом налога","Display cart/order totals including tax"
+"Display a tax rate for each product in cart/order","Отображать ставку налога для каждого товара в корзине/заказе","Display a tax rate for each product in cart/order"
+"Enable tax exemption for customers","Разрешить освобождение от налогов для клиентов","Enable tax exemption for customers"
+"Allow customers to modify their tax number after tax exemption is enabled","Разрешить покупателям изменять свой ИНН после активации освобождения от налогов","Allow customers to modify their tax number after tax exemption is enabled"
+Statistic,Статистика,Statistic
+Today,"За сегодня",Today
+"This week","За неделю","This week"
+"This month","За месяц","This month"
+"This year","За год","This year"
+"All time","За все время","All time"
+"Search orders","Поиск заказов","Search orders"
+"Select service","Выберите услугу","Select service"
+"Carrier type","Тип перевозчика","Carrier type"
+Packaging,Упаковка,Packaging
+"Dropoff type","Тип доставки","Dropoff type"
+"Ship date (days)","Дата отправки (дни)","Ship date (days)"
+Currency,Валюта,Currency
+"Package limits","Ограничения на упаковку","Package limits"
+"Maximum package weight","Максимальный вес посылки","Maximum package weight"
+"Maximum package dimensions","Максимальный размер посылки","Maximum package dimensions"
+Length,Длина,Length
+Width,Ширина,Width
+Height,Высота,Height
+"Split the shipment into multiple packages if its weight/dimensions exceed the limitations","Разделите груз на несколько посылок, если его вес/габариты превышают установленные ограничения","Split the shipment into multiple packages if its weight/dimensions exceed the limitations"
+"COD value","Значение COD","COD value"
+"COD type","Тип COD","COD type"
+Any,Любой,Any
+"Guaranteed funds","Гарантированные средства","Guaranteed funds"
+Cash,Наличные,Cash
+"Special services","Специальные услуги","Special services"
+"Dangerous Goods/Accessibility","Опасные грузы/доступность","Dangerous Goods/Accessibility"
+"Accessible dangerous goods","Доступные опасные грузы","Accessible dangerous goods"
+"Inaccessible dangerous goods","Недоступные опасные грузы","Inaccessible dangerous goods"
+"Signature option","Возможность подписи","Signature option"
+"No signature","Без подписи","No signature"
+"Indirect signature required","Требуется косвенная подпись","Indirect signature required"
+"Direct signature required","Требуется прямая подпись","Direct signature required"
+"Adult signature required","Требуется подпись взрослого","Adult signature required"
+"Shipment contains dry ice","Груз содержит сухой лед","Shipment contains dry ice"
+"Shipment is Hold at Location","Доставка товара в пункт выдачи","Shipment is Hold at Location"
+"Shipment is Inside Pickup","Доставка товара до двери","Shipment is Inside Pickup"
+"Shipment is Inside Delivery","Доставка товара на дом","Shipment is Inside Delivery"
+"Shipment is scheduled for Saturday pickup","Отправка запланирована на субботу","Shipment is scheduled for Saturday pickup"
+"Shipment is scheduled for Saturday delivery","Доставка запланирована на субботу","Shipment is scheduled for Saturday delivery"
+"Shipment is Residential Delivery","Груз доставляется по месту жительства","Shipment is Residential Delivery"
+"Nonstandard container is used for a shipment","Для отправки используется нестандартный контейнер","Nonstandard container is used for a shipment"
+"Additional charges","Дополнительные сборы","Additional charges"
+"Send package cost to calculate insurance","Стоимость отправления для расчета страховки","Send package cost to calculate insurance"
+"Handling charge amount","Плата за обработку груза","Handling charge amount"
+"SmartPost Shipping settings","Настройки доставку SmartPost","SmartPost Shipping settings"
+"Add SmartPost Shipping data to request","Добавить данные о доставке SmartPost к запросу","Add SmartPost Shipping data to request"
+"Specify the indicia type","Укажите тип маркировки","Specify the indicia type"
+"Specify an endorsement type","Укажите тип индоссамента","Specify an endorsement type"
+"Specify the HubID","Укажите HubID","Specify the HubID"
+"Fedex is not enabled","Fedex не активирован","Fedex is not enabled"
+"Girth (required for non-rectangular Priority Mail large pieces)","Обхват (требуется для непрямоугольных крупных отправлений Priority Mail)","Girth (required for non-rectangular Priority Mail large pieces)"
+"Automatically enable new shipping methods from shipping server response","Автоматическое включение новых методов доставки на основе ответа сервера доставки","Automatically enable new shipping methods from shipping server response"
+"Shipping cost conversion rate","Коэффициент пересчета стоимости доставки","Shipping cost conversion rate"
+"International U.S.P.S.","Международные U.S.P.S.","International U.S.P.S."
+"Type of mail","Тип почтового отправления","Type of mail"
+"Container (International Rates)","Контейнер (международные тарифы)","Container (International Rates)"
+"Domestic U.S.P.S.","Внутренние U.S.P.S.","Domestic U.S.P.S."
+Services,Услуги,Services
+"Select all","Выберите все","Select all"
+"""Ground Only"" indicator for ""Standard Post"" service","Индикатор ""Только наземная перевозка"" для услуги ""Стандартная почтовая доставка""","""Ground Only"" indicator for ""Standard Post"" service"
+"Ground transportation required","Требуется наземная перевозка","Ground transportation required"
+"Ground transportation not required","Наземная перевозка не требуется","Ground transportation not required"
+Machinable,"Подходит для упаковочных машин",Machinable
+"Container (Express Mail)","Контейнер (экспресс-почта)","Container (Express Mail)"
+None,Нет,None
+"Container (Priority Mail)","Контейнер (срочная почта)","Container (Priority Mail)"
+Apply,Применить,Apply
+"Type of delivery","Тип доставки","Type of delivery"
+"Type of pickup","Тип получения","Type of pickup"
+"Package type","Тип упаковки","Package type"
+"Nature of Shipment Contents","Тип содержимого отправления","Nature of Shipment Contents"
+"Package CODValue in cents","Доставка посылки до двери стоимость в центах","Package CODValue in cents"
+"Optional services","Дополнительные услуги","Optional services"
+"Should not exceed","Не должно превышать","Should not exceed"
+"Your Canada Post commercial customer number","Ваш номер коммерческого клиента Canada Post","Your Canada Post commercial customer number"
+"Shipping cost convertion rate","Курс конвертации стоимости доставки","Shipping cost convertion rate"
+"Package options","Варианты посылки","Package options"
+Coverage,"Наложенный платеж",Coverage
+COD,"Оплата при доставке",COD
+"Packaging type","Тип упаковки","Packaging type"
+"Ship in a specified number of days","Отправка в течение определенного количества дней","Ship in a specified number of days"
+"Additional protection type","Тип дополнительной защиты","Additional protection type"
+"Additional protection value in $","Стоимость дополнительной защиты в $","Additional protection value in $"
+"Hazardous Materials","Опасные материалы","Hazardous Materials"
+"COD payment","Оплата при доставке","COD payment"
+"COD value in $","Стоимость оплаты при доставке в $","COD value in $"
+"Always use the same package dimensions as specified in the ""Maximum package dimensions"" fields","Всегда используйте те же размеры посылки, которые указаны в полях ""Максимальные размеры посылки""","Always use the same package dimensions as specified in the ""Maximum package dimensions"" fields"
+"Warehouse name","Название склада","Warehouse name"
+"Change info","Изменить информацию","Change info"
+"Zip code","Почтовый индекс","Zip code"
+"Business hours","Рабочие часы","Business hours"
+"Operation days","Рабочие дни","Operation days"
+Username,"Имя пользователя",Username
+"Ready time","Время готовности","Ready time"
+"Subsidizing rate","Субсидированная ставка","Subsidizing rate"
+"1-800Courier options are empty","Варианты 1-800Courier отсутствуют","1-800Courier options are empty"
+"Payment methods","Способы оплаты","Payment methods"
+"Payment method","Способ оплаты","Payment method"
+Comment,Комментарий,Comment
+Mode,Режим,Mode
+Params,Параметры,Params
+"Order by","Заказ по","Order by"
+Test,Тест,Test
+Live,Онлайн,Live
+"Search again","Повторный поиск","Search again"
+"Users search results","Результаты поиска пользователя","Users search results"
+"User name","Имя пользователя","User name"
+"User email","Электронная почта пользователя","User email"
+"User role","Роль пользователя","User role"
+Administrator,Администратор,Administrator
+Customer,Клиент,Customer
+"Not active","Не активен","Not active"
+"No users found","Пользователи не найдены","No users found"
+"Users management","Управление пользователями","Users management"
+"Search for",Искать,"Search for"
+"Search in","Поиск в","Search in"
+Role,Роль,Role
+"Pending membership","Членство на рассмотрении","Pending membership"
+Search,Поиск,Search
+Fisrtname,Имя,Fisrtname
+"Sign up for membership","Оформить членство","Sign up for membership"
+"Add to cart",Купить,"Add to cart"
+"Move product here","Переместить товар сюда","Move product here"
+"See more details",Подробнее,"See more details"
+"Product details","Подробности о товаре","Product details"
+"List price","Цена по прейскуранту","List price"
+"Product options","Параметры товара","Product options"
+"Please, select all options.","Пожалуйста, выберите все опции.","Please, select all options."
+Price,Цена,Price
+Qty,Кол-во,Qty
+"Out of stock","Нет в наличии","Out of stock"
+"Wholesale Price Breaks","Оптовые цены","Wholesale Price Breaks"
+Description,Описание,Description
+"Related products","Похожие товары","Related products"
+"Recommended products","Рекомендуемые товары","Recommended products"
+"Send to friend","Отправить другу","Send to friend"
+"Your name","Ваше имя","Your name"
+"Friend E-mail","Электронная почта друга","Friend E-mail"
+"Add personal message","Добавить личное сообщение","Add personal message"
+"No pages","Нет страниц","No pages"
+"Page title","Название страницы","Page title"
+"Clean URL","Чистый URL","Clean URL"
+"Page content","Содержание страницы","Page content"
+"Title tag","Тег заголовка","Title tag"
+"Meta keywords","Мета-тег keywords","Meta keywords"
+"Meta description",Мета-описание,"Meta description"
+"Category disabled","Категория отключена","Category disabled"
+"Delete category","Удалить категорию","Delete category"
+"List of subcategories","Список подкатегорий","List of subcategories"
+"Category name","Название категории","Category name"
+Subcategories,Подкатегории,Subcategories
+"No categories","Нет категорий","No categories"
+Edit,Редактировать,Edit
+"Modify selected","Изменить выбранную категорию","Modify selected"
+"Add new category","Добавить новую категорию","Add new category"
+"Featured products","Рекомендуемые товары","Featured products"
+"No featured products in this category","В этой категории нет рекомендуемых товаров","No featured products in this category"
+"Add product","Добавить товар","Add product"
+Browse...,Загрузить...,Browse...
+Details,Подробности,Details
+Banners,Баннеры,Banners
+Banner,Баннер,Banner
+Link,Ссылка,Link
+Alt,Alt,Alt
+"No banners for this category","Нет баннеров для этой категории","No banners for this category"
+Title,Заголовок,Title
+"Category icon","Значок категории","Category icon"
+"Delete icon","Удалить значок","Delete icon"
+"Category location","Расположение категории","Category location"
+"Order #ID","Идентификатор заказа","Order #ID"
+"Search by date","Поиск по дате","Search by date"
+"All dates","Все даты","All dates"
+"Date period","Диапазон дат","Date period"
+"Reset filter","Сбросить фильтр","Reset filter"
+"Search results","Результаты поиска","Search results"
+"Recent orders","Последние заказы","Recent orders"
+Date,Дата,Date
+"New blog comment has been posted","Опубликован новый комментарий в блоге","New blog comment has been posted"
+"Blog comment(s)","Комментарий(и) блога","Blog comment(s)"
+"This operation will delete selected blogs with all messages.","Эта операция удалит выбранные блоги со всеми сообщениями.","This operation will delete selected blogs with all messages."
+Authors,Авторы,Authors
+"New blog","Новый блог","New blog"
+Author,Автор,Author
+Added,Добавлено,Added
+Image,Изображение,Image
+"Delete image","Удалить изображение","Delete image"
+"Short description","Краткое описание","Short description"
+"Detailed description","Подробное описание","Detailed description"
+"Meta title","Мета-тег title","Meta title"
+"Blog comments","Комментарии в блоге","Blog comments"
+"Delete this comment?","Удалить этот комментарий?","Delete this comment?"
+Decline,Отклонить,Decline
+Approve,Утвердить,Approve
+"No blog comments yet","В блоге пока нет комментариев ","No blog comments yet"
+"Add new/edit","Добавлять новые/редактировать","Add new/edit"
+"No brands found","Бренды не найдены","No brands found"
+"Go to comments","Перейти к комментариям","Go to comments"
+"Leave a comment","Оставить комментарий","Leave a comment"
+Quote,Цитировать,Quote
+"Comment from","Комментарий от","Comment from"
+"Commented on",Прокомментировал,"Commented on"
+"No comments yet","Комментариев нет","No comments yet"
+"You should be a registered user to leave a comment.","Вы должны быть зарегистрированным пользователем, чтобы оставить комментарий.","You should be a registered user to leave a comment."
+"Read blog","Читать блог ","Read blog"
+"No topics yet","Тем пока нет","No topics yet"
+"Import search keywords","Импортировать ключевые слова для поиска","Import search keywords"
+"Google sitemap","Карта сайта Google","Google sitemap"
+"Generate sitemap","Сгенерировать карту сайта","Generate sitemap"
+"No products found","Товары не найдены","No products found"
+"No banners for  homepage","Нет баннеров для главной страницы","No banners for  homepage"
+"In stock","В наличии","In stock"
+"Additional categories","Дополнительные категории","Additional categories"
+Brand,Бренд,Brand
+Available,Доступно,Available
+"Not available","Нет в наличии","Not available"
+"Hidden, but available for sale","Скрыт, но доступен для продажи","Hidden, but available for sale"
+Keywords,"Ключевые слова",Keywords
+drop_files_to_upload,drop_files_to_upload,drop_files_to_upload
+Photos,Фотографии,Photos
+Photo,Фото,Photo
+"Upload new","Загрузить новое","Upload new"
+Text,Текст,Text
+Type,Тип,Type
+"Options group","Группа опций","Options group"
+"Text option","Параметр текста","Text option"
+"Display type","Тип отображения","Display type"
+"Select box","Поле выбора","Select box"
+Squares,Квадраты,Squares
+"Radio buttons list","Список кнопок для выбора опций","Radio buttons list"
+"Text area","Текстовая область","Text area"
+"Input box","Поле ввода","Input box"
+Variant,Вариант,Variant
+"Group options","Групповые опции","Group options"
+"Price modifier","Модификатор цены","Price modifier"
+"Weight modifier","Модификатор веса","Weight modifier"
+Percent,Процент,Percent
+Absolute,Абсолютный,Absolute
+"Add option group","Добавить группу опций","Add option group"
+"Option group","Группа опций","Option group"
+"Options exceptions","Исключения опций","Options exceptions"
+"Add exception","Добавить исключение","Add exception"
+"Filter variants","Фильтр вариантов","Filter variants"
+"Product title","Название товара","Product title"
+"Supplier Code","Код поставщика","Supplier Code"
+"Quantity per box","Количество в коробке","Quantity per box"
+"Supplied As","Поставляется как","Supplied As"
+Wholesale,"Оптовая продажа",Wholesale
+Default,"По умолчанию",Default
+Quantity,Количество,Quantity
+Restore,Восстановить,Restore
+"New variant","Новый вариант","New variant"
+"Create all possible variants","Создать все возможные варианты","Create all possible variants"
+"Are you sure to delete this image?","Вы уверены, что хотите удалить это изображение?","Are you sure to delete this image?"
+"Upload images","Загрузить изображения","Upload images"
+"No shipping methods to your area available","Нет доступных способов доставки в ваш регион","No shipping methods to your area available"
+"Your comments","Ваши комментарии","Your comments"
+"Have a discount coupon?","У вас есть купон на скидку?","Have a discount coupon?"
+"Place order","Разместить заказ","Place order"
+Checkout,Заказать,Checkout
+Continue,Продолжить,Continue
+"Clear cart","Очистить корзину","Clear cart"
+"Cart is empty","Корзина пуста","Cart is empty"
+"Continue shopping","Продолжить покупки","Continue shopping"
+"View cart",Корзина,"View cart"
+"All testimonials","Все отзывы","All testimonials"
+Bestsellers,Бестселлеры,Bestsellers
+"Most viewed","Наиболее просмотренные","Most viewed"
+"New arrivals","Новые поступления","New arrivals"
+Account,Аккаунт,Account
+"Log out",Выход,"Log out"
+Brands,Бренды,Brands
+Blog,Блог,Blog
+About,"О сайте",About
+Categories,Категории,Categories
+"Terms & Conditions","Правила и условия","Terms & Conditions"
+"Search by substring","Поиск по подстроке","Search by substring"
+"Advanced search","Расширенный поиск","Advanced search"
+"Search in category","Поиск в категории","Search in category"
+as,как,as
+"Main category","Основная категория","Main category"
+"Additional category","Дополнительная категория","Additional category"
+"also search in subcategories","также искать в подкатегориях","also search in subcategories"
+"Search by brand","Поиск по бренду","Search by brand"
+"Product #ID","Идентификатор товара","Product #ID"
+"Weight (lbs)","Вес (кг)","Weight (lbs)"
+Availability,Доступность,Availability
+"Available for sale","Доступно для продажи","Available for sale"
+"New brand","Новый бренд","New brand"
+"Ajax Cart",SPA-корзина,SPA-Cart
+Profile,Профиль,Profile
+foot_advertising,foot_advertising,foot_advertising
+foot_help,foot_help,foot_help
+site_terms,site_terms,site_terms
+foot_about,foot_about,foot_about
+footer_search,footer_search,footer_search
+error_error,error_error,error_error
+Dashboard,Дашборд,Dashboard
+"Orders and discounts","Заказы и скидки","Orders and discounts"
+"Discount coupons","Купоны на скидку","Discount coupons"
+Discounts,Скидки,Discounts
+Users,Пользователи,Users
+"Browse users","Просмотр пользователей","Browse users"
+"Create new user","Создать нового пользователя","Create new user"
+"Membership levels","Уровни членства","Membership levels"
+Catalog,Каталог,Catalog
+"Add new product","Добавить новый товар","Add new product"
+"Import catalog","Импорт каталога","Import catalog"
+"Export catalog","Экспорт каталога","Export catalog"
+Content,Содержание,Content
+"Static pages","Статичные страницы","Static pages"
+Homepage,"Домашняя страница",Homepage
+"Shipping and payment","Доставка и оплата","Shipping and payment"
+Countries/States,Страны/регионы,Countries/States
+Configuration,Конфигурация,Configuration
+"General settings","Общие настройки","General settings"
+"Blog settings","Настройки блога","Blog settings"
+"Language labels",Перевод,"Language labels"
+Modules,Модули,Modules
+"Support desk","Служба поддержки","Support desk"
+Newsletter,"Рассылка новостей",Newsletter
+"Guest book","Гостевая книга","Guest book"
+"Mass products modifier","Модификатор массовых товаров","Mass products modifier"
+SEO,SEO,SEO
+"Search keywords","Ключевые слова для поиска","Search keywords"
+"Back to customer area","Вернуться в клиентскую зону","Back to customer area"
+public,публичный,public
+private,частный,private
+for_subscribers,for_subscribers,for_subscribers
+for_friends,for_friends,for_friends
+for_friends_and_their_friends,for_friends_and_their_friends,for_friends_and_their_friends
+file_too_big,file_too_big,file_too_big
+bad_image_type,bad_image_type,bad_image_type
+bad_images,bad_images,bad_images
+"Click the <b>Update</b><br />button to complete<br />removing","Нажмите кнопку <b>Update</b><br />,  что завершить удаление <br />","Click the <b>Update</b><br />button to complete<br />removing"
+"Please, enter your comment.","Пожалуйста, введите ваш комментарий.","Please, enter your comment."
+"Please, enter your name","Пожалуйста, введите ваше имя","Please, enter your name"
+blog_bbcode_b,Жирным,Bold
+blog_bbcode_i,Наклон,Italic
+blog_bbcode_u,Подчеркнуто,Underlined
+blog_bbcode_s,Зачеркнуто,"Line through"
+blog_bbcode_url,Ссылка,Link
+blog_bbcode_email,Почта,Email
+blog_bbcode_img,Картинка,Image
+blog_bbcode_list,Лист,List
+blog_bbcode_li,"Элемент листа","List point"
+blog_bbcode_quote,Цитата,Quote
+blog_bbcode_code,Код,Code
+"Please, enter category title","Пожалуйста, введите название категории","Please, enter category title"
+p_restored,p_restored,p_restored
+"Clear all","Очистить все","Clear all"
+"Price Per Unit","Цена за единицу","Price Per Unit"
+"This options combination is not available","Такое сочетание опций недоступно","This options combination is not available"
+"Option Not Available in Combination with","Опция недоступна в сочетании с","Option Not Available in Combination with"
+"Option Not Available","Опция недоступна","Option Not Available"
+"Please, select options","Пожалуйста, выберите варианты","Please, select options"
+ok,Ок,ok
+"Please, wait we are connecting you to PayPal","Пожалуйста, подождите, мы подключаем вас к PayPal","Please, wait we are connecting you to PayPal"
+"Brand name cannot be empty","Название бренда не может отсутствовать","Brand name cannot be empty"
+Administration,"Управление ",Administration
+Successful,Успешно,Successful
+Label,Перевод,Translation
+"Contact form","Форма обратной связни","Contact form"
+"Your letter has been sent. We will contact you as soon as possible.","Ваше письмо было отправлено. Мы свяжемся с вами как можно скорее.","Your letter has been sent. We will contact you as soon as possible."
+"Message from","Сообщение от","Message from"
+"Your password","Ваш пароль","Your password"
+Dear,Дорогой,Dear
+"To set new password","Чтобы установить новый пароль","To set new password"
+"click here","нажмите здесь","click here"
+"Link to change password sent to your email","Ссылка для смены пароля была отправлена на ваш email","Link to change password sent to your email"
+"New password","Новый пароль","New password"
+"Confirm password","Подтвердите пароль","Confirm password"
+"Passwords mismatch","Пароли не совпадают","Passwords mismatch"
+Change,Изменить,Change
+"Please, enter","Пожалуйста, введите","Please, enter"
+"Please, enter correct confirm password field","Пожалуйста, введите в поле правильный пароль для подтверждения","Please, enter correct confirm password field"
+"Please, set your password","Пожалуйста, установите пароль","Please, set your password"
+"Set your password","Установить пароль","Set your password"
+"Category details","Подробности категории","Category details"
+Pages,Страницы,Pages
+"About CMS",CMS,"About CMS"
+Contact,Контакты,Contact
+View,Посмотреть,View
+Images,Изображения,Images
+"Wholesale pricing","Оптовые цены","Wholesale pricing"
+Recommended,Рекомендуемые,Recommended
+Newest,Новые,Newest
+"added to cart.","Добавлено в корзину.","added to cart."
+"Move me to cart","Добавь меня в корзину","Move me to cart"
+"Language labels imported successful","Метки языка успешно импортированы","Language labels imported successful"
+Error,Ошибка,Error
+Blogs,Блоги,Blogs
+"Selected options","Выбранные параметры","Selected options"
+"Previous page","Предыдущая страница","Previous page"
+"added to cart","добавлено в корзину","added to cart"
+"Order #","Заказ №","Order #"
+"New testimonial","Новый отзыв","New testimonial"
+Variants,"Варианты ",Variants
+"Variants Images","Картинки вариантов","Variants Images"
+"Products variants","Варианты товаров ","Products variants"
+"Thank you for recommending our product to your friend.","Благодарим вас за рекомендацию нашей продукции своим друзьям.","Thank you for recommending our product to your friend."
+"You cannot order below ","Вы не можете сделать заказ ниже ","You cannot order below "
+login_incorrect,"Попытка входа не удалась. Если вы забыли пароль, <a href=""#"" onclick=""$('.alerts').remove(); return restore_password()"">нажмите здесь</a>.","Login attempt incorrect. If you forgot password, <a href=""#"" onclick=""$('.alerts').remove(); return restore_password()"">click here</a>"
+"Call Us","Свяжитесь с нами","Call Us"
+"Brand not found","Бренд не найден","Brand not found"
+"Browse by module","Просмотреть по модулю","Browse by module"
+"Browse by role","Просмотреть по ролям","Browse by role"
+Cart,Корзина,Cart
+Logout,Выход,Logout
+Tasks,Задания,Tasks
+"No tasks in this category","В этой категории нет заданий","No tasks in this category"
+"What specific area to you want to get covered","Какую конкретную область вы хотите охватить","What specific area to you want to get covered"
+Proceed,Продолжить,Proceed
+"Found menus","Найденные меню","Found menus"
+"Found tasks","Найденные задания","Found tasks"
+"No results found","Результаты не найдены","No results found"
+"Product has been added to your cart.","Товар был добавлен в вашу корзину.","Product has been added to your cart."
+"MySQL error happens.","Произошла ошибка MySQL.","MySQL error happens."
+"Category banners","Баннеры категорий","Category banners"
+News,Новости,News
+"This operation will delete selected news.","Эта команда удалит выбранные новости.","This operation will delete selected news."
+"New news","Свежие новости","New news"
+"Total subscribers","Общее количество подписчиков","Total subscribers"
+"This operation will delete selected letters.","Эта команда удалит выбранные письма.","This operation will delete selected letters."
+"New letter","Новое письмо","New letter"
+"Test email","Тестовое сообщение","Test email"
+"Email address #1","Адрес электронной почты #1","Email address #1"
+"Email address #2","Адрес электронной почты #2","Email address #2"
+"Email address #3","Адрес электронной почты #3","Email address #3"
+are_you_sure,"Вы уверены?","Are you sure?"
+"Email has been sent","Письмо было отправлено","Email has been sent"
+yes,Да,Yes
+no,Нет,No
+"Browse our news","Посмотреть наши новости","Browse our news"
+"All news","Все новости","All news"
+"See full article","Смотреть полную статью","See full article"
+"Read more","Читать дальше","Read more"
+"Back to News mainpage","Вернуться к главной странице новостей","Back to News mainpage"
+Subscribe,Подписаться,Subscribe
+"Thank you for your subscription","Спасибо за подписку","Thank you for your subscription"
+"Subscribe to our news here...","Подписаться на наши новости...","Subscribe to our news here..."
+"Free shipping on orders over $100 (US only)","Бесплатная доставка на заказы свыше $100 (только для США)","Free shipping on orders over $100 (US only)"
+"Email us",Помощь,"Email us"
+"You are already subscribed","Вы уже подписаны","You are already subscribed"
+"First name",Имя,"First name"
+"Last name",Фамилия,"Last name"
+Wishlist,Хотелки,Wishlist
+"Type your email first","Сначала введите Ваш email ","Type your email first"
+"Add to wishlist","Добавить в список желаний","Add to wishlist"
+"Product has been added to your Wishlist","Товар был добавлен в список желаний","Product has been added to your Wishlist"
+"New user","Новый пользователь","New user"
+"Clear wishlist","Очистить список желаний","Clear wishlist"
+"Wishlist is empty","Список желаний пуст","Wishlist is empty"
+"Your cart","Ваша корзина","Your cart"
+"Password recovery","Восстановление пароля ","Password recovery"
+"Our testimonials","Наши Отзывы","Our testimonials"
+"Our blog","Наш блог","Our blog"
+"Enter your coupon code here","Введите код купона здесь","Enter your coupon code here"
+"Please enter your address","Пожалуйста, введите Ваш адрес","Please enter your address"
+"Your message","Ваше сообщение","Your message"
+Quicklook,"Быстрый просмотр",Quicklook
+"Drop files here to upload.<br><br>Or click to select","Перетащите сюда файлы для загрузки.<br><br>или выберите","Drop files here to upload.<br /><br />Or click to select"
+"Products options","Варианты товаров ","Products options"
+Warehouses,Склады,Warehouses
+"Warehouse address","Адрес склада","Warehouse address"
+"Warehouses description","Описание складов","Warehouses description"
+"No warehouses defined","Склады не указаны","No warehouses defined"
+"Warehouses invetory","Инвентаризация складов","Warehouses invetory"
+Warehouse,Склад,Warehouse
+Avail,"В наличии",Avail
+"Warehouses inventory","Инвентарь складов","Warehouses inventory"
+"Warehouse code","Код склада","Warehouse code"
+"Local pickup(free shipping)","Самовывоз (бесплатная доставка)","Local pickup(free shipping)"
+"No shipping methods to your location available","Нет доступных способов доставки в ваш город","No shipping methods to your location available"
+"Choose warehouse","Выберите склад","Choose warehouse"
+"Open in map","Открыть на карте","Open in map"
+Orders,Заказы,Orders
+"Order invoice","Счет-фактура заказа","Order invoice"
+"Update warehouses","Обновить склады","Update warehouses"
+"Local pickup from","Самовывоз из","Local pickup from"
+"Local pickup",Самовывоз,"Local pickup"
+"Your sitemap successfully generated","Карта сайта успешно сгенерирована","Your sitemap successfully generated"
+"Ordered amount","Сумма заказа","Ordered amount"
+Zones,Зоны,Zones
+"Detination zones","Зоны пунктов назначения","Detination zones"
+"Site title","Очень быстро СПА-корзина. Без перезагрузки страницы. Анимированные всплывающие окна. Многие модули.",
+"Site description","<P>в админку: a@a.com / 01230 <а href=""http://demo.spa-cart.com/admin"" цель=""_blank"">http://demo.spa-cart.com/admin</а></р>
+
+<Р>Ajaxfied страниц. Все страницы чистые URL-адреса, даже в админке. Простое обновление/перевести язык этикеток. Тест скидкой&nbsp;с купоном 10% - на &quot;тест&quot; по. Полоска тест на кредитную карту - 4111 1111 1111 1111 (любые действия и CVV), проверить счет PayPal - olegkhorev@gmail.com / 01234567 . Это просто основа - любая конструкция может быть применена.</п>
+
+<P>в мобильной версии будет показан, как только вы зайдете на сайт с вашего мобильного.</п>
+
+элемент <div>&nbsp; с</див>
+",
+User,Пользователь,User
+newss,новости,newss
+"Buy with one click","Купить в один клик","Buy with one click"
+"Enter your phone number","Введите свой номер телефона","Enter your phone number"
+"We will contact you soon","Мы свяжемся с вами в ближайшее время","We will contact you soon"
+"Please, allow us a few minutes to receive your request","Пожалуйста, дайте нам несколько минут для получения вашего запроса","Please, allow us a few minutes to receive your request"
+"Someone interesting in your product","Кто-то заинтересовался вашим товаром","Someone interesting in your product"
+"You can require quick sale not more than once per 10 seconds","Вы можете запрашивать быструю продажу не чаще одного раза в 10 секунд","You can require quick sale not more than once per 10 seconds"
+"Products variants images","Изображения вариантов продукции","Products variants images"
+Reviews,Отзывы,Reviews
+"Add review","Добавить отзыв","Add review"
+"Please, enter your name and message","Пожалуйста, введите ваше имя и сообщение","Please, enter your name and message"
+Rating,Рейтинг,Rating
+"Captcha is incorrect","Captcha неверна","Captcha is incorrect"
+"Your review has been sent to moderation","Ваш отзыв отправлен на модерацию","Your review has been sent to moderation"
+"New review","Новый отзыв","New review"
+"posted new review","опубликован новый отзыв","posted new review"
+"'Search for reviews'",'Поиск'отзывы,"'Search for reviews'"
+'Status',"""Статус""",'Status'
+'Pending',"'В ожидании'",'Pending'
+'Approved',"""Утверждено""",'Approved'
+'Declined',"""Отклонен""",'Declined'
+'All',"""Все""",'All'
+"'IP Address'","""IP-адрес""","'IP Address'"
+'Name',"""Имя""",'Name'
+'Message','Сообщение','Message'
+"'Product ID'","'Код продукта'","'Product ID'"
+'SKU','СКУ','SKU'
+'Rating',"""Рейтинг""",'Rating'
+"Search for reviews","Поиск отзывов","Search for reviews"
+Declined,Отклонено,Declined
+"IP Address",IP-адрес,"IP Address"
+"Product ID","ID товара","Product ID"
+IP,IP,IP
+"Product ID/SKU","ID товара/SKU","Product ID/SKU"
+Delete_selected',Delete_selected',Delete_selected'
+"Reviews updated.","Отзывы обновлены.","Reviews updated."
+"You has been successfully registered on our site","Вы успешно зарегистрировались на нашем сайте","You has been successfully registered on our site"
+"Registration completed","Регистрация завершена","Registration completed"
+"This operation will delete selected reviews.","В результате этой операции выбранные отзывы будут удалены.","This operation will delete selected reviews."
+"Selected reviews deleted.","Выбранные отзывы удалены.","Selected reviews deleted."
+"Recently you left products in your cart on our site","Недавно вы оставили товары в корзине на нашем сайте","Recently you left products in your cart on our site"
+"Narrow selection","Фильтр товаров","Narrow selection"
+"Price range","Диапазон цен","Price range"
+"Import fields","Импортировать поля","Import fields"
+"Support desk settings","Настройки службы поддержки","Support desk settings"
+"Customer email","Электронная почта клиента","Customer email"
+"During date period","В течение периода времени","During date period"
+"Specify period below","Укажите период ниже","Specify period below"
+"Search period","Искать период","Search period"
+Reset,Сбросить,Reset
+"Results found","Результаты найдены","Results found"
+Displaying,Отображение,Displaying
+results,результатов,results
+Messages,Сообщения,Messages
+"Ticket ID","ID тикета","Ticket ID"
+"Unread tickets","Непрочитанные тикеты","Unread tickets"
+Open,Открытые,Open
+Closed,Закрытые,Closed
+"Waiting for consultant","Ожидание консультанта","Waiting for consultant"
+"Waiting for client","Ожидание клиента","Waiting for client"
+Cancelled,Отменен,Cancelled
+"Search for tickets","Поиск тикетов","Search for tickets"
+"Ticket priority","Приоритет тикетов","Ticket priority"
+"Ticket contact us","Связаться с нами по тикету","Ticket contact us"
+"Ticket product","Товар тикета","Ticket product"
+"Ticket topic","Тема тикета","Ticket topic"
+"Ticket mailbox","Почтовый ящик для тикетов","Ticket mailbox"
+lbl_tickets,Тикеты,Tickets
+lbl_ticket,Тикет,Ticket
+lbl_tickets_management,"Управление тикетами","Tickets management"
+lbl_create_ticket,"Создать тикет","Create ticket"
+lbl_search_for_tickets,"Поиск тикетов","Search for tickets"
+lbl_ticket_open,Открытые,Open
+lbl_ticket_closed,Закрытые,Closed
+lbl_ticket_scheduled,Запланированные,Scheduled
+lbl_ticket_deleted,"Тикет был успешно удален","Ticket has been successfully deleted"
+lbl_ticket_info,"Информация о тикете","Ticket info"
+lbl_ticket_contact_us,"Свяжитесь с нами","Contact Us"
+lbl_ticket_topic,Тема,Topic
+eml_ticket_posted_subj,"Новый тикет","New ticket"
+eml_ticket_message_posted_subj,eml_ticket_message_posted_subj,eml_ticket_message_posted_subj
+eml_ticket_posted,"Для вас опубликован новый тикет. Новый идентификационный номер - #{{ticketid}}.","A new ticket posted for you. A new identification number is #{{ticketid}}."
+lbl_unread_tickets,"Тикеты с новыми сообщениями","Tickets with new messages"
+lbl_all_tickets,"Все тикеты","All tickets"
+lbl_ticket_priority_1,"Может подождать","Can wait"
+lbl_ticket_priority_2,Нормальный,Normal
+lbl_ticket_priority_3,Высокий,High
+lbl_ticket_priority_4,Экстренный,"Hot Rush"
+txt_tickets_management,"Эта страница позволяет вам искать все тикеты в вашем магазине.","This page allow you to search for all tickets in your store."
+lbl_no_tickets_found,"Для заданного условия тикеты не найдены.","No tickets found for the defined condition."
+lbl_ticket_mailbox,"Почтовый ящик",Mailbox
+txt_create_ticket,"На этой странице вы можете создать новый тикет.","This page allow you to create a new ticket."
+txt_modify_ticket,"Эта страница позволяет обновить существующий тикет.","This page allow you to update existing ticket."
+lbl_no_tickets,"У вас нет тикетов.","You have no tickets."
+err_ticket_message_subject,"Пожалуйста, введите тему и сообщение.","Please, enter your subject and message."
+err_ticket_message,"Пожалуйста, введите ваше сообщение.","Please, enter your message."
+lbl_new_ticket,"Новый тикет","New ticket"
+lbl_ticket_priority,Приоритет,Priority
+err_ticket_login_empty,"Пожалуйста, введите ваш email и номер билета.","Please, enter your email and ticket #."
+lbl_ticket_product,Товар,Product
+err_ticket_all_fields,"Пожалуйста, введите свой email, тему и сообщение.","Please, enter your email, subject and message."
+lbl_ticket_upload_files,"Загрузить файлы","Upload files"
+lbl_full_ticket,"Чтобы увидеть полный текст тикета, пожалуйста, перейдите по ссылке","To see full ticket, please, follow here"
+lbl_ticket_subject,Тема,Subject
+lbl_ticket_message,Сообщение,Message
+eml_new_ticket,"Новый тикет #{{ticketid}}","New ticket #{{ticketid}}"
+"No tickets found","Тикеты не найдены","No tickets found"
+Ticket,Тикет,Ticket
+"New ticket","Новый тикет","New ticket"
+"Create ticket","Создать тикет","Create ticket"
+"No such ticket","Нет такого тикета","No such ticket"
+"Ticket info","Информация о тикете","Ticket info"
+"Ticket subject","Тема тикета","Ticket subject"
+"Ticket message","Сообщение тикета","Ticket message"
+"Ticket messages","Сообщения тикета","Ticket messages"
+"Select ticket category","Выберите категорию тикета","Select ticket category"
+"You have already one Open ticket. You cannot post more till it processed.","У вас уже есть один открытый тикет. Вы не можете опубликовать еще один, пока он не будет обработан.","You have already one Open ticket. You cannot post more till it processed."
+"You have no access to this ticket","У вас нет доступа к этому билету","You have no access to this ticket"
+lbl_ticket_task,задание,task
+"You can have only one open ticket at a time. Please close or cancel the open ticket to create a new one.","Одновременно у вас может быть только один открытый тикет. Пожалуйста, закройте или отмените открытый тикет, чтобы создать новый.","You can have only one open ticket at a time. Please close or cancel the open ticket to create a new one."
+"New estimate request","Новый запрос на расчет сметы","New estimate request"
+"Back to search results","Вернуться к результатам поиска","Back to search results"
+"Admin notes","Заметки администратора","Admin notes"
+lbl_attached_files,lbl_attached_files,lbl_attached_files
+lbl_delete_all_messages,lbl_delete_all_messages,lbl_delete_all_messages
+Add/Edit,Добавить/редактировать,Add/Edit
+"Upload files","Загрузить файлы","Upload files"
+"Delete all messages","Удалить все сообщения","Delete all messages"
+"You need to be subscribed to access AX prime dashboard.","Чтобы получить доступ к приборной панели AX prime, необходимо подписаться.","You need to be subscribed to access AX prime dashboard."
+"AX prime dashboard","Приборная панель AX prime","AX prime dashboard"
+Actions,Действия,Actions
+"new messages","новые сообщения","new messages"
+"Are you sure?","Вы уверены?","Are you sure?"
+Close,Закрыть,Close
+"Cancel subscription","Отменить подписку","Cancel subscription"
+"Subscribe again","Подписаться снова","Subscribe again"
+"Select version","Выберите версию","Select version"
+"Please, select all categories, enter your subject and message","Пожалуйста, выберите все категории, введите тему и сообщение","Please, select all categories, enter your subject and message"
+"Create request","Создать запрос","Create request"
+"Request information","Запросить информацию","Request information"
+lbl_post_new_message,lbl_post_new_message,lbl_post_new_message
+"Send message","Отправить сообщение","Send message"
+"Attached files","Прикрепленные файлы","Attached files"
+"Post new message","Опубликовать новое сообщение","Post new message"
+"Captcha is incorrect.","Captcha неверна.","Captcha is incorrect."
+lbl_reply_above_here,":: Ответьте ПЕРЕД ЭТОЙ СТРОКОЙ, чтобы оставить комментарий к тикету ::",":: Reply ABOVE THIS LINE to post a comment to the ticket ::"
+"You need to be logged in to access this page","Вы должны войти в систему, чтобы получить доступ к этой странице","You need to be logged in to access this page"
+"Ticket created. Please, wait our answer to your email.","Тикет создан. Пожалуйста, дождитесь ответа на ваше письмо.","Ticket created. Please, wait our answer to your email."
+"Ask a question about this product","Задать вопрос об этом товаре","Ask a question about this product"
+"Our answer","Наш ответ","Our answer"
+"Replied Message","Ответ на сообщение","Replied Message"
+"Invalid form token. Please, try once again.","Неверный токен формы. Пожалуйста, попробуйте еще раз.","Invalid form token. Please, try once again."
+"Gift Cards","Подарочные карты","Gift Cards"
+"Earlier purchased gift cards","Ранее приобретенные подарочные карты","Earlier purchased gift cards"
+"Enter your Gift Card code here","Введите код для подарочной карты здесь","Enter your Gift Card code here"
+"Gift Card","Подарочная Карта","Gift Card"
+"You will see the Gift Card key phrase on paid invoice","Вы увидите фразу-пароль для подарочной карты в оплаченной счет-фактуре","You will see the Gift Card key phrase on paid invoice"
+"Paid with Gift Card","Оплачено подарочной картой","Paid with Gift Card"
+"Have a Gift Card?","Есть подарочная карта?","Have a Gift Card?"
+"Download PDF invoice","Скачать счет-фактуру в PDF","Download PDF invoice"
+"Gift Card key phrase","Фраза-пароль для подарочной карты","Gift Card key phrase"
+"Get in touch with us","Свяжитесь с нами","Get in touch with us"
+"Phone #2","Телефон #2","Phone #2"
+Fax,Факс,Fax
+"Quick links","Быстрые ссылки","Quick links"
+"Home page","Домашняя страница","Home page"
+"Browse our blog","Посмотрите наш блог","Browse our blog"
+"See blog","Посмотреть блог","See blog"
+"All blogs","Все блоги","All blogs"
+"See full blog","Посмотреть весь блог","See full blog"
+SPA-Cart,SPA-корзина,SPA-Cart
+"This clean URL already exist for another product.","Этот чистый URL-адрес уже существует для другого товара.","This clean URL already exist for another product."
+"Variants has been added.","Варианты были добавлены.","Variants has been added."
+"Clean URL should contain only letters and numbers and be not more 250 characters length. Allowed symbols: ""-"", ""_"", ""."". Also it should be without "".html"".","Чистый URL должен содержать только буквы и цифры и быть не длиннее 250 символов. Разрешенные символы: ""-"", ""_"", ""."". Также он должен быть без "".html"".","Clean URL should contain only letters and numbers and be not more 250 characters length. Allowed symbols: ""-"", ""_"", ""."". Also it should be without "".html""."
+Root,Корень,Root
+"You cannot define the same product as related product.","Вы не можете определить один и тот же товар как похожий.","You cannot define the same product as related product."
+"Such related productid already added to this product.","ID похожего товара уже добавлен к этому товару.","Such related productid already added to this product."
+"New testimonial is here","Новый отзыв здесь","New testimonial is here"
+"Enter 3 characters","Введите 3 символа","Enter 3 characters"
+"Enter 2 characters","Введите 2 символа","Enter 2 characters"
+"Blog not found","Блог не найден","Blog not found"
+Currencies,Валюты,Currencies
+"Currencies management","Управление валютами ","Currencies management"
+"Currency code","Код валюты","Currency code"
+Rate,Курс,Rate
+Main,Главная,Main
+Symbol,Символ,Symbol
+Languages,Языки,Languages
+"Homepage meta title","Мета-заголовок домашней страницы",
+Language,Язык,Language
+"Homepage meta keywords","Ключевые слова мета-заголовка домашней страницы",
+"Homepage meta description","Мета-описание домашней страницы",
+"Recently viewed","Недавно просмотренные","Recently viewed"
+"Unable to redirect to Stripe","Невозможно переадресовать на Stripe","Unable to redirect to Stripe"
+"Please, wait we are connecting you to Stripe","Пожалуйста, подождите, мы соединяем вас с Stripe","Please, wait we are connecting you to Stripe"
+Favorite,Избранное,Favorite
+"Enter at least 2 characters","Введите не менее 2 символов","Enter at least 2 characters"
+"Free call","Бесплатный звонок","Free call"
+"FREE SHIPPING & RETURN","БЕСПЛАТНАЯ ДОСТАВКА И ВОЗВРАТ","FREE SHIPPING & RETURN"
+"Free shipping on all orders over $99","Бесплатная доставка на заказы от $99","Free shipping on all orders over $99"
+"MONEY BACK GUARANTEE","ГАРАНТИЯ ВОЗВРАТА СРЕДСТВ","MONEY BACK GUARANTEE"
+"For all orders created in below 30 days","Для заказов, созданных менее чем за 30","For all orders created in below 30 days"
+"ONLINE SUPPORT 24/7","ОНЛАЙН ПОДДЕРЖКА 24/7","ONLINE SUPPORT 24/7"
+"Any time any place","В любое время в любом месте","Any time any place"
+"We use cookies for better user experience","Мы используем файлы cookie для улучшения пользовательского опыта","We use cookies for better user experience"
+Accept,Принять,Accept
+"Search for reviews'","Поиск отзывов'",
+Status',Статус',
+Pending',"На рассмотрении'",
+Approved',Одобрен',
+Declined',Отклонено',
+All',Все',
+"IP Address'",IP-адрес',
+Name',Имя',
+Message',Сообщение',
+"Product ID'","ID товара'",
+SKU',SKU',
+Rating',Рейтинг',
+Roles,Роли,Roles
+"Open site","Открыть сайт","Open site"
+Customers,Клиенты,Customers
+Subscribers,Подписчики,Subscribers
+Coupons,Купоны,Coupons
+Memberships,"Группы членства",Memberships
+"Customer name","Customer name","Customer name"
+"Tracking number","Tracking number","Tracking number"
+"Track order","Track order","Track order"
+"Tracking URL","Tracking URL","Tracking URL"
+"Chagned status will be sent to customer","Chagned status will be sent to customer","Chagned status will be sent to customer"
+"Order date","Дата заказа","Order date"
+Transaction,"ID транзакции",Transaction
+"per customer","на клиента","per customer"
+"Add a new gift card","Добавить подарочную карту",
+"Card number","Номер карты",
+Amount,Сумма,
+"Amount left",Осталось,
+"User purchased",Пользователь,
+"Create new user account","Создать нового пользователя",
+"No Roles defined","No Roles defined","No Roles defined"
+"New role","Новая роль","New role"
+Permissions,Permissions,Permissions
+"Root admin","Root admin","Root admin"
+"Export selected","Export selected","Export selected"
+"Clone product","Clone product","Clone product"
+"View product","View product","View product"
+"You can set not available options combinations here.","Здесь вы можете установить недоступные комбинации опций.",
+"You can set ""not available"" options combinations here.","Здесь вы можете установить «недоступные» комбинации опций.","You can set ""not available"" options combinations here."
+"Add image","Добавить картинку","Add image"
+Action,Действия,Action
+"Apply to shipping","Применить к доставке",
+Priority,Priority,Priority
+"Admin area","Админ панель","Admin area"
+"Ajaxfied pages","Ajaxfied страницы","Ajaxfied pages"
+"All pages are clean URLs, even in the admin area","Все страницы clean URLs, даже админ панель","All pages are clean URLs, even in the admin area"
+"Easy to Update and Translate. Translate mode for easy and quick translation.","Легко обновить и перевести. Translate mode для быстрого и легкого перевода.","Easy to Update and Translate. Translate mode for easy and quick translation."
+"Design versatility","Свобода дизайна","Design versatility"
+"This is a framework. Any design can be applied","Это только framework. Любой дизайн может быть интегрирован","This is a framework. Any design can be applied"
+"Test our cart",Тестирование,"Test our cart"
+"Mobile version","Мобильная версия","Mobile version"
+"Available automatically from your mobile phone.","Доступен автоматически с вашего мобильного телефона","Available automatically from your mobile phone."
+"No reviews yet. Be first.","No reviews yet. Be first.","No reviews yet. Be first."
+"You may also like","You may also like","You may also like"
+"Purchase a new gift card","Купить новую подарочную карту","Purchase a new gift card"
+"Enter Gift Card amount $","Введите сумму","Enter Gift Card amount $"
+"Credit Card #","Номер карты","Credit Card #"
+Expiration,"Срок действия",Expiration
+CVV,CVV,CVV
+"Billing address is the same","Платежный адрес такой же","Billing address is the same"
