@@ -1,3 +1,6 @@
+SPA-Cart - e-commerce Single Page Application
+https://spa-cart.com/
+
 1. Installation
 
 a. Create MySQL database and upload files into some folder on your server.
@@ -86,75 +89,7 @@ It rebuild photos cache. Some hosting accounts will process images generation sl
 
 Once your developer create custom images sizes, this script should be customized for them.
 
+-----------
 
-5. Templates engine
-
-Supported tags are
-
-a. Any template variable can be {$var} - it's <?php echo $var; ?>. If it's array or object - use same way as PHP, for example {$var['var']}
-
-b.
-{foreach $array as $k=>$v}
-
-{/foreach}
-
-will be
-
-<?php
-foreach ($array as $k=>$v) {
-}
-?>
-
-You still can insert {$v} tag
-
-c. {if $tmp == '1' or $var == '2'} {/if}
-
-will be
-
-<?php
-if ($tmp == '1' or $var == '2') {
-}
-?>
-
-Same is
-
-{elseif [CODE]}
-
-and
-
-{else}
-
-d.
-{php $var = 1+2;}
-
-It's just to wrap <?php ?> to the inside content.
-
-e. {price $var}
-
-It will ouput currency symbol and price with .00 at the end.
-
-f. {weight $var}
-
-It will ouput weight symbol and weight with .00 at the end.
-
-g. {include="TEMPALTE PATH"} - for example {include="common/products.php"}
-
-h. {lng[Hello world]} - language variable. Useful if you translate or use multi-lingual site.
-
-All tags and {lng..} stored in cache and not processed on every page load.
-
-{lng[Hello|lower]} - lowcase.
-{lng[Hello|js]} - replace line breaks and " character with \".
-{lng[Hello|escape]} - replace " character with \".
-
-You can also use {lng} in JavaScript - they are processed as well. JavaScrpt already do all the work so it does not support additonal modifiers like "lower".
-
-i. Easier than {php } for assignments
-{assign $var=1+2}
-
-Output
-<?php
-$var = 1+2;
-?>
-
-
+I recommend to check this article:
+https://spa-cart.com/page/about_spa_cart.html
