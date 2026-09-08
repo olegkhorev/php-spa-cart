@@ -9,7 +9,7 @@ Complete steps.
 
 c. Once installed - you can edit settings in includes/settings.php
 
-# ImageMagick better to be installed and "convert" tool must be executable from any place. You can get ImageMagick for free from here
+ImageMagick better to be installed and "convert" tool must be executable from any place. You can get ImageMagick for free from here
 http://www.imagemagick.org/script/binary-releases.php
 
 It resizes images to needed dimension with Photoshop quality and keep same size as if it was with PHP GD.
