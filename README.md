@@ -66,17 +66,7 @@ $design_mode = 1;
 
 Please, also remove the Discount coupon and Gift Cards.
 
-3. To use HTTPS(SSL) always - open index.php and uncomment
-/*
-if (empty($_SERVER['HTTPS']) || $_SERVER['HTTPS'] == "off") {
-  $redirect = 'https://' . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
-  header('HTTP/1.1 301 Moved Permanently');
-  header('Location: ' . $redirect);
-  exit();
-}
-*/
-
-4. Helpful scripts
+3. Helpful scripts
 
 http://[YourDomain.com]/reset.php?pswd=01230 (I recommend to change 01230 password in script)
 
