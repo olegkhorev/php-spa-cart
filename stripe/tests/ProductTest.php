@@ -7,7 +7,7 @@ class ProductSKUOrderTest extends TestCase
     public function testProductFalseyId()
     {
         try {
-            Stripe::setApiKey('sk_test_JieJALRz7rPz7boV17oMma7a');
+            Stripe::setApiKey('');
             $retrievedProduct = Product::retrieve('0');
         } catch (Error\InvalidRequest $e) {
             // Can either succeed or 404, all other errors are bad

@@ -6763,12 +6763,12 @@ CREATE TABLE `payment_methods` (
 
 INSERT INTO `payment_methods` (`paymentid`, `name`, `details`, `offline`, `live`, `param1`, `param2`, `param3`, `param4`, `param5`, `orderby`, `enabled`) VALUES
 (1, 'Purchase Order', '', 1, 0, '', '', '', '', '', 50, 0),
-(2, 'Braintree', 'Braintree', 1, 0, 'h37htrb89y3cpgbf', 'j3kg2rtdydwmrmwm', '45986f5ab121176d32b2c99840c6e118', '', '', 0, 1),
+(2, 'Braintree', 'Braintree', 1, 0, '', '', '', '', '', 0, 1),
 (3, 'Personal Check', 'US Funds only', 1, 0, '', '', '', '', '', 60, 0),
 (4, 'Cash on delivery', '', 1, 0, '', '', '', '', '', 40, 0),
 (5, 'Wire Transfer', '', 1, 0, '', '', '', '', '', 20, 1),
-(7, 'Stripe', 'Stripe', 0, 0, 'sk_test_9RM7bAvxX6ce8oF3Zn8uslyt', 'pk_test_wfHyIYtEG4R2Vo2u1l1UXR2o', '', '', '', 1, 1),
-(8, 'Paypal', '', 0, 0, 'xcart@ya.ru', '', '', '', '', 2, 1),
+(7, 'Stripe', 'Stripe', 0, 0, '', '', '', '', '', 1, 1),
+(8, 'Paypal', '', 0, 0, '', '', '', '', '', 2, 1),
 (6, 'Fax Ordering', '(555) 555-5555', 1, 0, '', '', '', '', '', 30, 0);
 
 -- --------------------------------------------------------
@@ -9560,50 +9560,6 @@ CREATE TABLE `tickets` (
   `notes` mediumtext NOT NULL,
   `authkey` varchar(255) NOT NULL DEFAULT ''
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
-
---
--- Дамп данных таблицы `tickets`
---
-
-INSERT INTO `tickets` (`ticketid`, `productid`, `priority`, `userid`, `email`, `subject`, `message`, `status`, `type`, `open_date`, `date`, `read`, `admin_read`, `cat1`, `cat2`, `cat3`, `cat4`, `cat5`, `fields`, `notes`, `authkey`) VALUES
-('01AE3EC', 0, 3, '1', 'xcart@ya.ru', 'test', 'test', 'C', 'C', 0, 1468846741, 'Y', 'N', '', '', '', '', '', NULL, '', ''),
-('03A9B61', 0, 2, '1', 'xcart@ya.ru', '', '', 'C', 'C', 0, 1468923781, 'Y', 'N', '', '', '', '', '', NULL, '', ''),
-('11ECDE9', 0, 2, '1', 'xcart@ya.ru', '', '', 'C', 'C', 0, 1468923786, 'Y', 'N', '', '', '', '', '', NULL, '', ''),
-('147F7B7', 104, 2, '', 'test', 'Product #SKU104', 'test', 'O', 'P', 0, 1512675922, 'Y', 'Y', '', '', '', '', '', 'N;', '', ''),
-('2248D29', 0, 3, '1', 'xcart@ya.ru', 'test', 'test', 'C', 'C', 0, 1468846741, 'Y', 'N', '', '', '', '', '', NULL, '', ''),
-('2AFC15E', 0, 4, '848', 'a@a.com', 'Captcha', 'Test', 'O', 'C', 0, 1512652522, 'Y', 'Y', '', '', '', '', '', 'N;', '', ''),
-('3083670', 0, 3, '1', 'xcart@ya.ru', 'test', 'test', 'C', 'C', 0, 1468846113, 'Y', 'N', '', '', '', '', '', NULL, '', ''),
-('3195C9D', 0, 3, '1', 'xcart@ya.ru', 'test', 'test', 'C', 'C', 0, 1468845711, 'Y', 'N', '', '', '', '', '', NULL, '', ''),
-('3653122', 0, 3, '1', 'xcart@ya.ru', 'test', 'test', 'C', 'C', 0, 1468846962, 'Y', 'N', '', '', '', '', '', NULL, '', ''),
-('3E7E41E', 0, 3, '1', 'xcart@ya.ru', 'test', 'test', 'C', 'C', 0, 1468846962, 'Y', 'N', '', '', '', '', '', NULL, '', ''),
-('45D64EB', 0, 3, '1', 'xcart@ya.ru', 'test', 'test', 'C', 'C', 0, 1468845949, 'Y', 'N', '', '', '', '', '', NULL, '', ''),
-('47A78CC', 0, 3, '1', 'xcart@ya.ru', 'test', 'test', 'C', 'C', 0, 1468846118, 'Y', 'N', '', '', '', '', '', NULL, '', ''),
-('5947DEC', 0, 2, '1', 'xcart@ya.ru', 'asd', 'asd', 'C', 'C', 0, 1468924177, 'Y', 'Y', 'cat', 'sub', 'sub2', 'Sub 3', 'Sub 4.2', 'a:2:{s:9:\"field 4.2\";s:4:\"test\";s:9:\"field #23\";s:3:\"555\";}', '', ''),
-('5F24278', 0, 3, '1', 'xcart@ya.ru', 'test', 'test', '3', 'C', 0, 1468846864, 'Y', 'N', '', '', '', '', '', NULL, '', ''),
-('61B85E8', 0, 2, '', '1', '1', '1', 'O', 'C', 0, 1523170085, 'Y', 'N', '', '', '', '', '', 'N;', '', ''),
-('6A04B8B', 0, 2, '', 'test@test.com', '1', '2', 'O', 'C', 0, 1544550840, 'Y', 'Y', '', '', '', '', '', 'N;', '', '0ad72b71e5e48a795aca8903c86a2359'),
-('79AE5E3', 0, 3, '0', 'xcart@ya.ru', 'test', 'test', 'O', 'C', 0, 1468845858, 'Y', 'Y', '', '', '', '', '', NULL, '', ''),
-('79CCEBB', 0, 2, '1', 'xcart@ya.ru', '', '', 'C', 'C', 0, 1468923786, 'Y', 'N', '', '', '', '', '', NULL, '', ''),
-('8888E10', 0, 2, '', 't1', 'test', 'test', 'O', 'C', 0, 1617738949, 'Y', 'Y', '', '', '', '', '', 'N;', '', 'e0e42f98fd20f80813661ed79c23ced2'),
-('94CE989', 0, 3, '848', 'a@a.com', 'test', 'test', 'C', 'T', 0, 1512651961, 'Y', 'Y', '', '', '', '', '', 'N;', '', ''),
-('996F864', 39, 2, '', '123', 'Product #SKU1', '123', 'O', 'P', 0, 1523191375, 'Y', 'Y', '', '', '', '', '', 'N;', '', ''),
-('9A4AC88', 0, 2, '', '5', '5', '5', 'O', 'C', 0, 1523170276, 'Y', 'N', '', '', '', '', '', 'N;', '', ''),
-('9C9B1A9', 0, 0, '1', 'xcart@ya.ru', '', '', 'C', 'C', 0, 1474290179, 'Y', 'Y', 'AX 2012', 'RTM', 'Investigate an issue', 'Finance/GL/AP/AR', '', 'a:2:{s:27:\"Describe current state here\";s:37:\"test\r<br />test\r<br />test\r<br />test\";s:27:\"Describe desired state here\";s:37:\"test\r<br />test\r<br />test\r<br />test\";}', '', ''),
-('9FB15FA', 0, 0, '848', 'a@a.com', '', '', 'C', 'C', 0, 1474115763, 'Y', 'Y', 'AX 2012', 'RTM', 'Investigate an issue', 'Finance/GL/AP/AR', '', 'a:2:{s:27:\"Describe current state here\";s:4:\"test\";s:27:\"Describe desired state here\";s:4:\"test\";}', '', ''),
-('A338ED8', 0, 2, '', '123', '123', '123', 'O', 'C', 0, 1512654948, 'Y', 'N', '', '', '', '', '', 'N;', '', ''),
-('B20AE8B', 0, 2, '', 'test@test.com', '123', '123', 'O', 'C', 0, 1512655207, 'Y', 'Y', '', '', '', '', '', 'N;', '', ''),
-('BCFFBF1', 0, 3, '1', 'xcart@ya.ru', 'test', 'test', '3', 'C', 0, 1468846864, 'Y', 'N', '', '', '', '', '', NULL, '', ''),
-('BD4D1C3', 0, 3, '1', 'xcart@ya.ru', 'test', 'test', 'C', 'C', 0, 1468847018, 'Y', 'Y', '', '', '', '', '', NULL, '', ''),
-('BE2BD78', 0, 2, '1', 'xcart@ya.ru', '', '', 'C', 'C', 0, 1468923780, 'Y', 'N', '', '', '', '', '', NULL, '', ''),
-('CF7F94A', 0, 3, '1', 'xcart@ya.ru', 'test', 'test', 'C', 'C', 0, 1468847169, 'Y', 'N', '', '', '', '', '', NULL, '', ''),
-('F150503', 0, 2, '', '123', '123', '123', 'O', 'C', 0, 1512654944, 'Y', 'N', '', '', '', '', '', 'N;', '', ''),
-('F2DD941', 0, 3, '1', 'xcart@ya.ru', 'test', 'test', 'C', 'C', 0, 1468847018, 'Y', 'N', '', '', '', '', '', NULL, '', ''),
-('F3272BD', 0, 3, '1', 'xcart@ya.ru', 'test 3', 'test 2', 'C', 'C', 0, 1468847322, 'Y', 'Y', '', '', '', '', '', NULL, '', ''),
-('F57BA1D', 0, 2, '', '123', '123', '123', 'O', 'C', 0, 1512654919, 'Y', 'N', '', '', '', '', '', 'N;', '', ''),
-('FE6E4EB', 0, 2, '848', 'a@a.com', 'Test', 'Test', 'C', 'C', 0, 1671894273, 'Y', 'Y', '', '', '', '', '', 'N;', '', '06b1b38d62e9bcd825ae8c96da923c91'),
-('FECD8F8', 0, 2, '', 'olegkhorev@gmail.com', '123', '123', 'O', 'C', 0, 1523170237, 'Y', 'N', '', '', '', '', '', 'N;', '', '');
-
--- --------------------------------------------------------
 
 --
 -- Структура таблицы `tickets_attachments`
