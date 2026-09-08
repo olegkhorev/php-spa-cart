@@ -30,7 +30,7 @@ e. System does not support to be located under folder. It should be another doma
 f. Admin area - a@a.com / 01230
 
 g. Run
-http://[YourDomain.com]/optimize.php?pswd=01230
+http://[YourDomain.com]/optimize.php?pswd=01230  (I recommend to change 01230 password in script)
 
 it will generate images cache.
 
@@ -39,7 +39,7 @@ h. Use API in beta testing mode now
 http://demo.spa-cart.com/api?key=556677
 
 i. Add Cron job for every 30 minutes to check not processed Stripe orders and run the Abandoned cart reminder and check currency rates
-http://demo.spa-cart.com/cron.php?pswd=01230
+http://demo.spa-cart.com/cron.php?pswd=01230  (I recommend to change 01230 password in script)
 
 j. Support Desk
 
@@ -57,9 +57,6 @@ http://demo.spa-cart.com/cron_tickets.php
 SSL port is 995. Not SSL port is 110.
 
 k. To disable Design theme color mode edit settings.php
-# Design theme color editor
-# 1 - on
-# 0 - off
 $design_mode = 1;
 
 2. After testing remove all the data and insert yours. You can use Import/Export to insert new values. Only new categories are not imported.
