@@ -1,1 +1,0 @@
-set sql_mode=ORACLE;INSERT INTO `olegkhor_ajaxcart`.`templates` (`id`, `lng`, `template`, `time`) VALUES (NULL, 'en', 'test', '');
