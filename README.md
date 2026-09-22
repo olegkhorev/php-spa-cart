@@ -6,7 +6,7 @@ https://spa-cart.com/
 
 a. Create MySQL database and upload files onto your server.
 
-*System does not support to be located under folder. It should be another domain or subdomain.*
+*System does not support to be located under a folder. It should be another domain or subdomain.*
 
 
 b. Follow URL, you will get redirected here
