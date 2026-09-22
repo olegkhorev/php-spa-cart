@@ -2,7 +2,7 @@
 <div class="withleftmenu">
 <div class="left_filter">
 <h2>{lng[Narrow selection]}</h2>
-<div id="left_filter">
+<div id="left_filter" class="loading_filter">
 <div class="cssload-container"><div class="cssload-speeding-wheel"></div></div>
 
 </div>

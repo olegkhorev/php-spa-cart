@@ -3165,6 +3165,7 @@ function load_quick_look(product_id) {
 }
 
 function load_filter(url_params, url_replace) {
+  $('#left_filter').addClass('loading_filter');
 	$('#left_filter').html('<div class="cssload-container"><div class="cssload-speeding-wheel"></div></div>');
 	if (url_replace)
 		var url = url_replace;
@@ -3178,6 +3179,7 @@ function load_filter(url_params, url_replace) {
 		url: url+'&load_filter=1'+(url_params ? url_params : '')
 	}).done(function(r) {
 		$('#left_filter').html(r);
+    $('#left_filter').removeClass('loading_filter');
     if (filter_box) {
       $('.filter-box-'+filter_box).html(filter_box_html);
       $('.withfilter .left_filter').animate({

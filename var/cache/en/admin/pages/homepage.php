@@ -13,7 +13,7 @@
 if ($get['2'] == 'banners') {
 ?>
 
-<table cellpadding="3" cellspacing="1">
+<table cellpadding="3" cellspacing="1" class="lines-table">
 
 <tr>
 	<th width="10">&nbsp;</th>

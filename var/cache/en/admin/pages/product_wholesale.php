@@ -8,7 +8,7 @@ if ($wholesale) {
 <?php 
 }
 ?>
-<table cellspacing="1" width="600">
+<table cellspacing="1" width="600" class="lines-table">
 <tr>
  <th width="10"></th>
  <th>Quantity</th>
