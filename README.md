@@ -10,7 +10,7 @@ a. Create MySQL database and upload files onto your server.
 
 
 b. Follow URL, you will get redirected here
-https://demo.spa-cart.com/install
+https://[URL]/install
 
 Complete steps.
 
@@ -30,25 +30,25 @@ DEVELOPMENT TRUE means templates are always regenerated.
 
 
 e. Admin area - a@a.com / 01230
-https://demo.spa-cart.com/admin
+https://[URL]/admin
 
 
 f. Add Cron job for every 30 minutes to check not processed Stripe orders and run the Abandoned cart reminder and check currency rates
-http://demo.spa-cart.com/cron.php?pswd=01230  (I recommend to change 01230 password in script)
+http://[URL]/cron.php?pswd=01230  (I recommend to change 01230 password in script)
 
 
 g. Support Desk
 
 To receive replies from emails - add this script to cron for every 10-15 minutes:
-http://demo.spa-cart.com/cron_tickets.php?pswd=[PASSWORD]
+http://[URL]/cron_tickets.php?pswd=[PASSWORD]
 
 Password  you can define here
-http://demo.spa-cart.com/admin/configuration/Tickets
+http://[URL]/admin/configuration/Tickets
 
 On same page configure POP3 settings.
 
 Edit this file to set up correct server port and SSL setting
-http://demo.spa-cart.com/cron_tickets.php
+http://[URL]/cron_tickets.php
 
 SSL port is 995. Not SSL port is 110.
 
@@ -64,12 +64,12 @@ Please, also remove the Discount coupon and Gift Cards.
 
 # 3. Helpful scripts
 
-http://[YourDomain.com]/reset.php?pswd=01230 (I recommend to change 01230 password in script)
+http://[URL]/reset.php?pswd=01230 (I recommend to change 01230 password in script)
 
 It rebuilds templates cache.
 
 To generate images cache, without parsing full website by users or Google, visit this URL:
-http://[YourDomain.com]/optimize.php?pswd=01230  (I recommend to change 01230 password in script)
+http://[URL]/optimize.php?pswd=01230  (I recommend to change 01230 password in script)
 
 it will generate images cache.
 
