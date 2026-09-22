@@ -21,12 +21,12 @@ ImageMagick supported on most popular hostings, like GoDaddy.
 
 PHP GD also supported - open includes/settings.php and set "false" from "true"
 
-# $is_image_magick = false;
+$is_image_magick = false;
 
 
 d. For easier development Local IP is to include local Web Server settings
 
-# DEVELOPMENT TRUE means templates are always regenerated.
+DEVELOPMENT TRUE means templates are always regenerated.
 
 
 e. Admin area - a@a.com / 01230
@@ -54,7 +54,7 @@ SSL port is 995. Not SSL port is 110.
 
 
 h. To disable Design theme color mode edit settings.php
-# $design_mode = 0;
+$design_mode = 0;
 
 
 # 2. After testing remove all the data and insert yours. You can use Import/Export to insert new values. Only new categories are not imported.
