@@ -75,5 +75,7 @@ it will generate images cache.
 
 -----------
 
+It's free under the MIT license.
+
 I recommend to check this article:
 https://spa-cart.com/page/about_spa_cart.html
