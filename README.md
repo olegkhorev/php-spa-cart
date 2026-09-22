@@ -1,50 +1,43 @@
 SPA-Cart - e-commerce Single Page Application
 https://spa-cart.com/
 
-1. Installation
 
-a. Create MySQL database and upload files into some folder on your server.
+# 1. Installation
 
-b. Follow installation script, for example
+a. Create MySQL database and upload files onto your server.
+
+*System does not support to be located under folder. It should be another domain or subdomain.*
+
+
+b. Follow URL, you will get redirected here
 https://demo.spa-cart.com/install
 
 Complete steps.
 
+
 c. Once installed - you can edit settings in includes/settings.php
 
-ImageMagick better to be installed and "convert" tool must be executable from any place. You can get ImageMagick for free from here
-http://www.imagemagick.org/script/binary-releases.php
-
-It resizes images to needed dimension with Photoshop quality and keep same size as if it was with PHP GD.
+ImageMagick supported on most popular hostings, like GoDaddy.
 
 PHP GD also supported - open includes/settings.php and set "false" from "true"
 
-$is_image_magick = false;
+# $is_image_magick = false;
 
 
 d. For easier development Local IP is to include local Web Server settings
 
-DEVELOPMENT TRUE mean templates are always regenerated.
-
-DEMO TRUE mean some params are not editable.
-
-e. System does not support to be located under folder. It should be another domain or subdomain.
-
-f. Admin area - a@a.com / 01230
-
-g. Run
-http://[YourDomain.com]/optimize.php?pswd=01230  (I recommend to change 01230 password in script)
-
-it will generate images cache.
+# DEVELOPMENT TRUE means templates are always regenerated.
 
 
-h. Use API in beta testing mode now
-http://demo.spa-cart.com/api?key=556677
+e. Admin area - a@a.com / 01230
+https://demo.spa-cart.com/admin
 
-i. Add Cron job for every 30 minutes to check not processed Stripe orders and run the Abandoned cart reminder and check currency rates
+
+f. Add Cron job for every 30 minutes to check not processed Stripe orders and run the Abandoned cart reminder and check currency rates
 http://demo.spa-cart.com/cron.php?pswd=01230  (I recommend to change 01230 password in script)
 
-j. Support Desk
+
+g. Support Desk
 
 To receive replies from emails - add this script to cron for every 10-15 minutes:
 http://demo.spa-cart.com/cron_tickets.php?pswd=[PASSWORD]
@@ -59,24 +52,26 @@ http://demo.spa-cart.com/cron_tickets.php
 
 SSL port is 995. Not SSL port is 110.
 
-k. To disable Design theme color mode edit settings.php
-$design_mode = 1;
 
-2. After testing remove all the data and insert yours. You can use Import/Export to insert new values. Only new categories are not imported.
+h. To disable Design theme color mode edit settings.php
+# $design_mode = 0;
+
+
+# 2. After testing remove all the data and insert yours. You can use Import/Export to insert new values. Only new categories are not imported.
 
 Please, also remove the Discount coupon and Gift Cards.
 
-3. Helpful scripts
+
+# 3. Helpful scripts
 
 http://[YourDomain.com]/reset.php?pswd=01230 (I recommend to change 01230 password in script)
 
 It rebuilds templates cache.
 
-http://[YourDomain.com]/optimize.php?pswd=01230 (I recommend to change 01230 password in script)
+To generate images cache, without parsing full website by users or Google, visit this URL:
+http://[YourDomain.com]/optimize.php?pswd=01230  (I recommend to change 01230 password in script)
 
-It rebuild photos cache. Some hosting accounts will process images generation slow so better to do it yourself after you complete uploading images. Because otherwise if not you - your customer will wait it. But you can process all at once.
-
-Once your developer create custom images sizes, this script should be customized for them.
+it will generate images cache.
 
 -----------
 
