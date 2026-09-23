@@ -62,7 +62,7 @@ if ($total_pages > 2) {
 <?php 
 if ($orders) {
 ?>
-<table cellspacing="1" cellpadding="14" width="700" class="lines-table">
+<table cellspacing="1" cellpadding="14" width="900" class="lines-table">
 <tr>
  <th>#</th>
  <th>Status</th>

@@ -5,7 +5,7 @@
 <?php include SITE_ROOT."/var/cache/en/common/navigation.php";?>
 <?php } ?>
 
-<table cellpadding="3" cellspacing="1" width="900">
+<table cellpadding="3" cellspacing="1" width="900" class="lines-table">
 
 <tr>
 	<th width="10">&nbsp;</th>

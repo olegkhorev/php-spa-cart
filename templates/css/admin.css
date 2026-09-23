@@ -133,9 +133,8 @@ button:hover, input[type=button]:hover, input[type=submit]:hover {
 	top: 0;
 	width: 100%;
 	display: none;
-	background: #000;
-	opacity: 0.5;
-	-ms-transition-property: opacity, -ms-transform;
+	backdrop-filter: saturate(180%) blur(20px);
+	background: rgba(0, 0, 0, 0.4) !important;
 	z-index: 100;
 }
 .alert_message, .note {
@@ -456,6 +455,10 @@ div.logo {
 .cursor_help {
 	cursor: help;
 }
+.products_popup {
+	transform: translate(-50%, 0) !important;
+	left: 50% !important;
+}
 .popup a, .alert_message a {
 	text-decoration: none;
 }
@@ -764,6 +767,12 @@ table th:first-child {
 }
 table th:last-child {
 	border-radius: 0 20px 0 0;
+}
+table.ui-datepicker-calendar th {
+	border-radius: 0 !important;
+}
+table.ui-datepicker-calendar td a {
+	text-align: center;
 }
 table#popup_product th:first-child {
 	border-radius: 15px 0 0 0;

@@ -3,7 +3,7 @@ function popup_product() {
 	$.ajax({url: current_location+'/admin/popup_product/'}).done(function(r) {
 		fade();
 		unload();
-		$('body').append('<div class="popup products_popup"><img src="/images/close.png" class="close"/>'+r+'</div>');
+		$('body').append('<div class="popup products_popup"><span class="close close-popup">x</span>'+r+'</div>');
 		$(".products_popup img").one("load", function() {
 		var top = ($(window).scrollTop() + $(window).height() / 2 - $('.products_popup').height() / 2);
 			if (top < $(window).scrollTop())

@@ -1,8 +1,4 @@
 <div class="foot">
-<?php /* ?>
- <a href="<?php if ($config['Tickets']['use_tickets']) {?>/support_desk<?php } else  { ?>/help<?php } ?>">Contact us</a> &nbsp; <a href="/page/about.html">About</a> &nbsp; <a href="/page/terms-n-conditions.html">Terms & Conditions</a>
- <span>Copyright &copy;<?php if ($config['Company']['start_year'] && $config['Company']['start_year'] != date('Y')) {?><?php echo $config['Company']['start_year'];?> - <?php } ?><?php echo date('Y');; ?>. Developed by <a href="http://upwork.com/fl/ecommerce" class="no-ajax" target="_blank">Oleg Khorev</a></span>
-<?php */ ?>
  <ul class="foot-ul-1">
   <li>Get in touch with us</li>
   <li>Phone: <?php echo $config['Company']['company_phone'];?></li>
@@ -37,5 +33,5 @@
 <div class="clear"></div>
 <hr />
  <img src="/images/payment_methods.png" class="foot-pm" alt="Payment methods" />
-<span class="copyright">&copy; <?php if ($config['Company']['start_year'] && $config['Company']['start_year'] != date('Y')) {?><?php echo $config['Company']['start_year'];?> - <?php } ?><?php echo date('Y');; ?>. Developed by <a href="http://upwork.com/fl/ecommerce" class="no-ajax" target="_blank">Oleg Khorev</a></span>
+<span class="copyright">&copy; <?php if ($config['Company']['start_year'] && $config['Company']['start_year'] != date('Y')) {?><?php echo $config['Company']['start_year'];?> - <?php } ?><?php echo date('Y');; ?>. Developed by <a href="https://spa-cart.com/" class="no-ajax" target="_blank">Oleg Khorev</a></span>
 </div>

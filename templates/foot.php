@@ -1,8 +1,4 @@
 <div class="foot">
-{*
- <a href="{if $config['Tickets']['use_tickets']}/support_desk{else}/help{/if}">{lng[Contact us]}</a> &nbsp; <a href="/page/about.html">{lng[About]}</a> &nbsp; <a href="/page/terms-n-conditions.html">{lng[Terms & Conditions]}</a>
- <span>Copyright &copy;{if $config['Company']['start_year'] && $config['Company']['start_year'] != date('Y')}{$config['Company']['start_year']} - {/if}{php echo date('Y');}. Developed by <a href="http://upwork.com/fl/ecommerce" class="no-ajax" target="_blank">Oleg Khorev</a></span>
-*}
  <ul class="foot-ul-1">
   <li>{lng[Get in touch with us]}</li>
   <li>{lng[Phone]}: {$config['Company']['company_phone']}</li>
@@ -37,5 +33,5 @@
 <div class="clear"></div>
 <hr />
  <img src="/images/payment_methods.png" class="foot-pm" alt="{lng[Payment methods]}" />
-<span class="copyright">&copy; {if $config['Company']['start_year'] && $config['Company']['start_year'] != date('Y')}{$config['Company']['start_year']} - {/if}{php echo date('Y');}. Developed by <a href="http://upwork.com/fl/ecommerce" class="no-ajax" target="_blank">Oleg Khorev</a></span>
+<span class="copyright">&copy; {if $config['Company']['start_year'] && $config['Company']['start_year'] != date('Y')}{$config['Company']['start_year']} - {/if}{php echo date('Y');}. Developed by <a href="https://spa-cart.com/" class="no-ajax" target="_blank">Oleg Khorev</a></span>
 </div>

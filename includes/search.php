@@ -39,6 +39,7 @@ if ($search_condition['featured']) {
 			$conditions[] = "p.brandid='".addslashes($filter['brandid'])."'";
 
 		if ($filter['price']) {
+			$filter['price'] = strip_tags($filter['price']);
 			$tmp = explode('-', $filter['price']);
 			if ($tmp['1'] == 'More')
 				$tmp['1'] = 9999999999;

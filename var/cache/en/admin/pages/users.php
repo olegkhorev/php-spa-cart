@@ -87,7 +87,7 @@ No users found
 </tr>
 
 <tr>
- <td class="name">Role</td>
+ <td class="name">User type</td>
  <td>
 <select name="usertype">
 <option value="">All</option>

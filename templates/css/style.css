@@ -250,9 +250,8 @@ button.big {
 	top: 0;
 	width: 100%;
 	display: none;
-	background: #574e4e;
-	opacity: 0.5;
-	-ms-transition-property: opacity, -ms-transform;
+	backdrop-filter: saturate(180%) blur(20px);
+	background: rgba(0, 0, 0, 0.4) !important;
 	z-index: 300;
 }
 .alert_message, .note {
@@ -447,7 +446,7 @@ box-shadow:         0 1px 2px rgba(0,0,0,.1);
 }
 #subscribe button {
 	float: right;
-	margin: -2px -2px 0 0;
+	margin: -2px 5px 0 0;
 	border-radius: 0;
 	height: 55px;
 	text-shadow: none;
@@ -456,7 +455,8 @@ box-shadow:         0 1px 2px rgba(0,0,0,.1);
 box-shadow:         none;
 }
 #subscribe input[type="text"] {
-	padding: 10px;
+	padding: 10px 10px 10px 20px;
+	box-sizing: border-box;
 	border: 0px;
 	font-size: 17px;
 	line-height: 32px;

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Хост: MySQL-8.0:3306
--- Время создания: Сен 01 2026 г., 21:06
+-- Время создания: Сен 23 2026 г., 17:42
 -- Версия сервера: 8.0.43
 -- Версия PHP: 8.3.26
 
@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- База данных: `d`
+-- База данных: `d_demo`
 --
 
 -- --------------------------------------------------------
@@ -1169,13 +1169,6 @@ CREATE TABLE `coupons` (
   `status` char(1) NOT NULL DEFAULT 'Y'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
 
---
--- Дамп данных таблицы `coupons`
---
-
-INSERT INTO `coupons` (`coupon`, `discount`, `discount_type`, `times`, `times_used`, `per_customer`, `status`) VALUES
-('test', 10.00, 'P', 1000, 3, 0, 'Y');
-
 -- --------------------------------------------------------
 
 --
@@ -1246,15 +1239,6 @@ CREATE TABLE `gift_cards` (
   `date` int NOT NULL DEFAULT '0',
   `orders` mediumtext
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
-
---
--- Дамп данных таблицы `gift_cards`
---
-
-INSERT INTO `gift_cards` (`gcid`, `userid`, `amount`, `amount_left`, `status`, `date`, `orders`) VALUES
-('4CBF6A47F2F437F4', 848, 115.00, 0.00, 'Y', 1519732385, NULL),
-('E3E9EF99E246D988', 0, 50.00, 50.00, 'Y', 1519734386, NULL),
-('EE5D878A3B3AEE4A', 848, 155.00, 40.93, 'Y', 1523109370, NULL);
 
 -- --------------------------------------------------------
 
@@ -5013,7 +4997,15 @@ INSERT INTO `languages` (`id`, `lng`, `word`, `translation`) VALUES
 (4031, 'en', 'Mobile version', 'Mobile version'),
 (4032, 'en', 'Available automatically from your mobile phone.', 'Available automatically from your mobile phone.'),
 (4033, 'en', 'All orders', 'All orders'),
-(4034, 'en', 'Apply to shipping', 'Apply to shipping');
+(4034, 'en', 'Apply to shipping', 'Apply to shipping'),
+(4035, 'en', 'Create new user account', 'Create new user account'),
+(4036, 'en', 'User type', 'User type'),
+(4037, 'en', 'Add a new gift card', 'Add a new gift card'),
+(4038, 'en', 'Card number', 'Card number'),
+(4039, 'en', 'Amount', 'Amount'),
+(4040, 'en', 'Amount left', 'Amount left'),
+(4041, 'en', 'User purchased', 'User purchased'),
+(4042, 'en', 'per customer', 'per customer');
 
 -- --------------------------------------------------------
 
@@ -11840,14 +11832,7 @@ CREATE TABLE `users` (
 
 INSERT INTO `users` (`id`, `membershipid`, `pending_membershipid`, `usertype`, `roleid`, `email`, `password`, `salt`, `password_key`, `firstname`, `lastname`, `city`, `address`, `state`, `country`, `zipcode`, `phone`, `status`, `registration_date`, `b_firstname`, `b_lastname`, `b_city`, `b_state`, `b_country`, `b_address`, `b_zipcode`, `b_phone`, `same_address`) VALUES
 (848, 0, 0, 'A', 1, 'a@a.com', 'e3ae1ffda5a0fde0bcc527303daa1dac', 'Nw+<.}Oq:%f7-Y:f', 'cf69f6b203b29ed3c748ae7fc8896cc5', 'Admin', 'Admin', 'New York', 'address', 'IL', 'US', '10001', '1234', 1, 0, 'Admin', 'Admin', 'New York', 'IL', 'US', 'address', '10001', '1234', '1'),
-(849, 0, 0, 'C', 0, 't@tre.ru', '28b78a4fbe2adf4a3c2f7ced3af4bafd', 'vn)Co3NdSSz|Q(qi', '', 't', 't', '123', '123', 'DC', 'US', '12345', '', 1, 1435941188, '', '', '', '', '', '', '', '', '1'),
-(850, 0, 0, 'C', 0, 'tre@tre.ru', 'bdea08a39e8bf12689fa574e88aedc98', '8=O/5ieWKsSqLx$+', '', 't', 'er', '', '', '', 'AF', '', '', 0, 1435941223, '', '', '', '', '', '', '', '', '1'),
-(852, 0, 0, 'C', 0, 'm@e.com', 'e13dd266170cf9111f679d301a7cf68f', '[P-juk7I@aZfaEEj', '', 'Martin', 'Lopuszak', '', '', 'AB', 'CA', '', '123', 1, 1466628474, '', '', '', '', '', '', '', '', '1'),
-(854, 2, 2, 'C', 0, 'tester@tester.com', '149b591d3cf0d60770a5201e02ccc3cd', 'aMR=+D\"cfip9Os]]', '', 'tester', 'tester', '', '', 'AA', 'US', '', '123', 1, 0, '', '', '', '', '', '', '', '', '1'),
-(855, 0, 0, 'C', 2, 'ooo@ooo.ru', 'b4f2c07be9da5cd0b6f8088cf7df5f7c', 'jP>{%hR*70dZ;&}g', '', '1', '2', '', '', '', '', '', '', 1, 0, '', '', '', '', '', '', '', '', '1'),
-(856, 0, 0, 'C', 0, 'test@test.com', 'e876d47c78dea5bf144dc248703a5110', 'gXA&iH+]C>]D;UVI', '', 'test', 'test', '', '', '', '', '', '', 1, 0, '', '', '', '', '', '', '', '', '1'),
-(857, 0, 0, 'C', 0, 'l@l.com', '0fbe7e0a77444646bf24cb007336ff82', '1Jmpf/Vhev*W!ib%', '', 'L', 'L', '', '', '', '', '', '', 1, 0, '', '', '', '', '', '', '', '', '1'),
-(858, 0, 0, 'C', 0, 'test@2a.com', '29503636aeb7acd67df56579658f8bee', '_|Nm6HUyJWnzd1K^', '', 'test', 'test', '', '', '', '', '', '', 1, 0, '', '', '', '', '', '', '', '', '1');
+(854, 2, 2, 'C', 0, 'tester@tester.com', '149b591d3cf0d60770a5201e02ccc3cd', 'aMR=+D\"cfip9Os]]', '', 'tester', 'tester', '', '', 'AA', 'US', '', '123', 1, 0, '', '', '', '', '', '', '', '', '1');
 
 -- --------------------------------------------------------
 
@@ -11873,7 +11858,7 @@ INSERT INTO `users_carts` (`id`, `userid`, `email`, `cart`, `date`, `reminded_1`
 (1915, 0, '4o@o.ru', 'a:11:{s:8:\"products\";a:1:{i:0;a:36:{s:6:\"cartid\";i:1;s:9:\"productid\";s:3:\"129\";s:8:\"quantity\";i:1;s:7:\"options\";a:2:{i:226;s:3:\"845\";i:227;s:3:\"850\";}s:9:\"variantid\";s:3:\"270\";s:7:\"photoid\";s:3:\"412\";s:3:\"sku\";s:6:\"SKU171\";s:7:\"brandid\";s:1:\"4\";s:8:\"cleanurl\";s:26:\"STUSSY-SMOOTH-STOCK-LS-TEE\";s:4:\"name\";s:26:\"STUSSY SMOOTH STOCK LS TEE\";s:5:\"descr\";s:28:\"<p>SMOOTH STOCK LS TEE</p>\r\n\";s:8:\"keywords\";s:0:\"\";s:10:\"list_price\";s:2:\"57\";s:5:\"price\";s:7:\"49.0000\";s:6:\"weight\";s:4:\"0.00\";s:5:\"avail\";s:3:\"998\";s:11:\"avail_block\";s:1:\"0\";s:6:\"rating\";s:1:\"0\";s:6:\"status\";s:1:\"1\";s:7:\"deleted\";s:1:\"0\";s:8:\"add_date\";s:10:\"1545840730\";s:11:\"views_stats\";s:2:\"15\";s:11:\"sales_stats\";s:1:\"2\";s:9:\"del_stats\";s:1:\"0\";s:16:\"meta_description\";s:0:\"\";s:13:\"meta_keywords\";s:0:\"\";s:9:\"title_tag\";s:0:\"\";s:10:\"categoryid\";s:2:\"27\";s:5:\"title\";s:26:\"STUSSY SMOOTH STOCK LS TEE\";s:11:\"qty_per_box\";s:0:\"\";s:11:\"supplied_as\";s:0:\"\";s:13:\"supplier_code\";s:0:\"\";s:3:\"def\";s:1:\"0\";s:13:\"variant_photo\";N;s:5:\"photo\";a:8:{s:7:\"photoid\";s:3:\"412\";s:9:\"productid\";s:3:\"129\";s:3:\"alt\";s:0:\"\";s:4:\"file\";s:5:\"1.jpg\";s:4:\"size\";s:6:\"127584\";s:1:\"x\";s:4:\"1158\";s:1:\"y\";s:4:\"1228\";s:3:\"pos\";s:2:\"10\";}s:15:\"product_options\";a:2:{i:226;a:10:{s:7:\"groupid\";s:3:\"226\";s:9:\"productid\";s:3:\"129\";s:4:\"name\";s:4:\"Size\";s:8:\"fullname\";s:0:\"\";s:7:\"orderby\";s:2:\"10\";s:4:\"type\";s:1:\"g\";s:9:\"view_type\";s:1:\"p\";s:7:\"enabled\";s:1:\"1\";s:7:\"variant\";s:1:\"1\";s:6:\"option\";a:9:{s:8:\"optionid\";s:3:\"845\";s:7:\"groupid\";s:3:\"226\";s:4:\"name\";s:1:\"S\";s:7:\"orderby\";s:2:\"10\";s:7:\"enabled\";s:1:\"1\";s:14:\"price_modifier\";s:4:\"0.00\";s:19:\"price_modifier_type\";s:1:\"%\";s:15:\"weight_modifier\";s:4:\"0.00\";s:20:\"weight_modifier_type\";s:1:\"%\";}}i:227;a:10:{s:7:\"groupid\";s:3:\"227\";s:9:\"productid\";s:3:\"129\";s:4:\"name\";s:5:\"Color\";s:8:\"fullname\";s:0:\"\";s:7:\"orderby\";s:2:\"20\";s:4:\"type\";s:1:\"g\";s:9:\"view_type\";s:1:\"p\";s:7:\"enabled\";s:1:\"1\";s:7:\"variant\";s:1:\"1\";s:6:\"option\";a:9:{s:8:\"optionid\";s:3:\"850\";s:7:\"groupid\";s:3:\"227\";s:4:\"name\";s:5:\"White\";s:7:\"orderby\";s:2:\"10\";s:7:\"enabled\";s:1:\"1\";s:14:\"price_modifier\";s:4:\"0.00\";s:19:\"price_modifier_type\";s:1:\"%\";s:15:\"weight_modifier\";s:4:\"0.00\";s:20:\"weight_modifier_type\";s:1:\"%\";}}}}}s:8:\"subtotal\";d:49;s:19:\"discounted_subtotal\";d:49;s:14:\"subtotal_taxed\";d:49;s:5:\"total\";d:49;s:13:\"need_shipping\";i:1;s:13:\"shipping_cost\";d:13.949999999999999;s:10:\"shippingid\";s:4:\"2220\";s:11:\"tax_details\";a:11:{s:5:\"taxid\";s:1:\"1\";s:8:\"tax_name\";s:3:\"VAT\";s:16:\"tax_display_name\";s:3:\"VAT\";s:7:\"formula\";s:2:\"ST\";s:12:\"address_type\";s:1:\"B\";s:6:\"active\";s:1:\"Y\";s:18:\"price_includes_tax\";s:1:\"N\";s:21:\"display_including_tax\";s:1:\"N\";s:12:\"display_info\";s:0:\"\";s:9:\"regnumber\";s:0:\"\";s:8:\"priority\";s:1:\"0\";}s:3:\"tax\";d:6.2949999999999999;s:9:\"paymentid\";s:1:\"7\";}', 1562778869, 1, 1),
 (2239, 0, 'N', 'a:11:{s:8:\"products\";a:1:{i:0;a:35:{s:6:\"cartid\";i:1;s:9:\"productid\";s:3:\"113\";s:8:\"quantity\";i:1;s:7:\"options\";a:2:{i:194;s:3:\"713\";i:195;s:3:\"716\";}s:9:\"variantid\";s:3:\"174\";s:7:\"photoid\";s:3:\"367\";s:3:\"sku\";s:6:\"SKU110\";s:7:\"brandid\";s:1:\"4\";s:8:\"cleanurl\";s:42:\"MEN-Supima-Cotton-Crew-Neck-Short-Sleeve-T\";s:4:\"name\";s:42:\"MEN Supima Cotton Crew Neck Short Sleeve T\";s:5:\"descr\";s:548:\"<p>A 100% Supima&reg; cotton T-shirt thick enough to wear on its own or for layering.<br />\r\n- The luxurious jersey material uses 100% Supima&reg; cotton for a smooth feel, natural brightness and beautiful colors.<br />\r\n- A smooth silhouette from the bust down to the waist, with sleek shoulders and armholes.&nbsp;<br />\r\n- A narrower seam fold and stitching for a more delicate neckline.<br />\r\n- With a flattering neckline.<br />\r\n&nbsp;</p>\r\n\r\n<p>MATERIAL</p>\r\n\r\n<p>100% Cotton</p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p>CARE</p>\r\n\r\n<p>Cold Machine Wash</p>\r\n\";s:8:\"keywords\";s:0:\"\";s:10:\"list_price\";s:2:\"17\";s:5:\"price\";s:7:\"14.9000\";s:6:\"weight\";s:4:\"0.00\";s:5:\"avail\";s:3:\"994\";s:11:\"avail_block\";s:1:\"0\";s:6:\"rating\";s:1:\"0\";s:6:\"status\";s:1:\"1\";s:7:\"deleted\";s:1:\"0\";s:8:\"add_date\";s:10:\"1545827391\";s:11:\"views_stats\";s:2:\"61\";s:11:\"sales_stats\";s:1:\"9\";s:9:\"del_stats\";s:1:\"0\";s:16:\"meta_description\";s:0:\"\";s:13:\"meta_keywords\";s:0:\"\";s:9:\"title_tag\";s:0:\"\";s:10:\"categoryid\";s:2:\"26\";s:5:\"title\";s:42:\"MEN Supima Cotton Crew Neck Short Sleeve T\";s:11:\"qty_per_box\";s:0:\"\";s:11:\"supplied_as\";s:0:\"\";s:13:\"supplier_code\";s:0:\"\";s:3:\"def\";s:1:\"0\";s:13:\"variant_photo\";a:8:{s:7:\"imageid\";s:1:\"1\";s:9:\"variantid\";s:3:\"174\";s:3:\"alt\";s:0:\"\";s:3:\"pos\";s:2:\"10\";s:1:\"x\";s:4:\"1920\";s:1:\"y\";s:3:\"914\";s:4:\"file\";s:5:\"1.jpg\";s:4:\"size\";s:5:\"86714\";}s:15:\"product_options\";a:2:{i:194;a:10:{s:7:\"groupid\";s:3:\"194\";s:9:\"productid\";s:3:\"113\";s:4:\"name\";s:5:\"Color\";s:8:\"fullname\";s:0:\"\";s:7:\"orderby\";s:2:\"10\";s:4:\"type\";s:1:\"g\";s:9:\"view_type\";s:1:\"p\";s:7:\"enabled\";s:1:\"1\";s:7:\"variant\";s:1:\"1\";s:6:\"option\";a:9:{s:8:\"optionid\";s:3:\"713\";s:7:\"groupid\";s:3:\"194\";s:4:\"name\";s:5:\"Black\";s:7:\"orderby\";s:2:\"10\";s:7:\"enabled\";s:1:\"1\";s:14:\"price_modifier\";s:4:\"0.00\";s:19:\"price_modifier_type\";s:1:\"%\";s:15:\"weight_modifier\";s:4:\"0.00\";s:20:\"weight_modifier_type\";s:1:\"%\";}}i:195;a:10:{s:7:\"groupid\";s:3:\"195\";s:9:\"productid\";s:3:\"113\";s:4:\"name\";s:4:\"Size\";s:8:\"fullname\";s:0:\"\";s:7:\"orderby\";s:2:\"20\";s:4:\"type\";s:1:\"g\";s:9:\"view_type\";s:1:\"p\";s:7:\"enabled\";s:1:\"1\";s:7:\"variant\";s:1:\"1\";s:6:\"option\";a:9:{s:8:\"optionid\";s:3:\"716\";s:7:\"groupid\";s:3:\"195\";s:4:\"name\";s:1:\"S\";s:7:\"orderby\";s:2:\"10\";s:7:\"enabled\";s:1:\"1\";s:14:\"price_modifier\";s:4:\"0.00\";s:19:\"price_modifier_type\";s:1:\"%\";s:15:\"weight_modifier\";s:4:\"0.00\";s:20:\"weight_modifier_type\";s:1:\"%\";}}}}}s:8:\"subtotal\";d:14.9;s:19:\"discounted_subtotal\";d:14.9;s:14:\"subtotal_taxed\";d:14.9;s:5:\"total\";d:29.8595;s:13:\"need_shipping\";i:1;s:10:\"shippingid\";s:4:\"2220\";s:13:\"shipping_cost\";d:12.245;s:11:\"tax_details\";a:11:{s:5:\"taxid\";s:1:\"1\";s:8:\"tax_name\";s:3:\"VAT\";s:16:\"tax_display_name\";s:3:\"VAT\";s:7:\"formula\";s:2:\"ST\";s:12:\"address_type\";s:1:\"B\";s:6:\"active\";s:1:\"Y\";s:18:\"price_includes_tax\";s:1:\"N\";s:21:\"display_including_tax\";s:1:\"N\";s:12:\"display_info\";s:0:\"\";s:9:\"regnumber\";s:0:\"\";s:8:\"priority\";s:1:\"0\";}s:3:\"tax\";d:2.7145;s:9:\"paymentid\";s:1:\"2\";}', 1656435579, 0, 0),
 (2977, 0, 'spa@cart.com', 'a:11:{s:8:\"products\";a:1:{i:0;a:30:{s:6:\"cartid\";i:1;s:9:\"productid\";s:3:\"151\";s:8:\"quantity\";i:3;s:7:\"options\";a:1:{i:266;s:3:\"972\";}s:9:\"variantid\";b:0;s:7:\"photoid\";s:3:\"470\";s:3:\"sku\";s:6:\"SKU623\";s:7:\"brandid\";s:1:\"4\";s:8:\"cleanurl\";s:17:\"Beaded-Belt-Chain\";s:4:\"name\";s:17:\"Beaded Belt Chain\";s:5:\"descr\";s:90:\"<ul>\r\n	<li>Available In Silver</li>\r\n	<li>Beaded Metal</li>\r\n	<li>Pant Chain</li>\r\n</ul>\r\n\";s:8:\"keywords\";s:0:\"\";s:10:\"list_price\";s:2:\"14\";s:5:\"price\";d:8;s:6:\"weight\";d:0;s:5:\"avail\";s:4:\"1000\";s:11:\"avail_block\";s:1:\"0\";s:6:\"rating\";s:1:\"0\";s:6:\"status\";s:1:\"1\";s:7:\"deleted\";s:1:\"0\";s:8:\"add_date\";s:10:\"1545857988\";s:11:\"views_stats\";s:1:\"0\";s:11:\"sales_stats\";s:1:\"0\";s:9:\"del_stats\";s:1:\"0\";s:16:\"meta_description\";s:0:\"\";s:13:\"meta_keywords\";s:0:\"\";s:9:\"title_tag\";s:0:\"\";s:10:\"categoryid\";s:2:\"30\";s:5:\"photo\";a:8:{s:7:\"photoid\";s:3:\"470\";s:9:\"productid\";s:3:\"151\";s:3:\"alt\";s:0:\"\";s:4:\"file\";s:5:\"1.jpg\";s:4:\"size\";s:5:\"42905\";s:1:\"x\";s:3:\"760\";s:1:\"y\";s:4:\"1140\";s:3:\"pos\";s:1:\"0\";}s:15:\"product_options\";a:1:{i:266;a:10:{s:7:\"groupid\";s:3:\"266\";s:9:\"productid\";s:3:\"151\";s:4:\"name\";s:4:\"Size\";s:8:\"fullname\";s:0:\"\";s:7:\"orderby\";s:2:\"10\";s:4:\"type\";s:1:\"g\";s:9:\"view_type\";s:1:\"s\";s:7:\"enabled\";s:1:\"1\";s:7:\"variant\";s:1:\"0\";s:6:\"option\";a:9:{s:8:\"optionid\";s:3:\"972\";s:7:\"groupid\";s:3:\"266\";s:4:\"name\";s:2:\"OS\";s:7:\"orderby\";s:2:\"10\";s:7:\"enabled\";s:1:\"1\";s:14:\"price_modifier\";s:4:\"0.00\";s:19:\"price_modifier_type\";s:1:\"%\";s:15:\"weight_modifier\";s:4:\"0.00\";s:20:\"weight_modifier_type\";s:1:\"%\";}}}}}s:8:\"subtotal\";d:24;s:19:\"discounted_subtotal\";d:24;s:14:\"subtotal_taxed\";d:24;s:5:\"total\";d:26.4;s:13:\"need_shipping\";i:1;s:13:\"shipping_cost\";i:0;s:10:\"shippingid\";i:0;s:11:\"tax_details\";a:11:{s:5:\"taxid\";s:1:\"1\";s:8:\"tax_name\";s:3:\"VAT\";s:16:\"tax_display_name\";s:3:\"VAT\";s:7:\"formula\";s:2:\"ST\";s:12:\"address_type\";s:1:\"B\";s:6:\"active\";s:1:\"Y\";s:18:\"price_includes_tax\";s:1:\"N\";s:21:\"display_including_tax\";s:1:\"N\";s:12:\"display_info\";s:0:\"\";s:9:\"regnumber\";s:0:\"\";s:8:\"priority\";s:1:\"0\";}s:3:\"tax\";d:2.4;s:9:\"paymentid\";s:1:\"2\";}', 1677186113, 0, 0),
-(6529, 848, '', 'a:11:{s:8:\"products\";a:1:{i:0;a:36:{s:6:\"cartid\";i:1;s:9:\"productid\";s:3:\"123\";s:8:\"quantity\";i:1;s:7:\"options\";a:2:{i:214;s:3:\"805\";i:215;s:3:\"806\";}s:9:\"variantid\";s:2:\"54\";s:7:\"photoid\";s:3:\"397\";s:3:\"sku\";s:18:\"SKU111111111111111\";s:7:\"brandid\";s:1:\"4\";s:8:\"cleanurl\";s:48:\"ALTERNATIVE-Rocky-Eco-Fleece-Zip-Hoodie-Eco-True\";s:4:\"name\";s:48:\"ALTERNATIVE Rocky Eco-Fleece Zip Hoodie Eco True\";s:5:\"descr\";s:157:\"<p>alternative rocky eco-fleece zip hoodie eco true<br />\r\n<br />\r\n<br />\r\n<br />\r\nFashion Item for Man of type sweatshirts for Fall Winter Season 2017</p>\r\n\";s:8:\"keywords\";s:0:\"\";s:10:\"list_price\";s:2:\"65\";s:5:\"price\";s:7:\"59.0000\";s:6:\"weight\";s:4:\"0.00\";s:5:\"avail\";s:4:\"1000\";s:11:\"avail_block\";s:1:\"0\";s:6:\"rating\";s:1:\"0\";s:6:\"status\";s:1:\"1\";s:7:\"deleted\";s:1:\"0\";s:8:\"add_date\";s:10:\"1545836583\";s:11:\"views_stats\";s:2:\"54\";s:11:\"sales_stats\";s:1:\"2\";s:9:\"del_stats\";s:1:\"0\";s:16:\"meta_description\";s:0:\"\";s:13:\"meta_keywords\";s:0:\"\";s:9:\"title_tag\";s:0:\"\";s:10:\"categoryid\";s:2:\"27\";s:5:\"title\";s:48:\"ALTERNATIVE Rocky Eco-Fleece Zip Hoodie Eco True\";s:11:\"qty_per_box\";s:0:\"\";s:11:\"supplied_as\";s:0:\"\";s:13:\"supplier_code\";s:0:\"\";s:3:\"def\";s:1:\"0\";s:13:\"variant_photo\";N;s:5:\"photo\";a:8:{s:7:\"photoid\";s:3:\"397\";s:9:\"productid\";s:3:\"123\";s:3:\"alt\";s:0:\"\";s:4:\"file\";s:5:\"1.jpg\";s:4:\"size\";s:6:\"682078\";s:1:\"x\";s:4:\"1200\";s:1:\"y\";s:4:\"1300\";s:3:\"pos\";s:2:\"10\";}s:15:\"product_options\";a:2:{i:214;a:10:{s:7:\"groupid\";s:3:\"214\";s:9:\"productid\";s:3:\"123\";s:4:\"name\";s:4:\"Size\";s:8:\"fullname\";s:0:\"\";s:7:\"orderby\";s:2:\"10\";s:4:\"type\";s:1:\"g\";s:9:\"view_type\";s:1:\"p\";s:7:\"enabled\";s:1:\"1\";s:7:\"variant\";s:1:\"1\";s:6:\"option\";a:9:{s:8:\"optionid\";s:3:\"805\";s:7:\"groupid\";s:3:\"214\";s:4:\"name\";s:2:\"XL\";s:7:\"orderby\";s:2:\"50\";s:7:\"enabled\";s:1:\"1\";s:14:\"price_modifier\";s:5:\"15.00\";s:19:\"price_modifier_type\";s:1:\"%\";s:15:\"weight_modifier\";s:4:\"0.00\";s:20:\"weight_modifier_type\";s:1:\"%\";}}i:215;a:10:{s:7:\"groupid\";s:3:\"215\";s:9:\"productid\";s:3:\"123\";s:4:\"name\";s:5:\"Color\";s:8:\"fullname\";s:0:\"\";s:7:\"orderby\";s:2:\"20\";s:4:\"type\";s:1:\"g\";s:9:\"view_type\";s:1:\"p\";s:7:\"enabled\";s:1:\"1\";s:7:\"variant\";s:1:\"1\";s:6:\"option\";a:9:{s:8:\"optionid\";s:3:\"806\";s:7:\"groupid\";s:3:\"215\";s:4:\"name\";s:5:\"Green\";s:7:\"orderby\";s:2:\"10\";s:7:\"enabled\";s:1:\"1\";s:14:\"price_modifier\";s:4:\"0.00\";s:19:\"price_modifier_type\";s:1:\"%\";s:15:\"weight_modifier\";s:4:\"0.00\";s:20:\"weight_modifier_type\";s:1:\"%\";}}}}}s:8:\"subtotal\";d:59;s:19:\"discounted_subtotal\";d:59;s:14:\"subtotal_taxed\";d:59;s:5:\"total\";d:80.795;s:13:\"need_shipping\";i:1;s:10:\"shippingid\";s:4:\"2220\";s:13:\"shipping_cost\";d:14.45;s:11:\"tax_details\";a:11:{s:5:\"taxid\";s:1:\"1\";s:8:\"tax_name\";s:3:\"VAT\";s:16:\"tax_display_name\";s:3:\"VAT\";s:7:\"formula\";s:2:\"ST\";s:12:\"address_type\";s:1:\"B\";s:6:\"active\";s:1:\"Y\";s:18:\"price_includes_tax\";s:1:\"N\";s:21:\"display_including_tax\";s:1:\"N\";s:12:\"display_info\";s:0:\"\";s:9:\"regnumber\";s:0:\"\";s:8:\"priority\";s:1:\"0\";}s:3:\"tax\";d:7.345000000000001;s:9:\"paymentid\";s:1:\"2\";}', 1788282366, 0, 0);
+(6548, 848, '', 'a:11:{s:8:\"products\";a:1:{i:0;a:36:{s:6:\"cartid\";i:1;s:9:\"productid\";s:3:\"123\";s:8:\"quantity\";i:1;s:7:\"options\";a:2:{i:214;s:3:\"805\";i:215;s:3:\"806\";}s:9:\"variantid\";s:2:\"54\";s:7:\"photoid\";s:3:\"397\";s:3:\"sku\";s:18:\"SKU111111111111111\";s:7:\"brandid\";s:1:\"4\";s:8:\"cleanurl\";s:48:\"ALTERNATIVE-Rocky-Eco-Fleece-Zip-Hoodie-Eco-True\";s:4:\"name\";s:48:\"ALTERNATIVE Rocky Eco-Fleece Zip Hoodie Eco True\";s:5:\"descr\";s:157:\"<p>alternative rocky eco-fleece zip hoodie eco true<br />\r\n<br />\r\n<br />\r\n<br />\r\nFashion Item for Man of type sweatshirts for Fall Winter Season 2017</p>\r\n\";s:8:\"keywords\";s:0:\"\";s:10:\"list_price\";s:2:\"65\";s:5:\"price\";s:7:\"59.0000\";s:6:\"weight\";s:4:\"0.00\";s:5:\"avail\";s:4:\"1000\";s:11:\"avail_block\";s:1:\"0\";s:6:\"rating\";s:1:\"0\";s:6:\"status\";s:1:\"1\";s:7:\"deleted\";s:1:\"0\";s:8:\"add_date\";s:10:\"1545836583\";s:11:\"views_stats\";s:2:\"54\";s:11:\"sales_stats\";s:1:\"2\";s:9:\"del_stats\";s:1:\"0\";s:16:\"meta_description\";s:0:\"\";s:13:\"meta_keywords\";s:0:\"\";s:9:\"title_tag\";s:0:\"\";s:10:\"categoryid\";s:2:\"27\";s:5:\"title\";s:48:\"ALTERNATIVE Rocky Eco-Fleece Zip Hoodie Eco True\";s:11:\"qty_per_box\";s:0:\"\";s:11:\"supplied_as\";s:0:\"\";s:13:\"supplier_code\";s:0:\"\";s:3:\"def\";s:1:\"0\";s:13:\"variant_photo\";N;s:5:\"photo\";a:8:{s:7:\"photoid\";s:3:\"397\";s:9:\"productid\";s:3:\"123\";s:3:\"alt\";s:0:\"\";s:4:\"file\";s:5:\"1.jpg\";s:4:\"size\";s:6:\"682078\";s:1:\"x\";s:4:\"1200\";s:1:\"y\";s:4:\"1300\";s:3:\"pos\";s:2:\"10\";}s:15:\"product_options\";a:2:{i:214;a:10:{s:7:\"groupid\";s:3:\"214\";s:9:\"productid\";s:3:\"123\";s:4:\"name\";s:4:\"Size\";s:8:\"fullname\";s:0:\"\";s:7:\"orderby\";s:2:\"10\";s:4:\"type\";s:1:\"g\";s:9:\"view_type\";s:1:\"p\";s:7:\"enabled\";s:1:\"1\";s:7:\"variant\";s:1:\"1\";s:6:\"option\";a:9:{s:8:\"optionid\";s:3:\"805\";s:7:\"groupid\";s:3:\"214\";s:4:\"name\";s:2:\"XL\";s:7:\"orderby\";s:2:\"50\";s:7:\"enabled\";s:1:\"1\";s:14:\"price_modifier\";s:5:\"15.00\";s:19:\"price_modifier_type\";s:1:\"%\";s:15:\"weight_modifier\";s:4:\"0.00\";s:20:\"weight_modifier_type\";s:1:\"%\";}}i:215;a:10:{s:7:\"groupid\";s:3:\"215\";s:9:\"productid\";s:3:\"123\";s:4:\"name\";s:5:\"Color\";s:8:\"fullname\";s:0:\"\";s:7:\"orderby\";s:2:\"20\";s:4:\"type\";s:1:\"g\";s:9:\"view_type\";s:1:\"p\";s:7:\"enabled\";s:1:\"1\";s:7:\"variant\";s:1:\"1\";s:6:\"option\";a:9:{s:8:\"optionid\";s:3:\"806\";s:7:\"groupid\";s:3:\"215\";s:4:\"name\";s:5:\"Green\";s:7:\"orderby\";s:2:\"10\";s:7:\"enabled\";s:1:\"1\";s:14:\"price_modifier\";s:4:\"0.00\";s:19:\"price_modifier_type\";s:1:\"%\";s:15:\"weight_modifier\";s:4:\"0.00\";s:20:\"weight_modifier_type\";s:1:\"%\";}}}}}s:8:\"subtotal\";d:59;s:19:\"discounted_subtotal\";d:59;s:14:\"subtotal_taxed\";d:59;s:5:\"total\";d:80.795;s:13:\"need_shipping\";i:1;s:10:\"shippingid\";s:4:\"2220\";s:13:\"shipping_cost\";d:14.45;s:11:\"tax_details\";a:11:{s:5:\"taxid\";s:1:\"1\";s:8:\"tax_name\";s:3:\"VAT\";s:16:\"tax_display_name\";s:3:\"VAT\";s:7:\"formula\";s:2:\"ST\";s:12:\"address_type\";s:1:\"B\";s:6:\"active\";s:1:\"Y\";s:18:\"price_includes_tax\";s:1:\"N\";s:21:\"display_including_tax\";s:1:\"N\";s:12:\"display_info\";s:0:\"\";s:9:\"regnumber\";s:0:\"\";s:8:\"priority\";s:1:\"0\";}s:3:\"tax\";d:7.345000000000001;s:9:\"paymentid\";s:1:\"2\";}', 1790170946, 0, 0);
 
 -- --------------------------------------------------------
 
@@ -12213,7 +12198,7 @@ INSERT INTO `user_sessions` (`id`, `userid`, `name`, `value`) VALUES
 (22507, 857, 'recently', 'a:17:{i:0;s:3:\"113\";i:1;s:3:\"261\";i:2;s:3:\"260\";i:3;s:3:\"132\";i:4;s:3:\"118\";i:5;s:3:\"122\";i:8;s:3:\"126\";i:12;s:3:\"130\";i:14;s:3:\"121\";i:18;s:3:\"250\";i:28;s:3:\"154\";i:34;s:3:\"211\";i:35;s:3:\"264\";i:39;s:3:\"183\";i:40;s:3:\"166\";i:42;s:3:\"119\";i:43;s:3:\"215\";}'),
 (23361, 858, 'recently', 'a:2:{i:1;s:3:\"185\";i:3;s:3:\"215\";}'),
 (24647, 859, 'recently', 'a:8:{i:3;s:3:\"215\";i:46;s:3:\"247\";i:49;s:3:\"188\";i:60;s:3:\"190\";i:61;s:3:\"185\";i:63;s:3:\"113\";i:66;s:3:\"129\";i:67;s:3:\"170\";}'),
-(29078, 848, 'recently', 'a:14:{i:1;s:3:\"222\";i:2;s:3:\"218\";i:3;s:3:\"129\";i:4;s:3:\"131\";i:5;s:3:\"215\";i:6;s:3:\"197\";i:7;s:3:\"195\";i:8;s:3:\"220\";i:10;s:3:\"113\";i:14;s:3:\"264\";i:15;s:3:\"263\";i:25;s:3:\"128\";i:27;s:3:\"123\";i:29;s:3:\"260\";}');
+(29097, 848, 'recently', 'a:14:{i:1;s:3:\"222\";i:2;s:3:\"218\";i:3;s:3:\"129\";i:4;s:3:\"131\";i:5;s:3:\"215\";i:6;s:3:\"197\";i:7;s:3:\"195\";i:8;s:3:\"220\";i:10;s:3:\"113\";i:14;s:3:\"264\";i:15;s:3:\"263\";i:25;s:3:\"128\";i:27;s:3:\"123\";i:29;s:3:\"260\";}');
 
 -- --------------------------------------------------------
 
@@ -14186,7 +14171,7 @@ ALTER TABLE `currencies`
 -- AUTO_INCREMENT для таблицы `languages`
 --
 ALTER TABLE `languages`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4035;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4043;
 
 --
 -- AUTO_INCREMENT для таблицы `languages_codes`
@@ -14372,7 +14357,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT для таблицы `users_carts`
 --
 ALTER TABLE `users_carts`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6530;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6549;
 
 --
 -- AUTO_INCREMENT для таблицы `users_remember`
@@ -14384,7 +14369,7 @@ ALTER TABLE `users_remember`
 -- AUTO_INCREMENT для таблицы `user_sessions`
 --
 ALTER TABLE `user_sessions`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29079;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29098;
 
 --
 -- AUTO_INCREMENT для таблицы `variants`

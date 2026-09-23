@@ -15,7 +15,7 @@
 
 {if $filter['price']}
 <h4>{lng[Price]}</h4>
-<div class="selected-filter" data-id="{$filter['price']}" data-what="price">{php echo strip_tags($filter['price']);} (x)</div>
+<div class="selected-filter" data-id="{$filter['price']}" data-what="price">{$filter['price']} (x)</div>
 {elseif $prices}
 <h4 class="pointer">{lng[Price]}</h4>
 <ul data-what="price">
