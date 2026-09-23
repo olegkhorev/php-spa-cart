@@ -19,7 +19,7 @@
 	<div id="center"{if true || $no_left_menu == 'Y'} class="no_left_menu"{/if}>
 {$page}
 
-{if $recently && $get['0'] != 'checkout'}
+{if $config['Visual']['visual_recently'] == 'Y' && $recently && $get['0'] != 'checkout'}
 {if $get['0'] != 'product' && $get['0'] != 'home'}
 </div></div>
 {/if}

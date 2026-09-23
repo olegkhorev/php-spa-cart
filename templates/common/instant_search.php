@@ -1,3 +1,12 @@
+{if $meant}
+<div class="did-you-mean">
+<b>{lng[Did you mean]}:</b>
+{foreach $meant as $v}
+<span>{$v}</span>
+{/foreach}
+</div>
+{/if}
+
 {if $products}
 <table>
 {foreach $products as $v}
@@ -23,8 +32,8 @@ include SITE_ROOT . '/includes/image.php';
 {/foreach}
 </table>
 {if $total_items > 10}
-<div class="more-no-search">And more</div>
+<div class="more-no-search">{lng[And more]}</div>
 {/if}
 {else}
-<div class="more-no-search">No products found</div>
+<div class="more-no-search">{lng[No products found]}</div>
 {/if}

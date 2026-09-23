@@ -13,6 +13,10 @@ if ($bt_params['param1'] && $bt_params['param2'] && $bt_params['param3']) {
 	Braintree_Configuration::merchantId($bt_params['param1']);
 	Braintree_Configuration::publicKey($bt_params['param2']);
 	Braintree_Configuration::privateKey($bt_params['param3']);
+	if (DEVELOPMENT) {
+		Braintree_Configuration::environment('development');
+	}
+
 	try {
 		$template['client_token'] = Braintree\ClientToken::generate();
 	} catch (Exception $e) {

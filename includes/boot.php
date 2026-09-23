@@ -167,12 +167,7 @@ $template['company_name'] = $company_name;
 $template['company_slogan'] = $company_slogan;
 
 $template['css'][] = 'style';
-if ($get['0'] != 'admin') {
-	$template['js'][] = 'jquery.ui.tooltip';
-}
-
 $template['js'][] = 'scripts';
-$template['css'][] = 'jquery.ui.tooltip';
 # Get templates
 $tmp = $db->all("SELECT template, time, lng FROM templates WHERE lng IN ('".$lng."', 'css', 'js')");
 if (!empty($tmp)) {

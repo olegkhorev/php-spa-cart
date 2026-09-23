@@ -223,11 +223,10 @@ button.big {
 }
 .allow-cookies {
     padding: 10px 15px;
-    z-index: 30;
+    z-index: 101;
     position: fixed;
     bottom: 10px;
-    left: 50%;
-	transform: translate(-50%, 0);
+    left: 10px;
     width: 320px;
     border: 1px solid #fff;
     box-sizing: border-box;
@@ -1489,6 +1488,17 @@ html::-webkit-scrollbar-thumb {
 	left: 0;
 	top: 32px;
 	z-index: 100;
+}
+.instant-search .did-you-mean {
+    padding: 15px 8px !important;
+    line-height: 18px;
+	color: #000 !important;
+}
+.did-you-mean b, .did-you-mean span {
+	display: block;
+}
+.did-you-mean span {
+	cursor: pointer;
 }
 .search:hover .instant-search {
 	display: block

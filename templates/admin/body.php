@@ -277,9 +277,8 @@ if (!empty($js)) {
 <div>
 {if in_array('configuration', $allow_pages_ids) || $root_admin}
 <a href="/admin/configuration/General">{lng[General settings]}</a>
-{/if}
-{if in_array('configuration', $allow_pages_ids) || $root_admin}
 <a href="/admin/configuration/Company">{lng[Company information]}</a>
+<a href="/admin/configuration/Visual">{lng[Visual settings]}</a>
 {/if}
 {if in_array('configuration', $allow_pages_ids) || $root_admin}
 <a href="/admin/configuration/Blog">{lng[Blog settings]}</a>
@@ -289,6 +288,9 @@ if (!empty($js)) {
 {/if}
 {if in_array('currencies', $allow_pages_ids) || $root_admin}
 <a href="/admin/currencies">{lng[Currencies]}</a>
+{/if}
+{if $root_admin}
+<a href="/cron_fuzzy.php?pswd=01230" class="no-ajax pointer-events-auto" target="_blank">{lng[Reset predictive search]}</a>
 {/if}
 </div>
  </li>

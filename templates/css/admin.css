@@ -1073,6 +1073,10 @@ table.countries, table.states {
 	padding: 5px;
 	border: 1px dashed var(--blue);
 	position: relative;
+	border-radius: 10px;
+}
+.product-images div.clear {
+	border: 0;
 }
 .product-images div img {
 	cursor: pointer;
@@ -1091,14 +1095,11 @@ table.countries, table.states {
     color: #fff;
     font-size: 18px;
     text-align: center;
-
     width: 800px;
     margin: 0 auto 20px auto;
-
     background: var(--blue);
     border: 1px solid #ccc;
-
-    border-radius: 2px;
+    border-radius: 10px;
     cursor: pointer;
 	-khtml-user-drag: element;
 }
@@ -1135,6 +1136,7 @@ table.countries, table.states {
     position: relative;
     padding: 10px 0;
     width: 100%;
+	border-radius: 10px;
 }
 .fileButton input {
 	opacity: 0;

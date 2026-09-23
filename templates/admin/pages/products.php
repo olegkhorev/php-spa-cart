@@ -60,7 +60,7 @@ if ($brands) {
  <td><input type="text" size="8" name="price_min" value="<?php echo escape($search_products['price_min'], 2); ?>" /> - <input type="text" size="8" name="price_max" value="<?php echo escape($search_products['price_max'], 2); ?>" /></td>
 </tr>
 <tr>
- <td class="data-name">{lng[List price]}:</td>
+ <td class="data-name">{lng[Market price]}:</td>
  <td><input type="text" size="8" name="list_price_min" value="<?php echo escape($search_products['list_price_min'], 2); ?>" /> - <input type="text" size="8" name="list_price_max" value="<?php echo escape($search_products['list_price_max'], 2); ?>" /></td>
 </tr>
 <tr>

@@ -483,7 +483,6 @@ function is_url($url) {
 function func_get_ajax_css() {
 	$array = array();
 	$array[] = 'style';
-	$array[] = 'jquery.ui.tooltip';
 	$array[] = 'blog';
 	$array[] = 'static';
 	$array[] = 'banners';
@@ -508,7 +507,6 @@ function func_get_ajax_css() {
 
 function func_get_ajax_js() {
 	$array = array();
-	$array[] = 'jquery.ui.tooltip';
 	$array[] = 'jquery.ui.touch-punch.min';
 	$array[] = 'scripts';
 	$array[] = 'blog_bb';

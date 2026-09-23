@@ -116,7 +116,7 @@ exceptions[{$oid}] = [];
 {php $save_price = $product['list_price'] - $product['price'];}
 {php $save_percentage = round(100 - 100 * $product['price'] / $product['list_price']);}
 <tr>
- <td class="name">{lng[List price]}:</td>
+ <td class="name">{lng[Market price]}:</td>
  <td class="value product-list-price"><s>{price $product['list_price']}</s>, save <b>{price $save_price} ({$save_percentage}%)</b></td>
 </tr>
 {/if}

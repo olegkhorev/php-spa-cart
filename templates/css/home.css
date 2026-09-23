@@ -1,3 +1,9 @@
+.subheader_break {
+  height: 20px;
+}
+#body-home .subheader_break {
+  display: none;
+}
 .page-container.page-container-testimonials {
     margin-top: 40px;
 }

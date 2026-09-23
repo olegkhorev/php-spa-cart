@@ -1,5 +1,5 @@
 <div class="head-line">
-{if $languages}
+{if $config['Visual']['visual_language'] == 'Y' && $languages}
 <div class="language_select">
 <div>
 {foreach $languages as $c}
@@ -13,17 +13,10 @@
 {/foreach}
 </ul>
 </div>
-{*
-<select>
-{foreach $languages as $c}
-<option value="{$c['id']}"{if $current_language['id'] == $c['id'] || (!$current_language['id'] && $c['main'])} selected{/if}>{$c['name']}</option>
-{/foreach}
-</select>
-*}
 </div>
 {/if}
 
-{if $currencies}
+{if $config['Visual']['visual_currency'] == 'Y' && $currencies}
 <div class="currency_select">
 <div>{foreach $currencies as $c}{if $current_currency['id'] == $c['id'] || (!$current_currency['id'] && $c['main'])}{$c['code']}{/if}{/foreach}
 <ul>
@@ -32,13 +25,6 @@
 {/foreach}
 </ul>
 </div>
-{*
-<select>
-{foreach $currencies as $c}
-<option value="{$c['id']}"{if $current_currency['id'] == $c['id'] || (!$current_currency['id'] && $c['main'])} selected{/if}>{$c['code']}</option>
-{/foreach}
-</select>
-*}
 </div>
 {/if}
 
@@ -82,34 +68,14 @@
 
 
 <div class="header desktop_head">
-{*
-<div class="top-line">
-<div class="free-shipping">
-<svg><use xlink:href="/images/sprite.svg#delivery"></use></svg>
- {lng[Free shipping on orders over $100 (US only)]}</div>
-<div class="social-icons">
-<a href="http://facebook.com" target="_blank"><svg><use xlink:href="/images/sprite.svg#facebook"></use></svg></a>
-<a href="http://twitter.com" target="_blank"><svg><use xlink:href="/images/sprite.svg#twitter"></use></svg></a>
-<a href="http://facebook.com" target="_blank"><svg><use xlink:href="/images/sprite.svg#pin"></use></svg></a>
-</div>
-<div class="links">
-</div>
-</div>
-*}
-
 <a href="/" class="logo-link"><img src="/images/logo_new.png" alt="" /></a>
-{if $mobile_link}
-<a class="mobile-version" href="{$mobile_link}">Mobile version</a>
-{/if}
 <div class="menu-container">
 <ul id="menu">
 {if $categories_top_menu}
  {foreach $categories_top_menu as $k=>$v}
  <li id="menu-{$v['categoryid']}" class="{if $v['subcategories']}with-drop-down {/if}{if $v['categoryid'] == $parentid} active{/if}"><a class="parent-link" href="{$current_location}/{if $v['cleanurl']}{$v['cleanurl']}{else}{$v['categoryid']}{/if}">{$v['title']}</a>
   {if $v['subcategories']}
-{*<div class="submenu-fade"></div>*}
   <ul>
-{*	<li class="top-part"></li>*}
    {foreach $v['subcategories'] as $s}
    <li><a href="{$current_location}/{if $s['cleanurl']}{$s['cleanurl']}{else}{$s['categoryid']}{/if}">{$s['title']}</a>
 	{if $s['subcategories']}<div>
@@ -134,17 +100,6 @@
 </ul>
 {/if}
   </li>
-{*
-  <li id="menu-blog"{if $get['0'] == 'blog'} class="active"{/if}><a class="parent-link" href="{$current_location}/blog">{lng[Blog]}</a></li>
-  <li id="menu-page"{if $get['0'] == 'page'} class="active"{/if}><a class="parent-link" href="/page/about.html">{lng[About CMS]}</a>
-<ul>
- <li><a href="{$current_location}/page/scripts-structure.html">Scripts structure</a></li>
- <li><a href="{$current_location}/page/templages-engine.html">Templates engine</a></li>
- <li><a href="{$current_location}/page/MySQL-standards.html">MySQL standards</a></li>
-</ul>
-  </li>
-  <li id="menu-news"{if $get['0'] == 'news'} class="active"{/if}><a class="parent-link" href="/news">{lng[News]}</a>
-*}
   <li class="search-dd"><svg><use xlink:href="/images/sprite.svg#search"></use></svg>
 <form method="POST" action="/search" class="searchform searchform_desktop">
 <div class="search">
@@ -175,6 +130,7 @@
 </div>
 </div>
 
+{if $config['Visual']['visual_3_boxes'] == 'Y'}
 <div class="subheader">
 <table>
 <tr>
@@ -202,6 +158,9 @@
 </tr>
 </table>
 </div>
+{else}
+<div class="subheader_break"></div>
+{/if}
 
 <div id="head_mobile">
 {*<div class="header-phone">{lng[Call Us]} {$config['Company']['company_phone']}</div>*}

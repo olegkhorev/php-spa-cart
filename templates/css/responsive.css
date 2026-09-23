@@ -1126,6 +1126,9 @@
 	}
 }
 @media only screen and (max-width: 500px) {
+	.main-container {
+		display: block;
+	}
 	.product-details-price {
 		min-width: 100px;
 	}

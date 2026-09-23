@@ -29,6 +29,7 @@ if (!is_dir($dir)) {
 
 $height = $width = 0;
 $new_file = $dir.'/'.$image['file'];
+#exit($new_file.'-');
 if (!file_exists($new_file)) {
 	$file = SITE_ROOT . '/photos/product/'.$image['productid'].'/'.$image['photoid'].'/'.$image['file'];
 	if ($image['x'] < $image['new_width'] && $image['y'] < $image['new_height']) {

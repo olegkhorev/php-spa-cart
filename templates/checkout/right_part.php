@@ -65,13 +65,12 @@ Free
 </div>
 {/if}
 
-<br /><br />
-    <div class="group">
-      <textarea class="width-95p" cols="30" rows="4" name="notes"></textarea>
-      <span class="highlight"></span>
-      <span class="bar"></span>
-      <label>{lng[Your comments]}</label>
-    </div>
+<div class="group">
+ <textarea class="width-95p" cols="30" rows="4" name="notes"></textarea>
+ <span class="highlight"></span>
+ <span class="bar"></span>
+ <label>{lng[Your comments]}</label>
+</div>
 
 <br /><br />
 <div align="right">
