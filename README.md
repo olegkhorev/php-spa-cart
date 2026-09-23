@@ -33,7 +33,7 @@ e. Admin area - a@a.com / 01230
 https://[URL]/admin
 
 
-f. Add Cron job for every 30 minutes to check not processed Stripe orders and run the Abandoned cart reminder and check currency rates
+f. Add the Cron job for every 30 minutes to check not processed Stripe orders and run the Abandoned cart reminder and check currency rates
 http://[URL]/cron.php?pswd=01230  (I recommend to change 01230 password in script)
 
 
@@ -42,10 +42,10 @@ g. Support Desk
 To receive replies from emails - add this script to cron for every 10-15 minutes:
 http://[URL]/cron_tickets.php?pswd=[PASSWORD]
 
-Password  you can define here
+The password you can define here
 http://[URL]/admin/configuration/Tickets
 
-On same page configure POP3 settings.
+On the same page configure SMTP settings.
 
 Edit this file to set up correct server port and SSL setting
 http://[URL]/cron_tickets.php
@@ -53,25 +53,23 @@ http://[URL]/cron_tickets.php
 SSL port is 995. Not SSL port is 110.
 
 
-h. To disable Design theme color mode edit settings.php
+h. To disable the Design theme color mode edit settings.php
 $design_mode = 0;
 
 
 # 2. After testing remove all the data and insert yours. You can use Import/Export to insert new values. Only new categories are not imported.
 
-Please, also remove the Discount coupon and Gift Cards.
-
 
 # 3. Helpful scripts
 
-http://[URL]/reset.php?pswd=01230 (I recommend to change 01230 password in script)
+http://[URL]/reset.php?pswd=01230 (I recommend to change the 01230 password in the script)
 
-It rebuilds templates cache.
+It rebuilds the templates cache.
 
-To generate images cache, without parsing full website by users or Google, visit this URL:
-http://[URL]/optimize.php?pswd=01230  (I recommend to change 01230 password in script)
+To generate the images cache, without parsing full website by users or Google, visit this URL:
+http://[URL]/optimize.php?pswd=01230  (I recommend to change the 01230 password in the script)
 
-it will generate images cache.
+it will the generate images cache.
 
 -----------
 
