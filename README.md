@@ -2,7 +2,7 @@ SPA-Cart - e-commerce Single Page Application
 https://spa-cart.com/
 
 
-# 1. Installation
+### 1. Installation
 
 a. Create MySQL database and upload files onto your server.
 
@@ -57,10 +57,10 @@ h. To disable the Design theme color mode edit settings.php
 $design_mode = 0;
 
 
-# 2. After testing remove all the data and insert yours. You can use Import/Export to insert new values. Only new categories are not imported.
+### 2. After testing remove all the data and insert yours. You can use Import/Export to insert new values. Only new categories are not imported.
 
 
-# 3. Helpful scripts
+### 3. Helpful scripts
 
 http://[URL]/reset.php?pswd=01230 (I recommend to change the 01230 password in the script)
 
