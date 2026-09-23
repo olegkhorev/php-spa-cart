@@ -1,6 +1,6 @@
 <?php
 redirect('/admin/user/'.$login);
-q_load('user');
+func_load('user');
 if ($get['2'])
 	$user_id = $get['2'];
 else

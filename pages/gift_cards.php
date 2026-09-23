@@ -2,7 +2,7 @@
 if (!$login)
 	redirect('/login');
 
-q_load('blog');
+func_load('blog');
 if ($_SERVER['REQUEST_METHOD'] == "POST") {
 	extract($_POST);
 

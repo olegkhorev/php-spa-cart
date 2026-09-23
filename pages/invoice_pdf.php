@@ -2,7 +2,7 @@
 use Dompdf\Dompdf;
 
 session_start();
-q_load('product', 'order');
+func_load('product', 'order');
 if (!$_SESSION['invoices']) {
 	$_SESSION['invoices'] = array();
 }

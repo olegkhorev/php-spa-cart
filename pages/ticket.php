@@ -13,7 +13,7 @@ if ($get['1'] == 'attachment') {
 	exit;
 }
 
-q_load('ticket');
+func_load('ticket');
 
 if (!isset($_SESSION['mytickets']))
 	$_SESSION['mytickets'] = array();

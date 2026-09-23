@@ -45,7 +45,7 @@ function order_status($orderid, $status, $calculate_processed = false) {
 function func_orderinfo($orderid) {
 	global $db;
 
-	q_load('product');
+	func_load('product');
 
 	$order = $db->row("SELECT * FROM orders WHERE orderid='".addslashes($orderid)."'");
 	if (!$order)

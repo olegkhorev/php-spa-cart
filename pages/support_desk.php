@@ -3,7 +3,7 @@ if (!$login) {
 	redirect('/ticket');
 }
 
-q_load('ticket');
+func_load('ticket');
 if ($get['1'] == 'cancel') {
 	$db->query("UPDATE users SET active_subscription=0 WHERE id='$login'");
 	$_SESSION['alerts'][] = array(

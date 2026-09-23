@@ -1,7 +1,7 @@
 <form method="post">
 <input type="hidden" name="mode" value="update" />
 
-<table cellpadding="3" cellspacing="1" width="600">
+<table cellpadding="3" cellspacing="1" width="600" class="lines-table">
 
 <tr class="TableHead">
 	<td width="10">&nbsp;</td>

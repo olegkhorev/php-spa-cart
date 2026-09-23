@@ -164,7 +164,7 @@ if ($device == 'mobile' && $get['0']) {
 }
 
 if ($get['0'] != 'admin' && $_SESSION['recently']) {
-	q_load('product');
+	func_load('product');
 	$recently = array();
 	foreach ($_SESSION['recently'] as $pid) {
 		$recently[] = func_select_product($pid);
@@ -234,7 +234,7 @@ if ($get['0'] == 'admin') {
 	else
 		$template['minicart'] = get_template_contents('common/minicart.php');
 
-	q_load('category');
+	func_load('category');
 	$template['categories_top_menu'] = func_categories_tree();
 	$template['brands_menu'] = $db->all("SELECT * FROM brands WHERE active='Y' ORDER BY orderby, brandid");
 	$template['head'] = get_template_contents('head.php');

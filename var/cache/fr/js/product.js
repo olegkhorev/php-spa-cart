@@ -8,7 +8,7 @@ var rate_clicked = 0,
 (function($) {
 "use strict";
   $(document).ready(function() {
-	if (!$('body').hasClass('admin-area'))
+	if (!$('body').hasClass('admin-area')	&& !$('html.itsinvoicepage').length)
 		product_clicks();
   });
 })($);

@@ -1,5 +1,5 @@
 <?php
-q_load('order');
+func_load('order');
 if ($get['2'] == 'reset') {
 	$_SESSION['search_orders'] = array();
 	redirect('/admin/orders');

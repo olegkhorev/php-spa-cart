@@ -12,7 +12,7 @@ set_time_limit(36000);
 
 include 'includes/boot.php';
 
-q_load('order');
+func_load('order');
 require_once(SITE_ROOT . '/stripe/init.php');
 $stripe_skey = $db->field("SELECT param1 FROM payment_methods WHERE paymentid=7");
 \Stripe\Stripe::setApiKey($stripe_skey);

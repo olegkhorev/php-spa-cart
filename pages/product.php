@@ -1,5 +1,5 @@
 <?php
-q_load('product');
+func_load('product');
 $product = func_select_product($productid);
 
 if ($_GET['popup']) {

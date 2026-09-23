@@ -3,7 +3,7 @@
 <?php if ($currencies) {?>
 <a href="javascript: void(0);" onclick="javascript: check_all(document.currenciesform, 'to_delete', true);">Check all</a> / <a href="javascript: void(0);" onclick="javascript: check_all(document.currenciesform, 'to_delete', false);">Uncheck all</a>
 <?php } ?>
-<table cellpadding="3" cellspacing="1" width="600">
+<table cellpadding="3" cellspacing="1" width="600" class="lines-table">
 <tr>
 	<th width="10">&nbsp;</th>
 	<th width="15%">Currency code</th>

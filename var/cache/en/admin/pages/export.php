@@ -14,7 +14,7 @@ Export product #<?php echo $_GET['product'];?>. <a href="/admin/export">Reset</a
 <br />
 <a href="javascript: void(0);" onclick="javascript: import_checkboxes('Y');">Check all</a> / <a href="javascript: void(0);" onclick="javascript: import_checkboxes();">Uncheck all</a>
 
-<table width="400" class="export" cellspacing="1" cellpadding="2">
+<table width="400" cellspacing="1" cellpadding="2" class="lines-table export">
 <?php if (!$_GET['product']) {?>
 <tr>
  <th width="15"><input type="checkbox" name="import[categories]" /></th>

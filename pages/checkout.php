@@ -1,5 +1,5 @@
 <?php
-q_load('cart', 'product', 'order');
+func_load('cart', 'product', 'order');
 
 require_once(SITE_ROOT."/bt/lib/autoload.php");
 $bt_params = $db->row("SELECT * FROM payment_methods WHERE paymentid=2 AND enabled='1'");
@@ -392,7 +392,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
 		$template['total'] = $total;
 
-		q_load('order');
+		func_load('order');
 		$subject = $company_name.': '.lng('Order').' #'.$orderid.' '.$order_statuses[$order_status];
 		if ($order_status == 2)
 			func_decrease_quantity($orderid);

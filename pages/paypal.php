@@ -69,7 +69,7 @@ fputs($fp, date('m.d.Y h:i:s')."\n"."Order #".$orderid.': '.$res."\n\n");
 if ($res == 'VERIFIED') {
 	fputs($fp, "Order #".$orderid.". Status updated.\n\n");
 	
-	q_load('order');
+	func_load('order');
 	$orderinfo = func_orderinfo($orderid);
 	$order = $orderinfo['order'];
 	if ($order['total'] != $myPost['mc_gross'])

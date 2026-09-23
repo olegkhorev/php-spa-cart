@@ -1,5 +1,5 @@
 <?php
-q_load('cart', 'product');
+func_load('cart', 'product');
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 	extract($_POST);
@@ -57,7 +57,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 		$cart = func_calculate();
 		$_SESSION['cart'] = $cart;
 		if ($is_ajax) {
-			q_load('product');
+			func_load('product');
 			if (!empty($product_options))
 				$variantid = func_get_variantid($product_options, $productid);
 			else

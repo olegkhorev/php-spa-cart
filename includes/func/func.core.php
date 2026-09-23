@@ -303,88 +303,32 @@ function func_mail($name, $email, $from = '', $subject, $message, $replyto = '',
 	if (!$from)
 		$from = $company_email;
 
-try
-{
-#require_once("includes/PHPMailer/src/Exception.php");
-#require_once("includes/PHPMailer/src/PHPMailer.php");
-#require_once("includes/PHPMailer/src/SMTP.php");
-$mail = new PHPMailer();
-
-$mail->CharSet = 'UTF-8';
-
-$mail->isHTML(true);                       // Set email format to HTML
-$mail->Subject = $subject;
-$mail->Body    = $message;
-
-if ($attachments) {
-	foreach ($attachments as $v) {
-		$mail->addAttachment($v['file_path']);         //Add attachments
-	}
-}
-
-$mail->setFrom($from, $config['Company']['company_name']);
-$mail->addAddress($email, $name);     //Add a recipient
-if ($email_replyto)
-	$mail->addReplyTo($email_replyto, '');
-
-$mail->send();
-}
-catch (\Throwable $t)
-{
-    echo $t;
-   // Executed only in PHP 7, will not match in PHP 5
-}
-catch (\Exception $e)
-{
-    echo $e;
-   // Executed only in PHP 5, will not be reached in PHP 7
-}
-	return;
-	if ($name)
-		$to = '=?UTF-8?B?' . base64_encode($name) . '?=' . ' <'.$email.'>';
-	else
-		$to = $email;
-
-	$separator = md5(time());
-	$separator2 = md5(time().rand(0, 10000));
-    $eol = PHP_EOL;
-
-	$headers = 'From: ' . $from . $eol;
-	if ($replyto)
-		$headers .= "Reply-To: ".$replyto."\r\n";
-	else if ($email_replyto)
-		$headers .= 'Reply-To: ' . $email_replyto . "\r\n";
-
-	$headers .= "MIME-Version: 1.0" . $eol;
-
-    $headers .= "Content-Type: multipart/related; type=\"multipart/alternative\"; boundary=\"" . $separator . "\"" . $eol;
-
-    $mail_message = "--".$separator.$eol;
-	$mail_message .= "Content-Type: multipart/alternative; boundary=\"".$separator2."\"" . $eol . $eol;
-    $mail_message .= "--" . $separator2 . $eol;
-    $mail_message .= "Content-Type: text/html; charset=\"utf-8\"" . $eol;
-    $mail_message .= "Content-Transfer-Encoding: 8bit" . $eol . $eol;
-    $mail_message .= $message . $eol . $eol;
-    $mail_message .= "--" . $separator2 . "--" . $eol . $eol;
-
-	if ($attachments) {
-		foreach ($attachments as $v) {
-		    $mail_message .= "--" . $separator . $eol;
-		    $mail_message .= "Content-Type: application/octet-stream; name=\"" . $v['name'] . "\"" . $eol;
-		    $mail_message .= "Content-Transfer-Encoding: base64" . $eol;
-		    $mail_message .= "Content-Disposition: attachment; filename=\"".$v['name']."\"" . $eol . $eol;
-		    $mail_message .= chunk_split(base64_encode($v['data'])) . $eol . $eol;
+	try {
+		$mail = new PHPMailer();
+		$mail->CharSet = 'UTF-8';
+		$mail->isHTML(true);                       // Set email format to HTML
+		$mail->Subject = $subject;
+		$mail->Body    = $message;
+		if ($attachments) {
+			foreach ($attachments as $v) {
+				$mail->addAttachment($v['file_path']);         //Add attachments
+			}
 		}
-	}
 
-    $mail_message .= "--" . $separator . $eol;
-	if (preg_match('/([^ @,;<>]+@[^ @,;<>]+)/S', $from, $m))
-		mail($to, $subject, $mail_message, $headers, "-f ".$m[1]);
-	else
-		mail($to, $subject, $mail_message, $headers);
+		$mail->setFrom($from, $config['Company']['company_name']);
+		$mail->addAddress($email, $name);     //Add a recipient
+		if ($email_replyto)
+			$mail->addReplyTo($email_replyto, '');
+
+		$mail->send();
+	} catch (\Throwable $t) {
+		echo $t;
+	} catch (\Exception $e) {
+		echo $e;
+	}
 }
 
-function q_load($func_name) {
+function func_load($func_name) {
 	global $qloaded_functions;
 
     $names = func_get_args();
@@ -396,8 +340,6 @@ function q_load($func_name) {
         $f = SITE_ROOT.'/includes/func/func.' . $n . '.php';
         if (file_exists($f))
             require_once $f;
-        else
-            assert('FALSE /* '.__FUNCTION__.': q_load tried to load non-existent function file */');
 
         $qloaded_functions[$n] = 1;
     }

@@ -6,10 +6,10 @@
 &nbsp; (Make sure you do it in Development mode - see settings.php)
 <br /><br />
 <form method="post" enctype="multipart/form-data" name="fpform" class="noajax">
-<table width="800">
+<table width="800" class="lines-table">
 <tr>
  <td width="50%">
-<table width="400" cellpadding="3" cellspacing="1">
+<table width="100%" cellpadding="3" cellspacing="1">
 <tr>
  <td colspan="2"><h3>Export language labels</td>
 </tr>
@@ -24,7 +24,7 @@
 </table>
  </td>
  <td>
-<table width="400" cellpadding="3" cellspacing="1">
+<table width="100%" cellpadding="3" cellspacing="1">
 
 <tr>
  <td colspan="2"><h3>Import language labels</td>

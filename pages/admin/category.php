@@ -1,5 +1,5 @@
 <?php
-q_load('category');
+func_load('category');
 
 if ($get['3'] == 'delete') {
 	$parentid = $db->field("SELECT parentid FROM categories WHERE categoryid='".$get['2']."'");

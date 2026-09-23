@@ -6,7 +6,7 @@ if ($login) {
 	redirect('/profile');
 }
 
-q_load('user');
+func_load('user');
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 	$rc_key = $config['General']['recaptcha_key'];

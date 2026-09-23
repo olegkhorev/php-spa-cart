@@ -5,7 +5,7 @@ if ($_GET['key'] != $key) {
 	exit('Access denied');
 }
 
-q_load('product', 'category');
+func_load('product', 'category');
 if ($_GET['mode'] == 'categories') {
 	$tree = func_categories_tree(0, "orderby");
 	echo '<pre>';

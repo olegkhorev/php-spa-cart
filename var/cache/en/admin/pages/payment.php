@@ -1,7 +1,7 @@
 <h1>Payment methods</h1>
 
 <form method="post" class="payment_methods">
-<table cellpadding="2" cellspacing="1" width="700" class="lines-table">
+<table cellpadding="2" cellspacing="1" width="900" class="lines-table">
 
 <tr class="TableHead">
   <th>Payment method</th>

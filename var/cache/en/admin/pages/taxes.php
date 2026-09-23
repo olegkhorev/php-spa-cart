@@ -11,7 +11,7 @@ if ($taxes) {
 <form method="post" name="taxesform">
 <input type="hidden" name="mode" value="update" />
 
-<table cellpadding="3" cellspacing="1" width="700">
+<table cellpadding="3" cellspacing="1" width="900" class="lines-table">
 
 <tr>
   <th>&nbsp;</th>

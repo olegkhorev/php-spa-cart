@@ -1,5 +1,5 @@
 <?php
-q_load('category');
+func_load('category');
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 	extract($_POST);

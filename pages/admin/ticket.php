@@ -2,7 +2,7 @@
 extract($_GET);
 extract($_POST);
 
-q_load('ticket');
+func_load('ticket');
 
 $get['2'] = addslashes($get['2']);
 

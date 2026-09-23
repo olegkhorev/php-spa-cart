@@ -19,7 +19,7 @@ if ($cats) {
 
 $parentid = $tmp['categoryid'] ? $tmp['categoryid'] : $categoryid;
 $template['parentid'] = $parentid;
-q_load('category');
+func_load('category');
 $template['categories_menu'] = func_categories_tree($parentid);
 
 $template['bread_crumbs'][] = array('', $category['title']);

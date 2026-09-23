@@ -1,5 +1,5 @@
 <?php
-q_load('news');
+func_load('news');
 if ($_GET['nosearch']) {
 	$_SESSION['news_substring'] = '';
 	redirect('/news');

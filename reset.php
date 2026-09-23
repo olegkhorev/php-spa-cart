@@ -12,7 +12,7 @@ set_time_limit(36000);
 
 include 'includes/boot.php';
 
-q_load('category');
+func_load('category');
 session_write_close();
 $languages = $db->all("SELECT * FROM languages_codes WHERE active=1 ORDER BY orderby, code");
 if (!$languages)
@@ -98,8 +98,6 @@ foreach ($languages as $v) {
 		file_put_contents($dir.'/'.$file.'.js', $packed);
 		$db->query("REPLACE INTO templates SET lng='js', template='".$file."', time='".filemtime(SITE_ROOT.'/templates/js/'.$file.'.js')."'");
 	}
-
-	include SITE_ROOT.'/includes/classes/class.JavaScriptPacker.php';
 
 	foreach ($templates['js'] as $file=>$v) {
 		parse_js('en', $file);

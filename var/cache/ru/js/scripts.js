@@ -48,7 +48,10 @@ $(document).on('keyup', function(e) {
 (function($) {
 "use strict";
   $(document).ready(function() {
-		if (!getCookie('allow_cookies')) {
+		if ($('html.itsinvoicepage').length)
+			return;
+
+		if (!getCookie('allow_cookies') && !$('html.area-a').length) {
 				$('body').append('<div class="allow-cookies"><p>Мы используем файлы cookie для улучшения пользовательского опыта</p><button>Принять</button></div>');
 				$('.allow-cookies button').on('click', function() {
 					$('.allow-cookies').remove();
@@ -264,8 +267,6 @@ function ajax_clicks() {
 			},
 			success: function(r) {
 				clearTimeout(site_loader_to);
-				$('#content-loading').remove();
-
 				$('#content-loading').remove();
 				$('body').attr('id', 'body-'+r[3]);
 				$('.ajax_container').html(r[0]);
@@ -880,14 +881,20 @@ function checkout_actions() {
 	configure_stripe();
 	states_actions();
 	if ($('#same_address').is(':checked')) {
-		$('.billing_address input').removeProp('required');
+			$('.billing_address input').prop('required', false);
+			$('.billing_address input').attr('required', false);
+			$('.billing_address input').removeProp('required');
+			$('.billing_address input').removeAttr('required');
 	} else {
 		$('.billing_address input').prop('required', true);
 	}
 
 	$('#same_address').unbind('change').change(function() {
 		if ($(this).is(':checked')) {
+			$('.billing_address input').prop('required', false);
+			$('.billing_address input').attr('required', false);
 			$('.billing_address input').removeProp('required');
+			$('.billing_address input').removeAttr('required');
 		} else {
 			$('.billing_address input').prop('required', true);
 		}
@@ -1239,7 +1246,7 @@ function func_highlight(el) {
 function print_invoice(el) {
 	$('#iframe-invoice').remove();
 	$("<iframe id='iframe-invoice' name='invoice' style='height: 0px; width: 0px;' src='" + el.attr('href') + "' />").appendTo('body');
-	$('#iframe-invoice').load(function() {
+	$('#iframe-invoice').on('load', function() {
 		window.frames['invoice'].focus();
 		window.frames['invoice'].print();
 	});

@@ -208,7 +208,9 @@ function ajax_clicks() {
 			pushed = true;
 		}
 
-		$('body').append('<div id="content-loading"><div class="cssload-container"><div class="cssload-speeding-wheel"></div></div></div>');
+		var site_loader_to = setTimeout(function() {
+			$('body').append('<div id="content-loading"><div class="cssload-container"><div class="cssload-speeding-wheel"></div></div></div>');
+		}, 1000);
 		$.ajax({
 			dataType: 'json',
 			url: h,
@@ -216,6 +218,7 @@ function ajax_clicks() {
 				self.location = h;
 			},
 			success: function(r) {
+				clearTimeout(site_loader_to);
 				$('#content-loading').remove();
 				$('body').attr('id', 'body-search');
 				$('.ajax_container').html(r[0]);

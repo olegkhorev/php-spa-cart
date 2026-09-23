@@ -1,4 +1,4 @@
-<html>
+<html class="itsinvoicepage">
 <head>
 <meta charset="utf-8" />
 <title>Invoice #<?php  echo $order['orderid']; ?></title>

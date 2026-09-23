@@ -1,5 +1,5 @@
 <?php
-q_load('category', 'product');
+func_load('category', 'product');
 
 if (empty($section))
 	$section = $get['3'];

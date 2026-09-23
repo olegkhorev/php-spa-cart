@@ -20,7 +20,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 		redirect('/admin/import');
 	}
 
-	q_load('product', 'category', 'brands');
+	func_load('product', 'category', 'brands');
 	doImport($_FILES['file']['tmp_name'], $delimiter);
 	exit;
 }

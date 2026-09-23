@@ -11,7 +11,7 @@ if ($get['2']) {
 	} else
 		exit(lng('No products under this category'));
 } else {
-	q_load('category');
+	func_load('category');
 	$tree = func_categories_tree(0, 'title');
 	$template['categories_tree'] = categories_tree_html($tree, 0, 0, 1, 0, 20);
 	exit(get_template_contents('admin/common/popup_product.php').'-');

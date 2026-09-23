@@ -1,5 +1,5 @@
 <?php
-q_load('blog');
+func_load('blog');
 
 if (!empty($_GET['declineid'])) {
 	$db->query("UPDATE blog_comments SET active='N' WHERE commentid='".addslashes($_GET['declineid'])."'");

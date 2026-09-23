@@ -6,7 +6,7 @@ if (!$order) {
 }
 
 $_SESSION['cart'] = '';
-q_load('order');
+func_load('order');
 
 require_once(SITE_ROOT . '/stripe/init.php');
 $stripe_skey = $db->field("SELECT param1 FROM payment_methods WHERE paymentid=7");

@@ -1,5 +1,5 @@
 <?php
-q_load('user');
+func_load('user');
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 	extract($_POST);

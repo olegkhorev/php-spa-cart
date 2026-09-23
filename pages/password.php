@@ -3,7 +3,7 @@ $get = array_map('addslashes', $get);
 if (!$get['2'])
 	redirect('/');
 
-q_load('user');
+func_load('user');
 $id = $db->field("SELECT id FROM users WHERE id='".$get['1']."' AND password_key='".$get['2']."'");
 if (!$id) {
 	$_SESSION['alerts'][] = array(

@@ -1,5 +1,5 @@
 <?php
-q_load('blog');
+func_load('blog');
 if ($_SERVER['REQUEST_METHOD'] == "POST") {
 	extract($_POST);
 	if (!empty($comment) && (!empty($login) || $config['Blog']['blog_guests'] == 'Y')) {

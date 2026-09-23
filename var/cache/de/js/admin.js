@@ -1,5 +1,291 @@
 var current_multirow = 0;
 
+function createGradient(ctx, chartArea) {
+
+  const gradient = ctx.createLinearGradient(
+
+    0,
+
+    chartArea.bottom,
+
+    0,
+
+    chartArea.top
+
+  );
+
+
+
+  gradient.addColorStop(0, "rgba(76, 175, 80, 0.1)");
+
+  gradient.addColorStop(0.5, "rgba(76, 175, 80, 0.6)");
+
+  gradient.addColorStop(1, "rgba(76, 175, 80, 1)");
+
+
+
+  return gradient;
+
+}
+
+
+
+function formatMonthLabels(dates) {
+
+  const monthLabels = dates.map((date) => {
+
+    const d = new Date(date);
+
+    return d.toLocaleString("en", { month: "short" });
+
+  });
+
+
+
+  return monthLabels.map((month, index, array) => {
+
+    return index === 0 || month !== array[index - 1] ? month : "";
+
+  });
+
+}
+
+
+
+const CHART_COLORS = {
+
+  white: "#fff",
+
+  green: "#fff",
+
+  purple: "#A265FF",
+
+  yellow: "#FFB202",
+
+  pink: "#ED02AD",
+
+  blue: "#218EF5",
+
+  lightBlue: "#4A8EFF",
+
+  red: "#EF364F",
+
+  cyan: "#38C1F2",
+
+  orange: "#F19B36",
+
+  lightGreen: "#32E28B",
+
+};
+
+
+
+
+
+const TOOLTIP_SETTINGS = {
+
+  titleColor: "rgb(255, 255, 255)",
+
+  bodyColor: "rgb(255, 255, 255)",
+
+  borderWidth: 1,
+
+  borderColor: "#fff",
+
+  borderRadius: 10,
+
+  padding: 15,
+
+  titleFontSize: 16,
+
+  bodyFontSize: 20,
+
+  bodyWeight: "bold",
+
+};
+
+
+
+const GRID_SETTINGS = {
+
+  color: "#6ccf70",
+
+};
+
+
+
+const LINE_CHART_CONFIG = {
+
+  data: {
+
+    labels: [
+
+      "2024-05-05",
+
+      "2024-06-02",
+
+      "2024-07-01",
+
+      "2024-08-02",
+
+    ],
+
+    values: [
+
+      100000, 125000, 116000, 260000,
+
+    ],
+
+  },
+
+
+
+  display: {
+
+    lineColor: CHART_COLORS.green,
+
+    tension: 0.25,
+
+    pointRadius: 0,
+
+    pointHoverRadius: 6,
+
+    pointHoverColor: "#fff", 
+
+    pointHoverBorderColor: "#FFFFFF",
+
+  },
+
+
+
+  scaleY: {
+
+    min: 0,
+
+//    max: 200000,
+
+//    stepSize: 25000,
+
+    //allowedValues: [100000, 125000, 150000, 200000],
+
+    format: (value) => '$' + (Math.floor(value * 100) / 100),// / 1000 + "k",
+
+  },
+
+};
+
+
+
+const verticalLinePlugin = {
+
+  id: "verticalLinePlugin",
+
+  beforeDatasetsDraw: function (chart) {
+
+    if (chart.tooltip._active && chart.tooltip._active.length) {
+
+      const ctx = chart.ctx;
+
+      const activePoint = chart.tooltip._active[0];
+
+      const x = activePoint.element.x;
+
+      const y = activePoint.element.y;
+
+      const chartArea = chart.chartArea;
+
+
+
+      ctx.save();
+
+
+
+      const gradient = ctx.createLinearGradient(x, chartArea.bottom, x, y);
+
+      gradient.addColorStop(1, "rgba(255, 255, 255, 1)");
+
+      gradient.addColorStop(1, "rgba(255, 255, 255, 0.4)");
+
+      gradient.addColorStop(1, "rgba(255, 255, 255, 1)");
+
+
+
+      ctx.beginPath();
+
+      ctx.moveTo(x - 1, chartArea.bottom);
+
+      ctx.lineTo(x - 1, y);
+
+      ctx.lineTo(x + 1, y);
+
+      ctx.lineTo(x + 1, chartArea.bottom);
+
+      ctx.closePath();
+
+
+
+      ctx.fillStyle = gradient;
+
+      ctx.fill();
+
+
+
+      ctx.restore();
+
+    }
+
+  },
+
+};
+
+
+
+const gradientTooltipPlugin = {
+
+  id: "gradientTooltip",
+
+  beforeDraw: function (chart) {
+
+    const tooltip = chart.tooltip;
+
+    if (tooltip._active && tooltip._active.length) {
+
+      const ctx = chart.ctx;
+
+      const tooltipModel = tooltip;
+
+
+
+      const gradient = ctx.createLinearGradient(
+
+        tooltipModel.x,
+
+        tooltipModel.y - tooltipModel.height,
+
+        tooltipModel.x,
+
+        tooltipModel.y
+
+      );
+
+
+
+      gradient.addColorStop(0.5, "#0c6f10");
+
+      gradient.addColorStop(1, "#4caf50");
+
+
+
+      tooltipModel.gradientBackground = gradient;
+
+    }
+
+  },
+
+};
+
+
+
 function admin_left_menu() {
 	var height = $('.content').height();
 
@@ -438,7 +724,13 @@ function ajax_clicks_admin() {
 
 		var h = $(this).attr('href');
 
-		$('body').append('<div id="content-loading"><div class="cssload-container"><div class="cssload-speeding-wheel"></div></div></div>');
+		var site_loader_to = setTimeout(function() {
+
+			$('body').append('<div id="content-loading"><div class="cssload-container"><div class="cssload-speeding-wheel"></div></div></div>');
+
+		}, 1000);
+
+
 
 		$.ajax({
 
@@ -451,9 +743,11 @@ function ajax_clicks_admin() {
 
 			},
 
-			   success: function(r, textStatus, request) {
+      success: function(r, textStatus, request) {
 
-					$('#content-loading').remove();
+				clearTimeout(site_loader_to);
+
+				$('#content-loading').remove();
 
 				$('body').attr('id', 'body-'+r[3]);
 
@@ -710,25 +1004,17 @@ function popup_product() {
 
 		unload();
 
-		$('body').append('<div class="popup products_popup"><img src="/images/close.png" class="close"/>'+r+'</div>');
-
-		$(".products_popup img").one("load", function() {
+		$('body').append('<div class="popup products_popup"><span class="close close-popup">x</span>'+r+'</div>');
 
 		var top = ($(window).scrollTop() + $(window).height() / 2 - $('.products_popup').height() / 2);
 
-			if (top < $(window).scrollTop())
+		if (top < $(window).scrollTop())
 
-						top = 30;
-
-
-
-			$('.products_popup').css('top', top + 'px');
-
-		});
+				top = 30;
 
 
 
-		$('.products_popup').css('left', ($(window).width() / 2 - $('.products_popup').width() / 2 - 10) + 'px');
+		$('.products_popup').css('top', top + 'px');
 
 		$(window).resize(function() {
 
@@ -748,15 +1034,27 @@ function popup_product() {
 
 
 
-		$('.products_popup .close, .products_popup .close_popup').on('click', function() {
+		$('.products_popup .close, .products_popup .close_popup, .fade').unbind('click').on('click', function() {
 
 			var e = $('.products_popup');
 
-  			e.slideUp();
+      var top = ($(window).scrollTop() + $(window).height() / 2 - $('.products_popup').height() / 2);
 
-	    	unfade();
+      if (top < $(window).scrollTop())
+
+        top = 30;
+
+
+
+  		$('.products_popup').css('top', (top - 1000) + 'px');
+
+      $('.products_popup').fadeOut(300);
+
+    	unfade();
 
 			setTimeout(function(){e.remove()}, 500);
+
+      return false;
 
 		});
 
@@ -1044,177 +1342,33 @@ $('body').on('click', function(event) {
 
 var agencyLineChart, agencyBarChart, agencyDoughnutChart;
 
-const CHART_COLORS = {
-
-  white: "#fff",
-
-  green: "#4BD158",
-
-  purple: "#A265FF",
-
-  yellow: "#FFB202",
-
-  pink: "#ED02AD",
-
-  blue: "#218EF5",
-
-  lightBlue: "#4A8EFF",
-
-  red: "#EF364F",
-
-  cyan: "#38C1F2",
-
-  orange: "#F19B36",
-
-  lightGreen: "#32E28B",
-
-};
-
-
-
-const TOOLTIP_SETTINGS = {
-
-  titleColor: CHART_COLORS.white,
-
-  bodyColor: CHART_COLORS.white,
-
-  borderWidth: 1,
-
-  borderColor: "rgb(65, 66, 67)",
-
-  borderRadius: 10,
-
-  padding: 15,
-
-  titleFontSize: 16,
-
-  bodyFontSize: 20,
-
-  bodyWeight: "bold",
-
-};
-
-
-
-const GRID_SETTINGS = {
-
-  color: "#363636",
-
-};
-
-
-
-const gradientTooltipPlugin = {
-
-  id: "gradientTooltip",
-
-  beforeDraw: function (chart) {
-
-    const tooltip = chart.tooltip;
-
-    if (tooltip._active && tooltip._active.length) {
-
-      const ctx = chart.ctx;
-
-      const tooltipModel = tooltip;
-
-
-
-      const gradient = ctx.createLinearGradient(
-
-        tooltipModel.x,
-
-        tooltipModel.y - tooltipModel.height,
-
-        tooltipModel.x,
-
-        tooltipModel.y
-
-      );
-
-
-
-      gradient.addColorStop(0, "rgba(45, 46, 46, 1)");
-
-      gradient.addColorStop(1, "rgb(33, 36, 36)");
-
-
-
-      tooltipModel.gradientBackground = gradient;
-
-    }
-
-  },
-
-};
-
-
-
-const DOUGHNUT_CHART_CONFIG = {
-
-  data: {
-
-    labels: ["name1", "name2", "name3"],
-
-    values: [60, 20, 20],
-
-    colors: [
-
-      CHART_COLORS.red,
-
-      CHART_COLORS.cyan,
-
-      CHART_COLORS.orange,
-
-      CHART_COLORS.lightGreen,
-
-    ],
-
-  },
-
-
-
-  display: {
-
-    cutout: "70%",
-
-    borderRadius: 12,
-
-    borderWidth: 0,
-
-    spacing: 8,
-
-  },
-
-};
-
 
 
 function init_chart_line() {
 
-  const canvas = document.getElementById(canvasId);
+  const canvas = document.getElementById('chart-line');
 
   const ctx = canvas.getContext("2d");
-
-  const formattedLabels = formatMonthLabels(LINE_CHART_CONFIG.data.labels);
 
   var labels = [],
 
       values = [],
 
-      json = $.parseJSON($('.agency_income_chart').html());
+      json = $.parseJSON($('.income_all_chart').html());
 
 
 
   for (var x in json) {
 
-    labels[labels.length] = json[x].lbl;
+    labels[labels.length] = x;
 
-    values[values.length] = json[x].total;
+    values[values.length] = json[x];
 
   }
 
+//console.log(labels);
 
+//console.log(values);
 
   const chartConfig = {
 

@@ -19,12 +19,12 @@
 </td>
 <tr>
  <td class="name">Password</td>
- <td><input type="password" name="password" value="" /></td>
+ <td><input type="password" name="password" value="" autocomplete="new-password" /></td>
 </td>
 
 <?php if ($userinfo['usertype'] == 'A' && $root_admin) {?>
 <tr>
- <td class="name">Role</td>
+ <td class="name">User type</td>
  <td>
 <select name="posted_data[usertype]">
 <option value="C"<?php  if ($user['usertype'] == 'C') echo ' selected'; ?>>Customer</option>

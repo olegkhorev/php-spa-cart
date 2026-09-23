@@ -1,5 +1,5 @@
 <?php
-q_load('news');
+func_load('news');
 
 if ($_GET['mode'] == 'delete_image') {
 	$image = $db->row("SELECT * FROM news_images WHERE newsid='".$get['2']."'");

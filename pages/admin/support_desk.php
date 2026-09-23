@@ -1,5 +1,5 @@
 <?php
-q_load('ticket');
+func_load('ticket');
 if ($get['2'] == 'reset') {
 	$_SESSION['search_sd'] = array();
 	redirect('/admin/support_desk');

@@ -26,7 +26,7 @@ $port = 995; # server port
 
 include SITE_ROOT . '/includes/tickets_smtp.php';
 
-q_load('ticket');
+func_load('ticket');
 
 function writelog($str) {
 	$logfile = SITE_ROOT."/var/log/tickets_cron.txt";
