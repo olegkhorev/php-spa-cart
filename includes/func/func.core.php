@@ -475,25 +475,6 @@ function func_array_empty($data) {
     return true;
 }
 
-function func_get_carriers() {
-    global $config, $carrier;
-
-    $carriers = array();
-    if ($config['Shipping']['use_intershipper'] == 'Y') {
-        $carriers[] = array('Intershipper', 'InterShipper');
-        $carrier = 'Intershipper';
-    } else {
-        $carriers[] = array('CPC',  'Canada Post');
-        $carriers[] = array('FDX',  'FedEx');
-        $carriers[] = array('USPS', 'U.S.P.S');
-        $carriers[] = array('ARB',  'Airborne / DHL');
-        $carriers[] = array('APOST','Australia Post');
-        $carriers[] = array('1800C', '1-800Courier');
-    }
-
-    return $carriers;
-}
-
 function func_get_state($state_code, $country_code) {
     global $db;
 

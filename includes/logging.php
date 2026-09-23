@@ -35,7 +35,7 @@ function errorHandler($n, $m, $f, $l) {
 		$string .= "\n".$v['file'].':'.$v['line'];
 
 	$string .= "\n\n---\n\n";
-	$fp = fopen(SITE_ROOT.'/var/log/'.$file_name.'-'.date('m-d-Y').'.log', 'a+');
+	$fp = fopen(SITE_ROOT.'/var/log/'.$file_name.'-'.date('Y-m-d').'.log', 'a+');
 	fputs($fp, $string);
 	fclose($fp);
 	if (ADMIN_AREA || DEVELOPMENT)
@@ -73,7 +73,7 @@ function errorShutdown() {
 	echo $string;
 
 	$string .= "\n---\n\n";
-	$fp = fopen(SITE_ROOT.'/var/log/php-'.date('m-d-Y').'.log', 'a+');
+	$fp = fopen(SITE_ROOT.'/var/log/php-'.date('Y-m-d').'.log', 'a+');
 	fputs($fp, $string);
 	fclose($fp);
 }
@@ -93,7 +93,7 @@ function log_sql($string) {
 
 	$string .= "\n\n---\n\n";
 
-	$fn = SITE_ROOT . '/var/log/sql-'.date('m-d-Y').'.log';
+	$fn = SITE_ROOT . '/var/log/sql-'.date('Y-m-d').'.log';
 	$string .= file_get_contents($fn);
 	file_put_contents($fn, $string);
 	if (ADMIN_AREA || DEVELOPMENT)

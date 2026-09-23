@@ -1,7 +1,4 @@
 <?php
-if (!DEVELOPMENT)
-	include SITE_ROOT.'/includes/classes/class.JavaScriptPacker.php';
-
 $dir = SITE_ROOT.'/var/cache/'.$lng.'/js';
 
 foreach ($js as $v) {
