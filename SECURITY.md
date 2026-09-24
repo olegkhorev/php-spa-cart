@@ -8,3 +8,5 @@ The following historical security vulnerabilities have been formally patched and
 * **CVE-2024-58304** - Stored Cross-Site Scripting (XSS) via product description (FIXED).
 
 Please ensure you are using the latest main branch of this repository to maintain a secure environment.
+
+Versions 1.9.0.3 and below are vulnerable to XSS. Please upgrade to version 2.0.0 or later where input sanitization has been applied to the product description fields.
