@@ -81,5 +81,3 @@ It's free under the MIT license.
 
 I recommend to check this article:
 https://spa-cart.com/page/about_spa_cart.html
-
-Issues CVE-2024-58304, CVE-2023-43149 and other knows were fixed.
