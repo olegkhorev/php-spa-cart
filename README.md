@@ -56,7 +56,7 @@ SSL port is 995. Not SSL port is 110.
 h. To disable the Design theme color mode edit settings.php
 $design_mode = 0;
 
-e. Predictive search
+e. Predictive search - add Cron job for every day, for example. Or run it manually if you want to see the changes immediately.
 http://[URL]/cron_fuzzy.php?pswd=01230 (I recommend to change the 01230 password in the script)
 
 It rebuilds the predictive search cache.
