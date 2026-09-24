@@ -11,16 +11,16 @@ if ($zones) {
 <form method="post" name="zonesform">
 <input type="hidden" name="mode" value="delete" />
 
-<table cellpadding="3" cellspacing="1" width="100%" class="lines-table">
-
+<table cellpadding="3" cellspacing="1" width="100%" class="lines-table resp-table">
+<thead>
 <tr>
   <th width="10">&nbsp;</th>
   <th width="100%">{lng[Zone name]}</th>
 </tr>
-
+</thead>
 <tr>
   <td><input type="checkbox" disabled="disabled" /></td>
-  <td>{lng[Default zone]}</td>
+  <td><label>{lng[Zone name]}</label>{lng[Default zone]}</td>
 </tr>
 
 <?php
@@ -28,7 +28,7 @@ if ($zones) {
 	foreach ($zones as $z) {
 		echo '<tr>
   <td><input type="checkbox" name="to_delete['.$z['zoneid'].']" /></td>
-  <td><a href="'.$current_location.'/admin/zones/'.$z['zoneid'].'">'.$z['zone_name'].'</a></td>
+  <td><label>{lng[Zone name]}</label><a href="'.$current_location.'/admin/zones/'.$z['zoneid'].'">'.$z['zone_name'].'</a></td>
 		</tr>';
 	}
 ?>

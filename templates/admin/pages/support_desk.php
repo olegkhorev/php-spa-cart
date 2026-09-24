@@ -6,7 +6,7 @@
 
 <form name="searchform" action="/admin/support_desk/search" method="post" href="/admin/support_desk/?mode=search">
 
-<table cellpadding="4" cellspacing="0" width="100%">
+<table cellpadding="4" cellspacing="0" width="100%" class="search_table search_table-support-desk">
 
 {php $empty='Y'; $name="posted_data[type]"; $type=$search_prefilled['type'];}
 <tr>
@@ -160,8 +160,8 @@ if ($total_pages > 2) {
 {/if}
 
 
-<table cellpadding="2" cellspacing="1" width="100%" class="lines-table">
-
+<table cellpadding="2" cellspacing="1" width="100%" class="lines-table resp-table resp-table-no-margin">
+<thead>
 <tr>
         <th>&nbsp;</th>
         <th>#</th>
@@ -173,38 +173,30 @@ if ($total_pages > 2) {
         <th>{lng[Date]}</th>
         <th>{lng[Priority]}</th>
 </tr>
-
+</thead>
 {foreach $tickets as $i}
 <tr>
         <td width="5"><input type="checkbox" name="to_delete[{$i['ticketid']}]" /></td>
-        <td width='30'><a href="/admin/ticket/{$i['ticketid']}">{$i['ticketid']}</a></td>
-        <td width="100" align='center'>{php $mode = ''; $name="statuses[".$i['ticketid']."]"; $status=$i['status'];}{include="common/ticket_status.php"}</td>
-        <td width="100" align='center'>{php $mode='static'; $name="types[".$i['ticketid']."]"; $type=$i['type'];}{include="common/ticket_type.php"}</td>
-        <td><a href="/admin/ticket/{$i['ticketid']}">{$i['subject']}{if $i['admin_read'] == 'N'} <font color="red">(Not read)</font>{/if}</a></td>
-        <td width='200' align='center'>
+        <td width='30'><label>#</label><a href="/admin/ticket/{$i['ticketid']}">{$i['ticketid']}</a></td>
+        <td width="100" align='center' class="no-word-break"><label>{lng[Status]}</label>{php $mode = ''; $name="statuses[".$i['ticketid']."]"; $status=$i['status'];}{include="common/ticket_status.php"}</td>
+        <td width="100" align='center'><label>{lng[Type]}</label>{php $mode='static'; $name="types[".$i['ticketid']."]"; $type=$i['type'];}{include="common/ticket_type.php"}</td>
+        <td><label>{lng[Subject]}</label><a href="/admin/ticket/{$i['ticketid']}">{$i['subject']}{if $i['admin_read'] == 'N'} <font color="red">(Not read)</font>{/if}</a></td>
+        <td width='200' align='center'><label>{lng[Customer]}</label>
 {if $i['userid']}
         <a href="/admin/user/{$i['userid']}">{$i['customer']['firstname']} {$i['customer']['lastname']} ({$i['email']})</a>
 {else}
 {$i['email']}
 {/if}
         </td>
-        <td width='70' align='center'>{$i['count']}</td>
-        <td width='150' align='center'><a href="/admin/ticket/{$i['ticketid']}">{php echo date($datetime_format, $i['date']);}</a></td>
-        <td width="70" align="center">{php $mode="static"; $value=$i['priority'];}{include="common/ticket_priority.php"}</td>
+        <td width='70' align='center'><label>{lng[Messages]}</label>{$i['count']}</td>
+        <td width='150' align='center'><label>{lng[Date]}</label><a href="/admin/ticket/{$i['ticketid']}">{php echo date($datetime_format, $i['date']);}</a></td>
+        <td width="70" align="center"><label>{lng[Priority]}</label>{php $mode="static"; $value=$i['priority'];}{include="common/ticket_priority.php"}</td>
 </tr>
 {/foreach}
-
-<tr>
-        <td colspan="9">
-<div class="fixed_save_button">
-        <input type="button" value="{lng[Update]}" onclick="javascript: submitForm(this, 'update');" />
-        <input type="button" value="{lng[Delete selected]}" onclick="if (confirm('Are you sure?', $(this)) || confirmed) submitForm(this, 'delete');" />
-</div>
-        </td>
-</tr>
-
-
 </table>
+<div class="fixed_save_button">
+<input type="button" value="{lng[Update]}" onclick="javascript: submitForm(this, 'update');" /> <input type="button" value="{lng[Delete selected]}" onclick="if (confirm('Are you sure?', $(this)) || confirmed) submitForm(this, 'delete');" />
+</div>
 </form>
 
 <br />

@@ -17,21 +17,22 @@ if ($total_pages > 2) {
 
 <a href="javascript: void(0);" onclick="javascript: check_all(document.brandsform, 'to_delete', true);">{lng[Check all]}</a> / <a href="javascript: void(0);" onclick="javascript: check_all(document.brandsform, 'to_delete', false);">{lng[Uncheck all]}</a>
 
-<table cellpadding="3" cellspacing="1" width="600" class="lines-table">
+<table cellpadding="3" cellspacing="1" width="600" class="lines-table resp-table">
+<thead>
 <tr>
 	<th width="10">&nbsp;</th>
 	<th width="60%">{lng[Name]}</th>
 	<th width="20%">{lng[Active]}</th>
 	<th width="20%">{lng[Pos]}</th>
 </tr>
-
+</thead>
 <?php
 foreach ($brands as $b) {
 	echo '<tr>
 	<td><input type="checkbox" name="to_delete['.$b['brandid'].']" value="Y" /></td>
-	<td><a href="'.$current_location.'/admin/brands/'.$b['brandid'].'">'.$b['name'].'</a></td>
-	<td align="center"><input type="checkbox" name="to_update['.$b['brandid'].'][active]" value="Y"'.($b['active'] == 'Y' ? ' checked="checked"' : '').' /></td>
-	<td align="center"><input type="text" size="5" name="to_update['.$b['brandid'].'][orderby]" value="'.$b['orderby'].'" /></td>
+	<td><label>{lng[Name]}</label><a href="'.$current_location.'/admin/brands/'.$b['brandid'].'">'.$b['name'].'</a></td>
+	<td align="center"><label>{lng[Active]}</label><input type="checkbox" name="to_update['.$b['brandid'].'][active]" value="Y"'.($b['active'] == 'Y' ? ' checked="checked"' : '').' /></td>
+	<td align="center"><label>{lng[Pos]}</label><input type="text" size="5" name="to_update['.$b['brandid'].'][orderby]" value="'.$b['orderby'].'" /></td>
 </tr>';
 }
 ?>

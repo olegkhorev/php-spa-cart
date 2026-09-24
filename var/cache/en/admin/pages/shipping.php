@@ -33,9 +33,9 @@ function expand_all(flag) {
 }
 //]]></script>
 
-<table cellpadding="2" cellspacing="1" width="900" class="lines-table">
-
-<tr class="TableHead">
+<table cellpadding="2" cellspacing="1" width="900" class="lines-table resp-table">
+<thead>
+<tr>
   <th>Shipping method</th>
   <th>Delivery time</th>
   <th>Destination</th>
@@ -43,19 +43,20 @@ function expand_all(flag) {
   <th>Active</th>
   <th></th>
 </tr>
+</thead>
 <?php 
 foreach ($shipping as $s) {
 	if ($s['code'] == "") {
 		echo '
 <tr>
-  <td><input type="text" name="data['.$s['shippingid'].'][shipping]" size="27" value="'.escape($s['shipping'], 2).'" /></td>
-  <td align="center"><input type="text" name="data['.$s['shippingid'].'][shipping_time]" size="8" value="'.escape($s['shipping_time'], 2).'" /></td>
-  <td align="center"><select name="data['.$s['shippingid'].'][destination]">
+  <td><label>Shipping method</label><input type="text" name="data['.$s['shippingid'].'][shipping]" size="27" value="'.escape($s['shipping'], 2).'" /></td>
+  <td align="center"><label>Delivery time</label><input type="text" name="data['.$s['shippingid'].'][shipping_time]" size="8" value="'.escape($s['shipping_time'], 2).'" /></td>
+  <td align="center" class="no-word-break"><label>Destination</label><select name="data['.$s['shippingid'].'][destination]">
     <option value="I"'.($s['destination'] == 'I' ? ' selected="selected"' : '').'>International</option>
     <option value="N"'.($s['destination'] == 'N' ? ' selected="selected"' : '').'>National</option>
   </select></td>
-  <td align="center"><input type="text" name="data['.$s['shippingid'].'][orderby]" size="4" value="'.$s['orderby'].'" /></td>
-  <td nowrap="nowrap" align="center"><input type="checkbox" name="data['.$s['shippingid'].'][active]" value="Y"'.($s['active'] == 'Y' ? ' checked="checked"' : '').' /></td>
+  <td align="center"><label>Pos</label><input type="text" name="data['.$s['shippingid'].'][orderby]" size="4" value="'.$s['orderby'].'" /></td>
+  <td nowrap="nowrap" align="center"><label>Active</label><input type="checkbox" name="data['.$s['shippingid'].'][active]" value="Y"'.($s['active'] == 'Y' ? ' checked="checked"' : '').' /></td>
   <td><button type="button" onclick="self.location=\''.$current_location.'/admin/shipping/?mode=delete&amp;shippingid='.$s['shippingid'].'\'">Delete</button></td>
 </tr>';
 	}
@@ -63,36 +64,28 @@ foreach ($shipping as $s) {
 ?>
 
 <tr>
-  <td colspan="7"><br /><h3>Add shipping method</td>
+  <td colspan="7" class="var-wh-100"><br /><h3>Add shipping method</td>
 </tr>
 
 <tr>
-  <td><input type="text" name="add[shipping]" size="27" /></td>
-  <td align="center"><input type="text" name="add[shipping_time]" size="10" /></td>
-  <td align="center"><select name="add[destination]">
+  <td><label>Shipping method</label><input type="text" name="add[shipping]" size="27" /></td>
+  <td align="center"><label>Delivery time</label><input type="text" name="add[shipping_time]" size="10" /></td>
+  <td align="center" class="no-word-break"><label>Destination</label><select name="add[destination]">
     <option value="I">International</option>
     <option value="N">National</option>
   </select></td>
 
-  <td align="center"><input type="text" name="add[orderby]" size="4" value="0" /></td>
-  <td align="center"><input type="checkbox" name="add[active]" value="Y" checked="checked" /></td>
+  <td align="center"><label>Pos</label><input type="text" name="add[orderby]" size="4" value="0" /></td>
+  <td align="center"><label>Active</label><input type="checkbox" name="add[active]" value="Y" checked="checked" /></td>
   <td></td>
 </tr>
 
-<tr>
-  <td colspan="7">&nbsp;</td>
-</tr>
+</table>
 
-<tr>
-  <td colspan="7">
 <div class="fixed_save_button">
     <button type="submit">Apply changes</button>
 </div>
-  </td>
-</tr>
 
-
-</table>
 </form>
 
 <br /><br />

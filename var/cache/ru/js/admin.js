@@ -704,6 +704,16 @@ function ajax_clicks_admin() {
 
 
 
+    if ($('.navigation-overlay').is(':visible')) {
+
+    	$('.navigation-overlay').hide();
+
+    	$('.navigation-admin').hide();
+
+    }
+
+
+
 		if ($(this).closest('.navigation-admin').length) {
 
         $('.navigation-admin li').removeClass('clicked');

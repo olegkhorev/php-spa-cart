@@ -62,7 +62,8 @@ if ($total_pages > 2) {
 <?php 
 if ($orders) {
 ?>
-<table cellspacing="1" cellpadding="14" width="900" class="lines-table">
+<table cellspacing="1" cellpadding="14" width="900" class="lines-table resp-table">
+<thead>
 <tr>
  <th>#</th>
  <th>Status</th>
@@ -70,6 +71,7 @@ if ($orders) {
  <th>Date</th>
  <th>Total</th>
 </tr>
+</thead>
 <?php 
 	$total = 0;
 	$total_paid = 0;
@@ -80,8 +82,8 @@ if ($orders) {
 
 		echo '
 		<tr>
-			<td width="10"><a href="/admin/invoice/'.$v['orderid'].'">#'.$v['orderid'].'</a></td>
-			<td width="100">
+			<td width="10"><label>#</label><a href="/admin/invoice/'.$v['orderid'].'">#'.$v['orderid'].'</a></td>
+			<td width="100" class="no-word-break"><label>Status</label>
 				<select name="status['.$v['orderid'].']">';
 		foreach ($order_statuses as $k2=>$v2) {			echo '<option value="'.$k2.'"'.($k2 == $v['status'] ? ' selected' : '').'>'.$v2.'</option>';		}
 
@@ -92,15 +94,15 @@ if ($orders) {
 #exit(print_R($v));
 
 		echo '</td>
-			<td nowrap><a href="/admin/user/'.$v['userid'].'">'.$v['firstname'].' '.$v['lastname'].' ('.$v['email'].')</a></td>
-			<td width="130" nowrap><a href="/admin/invoice/'.$v['orderid'].'">'.date($datetime_format, $v['date']).'</a></td>
-			<td align="right"><a href="/admin/invoice/'.$v['orderid'].'">$'.$v['total'].'</a></td>
+			<td nowrap><label>Customer</label><a href="/admin/user/'.$v['userid'].'">'.$v['firstname'].' '.$v['lastname'].' ('.$v['email'].')</a></td>
+			<td width="130" nowrap><label>Date</label><a href="/admin/invoice/'.$v['orderid'].'">'.date($datetime_format, $v['date']).'</a></td>
+			<td align="right"><label>Total</label><a href="/admin/invoice/'.$v['orderid'].'">$'.$v['total'].'</a></td>
 		</tr>
 		';
   	}
 
-	echo '<tr><td colspan="5" align="right"><hr />Total: $'.$total.'</td></tr>';
-	echo '<tr><td colspan="5" align="right"><b>Total paid: $'.$total_paid.'</b></td></tr>';
+	echo '<tr class="resp-width-100">><td colspan="5" align="right"><hr />Total: $'.$total.'</td></tr>';
+	echo '<tr class="resp-width-100">><td colspan="5" align="right"><b>Total paid: $'.$total_paid.'</b></td></tr>';
 	echo '</table>';
 ?>
 <div class="fixed_save_button">

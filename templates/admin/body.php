@@ -114,6 +114,7 @@ if (!empty($js)) {
 {include="admin/pages/login_new.php"}
 {else}
 	<div class="container">
+		<div class="navigation-overlay"></div>
 		<div class="navigation-admin">
 {if $login && $userinfo['usertype'] == 'A'}
 			<ul>
@@ -339,11 +340,9 @@ if (!empty($js)) {
 		<div class="main">
 {if $login}
 			<div class="topbar">
-{*
-				<div class="toggle">
+				<div class="toggle toggle-left">
 					<ion-icon name="menu-outline"></ion-icon>
 				</div>
-*}
 				<div class="header-links">
 <div id="quick_search_form">
 <label>{lng[Search]}: </label>
@@ -376,6 +375,16 @@ if (!empty($js)) {
 <div class="loading"><img src="{$current_location}/images/spacer.gif" alt="..."/></div>
 <a class="goback-admin hidden ajax_link" href="#"></a>
 <script>
+$('.navigation-admin li').click(function() {
+	$('.navigation-admin li').removeClass('clicked');
+	$(this).addClass('clicked');
+});
+
+$('.toggle-left, .navigation-overlay').click(function() {
+	$('.navigation-overlay').toggle();
+	$('.navigation-admin').toggle();
+});
+
 function custom_elements() {
 	if ($('body').hasClass('no-logged')) {
 		return;

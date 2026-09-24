@@ -2,40 +2,40 @@
 <input type="hidden" name="mode" value="" />
 
 <a href="javascript: void(0);" onclick="javascript: check_all(document.states_form, 'to_delete', true);">Check all</a> / <a href="javascript: void(0);" onclick="javascript: check_all(document.states_form, 'to_delete', false);">Uncheck all</a>
-<table cellpadding="2" cellspacing="1" class="states lines-table">
-
+<table cellpadding="2" cellspacing="1" class="states lines-table resp-table">
+<thead>
 <tr>
   <th>&nbsp;</th>
   <th>Code</th>
   <th>States</th>
 </tr>
-
+</thead>
 <?php 
 if ($states) {
 	foreach ($states as $v) {
 		echo '<tr>
   <td width="1%" align="center"><input type="checkbox" name="to_delete['.$v['code'].']" /></td>
-  <td width="5%" align="center"><input type="text" name="posted_data['.$v['code'].'][code]" size="10" value="'.escape($v['code']).'" /></td>
-  <td align="center"><input type="text" name="posted_data['.$v['code'].'][state]" size="35" value="'.escape($v['state']).'" /></td>
+  <td width="5%" align="center"><label>Code</label><input type="text" name="posted_data['.$v['code'].'][code]" size="10" value="'.escape($v['code']).'" /></td>
+  <td align="center"><label>States</label><input type="text" name="posted_data['.$v['code'].'][state]" size="35" value="'.escape($v['state']).'" /></td>
 </tr>';
 	}
 } else  {
-	echo "<tr><td colspan='3' align='center'>";
 ?>
-No states defined in this country
+ <tr>
+  <td colspan="3" align="center" class="var-wh-100">No states defined in this country</td>
+ </tr>
 <?php 
- echo "</td></tr>";
 }
 ?>
 
 <tr>
- <td colspan="3"><h3>Add new</h3></td>
+ <td colspan="3" class="var-wh-100"><h3>Add new</h3></td>
 </tr>
 
 <tr>
   <td>&nbsp;</td>
-  <td width="5%" align="center"><input type="text" name="new_state[code]" size="10" /></td>
-  <td align="center"><input type="text" name="new_state[state]" size="35" /></td>
+  <td width="5%" align="center"><label>Code</label><input type="text" name="new_state[code]" size="10" /></td>
+  <td align="center"><label>States</label><input type="text" name="new_state[state]" size="35" /></td>
 </tr>
 
 </table>

@@ -1,1 +1,1 @@
-Spa-Cart 1.9.2
+Spa-Cart 2.0.0

@@ -71,7 +71,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 			$tax_details['price_includes_tax'] = $price_includes_tax;
 			$tax_details['display_including_tax'] = $display_including_tax;
 			$tax_details['display_info'] = $display_info;
-			$tax_details['regnumber'] = $tax_regnumber;
 			$tax_details['priority'] = $tax_priority;
 			$_SESSION['tax_details'] = $tax_details;
 		} else {
@@ -90,7 +89,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 				'price_includes_tax' => $price_includes_tax,
 				'display_including_tax' => $display_including_tax,
 				'display_info' => $display_info,
-				'regnumber' => $tax_regnumber,
 				'priority' => $tax_priority
 			);
 
@@ -241,10 +239,6 @@ if ($get['2'] == 'add' || !empty($get['2'])) {
 		$template['tax_details'] = $tax_details;
 
 	$template['page'] = get_template_contents('admin/pages/tax_edit.php');
-} else {
-	$template['location'] .= ' &gt; '.lng('Taxes');
-	$template['taxes'] = $db->all("SELECT taxes.*, COUNT(tax_rates.taxid) as rates_count FROM taxes LEFT JOIN tax_rates ON tax_rates.taxid=taxes.taxid $provider_condition GROUP BY taxes.taxid ORDER BY priority, tax_name");
-	$template['page'] = get_template_contents('admin/pages/taxes.php');
 }
 
 $template['head_title'] = lng('Taxes').' :: '.$template['head_title'];

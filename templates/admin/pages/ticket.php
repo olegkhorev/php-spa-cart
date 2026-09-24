@@ -14,13 +14,13 @@
 
 <form method="POST" name="ticketform" enctype="multipart/form-data"{* class="noajax"*}>
 <input type="hidden" name="mode" value="">
-<table cellspacing='1' cellpadding='2' width='100%'>
+<table cellspacing='1' cellpadding='2' width='100%' class="search_table search_table-support-desk">
 
 {if $ticket}
 <tr>
  <td valign="top" align='right'>{lng[Admin notes]}:</td>
  <td width='10'>&nbsp;</td>
- <td><textarea name="ticket[notes]" rows="10" cols="80">{$ticket['notes']}</textarea></td>
+ <td><textarea name="ticket[notes]" rows="10" cols="80" class="border-radius-25">{$ticket['notes']}</textarea></td>
 </tr>
 {php $name="ticket[type]"; $type=$ticket['type'];}
 <tr>
@@ -94,7 +94,7 @@
 <tr>
  <td valign='top' align='right'>{lng[Ticket message]}:</td>
  <td width='10'>&nbsp;</td>
- <td><textarea name="ticket[message]" id="ticket_message" cols="85" rows="5">{$ticket['message']}</textarea></td>
+ <td><textarea name="ticket[message]" id="ticket_message" cols="85" rows="5" class="border-radius-25">{$ticket['message']}</textarea></td>
 </tr>
 
 <tr>
@@ -187,15 +187,15 @@ if ($total_pages > 2) {
 }
 ?>
 
-<table cellspacing='0' cellpadding'0' width='100%'>
+<table cellspacing='0' cellpadding'0' width='100%' class="resp-table">
 {foreach $messages as $i}
 <tr>
- <td align='left'><a name="m{$i['messageid']}"></a>&nbsp;<a href="/admin/user/{$i['userid']}">{$i['firstname']} {$i['lastname']} ({$i['email']})</a>{if $i['ip']} (IP: {$i['ip']}){/if}</td>
- <td align='right' width="150">{php echo date($datetime_format, $i['date']);}</td>
+ <td align='left'><label>{lng[Customer]}</label><a name="m{$i['messageid']}"></a>&nbsp;<a href="/admin/user/{$i['userid']}">{$i['firstname']} {$i['lastname']} ({$i['email']})</a>{if $i['ip']} (IP: {$i['ip']}){/if}</td>
+ <td align='right' width="150"><label>{lng[Date]}</label>{php echo date($datetime_format, $i['date']);}</td>
  <td align='right' width='200'><a href="#add_new" onclick="javascript: edit_message('{$i['messageid']}')">Edit</a> / <a href="javascript: void(0);" onclick="javascript: if (confirm('Delete this message?')) self.location='/admin/ticket/{$ticket['ticketid']}?mode=delete_message&messageid={$i['messageid']}';">Delete</a>&nbsp;</td>
 </tr>
 <tr>
- <td><hr />{php echo func_eol2br($i['message']);}
+ <td><hr /><label>{lng[Message]}</label>{php echo func_eol2br($i['message']);}
 
 <br />
 
@@ -228,9 +228,9 @@ Clone message to:
 <form method="POST" name="mesform" enctype="multipart/form-data"{* class="noajax"*}>
 <input type="hidden" name="mode" value="add_message">
 <input type="hidden" name="messageid">
-<table cellspacing='0' cellpadding'0' width="600">
+<table cellspacing='0' cellpadding'0' width="600" class="new-ticket-message-table">
 <tr>
- <td valign="top"><textarea cols="80" rows="10" name="message"></textarea></td>
+ <td valign="top"><textarea cols="80" rows="10" name="message" class="border-radius-25"></textarea></td>
  <td valign="top">
 <b>{lng[Upload files]}</b><br />
 <input size="40" type="file" name="attachments[]"><br />

@@ -1516,3 +1516,6 @@ canvas#chart-line {
 .mdl-textfield.mdl-textarea {
     border-radius: 25px;
 }
+table.new_variant select, .border-radius-25 {
+	border-radius: 25px;
+}

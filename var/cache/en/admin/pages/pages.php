@@ -4,22 +4,22 @@
 if (empty($get['2'])) {
 ?>
 
-<table cellpadding="3" width="600" cellspacing="1" class="lines-table">
-
+<table cellpadding="3" width="600" cellspacing="1" class="lines-table resp-table">
+<thead>
 <tr>
 	<th width="10">&nbsp;</th>
 	<th width="100%">Page</th>
 	<th width="100">Pos</th>
 </tr>
-
+</thead>
 <?php 
 if ($pages) {
 	foreach ($pages as $p) {
 ?>
 <tr>
 	<td><input type="checkbox" name="to_delete[<?php  echo $p['pageid'];?>]" /></td>
-	<td><a href="<?php  echo $current_location.'/admin/pages/'.$p['pageid']; ?>"><?php  echo $p['title']; ?></a></td>
-	<td><input size="5" type="text" name="to_update[<?php  echo $p['pageid'];?>][orderby]" value="<?php  echo $p['orderby'];?>"></td>
+	<td><label>Page</label><a href="<?php  echo $current_location.'/admin/pages/'.$p['pageid']; ?>"><?php  echo $p['title']; ?></a></td>
+	<td><label>Pos</label><input size="5" type="text" name="to_update[<?php  echo $p['pageid'];?>][orderby]" value="<?php  echo $p['orderby'];?>"></td>
 </tr>
 <?php 
 	}
@@ -80,7 +80,7 @@ CKEDITOR.config.protectedSource.push( /<\?[\s\S]*?\?>/g );   // PHP Code
 </tr>
 
 <tr>
-	<td height="10" class="FormButton" nowrap="nowrap">Title tag</td>
+	<td height="10" nowrap="nowrap">Title tag</td>
 	<td width="10" height="10"></td>
 	<td height="10">
 		<input type="text" size="65" name="meta_title" value="<?php  echo escape($page['meta_title'], 2); ?>" />
@@ -88,7 +88,7 @@ CKEDITOR.config.protectedSource.push( /<\?[\s\S]*?\?>/g );   // PHP Code
 </tr>
 
 <tr>
-	<td height="10" class="FormButton" nowrap="nowrap">Meta keywords</td>
+	<td height="10" nowrap="nowrap">Meta keywords</td>
 	<td width="10" height="10"></td>
 	<td height="10">
 		<textarea cols="65" rows="4" name="meta_keywords"><?php  echo $page['meta_keywords']; ?></textarea>
@@ -96,7 +96,7 @@ CKEDITOR.config.protectedSource.push( /<\?[\s\S]*?\?>/g );   // PHP Code
 </tr>
 
 <tr>
-	<td height="10" class="FormButton" nowrap="nowrap">Meta description</td>
+	<td height="10" nowrap="nowrap">Meta description</td>
 	<td width="10" height="10"></td>
 	<td height="10">
 		<textarea cols="65" rows="4" name="meta_description"><?php  echo $page['meta_description']; ?></textarea>

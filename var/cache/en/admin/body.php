@@ -114,6 +114,7 @@ if (!empty($js)) {
 <?php include SITE_ROOT."/var/cache/en/admin/pages/login_new.php";?>
 <?php } else  { ?>
 	<div class="container">
+		<div class="navigation-overlay"></div>
 		<div class="navigation-admin">
 <?php if ($login && $userinfo['usertype'] == 'A') {?>
 			<ul>
@@ -277,9 +278,8 @@ if (!empty($js)) {
 <div>
 <?php if (in_array('configuration', $allow_pages_ids) || $root_admin) {?>
 <a href="/admin/configuration/General">General settings</a>
-<?php } ?>
-<?php if (in_array('configuration', $allow_pages_ids) || $root_admin) {?>
 <a href="/admin/configuration/Company">Company information</a>
+<a href="/admin/configuration/Visual">Visual settings</a>
 <?php } ?>
 <?php if (in_array('configuration', $allow_pages_ids) || $root_admin) {?>
 <a href="/admin/configuration/Blog">Blog settings</a>
@@ -289,6 +289,9 @@ if (!empty($js)) {
 <?php } ?>
 <?php if (in_array('currencies', $allow_pages_ids) || $root_admin) {?>
 <a href="/admin/currencies">Currencies</a>
+<?php } ?>
+<?php if ($root_admin) {?>
+<a href="/cron_fuzzy.php?pswd=01230" class="no-ajax pointer-events-auto" target="_blank">Reset predictive search</a>
 <?php } ?>
 </div>
  </li>
@@ -337,11 +340,9 @@ if (!empty($js)) {
 		<div class="main">
 <?php if ($login) {?>
 			<div class="topbar">
-<?php /* ?>
-				<div class="toggle">
+				<div class="toggle toggle-left">
 					<ion-icon name="menu-outline"></ion-icon>
 				</div>
-<?php */ ?>
 				<div class="header-links">
 <div id="quick_search_form">
 <label>Search: </label>
@@ -374,6 +375,16 @@ if (!empty($js)) {
 <div class="loading"><img src="<?php echo $current_location;?>/images/spacer.gif" alt="..."/></div>
 <a class="goback-admin hidden ajax_link" href="#"></a>
 <script>
+$('.navigation-admin li').click(function() {
+	$('.navigation-admin li').removeClass('clicked');
+	$(this).addClass('clicked');
+});
+
+$('.toggle-left, .navigation-overlay').click(function() {
+	$('.navigation-overlay').toggle();
+	$('.navigation-admin').toggle();
+});
+
 function custom_elements() {
 	if ($('body').hasClass('no-logged')) {
 		return;

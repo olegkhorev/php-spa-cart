@@ -27,6 +27,7 @@
     </div>
 </div>
 
+<?php if ($config['Visual']['visual_boxes_below_banner'] == 'Y') {?>
 <div class="boxes-homepage-line">
 <div class="boxes-homepage">
  <div><h2>Admin area</h2><p>Admin: a@a.com<br />Pass: 01230<br /><a href="https://demo.spa-cart.com/admin" target="_blank">https://demo.spa-cart.com/admin</a></p></div>
@@ -37,6 +38,7 @@
  <div><h2>Mobile version</h2><p>Available automatically from your mobile phone.</p></div>
 </div>
 </div>
+<?php } ?>
 <div class="clear"></div>
 
 <?php if (lng('Site title') || lng('Site description')) {?>
@@ -62,6 +64,7 @@ if (lng('Site description'))
 </div>
 <?php } ?>
 
+<?php if ($config['Visual']['visual_testimonials'] == 'Y') {?>
 <div class="page-container page-container-testimonials">
 <div class="content">
 	<div id="center" class="no_left_menu">
@@ -85,6 +88,7 @@ if (lng('Site description'))
 </div>
 <div class="clear"></div>
 </div>
+<?php } ?>
 
 <div id="home-tabs">
 <ul class="home-tabs">
@@ -123,7 +127,7 @@ if (lng('Site description'))
 </div>
 <?php } ?>
 
-<?php if ($bestsellers) {?>
+<?php if ($config['Visual']['visual_bestsellers'] == 'Y' && $bestsellers) {?>
 <?php /* ?> End page container <?php */ ?>
 </div>
 </div>
@@ -165,7 +169,7 @@ if (lng('Site description'))
 </div>
 <?php } ?>
 
-<?php if ($most_viewed) {?>
+<?php if ($config['Visual']['visual_most_viewed'] == 'Y' && $most_viewed) {?>
 <?php /* ?> End page container <?php */ ?>
 </div>
 </div>
@@ -207,7 +211,7 @@ if (lng('Site description'))
 </div>
 <?php } ?>
 
-<?php if ($new_arrivals) {?>
+<?php if ($config['Visual']['visual_new_arrivals'] == 'Y' && $new_arrivals) {?>
 <?php /* ?> End page container <?php */ ?>
 </div>
 </div>
@@ -249,7 +253,7 @@ if (lng('Site description'))
 </div>
 <?php } ?>
 
-<?php if ($last_news) {?>
+<?php if ($config['Visual']['visual_news'] == 'Y' && $last_news) {?>
 <?php /* ?> Page container assign <?php */ ?>
 </div>
 </div>
@@ -287,7 +291,7 @@ if (lng('Site description'))
 </div>
 <?php } ?>
 
-<?php if ($last_blog) {?>
+<?php if ($config['Visual']['visual_blogs'] == 'Y' && $last_blog) {?>
 <?php /* ?> Page container assign <?php */ ?>
 </div>
 </div>

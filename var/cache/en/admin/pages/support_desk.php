@@ -6,7 +6,7 @@
 
 <form name="searchform" action="/admin/support_desk/search" method="post" href="/admin/support_desk/?mode=search">
 
-<table cellpadding="4" cellspacing="0" width="100%">
+<table cellpadding="4" cellspacing="0" width="100%" class="search_table search_table-support-desk">
 
 <?php $empty='Y'; $name="posted_data[type]"; $type=$search_prefilled['type'];; ?>
 <tr>
@@ -160,8 +160,8 @@ if ($total_pages > 2) {
 <?php } ?>
 
 
-<table cellpadding="2" cellspacing="1" width="100%" class="lines-table">
-
+<table cellpadding="2" cellspacing="1" width="100%" class="lines-table resp-table resp-table-no-margin">
+<thead>
 <tr>
         <th>&nbsp;</th>
         <th>#</th>
@@ -173,38 +173,30 @@ if ($total_pages > 2) {
         <th>Date</th>
         <th>Priority</th>
 </tr>
-
+</thead>
 <?php foreach ($tickets as $i) {?>
 <tr>
         <td width="5"><input type="checkbox" name="to_delete[<?php echo $i['ticketid'];?>]" /></td>
-        <td width='30'><a href="/admin/ticket/<?php echo $i['ticketid'];?>"><?php echo $i['ticketid'];?></a></td>
-        <td width="100" align='center'><?php $mode = ''; $name="statuses[".$i['ticketid']."]"; $status=$i['status'];; ?><?php include SITE_ROOT."/var/cache/en/common/ticket_status.php";?></td>
-        <td width="100" align='center'><?php $mode='static'; $name="types[".$i['ticketid']."]"; $type=$i['type'];; ?><?php include SITE_ROOT."/var/cache/en/common/ticket_type.php";?></td>
-        <td><a href="/admin/ticket/<?php echo $i['ticketid'];?>"><?php echo $i['subject'];?><?php if ($i['admin_read'] == 'N') {?> <font color="red">(Not read)</font><?php } ?></a></td>
-        <td width='200' align='center'>
+        <td width='30'><label>#</label><a href="/admin/ticket/<?php echo $i['ticketid'];?>"><?php echo $i['ticketid'];?></a></td>
+        <td width="100" align='center' class="no-word-break"><label>Status</label><?php $mode = ''; $name="statuses[".$i['ticketid']."]"; $status=$i['status'];; ?><?php include SITE_ROOT."/var/cache/en/common/ticket_status.php";?></td>
+        <td width="100" align='center'><label>Type</label><?php $mode='static'; $name="types[".$i['ticketid']."]"; $type=$i['type'];; ?><?php include SITE_ROOT."/var/cache/en/common/ticket_type.php";?></td>
+        <td><label>Subject</label><a href="/admin/ticket/<?php echo $i['ticketid'];?>"><?php echo $i['subject'];?><?php if ($i['admin_read'] == 'N') {?> <font color="red">(Not read)</font><?php } ?></a></td>
+        <td width='200' align='center'><label>Customer</label>
 <?php if ($i['userid']) {?>
         <a href="/admin/user/<?php echo $i['userid'];?>"><?php echo $i['customer']['firstname'];?> <?php echo $i['customer']['lastname'];?> (<?php echo $i['email'];?>)</a>
 <?php } else  { ?>
 <?php echo $i['email'];?>
 <?php } ?>
         </td>
-        <td width='70' align='center'><?php echo $i['count'];?></td>
-        <td width='150' align='center'><a href="/admin/ticket/<?php echo $i['ticketid'];?>"><?php echo date($datetime_format, $i['date']);; ?></a></td>
-        <td width="70" align="center"><?php $mode="static"; $value=$i['priority'];; ?><?php include SITE_ROOT."/var/cache/en/common/ticket_priority.php";?></td>
+        <td width='70' align='center'><label>Messages</label><?php echo $i['count'];?></td>
+        <td width='150' align='center'><label>Date</label><a href="/admin/ticket/<?php echo $i['ticketid'];?>"><?php echo date($datetime_format, $i['date']);; ?></a></td>
+        <td width="70" align="center"><label>Priority</label><?php $mode="static"; $value=$i['priority'];; ?><?php include SITE_ROOT."/var/cache/en/common/ticket_priority.php";?></td>
 </tr>
 <?php } ?>
-
-<tr>
-        <td colspan="9">
-<div class="fixed_save_button">
-        <input type="button" value="Update" onclick="javascript: submitForm(this, 'update');" />
-        <input type="button" value="Delete selected" onclick="if (confirm('Are you sure?', $(this)) || confirmed) submitForm(this, 'delete');" />
-</div>
-        </td>
-</tr>
-
-
 </table>
+<div class="fixed_save_button">
+<input type="button" value="Update" onclick="javascript: submitForm(this, 'update');" /> <input type="button" value="Delete selected" onclick="if (confirm('Are you sure?', $(this)) || confirmed) submitForm(this, 'delete');" />
+</div>
 </form>
 
 <br />

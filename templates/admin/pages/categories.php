@@ -32,8 +32,8 @@ if ($category) {
 <form action="{$current_location}/admin/categories/<?php echo $category['categoryid']; ?>" method="post" name="categories_form">
 <input type="hidden" name="mode" value="" />
 
-<table cellpadding="2" cellspacing="1" class="categories lines-table">
-
+<table cellpadding="2" cellspacing="1" class="categories lines-table resp-table">
+<thead>
 <tr>
   <th>{lng[Enabled]}</th>
   <th>{lng[Pos]}</th>
@@ -41,28 +41,24 @@ if ($category) {
   <th align="center">{lng[Products]}</th>
   <th align="center">{lng[Subcategories]}</th>
 </tr>
-
+</thead>
 <?php
 
 if (empty($categories)) {
 ?>
 <tr>
- <td colspan="6" align="center" class="submit-row"><br />{lng[No categories]}<br /><br /></td>
+ <td colspan="6" align="center" class="var-wh-100 submit-row"><br />{lng[No categories]}<br /><br /></td>
 </tr>
 <?php
 } else {
 	foreach ($categories as $v) {
 		echo '<tr>
-  <td width="1%"><input type="checkbox" size="3" name="posted_data['.$v['categoryid'].'][enabled]" maxlength="3" value="1"'.($v['enabled'] ? ' checked="checked"' : '').'" /></td>
-  <td width="1%"><input type="text" size="3" name="posted_data['.$v['categoryid'].'][orderby]" maxlength="3" value="'.$v['orderby'].'" /></td>
-  <td width="1%"><input type="radio" name="cat" value="'.$v['categoryid'].'" /></td>
-  <td><a href="/admin/categories/'.$v['categoryid'].'">'.$v['title'].'</a> (<a href="/admin/category/'.$v['categoryid'].'">';
-	?>
-	{lng[Edit|escape]}
-	<?php
-		echo '</a>)</td>
-  <td align="center"><a href="/admin/category/'.$v['categoryid'].'/products">'.$v['products'].'</a> ('.$v['products_global'].')</td>
-  <td align="center"><a href="/admin/categories/'.$v['categoryid'].'">'.$v['subcategories'].'</a></td>
+  <td width="1%"><label>{lng[Enabled]}</label><input type="checkbox" size="3" name="posted_data['.$v['categoryid'].'][enabled]" maxlength="3" value="1"'.($v['enabled'] ? ' checked="checked"' : '').'" /></td>
+  <td width="1%"><label>{lng[Pos]}</label><input type="text" size="3" name="posted_data['.$v['categoryid'].'][orderby]" maxlength="3" value="'.$v['orderby'].'" /></td>
+  <td width="1%"><label>&nbsp;</label><input type="radio" name="cat" value="'.$v['categoryid'].'" /></td>
+  <td><label>{lng[Category name]}</label><a href="/admin/categories/'.$v['categoryid'].'">'.$v['title'].'</a> (<a href="/admin/category/'.$v['categoryid'].'">{lng[Edit|escape]})</a>)</td>
+  <td align="center"><label>{lng[Products]}</label><a href="/admin/category/'.$v['categoryid'].'/products">'.$v['products'].'</a> ('.$v['products_global'].')</td>
+  <td align="center"><label>{lng[Subcategories]}</label><a href="/admin/categories/'.$v['categoryid'].'">'.$v['subcategories'].'</a></td>
 		</tr>';
 	}
 ?>
@@ -89,33 +85,31 @@ if (empty($categories)) {
 <input type="hidden" name="mode" value="update" />
 <input type="hidden" name="action" value="featured_products" />
 
-<table cellpadding="3" cellspacing="1" width="100%" class="lines-table">
-
+<table cellpadding="3" cellspacing="1" width="100%" class="lines-table resp-table">
+<thead>
 <tr>
   <th width="10">&nbsp;</th>
   <th width="70%">{lng[Product name]}</th>
   <th width="15%" align="center">{lng[Pos]}</th>
   <th width="15%" align="center">{lng[Active]}</th>
 </tr>
-
+</thead>
 <?php
 if ($featured_products) {
 	foreach ($featured_products as $v) {
 ?>
-
-<tr>
+r>
   <td><input type="checkbox" name="to_delete[<?php echo $v['productid']; ?>]" /></td>
-  <td><b><a href="{$current_location}/admin/products/<?php echo $v['productid']; ?>" target="_blank"><?php echo $v['name']; ?></a></b></td>
-  <td align="center"><input type="text" name="posted_data[<?php echo $v['productid']; ?>][orderby]" size="5" value="<?php echo $v['orderby']; ?>" /></td>
-  <td align="center"><input type="checkbox" name="posted_data[<?php echo $v['productid']; ?>][enabled]"<?php if ($v['enabled']) echo ' checked="checked"'; ?> /></td>
+  <td><label>{lng[Product name]}</label><b><a href="{$current_location}/admin/products/<?php echo $v['productid']; ?>" target="_blank"><?php echo $v['name']; ?></a></b></td>
+  <td align="center"><label>{lng[Pos]}</label><input type="text" name="posted_data[<?php echo $v['productid']; ?>][orderby]" size="5" value="<?php echo $v['orderby']; ?>" /></td>
+  <td align="center"><label>{lng[Active]}</label><input type="checkbox" name="posted_data[<?php echo $v['productid']; ?>][enabled]"<?php if ($v['enabled']) echo ' checked="checked"'; ?> /></td>
 </tr>
 <?php
 	}
 ?>
 <tr>
-  <td colspan="4">
-  <button type="button" onclick="javascript: document.fpform.mode.value = 'delete'; document.fpform.submit();">{lng[Delete selected]}</button>
-  <button type="submit">{lng[Update]}</button>
+  <td colspan="4" class="var-wh-100">
+  <button type="button" onclick="javascript: document.fpform.mode.value = 'delete'; document.fpform.submit();">{lng[Delete selected]}</button> &nbsp; <button type="submit">{lng[Update]}</button>
   </td>
 </tr>
 
@@ -124,7 +118,7 @@ if ($featured_products) {
 ?>
 
 <tr>
-	<td colspan="4" align="center">{lng[No featured products in this category]}</td>
+	<td colspan="4" align="center" class="var-wh-100">{lng[No featured products in this category]}</td>
 </tr>
 
 <?php
@@ -132,12 +126,12 @@ if ($featured_products) {
 ?>
 
 <tr>
-<td colspan="4"><br /><h3>{lng[Add product]}</td>
+<td colspan="4" class="var-wh-100"><br /><h3>{lng[Add product]}</td>
 </tr>
 
 <tr>
   <td>&nbsp;</td>
-  <td>
+  <td class="no-word-break"><label>{lng[Select product]}</label>
     <input type="hidden" name="newproductid" />
     <input type="text" size="35" name="newproduct" disabled="disabled" />
 <script>
@@ -146,12 +140,12 @@ var popup_product_pid = document.fpform.newproductid,
 </script>
     <button type="button" onclick="javascript: popup_product();">{lng[Browse...]}</button>
   </td>
-  <td align="center"><input type="text" name="neworderby" size="5" /></td>
-  <td align="center"><input type="checkbox" name="newenabled" checked="checked" /></td>
+  <td align="center"><label>{lng[Pos]}</label><input type="text" name="neworderby" size="5" /></td>
+  <td align="center"><label>{lng[Active]}</label><input type="checkbox" name="newenabled" checked="checked" /></td>
 </tr>
 
 <tr>
-  <td colspan="4" class="SubmitBox">
+  <td colspan="4" class="var-wh-100">
   <button type="button" onclick="javascript: document.fpform.mode.value = 'add'; document.fpform.submit();">{lng[Add new]}</button>
   </td>
 </tr>

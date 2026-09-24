@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Хост: MySQL-8.0:3306
--- Время создания: Сен 23 2026 г., 23:04
+-- Время создания: Сен 24 2026 г., 13:23
 -- Версия сервера: 8.0.43
 -- Версия PHP: 8.3.26
 
@@ -5025,7 +5025,11 @@ INSERT INTO `languages` (`id`, `lng`, `word`, `translation`) VALUES
 (4052, 'en', 'Visual settings', 'Visual settings'),
 (4053, 'en', 'Did you mean', 'Did you mean'),
 (4054, 'en', 'And more', 'And more'),
-(4055, 'en', 'Reset suggested search', 'Reset suggested search');
+(4055, 'en', 'Reset suggested search', 'Reset suggested search'),
+(4056, 'en', 'Reset predictive search', 'Reset predictive search'),
+(4057, 'en', 'Remove', 'Remove'),
+(4058, 'en', 'Paid with GC', 'Paid with GC'),
+(4059, 'en', 'Select product', 'Select product');
 
 -- --------------------------------------------------------
 
@@ -9372,146 +9376,147 @@ INSERT INTO `templates` (`id`, `lng`, `template`, `time`) VALUES
 (3528682, 'ru', 'checkout/body.php', 0),
 (3528803, 'ru', 'brands/body.php', 0),
 (3530834, 'ru', 'admin/pages/login.php', 1560518128),
-(3551826, 'js', 'script', 0),
-(3551830, 'js', 'admin_users', 0),
-(3551834, 'js', 'admin_product_variant_imagess', 0),
-(3551838, 'js', 'admin_str_replace', 0),
-(3551842, 'js', 'admin_warehouses', 1617739792),
-(3551846, 'js', 'news', 0),
-(3551850, 'js', 'jquery.ui.slider.min.js', 0),
-(3551854, 'js', 'jquery.ui.slider.min', 1512550674),
-(3551858, 'js', 'admin_product_options', 1617739762),
-(3551862, 'js', 'canvasjs.min', 0),
-(3551866, 'js', 'jquery.flot', 0),
-(3551870, 'js', 'jquery.flot.time', 0),
-(3551874, 'js', 'admin_memberships', 0),
-(3551878, 'js', 'jquery.lazy', 0),
-(3551882, 'js', 'jquery.lazy.min', 1525213090),
-(3551886, 'js', 'mobile', 1630004594),
-(3551890, 'js', 'admin_import', 1361784862),
-(3551894, 'js', 'password', 1630004782),
-(3551898, 'js', 'admin_category', 1406411586),
-(3551902, 'js', 'admin_payment', 0),
-(3551906, 'js', 'admin_order_invoice', 1630004372),
-(3551910, 'js', 'admin_roles', 0),
-(3551914, 'js', 'jquery.ui.sortable', 1715350131),
-(3551918, 'js', 'admin_product_images', 1630004788),
-(3551922, 'js', 'admin_product_variants', 1766224071),
-(3551926, 'js', 'admin_duplicate_row', 1410371282),
-(3551930, 'js', 'admin_product_variant_images', 1410451664),
-(3551934, 'js', 'admin_products', 1630004354),
-(3551938, 'js', 'admin_brands', 1411904362),
-(3551942, 'js', 'admin_news', 0),
-(3551946, 'js', 'newsletter', 0),
-(3551950, 'js', 'admin_shipping', 0),
-(3551954, 'js', 'admin_zones', 1467033122),
-(3551958, 'js', 'admin_countries', 1406404466),
-(3551962, 'js', 'invoice', 0),
-(3551966, 'js', 'admin_blog', 0),
-(3551970, 'js', 'str_replace', 1411814584),
-(3551974, 'js', 'blog', 1467291784),
-(3551978, 'js', 'jquery.min', 1715350131),
-(3551982, 'js', 'jquery.ui.core.min', 1351144192),
-(3551986, 'js', 'jquery.ui.widget.min', 1715350131),
-(3551990, 'js', 'jquery.ui.mouse.min', 1351144192),
-(3551994, 'js', 'jquery.ui.position.min', 1351144192),
-(3551998, 'js', 'jquery.ui.draggable.min', 1715350131),
-(3552002, 'js', 'jquery.ui.droppable.min', 1715350131),
-(3552006, 'js', 'admin_taxes', 1467103186),
-(3552010, 'js', 'login', 1766224081),
-(3552014, 'js', 'admin_login', 1630004794),
-(3552018, 'js', 'admin_categories', 1406404466),
-(3552022, 'js', 'admin_popup_product', 1790170182),
-(3552026, 'js', 'admin_orders', 1617739698),
-(3552030, 'js', 'admin_configuration', 0),
-(3552034, 'js', 'jquery.ui.tooltip', 0),
-(3552119, 'css', 'admin_product_variant_imagess', 0),
-(3552120, 'css', 'admin_pages', 0),
-(3552121, 'css', 'bot', 1386156554),
-(3552122, 'css', 'admin_warehouses', 1482503444),
-(3552123, 'css', 'jquery.ui.slider.min', 1512550674),
-(3552124, 'css', 'jquery.ui.min', 0),
-(3552125, 'css', 'jquery-ui.min', 1512550674),
-(3552126, 'css', 'safari', 1389372128),
-(3552127, 'css', 'admin_memberships', 0),
-(3552128, 'css', 'mobile', 1546694170),
-(3552129, 'css', 'ie', 1389372120),
-(3552130, 'css', 'ff', 1389372124),
-(3552131, 'css', 'admin_import', 1467193570),
-(3552132, 'css', 'admin_sitemap', 0),
-(3552133, 'css', 'password', 1373280310),
-(3552134, 'css', 'admin_statistic', 1411935724),
-(3552135, 'css', 'ticket', 0),
-(3552136, 'css', 'admin_category', 1406409650),
-(3552137, 'css', 'admin_payment', 0),
-(3552138, 'css', 'admin_order_invoice', 1482590180),
-(3552139, 'css', 'admin_coupons', 0),
-(3552140, 'css', 'admin_roles', 0),
-(3552141, 'css', 'admin_product_images', 1466883810),
-(3552142, 'css', 'admin_product_variants', 1482589796),
-(3552143, 'css', 'admin_product_variant_images', 1410460030),
-(3552144, 'css', 'admin_products', 1560463512),
-(3552145, 'css', 'admin_brands', 0),
-(3552146, 'css', 'admin_news', 0),
-(3552147, 'css', 'newsletter', 0),
-(3552148, 'css', 'admin_user', 1407782112),
-(3552149, 'css', 'admin_shipping', 0),
-(3552150, 'css', 'admin_zones', 0),
-(3552151, 'css', 'admin_countries', 1409773208),
-(3552152, 'css', 'invoice', 1479067220),
-(3552153, 'css', 'admin_blog', 0),
-(3552154, 'css', 'admin_taxes', 0),
-(3552155, 'css', 'login', 1479057974),
-(3552156, 'css', 'admin_login', 1654357410),
-(3552157, 'css', 'admin_categories', 1559923424),
-(3552158, 'css', 'admin_popup', 1471089016),
-(3552159, 'css', 'admin_orders', 1411935946),
-(3552160, 'css', 'admin_users', 1410525758),
-(3552161, 'css', 'admin_configuration', 1467029282),
-(3552162, 'css', 'jquery.ui.tooltip', 1405644666),
-(3552707, 'css', 'admin_dashboard', 1680802907),
-(3552708, 'css', 'admin', 1790182129),
-(3552709, 'css', 'admin_new', 1790190205),
-(3552713, 'js', 'admin_dashboard', 1406404466),
-(3552714, 'js', 'admin', 1790190113),
-(3552854, 'css', 'static', 1467127962),
-(3552855, 'css', 'banners', 1524952060),
-(3552860, 'css', 'product', 1790187797),
-(3552861, 'css', 'cart', 1481298360),
-(3552862, 'css', 'wishlist', 0),
-(3552863, 'css', 'checkout', 1790187405),
-(3552865, 'css', 'help', 1389363746),
-(3552866, 'css', 'testimonials', 1466615196),
-(3552867, 'css', 'news', 1654783716),
-(3552868, 'css', 'blog', 1681734011),
-(3552869, 'css', 'brands', 1654783936),
-(3552870, 'css', 'category', 1680727022),
-(3552871, 'css', 'style', 1790189145),
-(3552872, 'css', 'logged', 1466870052),
-(3552873, 'css', 'register', 1680618675),
-(3552874, 'css', 'home', 1790186558),
-(3552875, 'css', 'popup', 1654344718),
-(3552876, 'css', 'products', 1790015987),
-(3552877, 'css', 'responsive', 1790187460),
-(3552878, 'js', 'jquery.ui.touch-punch.min', 1418901836),
-(3552880, 'js', 'blog_bb', 1411750934),
-(3552881, 'js', 'banners', 1766224075),
-(3552883, 'js', 'category', 1407610568),
-(3552887, 'js', 'product', 1779199092),
-(3552888, 'js', 'cart', 1363123832),
-(3552889, 'js', 'wishlist', 0),
-(3552890, 'js', 'states', 1766224147),
-(3552892, 'js', 'checkout', 1617740378),
-(3552893, 'js', 'testimonials', 1466612964),
-(3552894, 'js', 'ticket', 1766224151),
-(3552895, 'js', 'scripts', 1790188912),
-(3552896, 'js', 'logged', 1677186268),
-(3552897, 'js', 'register', 1766224122),
-(3552898, 'js', 'products', 1790180968),
-(3552899, 'js', 'home', 1766224050),
-(3552900, 'js', 'popup', 1405697764),
-(3552901, 'js', 'browser', 1366969956),
-(3552902, 'js', 'jquery.zoom.min', 1384263138);
+(3566962, 'js', 'script', 0),
+(3566966, 'js', 'admin_users', 0),
+(3566970, 'js', 'admin_product_variant_imagess', 0),
+(3566974, 'js', 'admin_str_replace', 0),
+(3566978, 'js', 'admin_warehouses', 1617739792),
+(3566982, 'js', 'news', 0),
+(3566986, 'js', 'jquery.ui.slider.min.js', 0),
+(3566990, 'js', 'jquery.ui.slider.min', 1512550674),
+(3566994, 'js', 'canvasjs.min', 0),
+(3566998, 'js', 'jquery.flot', 0),
+(3567002, 'js', 'jquery.flot.time', 0),
+(3567006, 'js', 'jquery.lazy', 0),
+(3567010, 'js', 'jquery.lazy.min', 1525213090),
+(3567014, 'js', 'mobile', 1630004594),
+(3567018, 'js', 'admin_import', 1361784862),
+(3567022, 'js', 'password', 1630004782),
+(3567026, 'js', 'admin_order_invoice', 1630004372),
+(3567030, 'js', 'invoice', 0),
+(3567034, 'js', 'blog', 1467291784),
+(3567038, 'js', 'jquery.min', 1715350131),
+(3567042, 'js', 'jquery.ui.core.min', 1351144192),
+(3567046, 'js', 'jquery.ui.widget.min', 1715350131),
+(3567050, 'js', 'jquery.ui.mouse.min', 1351144192),
+(3567054, 'js', 'jquery.ui.position.min', 1351144192),
+(3567058, 'js', 'jquery.ui.draggable.min', 1715350131),
+(3567062, 'js', 'jquery.ui.droppable.min', 1715350131),
+(3567066, 'js', 'login', 1766224081),
+(3567070, 'js', 'admin_login', 1630004794),
+(3567074, 'js', 'admin_configuration', 0),
+(3567078, 'js', 'jquery.ui.tooltip', 0),
+(3567082, 'js', 'browser', 1366969956),
+(3567086, 'js', 'admin_dashboard', 1406404466),
+(3567090, 'js', 'jquery.ui.sortable', 1715350131),
+(3567094, 'js', 'admin_product_images', 1630004788),
+(3567098, 'js', 'admin_product_options', 1617739762),
+(3567102, 'js', 'admin_product_variants', 1766224071),
+(3567106, 'js', 'admin_duplicate_row', 1410371282),
+(3567110, 'js', 'admin_product_variant_images', 1410451664),
+(3567114, 'js', 'admin_products', 1630004354),
+(3567118, 'js', 'admin_orders', 1617739698),
+(3567122, 'js', 'admin_memberships', 0),
+(3567126, 'js', 'admin_roles', 0),
+(3567130, 'js', 'admin_categories', 1406404466),
+(3567134, 'js', 'admin_popup_product', 1790170182),
+(3567138, 'js', 'admin_category', 1406411586),
+(3567142, 'js', 'admin_brands', 1411904362),
+(3567146, 'js', 'admin_news', 0),
+(3567150, 'js', 'newsletter', 0),
+(3567154, 'js', 'str_replace', 1411814584),
+(3567158, 'js', 'admin_blog', 0),
+(3567162, 'js', 'admin_shipping', 0),
+(3567166, 'js', 'admin_payment', 0),
+(3567170, 'js', 'admin_taxes', 1467103186),
+(3567174, 'js', 'admin_zones', 1467033122),
+(3567178, 'js', 'admin_countries', 1406404466),
+(3567182, 'js', 'admin', 1790233743),
+(3567255, 'css', 'admin_product_variant_imagess', 0),
+(3567256, 'css', 'admin_pages', 0),
+(3567257, 'css', 'bot', 1386156554),
+(3567258, 'css', 'admin_warehouses', 1482503444),
+(3567259, 'css', 'jquery.ui.slider.min', 1512550674),
+(3567260, 'css', 'jquery.ui.min', 0),
+(3567261, 'css', 'jquery-ui.min', 1512550674),
+(3567262, 'css', 'safari', 1389372128),
+(3567263, 'css', 'mobile', 1546694170),
+(3567264, 'css', 'ie', 1389372120),
+(3567265, 'css', 'ff', 1389372124),
+(3567266, 'css', 'admin_import', 1467193570),
+(3567267, 'css', 'admin_sitemap', 0),
+(3567268, 'css', 'password', 1373280310),
+(3567269, 'css', 'admin_statistic', 1411935724),
+(3567270, 'css', 'ticket', 0),
+(3567271, 'css', 'admin_order_invoice', 1482590180),
+(3567272, 'css', 'invoice', 1479067220),
+(3567273, 'css', 'login', 1479057974),
+(3567274, 'css', 'admin_login', 1654357410),
+(3567275, 'css', 'admin_configuration', 1467029282),
+(3567276, 'css', 'jquery.ui.tooltip', 1405644666),
+(3567277, 'css', 'admin_dashboard', 1680802907),
+(3567278, 'css', 'admin_product_images', 1466883810),
+(3567279, 'css', 'admin_product_variants', 1482589796),
+(3567280, 'css', 'admin_product_variant_images', 1410460030),
+(3567281, 'css', 'admin_products', 1560463512),
+(3567282, 'css', 'admin_orders', 1411935946),
+(3567283, 'css', 'admin_coupons', 0),
+(3567284, 'css', 'admin_users', 1410525758),
+(3567285, 'css', 'admin_memberships', 0),
+(3567286, 'css', 'admin_roles', 0),
+(3567287, 'css', 'admin_categories', 1559923424),
+(3567288, 'css', 'admin_popup', 1471089016),
+(3567289, 'css', 'admin_category', 1406409650),
+(3567290, 'css', 'admin_brands', 0),
+(3567291, 'css', 'admin_news', 0),
+(3567292, 'css', 'newsletter', 0),
+(3567293, 'css', 'admin_blog', 0),
+(3567294, 'css', 'admin_user', 1407782112),
+(3567295, 'css', 'admin_shipping', 0),
+(3567296, 'css', 'admin_payment', 0),
+(3567297, 'css', 'admin_taxes', 0),
+(3567298, 'css', 'admin_zones', 0),
+(3567299, 'css', 'admin_countries', 1409773208),
+(3567300, 'css', 'admin', 1790237114),
+(3567301, 'css', 'admin_new', 1790190205),
+(3567302, 'css', 'admin_responsive', 1790241670),
+(3567324, 'css', 'static', 1467127962),
+(3567325, 'css', 'banners', 1524952060),
+(3567326, 'css', 'home', 1790186558),
+(3567328, 'css', 'products', 1790015987),
+(3567329, 'css', 'popup', 1654344718),
+(3567330, 'css', 'product', 1790187797),
+(3567331, 'css', 'cart', 1481298360),
+(3567332, 'css', 'wishlist', 0),
+(3567333, 'css', 'checkout', 1790187405),
+(3567335, 'css', 'help', 1389363746),
+(3567336, 'css', 'testimonials', 1466615196),
+(3567337, 'css', 'news', 1654783716),
+(3567338, 'css', 'blog', 1681734011),
+(3567339, 'css', 'brands', 1654783936),
+(3567340, 'css', 'category', 1680727022),
+(3567341, 'css', 'style', 1790189145),
+(3567342, 'css', 'logged', 1466870052),
+(3567343, 'css', 'register', 1680618675),
+(3567344, 'css', 'responsive', 1790187460),
+(3567345, 'js', 'jquery.ui.touch-punch.min', 1418901836),
+(3567347, 'js', 'blog_bb', 1411750934),
+(3567348, 'js', 'banners', 1766224075),
+(3567349, 'js', 'home', 1766224050),
+(3567350, 'js', 'category', 1407610568),
+(3567351, 'js', 'products', 1790180968),
+(3567352, 'js', 'popup', 1405697764),
+(3567353, 'js', 'jquery.zoom.min', 1384263138),
+(3567354, 'js', 'product', 1779199092),
+(3567355, 'js', 'cart', 1363123832),
+(3567356, 'js', 'wishlist', 0),
+(3567357, 'js', 'states', 1766224147),
+(3567359, 'js', 'checkout', 1617740378),
+(3567360, 'js', 'testimonials', 1466612964),
+(3567361, 'js', 'ticket', 1766224151),
+(3567362, 'js', 'scripts', 1790188912),
+(3567363, 'js', 'logged', 1677186268),
+(3567364, 'js', 'register', 1766224122);
 
 -- --------------------------------------------------------
 
@@ -11878,7 +11883,7 @@ INSERT INTO `users_carts` (`id`, `userid`, `email`, `cart`, `date`, `reminded_1`
 (1915, 0, '4o@o.ru', 'a:11:{s:8:\"products\";a:1:{i:0;a:36:{s:6:\"cartid\";i:1;s:9:\"productid\";s:3:\"129\";s:8:\"quantity\";i:1;s:7:\"options\";a:2:{i:226;s:3:\"845\";i:227;s:3:\"850\";}s:9:\"variantid\";s:3:\"270\";s:7:\"photoid\";s:3:\"412\";s:3:\"sku\";s:6:\"SKU171\";s:7:\"brandid\";s:1:\"4\";s:8:\"cleanurl\";s:26:\"STUSSY-SMOOTH-STOCK-LS-TEE\";s:4:\"name\";s:26:\"STUSSY SMOOTH STOCK LS TEE\";s:5:\"descr\";s:28:\"<p>SMOOTH STOCK LS TEE</p>\r\n\";s:8:\"keywords\";s:0:\"\";s:10:\"list_price\";s:2:\"57\";s:5:\"price\";s:7:\"49.0000\";s:6:\"weight\";s:4:\"0.00\";s:5:\"avail\";s:3:\"998\";s:11:\"avail_block\";s:1:\"0\";s:6:\"rating\";s:1:\"0\";s:6:\"status\";s:1:\"1\";s:7:\"deleted\";s:1:\"0\";s:8:\"add_date\";s:10:\"1545840730\";s:11:\"views_stats\";s:2:\"15\";s:11:\"sales_stats\";s:1:\"2\";s:9:\"del_stats\";s:1:\"0\";s:16:\"meta_description\";s:0:\"\";s:13:\"meta_keywords\";s:0:\"\";s:9:\"title_tag\";s:0:\"\";s:10:\"categoryid\";s:2:\"27\";s:5:\"title\";s:26:\"STUSSY SMOOTH STOCK LS TEE\";s:11:\"qty_per_box\";s:0:\"\";s:11:\"supplied_as\";s:0:\"\";s:13:\"supplier_code\";s:0:\"\";s:3:\"def\";s:1:\"0\";s:13:\"variant_photo\";N;s:5:\"photo\";a:8:{s:7:\"photoid\";s:3:\"412\";s:9:\"productid\";s:3:\"129\";s:3:\"alt\";s:0:\"\";s:4:\"file\";s:5:\"1.jpg\";s:4:\"size\";s:6:\"127584\";s:1:\"x\";s:4:\"1158\";s:1:\"y\";s:4:\"1228\";s:3:\"pos\";s:2:\"10\";}s:15:\"product_options\";a:2:{i:226;a:10:{s:7:\"groupid\";s:3:\"226\";s:9:\"productid\";s:3:\"129\";s:4:\"name\";s:4:\"Size\";s:8:\"fullname\";s:0:\"\";s:7:\"orderby\";s:2:\"10\";s:4:\"type\";s:1:\"g\";s:9:\"view_type\";s:1:\"p\";s:7:\"enabled\";s:1:\"1\";s:7:\"variant\";s:1:\"1\";s:6:\"option\";a:9:{s:8:\"optionid\";s:3:\"845\";s:7:\"groupid\";s:3:\"226\";s:4:\"name\";s:1:\"S\";s:7:\"orderby\";s:2:\"10\";s:7:\"enabled\";s:1:\"1\";s:14:\"price_modifier\";s:4:\"0.00\";s:19:\"price_modifier_type\";s:1:\"%\";s:15:\"weight_modifier\";s:4:\"0.00\";s:20:\"weight_modifier_type\";s:1:\"%\";}}i:227;a:10:{s:7:\"groupid\";s:3:\"227\";s:9:\"productid\";s:3:\"129\";s:4:\"name\";s:5:\"Color\";s:8:\"fullname\";s:0:\"\";s:7:\"orderby\";s:2:\"20\";s:4:\"type\";s:1:\"g\";s:9:\"view_type\";s:1:\"p\";s:7:\"enabled\";s:1:\"1\";s:7:\"variant\";s:1:\"1\";s:6:\"option\";a:9:{s:8:\"optionid\";s:3:\"850\";s:7:\"groupid\";s:3:\"227\";s:4:\"name\";s:5:\"White\";s:7:\"orderby\";s:2:\"10\";s:7:\"enabled\";s:1:\"1\";s:14:\"price_modifier\";s:4:\"0.00\";s:19:\"price_modifier_type\";s:1:\"%\";s:15:\"weight_modifier\";s:4:\"0.00\";s:20:\"weight_modifier_type\";s:1:\"%\";}}}}}s:8:\"subtotal\";d:49;s:19:\"discounted_subtotal\";d:49;s:14:\"subtotal_taxed\";d:49;s:5:\"total\";d:49;s:13:\"need_shipping\";i:1;s:13:\"shipping_cost\";d:13.949999999999999;s:10:\"shippingid\";s:4:\"2220\";s:11:\"tax_details\";a:11:{s:5:\"taxid\";s:1:\"1\";s:8:\"tax_name\";s:3:\"VAT\";s:16:\"tax_display_name\";s:3:\"VAT\";s:7:\"formula\";s:2:\"ST\";s:12:\"address_type\";s:1:\"B\";s:6:\"active\";s:1:\"Y\";s:18:\"price_includes_tax\";s:1:\"N\";s:21:\"display_including_tax\";s:1:\"N\";s:12:\"display_info\";s:0:\"\";s:9:\"regnumber\";s:0:\"\";s:8:\"priority\";s:1:\"0\";}s:3:\"tax\";d:6.2949999999999999;s:9:\"paymentid\";s:1:\"7\";}', 1562778869, 1, 1),
 (2239, 0, 'N', 'a:11:{s:8:\"products\";a:1:{i:0;a:35:{s:6:\"cartid\";i:1;s:9:\"productid\";s:3:\"113\";s:8:\"quantity\";i:1;s:7:\"options\";a:2:{i:194;s:3:\"713\";i:195;s:3:\"716\";}s:9:\"variantid\";s:3:\"174\";s:7:\"photoid\";s:3:\"367\";s:3:\"sku\";s:6:\"SKU110\";s:7:\"brandid\";s:1:\"4\";s:8:\"cleanurl\";s:42:\"MEN-Supima-Cotton-Crew-Neck-Short-Sleeve-T\";s:4:\"name\";s:42:\"MEN Supima Cotton Crew Neck Short Sleeve T\";s:5:\"descr\";s:548:\"<p>A 100% Supima&reg; cotton T-shirt thick enough to wear on its own or for layering.<br />\r\n- The luxurious jersey material uses 100% Supima&reg; cotton for a smooth feel, natural brightness and beautiful colors.<br />\r\n- A smooth silhouette from the bust down to the waist, with sleek shoulders and armholes.&nbsp;<br />\r\n- A narrower seam fold and stitching for a more delicate neckline.<br />\r\n- With a flattering neckline.<br />\r\n&nbsp;</p>\r\n\r\n<p>MATERIAL</p>\r\n\r\n<p>100% Cotton</p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p>CARE</p>\r\n\r\n<p>Cold Machine Wash</p>\r\n\";s:8:\"keywords\";s:0:\"\";s:10:\"list_price\";s:2:\"17\";s:5:\"price\";s:7:\"14.9000\";s:6:\"weight\";s:4:\"0.00\";s:5:\"avail\";s:3:\"994\";s:11:\"avail_block\";s:1:\"0\";s:6:\"rating\";s:1:\"0\";s:6:\"status\";s:1:\"1\";s:7:\"deleted\";s:1:\"0\";s:8:\"add_date\";s:10:\"1545827391\";s:11:\"views_stats\";s:2:\"61\";s:11:\"sales_stats\";s:1:\"9\";s:9:\"del_stats\";s:1:\"0\";s:16:\"meta_description\";s:0:\"\";s:13:\"meta_keywords\";s:0:\"\";s:9:\"title_tag\";s:0:\"\";s:10:\"categoryid\";s:2:\"26\";s:5:\"title\";s:42:\"MEN Supima Cotton Crew Neck Short Sleeve T\";s:11:\"qty_per_box\";s:0:\"\";s:11:\"supplied_as\";s:0:\"\";s:13:\"supplier_code\";s:0:\"\";s:3:\"def\";s:1:\"0\";s:13:\"variant_photo\";a:8:{s:7:\"imageid\";s:1:\"1\";s:9:\"variantid\";s:3:\"174\";s:3:\"alt\";s:0:\"\";s:3:\"pos\";s:2:\"10\";s:1:\"x\";s:4:\"1920\";s:1:\"y\";s:3:\"914\";s:4:\"file\";s:5:\"1.jpg\";s:4:\"size\";s:5:\"86714\";}s:15:\"product_options\";a:2:{i:194;a:10:{s:7:\"groupid\";s:3:\"194\";s:9:\"productid\";s:3:\"113\";s:4:\"name\";s:5:\"Color\";s:8:\"fullname\";s:0:\"\";s:7:\"orderby\";s:2:\"10\";s:4:\"type\";s:1:\"g\";s:9:\"view_type\";s:1:\"p\";s:7:\"enabled\";s:1:\"1\";s:7:\"variant\";s:1:\"1\";s:6:\"option\";a:9:{s:8:\"optionid\";s:3:\"713\";s:7:\"groupid\";s:3:\"194\";s:4:\"name\";s:5:\"Black\";s:7:\"orderby\";s:2:\"10\";s:7:\"enabled\";s:1:\"1\";s:14:\"price_modifier\";s:4:\"0.00\";s:19:\"price_modifier_type\";s:1:\"%\";s:15:\"weight_modifier\";s:4:\"0.00\";s:20:\"weight_modifier_type\";s:1:\"%\";}}i:195;a:10:{s:7:\"groupid\";s:3:\"195\";s:9:\"productid\";s:3:\"113\";s:4:\"name\";s:4:\"Size\";s:8:\"fullname\";s:0:\"\";s:7:\"orderby\";s:2:\"20\";s:4:\"type\";s:1:\"g\";s:9:\"view_type\";s:1:\"p\";s:7:\"enabled\";s:1:\"1\";s:7:\"variant\";s:1:\"1\";s:6:\"option\";a:9:{s:8:\"optionid\";s:3:\"716\";s:7:\"groupid\";s:3:\"195\";s:4:\"name\";s:1:\"S\";s:7:\"orderby\";s:2:\"10\";s:7:\"enabled\";s:1:\"1\";s:14:\"price_modifier\";s:4:\"0.00\";s:19:\"price_modifier_type\";s:1:\"%\";s:15:\"weight_modifier\";s:4:\"0.00\";s:20:\"weight_modifier_type\";s:1:\"%\";}}}}}s:8:\"subtotal\";d:14.9;s:19:\"discounted_subtotal\";d:14.9;s:14:\"subtotal_taxed\";d:14.9;s:5:\"total\";d:29.8595;s:13:\"need_shipping\";i:1;s:10:\"shippingid\";s:4:\"2220\";s:13:\"shipping_cost\";d:12.245;s:11:\"tax_details\";a:11:{s:5:\"taxid\";s:1:\"1\";s:8:\"tax_name\";s:3:\"VAT\";s:16:\"tax_display_name\";s:3:\"VAT\";s:7:\"formula\";s:2:\"ST\";s:12:\"address_type\";s:1:\"B\";s:6:\"active\";s:1:\"Y\";s:18:\"price_includes_tax\";s:1:\"N\";s:21:\"display_including_tax\";s:1:\"N\";s:12:\"display_info\";s:0:\"\";s:9:\"regnumber\";s:0:\"\";s:8:\"priority\";s:1:\"0\";}s:3:\"tax\";d:2.7145;s:9:\"paymentid\";s:1:\"2\";}', 1656435579, 0, 0),
 (2977, 0, 'spa@cart.com', 'a:11:{s:8:\"products\";a:1:{i:0;a:30:{s:6:\"cartid\";i:1;s:9:\"productid\";s:3:\"151\";s:8:\"quantity\";i:3;s:7:\"options\";a:1:{i:266;s:3:\"972\";}s:9:\"variantid\";b:0;s:7:\"photoid\";s:3:\"470\";s:3:\"sku\";s:6:\"SKU623\";s:7:\"brandid\";s:1:\"4\";s:8:\"cleanurl\";s:17:\"Beaded-Belt-Chain\";s:4:\"name\";s:17:\"Beaded Belt Chain\";s:5:\"descr\";s:90:\"<ul>\r\n	<li>Available In Silver</li>\r\n	<li>Beaded Metal</li>\r\n	<li>Pant Chain</li>\r\n</ul>\r\n\";s:8:\"keywords\";s:0:\"\";s:10:\"list_price\";s:2:\"14\";s:5:\"price\";d:8;s:6:\"weight\";d:0;s:5:\"avail\";s:4:\"1000\";s:11:\"avail_block\";s:1:\"0\";s:6:\"rating\";s:1:\"0\";s:6:\"status\";s:1:\"1\";s:7:\"deleted\";s:1:\"0\";s:8:\"add_date\";s:10:\"1545857988\";s:11:\"views_stats\";s:1:\"0\";s:11:\"sales_stats\";s:1:\"0\";s:9:\"del_stats\";s:1:\"0\";s:16:\"meta_description\";s:0:\"\";s:13:\"meta_keywords\";s:0:\"\";s:9:\"title_tag\";s:0:\"\";s:10:\"categoryid\";s:2:\"30\";s:5:\"photo\";a:8:{s:7:\"photoid\";s:3:\"470\";s:9:\"productid\";s:3:\"151\";s:3:\"alt\";s:0:\"\";s:4:\"file\";s:5:\"1.jpg\";s:4:\"size\";s:5:\"42905\";s:1:\"x\";s:3:\"760\";s:1:\"y\";s:4:\"1140\";s:3:\"pos\";s:1:\"0\";}s:15:\"product_options\";a:1:{i:266;a:10:{s:7:\"groupid\";s:3:\"266\";s:9:\"productid\";s:3:\"151\";s:4:\"name\";s:4:\"Size\";s:8:\"fullname\";s:0:\"\";s:7:\"orderby\";s:2:\"10\";s:4:\"type\";s:1:\"g\";s:9:\"view_type\";s:1:\"s\";s:7:\"enabled\";s:1:\"1\";s:7:\"variant\";s:1:\"0\";s:6:\"option\";a:9:{s:8:\"optionid\";s:3:\"972\";s:7:\"groupid\";s:3:\"266\";s:4:\"name\";s:2:\"OS\";s:7:\"orderby\";s:2:\"10\";s:7:\"enabled\";s:1:\"1\";s:14:\"price_modifier\";s:4:\"0.00\";s:19:\"price_modifier_type\";s:1:\"%\";s:15:\"weight_modifier\";s:4:\"0.00\";s:20:\"weight_modifier_type\";s:1:\"%\";}}}}}s:8:\"subtotal\";d:24;s:19:\"discounted_subtotal\";d:24;s:14:\"subtotal_taxed\";d:24;s:5:\"total\";d:26.4;s:13:\"need_shipping\";i:1;s:13:\"shipping_cost\";i:0;s:10:\"shippingid\";i:0;s:11:\"tax_details\";a:11:{s:5:\"taxid\";s:1:\"1\";s:8:\"tax_name\";s:3:\"VAT\";s:16:\"tax_display_name\";s:3:\"VAT\";s:7:\"formula\";s:2:\"ST\";s:12:\"address_type\";s:1:\"B\";s:6:\"active\";s:1:\"Y\";s:18:\"price_includes_tax\";s:1:\"N\";s:21:\"display_including_tax\";s:1:\"N\";s:12:\"display_info\";s:0:\"\";s:9:\"regnumber\";s:0:\"\";s:8:\"priority\";s:1:\"0\";}s:3:\"tax\";d:2.4;s:9:\"paymentid\";s:1:\"2\";}', 1677186113, 0, 0),
-(8113, 848, '', 'a:11:{s:8:\"products\";a:1:{i:0;a:38:{s:6:\"cartid\";i:1;s:9:\"productid\";s:3:\"123\";s:8:\"quantity\";i:1;s:7:\"options\";a:2:{i:214;s:3:\"805\";i:215;s:3:\"806\";}s:9:\"variantid\";s:2:\"54\";s:7:\"photoid\";s:3:\"397\";s:3:\"sku\";s:18:\"SKU111111111111111\";s:7:\"brandid\";s:1:\"4\";s:8:\"cleanurl\";s:48:\"ALTERNATIVE-Rocky-Eco-Fleece-Zip-Hoodie-Eco-True\";s:4:\"name\";s:48:\"ALTERNATIVE Rocky Eco-Fleece Zip Hoodie Eco True\";s:5:\"descr\";s:157:\"<p>alternative rocky eco-fleece zip hoodie eco true<br />\r\n<br />\r\n<br />\r\n<br />\r\nFashion Item for Man of type sweatshirts for Fall Winter Season 2017</p>\r\n\";s:8:\"keywords\";s:0:\"\";s:10:\"list_price\";s:2:\"65\";s:5:\"price\";s:7:\"59.0000\";s:6:\"weight\";s:4:\"0.00\";s:5:\"avail\";s:4:\"1000\";s:11:\"avail_block\";s:1:\"0\";s:6:\"rating\";s:1:\"0\";s:6:\"status\";s:1:\"1\";s:7:\"deleted\";s:1:\"0\";s:8:\"add_date\";s:10:\"1545836583\";s:11:\"views_stats\";s:2:\"54\";s:11:\"sales_stats\";s:1:\"2\";s:9:\"del_stats\";s:1:\"0\";s:16:\"meta_description\";s:0:\"\";s:13:\"meta_keywords\";s:0:\"\";s:9:\"title_tag\";s:0:\"\";s:10:\"categoryid\";s:2:\"27\";s:5:\"title\";s:48:\"ALTERNATIVE Rocky Eco-Fleece Zip Hoodie Eco True\";s:11:\"qty_per_box\";s:0:\"\";s:11:\"supplied_as\";s:0:\"\";s:13:\"supplier_code\";s:0:\"\";s:3:\"def\";s:1:\"0\";s:13:\"variant_photo\";N;s:5:\"photo\";a:8:{s:7:\"photoid\";s:3:\"397\";s:9:\"productid\";s:3:\"123\";s:3:\"alt\";s:0:\"\";s:4:\"file\";s:5:\"1.jpg\";s:4:\"size\";s:6:\"682078\";s:1:\"x\";s:4:\"1200\";s:1:\"y\";s:4:\"1300\";s:3:\"pos\";s:2:\"10\";}s:15:\"product_options\";a:2:{i:214;a:10:{s:7:\"groupid\";s:3:\"214\";s:9:\"productid\";s:3:\"123\";s:4:\"name\";s:4:\"Size\";s:8:\"fullname\";s:0:\"\";s:7:\"orderby\";s:2:\"10\";s:4:\"type\";s:1:\"g\";s:9:\"view_type\";s:1:\"p\";s:7:\"enabled\";s:1:\"1\";s:7:\"variant\";s:1:\"1\";s:6:\"option\";a:9:{s:8:\"optionid\";s:3:\"805\";s:7:\"groupid\";s:3:\"214\";s:4:\"name\";s:2:\"XL\";s:7:\"orderby\";s:2:\"50\";s:7:\"enabled\";s:1:\"1\";s:14:\"price_modifier\";s:5:\"15.00\";s:19:\"price_modifier_type\";s:1:\"%\";s:15:\"weight_modifier\";s:4:\"0.00\";s:20:\"weight_modifier_type\";s:1:\"%\";}}i:215;a:10:{s:7:\"groupid\";s:3:\"215\";s:9:\"productid\";s:3:\"123\";s:4:\"name\";s:5:\"Color\";s:8:\"fullname\";s:0:\"\";s:7:\"orderby\";s:2:\"20\";s:4:\"type\";s:1:\"g\";s:9:\"view_type\";s:1:\"p\";s:7:\"enabled\";s:1:\"1\";s:7:\"variant\";s:1:\"1\";s:6:\"option\";a:9:{s:8:\"optionid\";s:3:\"806\";s:7:\"groupid\";s:3:\"215\";s:4:\"name\";s:5:\"Green\";s:7:\"orderby\";s:2:\"10\";s:7:\"enabled\";s:1:\"1\";s:14:\"price_modifier\";s:4:\"0.00\";s:19:\"price_modifier_type\";s:1:\"%\";s:15:\"weight_modifier\";s:4:\"0.00\";s:20:\"weight_modifier_type\";s:1:\"%\";}}}s:5:\"brand\";a:9:{s:7:\"brandid\";s:1:\"4\";s:8:\"cleanurl\";s:5:\"Apple\";s:4:\"name\";s:5:\"Apple\";s:5:\"descr\";s:0:\"\";s:10:\"meta_title\";s:0:\"\";s:13:\"meta_keywords\";s:0:\"\";s:10:\"meta_descr\";s:0:\"\";s:6:\"active\";s:1:\"Y\";s:7:\"orderby\";s:2:\"30\";}s:11:\"brand_image\";a:6:{s:7:\"imageid\";s:3:\"143\";s:7:\"brandid\";s:1:\"4\";s:4:\"file\";s:15:\"brand-icon2.png\";s:1:\"x\";s:3:\"300\";s:1:\"y\";s:3:\"170\";s:4:\"size\";s:4:\"5388\";}}}s:8:\"subtotal\";d:59;s:19:\"discounted_subtotal\";d:59;s:14:\"subtotal_taxed\";d:59;s:5:\"total\";d:80.795;s:13:\"need_shipping\";i:1;s:10:\"shippingid\";s:4:\"2220\";s:13:\"shipping_cost\";d:14.45;s:11:\"tax_details\";a:11:{s:5:\"taxid\";s:1:\"1\";s:8:\"tax_name\";s:3:\"VAT\";s:16:\"tax_display_name\";s:3:\"VAT\";s:7:\"formula\";s:2:\"ST\";s:12:\"address_type\";s:1:\"B\";s:6:\"active\";s:1:\"Y\";s:18:\"price_includes_tax\";s:1:\"N\";s:21:\"display_including_tax\";s:1:\"N\";s:12:\"display_info\";s:0:\"\";s:9:\"regnumber\";s:0:\"\";s:8:\"priority\";s:1:\"0\";}s:3:\"tax\";d:7.345000000000001;s:9:\"paymentid\";s:1:\"7\";}', 1790190271, 0, 0);
+(9468, 848, '', 'a:11:{s:8:\"products\";a:1:{i:0;a:38:{s:6:\"cartid\";i:1;s:9:\"productid\";s:3:\"123\";s:8:\"quantity\";i:1;s:7:\"options\";a:2:{i:214;s:3:\"805\";i:215;s:3:\"806\";}s:9:\"variantid\";s:2:\"54\";s:7:\"photoid\";s:3:\"397\";s:3:\"sku\";s:18:\"SKU111111111111111\";s:7:\"brandid\";s:1:\"4\";s:8:\"cleanurl\";s:48:\"ALTERNATIVE-Rocky-Eco-Fleece-Zip-Hoodie-Eco-True\";s:4:\"name\";s:48:\"ALTERNATIVE Rocky Eco-Fleece Zip Hoodie Eco True\";s:5:\"descr\";s:157:\"<p>alternative rocky eco-fleece zip hoodie eco true<br />\r\n<br />\r\n<br />\r\n<br />\r\nFashion Item for Man of type sweatshirts for Fall Winter Season 2017</p>\r\n\";s:8:\"keywords\";s:0:\"\";s:10:\"list_price\";s:2:\"65\";s:5:\"price\";s:7:\"59.0000\";s:6:\"weight\";s:4:\"0.00\";s:5:\"avail\";s:4:\"1000\";s:11:\"avail_block\";s:1:\"0\";s:6:\"rating\";s:1:\"0\";s:6:\"status\";s:1:\"1\";s:7:\"deleted\";s:1:\"0\";s:8:\"add_date\";s:10:\"1545836583\";s:11:\"views_stats\";s:2:\"54\";s:11:\"sales_stats\";s:1:\"2\";s:9:\"del_stats\";s:1:\"0\";s:16:\"meta_description\";s:0:\"\";s:13:\"meta_keywords\";s:0:\"\";s:9:\"title_tag\";s:0:\"\";s:10:\"categoryid\";s:2:\"27\";s:5:\"title\";s:48:\"ALTERNATIVE Rocky Eco-Fleece Zip Hoodie Eco True\";s:11:\"qty_per_box\";s:0:\"\";s:11:\"supplied_as\";s:0:\"\";s:13:\"supplier_code\";s:0:\"\";s:3:\"def\";s:1:\"0\";s:13:\"variant_photo\";N;s:5:\"photo\";a:8:{s:7:\"photoid\";s:3:\"397\";s:9:\"productid\";s:3:\"123\";s:3:\"alt\";s:0:\"\";s:4:\"file\";s:5:\"1.jpg\";s:4:\"size\";s:6:\"682078\";s:1:\"x\";s:4:\"1200\";s:1:\"y\";s:4:\"1300\";s:3:\"pos\";s:2:\"10\";}s:15:\"product_options\";a:2:{i:214;a:10:{s:7:\"groupid\";s:3:\"214\";s:9:\"productid\";s:3:\"123\";s:4:\"name\";s:4:\"Size\";s:8:\"fullname\";s:0:\"\";s:7:\"orderby\";s:2:\"10\";s:4:\"type\";s:1:\"g\";s:9:\"view_type\";s:1:\"p\";s:7:\"enabled\";s:1:\"1\";s:7:\"variant\";s:1:\"1\";s:6:\"option\";a:9:{s:8:\"optionid\";s:3:\"805\";s:7:\"groupid\";s:3:\"214\";s:4:\"name\";s:2:\"XL\";s:7:\"orderby\";s:2:\"50\";s:7:\"enabled\";s:1:\"1\";s:14:\"price_modifier\";s:5:\"15.00\";s:19:\"price_modifier_type\";s:1:\"%\";s:15:\"weight_modifier\";s:4:\"0.00\";s:20:\"weight_modifier_type\";s:1:\"%\";}}i:215;a:10:{s:7:\"groupid\";s:3:\"215\";s:9:\"productid\";s:3:\"123\";s:4:\"name\";s:5:\"Color\";s:8:\"fullname\";s:0:\"\";s:7:\"orderby\";s:2:\"20\";s:4:\"type\";s:1:\"g\";s:9:\"view_type\";s:1:\"p\";s:7:\"enabled\";s:1:\"1\";s:7:\"variant\";s:1:\"1\";s:6:\"option\";a:9:{s:8:\"optionid\";s:3:\"806\";s:7:\"groupid\";s:3:\"215\";s:4:\"name\";s:5:\"Green\";s:7:\"orderby\";s:2:\"10\";s:7:\"enabled\";s:1:\"1\";s:14:\"price_modifier\";s:4:\"0.00\";s:19:\"price_modifier_type\";s:1:\"%\";s:15:\"weight_modifier\";s:4:\"0.00\";s:20:\"weight_modifier_type\";s:1:\"%\";}}}s:5:\"brand\";a:9:{s:7:\"brandid\";s:1:\"4\";s:8:\"cleanurl\";s:5:\"Apple\";s:4:\"name\";s:5:\"Apple\";s:5:\"descr\";s:0:\"\";s:10:\"meta_title\";s:0:\"\";s:13:\"meta_keywords\";s:0:\"\";s:10:\"meta_descr\";s:0:\"\";s:6:\"active\";s:1:\"Y\";s:7:\"orderby\";s:2:\"30\";}s:11:\"brand_image\";a:6:{s:7:\"imageid\";s:3:\"143\";s:7:\"brandid\";s:1:\"4\";s:4:\"file\";s:15:\"brand-icon2.png\";s:1:\"x\";s:3:\"300\";s:1:\"y\";s:3:\"170\";s:4:\"size\";s:4:\"5388\";}}}s:8:\"subtotal\";d:59;s:19:\"discounted_subtotal\";d:59;s:14:\"subtotal_taxed\";d:59;s:5:\"total\";d:80.795;s:13:\"need_shipping\";i:1;s:10:\"shippingid\";s:4:\"2220\";s:13:\"shipping_cost\";d:14.45;s:11:\"tax_details\";a:11:{s:5:\"taxid\";s:1:\"1\";s:8:\"tax_name\";s:3:\"VAT\";s:16:\"tax_display_name\";s:3:\"VAT\";s:7:\"formula\";s:2:\"ST\";s:12:\"address_type\";s:1:\"B\";s:6:\"active\";s:1:\"Y\";s:18:\"price_includes_tax\";s:1:\"N\";s:21:\"display_including_tax\";s:1:\"N\";s:12:\"display_info\";s:0:\"\";s:9:\"regnumber\";s:0:\"\";s:8:\"priority\";s:1:\"0\";}s:3:\"tax\";d:7.345000000000001;s:9:\"paymentid\";s:1:\"7\";}', 1790241806, 0, 0);
 
 -- --------------------------------------------------------
 
@@ -12218,7 +12223,7 @@ INSERT INTO `user_sessions` (`id`, `userid`, `name`, `value`) VALUES
 (22507, 857, 'recently', 'a:17:{i:0;s:3:\"113\";i:1;s:3:\"261\";i:2;s:3:\"260\";i:3;s:3:\"132\";i:4;s:3:\"118\";i:5;s:3:\"122\";i:8;s:3:\"126\";i:12;s:3:\"130\";i:14;s:3:\"121\";i:18;s:3:\"250\";i:28;s:3:\"154\";i:34;s:3:\"211\";i:35;s:3:\"264\";i:39;s:3:\"183\";i:40;s:3:\"166\";i:42;s:3:\"119\";i:43;s:3:\"215\";}'),
 (23361, 858, 'recently', 'a:2:{i:1;s:3:\"185\";i:3;s:3:\"215\";}'),
 (24647, 859, 'recently', 'a:8:{i:3;s:3:\"215\";i:46;s:3:\"247\";i:49;s:3:\"188\";i:60;s:3:\"190\";i:61;s:3:\"185\";i:63;s:3:\"113\";i:66;s:3:\"129\";i:67;s:3:\"170\";}'),
-(30669, 848, 'recently', 'a:19:{i:1;s:3:\"222\";i:2;s:3:\"218\";i:3;s:3:\"129\";i:4;s:3:\"131\";i:6;s:3:\"197\";i:7;s:3:\"195\";i:8;s:3:\"220\";i:10;s:3:\"113\";i:14;s:3:\"264\";i:15;s:3:\"263\";i:25;s:3:\"128\";i:27;s:3:\"123\";i:29;s:3:\"260\";i:44;s:3:\"215\";i:46;s:3:\"135\";i:47;s:3:\"136\";i:48;s:3:\"148\";i:49;s:3:\"149\";i:56;s:3:\"127\";}');
+(32026, 848, 'recently', 'a:19:{i:1;s:3:\"222\";i:2;s:3:\"218\";i:3;s:3:\"129\";i:4;s:3:\"131\";i:6;s:3:\"197\";i:7;s:3:\"195\";i:8;s:3:\"220\";i:10;s:3:\"113\";i:14;s:3:\"264\";i:15;s:3:\"263\";i:25;s:3:\"128\";i:27;s:3:\"123\";i:29;s:3:\"260\";i:44;s:3:\"215\";i:46;s:3:\"135\";i:47;s:3:\"136\";i:48;s:3:\"148\";i:49;s:3:\"149\";i:56;s:3:\"127\";}');
 
 -- --------------------------------------------------------
 
@@ -14173,7 +14178,7 @@ ALTER TABLE `categories`
 -- AUTO_INCREMENT для таблицы `category_banners`
 --
 ALTER TABLE `category_banners`
-  MODIFY `bannerid` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
+  MODIFY `bannerid` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
 
 --
 -- AUTO_INCREMENT для таблицы `category_icons`
@@ -14191,7 +14196,7 @@ ALTER TABLE `currencies`
 -- AUTO_INCREMENT для таблицы `languages`
 --
 ALTER TABLE `languages`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4056;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4060;
 
 --
 -- AUTO_INCREMENT для таблицы `languages_codes`
@@ -14341,7 +14346,7 @@ ALTER TABLE `tax_rates`
 -- AUTO_INCREMENT для таблицы `templates`
 --
 ALTER TABLE `templates`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3552903;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3567365;
 
 --
 -- AUTO_INCREMENT для таблицы `testimonials`
@@ -14377,7 +14382,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT для таблицы `users_carts`
 --
 ALTER TABLE `users_carts`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8114;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9469;
 
 --
 -- AUTO_INCREMENT для таблицы `users_remember`
@@ -14389,7 +14394,7 @@ ALTER TABLE `users_remember`
 -- AUTO_INCREMENT для таблицы `user_sessions`
 --
 ALTER TABLE `user_sessions`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30670;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32027;
 
 --
 -- AUTO_INCREMENT для таблицы `variants`

@@ -8,19 +8,21 @@ if ($wholesale) {
 <?php
 }
 ?>
-<table cellspacing="1" width="600" class="lines-table">
+<table cellspacing="1" width="600" class="lines-table resp-table wholesale-table" style="margin-bottom: 0;">
+<thead>
 <tr>
  <th width="10"></th>
  <th>{lng[Quantity]}</th>
  <th>{lng[Price]}</th>
  <th>{lng[Membership]}</th>
 </tr>
+</thead>
 <?php
 if ($wholesale) {	foreach ($wholesale as $k=>$v) {		echo '<tr>
  <td><input type="checkbox" name="to_delete['.$v['priceid'].']" /></td>
- <td><input size="5" type="text" class="width-85p" name="posted_data['.$v['priceid'].'][quantity]" value="'.$v['quantity'].'" /></td>
- <td><input size="5" type="text" name="posted_data['.$v['priceid'].'][price]" value="'.$v['price'].'" /></td>
- <td><select name="posted_data['.$v['priceid'].'][membershipid]">
+ <td><label>{lng[Quantity]}</label><input size="5" type="text" class="width-85p" name="posted_data['.$v['priceid'].'][quantity]" value="'.$v['quantity'].'" /></td>
+ <td><label>{lng[Price]}</label><input size="5" type="text" name="posted_data['.$v['priceid'].'][price]" value="'.$v['price'].'" /></td>
+ <td><label>{lng[Membership]}</label><select name="posted_data['.$v['priceid'].'][membershipid]">
 <option value="0">{lng[All]}</option>
  ';
 		if ($memberships)
@@ -34,10 +36,10 @@ if ($wholesale) {	foreach ($wholesale as $k=>$v) {		echo '<tr>
 }
 ?>
 <tr id="add_new">
- <td><a href="javascript: void(0);" onclick="duplicate_row($('#add_new'), $(this));" class="duplicate_plus">+</a></td>
- <td><input type="text" class="width-85p" name="new_wp[0][quantity]" value="1" /></td>
- <td><input size="5" type="text" name="new_wp[0][price]" /></td>
- <td><select name="new_wp[0][membershipid]">
+ <td><label>{lng[Add]}</label><a href="javascript: void(0);" onclick="duplicate_row($('#add_new'), $(this));" class="duplicate_plus">+</a></td>
+ <td><label>{lng[Quantity]}</label><input type="text" class="width-85p" name="new_wp[0][quantity]" value="1" /></td>
+ <td><label>{lng[Price]}</label><input size="5" type="text" name="new_wp[0][price]" /></td>
+ <td><label>{lng[Membership]}</label><select name="new_wp[0][membershipid]">
 <option value="0">{lng[All]}</option>
 <?php
 if ($memberships)

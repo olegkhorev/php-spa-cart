@@ -155,6 +155,7 @@ $(function() {
 <div class="cssload-container"><div class="cssload-speeding-wheel"></div></div>
 </div>
 <?php if ($config['General']['shop_closed'] != 'Y') {?>
+<?php if ($config['Visual']['visual_subscribe'] == 'Y') {?>
 <div id="foot-subscribe">
 <div class="foot-subscribe">
 <form method="POST" action="/subscribe" id="subsform">
@@ -165,6 +166,7 @@ $(function() {
 </form>
 </div>
 </div>
+<?php } ?>
 
 <div id="foot">
 <?php echo $foot;?>

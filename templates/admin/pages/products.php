@@ -24,7 +24,7 @@ else
 <tr>
  <td class="data-name top">{lng[Search in category]}:</td>
  <td><?php echo $categories_tree; ?><br />
-{lng[as]} <label><input type="checkbox" name="main_category" value="1"<?php if (!$search_products || $search_products['main_category']) echo 'checked="checked"'; ?> /> {lng[Main category]}</label>
+<label><input type="checkbox" name="main_category" value="1"<?php if (!$search_products || $search_products['main_category']) echo 'checked="checked"'; ?> /> {lng[Main category]}</label>
 &nbsp; <label><input type="checkbox" name="additional_category" value="1"<?php if ($search_products['additional_category']) echo ' checked="checked"'; ?> /> {lng[Additional category]}</label><br />
 <label><input type="checkbox" name="in_subcategories" value="1"<?php if ($search_products['in_subcategories']) echo ' checked="checked"'; ?> /> {lng[also search in subcategories]}</label><br />
  </td>
@@ -104,7 +104,8 @@ if ($total_pages > 2) {
 ?>
 <br /><a href="javascript: void(0);" onclick="javascript: check_all(document.psform, 'to_delete', true);">{lng[Check all]}</a> / <a href="javascript: void(0);" onclick="javascript: check_all(document.psform, 'to_delete', false);">{lng[Uncheck all]}</a>
 
-<table width="100%" class="lines-table">
+<table width="100%" class="lines-table resp-table products-table">
+<thead>
 <tr>
  <th width="10"></th>
  <th><a href="/admin/products?sort=sku<?php echo $direction; ?>">{lng[SKU]}</a></th>
@@ -113,15 +114,16 @@ if ($total_pages > 2) {
  <th><a href="/admin/products?sort=avail<?php echo $direction; ?>">{lng[In stock]}</a></th>
  <th>{lng[Status]}</th>
 </tr>
+</thead>
 <?php
 	foreach ($products as $v) {		echo '
 <tr>
  <td><input type="checkbox" pid="'.$v['productid'].'" name="to_delete['.$v['productid'].']" value="1" /></td>
- <td nowarp>'.$v['sku'].'</td>
- <td><a href="/admin/products/'.$v['productid'].'">'.$v['name'].'</a></td>
- <td><input type="text" size="10" name="posted_data['.$v['productid'].'][price]" value="'.$v['price'].'"></td>
- <td><input type="text" size="10" name="posted_data['.$v['productid'].'][avail]" value="'.$v['avail'].'"></td>
- <td>
+ <td nowarp><label>{lng[SKU]}</label>'.$v['sku'].'</td>
+ <td><label>{lng[Product name]}</label><a href="/admin/products/'.$v['productid'].'">'.$v['name'].'</a></td>
+ <td class="no-word-break"><label>{lng[Price]}</label><input type="text" size="10" name="posted_data['.$v['productid'].'][price]" value="'.$v['price'].'"></td>
+ <td class="no-word-break"><label>{lng[In stock]}</label><input type="text" size="10" name="posted_data['.$v['productid'].'][avail]" value="'.$v['avail'].'"></td>
+ <td class="no-word-break"><label>{lng[Status]}</label>
 <select name="posted_data['.$v['productid'].'][status]">
  <option value="1">{lng[Available for sale]}</option>
  <option value="2"'.($v['status'] == 2 ? ' selected' : '').'>{lng[Not available]}</option>

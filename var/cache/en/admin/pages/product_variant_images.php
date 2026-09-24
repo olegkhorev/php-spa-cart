@@ -5,12 +5,13 @@
 <?php 
 if ($has_images == 'Y') {?>
 <a href="javascript: void(0);" onclick="javascript: check_all(document.vform, 'to_delete', true);">Check all</a> / <a href="javascript: void(0);" onclick="javascript: check_all(document.vform, 'to_delete', false);">Uncheck all</a>
-<table>
+<table class="variant-images-table">
+<tbody>
 <?php 
 	foreach ($variants as $v) {
 		if ($v['images']) {?>
 <tr>
- <td valign="top">
+ <td valign="top" style="vertical-align: top;" class="var-images-td-1">
 <table>
 <?php 
 			foreach ($v['options'] as $o) {
@@ -25,7 +26,7 @@ if ($has_images == 'Y') {?>
 </table>
  </td>
  <td> &nbsp;</td>
- <td class="variant_images">
+ <td class="variant_images var-images-td-2">
 <?php 
 			foreach ($v['images'] as $img) {?>
 <div>
@@ -49,6 +50,7 @@ Pos:<br />
 		}
 	}
 ?>
+</tbody>
 <tr>
  <td colspan="3"><button>Update</button> <button type="button" onclick="submitForm(this, 'delete');">Delete selected</button><br /><br /></td>
 </tr>

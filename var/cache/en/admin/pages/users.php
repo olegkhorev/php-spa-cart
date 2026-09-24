@@ -19,7 +19,8 @@ if ($total_pages > 2) {
 }
 ?>
 
-<table cellpadding="2" class="users_list lines-table">
+<table cellpadding="2" class="users_list lines-table resp-table">
+<thead>
 <tr>
  <th width="10">&nbsp;</th>
  <th width="40%">User name</th>
@@ -27,15 +28,16 @@ if ($total_pages > 2) {
  <th width="10%">User role</th>
  <th width="10%">Status</th>
 </tr>
+</thead>
 <?php 
 foreach ($users as $k=>$v) {
 ?>
 <tr>
  <td><input type="checkbox" name="to_delete[<?php  echo $v['id']; ?>]" /></td>
- <td><a href="<?php echo $current_location;?>/admin/user/<?php  echo $v['id']; ?>"><?php  echo $v['firstname'].' '.$v['lastname']; ?></a></td>
- <td><?php  echo $v['email']; ?></a></td>
- <td align="center"><?php  if ($v['usertype'] == 'A') {?>Administrator<?php } else  {?>Customer<?php } ?></a></td>
- <td>
+ <td><label>User name</label><a href="<?php echo $current_location;?>/admin/user/<?php  echo $v['id']; ?>"><?php  echo $v['firstname'].' '.$v['lastname']; ?></a></td>
+ <td><label>User email</label><?php  echo $v['email']; ?></a></td>
+ <td align="center"><label>User role</label><?php  if ($v['usertype'] == 'A') {?>Administrator<?php } else  {?>Customer<?php } ?></a></td>
+ <td class="no-word-break"><label>Status</label>
 <select name="status[<?php  echo $v['id']; ?>]">
 <option value="1"<?php  if ($v['status'] == 1) echo ' selected="selected"'; ?>>Active</option>
 <option value="0"<?php  if (empty($v['status'])) echo ' selected="selected"'; ?>>Not active</option>

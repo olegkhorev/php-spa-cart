@@ -1,3 +1,12 @@
+<?php if ($meant) {?>
+<div class="did-you-mean">
+<b>Did you mean:</b>
+<?php foreach ($meant as $v) {?>
+<span><?php echo $v;?></span>
+<?php } ?>
+</div>
+<?php } ?>
+
 <?php if ($products) {?>
 <table>
 <?php foreach ($products as $v) {?>

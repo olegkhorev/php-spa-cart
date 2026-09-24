@@ -11,26 +11,22 @@ Total subscribers: <?php  echo $subscribers ? $subscribers : '0';?> <a href="/ad
 <h3><?php echo $letter['subject'];?></h3>
 <?php } ?>
 
-<table cellpadding="3" cellspacing="1" width="90%">
 <?php 
 if ($letter['date']) {
 ?>
-<tr>
- <td><b>Added:</b></td>
- <td><?php  echo date($datetime_format, $letter['date']); ?></td>
-</tr>
+Added: <?php  echo date($datetime_format, $letter['date']); ?>
 <?php 
 }
 ?>
 
+<table cellpadding="3" cellspacing="1" width="90%" class="normal-table">
 <tr>
  <td><b>Subject:</b></td>
  <td><input type="text" name="subject" size="40" value="<?php  echo escape($letter['subject'], 2); ?>" /></td>
 </tr>
 
 <tr>
- <td valign="top"><b>Message:</b></td>
- <td>
+ <td colspan="2">
 	<script>
 		var editor;
 		// The instanceReady event is fired, when an instance of CKEditor has finished
@@ -56,7 +52,6 @@ if ($letter['date']) {
 
 <tr>
  <td colspan="2"><h3>Test email</h3></td>
- <td></td>
 </tr>
 
 <tr>
@@ -75,8 +70,7 @@ if ($letter['date']) {
 </tr>
 
 <tr>
- <td></td>
- <td>
+ <td colspan="2">
 <button type="button" onclick="javascript: submitForm(this, 'test');">Test</button>
 </td>
 </tr>

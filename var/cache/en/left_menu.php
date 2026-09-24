@@ -1,6 +1,6 @@
 <div id="left_menu">
 <div class="mobile-menu-links">
-<?php if ($languages) {?>
+<?php if ($config['Visual']['visual_language'] == 'Y' && $languages) {?>
 <div class="language_select mobile_languages_select">
 Language:
 <select>
@@ -11,7 +11,7 @@ Language:
 </div>
 <?php } ?>
 
-<?php if ($currencies) {?>
+<?php if ($config['Visual']['visual_currency'] == 'Y' && $currencies) {?>
 <div class="currency_select mobile_currency_select">
 Currency:
 <select>
@@ -22,7 +22,7 @@ Currency:
 </div>
 <?php } ?>
 
-<?php if ($currencies || $languages) {?>
+<?php if (($config['Visual']['visual_language'] == 'Y' && $languages) || ($currencies && $config['Visual']['visual_currency'] == 'Y')) {?>
 <div class="clear"></div>
 <hr />
 <?php } ?>

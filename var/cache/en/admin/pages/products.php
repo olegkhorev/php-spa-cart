@@ -24,7 +24,7 @@ else
 <tr>
  <td class="data-name top">Search in category:</td>
  <td><?php  echo $categories_tree; ?><br />
-as <label><input type="checkbox" name="main_category" value="1"<?php  if (!$search_products || $search_products['main_category']) echo 'checked="checked"'; ?> /> Main category</label>
+<label><input type="checkbox" name="main_category" value="1"<?php  if (!$search_products || $search_products['main_category']) echo 'checked="checked"'; ?> /> Main category</label>
 &nbsp; <label><input type="checkbox" name="additional_category" value="1"<?php  if ($search_products['additional_category']) echo ' checked="checked"'; ?> /> Additional category</label><br />
 <label><input type="checkbox" name="in_subcategories" value="1"<?php  if ($search_products['in_subcategories']) echo ' checked="checked"'; ?> /> also search in subcategories</label><br />
  </td>
@@ -60,7 +60,7 @@ if ($brands) {
  <td><input type="text" size="8" name="price_min" value="<?php  echo escape($search_products['price_min'], 2); ?>" /> - <input type="text" size="8" name="price_max" value="<?php  echo escape($search_products['price_max'], 2); ?>" /></td>
 </tr>
 <tr>
- <td class="data-name">List price:</td>
+ <td class="data-name">Market price:</td>
  <td><input type="text" size="8" name="list_price_min" value="<?php  echo escape($search_products['list_price_min'], 2); ?>" /> - <input type="text" size="8" name="list_price_max" value="<?php  echo escape($search_products['list_price_max'], 2); ?>" /></td>
 </tr>
 <tr>
@@ -104,7 +104,8 @@ if ($total_pages > 2) {
 ?>
 <br /><a href="javascript: void(0);" onclick="javascript: check_all(document.psform, 'to_delete', true);">Check all</a> / <a href="javascript: void(0);" onclick="javascript: check_all(document.psform, 'to_delete', false);">Uncheck all</a>
 
-<table width="100%" class="lines-table">
+<table width="100%" class="lines-table resp-table products-table">
+<thead>
 <tr>
  <th width="10"></th>
  <th><a href="/admin/products?sort=sku<?php  echo $direction; ?>">SKU</a></th>
@@ -113,15 +114,16 @@ if ($total_pages > 2) {
  <th><a href="/admin/products?sort=avail<?php  echo $direction; ?>">In stock</a></th>
  <th>Status</th>
 </tr>
+</thead>
 <?php 
 	foreach ($products as $v) {		echo '
 <tr>
  <td><input type="checkbox" pid="'.$v['productid'].'" name="to_delete['.$v['productid'].']" value="1" /></td>
- <td nowarp>'.$v['sku'].'</td>
- <td><a href="/admin/products/'.$v['productid'].'">'.$v['name'].'</a></td>
- <td><input type="text" size="10" name="posted_data['.$v['productid'].'][price]" value="'.$v['price'].'"></td>
- <td><input type="text" size="10" name="posted_data['.$v['productid'].'][avail]" value="'.$v['avail'].'"></td>
- <td>
+ <td nowarp><label>SKU</label>'.$v['sku'].'</td>
+ <td><label>Product name</label><a href="/admin/products/'.$v['productid'].'">'.$v['name'].'</a></td>
+ <td class="no-word-break"><label>Price</label><input type="text" size="10" name="posted_data['.$v['productid'].'][price]" value="'.$v['price'].'"></td>
+ <td class="no-word-break"><label>In stock</label><input type="text" size="10" name="posted_data['.$v['productid'].'][avail]" value="'.$v['avail'].'"></td>
+ <td class="no-word-break"><label>Status</label>
 <select name="posted_data['.$v['productid'].'][status]">
  <option value="1">Available for sale</option>
  <option value="2"'.($v['status'] == 2 ? ' selected' : '').'>Not available</option>

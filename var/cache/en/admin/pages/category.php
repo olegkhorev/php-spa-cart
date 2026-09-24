@@ -19,8 +19,8 @@
 if ($get['3'] == 'banners') {
 ?>
 
-<table cellpadding="3" cellspacing="1" class="lines-table">
-
+<table cellpadding="3" cellspacing="1" class="lines-table resp-table">
+<thead>
 <tr>
 	<th width="10">&nbsp;</th>
 	<th>Banner</th>
@@ -28,26 +28,24 @@ if ($get['3'] == 'banners') {
 	<th>Alt</th>
 	<th width="100">Pos</th>
 </tr>
-
+</thead>
 <?php 
 if ($banners) {
 	foreach ($banners as $b) {
 ?>
 <tr>
 	<td><input type="checkbox" name="to_delete[<?php  echo $b['bannerid'];?>]" /></td>
-	<td align="center"><a href="<?php  echo $b['image_url'];?>" target="_blank"><img src="<?php  echo $b['image_url'];?>" width="100"></a></td>
-	<td><input size="30" type="text" name="to_update[<?php  echo $b['bannerid'];?>][url]" value="<?php  echo escape($b['url']);?>" /></td>
-	<td><input size="30" type="text" name="to_update[<?php  echo $b['bannerid'];?>][alt]" value="<?php  echo escape($b['alt']);?>" /></td>
-	<td><input size="5" type="text" name="to_update[<?php  echo $b['bannerid'];?>][pos]" value="<?php  echo $b['pos'];?>"></td>
+	<td align="center"><label>Banner</label><a href="<?php  echo $b['image_url'];?>" target="_blank"><img src="<?php  echo $b['image_url'];?>" width="100"></a></td>
+	<td><label>Link</label><input size="30" type="text" name="to_update[<?php  echo $b['bannerid'];?>][url]" value="<?php  echo escape($b['url']);?>" /></td>
+	<td><label>Alt</label><input size="30" type="text" name="to_update[<?php  echo $b['bannerid'];?>][alt]" value="<?php  echo escape($b['alt']);?>" /></td>
+	<td><label>Pos</label><input size="5" type="text" name="to_update[<?php  echo $b['bannerid'];?>][pos]" value="<?php  echo $b['pos'];?>"></td>
 </tr>
 <?php 
 	}
 ?>
 <tr>
-	<td colspan="5" class="SubmitBox">
-	<br />
-	<button type="button" onclick="javascript: submitForm(this, 'update');">Update</button>
-	<button type="button" onclick="javascript: submitForm(this, 'delete');">Delete selected</button>
+	<td colspan="5" class="var-wh-100">
+	<button type="button" onclick="javascript: submitForm(this, 'update');">Update</button> &nbsp;	<button type="button" onclick="javascript: submitForm(this, 'delete');">Delete selected</button>
 	</td>
 </tr>
 
@@ -55,26 +53,26 @@ if ($banners) {
 } else  {
 ?>
 <tr>
- <td colspan="5" align="center">No banners for this category</td>
+ <td colspan="5" align="center" class="var-wh-100">No banners for this category</td>
 </tr>
 <?php 
 }
 ?>
 
 <tr>
-<td colspan="5"><br /><h3>Add new</td>
+<td colspan="5" class="var-wh-100"><br /><h3>Add new</td>
 </tr>
 
 <tr>
 	<td>&nbsp;</td>
-	<td><input type="file" size="10" name="userfile" /></td>
-	<td><input size="30" type="text" name="new_url"></td>
-	<td><input size="30" type="text" name="new_alt"></td>
-	<td align="center"><input type="text" size="5" name="new_pos" /></td>
+	<td><label>Banner</label><input type="file" size="10" name="userfile" /></td>
+	<td><label>Link</label><input size="30" type="text" name="new_url"></td>
+	<td><label>Alt</label><input size="30" type="text" name="new_alt"></td>
+	<td align="center"><label>Pos</label><input type="text" size="5" name="new_pos" /></td>
 </tr>
 
 <tr>
-	<td colspan="5">
+	<td colspan="5" class="var-wh-100">
 <button type="button" onclick="javascript: submitForm(this, 'add');">Add</button>
 	</td>
 </tr>
@@ -106,7 +104,7 @@ if ($banners) {
 </tr>
 
 <tr>
-	<td height="10" class="FormButton" nowrap="nowrap">Position</td>
+	<td height="10" nowrap="nowrap">Position</td>
 	<td width="10" height="10">&nbsp;</td>
 	<td height="10">
 		<input type="text" name="orderby" size="5" value="<?php  echo $category['orderby']; ?>" />
@@ -161,7 +159,7 @@ if ($banners) {
 </tr>
 
 <tr>
-	<td height="10" class="FormButton" nowrap="nowrap">Title tag</td>
+	<td height="10" nowrap="nowrap">Title tag</td>
 	<td width="10" height="10"></td>
 	<td height="10">
 		<input type="text" size="65" name="meta_title" value="<?php  echo escape($category['meta_title']); ?>" />
@@ -169,7 +167,7 @@ if ($banners) {
 </tr>
 
 <tr>
-	<td height="10" class="FormButton" nowrap="nowrap">Meta keywords</td>
+	<td height="10" nowrap="nowrap">Meta keywords</td>
 	<td width="10" height="10"></td>
 	<td height="10">
 		<textarea cols="65" rows="4" name="meta_keywords"><?php  echo $category['meta_keywords']; ?></textarea>
@@ -177,7 +175,7 @@ if ($banners) {
 </tr>
 
 <tr>
-	<td height="10" class="FormButton" nowrap="nowrap">Meta description</td>
+	<td height="10" nowrap="nowrap">Meta description</td>
 	<td width="10" height="10"></td>
 	<td height="10">
 		<textarea cols="65" rows="4" name="meta_description"><?php  echo $category['meta_description']; ?></textarea>
@@ -186,7 +184,7 @@ if ($banners) {
 
 </table>
 <br /><br /><br /><br />
-<div class="fixed_save_button">
+<div class="fixed_save_button fixed_save_button_category">
 <button class="button-margin-left" type="button" onclick="javascript: submit_category();">Save</button>
 <?php 
 if ($category && $new_category != 'Y') {

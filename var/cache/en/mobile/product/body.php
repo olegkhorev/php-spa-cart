@@ -94,7 +94,7 @@ exceptions[<?php echo $oid;?>] = [];
 <?php $save_price = $product['list_price'] - $product['price'];; ?>
 <?php $save_percentage = round(100 - 100 * $product['price'] / $product['list_price']);; ?>
 <tr>
- <td class="name">List price:</td>
+ <td class="name">Market price:</td>
  <td class="value product-list-price"><s><?php echo '<span class="currency">'.currency_symbol().'</span>'.price_format_currency($product['list_price']); ?></s>, save <?php echo '<span class="currency">'.currency_symbol().'</span>'.price_format_currency($save_price); ?> (<?php echo $save_percentage;?>%)</td>
 </tr>
 <?php } ?>

@@ -8,10 +8,11 @@ if ($option_groups) {
 <?php 
 }
 ?>
-<table width="800" class="lines-table">
+<table width="800" class="lines-table resp-table resp-table-100">
 <?php 
 if ($option_groups) {
 ?>
+<thead>
 <tr>
  <th width="10">&nbsp;</th>
  <th width="100%" colspan="2">Option group</th>
@@ -19,13 +20,14 @@ if ($option_groups) {
  <th>Variant</th>
  <th>Enabled</th>
 </tr>
+</thead>
 <?php 
 foreach ($option_groups as $v) {
 	echo '
 <tr>
  <td><input type="checkbox" name="to_delete['.$v['groupid'].']"></td>
- <td width="100%"><a href="'.$current_location.'/admin/products/'.$v['productid'].'/options/'.$v['groupid'].'">'.$v['name'].' ('.($v['options'] ? count($v['options']) : '0').')</a></td>
- <td nowrap>';
+ <td width="100%"><label>Name</label><a href="'.$current_location.'/admin/products/'.$v['productid'].'/options/'.$v['groupid'].'">'.$v['name'].' ('.($v['options'] ? count($v['options']) : '0').')</a></td>
+ <td nowrap><label>Type</label>';
 ?>
 <?php if (($v['view_type'] == 's')) {?>
 Select box
@@ -40,9 +42,9 @@ Input box
 <?php } ?>
 <?php 
  echo '</td>
- <td><input type="text" size="5" name="posted_data['.$v['groupid'].'][orderby]" value="'.$v['orderby'].'" /></td>
- <td align="center"><input type="checkbox" name="posted_data['.$v['groupid'].'][variant]" value="1" '.($v['variant'] ? ' checked="checked"' : '').' /></td>
- <td align="center"><input type="checkbox" name="posted_data['.$v['groupid'].'][enabled]" value="1" '.($v['enabled'] ? ' checked="checked"' : '').' /></td>
+ <td><label>Pos</label><input type="text" size="5" name="posted_data['.$v['groupid'].'][orderby]" value="'.$v['orderby'].'" /></td>
+ <td align="center"><label>Variant</label><input type="checkbox" name="posted_data['.$v['groupid'].'][variant]" value="1" '.($v['variant'] ? ' checked="checked"' : '').' /></td>
+ <td align="center"><label>Enabled</label><input type="checkbox" name="posted_data['.$v['groupid'].'][enabled]" value="1" '.($v['enabled'] ? ' checked="checked"' : '').' /></td>
 </tr>
 	';
 }

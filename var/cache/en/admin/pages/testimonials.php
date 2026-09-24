@@ -16,7 +16,7 @@ if ($testimonial) {
 </tr>
 <tr>
   <td valign="top" align="right">Testimonial:</td>
-  <td><textarea name="to_edit[message]" cols="40" rows="10"><?php  echo $testimonial['message']; ?></textarea></td>
+  <td><textarea name="to_edit[message]" cols="40" rows="10" class="border-radius-25"><?php  echo $testimonial['message']; ?></textarea></td>
 </tr>
 <tr>
   <td align="right">Status:</td>
@@ -45,8 +45,8 @@ if ($total_pages > 2) {
 ?>
 
 <a href="javascript: void(0);" onclick="javascript: check_all(document.testimonialsform, 'to_delete', true);">Check all</a> / <a href="javascript: void(0);" onclick="javascript: check_all(document.testimonialsform, 'to_delete', false);">Uncheck all</a>
-<table cellpadding="3" cellspacing="0" width="900" class="lines-table">
-
+<table cellpadding="3" cellspacing="0" width="900" class="lines-table resp-table">
+<thead>
 <tr>
         <th width="10">&nbsp;</th>
         <th width="70">Status</th>
@@ -55,21 +55,21 @@ if ($total_pages > 2) {
         <th width="70">Date</th>
         <th width="70">Action</th>
 </tr>
-
+</thead>
 <?php 
 foreach ($testimonials as $t) {
 ?>
 <tr>
         <td class="underline"><input type="checkbox" name="to_delete[<?php  echo $t['tid']; ?>]" value="Y"></td>
-        <td class="underline">
+        <td class="underline"><label>Status</label>
 <select name="to_update[<?php  echo $t['tid']; ?>][status]">
 <option value="A">Approved</option>
 <option value="P"<?php  if ($t['status'] == 'P') echo ' selected'; ?>>Pending</option>
 </select>
         </td>
-        <td class="underline"><?php  echo $t['message']; ?></td>
-        <td class="underline"><a target="_blank" href="/admin/user/<?php  echo $t['userid']; ?>"><?php  echo $t['name'].'('.$t['email'].')'; ?></a></td>
-        <td class="underline" align="right"><?php  echo date($date_format, $t['date']); ?></td>
+        <td class="underline"><label>Testimonial</label><?php  echo $t['message']; ?></td>
+        <td class="underline"><label>User</label><a target="_blank" href="/admin/user/<?php  echo $t['userid']; ?>"><?php  echo $t['name'].'('.$t['email'].')'; ?></a></td>
+        <td class="underline" align="right"><label>Date</label><?php  echo date($date_format, $t['date']); ?></td>
         <td class="underline" align="right"><a href="/admin/testimonials/<?php  echo $t['tid']; ?>">Modify</a></td>
 </tr>
 <?php 

@@ -79,7 +79,8 @@ if ($options) {
 <?php
 }
 ?>
-<table cellspacing="1" width="100%">
+<table cellspacing="1" width="100%" class="resp-table resp-table-100 options-group-table" style="margin-bottom: 0px;">
+<thead>
 <tr>
  <th width="10"></th>
  <th width="100%">{lng[Name]}</th>
@@ -88,49 +89,50 @@ if ($options) {
  <th>{lng[Pos]}</th>
  <th>{lng[Enabled]}</th>
 </tr>
+</thead>
 <?php
 if ($options) {	foreach ($options as $k=>$v) {		echo '<tr>
  <td><input type="checkbox" name="to_delete['.$v['optionid'].']" /></td>
- <td><input type="text" class="width-95p" name="options_data['.$v['optionid'].'][name]" value="'.escape($v['name']).'" /></td>
- <td><input size="5" type="text" name="options_data['.$v['optionid'].'][price_modifier]" value="'.escape($v['price_modifier']).'" /></td>
- <td>
+ <td><label>{lng[Name]}</label><input type="text" class="width-95p" name="options_data['.$v['optionid'].'][name]" value="'.escape($v['name']).'" /></td>
+ <td><label>{lng[Price]}</label><input size="5" type="text" name="options_data['.$v['optionid'].'][price_modifier]" value="'.escape($v['price_modifier']).'" /></td>
+ <td class="no-word-break"><label>&nbsp;</label>
   <select name="options_data['.$v['optionid'].'][price_modifier_type]">
    <option value="%">{lng[Percent]}</option>
    <option value="$"'.($v['price_modifier_type'] == '$' ? ' selected="selected"' : '').'>{lng[Absolute]}</option>
   </select>
  </td>
- <td><input size="5" type="text" name="options_data['.$v['optionid'].'][weight_modifier]" value="'.escape($v['weight_modifier']).'" /></td>
- <td>
+ <td><label>{lng[Weight]}</label><input size="5" type="text" name="options_data['.$v['optionid'].'][weight_modifier]" value="'.escape($v['weight_modifier']).'" /></td>
+ <td class="no-word-break"><label>&nbsp;</label>
   <select name="options_data['.$v['optionid'].'][weight_modifier_type]">
    <option value="%">{lng[Percent]}</option>
    <option value="$"'.($v['weight_modifier_type'] == '$' ? ' selected="selected"' : '').'>{lng[Absolute]}</option>
   </select>
  </td>
- <td><input size="5" type="text" name="options_data['.$v['optionid'].'][orderby]" value="'.$v['orderby'].'" /></td>
- <td align="center"><input type="checkbox" name="options_data['.$v['optionid'].'][enabled]" value="1" '.($v['enabled'] ? ' checked' : '').'></td>
+ <td><label>{lng[Pos]}</label><input size="5" type="text" name="options_data['.$v['optionid'].'][orderby]" value="'.$v['orderby'].'" /></td>
+ <td align="center"><label>{lng[Enabled]}</label><input type="checkbox" name="options_data['.$v['optionid'].'][enabled]" value="1" '.($v['enabled'] ? ' checked' : '').'></td>
 </tr>';
 	}
 }
 ?>
 <tr id="add_new">
- <td><a href="javascript: void(0);" onclick="duplicate_row($('#add_new'), $(this));" class="duplicate_plus">+</a></td>
- <td><input type="text" class="width-95p" name="new_option[0][name]" /></td>
- <td><input size="5" type="text" name="new_option[0][price_modifier]" /></td>
- <td>
+ <td><label>{lng[Add]}</label><a href="javascript: void(0);" onclick="duplicate_row($('#add_new'), $(this));" class="duplicate_plus">+</a></td>
+ <td><label>{lng[Name]}</label><input type="text" class="width-95p" name="new_option[0][name]" /></td>
+ <td><label>{lng[Price]}</label><input size="5" type="text" name="new_option[0][price_modifier]" /></td>
+ <td class="no-word-break"><label>&nbsp;</label>
   <select name="new_option[0][price_modifier_type]">
    <option value="%">{lng[Percent]}</option>
    <option value="$">{lng[Absolute]}</option>
   </select>
  </td>
- <td><input size="5" type="text" name="new_option[0][weight_modifier]" /></td>
- <td>
+ <td><label>{lng[Weight]}</label><input size="5" type="text" name="new_option[0][weight_modifier]" /></td>
+ <td class="no-word-break"><label>&nbsp;</label>
   <select name="new_option[0][weight_modifier_type]">
    <option value="%">{lng[Percent]}</option>
    <option value="$">{lng[Absolute]}</option>
   </select>
  </td>
- <td><input size="5" type="text" name="new_option[0][orderby]" /></td>
- <td align="center"><input type="checkbox" name="new_option[0][enabled]" checked value="1" /></td>
+ <td><label>{lng[Pos]}</label><input size="5" type="text" name="new_option[0][orderby]" /></td>
+ <td align="center"><label>{lng[Enabled]}</label><input type="checkbox" name="new_option[0][enabled]" checked value="1" /></td>
 </tr>
 </table>
 <br />

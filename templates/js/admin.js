@@ -349,6 +349,11 @@ function ajax_clicks_admin() {
 		if ($(this).hasClass('no-ajax'))
 			return true;
 
+    if ($('.navigation-overlay').is(':visible')) {
+    	$('.navigation-overlay').hide();
+    	$('.navigation-admin').hide();
+    }
+
 		if ($(this).closest('.navigation-admin').length) {
         $('.navigation-admin li').removeClass('clicked');
 				$(this).closest('li').addClass('clicked');

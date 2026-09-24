@@ -31,7 +31,7 @@
  <td><input type="text" size="10" name="price" value="<?php  echo $product['price'] ? $product['price'] : '0.00'; ?>" /></td>
 </tr>
 <tr>
- <td>List price (<?php echo $config['General']['currency_symbol'];?>)</td>
+ <td>Market price (<?php echo $config['General']['currency_symbol'];?>)</td>
  <td><input type="text" size="10" name="list_price" value="<?php  echo $product['list_price'] ? $product['list_price'] : '0.00'; ?>" /></td>
 </tr>
 <tr>

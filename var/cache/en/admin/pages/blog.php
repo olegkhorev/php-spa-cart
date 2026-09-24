@@ -17,21 +17,22 @@ if ($total_pages > 2) {
 
 <a href="javascript: void(0);" onclick="javascript: check_all(document.blogsform, 'to_delete', true);">Check all</a> / <a href="javascript: void(0);" onclick="javascript: check_all(document.blogsform, 'to_delete', false);">Uncheck all</a>
 
-<table cellpadding="3" cellspacing="1" width="600" class="lines-table">
+<table cellpadding="3" cellspacing="1" width="600" class="lines-table resp-table">
+<thead>
 <tr>
 	<th width="10">&nbsp;</th>
 	<th width="60%">Title</th>
 	<th width="5%">Active</th>
 	<th width="35%">Comments</th>
 </tr>
-
+</thead>
 <?php 
 foreach ($blogs as $b) {
 	echo '<tr>
 	<td><input type="checkbox" name="to_delete['.$b['blogid'].']" value="Y" /></td>
-	<td><a href="'.$current_location.'/admin/blog/'.$b['blogid'].'">'.$b['title'].'</a></td>
-	<td><input type="checkbox" name="to_update['.$b['blogid'].'][active]" value="Y"'.($b['active'] == 'Y' ? ' checked="checked"' : '').' /></td>
-	<td align="center"><a href="'.$current_location.'/admin/blog/'.$b['blogid'].'">'.$b['comments']."</a></td>
+	<td><label>Title</label><a href="'.$current_location.'/admin/blog/'.$b['blogid'].'">'.$b['title'].'</a></td>
+	<td><label>Active</label><input type="checkbox" name="to_update['.$b['blogid'].'][active]" value="Y"'.($b['active'] == 'Y' ? ' checked="checked"' : '').' /></td>
+	<td align="center"><label>Comments</label><a href="'.$current_location.'/admin/blog/'.$b['blogid'].'">'.$b['comments']."</a></td>
 </tr>";
 }
 ?>
@@ -219,7 +220,7 @@ if ($comments) {
 <input size="40" id="helptext" readonly>
 <br />
 
-<textarea name="comment" cols="80" rows="15"></textarea>
+<textarea name="comment" cols="80" rows="15" class="border-radius-25"></textarea>
 <br /><br />
 <button type="submit" name="btn">Add</button>
 <br /><br />

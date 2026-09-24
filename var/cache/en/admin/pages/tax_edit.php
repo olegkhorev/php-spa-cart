@@ -11,25 +11,7 @@
   <td width="10" class="star">*</td>
   <td width="80%"><input type="text" size="15" maxlength="10" name="tax_service_name" value="<?php  echo escape($tax_details['tax_name'], 2); ?>" /></td>
 </tr>
-<?php /* ?>
-<tr>
-  <td>Tax display name:</td>
-  <td></td>
-  <td><input type="text" size="45" name="tax_display_name" value="<?php  echo escape($tax_details['tax_display_name'], 2); ?>" /></td>
-</tr>
 
-<tr>
-  <td>Tax reg number:</td>
-  <td></td>
-  <td><input type="text" size="32" maxlength="32" name="tax_regnumber" value="<?php  echo escape($tax_details['regnumber'], 2); ?>" /></td>
-</tr>
-
-<tr>
-  <td>Tax priority:</td>
-  <td></td>
-  <td><input type="text" size="10" name="tax_priority" value="<?php  echo escape($tax_details['priority'], 2); ?>" /></td>
-</tr>
-<?php */ ?>
 <tr>
   <td>Status:</td>
   <td></td>
@@ -40,87 +22,7 @@
   </select>
   </td>
 </tr>
-<?php /* ?>
-<tr>
-  <td>Tax apply to:</td>
-  <td class="star">*</td>
-  <td>
-<table cellpadding="0" cellspacing="0" width="100%">
 
-<tr>
-  <td><input type="text" size="25" id="tax_formula" name="tax_formula" value="=<?php  echo escape($tax_details['formula'], 2); ?>" readonly="readonly" /></td>
-  <td nowrap>
-<button type="button" onclick="javacript: undoFormula('tax_formula');" />Undo</button>
-<button  type="button" onclick="javacript: undoFormula('tax_formula', 1);" />Redo</button>
-<button  type="button" onclick="javacript: addElm('tax_formula', '=', '=');" />Clear</button>
-  </td>
-</tr>
-
-<tr>
-  <td class="tax-padding">
-<input type="button" value=" + " onclick="javascript: addElm('tax_formula', '+', 1);" /></button>
-<input type="button" value=" - " onclick="javascript: addElm('tax_formula', '-', 1);" /></button>
-<input type="button" value=" * " onclick="javascript: addElm('tax_formula', '*', 1);" /></button>
-<input type="button" value=" / " onclick="javascript: addElm('tax_formula', '/', 1);" /></button>
-  </td>
-  <td class="tax-padding" nowrap>
-  <select id="unit_tax_formula">
-  <option value="">&nbsp;</option>
-<?php 
-foreach ($taxes_units as $key=>$item)
-	echo '<option value="'.$key.'">'.$key.($key != $item ? ' ('.$item.')' : '').'</option>';
-?>
-  </select>&nbsp;
-  <input type="button" value="Add" onclick="javascript: if(document.getElementById('unit_tax_formula').value != '') addElm('tax_formula', document.getElementById('unit_tax_formula').value, 2);" /></button>
-  </td>
-</tr>
-<?php */ ?>
-<?php /* ?>
-<tr>
-  <td>
-  <input type="text" id="value_tax_formula" />
-  <input type="button" size="8" value="Add" onclick="javascript: document.getElementById('value_tax_formula').value = (isNaN(parseFloat(document.getElementById('value_tax_formula').value)) ? '' : Math.abs(parseFloat(document.getElementById('value_tax_formula').value))); if (document.getElementById('value_tax_formula').value != '') addElm('tax_formula', document.getElementById('value_tax_formula').value, 2);" /></button>
-  </td>
-</tr>
-<?php */ ?>
-<?php /* ?>
-</table>
-  </td>
-</tr>
-<?php */ ?>
-<?php /* ?>
-<tr>
-  <td nowrap="nowrap">Tax rates depended on:</td>
-  <td></td>
-  <td>
-  <select name="address_type">
-    <option value="S"<?php  echo ($tax_details['address_type'] == "S" ? ' selected="selected"' : ''); ?>>Shipping address</option>
-    <option value="B"<?php  echo ($tax_details['address_type'] == "B" ? ' selected="selected"' : ''); ?>>Billing address</option>
-  </select>
-  </td>
-</tr>
-<?php */ ?>
-<?php /* ?>
-<tr>
-  <td colspan="2"></td>
-  <td><label><input type="checkbox" name="price_includes_tax" value="Y"<?php  echo ($tax_details['price_includes_tax'] == "Y" ? ' checked="checked"' : ''); ?> /> Included in product price</label></td>
-</tr>
-
-<tr>
-  <td colspan="2"></td>
-  <td><label><input type="checkbox" name="display_including_tax" value="Y" onclick="javascript: document.taxdetailsform.display_info.disabled = !document.taxdetailsform.display_including_tax.checked;"<?php  echo ($tax_details['display_including_tax'] == "Y" ? ' checked="checked"' : ''); ?> /> Display including tax</label></td>
-</tr>
-
-<tr>
-  <td colspan="2"></td>
-  <td>Display also:<br />
-<label><input type="radio" value=""<?php  echo $tax_details['display_info'] == '' ? ' checked="checked"' : ''; ?> name="display_info"<?php  echo $tax_details['display_including_tax'] != "Y" ? ' disabled="disabled"': ''; ?>> Display tax none</label>
-<label><input type="radio" value="1"<?php  echo $tax_details['display_info'] == '1' ? ' checked="checked"' : ''; ?> name="display_info"<?php  echo $tax_details['display_including_tax'] != "Y" ? ' disabled="disabled"': ''; ?>> Display tax rate</label>
-<label><input type="radio" value="2"<?php  echo $tax_details['display_info'] == '2' ? ' checked="checked"' : ''; ?> name="display_info"<?php  echo $tax_details['display_including_tax'] != "Y" ? ' disabled="disabled"': ''; ?>> Display tax cost</label>
-<label><input type="radio" value="3"<?php  echo $tax_details['display_info'] == '3' ? ' checked="checked"' : ''; ?> name="display_info"<?php  echo $tax_details['display_including_tax'] != "Y" ? ' disabled="disabled"': ''; ?>> Display tax rate and cost</label>
-  </td>
-</tr>
-<?php */ ?>
 <tr>
   <td colspan="2"></td>
   <td><br /></td>
@@ -143,8 +45,8 @@ if ($tax_details['taxid'] && $tax_details['taxid'] != 'add') {
 <input type="hidden" name="mode" value="update_rates" />
 <input type="hidden" name="taxid" value="<?php  echo $tax_details['taxid']; ?>" />
 
-<table cellpadding="3" cellspacing="1" width="100%" class="lines-table">
-
+<table cellpadding="3" cellspacing="1" width="100%" class="lines-table resp-table">
+<thead>
 <tr>
   <th width="10">&nbsp;</th>
   <th width="30%">Zone</th>
@@ -152,17 +54,17 @@ if ($tax_details['taxid'] && $tax_details['taxid'] != 'add') {
   <th width="30%" align="center">Tax rate value</th>
   <th width="20%" align="center">Tax apply to</th>
 </tr>
-
+</thead>
 <?php 
 if ($tax_rates) {
 	foreach ($tax_rates as $t) {
 		echo '<tr>
   <td><input type="checkbox" name="to_delete['.$t['rateid'].']" /></td>
-  <td>';
+  <td><label>Zone</label>';
 ?>
 <?php if ($t['zoneid'] == 0) {?>Default zone<?php } else  { ?><a href='<?php echo $current_location;?>/admin/zones/<?php echo $t['zoneid'];?>'><?php echo $t['zone_name'];?></a><?php } ?>
 <?php 
-  echo '</td><td align="center">
+  echo '</td><td align="center"><label>Membership</label>
 <a href="/admin/taxes/'.$tax_details['taxid'].'?rateid='.$t['rateid'].'#rates">
 		';
 ?>
@@ -176,14 +78,14 @@ All
 <?php 
 		echo '</a>
 </td>
-  <td align="center" nowrap="nowrap">
+  <td align="center" nowrap="nowrap" class="no-word-break"><label>Tax rate value</label>
 <input type="text" size="10" maxlength="13" name="posted_data['.$t['rateid'].'][rate_value]" value="'.$t['rate_value'].'" />
 <select name="posted_data['.$t['rateid'].'][rate_type]">
   <option value="%"'.($t['rate_type'] == "%" ? ' selected="selected"' : '').'>%</option>
   <option value="$"'.($t['rate_type'] == "$" ? ' selected="selected"' : '').'>'.$config['General']['currency_symbol'].'</option>
 </select>
   </td>
-  <td align="center"><a href="/admin/taxes/'.$tax_details['taxid'].'?rateid='.$t['rateid'].'#rates">'.($t['formula'] == "" ? $tax_details['formula'] : $t['formula']).($t['shipping'] ? '+Shipping' : '').'</a></td>
+  <td align="center"><label>Tax apply to</label><a href="/admin/taxes/'.$tax_details['taxid'].'?rateid='.$t['rateid'].'#rates">'.($t['formula'] == "" ? $tax_details['formula'] : $t['formula']).($t['shipping'] ? '+Shipping' : '').'</a></td>
 </tr>
 		';
 	}

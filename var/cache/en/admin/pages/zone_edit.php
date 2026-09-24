@@ -22,7 +22,7 @@ if ($zoneid) {
 </tr>
 </table>
 
-<table cellpadding="3" cellspacing="1" width="1000">
+<table cellpadding="3" cellspacing="1" width="1000" class="mobile-zone_edit-table">
 <tr>
   <td colspan="3"><br /><br /><h3>Countries</td>
 </tr>
@@ -36,7 +36,7 @@ if ($zoneid) {
 <tr>
   <td>
 <input type="hidden" id="zone_countries_store" name="zone_countries_store" value="" />
-<select id="zone_countries" multiple="multiple" class="width-100p" size="20">
+<select id="zone_countries" multiple="multiple" class="width-100p border-radius-25" size="20">
 <?php 
 foreach ($zone_countries as $c)
 	echo '<option value="'.$c['code'].'">'.$c['country'].'</option>';
@@ -53,7 +53,7 @@ normalizeSelect('zone_countries');
 <input type="button" value="&gt;&gt;" onclick="javascript: moveSelect(document.getElementById('zone_countries'), document.getElementById('rest_countries'), 'L');" />
   </td>
   <td>
-<select id="rest_countries" multiple="multiple" class="width-100p" size="20">
+<select id="rest_countries" multiple="multiple" class="width-100p border-radius-25" size="20">
 <?php 
 foreach ($rest_countries as $c)
 	echo '<option value="'.$c['code'].'">'.$c['country'].'</option>';
@@ -75,7 +75,7 @@ foreach ($rest_countries as $c)
 <tr>
   <td>
 <input type="hidden" id="zone_states_store" name="zone_states_store" value="" />
-<select id="zone_states" multiple="multiple" class="width-100p" size="20">
+<select id="zone_states" multiple="multiple" class="width-100p border-radius-25" size="20">
 <?php 
 foreach ($zone_states as $s)
 	echo '<option value="'.$s['country_code'].'_'.$s['code'].'">'.substr($s['country'], 0, 30).': '.$s['state'].'</option>';
@@ -92,7 +92,7 @@ normalizeSelect('zone_states');
 <input type="button" value="&gt;&gt;" onclick="javascript: moveSelect(document.getElementById('zone_states'), document.getElementById('rest_states'), 'L');" />
   </td>
   <td>
-<select id="rest_states" name="rest_states" multiple="multiple" class="width-100p" size="20">
+<select id="rest_states" name="rest_states" multiple="multiple" class="width-100p border-radius-25" size="20">
 <?php 
 foreach ($rest_states as $s)
 	echo '<option value="'.$s['country_code'].'_'.$s['code'].'">'.substr($s['country'], 0, 17).': '.$s['state'].'</option>';
@@ -113,7 +113,7 @@ foreach ($rest_states as $s)
 
 <tr>
   <td>
-<textarea cols="40" rows="20" class="width-100p" name="zone_cities"><?php 
+<textarea cols="40" rows="20" class="width-100p border-radius-25" name="zone_cities"><?php 
 foreach ($zone_elements as $e)
 	if ($e['field_type'] == 'T')
 		echo $e['field']."\n";
@@ -135,7 +135,7 @@ foreach ($zone_elements as $e)
 
 <tr>
   <td>
-<textarea cols="40" rows="20" class="width-100p" name="zone_zipcodes"><?php  foreach ($zone_elements as $e) if ($e['field_type'] == 'Z') echo $e['field']."\n";?></textarea>
+<textarea cols="40" rows="20" class="width-100p border-radius-25" name="zone_zipcodes"><?php  foreach ($zone_elements as $e) if ($e['field_type'] == 'Z') echo $e['field']."\n";?></textarea>
   </td>
   <td align="center">&nbsp;</td>
   <td valign="top">1000%<br />38245<br />4320%</td>

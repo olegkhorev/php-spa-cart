@@ -6,7 +6,7 @@ table td {
 <h3>{lng[Search for reviews]}</h3>
 <form method="POST" href="/admin/reviews?mode=search">
 <input type="hidden" name="mode" value="search">
-<table width="100%" align="center" cellpadding="2" cellspacing="1">
+<table width="100%" align="center" cellpadding="2" cellspacing="1"class="search_table reviews_search_table">
         <tr>
                 <td align="right">{lng[Status]}</td>
                 <td><select name="status">
@@ -68,7 +68,8 @@ table td {
 <form action="/admin/reviews" method="post" name="reviewsform">
         <input type="hidden" name="mode" value="edit">
 <a href="javascript: void(0);" onclick="javascript: check_all(document.reviewsform, 'to_delete', true);">{lng[Check all]}</a> / <a href="javascript: void(0);" onclick="javascript: check_all(document.reviewsform, 'to_delete', false);">{lng[Uncheck all]}</a>
-        <table border="0" cellpadding="5" cellspacing="0" class="lines-table">
+        <table border="0" cellpadding="5" cellspacing="0" class="lines-table resp-table">
+<thead>
                 <tr>
                         <th></th>
                         <th>{lng[Status]}</th>
@@ -78,17 +79,18 @@ table td {
                         <th>{lng[Message]}</th>
                         <th nowrap>{lng[Product ID/SKU]}</th>
                 </tr>
+</thead>
 {foreach $reviews as $r}
                 <tr>
                         <td valign="top" width="5%"><input type="checkbox" name="to_delete[{$r['id']}]" value="{$r['id']}"></td>
-                        <td valign="top" width="5%">
+                        <td valign="top" width="5%" class="no-word-break"><label>{lng[Status]}</label>
                                 <select name="to_update[{$r['id']}][status]">
                                 <option value="0" >{lng[Pending]}</option>
                                 <option value="1" {if $r['status'] == "1"}selected{/if}>{lng[Approved]}</option>
                                 <option value="2" {if $r['status'] == "2"}selected{/if}>{lng[Declined]}</option>
                                 </select>
                         </td>
-                        <td valign="top" width="5%">
+                        <td valign="top" width="5%" class="no-word-break"><label>{lng[Rating]}</label>
                                 <select name="to_update[{$r['id']}][rating]">
                                 <option value="5"{if $r['rating'] == "5"} selected{/if}>5</option>
                                 <option value="4"{if $r['rating'] == "4"} selected{/if}>4</option>
@@ -97,10 +99,10 @@ table td {
                                 <option value="1"{if $r['rating'] == "1"} selected{/if}>1</option>
                                 </select>
                         </td>
-                        <td valign="top" width="15%">{$r['remote_ip']}</td>
-                        <td valign="top" width="15%">{$r['name']}</td>
-                        <td valign="top" width="45%"><textarea cols="40" rows="3" name="to_update[{$r['id']}][message]">{$r['message']}</textarea></td>
-                        <td valign="top" width="10%"><a href="/admin/products/{$r['productid']}" target="_blank">{$r['productid']}/{$r['sku']}</a></td>
+                        <td valign="top" width="15%"><label>{lng[IP]}</label>{$r['remote_ip']}</td>
+                        <td valign="top" width="15%"><label>{lng[Name]}</label>{$r['name']}</td>
+                        <td valign="top" width="45%"><label>{lng[Message]}</label><textarea cols="40" rows="3" name="to_update[{$r['id']}][message]" class="border-radius-25">{$r['message']}</textarea></td>
+                        <td valign="top" width="10%"><label>{lng[Product ID/SKU]}</label><a href="/admin/products/{$r['productid']}" target="_blank">{$r['productid']}/{$r['sku']}</a></td>
                 </tr>
 {/foreach}
                 <tr>

@@ -17,19 +17,20 @@ if ($total_pages > 2) {
 
 <a href="javascript: void(0);" onclick="javascript: check_all(document.newssform, 'to_delete', true);">Check all</a> / <a href="javascript: void(0);" onclick="javascript: check_all(document.newssform, 'to_delete', false);">Uncheck all</a>
 
-<table cellpadding="3" cellspacing="1" width="600" class="lines-table">
+<table cellpadding="3" cellspacing="1" width="600" class="lines-table resp-table">
+<thead>
 <tr>
 	<th width="10">&nbsp;</th>
 	<th width="90%">Title</th>
 	<th width="5%">Active</th>
 </tr>
-
+</thead>
 <?php 
 foreach ($newss as $b) {
 	echo '<tr>
 	<td><input type="checkbox" name="to_delete['.$b['newsid'].']" value="Y" /></td>
-	<td><a href="'.$current_location.'/admin/news/'.$b['newsid'].'">'.$b['title'].'</a></td>
-	<td><input type="checkbox" name="to_update['.$b['newsid'].'][active]" value="Y"'.($b['active'] == 'Y' ? ' checked="checked"' : '').' /></td>
+	<td><label>Title</label><a href="'.$current_location.'/admin/news/'.$b['newsid'].'">'.$b['title'].'</a></td>
+	<td><label>Active</label><input type="checkbox" name="to_update['.$b['newsid'].'][active]" value="Y"'.($b['active'] == 'Y' ? ' checked="checked"' : '').' /></td>
 </tr>';
 }
 ?>

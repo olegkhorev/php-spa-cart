@@ -8,37 +8,39 @@ if ($related_products) {
 <?php 
 }
 ?>
-<table width="500" class="lines-table">
+<table width="500" class="lines-table resp-table related-table" style="margin-bottom: 0;">
 <?php 
 if ($related_products) {
 ?>
+<thead>
 <tr>
  <th width="10">&nbsp;</th>
  <th width="100%">Product</th>
  <th>Pos</th>
 </tr>
+</thead>
 <?php 
 foreach ($related_products as $v) {
 	echo '
 <tr>
  <td><input type="checkbox" name="to_delete['.$v['productid'].']"></td>
- <td><a href="'.$current_location.'/admin/products/'.$v['productid'].'" target="_blank">'.$v['name'].'</a></td>
- <td><input size="5" type="text" name="posted_data['.$v['productid'].'][orderby]" value="'.$v['orderby'].'"></td>
+ <td><label>Product</label><a href="'.$current_location.'/admin/products/'.$v['productid'].'" target="_blank">'.$v['name'].'</a></td>
+ <td><label>Pos</label><input size="5" type="text" name="posted_data['.$v['productid'].'][orderby]" value="'.$v['orderby'].'"></td>
 </tr>
 	';
 }
 ?>
 <tr>
- <td colspan="3"><br><button type="submit">Update</button> <button type="button" onclick="submitForm(this, 'delete');">Delete selected</button></td>
+ <td colspan="3" class="resp-td-width-100"><br><button type="submit">Update</button> <button type="button" onclick="submitForm(this, 'delete');">Delete selected</button></td>
 </tr>
 <?php 
 }
 ?>
 <tr>
- <td colspan="3"><br /><h3>Add new</h3></td>
+ <td colspan="3" class="resp-td-width-100" style="border-top: 0 !important;"><br /><h3>Add new</h3></td>
 </tr>
 <tr>
- <td colspan="3">
+ <td colspan="3" class="resp-td-width-100">
     <input type="hidden" name="newproductid" />
     <input type="text" size="35" name="newproduct" disabled="disabled" />
 <script>
@@ -49,7 +51,7 @@ var popup_product_pid = document.prform.newproductid,
  </td>
 </tr>
 <tr>
- <td colspan="3"><br><button>Add</button></td>
+ <td colspan="3" class="resp-td-width-100"><br><button>Add</button></td>
 </tr>
 </table>
 </form>

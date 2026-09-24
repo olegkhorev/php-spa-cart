@@ -38,7 +38,7 @@ foreach ($zones as $z)
 <?php
 if ($shipping_rates_avail > 0) {
 ?>
-<div align="right"><a href="#addrate">{lng[Add shipping rates values]}</a></div>
+<div align="right" class="mobile-text-left"><a href="#addrate">{lng[Add shipping rates values]}</a></div>
 
 <br /><br />
 
@@ -85,14 +85,13 @@ foreach ($zones_list as $z) {
   <td>
 ';
 				if ($shipping_method['rates']) {
-					echo '<table cellpadding="0" cellspacing="3" width="100%">';
+					echo '<table cellpadding="0" cellspacing="3" width="100%" class="resp-table resp-table-shipping-charges">';
 
 					foreach ($shipping_method['rates'] as $shipping_rate) {
 						echo '<tr>
   <td rowspan="2" nowrap="nowrap"> &nbsp; <input type="checkbox" name="posted_data['.$shipping_rate['rateid'].'][to_delete]" class="checkboxes_'.$z['zone']['zoneid'].'_'.$shipid.'" /></td>
   <td>{lng[Weight range]}:</td>
-  <td nowrap="nowrap">
-<input type="text" name="posted_data['.$shipping_rate['rateid'].'][minweight]" size="9" value="'.$shipping_rate['minweight'].'" />
+  <td nowrap="nowrap"><input type="text" name="posted_data['.$shipping_rate['rateid'].'][minweight]" size="9" value="'.$shipping_rate['minweight'].'" />
 -
 <input type="text" name="posted_data['.$shipping_rate['rateid'].'][maxweight]" size="9" value="'.$shipping_rate['maxweight'].'" />
   </td>
@@ -104,8 +103,7 @@ foreach ($zones_list as $z) {
 
 <tr>
   <td>{lng[Subtotal range]}:</td>
-  <td nowrap="nowrap">
-<input type="text" name="posted_data['.$shipping_rate['rateid'].'][mintotal]" size="9" value="'.$shipping_rate['mintotal'].'" />
+  <td nowrap="nowrap"><input type="text" name="posted_data['.$shipping_rate['rateid'].'][mintotal]" size="9" value="'.$shipping_rate['mintotal'].'" />
 -
 <input type="text" name="posted_data['.$shipping_rate['rateid'].'][maxtotal]" size="9" value="'.$shipping_rate['maxtotal'].'" />
   </td>
@@ -115,7 +113,7 @@ foreach ($zones_list as $z) {
   <td nowrap="nowrap"><input type="text" name="posted_data['.$shipping_rate['rateid'].'][weight_rate]" size="5" value="'.$shipping_rate['weight_rate'].'" /></td>
 </tr>
 <tr>
-  <td colspan="7"><hr /></td>
+  <td colspan="7" class="mobile-none"><hr /></td>
 </tr>
 ';
 					}
@@ -131,17 +129,12 @@ foreach ($zones_list as $z) {
 	}
 }
 ?>
-<tr>
-  <td>
+</table>
 <div class="fixed_save_button">
 <button type="button" onclick="javascript: submitForm(this, 'delete');">{lng[Delete selected]}</button>
 &nbsp;&nbsp;&nbsp;&nbsp;
 <button type="submit">{lng[Update]}</button>
 </div>
-  </td>
-</tr>
-
-</table>
 </form>
 
 <br /><br /><br />
@@ -153,17 +146,8 @@ foreach ($zones_list as $z) {
 ?>
 
 <br />
-<?php
-if ($type == "D") {
-?>
 <h3>{lng[Add shipping charges]}</h3>
 <?php
-} else {
-?>
-<h3>{lng[Add shipping markups]}</h3>
-<?php
-}
-
 if ($shipping != "") {
 ?>
 
@@ -199,26 +183,13 @@ if ($shipping != "") {
   </td>
 </tr>
 
-{*
-<tr>
-  <td><b>{lng[Apply rate to]}:</b></td>
-  <td>
-  <select name="apply_to_new">
-    <option value="DST" selected="selected">DST ({lng[Discounted subtotal]})</option>
-    <option value="ST">ST ({lng[Subtotal]})</option>
-  </select>
-  </td>
-</tr>
-*}
-
 </table>
 
-<table cellpadding="0" cellspacing="3" width="1000">
+<table cellpadding="0" cellspacing="3" width="1000" class="resp-table resp-table-no-margin">
 
 <tr>
   <td><b>{lng[Weight range]}:</b></td>
-  <td nowrap="nowrap">
-<input type="text" name="minweight_new" size="9" value="0.00" />
+  <td nowrap="nowrap"><input type="text" name="minweight_new" size="9" value="0.00" />
 -
 <input type="text" name="maxweight_new" size="9" value="<?php echo price_format($maxvalue); ?>" />
   </td>
@@ -248,7 +219,7 @@ if ($shipping != "") {
 </form>
 
 <?php
-} elseif ($type == "D") {
+} else {
 ?>
 {lng[User-defined shipping methods are not defined]}
 <?php

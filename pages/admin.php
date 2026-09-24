@@ -242,6 +242,7 @@ else
 $template['css'][] = 'admin';
 if ($login && $userinfo['usertype'] == 'A') {
 	$template['css'][] = 'admin_new';
+	$template['css'][] = 'admin_responsive';
 } else {
 	$template['css'][] = 'admin_login';
 }

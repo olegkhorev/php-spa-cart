@@ -108,8 +108,6 @@ $(document).on('keyup', function(e) {
 			$(this).val('');
 	});
 
-    $(document).tooltip();
-
 	original_content = $('.ajax_container').html();
 	original_title = $('title').html();
 	original_page = page;
@@ -174,10 +172,10 @@ function ajax_clicks() {
 		return;
 
 	init_translate();
-	$(document).tooltip();
-		$('.filter_switcher').unbind('click').on('click', function() {
-			$('body').toggleClass('filteropen');
-		});
+	$('.filter_switcher').unbind('click').on('click', function() {
+		$('body').toggleClass('filteropen');
+	});
+
 	$('body').removeClass('filteropen');
 	left_filter_max_height();
 	mdl_elements();
@@ -208,7 +206,9 @@ function ajax_clicks() {
 			pushed = true;
 		}
 
-		$('body').append('<div id="content-loading"><div class="cssload-container"><div class="cssload-speeding-wheel"></div></div></div>');
+		var site_loader_to = setTimeout(function() {
+			$('body').append('<div id="content-loading"><div class="cssload-container"><div class="cssload-speeding-wheel"></div></div></div>');
+		}, 1000);
 		$.ajax({
 			dataType: 'json',
 			url: h,
@@ -216,6 +216,7 @@ function ajax_clicks() {
 				self.location = h;
 			},
 			success: function(r) {
+				clearTimeout(site_loader_to);
 				$('#content-loading').remove();
 				$('body').attr('id', 'body-search');
 				$('.ajax_container').html(r[0]);
@@ -1305,20 +1306,6 @@ function instant_search() {
 		$('.instant-search').fadeOut();
 	});
 
-	$('.search').unbind('mouseover').mouseover(function() {
-		return false;
-		$('.instant-search').fadeIn();
-		var val = $(this).find('input').val();
-		if (val.length < 2) {
-			$('.instant-search').html("<div class='enter-3-chars'>Entrez 2 caractères</div>");
-			return;
-		}
-
-		setTimeout(function() {
-			search_instant(val);
-		}, 300);
-	});
-
 	$('.search input').on('keyup', function() {
 		if ($(this).val().length < 2) {
 			$('.instant-search').html("<div class='enter-3-chars'>Entrez 2 caractères</div>");
@@ -1341,6 +1328,11 @@ function search_instant(val) {
 			$('.instant-search').html(r);
 			$('.instant-search').show();
 			ajax_clicks();
+			$('.did-you-mean span').on('click', function() {
+				$('#searchform input[type="text"]').val($(this).text());
+				search_instant($(this).text());
+			});
+
 			$('.more-no-search').on('click', function() {
 				if (mobile_screen > $(window).width()) {
 					$('.searchform_desktop').submit();
