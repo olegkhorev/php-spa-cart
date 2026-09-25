@@ -79,7 +79,7 @@ it will the generate images cache.
 
 -----------
 
-It's free under the MIT license.
+Right now, SPA-Cart is focused on being a highly stable, lightweight engine in its current form. I am doing some long-term R&D in the background regarding future extensibility, but my priority is keeping the core stable. I'll share more when it's fully cooked.
 
-I recommend to check this article:
+*I recommend to check this article:*
 https://spa-cart.com/page/about_spa_cart.html
