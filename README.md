@@ -1,3 +1,5 @@
+Hi, I’m Oleg. I am intentionally developing SPA-Cart slowly. Right now, my focus is 100% on deep thinking and slowly growing with community. If you are looking for a massive ecosystem of instant plugins, this isn't it yet. If you love lightweight, vanilla PHP engineering and want to help think through architectural challenges, you are welcome here.
+
 SPA-Cart - e-commerce Single Page Application
 https://spa-cart.com/
 
