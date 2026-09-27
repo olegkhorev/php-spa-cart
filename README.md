@@ -5,6 +5,7 @@ SPA-Cart - e-commerce Single Page Application
 https://spa-cart.com/
 
 
+
 ### 1. Installation
 
 a. Create MySQL database and upload files onto your server.
@@ -13,6 +14,7 @@ a. Create MySQL database and upload files onto your server.
 
 
 b. Follow URL, you will get redirected here
+
 https://[URL]/install
 
 Complete steps.
@@ -33,6 +35,7 @@ DEVELOPMENT TRUE means templates are always regenerated.
 
 
 e. Admin area - a@a.com / 01230
+
 https://[URL]/admin
 
 
@@ -43,14 +46,17 @@ http://[URL]/cron.php?pswd=01230  (I recommend to change 01230 password in scrip
 g. Support Desk
 
 To receive replies from emails - add this script to cron for every 10-15 minutes:
+
 http://[URL]/cron_tickets.php?pswd=[PASSWORD]
 
 The password you can define here
+
 http://[URL]/admin/configuration/Tickets
 
 On the same page configure SMTP settings.
 
 Edit this file to set up correct server port and SSL setting
+
 http://[URL]/cron_tickets.php
 
 SSL port is 995. Not SSL port is 110.
@@ -59,10 +65,12 @@ SSL port is 995. Not SSL port is 110.
 h. To disable the Design theme color mode edit settings.php
 $design_mode = 0;
 
+
 e. Predictive search - add Cron job for every day, for example. Or run it manually if you want to see the changes immediately.
 http://[URL]/cron_fuzzy.php?pswd=01230 (I recommend to change the 01230 password in the script)
 
 It rebuilds the predictive search cache.
+
 
 ### 2. After testing remove all the data and insert yours. You can use Import/Export to insert new values. Only new categories are not imported.
 
@@ -83,4 +91,5 @@ it will the generate images cache.
 Right now, SPA-Cart is focused on being a highly stable, lightweight engine in its current form. I am doing some long-term R&D in the background regarding future extensibility, but my priority is keeping the core stable.
 
 *I recommend to check this article:*
+
 https://spa-cart.com/page/about_spa_cart.html
