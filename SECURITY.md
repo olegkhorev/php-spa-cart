@@ -9,6 +9,7 @@ The following historical security vulnerabilities have been formally patched and
 * **EDB-ID-51919** - Stored XSS was listed by mistake, because the Admin area was hosted on the same folder as the customer area. Admin should be able to use the WYSIWYG editor.
 * **CVE-2023-43149** - A high-severity CSRF flaw (CVSS score 8.8) that allows a remote attacker to silently inject a root administrative user account into the database.
 * **CVE-2023-43148** - Another CSRF exploit that allows a remote attacker to completely wipe out all accounts on the platform.
+* **VDB-238058** - Reflected Cross-Site Scripting / XSS
 
 Please ensure you are using the latest main branch of this repository to maintain a secure environment.
 
