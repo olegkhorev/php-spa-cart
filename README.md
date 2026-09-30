@@ -90,7 +90,7 @@ it will the generate images cache.
 
 ### 4. Major update
 
-I have launched modules & themes for SPA-Cart
+I have added modules & themes support to SPA-Cart.
 
 Custom module:
 
