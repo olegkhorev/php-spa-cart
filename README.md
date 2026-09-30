@@ -9,7 +9,7 @@ SPA-Cart - e-commerce Single Page Application
 https://spa-cart.com/
 
 Article content:
-* [Installation](#4-major-update)
+* [Installation](#1-installation)
 * [Remove demo content](#4-major-update)
 * [Helpful scripts](#4-major-update)
 * [Major update](#4-major-update)
