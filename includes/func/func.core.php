@@ -1,4 +1,13 @@
 <?php
+/**
+* SPA-Cart
+* Copyright (c) Oleg Khorev
+*
+* Released under the MIT License.
+* https://github.com/olegkhorev/php-spa-cart
+*/
+?>
+<?php
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 function func_setcookie($name, $value, $expire = 0) {
@@ -53,12 +62,23 @@ function get_include_contents($filename) {
 }
 
 function get_template_contents($filename, $force = false) {
-	global $lng, $db, $templates, $config, $device, $warehouse_enabled, $translate_mode;
+	global $lng, $db, $templates, $config, $device, $warehouse_enabled, $translate_mode, $_SESSION;
 
 	$cache = SITE_ROOT.'/var/cache/'.$lng;
 	if (!is_dir($cache)) {
 		mkdir($cache);
 		mkdir($cache.'/js');
+	}
+
+	if ($_SESSION['current_theme'])
+		$custom_theme = $_SESSION['current_theme'];
+	else
+		$custom_theme = $db->row("SELECT * FROM modules WHERE enabled='1' AND template<>'' ORDER BY pos");
+
+	if ($custom_theme) {
+		$theme_filename = 'themes/'.$custom_theme['author'].'/'.$custom_theme['module'].'/'.$filename;
+		if (file_exists(SITE_ROOT.'/templates/'.$theme_filename))
+			$filename = $theme_filename;
 	}
 
 	if (!file_exists(SITE_ROOT.'/templates/'.$filename))
@@ -93,7 +113,6 @@ function get_template_contents($filename, $force = false) {
 				$content = str_replace($v, '<?php '.$matches['1'][$k].'; ?>', $content);
 			}
 		}
-
 
 		$content = str_replace('{php}', '<?php ', $content);
 		$content = str_replace('{/php}', ' ?>', $content);
@@ -492,7 +511,6 @@ function func_get_ajax_css() {
 	$array[] = 'popup';
 	$array[] = 'product';
 	$array[] = 'cart';
-	$array[] = 'wishlist';
 	$array[] = 'checkout';
 	$array[] = 'register';
 	$array[] = 'help';
@@ -518,7 +536,6 @@ function func_get_ajax_js() {
 	$array[] = 'jquery.zoom.min';
 	$array[] = 'product';
 	$array[] = 'cart';
-	$array[] = 'wishlist';
 	$array[] = 'states';
 	$array[] = 'checkout';
 	$array[] = 'checkout';
@@ -526,6 +543,124 @@ function func_get_ajax_js() {
 	$array[] = 'ticket';
 
 	return $array;
+}
+
+function func_get_modules_ajax_css() {
+	global $db, $_SESSION;
+
+	$array = [];
+	$modules = $db->all("SELECT * FROM modules WHERE enabled=1 ORDER BY pos");
+	if ($_SESSION['current_theme'])
+		$modules[] = $_SESSION['current_theme'];
+
+	foreach ($modules as $v) {
+		$array[] = $v['author'].'/'.$v['module'];
+	}
+
+	return $array;
+}
+
+function func_get_modules_ajax_js() {
+	global $db, $_SESSION;
+
+	$array = [];
+	$modules = $db->all("SELECT * FROM modules WHERE enabled=1 ORDER BY pos");
+	if ($_SESSION['current_theme'])
+		$modules[] = $_SESSION['current_theme'];
+
+	foreach ($modules as $v) {
+		$array[] = $v['author'].'/'.$v['module'];
+	}
+
+	return $array;
+}
+
+function func_put_css_content($from_file, $to_file, $template_var_name, $template_var, $force_parse = false) {
+	global $db, $templates;
+
+	if (!file_exists($to_file) || $templates[$template_var][$template_var_name] != filemtime($from_file) || DEVELOPMENT || $force_parse) {
+		$content = file_get_contents($from_file);
+		file_put_contents($to_file, $content);
+		$exists = $db->field("SELECT id FROM templates WHERE lng='".$template_var."' AND template='".$template_var_name."'");
+		if ($exists)
+			$db->query("UPDATE templates SET time='".filemtime($from_file)."' WHERE lng='".$template_var."' AND template='".$template_var_name."'");
+		else
+			$db->query("INSERT INTO templates SET lng='".$template_var."', template='".$template_var_name."', time='".filemtime($from_file)."'");
+	}
+}
+
+function func_put_javascript_content($from_file, $to_file, $template_var_name, $template_var, $force_parse = false, $is_module_script = false) {
+	global $db, $templates, $lng;
+
+	if (!file_exists($to_file) || $templates[$template_var][$template_var_name] != filemtime($from_file) || DEVELOPMENT || $force_parse) {
+		$script = file_get_contents($from_file);
+		preg_match_all("/\{lng\[(.*?)\]\}/", $script, $matches);
+		if (!empty($matches['1']['0'])) {
+			foreach ($matches['0'] as $k2=>$v2) {
+				$to = $matches['1'][$k2];
+				$tmp = $db->field("SELECT translation FROM languages WHERE lng='".$lng."' AND word='".addslashes($to)."'");
+				if (empty($tmp)) {
+					$db->query("INSERT INTO languages SET lng='".$lng."', word='".addslashes($to)."', translation='".addslashes($to)."'");
+					$script = str_replace($v2, $to, $script);
+				} else {
+					$tmp = str_replace('"', '\"', $tmp);
+					$script = str_replace($v2, $tmp, $script);
+				}
+			}
+		}
+
+		$packed = $script;
+		if ($v == 'jquery.min') {
+		} elseif ($v == 'jquery.zoom.min') {
+			$packed = '/*!Zoom v1.7.11 - 2013-11-12	Enlarge images on click or mouseover.	(c) 2013 Jack Moore - http://www.jacklmoore.com/zoom	license: http://www.opensource.org/licenses/mit-license.php*/'.$packed;
+		} elseif ($v == 'jquery.ui.sortable') {
+			$packed = '/*! jQuery UI Sortable 1.10.2
+* http://jqueryui.com
+* Copyright 2013 jQuery Foundation and other contributors Licensed MIT */'.$packed;
+		} elseif ($v == 'jquery-ui.min') {
+			$packed = '/*! jQuery UI
+* http://jqueryui.com
+* Copyright (c) 2013 jQuery Foundation and other contributors Licensed MIT */'.$packed;
+		} elseif ($v == 'scroll') {
+			$packed = '/*! Copyright (c) 2011 Brandon Aaron (http://brandonaaron.net)
+ * Licensed under the MIT License (LICENSE.txt).
+ *
+ * Thanks to: http://adomas.org/javascript-mouse-wheel/ for some pointers.
+ * Thanks to: Mathias Bank(http://www.mathias-bank.de) for a scope bug fix.
+ * Thanks to: Seamus Leahy for adding deltaX and deltaY
+ *
+ * Version: 3.0.6
+ *
+ * Requires: 1.2.2+
+ */
+'.$packed;
+		} elseif ($v == 'jquery.gradientPicker') {
+			$packed = '/**
+@author Matt Crinklaw-Vogt (tantaman)
+*/'.$packed;
+		} elseif ($v == 'jquery.ui.draggable') {
+			$packed = '/*! jQuery UI Draggable 1.10.2
+* http://jqueryui.com
+* Copyright 2013 jQuery Foundation and other contributors Licensed MIT */'.$packed;
+		} elseif ($v == 'colorpicker') {
+			$packed = '/**
+ *
+ * Color picker
+ * Author: Stefan Petre www.eyecon.ro
+ *
+ * Dual licensed under the MIT and GPL licenses
+ *
+ */'.$packed;
+		}
+
+		file_put_contents($to_file, $packed);
+		$exists = $db->field("SELECT id FROM templates WHERE lng='".$template_var."' AND template='".$template_var_name."'");
+		if ($exists)
+			$db->query("UPDATE templates SET time='".filemtime($from_file)."' WHERE lng='".$template_var."' AND template='".$template_var_name."'");
+		else {
+			$db->query("INSERT INTO templates SET lng='".$template_var."', template='".$template_var_name."', time='".filemtime($from_file)."'");
+		}
+	}
 }
 
 function func_save_cart() {
@@ -579,4 +714,25 @@ function func_average_rating($product) {
 	global $db;
 	$average = $db->field("SELECT AVG(rating) FROM reviews WHERE productid='".$product['productid']."' AND status='1'");
 	echo round($average * 100 / 5);
+}
+
+function func_copy_folder($source, $destination) {
+    if (!is_dir($destination)) {
+        mkdir($destination, 0755, true);
+    }
+
+    $dirIterator = new RecursiveDirectoryIterator($source, RecursiveDirectoryIterator::SKIP_DOTS);
+    $iterator = new RecursiveIteratorIterator($dirIterator, RecursiveIteratorIterator::SELF_FIRST);
+
+    foreach ($iterator as $item) {
+        $targetPath = $destination . DIRECTORY_SEPARATOR . $iterator->getSubPathName();
+
+        if ($item->isDir()) {
+            if (!is_dir($targetPath)) {
+                mkdir($targetPath, 0755, true);
+            }
+        } else {
+            copy($item->getRealPath(), $targetPath);
+        }
+    }
 }

@@ -1,3 +1,12 @@
+<?php 
+/**
+* SPA-Cart
+* Copyright (c) Oleg Khorev
+*
+* Released under the MIT License.
+* https://github.com/olegkhorev/php-spa-cart
+*/
+?>
 <?php include SITE_ROOT."/var/cache/en/mail/header.php";?>
 Hello<?php if ($user['firstname']) {?> <?php echo $user['firstname'];?><?php } ?>,<br /><br />
 <p>Recently you left products in your cart on our site <a href="<?php echo $current_location;?>?<?php echo $link_add;?>"><?php echo $config['Company']['company_name'];?></a>.</p>

@@ -1,4 +1,13 @@
 <?php
+/**
+* SPA-Cart
+* Copyright (c) Oleg Khorev
+*
+* Released under the MIT License.
+* https://github.com/olegkhorev/php-spa-cart
+*/
+?>
+<?php
 if ($userinfo['usertype'] != 'A' && $get['1'] != 'login') {
 	$_SESSION['login_redirect'] = $_SERVER['REQUEST_URI'];
 	redirect('admin/login');
@@ -161,6 +170,19 @@ $role_pages = array(
 			),
 		)
 	),
+	'pages_9'	=> array(
+		'title'	=> 'Modules',
+		'pages'	=> array(
+			array(
+				'title'	=> 'Modules',
+				'id'	=> 'module_manage'
+			),
+			array(
+				'title'	=> 'Modules',
+				'id'	=> 'modules'
+			),
+		)
+	),
 );
 
 $template['role_pages'] = $role_pages;
@@ -248,3 +270,5 @@ if ($login && $userinfo['usertype'] == 'A') {
 }
 
 $template['js'][] = 'admin';
+$modules = $db->all("SELECT * FROM modules WHERE enabled='1' ORDER BY pos");
+$template["modules"] = $modules;

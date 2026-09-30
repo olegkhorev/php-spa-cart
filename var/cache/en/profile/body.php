@@ -1,3 +1,12 @@
+<?php 
+/**
+* SPA-Cart
+* Copyright (c) Oleg Khorev
+*
+* Released under the MIT License.
+* https://github.com/olegkhorev/php-spa-cart
+*/
+?>
 <div class="tabs">
 <a onclick="javascript: return profile_popup();" href="/profile"<?php if ($section != 'orders') {?> class="active"<?php } ?>>Your profile</a>
 <a onclick="javascript: return profile_popup('/orders');" href="/profile/orders"<?php if ($section == 'orders') {?> class="active"<?php } ?>>Orders history</a>

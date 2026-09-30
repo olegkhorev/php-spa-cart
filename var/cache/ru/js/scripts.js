@@ -4,6 +4,7 @@ var $window = $(window),
 	original_title,
 	original_page,
 	original_bread_crumbs,
+	history_push = false,
 	$animation_elements = $('.page-container-2, .page-container-news, .page-container-blog'),
 	are_you_sure = "Вы уверены?",
 	mobile_screen = 850,
@@ -172,6 +173,10 @@ function ajax_clicks() {
 		return;
 
 	init_translate();
+	if ($('.exec_page_js').length) {
+		eval($('.exec_page_js').html());
+	}
+
 	$('.filter_switcher').unbind('click').on('click', function() {
 		$('body').toggleClass('filteropen');
 	});
@@ -222,7 +227,9 @@ function ajax_clicks() {
 				$('.ajax_container').html(r[0]);
 				$('#bread_crumbs_container').html(r[2]);
 				ajax_clicks();
-				window.history.pushState({"html":r[0],"pageTitle":r[1], 'bread_crumbs': r[2], 'page': r[3], 'parentid': r[4], 'pageid': r[5]},"", h);
+				if (!history_push)
+					window.history.pushState({"html":r[0],"pageTitle":r[1], 'bread_crumbs': r[2], 'page': r[3], 'parentid': r[4], 'pageid': r[5]},"", h);
+
 				document.title = r[1];
 				proceed_clicks(r[3]);
 				tabs_clicks();
@@ -269,13 +276,19 @@ function ajax_clicks() {
 			success: function(r) {
 				clearTimeout(site_loader_to);
 				$('#content-loading').remove();
-				$('body').attr('id', 'body-'+r[3]);
+				if (r[6])
+					$('body').attr('id', 'body-module-'+r[6]);
+				else
+					$('body').attr('id', 'body-'+r[3]);
+
 				$('.ajax_container').html(r[0]);
 
 				$('#bread_crumbs_container').html(r[2]);
 				ajax_clicks();
 				page = r[3];
-				window.history.pushState({"html":r[0],"pageTitle":r[1], 'bread_crumbs': r[2], 'page': r[3], 'parentid': r[4], 'pageid': r[5]},"", h);
+				if (!history_push)
+					window.history.pushState({"html":r[0],"pageTitle":r[1], 'bread_crumbs': r[2], 'page': r[3], 'parentid': r[4], 'pageid': r[5], 'moduleid': r[6]},"", h);
+
 				document.title = r[1];
 				pageid = r[5];
 				recalc_menus(r[3], r[4]);
@@ -325,38 +338,20 @@ function contact_form() {
 
 window.onpopstate = function(e) {
 	if (current_area == 'A') {
-		self.location = window.location.href;
-		return false;
+		$('body').append('<a class="ajax_link hidden click_history" href="'+window.location.href+'"></a>');
+		ajax_clicks_admin();
+		history_push = true;
+		$('.click_history').click();
+		$('.click_history').remove();
+		return;
 	}
 
 	if (is_ajax_page) {
-		$('.page-container-2, #home-tabs').remove();
-		if (e.state) {
-			$('.ajax_container').html(e.state.html);
-			$('body').attr('id', 'body-'+e.state.page);
-			document.title = e.state.pageTitle;
-			$('#bread_crumbs_container').html(e.state.bread_crumbs);
-			if (e.state.parentid || (e.state.page != 'category' && e.state.page != 'search'))
-				recalc_menus(e.state.page, e.state.parentid);
-
-			var this_page = e.state.page;
-			if (e.state.dontrealodfilter)
-				dontloadfilter = true;
-
-			pageid = e.state.pageid;
-		} else {
-			$('.ajax_container').html(original_content);
-			document.title = original_title;
-			$('#bread_crumbs_container').html(original_bread_crumbs);
-			recalc_menus(page, parentid);
-			var this_page = original_page;
-			pageid = original_pageid;
-			$('body').attr('id', body_id);
-		}
-
+		$('body').append('<a class="ajax_link hidden click_history" href="'+window.location.href+'"></a>');
 		ajax_clicks();
-		proceed_clicks(this_page);
-		tabs_clicks();
+		history_push = true;
+		$('.click_history').click();
+		$('.click_history').remove();
 	}
 };
 
@@ -524,8 +519,10 @@ return;
 function removePopups(no_unfade) {
 	if (current_area == 'C')
 		setTimeout(function() {
-			oid = 0;
-			product_clicks();
+			if ($('#body-product').length) {
+				oid = 0;
+				product_clicks();
+			}
 		}, 500);
 
 	if (no_unfade) {
@@ -1097,6 +1094,7 @@ return;
 			$('.coupon-error').hide();
 		});
 
+		mdl_elements();
 		$('.coupon_screen button').on('click', function() {
 			if (!$('.coupon_screen input').val()) {
 				func_highlight($('.coupon_screen input'));
@@ -1123,6 +1121,7 @@ return;
 			$('.coupon-error').hide();
 		});
 
+		mdl_elements();
 		$('.coupon_screen button').on('click', function() {
 			if (!$('.coupon_screen input').val()) {
 				func_highlight($('.coupon_screen input'));

@@ -1,3 +1,12 @@
+<?php
+/**
+* SPA-Cart
+* Copyright (c) Oleg Khorev
+*
+* Released under the MIT License.
+* https://github.com/olegkhorev/php-spa-cart
+*/
+?>
 <form method="post" name="roleform">
 <input type="hidden" name="mode" value="{if $role}save{else}add{/if}" />
 <?php

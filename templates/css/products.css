@@ -258,11 +258,15 @@ table.product-options {
 	position: relative;
 }
 .left_filter ul li:before {
-	content: '>';
-	font-size: 12px;
+	content: '\00B7';
+	font-size: 42px;
+	line-height: 16px;
 	position: absolute;
 	left: -15px;
 	top: 11px;
+}
+.left_filter ul li, .selected-filter {
+	text-decoration: none !important;
 }
 .left_filter ul.filter-attr {
 	padding-left: 10px;

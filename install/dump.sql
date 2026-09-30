@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Хост: MySQL-8.0:3306
--- Время создания: Сен 24 2026 г., 13:23
+-- Время создания: Сен 30 2026 г., 11:21
 -- Версия сервера: 8.0.43
 -- Версия PHP: 8.3.26
 
@@ -5029,7 +5029,88 @@ INSERT INTO `languages` (`id`, `lng`, `word`, `translation`) VALUES
 (4056, 'en', 'Reset predictive search', 'Reset predictive search'),
 (4057, 'en', 'Remove', 'Remove'),
 (4058, 'en', 'Paid with GC', 'Paid with GC'),
-(4059, 'en', 'Select product', 'Select product');
+(4059, 'en', 'Select product', 'Select product'),
+(4060, '', 'are_you_sure', 'are_you_sure'),
+(4061, '', 'yes', 'yes'),
+(4062, '', 'no', 'no'),
+(4063, '', 'ok', 'ok'),
+(4064, '', 'We use cookies for better user experience', 'We use cookies for better user experience'),
+(4065, '', 'Accept', 'Accept'),
+(4066, '', 'Unable to redirect to Stripe', 'Unable to redirect to Stripe'),
+(4067, '', 'Please, wait we are connecting you to Stripe', 'Please, wait we are connecting you to Stripe'),
+(4068, '', 'Please, wait we are connecting you to PayPal', 'Please, wait we are connecting you to PayPal'),
+(4069, '', 'Enter your Gift Card code here', 'Enter your Gift Card code here'),
+(4070, '', 'Apply', 'Apply'),
+(4071, '', 'Enter your coupon code here', 'Enter your coupon code here'),
+(4072, '', 'Enter at least 2 characters', 'Enter at least 2 characters'),
+(4073, '', 'Enter 2 characters', 'Enter 2 characters'),
+(4074, '', 'Closed', 'Closed'),
+(4075, '', 'Cancelled', 'Cancelled'),
+(4076, '', 'blog_bbcode_b', 'blog_bbcode_b'),
+(4077, '', 'blog_bbcode_i', 'blog_bbcode_i'),
+(4078, '', 'blog_bbcode_u', 'blog_bbcode_u'),
+(4079, '', 'blog_bbcode_s', 'blog_bbcode_s'),
+(4080, '', 'blog_bbcode_url', 'blog_bbcode_url'),
+(4081, '', 'blog_bbcode_email', 'blog_bbcode_email'),
+(4082, '', 'blog_bbcode_img', 'blog_bbcode_img'),
+(4083, '', 'blog_bbcode_list', 'blog_bbcode_list'),
+(4084, '', 'blog_bbcode_li', 'blog_bbcode_li'),
+(4085, '', 'blog_bbcode_quote', 'blog_bbcode_quote'),
+(4086, '', 'blog_bbcode_code', 'blog_bbcode_code'),
+(4087, '', 'Enter your phone number', 'Enter your phone number'),
+(4088, '', 'Clear all', 'Clear all'),
+(4089, '', 'Quantity', 'Quantity'),
+(4090, '', 'Price Per Unit', 'Price Per Unit'),
+(4091, '', 'This options combination is not available', 'This options combination is not available'),
+(4092, '', 'Clear', 'Clear'),
+(4093, '', 'Option Not Available in Combination with', 'Option Not Available in Combination with'),
+(4094, '', 'Option Not Available', 'Option Not Available'),
+(4095, '', 'Please, select options', 'Please, select options'),
+(4096, '', 'Product has been added to your cart.', 'Product has been added to your cart.'),
+(4097, '', 'View cart', 'View cart'),
+(4098, '', 'Checkout', 'Checkout'),
+(4099, '', 'Please, enter your name and message', 'Please, enter your name and message'),
+(4100, '', 'Captcha is incorrect', 'Captcha is incorrect'),
+(4101, '', 'Your review has been sent to moderation', 'Your review has been sent to moderation'),
+(4102, '', 'Product has been added to your Wishlist', 'Product has been added to your Wishlist'),
+(4103, '', 'We will contact you soon', 'We will contact you soon'),
+(4104, '', 'Send', 'Send'),
+(4105, '', 'You can require quick sale not more than once per 10 seconds', 'You can require quick sale not more than once per 10 seconds'),
+(4106, '', 'Please, allow us a few minutes to receive your request', 'Please, allow us a few minutes to receive your request'),
+(4107, '', 'State', 'State'),
+(4108, '', 'Firstname', 'Firstname'),
+(4109, '', 'Lastname', 'Lastname'),
+(4110, '', 'E-mail', 'E-mail'),
+(4111, '', 'Password', 'Password'),
+(4112, '', 'Address', 'Address'),
+(4113, '', 'City', 'City'),
+(4114, '', 'Zip/Postal code', 'Zip/Postal code'),
+(4115, '', 'Phone', 'Phone'),
+(4116, '', 'You need to be logged in to access this page', 'You need to be logged in to access this page'),
+(4117, '', 'Your E-mail', 'Your E-mail'),
+(4118, '', 'Type your email first', 'Type your email first'),
+(4119, '', 'Link to change password sent to your email', 'Link to change password sent to your email'),
+(4120, '', 'Email', 'Email'),
+(4121, '', 'Hello world!', 'Hello world!'),
+(4122, 'en', 'Hello world!', 'Hello world!'),
+(4123, 'fr', 'Hello world!', 'Hello world!'),
+(4124, 'de', 'Hello world!', 'Hello world!'),
+(4125, 'ru', 'Hello world!', 'Hello world!'),
+(4126, 'en', 'This operation will delete selected modules with all messages.', 'This operation will delete selected modules with all messages.'),
+(4127, 'en', 'Logo', 'Logo'),
+(4128, 'en', 'Install new', 'Install new'),
+(4129, 'en', 'Install', 'Install'),
+(4130, 'en', 'Sample page', 'Sample page'),
+(4131, 'en', 'Install new module', 'Install new module'),
+(4132, 'en', 'Installation instructions', 'Installation instructions'),
+(4133, 'en', 'Welcome to new module', 'Welcome to new module'),
+(4134, 'en', 'New module', 'New module'),
+(4135, 'en', 'This is new module installation test', 'This is new module installation test'),
+(4136, 'en', 'This module does not have functions file', 'This module does not have functions file'),
+(4137, 'fr', 'Welcome to new module', 'Welcome to new module'),
+(4138, 'de', 'Welcome to new module', 'Welcome to new module'),
+(4139, 'ru', 'Welcome to new module', 'Welcome to new module'),
+(4140, 'en', 'About us', 'About us');
 
 -- --------------------------------------------------------
 
@@ -5105,6 +5186,33 @@ INSERT INTO `memberships` (`membershipid`, `membership`, `active`, `orderby`) VA
 -- --------------------------------------------------------
 
 --
+-- Структура таблицы `modules`
+--
+
+CREATE TABLE `modules` (
+  `moduleid` int NOT NULL,
+  `code` varchar(32) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci NOT NULL,
+  `author` varchar(255) NOT NULL DEFAULT '',
+  `module` varchar(255) NOT NULL DEFAULT '',
+  `comment` varchar(255) NOT NULL DEFAULT '',
+  `template` varchar(32) NOT NULL DEFAULT '',
+  `enabled` int NOT NULL DEFAULT '0',
+  `pos` int NOT NULL DEFAULT '0',
+  `date` int NOT NULL DEFAULT '0'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
+
+--
+-- Дамп данных таблицы `modules`
+--
+
+INSERT INTO `modules` (`moduleid`, `code`, `author`, `module`, `comment`, `template`, `enabled`, `pos`, `date`) VALUES
+(1, 'sample_page', 'OlegKhorev', 'SamplePage', 'Sample page example', '', 1, 1, 1756115420),
+(2, 'sample_theme', 'OlegKhorev', 'SampleTheme', 'Sample template example', 'sample', 0, 2, 1756115420),
+(8, 'new_module', 'OlegKhorev', 'NewModule', 'Module installation example', 'new_module', 0, 12, 0);
+
+-- --------------------------------------------------------
+
+--
 -- Структура таблицы `news`
 --
 
@@ -5128,7 +5236,7 @@ CREATE TABLE `news` (
 --
 
 INSERT INTO `news` (`newsid`, `cleanurl`, `author`, `title`, `descr`, `fulldescr`, `meta_title`, `meta_keywords`, `meta_descr`, `active`, `date`, `counter`) VALUES
-(6, 'SPA-Cart-News', '848', 'SPA-Cart News', '<p>I write here about SPA-Cart idea. Future is came. Why not all sites to be Ajaxfied? Look on Google Plus - they are in our days and fully ajaxfied. So here SPA-Cart provides you ability to be same user friendly as most as it can be.</p>\r\n', '<p>Good idea - Ajaxfied pages. But how to do?<br />\r\n<br />\r\nWell - here you have solution from 12 years experienced developer who was growing as Ajax was growing.<br />\r\n<br />\r\nBasically Ajax makes pages loaded without browser redirect. Here all URLs are supported. Links are absolute and native just like for Google and other Search Engines. Back-forward &nbsp;browser buttons works perfect.<br />\r\n<br />\r\nIt&#39;s not only fast because of no browser reload - it is fast also because we load not all site parts like header and footer and all it&#39;s JS and CSS files.<br />\r\n<br />\r\nIn fact it can be hours of thinking how to make ajaxfied pages. As the solution I came to - I put all pages in the &quot;pages&quot; directory and call them from the &quot;index.php&quot; root script. Just if it was /product/1 page - then pages/product.php script is loaded with &quot;1&quot; product #ID. Next in same index.php I display just page content came from pages/product.php - and display it for Ajax request.<br />\r\n<br />\r\nWell - it&#39;s over a year since SPA-Cart is here and it has many downloads and support questions. I did made ton of work already and more things are in plan since if I have customers - I am making platform grow more.<br />\r\n<br />\r\nYou can find SPA-Cart on CodeCanyon if you want to receive better support from me</p>\r\n\r\n<p><a href=\"https://codecanyon.net/item/ajax-cart-very-fast-no-page-reloading-many-features-responsive-and-mobile-skin/17109430?s_rank=11\">https://codecanyon.net/item/ajax-cart-very-fast-no-page-reloading-many-features-responsive-and-mobile-skin/17109430?s_rank=11</a><br />\r\n<br />\r\nThank you for reading this post.<br />\r\nOleg</p>\r\n', 'SPA-Cart - free php platform', 'ajax cart, free php platform', 'SPA-Cart - free php platform', 'Y', 1671894077, 2);
+(6, 'SPA-Cart-News', '848', 'SPA-Cart News', '<p>I write here about SPA-Cart idea. Future is came. Why not all sites to be Ajaxfied? Look on Google Plus - they are in our days and fully ajaxfied. So here SPA-Cart provides you ability to be same user friendly as most as it can be.</p>\r\n', '<p>Good idea - Ajaxfied pages. But how to do?<br />\r\n<br />\r\nWell - here you have solution from 12 years experienced developer who was growing as Ajax was growing.<br />\r\n<br />\r\nBasically Ajax makes pages loaded without browser redirect. Here all URLs are supported. Links are absolute and native just like for Google and other Search Engines. Back-forward &nbsp;browser buttons works perfect.<br />\r\n<br />\r\nIt&#39;s not only fast because of no browser reload - it is fast also because we load not all site parts like header and footer and all it&#39;s JS and CSS files.<br />\r\n<br />\r\nIn fact it can be hours of thinking how to make ajaxfied pages. As the solution I came to - I put all pages in the &quot;pages&quot; directory and call them from the &quot;index.php&quot; root script. Just if it was /product/1 page - then pages/product.php script is loaded with &quot;1&quot; product #ID. Next in same index.php I display just page content came from pages/product.php - and display it for Ajax request.<br />\r\n<br />\r\nWell - it&#39;s over a year since SPA-Cart is here and it has many downloads and support questions. I did made ton of work already and more things are in plan since if I have customers - I am making platform grow more.<br />\r\n<br />\r\nYou can find SPA-Cart on CodeCanyon if you want to receive better support from me</p>\r\n\r\n<p><a href=\"https://codecanyon.net/item/ajax-cart-very-fast-no-page-reloading-many-features-responsive-and-mobile-skin/17109430?s_rank=11\">https://codecanyon.net/item/ajax-cart-very-fast-no-page-reloading-many-features-responsive-and-mobile-skin/17109430?s_rank=11</a><br />\r\n<br />\r\nThank you for reading this post.<br />\r\nOleg</p>\r\n', 'SPA-Cart - free php platform', 'ajax cart, free php platform', 'SPA-Cart - free php platform', 'Y', 1671894077, 3);
 
 -- --------------------------------------------------------
 
@@ -6620,7 +6728,9 @@ INSERT INTO `orders` (`orderid`, `paymentid`, `shippingid`, `local_pickup`, `wid
 (28, 2, 2220, 0, 0, 848, 'a@a.com', 'Admin', 'admin', 'New York', 'IL', 'US', 'address', '10001', '1234', '', 2, 1671893674, 248.00, '', 0.00, 0.00, 24.80, 'a:11:{s:5:\"taxid\";s:1:\"1\";s:8:\"tax_name\";s:3:\"VAT\";s:16:\"tax_display_name\";s:3:\"VAT\";s:7:\"formula\";s:2:\"ST\";s:12:\"address_type\";s:1:\"B\";s:6:\"active\";s:1:\"Y\";s:18:\"price_includes_tax\";s:1:\"N\";s:21:\"display_including_tax\";s:1:\"N\";s:12:\"display_info\";s:0:\"\";s:9:\"regnumber\";s:0:\"\";s:8:\"priority\";s:1:\"0\";}', 272.80, '', 0.00, 1, 1, 0, 'a312d2c66606a1573096f7bed8704ada', '', '504pj25r', '', 'Admin', 'admin', 'New York', 'IL', 'US', 'address', '10001', '1234', NULL, NULL, ''),
 (29, 7, 2222, 0, 0, 848, 'a@a.com', 'Admin', 'admin', 'New York', 'IL', 'US', 'address', '10001', '1234', 'test', 1, 1671893695, 199.00, '', 0.00, 36.90, 23.59, 'a:11:{s:5:\"taxid\";s:1:\"1\";s:8:\"tax_name\";s:3:\"VAT\";s:16:\"tax_display_name\";s:3:\"VAT\";s:7:\"formula\";s:2:\"ST\";s:12:\"address_type\";s:1:\"B\";s:6:\"active\";s:1:\"Y\";s:18:\"price_includes_tax\";s:1:\"N\";s:21:\"display_including_tax\";s:1:\"N\";s:12:\"display_info\";s:0:\"\";s:9:\"regnumber\";s:0:\"\";s:8:\"priority\";s:1:\"0\";}', 259.49, '', 0.00, 0, 0, 0, '73a7062809268f2f66d3f35f5fc64900', '', '', '', 'Admin', 'admin', 'New York', 'IL', 'US', 'address', '10001', '1234', NULL, NULL, ''),
 (30, 7, 2222, 0, 0, 848, 'a@a.com', 'Admin', 'admin', 'New York', 'IL', 'US', 'address', '10001', '1234', '', 2, 1671893740, 199.00, '', 0.00, 36.90, 23.59, 'a:11:{s:5:\"taxid\";s:1:\"1\";s:8:\"tax_name\";s:3:\"VAT\";s:16:\"tax_display_name\";s:3:\"VAT\";s:7:\"formula\";s:2:\"ST\";s:12:\"address_type\";s:1:\"B\";s:6:\"active\";s:1:\"Y\";s:18:\"price_includes_tax\";s:1:\"N\";s:21:\"display_including_tax\";s:1:\"N\";s:12:\"display_info\";s:0:\"\";s:9:\"regnumber\";s:0:\"\";s:8:\"priority\";s:1:\"0\";}', 259.49, '', 0.00, 1, 1, 1, '3f39a369e171db303ca75a67774ad83e', 'cs_test_a10d7Yp2oO92axcDx6yrM6dXjaKwMunDUZ6z7ZYYWMsqcGN8cjI6Hj1243', 'txn_3MIZ7IIVesFzCvTO2LpBxtno', 'pi_3MIZ7IIVesFzCvTO2Nw4ezp9', 'Admin', 'admin', 'New York', 'IL', 'US', 'address', '10001', '1234', NULL, NULL, ''),
-(31, 2, 0, 0, 0, 0, 'a@ac.com', '1', '2', 'New York', 'NY', 'US', '123', '10001', '3', '', 2, 1674503437, 14.90, '', 0.00, 0.00, 1.49, 'a:11:{s:5:\"taxid\";s:1:\"1\";s:8:\"tax_name\";s:3:\"VAT\";s:16:\"tax_display_name\";s:3:\"VAT\";s:7:\"formula\";s:2:\"ST\";s:12:\"address_type\";s:1:\"B\";s:6:\"active\";s:1:\"Y\";s:18:\"price_includes_tax\";s:1:\"N\";s:21:\"display_including_tax\";s:1:\"N\";s:12:\"display_info\";s:0:\"\";s:9:\"regnumber\";s:0:\"\";s:8:\"priority\";s:1:\"0\";}', 16.39, '', 0.00, 1, 1, 0, '6385db007a716dac94826eb4a5b6e331', '', 'ej2vwg42', '', '1', '2', 'New York', 'NY', 'US', '123', '10001', '3', NULL, NULL, 'dde1861953b38d23d2a1c5a6e889eb6e');
+(31, 2, 0, 0, 0, 0, 'a@ac.com', '1', '2', 'New York', 'NY', 'US', '123', '10001', '3', '', 2, 1674503437, 14.90, '', 0.00, 0.00, 1.49, 'a:11:{s:5:\"taxid\";s:1:\"1\";s:8:\"tax_name\";s:3:\"VAT\";s:16:\"tax_display_name\";s:3:\"VAT\";s:7:\"formula\";s:2:\"ST\";s:12:\"address_type\";s:1:\"B\";s:6:\"active\";s:1:\"Y\";s:18:\"price_includes_tax\";s:1:\"N\";s:21:\"display_including_tax\";s:1:\"N\";s:12:\"display_info\";s:0:\"\";s:9:\"regnumber\";s:0:\"\";s:8:\"priority\";s:1:\"0\";}', 16.39, '', 0.00, 1, 1, 0, '6385db007a716dac94826eb4a5b6e331', '', 'ej2vwg42', '', '1', '2', 'New York', 'NY', 'US', '123', '10001', '3', NULL, NULL, 'dde1861953b38d23d2a1c5a6e889eb6e'),
+(32, 7, 2220, 0, 0, 848, 'a@a.com', 'Admin', 'Admin', 'New York', 'IL', 'US', 'address', '10001', '1234', '', 1, 1790620546, 464.00, '', 0.00, 0.00, 46.40, 'a:11:{s:5:\"taxid\";s:1:\"1\";s:8:\"tax_name\";s:3:\"VAT\";s:16:\"tax_display_name\";s:3:\"VAT\";s:7:\"formula\";s:2:\"ST\";s:12:\"address_type\";s:1:\"B\";s:6:\"active\";s:1:\"Y\";s:18:\"price_includes_tax\";s:1:\"N\";s:21:\"display_including_tax\";s:1:\"N\";s:12:\"display_info\";s:0:\"\";s:9:\"regnumber\";s:0:\"\";s:8:\"priority\";s:1:\"0\";}', 510.40, '', 0.00, 0, 0, 0, '8eb0ebb0574f70f9afa4cc298c114e38', '', '', '', 'Admin', 'Admin', 'New York', 'IL', 'US', 'address', '10001', '1234', NULL, NULL, '0d412b4e9fd47b24f425ae0b291add0f'),
+(33, 5, 2220, 0, 0, 848, 'a@a.com', 'Admin', 'Admin', 'New York', 'IL', 'US', 'address', '10001', '1234', '', 1, 1790620555, 464.00, '', 0.00, 0.00, 46.40, 'a:11:{s:5:\"taxid\";s:1:\"1\";s:8:\"tax_name\";s:3:\"VAT\";s:16:\"tax_display_name\";s:3:\"VAT\";s:7:\"formula\";s:2:\"ST\";s:12:\"address_type\";s:1:\"B\";s:6:\"active\";s:1:\"Y\";s:18:\"price_includes_tax\";s:1:\"N\";s:21:\"display_including_tax\";s:1:\"N\";s:12:\"display_info\";s:0:\"\";s:9:\"regnumber\";s:0:\"\";s:8:\"priority\";s:1:\"0\";}', 510.40, '', 0.00, 0, 0, 0, '4095468705ee1b139296df48dddefde7', '', '', '', 'Admin', 'Admin', 'New York', 'IL', 'US', 'address', '10001', '1234', NULL, NULL, '9b632d733790a3c077cf0e649889d97a');
 
 -- --------------------------------------------------------
 
@@ -6696,7 +6806,13 @@ INSERT INTO `order_items` (`itemid`, `orderid`, `productid`, `price`, `weight`, 
 (49, 28, 129, 49.00, 0.00, 1, 'a:3:{s:15:\"product_options\";a:2:{i:226;a:10:{s:7:\"groupid\";s:3:\"226\";s:9:\"productid\";s:3:\"129\";s:4:\"name\";s:4:\"Size\";s:8:\"fullname\";s:0:\"\";s:7:\"orderby\";s:2:\"10\";s:4:\"type\";s:1:\"g\";s:9:\"view_type\";s:1:\"p\";s:7:\"enabled\";s:1:\"1\";s:7:\"variant\";s:1:\"1\";s:6:\"option\";a:9:{s:8:\"optionid\";s:3:\"846\";s:7:\"groupid\";s:3:\"226\";s:4:\"name\";s:1:\"M\";s:7:\"orderby\";s:2:\"20\";s:7:\"enabled\";s:1:\"1\";s:14:\"price_modifier\";s:4:\"0.00\";s:19:\"price_modifier_type\";s:1:\"%\";s:15:\"weight_modifier\";s:4:\"0.00\";s:20:\"weight_modifier_type\";s:1:\"%\";}}i:227;a:10:{s:7:\"groupid\";s:3:\"227\";s:9:\"productid\";s:3:\"129\";s:4:\"name\";s:5:\"Color\";s:8:\"fullname\";s:0:\"\";s:7:\"orderby\";s:2:\"20\";s:4:\"type\";s:1:\"g\";s:9:\"view_type\";s:1:\"p\";s:7:\"enabled\";s:1:\"1\";s:7:\"variant\";s:1:\"1\";s:6:\"option\";a:9:{s:8:\"optionid\";s:3:\"850\";s:7:\"groupid\";s:3:\"227\";s:4:\"name\";s:5:\"White\";s:7:\"orderby\";s:2:\"10\";s:7:\"enabled\";s:1:\"1\";s:14:\"price_modifier\";s:4:\"0.00\";s:19:\"price_modifier_type\";s:1:\"%\";s:15:\"weight_modifier\";s:4:\"0.00\";s:20:\"weight_modifier_type\";s:1:\"%\";}}}s:7:\"options\";a:2:{i:226;s:3:\"846\";i:227;s:3:\"850\";}s:9:\"variantid\";s:3:\"272\";}', ''),
 (50, 29, 219, 199.00, 0.00, 1, 'a:3:{s:15:\"product_options\";a:2:{i:396;a:10:{s:7:\"groupid\";s:3:\"396\";s:9:\"productid\";s:3:\"219\";s:4:\"name\";s:12:\"Stone Weight\";s:8:\"fullname\";s:0:\"\";s:7:\"orderby\";s:2:\"10\";s:4:\"type\";s:1:\"g\";s:9:\"view_type\";s:1:\"p\";s:7:\"enabled\";s:1:\"1\";s:7:\"variant\";s:1:\"0\";s:6:\"option\";a:9:{s:8:\"optionid\";s:4:\"1271\";s:7:\"groupid\";s:3:\"396\";s:4:\"name\";s:11:\"0.57 carats\";s:7:\"orderby\";s:2:\"20\";s:7:\"enabled\";s:1:\"1\";s:14:\"price_modifier\";s:4:\"0.00\";s:19:\"price_modifier_type\";s:1:\"%\";s:15:\"weight_modifier\";s:4:\"0.00\";s:20:\"weight_modifier_type\";s:1:\"%\";}}i:397;a:10:{s:7:\"groupid\";s:3:\"397\";s:9:\"productid\";s:3:\"219\";s:4:\"name\";s:5:\"Color\";s:8:\"fullname\";s:0:\"\";s:7:\"orderby\";s:2:\"20\";s:4:\"type\";s:1:\"g\";s:9:\"view_type\";s:1:\"p\";s:7:\"enabled\";s:1:\"1\";s:7:\"variant\";s:1:\"0\";s:6:\"option\";a:9:{s:8:\"optionid\";s:4:\"1272\";s:7:\"groupid\";s:3:\"397\";s:4:\"name\";s:11:\"silver gold\";s:7:\"orderby\";s:2:\"10\";s:7:\"enabled\";s:1:\"1\";s:14:\"price_modifier\";s:4:\"0.00\";s:19:\"price_modifier_type\";s:1:\"%\";s:15:\"weight_modifier\";s:4:\"0.00\";s:20:\"weight_modifier_type\";s:1:\"%\";}}}s:7:\"options\";a:2:{i:396;s:4:\"1271\";i:397;s:4:\"1272\";}s:9:\"variantid\";b:0;}', ''),
 (51, 30, 219, 199.00, 0.00, 1, 'a:3:{s:15:\"product_options\";a:2:{i:396;a:10:{s:7:\"groupid\";s:3:\"396\";s:9:\"productid\";s:3:\"219\";s:4:\"name\";s:12:\"Stone Weight\";s:8:\"fullname\";s:0:\"\";s:7:\"orderby\";s:2:\"10\";s:4:\"type\";s:1:\"g\";s:9:\"view_type\";s:1:\"p\";s:7:\"enabled\";s:1:\"1\";s:7:\"variant\";s:1:\"0\";s:6:\"option\";a:9:{s:8:\"optionid\";s:4:\"1271\";s:7:\"groupid\";s:3:\"396\";s:4:\"name\";s:11:\"0.57 carats\";s:7:\"orderby\";s:2:\"20\";s:7:\"enabled\";s:1:\"1\";s:14:\"price_modifier\";s:4:\"0.00\";s:19:\"price_modifier_type\";s:1:\"%\";s:15:\"weight_modifier\";s:4:\"0.00\";s:20:\"weight_modifier_type\";s:1:\"%\";}}i:397;a:10:{s:7:\"groupid\";s:3:\"397\";s:9:\"productid\";s:3:\"219\";s:4:\"name\";s:5:\"Color\";s:8:\"fullname\";s:0:\"\";s:7:\"orderby\";s:2:\"20\";s:4:\"type\";s:1:\"g\";s:9:\"view_type\";s:1:\"p\";s:7:\"enabled\";s:1:\"1\";s:7:\"variant\";s:1:\"0\";s:6:\"option\";a:9:{s:8:\"optionid\";s:4:\"1272\";s:7:\"groupid\";s:3:\"397\";s:4:\"name\";s:11:\"silver gold\";s:7:\"orderby\";s:2:\"10\";s:7:\"enabled\";s:1:\"1\";s:14:\"price_modifier\";s:4:\"0.00\";s:19:\"price_modifier_type\";s:1:\"%\";s:15:\"weight_modifier\";s:4:\"0.00\";s:20:\"weight_modifier_type\";s:1:\"%\";}}}s:7:\"options\";a:2:{i:396;s:4:\"1271\";i:397;s:4:\"1272\";}s:9:\"variantid\";b:0;}', ''),
-(52, 31, 113, 14.90, 0.00, 1, 'a:3:{s:15:\"product_options\";a:2:{i:194;a:10:{s:7:\"groupid\";s:3:\"194\";s:9:\"productid\";s:3:\"113\";s:4:\"name\";s:5:\"Color\";s:8:\"fullname\";s:0:\"\";s:7:\"orderby\";s:2:\"10\";s:4:\"type\";s:1:\"g\";s:9:\"view_type\";s:1:\"p\";s:7:\"enabled\";s:1:\"1\";s:7:\"variant\";s:1:\"1\";s:6:\"option\";a:9:{s:8:\"optionid\";s:3:\"713\";s:7:\"groupid\";s:3:\"194\";s:4:\"name\";s:5:\"Black\";s:7:\"orderby\";s:2:\"10\";s:7:\"enabled\";s:1:\"1\";s:14:\"price_modifier\";s:4:\"0.00\";s:19:\"price_modifier_type\";s:1:\"%\";s:15:\"weight_modifier\";s:4:\"0.00\";s:20:\"weight_modifier_type\";s:1:\"%\";}}i:195;a:10:{s:7:\"groupid\";s:3:\"195\";s:9:\"productid\";s:3:\"113\";s:4:\"name\";s:4:\"Size\";s:8:\"fullname\";s:0:\"\";s:7:\"orderby\";s:2:\"20\";s:4:\"type\";s:1:\"g\";s:9:\"view_type\";s:1:\"p\";s:7:\"enabled\";s:1:\"1\";s:7:\"variant\";s:1:\"1\";s:6:\"option\";a:9:{s:8:\"optionid\";s:3:\"716\";s:7:\"groupid\";s:3:\"195\";s:4:\"name\";s:1:\"S\";s:7:\"orderby\";s:2:\"10\";s:7:\"enabled\";s:1:\"1\";s:14:\"price_modifier\";s:4:\"0.00\";s:19:\"price_modifier_type\";s:1:\"%\";s:15:\"weight_modifier\";s:4:\"0.00\";s:20:\"weight_modifier_type\";s:1:\"%\";}}}s:7:\"options\";a:2:{i:194;s:3:\"713\";i:195;s:3:\"716\";}s:9:\"variantid\";s:3:\"174\";}', '');
+(52, 31, 113, 14.90, 0.00, 1, 'a:3:{s:15:\"product_options\";a:2:{i:194;a:10:{s:7:\"groupid\";s:3:\"194\";s:9:\"productid\";s:3:\"113\";s:4:\"name\";s:5:\"Color\";s:8:\"fullname\";s:0:\"\";s:7:\"orderby\";s:2:\"10\";s:4:\"type\";s:1:\"g\";s:9:\"view_type\";s:1:\"p\";s:7:\"enabled\";s:1:\"1\";s:7:\"variant\";s:1:\"1\";s:6:\"option\";a:9:{s:8:\"optionid\";s:3:\"713\";s:7:\"groupid\";s:3:\"194\";s:4:\"name\";s:5:\"Black\";s:7:\"orderby\";s:2:\"10\";s:7:\"enabled\";s:1:\"1\";s:14:\"price_modifier\";s:4:\"0.00\";s:19:\"price_modifier_type\";s:1:\"%\";s:15:\"weight_modifier\";s:4:\"0.00\";s:20:\"weight_modifier_type\";s:1:\"%\";}}i:195;a:10:{s:7:\"groupid\";s:3:\"195\";s:9:\"productid\";s:3:\"113\";s:4:\"name\";s:4:\"Size\";s:8:\"fullname\";s:0:\"\";s:7:\"orderby\";s:2:\"20\";s:4:\"type\";s:1:\"g\";s:9:\"view_type\";s:1:\"p\";s:7:\"enabled\";s:1:\"1\";s:7:\"variant\";s:1:\"1\";s:6:\"option\";a:9:{s:8:\"optionid\";s:3:\"716\";s:7:\"groupid\";s:3:\"195\";s:4:\"name\";s:1:\"S\";s:7:\"orderby\";s:2:\"10\";s:7:\"enabled\";s:1:\"1\";s:14:\"price_modifier\";s:4:\"0.00\";s:19:\"price_modifier_type\";s:1:\"%\";s:15:\"weight_modifier\";s:4:\"0.00\";s:20:\"weight_modifier_type\";s:1:\"%\";}}}s:7:\"options\";a:2:{i:194;s:3:\"713\";i:195;s:3:\"716\";}s:9:\"variantid\";s:3:\"174\";}', ''),
+(53, 32, 123, 59.00, 0.00, 1, 'a:3:{s:15:\"product_options\";a:2:{i:214;a:10:{s:7:\"groupid\";s:3:\"214\";s:9:\"productid\";s:3:\"123\";s:4:\"name\";s:4:\"Size\";s:8:\"fullname\";s:0:\"\";s:7:\"orderby\";s:2:\"10\";s:4:\"type\";s:1:\"g\";s:9:\"view_type\";s:1:\"p\";s:7:\"enabled\";s:1:\"1\";s:7:\"variant\";s:1:\"1\";s:6:\"option\";a:9:{s:8:\"optionid\";s:3:\"805\";s:7:\"groupid\";s:3:\"214\";s:4:\"name\";s:2:\"XL\";s:7:\"orderby\";s:2:\"50\";s:7:\"enabled\";s:1:\"1\";s:14:\"price_modifier\";s:5:\"15.00\";s:19:\"price_modifier_type\";s:1:\"%\";s:15:\"weight_modifier\";s:4:\"0.00\";s:20:\"weight_modifier_type\";s:1:\"%\";}}i:215;a:10:{s:7:\"groupid\";s:3:\"215\";s:9:\"productid\";s:3:\"123\";s:4:\"name\";s:5:\"Color\";s:8:\"fullname\";s:0:\"\";s:7:\"orderby\";s:2:\"20\";s:4:\"type\";s:1:\"g\";s:9:\"view_type\";s:1:\"p\";s:7:\"enabled\";s:1:\"1\";s:7:\"variant\";s:1:\"1\";s:6:\"option\";a:9:{s:8:\"optionid\";s:3:\"806\";s:7:\"groupid\";s:3:\"215\";s:4:\"name\";s:5:\"Green\";s:7:\"orderby\";s:2:\"10\";s:7:\"enabled\";s:1:\"1\";s:14:\"price_modifier\";s:4:\"0.00\";s:19:\"price_modifier_type\";s:1:\"%\";s:15:\"weight_modifier\";s:4:\"0.00\";s:20:\"weight_modifier_type\";s:1:\"%\";}}}s:7:\"options\";a:2:{i:214;s:3:\"805\";i:215;s:3:\"806\";}s:9:\"variantid\";s:2:\"54\";}', ''),
+(54, 32, 129, 49.00, 0.00, 3, 'a:3:{s:15:\"product_options\";a:2:{i:226;a:10:{s:7:\"groupid\";s:3:\"226\";s:9:\"productid\";s:3:\"129\";s:4:\"name\";s:4:\"Size\";s:8:\"fullname\";s:0:\"\";s:7:\"orderby\";s:2:\"10\";s:4:\"type\";s:1:\"g\";s:9:\"view_type\";s:1:\"p\";s:7:\"enabled\";s:1:\"1\";s:7:\"variant\";s:1:\"1\";s:6:\"option\";a:9:{s:8:\"optionid\";s:3:\"845\";s:7:\"groupid\";s:3:\"226\";s:4:\"name\";s:1:\"S\";s:7:\"orderby\";s:2:\"10\";s:7:\"enabled\";s:1:\"1\";s:14:\"price_modifier\";s:4:\"0.00\";s:19:\"price_modifier_type\";s:1:\"%\";s:15:\"weight_modifier\";s:4:\"0.00\";s:20:\"weight_modifier_type\";s:1:\"%\";}}i:227;a:10:{s:7:\"groupid\";s:3:\"227\";s:9:\"productid\";s:3:\"129\";s:4:\"name\";s:5:\"Color\";s:8:\"fullname\";s:0:\"\";s:7:\"orderby\";s:2:\"20\";s:4:\"type\";s:1:\"g\";s:9:\"view_type\";s:1:\"p\";s:7:\"enabled\";s:1:\"1\";s:7:\"variant\";s:1:\"1\";s:6:\"option\";a:9:{s:8:\"optionid\";s:3:\"850\";s:7:\"groupid\";s:3:\"227\";s:4:\"name\";s:5:\"White\";s:7:\"orderby\";s:2:\"10\";s:7:\"enabled\";s:1:\"1\";s:14:\"price_modifier\";s:4:\"0.00\";s:19:\"price_modifier_type\";s:1:\"%\";s:15:\"weight_modifier\";s:4:\"0.00\";s:20:\"weight_modifier_type\";s:1:\"%\";}}}s:7:\"options\";a:2:{i:226;s:3:\"845\";i:227;s:3:\"850\";}s:9:\"variantid\";s:3:\"270\";}', ''),
+(55, 32, 127, 129.00, 0.00, 2, 'a:3:{s:15:\"product_options\";a:2:{i:222;a:10:{s:7:\"groupid\";s:3:\"222\";s:9:\"productid\";s:3:\"127\";s:4:\"name\";s:4:\"Size\";s:8:\"fullname\";s:0:\"\";s:7:\"orderby\";s:2:\"10\";s:4:\"type\";s:1:\"g\";s:9:\"view_type\";s:1:\"p\";s:7:\"enabled\";s:1:\"1\";s:7:\"variant\";s:1:\"1\";s:6:\"option\";a:9:{s:8:\"optionid\";s:3:\"830\";s:7:\"groupid\";s:3:\"222\";s:4:\"name\";s:1:\"S\";s:7:\"orderby\";s:2:\"10\";s:7:\"enabled\";s:1:\"1\";s:14:\"price_modifier\";s:4:\"0.00\";s:19:\"price_modifier_type\";s:1:\"%\";s:15:\"weight_modifier\";s:4:\"0.00\";s:20:\"weight_modifier_type\";s:1:\"%\";}}i:223;a:10:{s:7:\"groupid\";s:3:\"223\";s:9:\"productid\";s:3:\"127\";s:4:\"name\";s:5:\"Color\";s:8:\"fullname\";s:0:\"\";s:7:\"orderby\";s:2:\"20\";s:4:\"type\";s:1:\"g\";s:9:\"view_type\";s:1:\"p\";s:7:\"enabled\";s:1:\"1\";s:7:\"variant\";s:1:\"1\";s:6:\"option\";a:9:{s:8:\"optionid\";s:3:\"835\";s:7:\"groupid\";s:3:\"223\";s:4:\"name\";s:7:\"Mustard\";s:7:\"orderby\";s:2:\"10\";s:7:\"enabled\";s:1:\"1\";s:14:\"price_modifier\";s:4:\"0.00\";s:19:\"price_modifier_type\";s:1:\"%\";s:15:\"weight_modifier\";s:4:\"0.00\";s:20:\"weight_modifier_type\";s:1:\"%\";}}}s:7:\"options\";a:2:{i:222;s:3:\"830\";i:223;s:3:\"835\";}s:9:\"variantid\";s:3:\"260\";}', ''),
+(56, 33, 123, 59.00, 0.00, 1, 'a:3:{s:15:\"product_options\";a:2:{i:214;a:10:{s:7:\"groupid\";s:3:\"214\";s:9:\"productid\";s:3:\"123\";s:4:\"name\";s:4:\"Size\";s:8:\"fullname\";s:0:\"\";s:7:\"orderby\";s:2:\"10\";s:4:\"type\";s:1:\"g\";s:9:\"view_type\";s:1:\"p\";s:7:\"enabled\";s:1:\"1\";s:7:\"variant\";s:1:\"1\";s:6:\"option\";a:9:{s:8:\"optionid\";s:3:\"805\";s:7:\"groupid\";s:3:\"214\";s:4:\"name\";s:2:\"XL\";s:7:\"orderby\";s:2:\"50\";s:7:\"enabled\";s:1:\"1\";s:14:\"price_modifier\";s:5:\"15.00\";s:19:\"price_modifier_type\";s:1:\"%\";s:15:\"weight_modifier\";s:4:\"0.00\";s:20:\"weight_modifier_type\";s:1:\"%\";}}i:215;a:10:{s:7:\"groupid\";s:3:\"215\";s:9:\"productid\";s:3:\"123\";s:4:\"name\";s:5:\"Color\";s:8:\"fullname\";s:0:\"\";s:7:\"orderby\";s:2:\"20\";s:4:\"type\";s:1:\"g\";s:9:\"view_type\";s:1:\"p\";s:7:\"enabled\";s:1:\"1\";s:7:\"variant\";s:1:\"1\";s:6:\"option\";a:9:{s:8:\"optionid\";s:3:\"806\";s:7:\"groupid\";s:3:\"215\";s:4:\"name\";s:5:\"Green\";s:7:\"orderby\";s:2:\"10\";s:7:\"enabled\";s:1:\"1\";s:14:\"price_modifier\";s:4:\"0.00\";s:19:\"price_modifier_type\";s:1:\"%\";s:15:\"weight_modifier\";s:4:\"0.00\";s:20:\"weight_modifier_type\";s:1:\"%\";}}}s:7:\"options\";a:2:{i:214;s:3:\"805\";i:215;s:3:\"806\";}s:9:\"variantid\";s:2:\"54\";}', ''),
+(57, 33, 129, 49.00, 0.00, 3, 'a:3:{s:15:\"product_options\";a:2:{i:226;a:10:{s:7:\"groupid\";s:3:\"226\";s:9:\"productid\";s:3:\"129\";s:4:\"name\";s:4:\"Size\";s:8:\"fullname\";s:0:\"\";s:7:\"orderby\";s:2:\"10\";s:4:\"type\";s:1:\"g\";s:9:\"view_type\";s:1:\"p\";s:7:\"enabled\";s:1:\"1\";s:7:\"variant\";s:1:\"1\";s:6:\"option\";a:9:{s:8:\"optionid\";s:3:\"845\";s:7:\"groupid\";s:3:\"226\";s:4:\"name\";s:1:\"S\";s:7:\"orderby\";s:2:\"10\";s:7:\"enabled\";s:1:\"1\";s:14:\"price_modifier\";s:4:\"0.00\";s:19:\"price_modifier_type\";s:1:\"%\";s:15:\"weight_modifier\";s:4:\"0.00\";s:20:\"weight_modifier_type\";s:1:\"%\";}}i:227;a:10:{s:7:\"groupid\";s:3:\"227\";s:9:\"productid\";s:3:\"129\";s:4:\"name\";s:5:\"Color\";s:8:\"fullname\";s:0:\"\";s:7:\"orderby\";s:2:\"20\";s:4:\"type\";s:1:\"g\";s:9:\"view_type\";s:1:\"p\";s:7:\"enabled\";s:1:\"1\";s:7:\"variant\";s:1:\"1\";s:6:\"option\";a:9:{s:8:\"optionid\";s:3:\"850\";s:7:\"groupid\";s:3:\"227\";s:4:\"name\";s:5:\"White\";s:7:\"orderby\";s:2:\"10\";s:7:\"enabled\";s:1:\"1\";s:14:\"price_modifier\";s:4:\"0.00\";s:19:\"price_modifier_type\";s:1:\"%\";s:15:\"weight_modifier\";s:4:\"0.00\";s:20:\"weight_modifier_type\";s:1:\"%\";}}}s:7:\"options\";a:2:{i:226;s:3:\"845\";i:227;s:3:\"850\";}s:9:\"variantid\";s:3:\"270\";}', ''),
+(58, 33, 127, 129.00, 0.00, 2, 'a:3:{s:15:\"product_options\";a:2:{i:222;a:10:{s:7:\"groupid\";s:3:\"222\";s:9:\"productid\";s:3:\"127\";s:4:\"name\";s:4:\"Size\";s:8:\"fullname\";s:0:\"\";s:7:\"orderby\";s:2:\"10\";s:4:\"type\";s:1:\"g\";s:9:\"view_type\";s:1:\"p\";s:7:\"enabled\";s:1:\"1\";s:7:\"variant\";s:1:\"1\";s:6:\"option\";a:9:{s:8:\"optionid\";s:3:\"830\";s:7:\"groupid\";s:3:\"222\";s:4:\"name\";s:1:\"S\";s:7:\"orderby\";s:2:\"10\";s:7:\"enabled\";s:1:\"1\";s:14:\"price_modifier\";s:4:\"0.00\";s:19:\"price_modifier_type\";s:1:\"%\";s:15:\"weight_modifier\";s:4:\"0.00\";s:20:\"weight_modifier_type\";s:1:\"%\";}}i:223;a:10:{s:7:\"groupid\";s:3:\"223\";s:9:\"productid\";s:3:\"127\";s:4:\"name\";s:5:\"Color\";s:8:\"fullname\";s:0:\"\";s:7:\"orderby\";s:2:\"20\";s:4:\"type\";s:1:\"g\";s:9:\"view_type\";s:1:\"p\";s:7:\"enabled\";s:1:\"1\";s:7:\"variant\";s:1:\"1\";s:6:\"option\";a:9:{s:8:\"optionid\";s:3:\"835\";s:7:\"groupid\";s:3:\"223\";s:4:\"name\";s:7:\"Mustard\";s:7:\"orderby\";s:2:\"10\";s:7:\"enabled\";s:1:\"1\";s:14:\"price_modifier\";s:4:\"0.00\";s:19:\"price_modifier_type\";s:1:\"%\";s:15:\"weight_modifier\";s:4:\"0.00\";s:20:\"weight_modifier_type\";s:1:\"%\";}}}s:7:\"options\";a:2:{i:222;s:3:\"830\";i:223;s:3:\"835\";}s:9:\"variantid\";s:3:\"260\";}', '');
 
 -- --------------------------------------------------------
 
@@ -6745,12 +6861,8 @@ CREATE TABLE `pages` (
 --
 
 INSERT INTO `pages` (`pageid`, `title`, `content`, `meta_title`, `meta_keywords`, `meta_description`, `orderby`, `cleanurl`) VALUES
-(1, 'About SPA-Cart', '<p><strong>Why is that so good?</strong></p>\n\n<ol>\n	<li>First is the speed. It&#39;s faster than Amazon.</li>\n	<li>Next thing is Ajax - pages are loaded without reloading. Just content is loaded and no page refresh.</li>\n	<li>Another good thing that all pages are clean URL even in the admin area.</li>\n	<li>Fully and easy customizable.&nbsp;It&rsquo;s plain and pure PHP. No 3rd party classes or frameworks &ndash; just PHP.</li>\n	<li>Own templates engine similar to Smarty and well documented. It makes it very fast generated and also cached. Also easy to code with it saving time from writing PHP tags every time.</li>\n	<li>Images are resized with ImageMagick(Photoshop 100% quality, GD option also available) and cached. All images auto-generation script included. Say product details has big images, products list has small images &ndash; it&rsquo;s not only products, also all other images types.</li>\n</ol>\n\n<p>&nbsp;</p>\n\n<p><strong>What we mostly need is in popups</strong></p>\n\n<ol>\n	<li>Product quicklook.</li>\n	<li>View cart.</li>\n	<li>Checkout.</li>\n	<li>Login.</li>\n	<li>Registration.</li>\n	<li>My account with tabs.</li>\n</ol>\n\n<p>&nbsp;</p>\n\n<p><strong>What features are here in the Customer area</strong></p>\n\n<ol>\n	<li>Homepage details with banners and testimonials. Homepage featured products, bestsellers, most viewed products, new arrivals. Category has featured products as well if defined.</li>\n	<li>Products with quicklook, variants, options, wholesale prices, multiple images(Zoom preview effect), variant images. Options and variants modify price and weight. Social share links. Product details page tabs: description; related products; recommended products(random); send to friend.</li>\n	<li>Categories, Brands, Blogs with moderated comments, Static Pages, Contact Us, Search products, News, Newsletter subscriptions.</li>\n	<li>reCaptcha used to avoid guests to spam.</li>\n	<li>Account details with orders history.</li>\n	<li>Login, register, ajaxfied cart, ajaxfied checkout, ajaxfied profile.</li>\n	<li>Realtime cart and checkout calculations.</li>\n	<li>Products pagination, sorting options.</li>\n	<li>Email notifications for order, order status, new testimonial, new blog comment, contact us form.</li>\n</ol>\n\n<p>&nbsp;</p>\n\n<p><strong>What features are here in the Admin area</strong></p>\n\n<p>&nbsp;</p>\n\n<p>First is meta tags on all pages are customizable. Next is all pages has own configurable clean URLs. Another is that each feature has many other options. And the last one is the WYSIWYG editor to customize all descriptions.</p>\n\n<ol>\n	<li>Dashboard is displaying main statistics of your sales, bestsellers and most viewed products</li>\n	<li>Orders - search orders, see order details, change order status, print invoice.</li>\n	<li>Discount coupons - most needed options are implemented.</li>\n	<li>Users with country/state dynamic drop-downs. Create new user - set it customer or admin.</li>\n	<li>Membership levels, if you don&#39;t use just have no membership levels defined.</li>\n	<li>Products: all the needed details, images drag &amp; drop, options, variants(you control which variants are exists or not), variant images, wholesale pricing, related products.</li>\n	<li>Categories: unlimited subcategories levels, each category has own featured products, easy featured product selection, all needed category details, move category to another category/subcategory, category icon, category banners.</li>\n	<li>Brands: All needed details with brand image(logo for example)</li>\n	<li>Import/Export all catalog items</li>\n	<li>Content: Blogs, testimonials, static pages, homepage(same as category page customizer)</li>\n	<li>Shipping methods: offline shipping methods only supported for now. Realtime shipping methods module exists and need personal custom work. Shipping method can be as National(your country) and International(customer from another country)</li>\n	<li>Shipping charges - you are free to set shipping charges for any destination zone and values per many different params.</li>\n	<li>Payment methods: Stripe for credit cards and Paypal. Also offline payment methods</li>\n	<li>Taxes - you are free to define taxes for any destination zone, membership level, set where tax will be applied. You can disable taxes if you don&#39;t use them. Also set tax name, for example &quot;VAT&quot;.</li>\n	<li>Destination zones - set zones by country, state, city, zipcode. City and zipcode support masks - just include &#39;%&#39; into string and it will mean that customer&#39;s city/zipcode should just include that value.</li>\n	<li>Manage countries and states</li>\n	<li>General settings, Company information, Blog settings</li>\n	<li>Easy to translate by export/import language variables.</li>\n</ol>\n\n<p>&nbsp;</p>\n\n<p><strong>What is good on backend</strong></p>\n\n<ol>\n	<li>Own templates engine similar to Smarty but adapted even for Entry Level developer.</li>\n	<li>Templates are multilingual - need little personal custom work, but for one language you can easy translate. They are stored in cache. JavaScript using {lng} tags as well and stored in cache as well.</li>\n	<li>Easy only one settings.php file with development mode,</li>\n	<li>In live mode(not development): JavaScript is obfuscated(it saves up to 90% of script size); CSS, HTML are in one line to save byte on line breaks.</li>\n	<li>Images are resized with ImageMagick(Photoshop quality). Images are not displayed in full size - they are resized to the size of particular place where they are displayed. Resized images are cached and stored under the separate directory.</li>\n	<li>Clean PHP core structure. No .php pages - just clean URLs. &quot;index.php&quot; processing all scripts and executed from .htaccess just from any URL.</li>\n</ol>\n\n<p>&nbsp;</p>\n\n<p><strong>Who made this E-Commerce CMS</strong></p>\n\n<ol>\n	<li>11 years E-Commerce experience</li>\n	<li>8 years freelance.&nbsp;Around 200&nbsp;successful projects</li>\n	<li>Browse Upwork profile&nbsp;<a href=\"https://www.upwork.com/fl/ecommerce\" target=\"_blank\">https://www.upwork.com/fl/ecommerce</a></li>\n	<li>Author and owner of social network&nbsp;<a href=\"http://owohho.com\" target=\"_blank\">http://owohho.com</a>&nbsp;(first project to create the core)</li>\n</ol>\n\n<p>&nbsp;</p>\n\n<p>This is just a quick overview of SPA-Cart.</p>\n\n<p>&nbsp;</p>\n\n<p>Thank you for reading this article. More things are to come.</p>\n', '', '', '', 10, 'about'),
-(3, 'Terms &amp; Conditions', '<p>Terms &amp; Conditions</p>\r\n', '', '', '', 20, 'terms-n-conditions'),
-(4, 'Templages engine', '<p>Templates engine support PHP tags. Also it has own tags.</p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p>Supported tags are</p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p><strong>a.</strong> Any template variable can be<em> <span style=\"color:#0000FF\">{$var}</span></em> - it&#39;s like &lt;?php <span style=\"color:#0000FF\">echo $var;</span> ?>. If it&#39;s array or object - use same way as PHP, for example<span style=\"color:#ADD8E6\"> </span><span style=\"color:#0000FF\"><em>{$var[&#39;var&#39;]}</em></span></p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p><strong>b.&nbsp;</strong><br />\r\n<span style=\"color:#0000FF\"><em>{foreach $array as $k=&gt;$v}</em></span></p>\r\n\r\n<p><span style=\"color:#0000FF\"><em>{/foreach}</em></span></p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p>will be</p>\r\n\r\n<p>&lt;?php </p>\r\n\r\n<p></p>\r\n\r\n<p><span style=\"color:#0000FF\">foreach ($array as $k=>$v) {<br />\r\n}</span><br />\r\n?></p>\r\n\r\n<p><em>Y</em>ou still can insert <span style=\"color:#0000FF\"><em>{$v}</em></span> tag</p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p>And so on. So instead of &lt;?php CODE ?> you simple write {CODE}, similar what saves you time. Look below to learn more(no PHP tags in examples).<br />\r\n&nbsp;</p>\r\n\r\n<p><strong>c.</strong> <span style=\"color:#0000FF\"><em>{if $tmp == &#39;1&#39; or $var == &#39;2&#39;} {/if}</em></span></p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p>will be</p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p><!--?php <br /--><!--?php</em--></p>\r\n\r\n<p><span style=\"color:#0000FF\"><em>if ($tmp == &#39;1&#39; or $var == &#39;2&#39;) {<br />\r\n}</em></span><br />\r\n&nbsp;</p>\r\n\r\n<p>Same is</p>\r\n\r\n<p><span style=\"color:#0000FF\"><em>{elseif [CODE]}</em></span></p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p>and</p>\r\n\r\n<p><span style=\"color:#0000FF\"><em>{else}</em></span></p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p><strong>d.</strong><br />\r\n<span style=\"color:#0000FF\"><em>{php $var = 1+2;}</em></span></p>\r\n\r\n<p>It&#39;s just to wrap <!--?php ?--> to the inside content.</p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p><strong>e.</strong> <span style=\"color:#0000FF\"><em>{price $var}</em></span></p>\r\n\r\n<p>It will ouput currency symbol and price with .00 at the end.</p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p><strong>f.</strong> <span style=\"color:#0000FF\"><em>{weight $var}</em></span></p>\r\n\r\n<p>It will ouput weight symbol and weight with .00 at the end.</p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p><strong>g.</strong> <span style=\"color:#0000FF\"><em>{include=&quot;TEMPALTE PATH&quot;}</em></span></p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p>for example <span style=\"color:#0000FF\"><em>{include=&quot;common/products.php&quot;}</em></span></p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p><strong>h.</strong> <span style=\"color:#0000FF\"><em>{lng[Hello world]}</em></span> - language variable. Useful if you translate or use multi-lingual site.</p>\r\n\r\n<p>All tags and <span style=\"color:#0000FF\"><em>{lng..}</em></span> stored in cache and not processed on every page load.</p>\r\n\r\n<p><span style=\"color:#0000FF\"><em>{lng[Hello|lower]}</em></span> - lowcase.<br />\r\n<span style=\"color:#0000FF\"><em>{lng[Hello|js]}</em> </span>- replace line breaks and &quot; character with \\&quot;.<br />\r\n<span style=\"color:#0000FF\"><em>{lng[Hello|escape]}</em></span> - replace &quot; character with \\&quot;.</p>\r\n\r\n<p>You can also use<span style=\"color:#0000FF\"> <em>{lng}</em></span> in JavaScript - they are processed as well. JavaScrpt already do all the work so it does not support additonal modifiers like &quot;lower&quot;.</p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p><strong>i.</strong> Easier than <span style=\"color:#0000FF\"><em>{php }</em> </span>for assignments<br />\r\n<span style=\"color:#0000FF\"><em>{assign $var=1+2}</em></span></p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p>Output<br />\r\n<!--?php<br /--> <span style=\"color:#0000FF\"><em>$var = 1+2;</em></span></p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<hr />\r\n<p>&nbsp;</p>\r\n\r\n<p>Full templates engine is in the <span style=\"color:#0000FF\"><em>includes/func/func.core.php</em></span> file</p>\r\n\r\n<p><span style=\"color:#0000FF\"><em>function get_template_contents</em></span></p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p>Easy to customize or add new template tags for even new developer.</p>\r\n', '', '', '', 30, 'templages-engine'),
-(5, 'Scripts structure', '<p>It has just few main folders</p>\r\n\r\n<ol>\r\n	<li>Includes</li>\r\n	<li>Pages</li>\r\n	<li>Templates</li>\r\n</ol>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p>All functions are with the <em>includes/</em> folder.</p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p>All pages we see are in the <em>pages/</em> folder. The file to process them is only one - index.php. It parse URL for example the <em>/help</em> url will load the&nbsp;<em>pages/help.php </em>script. So it makes all pages clean URLs.</p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p>Templates are grouped in the templates folder under folders same names as scripts under the <em>pages/</em>&nbsp;folder.</p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p>Mobile version is very similar scripts under the <em>templates/mobile/</em> folder.</p>\r\n', '', '', '', 25, 'scripts-structure'),
-(11, 'test', '<p>test</p>\r\n', '', '', '', 40, 'test'),
-(12, 'MySQL standards', '<p>Here I write how to use MySQL syntaxes with SPA-Cart. MySQL or MySQLi - it is same functions.</p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p>As you know PHP function is simple mysql_query. But it makes complicated to work with data.</p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p>SPA-Cart MySQL connection is wrote in $db variable.</p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p>Here are functions list</p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p><strong>1.</strong></p>\r\n\r\n<p><span style=\"color:#0000FF\">$db-&gt;all(&quot;SELECT * FROM table&quot;);</span></p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p>It will output array of table.</p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p><strong>2.</strong></p>\r\n\r\n<p><span style=\"color:#0000FF\">$db-&gt;row(SELECT * FROM table WHERE field=&#39;$value&#39;&quot;);</span></p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p>It will output just a line as array. No need to add &quot;LIMIT 1&quot;.</p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p><strong>3.</strong></p>\r\n\r\n<p><span style=\"color:#0000FF\">$db-&gt;field(&quot;SELET field FROM table WHERE ...&quot;);</span></p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p>It returns single variable. It&#39;s not like $result[&#39;field&#39;] - it&#39;s like $result just.</p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p><strong>4.</strong></p>\r\n\r\n<p><span style=\"color:#0000FF\">$db-&gt;array2insert(&quot;table&quot;, $array);</span></p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p>Array is like</p>\r\n\r\n<p><span style=\"color:#0000FF\">$array = array(</span></p>\r\n\r\n<p><span style=\"color:#0000FF\">&#39;field&#39; &nbsp;=&gt; $value,</span></p>\r\n\r\n<p><span style=\"color:#0000FF\">...</span></p>\r\n\r\n<p><span style=\"color:#0000FF\">);</span></p>\r\n\r\n<p>No need to put &quot;addslashes&quot; in that case.</p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p>To get recent inserted ID</p>\r\n\r\n<p><span style=\"color:#0000FF\">$inserted_id = $db-&gt;insert_id();</span></p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p><strong>5.</strong></p>\r\n\r\n<p><span style=\"color:#0000FF\">$db-&gt;array2update(&quot;table&quot;, $array, &quot;id=&#39;$value&#39;&quot;);</span></p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p>same as above, third field is where to update.</p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p><strong>6.</strong></p>\r\n\r\n<p><span style=\"color:#0000FF\">$db-&gt;query(&quot;ANY QUERY&quot;);</span></p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p>just mysql_query.</p>\r\n', '', '', '', 50, 'MySQL-standards');
+(1, 'About us', '<p>Edit static page in the admin area</p>\r\n', '', '', '', 10, 'about-us'),
+(3, 'Terms &amp; Conditions', '<p>Edit static page in the admin area</p>\r\n', '', '', '', 20, 'terms-n-conditions');
 
 -- --------------------------------------------------------
 
@@ -6824,7 +6936,7 @@ CREATE TABLE `products` (
 --
 
 INSERT INTO `products` (`productid`, `photoid`, `sku`, `brandid`, `cleanurl`, `name`, `descr`, `keywords`, `list_price`, `price`, `weight`, `avail`, `avail_block`, `rating`, `status`, `deleted`, `add_date`, `views_stats`, `sales_stats`, `del_stats`, `meta_description`, `meta_keywords`, `title_tag`) VALUES
-(113, 367, 'SKU1', 4, 'MEN-Supima-Cotton-Crew-Neck-Short-Sleeve-T', 'MEN Supima Cotton Crew Neck Short Sleeve T', '<p>A 100% Supima&reg; cotton T-shirt thick enough to wear on its own or for layering.<br />\r\n- The luxurious jersey material uses 100% Supima&reg; cotton for a smooth feel, natural brightness and beautiful colors.<br />\r\n- A smooth silhouette from the bust down to the waist, with sleek shoulders and armholes.&nbsp;<br />\r\n- A narrower seam fold and stitching for a more delicate neckline.<br />\r\n- With a flattering neckline.<br />\r\n&nbsp;</p>\r\n\r\n<p>MATERIAL</p>\r\n\r\n<p>100% Cotton</p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p>CARE</p>\r\n\r\n<p>Cold Machine Wash</p>\r\n', '', 17, 14.90, 0.00, 1000, 0, 0, '1', 0, 1545827391, 93, 10, 0, '', '', ''),
+(113, 367, 'SKU1', 4, 'MEN-Supima-Cotton-Crew-Neck-Short-Sleeve-T', 'MEN Supima Cotton Crew Neck Short Sleeve T', '<p>A 100% Supima&reg; cotton T-shirt thick enough to wear on its own or for layering.<br />\r\n- The luxurious jersey material uses 100% Supima&reg; cotton for a smooth feel, natural brightness and beautiful colors.<br />\r\n- A smooth silhouette from the bust down to the waist, with sleek shoulders and armholes.&nbsp;<br />\r\n- A narrower seam fold and stitching for a more delicate neckline.<br />\r\n- With a flattering neckline.<br />\r\n&nbsp;</p>\r\n\r\n<p>MATERIAL</p>\r\n\r\n<p>100% Cotton</p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p>CARE</p>\r\n\r\n<p>Cold Machine Wash</p>\r\n', '', 17, 14.90, 0.00, 1000, 0, 0, '1', 0, 1545827391, 115, 10, 0, '', '', ''),
 (114, 370, 'SKU2', 3, 'MEN-Uniqlo-U-Crew-Neck-Short-Sleeve-T-Shirt', 'MEN Uniqlo U Crew Neck Short Sleeve T-Shirt', '<p>Made from 100% heavyweight cotton, this is the ultimate basic t-shirt.<br />\r\n- Relaxed, loose cut.<br />\r\n- A simple, stylish t-shirt.<br />\r\n&nbsp;</p>\r\n\r\n<p>MATERIAL</p>\r\n\r\n<p>Body：100% Cotton</p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p>CARE</p>\r\n\r\n<p>Machine Wash, Gentle Or Delicate</p>\r\n', '', 23, 19.90, 0.00, 1000, 0, 0, '1', 0, 1545831147, 7, 0, 0, '', '', ''),
 (115, 373, 'SKU115', 2, 'MEN-Packaged-Dry-Crew-Neck-Short-Sleeve-T-Shirt', 'MEN Packaged Dry Crew Neck Short Sleeve T-Shirt', '<p>Available in a great variety of colors. Our simple, versatile plain DRY t-shirt.<br />\r\n- Classic jersey material with DRY technology.&nbsp;<br />\r\n- A wide range of versatile colors, from basic colors to shades that look great in casual or sporty styles.&nbsp;<br />\r\n- The range also includes light and cool mottled shades.&nbsp;<br />\r\n- Stitching running from the shoulders to the neckline prevent any risk of bagginess.<br />\r\n&nbsp;</p>\r\n\r\n<p>MATERIAL</p>\r\n\r\n<p>[00White, 03Gray, 09Black, 09Black, 17Red, 19Wine, 25Orange, 42Yellow, 53Green, 58Dark Green, 60Light Blue, 69Navy]66% Cotton, 34% Polyester [12Pink, 55Green, 65Blue, 78Purple] 76% Polyester, 24% Cotton</p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p>CARE</p>\r\n\r\n<p>Machine Wash, Gentle Or Delicate</p>\r\n\r\n<p>&nbsp;</p>\r\n', '', 13, 9.90, 0.00, 1000, 0, 0, '1', 0, 1545833287, 9, 5, 0, '', '', ''),
 (116, 378, 'SKU4', 2, 'MEN-Packaged-Dry-V-Neck-Short-Sleeve-T-Shirt', 'MEN Packaged Dry V Neck Short Sleeve T-Shirt', '<p>Masculine V-neck! DRY technology keeps you fresh even in the heat.<br />\r\n- Made with special jersey material with quick-drying DRY technology.<br />\r\n&nbsp;</p>\r\n\r\n<p>MATERIAL</p>\r\n\r\n<p>66% Cotton, 34% Polyester</p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p>CARE</p>\r\n\r\n<p>Machine Wash, Gentle Or Delicate</p>\r\n', '', 13, 9.90, 0.00, 1000, 0, 0, '1', 0, 1545833593, 2, 0, 0, '', '', ''),
@@ -6834,13 +6946,13 @@ INSERT INTO `products` (`productid`, `photoid`, `sku`, `brandid`, `cleanurl`, `n
 (120, 388, 'SKU8', 3, 'MEN-Dry-EX-Crew-Neck-Short-Sleeve-T', 'MEN Dry-EX Crew Neck Short Sleeve T', '<p>Amazingly absorbent! This DRY-EX t-shirt helps keep you feeling fresh.<br />\r\n- Super quick-drying DRY-EX will keep you cool and dry.<br />\r\n- In response to customer feedback, we&rsquo;ve added anti-microbial and anti-odor properties to our DRY-EX technology.<br />\r\n- Versatile LifeWear that can be worn in every setting, whether you&#39;re running a marathon or simply running errands.<br />\r\n&nbsp;</p>\r\n\r\n<p>MATERIAL</p>\r\n\r\n<p>100% Polyester</p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p>CARE</p>\r\n\r\n<p>Machine Wash, Gentle Or Delicate</p>\r\n\r\n<p>&nbsp;</p>\r\n', '', 23, 19.90, 0.00, 1000, 0, 0, '1', 0, 1545835353, 1, 0, 0, '', '', ''),
 (121, 393, 'SKU9', 2, 'MEN-SPRZ-NY-Dry-EX-Short-Sleeve-Graphic-T-Shirt', 'MEN SPRZ NY Dry-EX Short Sleeve Graphic T-Shirt', '<p>About SPRZ NY<br />\r\n<br />\r\nWe call it SPRZ NY...a launching pad for products unlike any you have seen before, and for mind-blowing innovations in pop culture. The project centers on our 5th Avenue NYC flagship store, and will expand into Uniqlo stores everywhere, inspiring and surprising New York and the world.<br />\r\n<br />\r\nFran&ccedil;ois Morellet<br />\r\n<br />\r\nEmploying a wide variety of materials, from paint to neon light, Fran&ccedil;ois Morellet began making abstract work around 1950. He applied the rules of basic mathematics to his compositions, which were often determined by chance, systems, or a series of rubrics he devised for each work.<br />\r\n<br />\r\n&copy;2018 Artists Rights Society (ARS), New York / ADAGP, Paris Atelier Morellet, Cholet / Adagp Images.<br />\r\n&nbsp;</p>\r\n\r\n<p>MATERIAL</p>\r\n\r\n<p>100% Polyester</p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p>CARE</p>\r\n\r\n<p>Machine Wash, Gentle Or Delicate</p>\r\n', '', 17, 14.90, 0.00, 1000, 0, 0, '1', 0, 1545835722, 6, 0, 0, '', '', ''),
 (122, 394, 'SKU10', 4, '', 'MEN SPRZ NY Dry-EX Short Sleeve Graphic T-Shirt', '<p>Our performance DRY-EX t-shirt featuring original artist designs!<br />\r\n- Incredibly quick-drying DRY-EX material.<br />\r\n- Dries sweat and moisture instantly to maintain a fresh, dry feel.<br />\r\n- Stylish design works great for sports or casual wear.<br />\r\n<br />\r\nMeguru Yamaguchi<br />\r\n<br />\r\nBorn in Tokyo in 1984. Moved to the United States in 2007, and currently lives in Brooklyn. His brush strokes exist universally, traversing borders and eras. He uses this method in his creative work to sublimate the expressions of the times. His most well-known work is a piece called &ldquo;OUT OF BOUNDS&rdquo; that breaks out of the boundaries of the canvas, and exists solely as brush strokes. This is further deconstructed and rebuilt in his &ldquo;SPLITTING HORIZON\" series.<br />\r\n<br />\r\n&copy; Meguru Yamaguchi<br />\r\n&nbsp;</p>\r\n\r\n<p>MATERIAL</p>\r\n\r\n<p>100% Polyester</p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p>CARE</p>\r\n\r\n<p>Machine Wash, Gentle Or Delicate</p>\r\n\r\n<p>&nbsp;</p>\r\n', '', 17, 14.90, 0.00, 1000, 0, 0, '1', 0, 1545835918, 1, 0, 0, '', '', ''),
-(123, 397, 'SKU11', 4, 'ALTERNATIVE-Rocky-Eco-Fleece-Zip-Hoodie-Eco-True', 'ALTERNATIVE Rocky Eco-Fleece Zip Hoodie Eco True', '<p>alternative rocky eco-fleece zip hoodie eco true<br />\r\n<br />\r\n<br />\r\n<br />\r\nFashion Item for Man of type sweatshirts for Fall Winter Season 2017</p>\r\n', '', 65, 59.00, 0.00, 1000, 0, 0, '1', 0, 1545836583, 54, 2, 0, '', '', ''),
+(123, 397, 'SKU11', 4, 'ALTERNATIVE-Rocky-Eco-Fleece-Zip-Hoodie-Eco-True', 'ALTERNATIVE Rocky Eco-Fleece Zip Hoodie Eco True', '<p>alternative rocky eco-fleece zip hoodie eco true<br />\r\n<br />\r\n<br />\r\n<br />\r\nFashion Item for Man of type sweatshirts for Fall Winter Season 2017</p>\r\n', '', 65, 59.00, 0.00, 1000, 0, 0, '1', 0, 1545836583, 54, 4, 0, '', '', ''),
 (124, 400, 'SKU12', 2, 'ALTERNATIVE-ROCKY-ECO-FLEECE-ZIP-ETN', 'ALTERNATIVE ROCKY ECO-FLEECE ZIP - ETN', '<p>ROCKY ECO-FLEECE ZIP - ETN</p>\r\n', '', 83, 76.00, 0.00, 1000, 0, 0, '1', 0, 1545837373, 29, 0, 0, '', '', ''),
 (125, 402, 'SKU13', 4, 'CLAP-YOUR-HAND-MAGLIA-MANICA-LUNGA', 'CLAP YOUR HAND MAGLIA MANICA LUNGA', '<p>clap your hand maglia manica lunga&nbsp;<br />\r\n<br />\r\n<br />\r\n<br />\r\nFashion Item for Man of type t-shirt for Fall Winter Season 2017</p>\r\n', '', 63, 56.00, 0.00, 1000, 0, 0, '1', 0, 1545837752, 0, 0, 0, '', '', ''),
 (126, 405, 'SKU14', 3, 'STUSSY-TWO-TONE-HOOD', 'STUSSY TWO TONE HOOD', '<p>TWO TONE HOOD</p>\r\n', '', 149, 155.00, 0.00, 1000, 0, 0, '1', 0, 1545839936, 1, 0, 0, '', '', ''),
-(127, 407, 'SKU15', 2, 'STUSSY-BAJA-PONCHO', 'STUSSY BAJA PONCHO', '<p>BAJA PONCHO</p>\r\n', '', 139, 129.00, 0.00, 1000, 0, 0, '1', 0, 1545840185, 9, 1, 0, '', '', ''),
+(127, 407, 'SKU15', 2, 'STUSSY-BAJA-PONCHO', 'STUSSY BAJA PONCHO', '<p>BAJA PONCHO</p>\r\n', '', 139, 129.00, 0.00, 1000, 0, 0, '1', 0, 1545840185, 9, 3, 0, '', '', ''),
 (128, 409, 'SKU16', 3, 'STUSSY-STOCK-APP.-CREW', 'STUSSY STOCK APP. CREW', '<p>STOCK APP. CREW</p>\r\n', '', 99, 93.00, 0.00, 1000, 0, 0, '1', 0, 1545840457, 3, 0, 0, '', '', ''),
-(129, 412, 'SKU17', 4, 'STUSSY-SMOOTH-STOCK-LS-TEE', 'STUSSY SMOOTH STOCK LS TEE', '<p>SMOOTH STOCK LS TEE</p>\r\n', '', 57, 49.00, 0.00, 1000, 0, 0, '1', 0, 1545840730, 79, 7, 0, '', '', ''),
+(129, 412, 'SKU17', 4, 'STUSSY-SMOOTH-STOCK-LS-TEE', 'STUSSY SMOOTH STOCK LS TEE', '<p>SMOOTH STOCK LS TEE</p>\r\n', '', 57, 49.00, 0.00, 1000, 0, 0, '1', 0, 1545840730, 93, 9, 0, '', '', ''),
 (130, 415, 'SKU18', 2, 'OBEY-ANYWAY', 'OBEY ANYWAY', '<p>ANYWAY</p>\r\n', '', 128, 119.00, 0.00, 1000, 0, 0, '1', 0, 1545842317, 3, 0, 0, '', '', ''),
 (131, 417, 'SKU19', 3, 'SHOESHINE-FELPA-CAPPUCCIO-ZIP-REVERSIBILE-UOMO-NAVI-ECR', 'SHOESHINE FELPA CAPPUCCIO + ZIP REVERSIBILE UOMO - NAVI/ECR', '<p>FELPA CAPPUCCIO + ZIP REVERSIBILE UOMO - NAVI/ECR</p>\r\n', '', 129, 119.00, 0.00, 1000, 0, 0, '1', 0, 1545842568, 2, 0, 0, '', '', ''),
 (132, 420, 'SKU20', 2, 'TOMMY-HILFIGER-TJM-SMALL-TEXT-LONGSLEEVE', 'TOMMY HILFIGER TJM SMALL TEXT LONGSLEEVE', '<p>TJM SMALL TEXT LONGSLEEVE</p>\r\n', '', 59, 55.00, 0.00, 1000, 0, 0, '1', 0, 1545843329, 1, 0, 0, '', '', ''),
@@ -6859,7 +6971,7 @@ INSERT INTO `products` (`productid`, `photoid`, `sku`, `brandid`, `cleanurl`, `n
 (145, 453, 'SKU431', 2, 'Downtown-Read-Backpack', 'Downtown Read Backpack', '<ul>\r\n	<li>Available In Black</li>\r\n	<li>Reflective Canvas</li>\r\n	<li>Multi-Way</li>\r\n	<li>Backpack Converts Into Crossbody</li>\r\n	<li>Adjustable Straps</li>\r\n</ul>\r\n', '', 29, 24.00, 0.00, 1000, 0, 0, '1', 0, 1545857150, 0, 1, 0, '', '', ''),
 (146, 456, 'SKU287', 2, 'Clout-Fanny-Pack', 'Clout Fanny Pack', '<ul>\r\n	<li>Available In Black And White</li>\r\n	<li>Dome Shape</li>\r\n	<li>Fanny Pack</li>\r\n	<li>\"Clout 9\" Verbiage</li>\r\n	<li>Zipper Closure</li>\r\n</ul>\r\n', '', 22, 19.00, 0.00, 1000, 0, 0, '1', 0, 1545857294, 0, 0, 0, '', '', ''),
 (147, 459, 'SKU225', 4, 'Hustle-Backpack', 'Hustle Backpack', '<ul>\r\n	<li>Available In Black/White And Black/Multi</li>\r\n	<li>Nylon</li>\r\n	<li>Backpack</li>\r\n	<li>Zipper Closure</li>\r\n	<li>Adjustable Straps</li>\r\n</ul>\r\n', '', 25, 17.00, 0.00, 1000, 0, 0, '1', 0, 1545857467, 0, 0, 0, '', '', ''),
-(148, 463, 'SKU401', 2, 'Clarity-Sunglasses', 'Clarity Sunglasses', '<ul>\r\n	<li>Available In Clear</li>\r\n	<li>Shield Sunglasses</li>\r\n	<li>Clear Frame</li>\r\n	<li>Clear Lens</li>\r\n</ul>\r\n', '', 15, 9.00, 0.00, 1000, 0, 0, '1', 0, 1545857619, 2, 0, 0, '', '', ''),
+(148, 463, 'SKU401', 2, 'Clarity-Sunglasses', 'Clarity Sunglasses', '<ul>\r\n	<li>Available In Clear</li>\r\n	<li>Shield Sunglasses</li>\r\n	<li>Clear Frame</li>\r\n	<li>Clear Lens</li>\r\n</ul>\r\n', '', 15, 9.00, 0.00, 1000, 0, 0, '1', 0, 1545857619, 10, 0, 0, '', '', ''),
 (149, 466, 'SKU451', 4, 'Hills-Sunglasses', 'Hills Sunglasses', '<ul>\r\n	<li>Available In Multi</li>\r\n	<li>Shield Sunglasses</li>\r\n	<li>Plastic Frame</li>\r\n	<li>Mirror Lens</li>\r\n</ul>\r\n', '', 15, 9.00, 0.00, 1000, 0, 0, '1', 0, 1545857694, 1, 1, 0, '', '', ''),
 (150, 469, 'SKU521', 2, 'Robin-s-Belt', 'Robin\'s Belt', '<ul>\r\n	<li>Available In Black , Dark Brown , And Light Brown</li>\r\n	<li>Wide</li>\r\n	<li>Basic Style</li>\r\n	<li>Square Buckle</li>\r\n	<li>Faux Leather</li>\r\n</ul>\r\n', '', 15, 9.00, 0.00, 1000, 0, 0, '1', 0, 1545857819, 0, 1, 0, '', '', ''),
 (151, 470, 'SKU623', 4, 'Beaded-Belt-Chain', 'Beaded Belt Chain', '<ul>\r\n	<li>Available In Silver</li>\r\n	<li>Beaded Metal</li>\r\n	<li>Pant Chain</li>\r\n</ul>\r\n', '', 14, 8.00, 0.00, 1000, 0, 0, '1', 0, 1545857988, 0, 0, 0, '', '', ''),
@@ -6896,11 +7008,11 @@ INSERT INTO `products` (`productid`, `photoid`, `sku`, `brandid`, `cleanurl`, `n
 (183, 566, 'SKU752', 2, 'Apple-iPad-Mini-2-with-Retina-Display-ME276LL-A-16GB-Wi-Fi-Black-with-Space-Gray', 'Apple iPad Mini 2 with Retina Display ME276LL/A (16GB, Wi-Fi, Black with Space Gray)', '<p>Renewed products are pre-owned products not Apple certified but have been inspected and tested by Amazon-qualified suppliers. Box and accessories may be generic. All products on Amazon Renewed come with a minimum 90-day supplier-backed warranty.</p>\r\n\r\n<ul>\r\n	<li>Renewed products look and work like new. These pre-owned products have been inspected and tested by Amazon-qualified suppliers, which typically perform a full diagnostic test, replacement of any defective parts, and a thorough cleaning process. Packaging and accessories may be generic. All products on Amazon Renewed come with a minimum 90-day supplier-backed warranty.</li>\r\n	<li>Apple iOS 7, 7.9 inches Display</li>\r\n	<li>Apple 1.3 GHz</li>\r\n	<li>16 GB Flash Memory, 1 GB RAM Memory</li>\r\n	<li>10-hour battery life, 0.73 pounds</li>\r\n</ul>\r\n', '', 169, 149.00, 0.00, 1000, 0, 0, '1', 0, 1545913586, 1, 0, 0, '', '', ''),
 (184, 569, 'SKU836', 3, 'Acer-Aspire-E-15-15.6-Full-HD-8th-Gen-Intel-Core-i3-8130U-6GB-RAM-Memory-1TB-HDD-8X-DVD-E5-576-392H', 'Acer Aspire E 15, 15.6&quot; Full HD, 8th Gen Intel Core i3-8130U, 6GB RAM Memory, 1TB HDD, 8X DVD, E5-576-392H', '<p>Acer Aspire E 15 E5-576-392H comes with these high level specs: 8th Generation Intel Core i3-8130U Processor 2.2GHz with Turbo Boost Technology up to 3.4GHz, Windows 10 Home, 15.6\" Full HD (1920 x 1080) widescreen LED-backlit display, Intel UHD Graphics 620, 6GB Dual Channel Memory, 1TB 5400RPM SATA Hard Drive, 8X DVD Double-Layer Drive RW (M-DISC enabled), Secure Digital (SD) card reader, Acer True Harmony, Two Built-in Stereo Speakers, 802.11ac Wi-Fi featuring MU-MIMO technology (Dual-Band 2.4GHz and 5GHz), Bluetooth 4.1, HD Webcam (1280 x 720) supporting High Dynamic Range (HDR), 1 - USB 3.1 Type C Gen 1 port (up to 5 Gbps), 2 - USB 3.0 ports (one with power-off charging), 1 - USB 2.0 port, 1 - HDMI Port with HDCP support, 6-cell Li-Ion Battery (2800 mAh), Up to 13.5-hours Battery Life, 5.27 lbs. | 2.39 kg (system unit only) (NX.GRYAA.001).</p>\r\n', '', 389, 359.00, 0.00, 1000, 0, 0, '1', 0, 1545914148, 0, 0, 0, '', '', ''),
 (185, 572, 'SKU368', 4, '2018-Lenovo-ThinkPad-T480-14-HD-Business-Laptop-Intel-Quad-Core-i5-8250U-Fingerprint-Thunderbolt-3-Type-C-WiFi-AC-Windows-10-Pro-Choose-from-8GB-16GB-32GB-DDR4-RAM-256GB-500GB-1TB-SSD-or-HDD', '2018 Lenovo ThinkPad T480 14&quot; HD Business Laptop (Intel Quad-Core i5-8250U, Fingerprint, Thunderbolt 3 Type-C, WiFi AC, Windows 10 Pro) - Choose from 8GB 16GB 32GB DDR4 RAM, 256GB 500GB 1TB SSD or HDD', '<p>This item does not ship to&nbsp;<strong>Ukraine</strong>. Please check other sellers who may ship internationally.</p>\r\n\r\n<p>Ships from and sold by&nbsp;<a href=\"https://www.amazon.com/gp/help/seller/at-a-glance.html/ref=dp_merchant_link?ie=UTF8&seller=A39QOQB63SPG0D\">Issaquah Highlands Tech</a>.</p>\r\n\r\n<ul>\r\n	<li>Upgrade and Choose from a) 8GB/16GB/32GB DDR4 RAM; Choose b) 500GB/1TB HDD or 500GB/1TB SSD; Professional Installation Service included.</li>\r\n	<li>8th Generation Intel Quad Core i5-8250U 1.60 GHz Processor (Max Turbo 3.40 GHz, 4 cores 8 threads, 6MB SmartCache)</li>\r\n	<li>14-Inch HD (1366x768), anti-glare, LED backlight, 220 nits, 16:9 aspect ratio, 400:1 contrast ratio</li>\r\n	<li>Intel Wireless 8265ac (2x2) + Bluetooth v4.1 | FingerPrint Reader | HD 720p Webcam | Integrated Intel UHD Graphics 620</li>\r\n	<li>Windows 10 Professional 64-bit</li>\r\n</ul>\r\n', '', 899, 839.00, 0.00, 1000, 0, 0, '1', 0, 1545915091, 3, 0, 0, '', '', ''),
-(186, 575, 'SKU763', 2, '2018-Premium-Dell-Inspiron-15-5000-15.6-Full-HD-Touchscreen-Business-Laptop-Intel-i5-8250U-up-to-3.4GHz-8GB-1TB-Backlit-Keyboard-DVDRW-Webcam-WLAN-Win-10-Upgrade-to-32G-RAM-1TB-SSD', '2018 Premium Dell Inspiron 15 5000 15.6&quot; Full HD Touchscreen Business Laptop - Intel i5-8250U up to 3.4GHz 8GB 1TB Backlit Keyboard DVDRW Webcam WLAN Win 10- Upgrade to 32G RAM 1TB SSD', '<ul>\r\n	<li>Customize Color (Silver/Blue/Black) and Upgrade RAM 8G/12G/16G/32G DDR4, and Hard Drive 1TB / 128G SSD / 256G SSD / 512G SSD / 1TB SSD or Hybrid (128G SSD + 1TB, 256G SSD + 1TB, 512G SSD + 1TB, 1TB SSD + 1TB) or any other specs you desire.</li>\r\n	<li>15.6 in Full HD 1080P TrueLife LED-backlit Touchscreen (1920 x 1080), 10-finger multi-touch support</li>\r\n	<li>Newest Intel 8th Quad Core i5-8250U 6MB cache with Turbo Boost Technology up to 3.4GHz</li>\r\n	<li>3-in-1 media card reader (SD/SDHC/SDXC), 2 USB 3.1 Gen 1 Type-A 1 USB 2.0 1 HDMI v1.4b Headphone output/Microphone input combo , 802.11ac Wireless WIFI, Bluetooth 4.2,</li>\r\n	<li>Windows 10 Home, 64-Bit , Up to 10 Hours Battery Life, Backlit keyboard</li>\r\n</ul>\r\n', '', 629, 599.00, 0.00, 1000, 0, 0, '1', 0, 1545915270, 0, 0, 0, '', '', ''),
-(187, 578, 'SKU783', 2, '2018-Lenovo-ThinkPad-E580-15.6-HD-Business-Laptop-Intel-Core-i5-7200U-Fingerprint-USB-Type-C-WiFi-AC-Webcam-Windows-10-Pro-Choose-from-8GB-16GB-32GB-DDR4-RAM-256GB-500GB-1TB-SSD-or-HDD', '2018 Lenovo ThinkPad E580 15.6&quot; HD Business Laptop (Intel Core i5-7200U, Fingerprint, USB Type-C, WiFi AC, Webcam, Windows 10 Pro) - Choose from 8GB 16GB 32GB DDR4 RAM, 256GB 500GB 1TB SSD or HDD', '<ul>\r\n	<li>Upgrade and Choose from a) 8GB/16GB/32GB DDR4 RAM; Choose b) 500GB/1TB HDD or 256GB/500GB/1TB SSD; Professional Installation Service included.</li>\r\n	<li>15.6-Inch Anti-Glare (1366x768) Display with Front Facing HD Webcam | Integrated Intel HD Graphics 620</li>\r\n	<li>Intel Core i5-7200U 2.5 GHz (Turbo 3.10 GHz, 2 Cores 4 Threads, 3MB SmartCache)</li>\r\n	<li>802.11ac Dual-Band Wireless (2x2) + BT4.1 Combo | HD Webcam | FingerPrint Reader</li>\r\n	<li>Windows 10 Professional 64-bit - Black</li>\r\n</ul>\r\n', '', 629, 599.00, 0.00, 1000, 0, 0, '1', 0, 1545915509, 3, 0, 0, '', '', ''),
+(186, 575, 'SKU763', 2, '2018-Premium-Dell-Inspiron-15-5000-15.6-Full-HD-Touchscreen-Business-Laptop-Intel-i5-8250U-up-to-3.4GHz-8GB-1TB-Backlit-Keyboard-DVDRW-Webcam-WLAN-Win-10-Upgrade-to-32G-RAM-1TB-SSD', '2018 Premium Dell Inspiron 15 5000 15.6&quot; Full HD Touchscreen Business Laptop - Intel i5-8250U up to 3.4GHz 8GB 1TB Backlit Keyboard DVDRW Webcam WLAN Win 10- Upgrade to 32G RAM 1TB SSD', '<ul>\r\n	<li>Customize Color (Silver/Blue/Black) and Upgrade RAM 8G/12G/16G/32G DDR4, and Hard Drive 1TB / 128G SSD / 256G SSD / 512G SSD / 1TB SSD or Hybrid (128G SSD + 1TB, 256G SSD + 1TB, 512G SSD + 1TB, 1TB SSD + 1TB) or any other specs you desire.</li>\r\n	<li>15.6 in Full HD 1080P TrueLife LED-backlit Touchscreen (1920 x 1080), 10-finger multi-touch support</li>\r\n	<li>Newest Intel 8th Quad Core i5-8250U 6MB cache with Turbo Boost Technology up to 3.4GHz</li>\r\n	<li>3-in-1 media card reader (SD/SDHC/SDXC), 2 USB 3.1 Gen 1 Type-A 1 USB 2.0 1 HDMI v1.4b Headphone output/Microphone input combo , 802.11ac Wireless WIFI, Bluetooth 4.2,</li>\r\n	<li>Windows 10 Home, 64-Bit , Up to 10 Hours Battery Life, Backlit keyboard</li>\r\n</ul>\r\n', '', 629, 599.00, 0.00, 1000, 0, 0, '1', 0, 1545915270, 2, 0, 0, '', '', ''),
+(187, 578, 'SKU783', 2, '2018-Lenovo-ThinkPad-E580-15.6-HD-Business-Laptop-Intel-Core-i5-7200U-Fingerprint-USB-Type-C-WiFi-AC-Webcam-Windows-10-Pro-Choose-from-8GB-16GB-32GB-DDR4-RAM-256GB-500GB-1TB-SSD-or-HDD', '2018 Lenovo ThinkPad E580 15.6&quot; HD Business Laptop (Intel Core i5-7200U, Fingerprint, USB Type-C, WiFi AC, Webcam, Windows 10 Pro) - Choose from 8GB 16GB 32GB DDR4 RAM, 256GB 500GB 1TB SSD or HDD', '<ul>\r\n	<li>Upgrade and Choose from a) 8GB/16GB/32GB DDR4 RAM; Choose b) 500GB/1TB HDD or 256GB/500GB/1TB SSD; Professional Installation Service included.</li>\r\n	<li>15.6-Inch Anti-Glare (1366x768) Display with Front Facing HD Webcam | Integrated Intel HD Graphics 620</li>\r\n	<li>Intel Core i5-7200U 2.5 GHz (Turbo 3.10 GHz, 2 Cores 4 Threads, 3MB SmartCache)</li>\r\n	<li>802.11ac Dual-Band Wireless (2x2) + BT4.1 Combo | HD Webcam | FingerPrint Reader</li>\r\n	<li>Windows 10 Professional 64-bit - Black</li>\r\n</ul>\r\n', '', 629, 599.00, 0.00, 1000, 0, 0, '1', 0, 1545915509, 39, 0, 0, '', '', ''),
 (188, 581, 'SKU672', 4, '2018-Newest-Flagship-Premium-Lenovo-IdeaPad-330-15.6-HD-Anti-glare-Laptop-Intel-Celeron-N4000-DVDRW-Dolby-Audio-802.11ac-HDMI-Bluetooth-Webcam-USB-3.0-Win-10-up-to-8GB-1TB-SSD', '2018 Newest Flagship Premium Lenovo IdeaPad 330 15.6&quot; HD Anti-glare Laptop, Intel Celeron N4000 DVDRW Dolby Audio 802.11ac HDMI Bluetooth Webcam USB 3.0 Win 10 - up to 8GB 1TB SSD', '<ul>\r\n	<li>Upgrade Your RAM and Hard Drive up to 8G DDR4, 1TB SSD for Your Desired Specs and Choose Favorite Color</li>\r\n	<li>Intel Dual-Core Celeron N4000 Turbo boost up to 2.6GHz (base frequency 1.1GHz, 4MB)</li>\r\n	<li>15.6\" HD LED Backlight (1366 x 768) Display , Intel Integrated HD Graphics, 2x 1.5W speakers with Dolby Audio Processing</li>\r\n	<li>Intel Wireless-AC WLAN + Bluetooth 4.1, 100/1000M Gigbit Ethernet (RJ-45 Connector), 1x USB 3.0 Type C, 2x USB 3.0, 1x HDMI, 1x Media Card Reader, 1x Combination Audio Jack</li>\r\n	<li>Windows 10 Home, Up to 5.5 hours Battery Life</li>\r\n</ul>\r\n', '', 369, 349.00, 0.00, 1000, 0, 0, '1', 0, 1545915658, 1, 0, 0, '', '', ''),
 (189, 584, 'SKU787', 3, 'Newest-HP-Pavilion-15-15.6-IPS-TouchScreen-Full-HD-1920x1080-Business-Laptop-Intel-Quad-Core-i5-8250U-Type-C-HDMI-WiFi-AC-Windows-10-Choose-from-8GB-16GB-32GB-DDR4-256GB-512GB-1TB-SSD-or-HDD', 'Newest HP Pavilion 15 15.6&quot; IPS TouchScreen Full HD (1920x1080) Business Laptop (Intel Quad-Core i5-8250U, Type-C, HDMI, WiFi AC, Windows 10) Choose from 8GB 16GB 32GB DDR4, 256GB 512GB 1TB SSD or HDD', '<ul>\r\n	<li>Upgrade and Choose from a) 8GB/16GB/32GB DDR4 RAM; Choose b) 256GB/512GB/1TB SSD or HDD; Professional Installation Service included (Seal is Broken for Upgrading Purposes ONLY)</li>\r\n	<li>15.6-Inch IPS Touchscreen FHD (1920x1080) (10-Finger Multi-TOUCH support) | HP Wide Vision Full HD Infrared Webcam</li>\r\n	<li>8th Generation Intel Quad Core i5-8250U (1.6 GHz base frequency, up to 3.4 GHz with Intel Turbo Boost Technology, 6 MB cache, 4 Cores 8 Threads) | Integrated Intel UHD Graphics 620</li>\r\n	<li>Bang & Olufsen | HDMI | USB type-C 3.1 Gen 1 | HDMI | 802.11ac Wi-Fi + BlueTooth Combo</li>\r\n	<li>Windows 10 Home 64-bit; Best for School, Home, Small Business, Lite Gaming</li>\r\n</ul>\r\n', '', 529, 499.00, 0.00, 1000, 0, 0, '1', 0, 1545916638, 0, 0, 0, '', '', ''),
-(190, 587, 'SKU678', 3, '2019-Flagship-Lenovo-ideaPad-15.6-HD-Energy-efficient-Laptop-AMD-Dual-Core-A6-9225-Up-to-3.0GHz-AMD-Radeon-R4-DVDRW-802.11ac-Bluetooth-Webcam-USB-3.0-HDMI-Windows-10-Up-to-8GB-DDR4-RAM-1TB-SSD', '2019 Flagship Lenovo ideaPad 15.6&quot; HD Energy-efficient Laptop AMD Dual-Core A6-9225 Up to 3.0GHz AMD Radeon R4 DVDRW 802.11ac Bluetooth Webcam USB 3.0 HDMI Windows 10 - Up to 8GB DDR4 RAM 1TB SSD', '<ul>\r\n	<li>Upgrade Your RAM and Hard Drive up to 8G DDR4, 1TB SSD for Your Desired Specs</li>\r\n	<li>15.6\" HD LED backlight anti-glare Display, AMD Radeon R4 Graphics</li>\r\n	<li>AMD A6-9225 @ 2.6GHz up to 3.0 GHz</li>\r\n	<li>802.11ac, Bluetooth 4.1, USB 2.0, LAN, HDMI, Headphone/microphone combo jack, 4 in 1 Card Reader(SD Card, MultiMediaCard, SDHC Card, SDXC Card)</li>\r\n	<li>Windows 10 Home, 720P Webcam for video chatting</li>\r\n</ul>\r\n', '', 329, 299.00, 0.00, 1000, 0, 0, '1', 0, 1545916756, 59, 1, 0, '', '', '');
+(190, 587, 'SKU678', 3, '2019-Flagship-Lenovo-ideaPad-15.6-HD-Energy-efficient-Laptop-AMD-Dual-Core-A6-9225-Up-to-3.0GHz-AMD-Radeon-R4-DVDRW-802.11ac-Bluetooth-Webcam-USB-3.0-HDMI-Windows-10-Up-to-8GB-DDR4-RAM-1TB-SSD', '2019 Flagship Lenovo ideaPad 15.6&quot; HD Energy-efficient Laptop AMD Dual-Core A6-9225 Up to 3.0GHz AMD Radeon R4 DVDRW 802.11ac Bluetooth Webcam USB 3.0 HDMI Windows 10 - Up to 8GB DDR4 RAM 1TB SSD', '<ul>\r\n	<li>Upgrade Your RAM and Hard Drive up to 8G DDR4, 1TB SSD for Your Desired Specs</li>\r\n	<li>15.6\" HD LED backlight anti-glare Display, AMD Radeon R4 Graphics</li>\r\n	<li>AMD A6-9225 @ 2.6GHz up to 3.0 GHz</li>\r\n	<li>802.11ac, Bluetooth 4.1, USB 2.0, LAN, HDMI, Headphone/microphone combo jack, 4 in 1 Card Reader(SD Card, MultiMediaCard, SDHC Card, SDXC Card)</li>\r\n	<li>Windows 10 Home, 720P Webcam for video chatting</li>\r\n</ul>\r\n', '', 329, 299.00, 0.00, 1000, 0, 0, '1', 0, 1545916756, 60, 1, 0, '', '', '');
 INSERT INTO `products` (`productid`, `photoid`, `sku`, `brandid`, `cleanurl`, `name`, `descr`, `keywords`, `list_price`, `price`, `weight`, `avail`, `avail_block`, `rating`, `status`, `deleted`, `add_date`, `views_stats`, `sales_stats`, `del_stats`, `meta_description`, `meta_keywords`, `title_tag`) VALUES
 (191, 590, 'SKU846', 2, '2019-Newest-Flagship-Dell-Inspiron-15-5000-15.6-FHD-Touchscreen-Business-Laptop-Intel-Quad-Core-i7-8550U-DVDRW-Backlit-Keyboard-MaxxAudio-Pro-HDMI-Bluetooth-Win-10-Upgrade-up-to-32GB-DDR4-1TB-SSD', '2019 Newest Flagship Dell Inspiron 15 5000 15.6&quot; FHD Touchscreen Business Laptop, Intel Quad-Core i7-8550U DVDRW Backlit Keyboard MaxxAudio Pro HDMI Bluetooth Win 10 - Upgrade up to 32GB DDR4 1TB SSD', '<ul>\r\n	<li>Upgrade Your RAM and Hard Drive from 4GB 128G SSD up to 32G DDR4, 1TB SSD or Hybrid (+2TB HDD) for Your Desired Specs</li>\r\n	<li>8th Gen Intel Quad-Core i7-8550U Processor 1.8GHz, Up to 4.0GHz, 8MB SmartCache</li>\r\n	<li>15.6\" Touchscreen LED-Backlit FHD (1920 x 1080) Display</li>\r\n	<li>Webcam, 802.11ac, 2 x USB 3.0, 1 x USB 2.0, 1x HDMI, 1x Combination Audio Jack</li>\r\n	<li>Windows 10 Home 64 Bit, MaxxAudio Pro</li>\r\n</ul>\r\n', '', 729, 699.00, 0.00, 1000, 0, 0, '1', 0, 1545916897, 1, 0, 0, '', '', ''),
 (192, 593, 'SKU767', 3, '2019-Inspiron-15-5000-15.6-FHD-Touchscreen-Laptop-Computer-AMD-Quad-Core-Ryzen-5-2500U-Beat-i7-7500u-up-to-3.6GHz-AC-WiFi-Windows-10-Up-to-8GB-16GB-32GB-DDR4-1TB-HDD-128GB-256GB-512GB-1TB-SSD', '2019 Inspiron 15 5000 15.6&quot; FHD Touchscreen Laptop Computer, AMD Quad-Core Ryzen 5 2500U (Beat i7-7500u) up to 3.6GHz, AC WiFi, Windows 10, Up to 8GB 16GB 32GB DDR4, 1TB HDD 128GB 256GB 512GB 1TB SSD', '<ul>\r\n	<li>Choose RAM from 8GB DDR4 16GB DDR4 32GB DDR4, Hard Drive from 1TB HDD 128GB SSD 256GB SSD 512GB SSD TO 1TB SSD for your desired specs.</li>\r\n	<li>AMD Ryzen 5 2500U Quad-Core Processor 2.0GHz( 6 MB cache, up to 3.6GHz ), Beat I7-7500u i5-7200u</li>\r\n	<li>15.6\" 1920x1080 FHD LED-Backlit Touchscreen Display; AMD Radeon RX Vega 8 Graphics</li>\r\n	<li>802.11ac Wi-Fi + Bluetooth 4.1, Windows 10 Home 64-Bit, MaxxAudio Pro, Stereo speakers, 3-cel Lithium-ion Battery, 1x USB 2.0, 1x USB 3.0 w/ PowerShare, 1x HDMI, 1x SD Card Reader, 1x Headphone/Microphone combo jack</li>\r\n	<li>Windows 10 Home 64-Bit, Backlit Keyboard, 3-Cell Lithium-ion Battery</li>\r\n</ul>\r\n', '', 569, 549.00, 0.00, 1000, 0, 0, '1', 0, 1545917004, 0, 0, 0, '', '', ''),
@@ -6908,7 +7020,7 @@ INSERT INTO `products` (`productid`, `photoid`, `sku`, `brandid`, `cleanurl`, `n
 (194, 599, 'SKU369', 3, 'Toshiba-32LF221U19-32-inch-720p-HD-Smart-LED-TV-Fire-TV-Edition', 'Toshiba 32LF221U19 32-inch 720p HD Smart LED TV - Fire TV Edition', '<ul>\r\n	<li>Toshiba HD Smart TV &ndash; Fire TV Edition delivers 720p picture quality with deep blacks and rich colors.</li>\r\n	<li>With the Fire TV experience built-in, enjoy tens of thousands of channels, apps, and Alexa skills, including Netflix, Prime Video, Hulu, HBO, SHOWTIME, STARZ, and more.</li>\r\n	<li>Fire TV Edition seamlessly integrates live over-the-air TV and streaming channels on a unified home screen (HD antenna required).</li>\r\n	<li>Easily control your TV with the included Voice Remote with Alexa&mdash;plus, launch apps, search for titles, play music, switch inputs, control smart home devices, and more, using just your voice.</li>\r\n	<li>Dimensions (W x H x D): TV without stand: 29&rdquo; x 17.2&rdquo; x 3.3&rdquo;, TV with stand: 29&rdquo; x 18.6&rdquo; x 7.1&rdquo;. Multiple device input/output options: 3 HDMI including 1 with ARC, USB, composite input, antenna/cable input, digital output (optical), audio output, Ethernet.</li>\r\n</ul>\r\n', '', 189, 129.00, 0.00, 1000, 0, 0, '1', 0, 1545917532, 0, 0, 0, '', '', ''),
 (195, 602, 'SKU866', 3, 'Hisense-2018-Model-55-Class-55H6E-54.6-diag.-3840-x-2160-4K-UHD-Smart-DLED-TV-with-HDR-Certified-Refurbished', 'Hisense 2018 Model 55&quot; Class 55H6E (54.6&quot; diag.) 3840 x 2160 4K UHD Smart DLED TV with HDR (Certified Refurbished)', '<ul>\r\n	<li>This Certified Refurbished product is tested and certified to look and work like new. The refurbishing process includes functionality testing, basic cleaning, inspection, and repackaging. The product ships with all relevant accessories, a minimum 90-day warranty, and may arrive in a generic box. Only select sellers who maintain a high performance bar may offer Certified Refurbished products on Amazon.com</li>\r\n	<li>With over 8 million pixels, the Hisense H6 Series offers a crisp, clear picture when compared to Full HD. And thanks to our UHD Upscaler, which brings lower resolution content as close to 4K as possible, your favorite movies, games and shows are ready to be seen in a whole new light.</li>\r\n	<li>High Dynamic Range (HDR*) boosts the contrast of every image while delivering vivid, deep colors. With enhancements to the darkest and lightest areas of the picture, HDR* delivers an image that looks closer to life.</li>\r\n	<li>Personalize your entertainment with the Hisense Smart operating system. The H6 Series provides fast access to Netflix, , YouTube, TikiLive and more through simple one-touch hot keys on the remote control.</li>\r\n	<li>What good is a beautiful picture if the sound is tiny and thin? With the Hisense H6 Series, you dont have to compromise. Prepare to be blown away by the full, detailed, award-winning sound offered by dbx-tv digital audio technology.</li>\r\n</ul>\r\n', '', 429, 399.00, 0.00, 1000, 0, 0, '1', 0, 1545917742, 1, 0, 0, '', '', ''),
 (196, 605, 'SKU861', 2, 'Hisense-65-Class-4K-2160P-H6-Series-UHD-Smart-LED-TV-65H6D-Certified-Refurbished', 'Hisense 65&quot; Class 4K (2160P) H6 Series UHD Smart LED TV 65H6D (Certified Refurbished)', '<ul>\r\n	<li>This Certified Refurbished product is tested and certified to look and work like new. The refurbishing process includes functionality testing, basic cleaning, inspection, and repackaging. The product ships with all relevant accessories, a minimum 90-day warranty, and may arrive in a generic box. Only select sellers who maintain a high performance bar may offer Certified Refurbished products on Amazon.com</li>\r\n	<li>Lose yourself in scenes that have an elevated brightness and range of colors thanks to *HDR. Give that 1080p movie from your collection a boost by viewing it in or near 4K</li>\r\n	<li>We&rsquo;ve pre-installed all your favorite apps for you, and there are eight ports to help you connect to external devices. Use the built-in Wifi to access your favorite apps and other content.</li>\r\n	<li>Let the rich sound, integrated by dbx-tv Award-Winning Audio Technology, carry you away. You&rsquo;ll hear every detail in the background of your favorite movie and experience it differently.</li>\r\n	<li>Enjoy streaming content from the Media Player and Receiver.</li>\r\n</ul>\r\n', '', 729, 699.00, 0.00, 1000, 0, 0, '1', 0, 1545917891, 0, 0, 0, '', '', ''),
-(197, 608, 'SKU973', 2, 'Free-Signal-TV-Transit-28-12-Volt-DC-Powered-LED-Flat-Screen-HDTV-for-RV-Camper-and-Mobile-Use', 'Free Signal TV Transit 28&quot; 12 Volt DC Powered LED Flat Screen HDTV for RV Camper and Mobile Use', '<ul>\r\n	<li>Mobile High Performance 28 inch LED TV - Get HD picture quality from this superb DC-powered 12 volt television with 1366 x 768 resolution. Groundbreaking engineering results in a lightweight TV with dynamic audio response and advanced noise reduction circuitry.</li>\r\n	<li>The Easy-to-Set-Up and Versatile RV Flat Screen TV - Simple 12V connection. 3 HDMI Inputs. Can also be used at home by converting to AC with the optional CHD 1260 Power Brick Adapter.</li>\r\n	<li>Perfect Television for Campers, Trailers, RVs, and More - The Transit 28 inch 12 volt powered flat screen TV is also ideal for cars and trucks. With high-resolution picture from a mobile TV line, it goes where other mobile TVs dare not go!</li>\r\n	<li>Flat Screen TV Mounting Options - Can be wall mounted or placed on a tabletop with included stand, making it well suited for both travel and home use.</li>\r\n	<li>Product Peace of Mind with Free Signal TV Support - Not only are you covered by a 1-Year full replacement warranty, Free Signal TV&rsquo;s Tech Support experts are also available to help with questions or set up advice.</li>\r\n</ul>\r\n', '', 279, 259.00, 0.00, 1000, 0, 0, '1', 0, 1545918021, 1, 0, 0, '', '', ''),
+(197, 608, 'SKU973', 2, 'Free-Signal-TV-Transit-28-12-Volt-DC-Powered-LED-Flat-Screen-HDTV-for-RV-Camper-and-Mobile-Use', 'Free Signal TV Transit 28&quot; 12 Volt DC Powered LED Flat Screen HDTV for RV Camper and Mobile Use', '<ul>\r\n	<li>Mobile High Performance 28 inch LED TV - Get HD picture quality from this superb DC-powered 12 volt television with 1366 x 768 resolution. Groundbreaking engineering results in a lightweight TV with dynamic audio response and advanced noise reduction circuitry.</li>\r\n	<li>The Easy-to-Set-Up and Versatile RV Flat Screen TV - Simple 12V connection. 3 HDMI Inputs. Can also be used at home by converting to AC with the optional CHD 1260 Power Brick Adapter.</li>\r\n	<li>Perfect Television for Campers, Trailers, RVs, and More - The Transit 28 inch 12 volt powered flat screen TV is also ideal for cars and trucks. With high-resolution picture from a mobile TV line, it goes where other mobile TVs dare not go!</li>\r\n	<li>Flat Screen TV Mounting Options - Can be wall mounted or placed on a tabletop with included stand, making it well suited for both travel and home use.</li>\r\n	<li>Product Peace of Mind with Free Signal TV Support - Not only are you covered by a 1-Year full replacement warranty, Free Signal TV&rsquo;s Tech Support experts are also available to help with questions or set up advice.</li>\r\n</ul>\r\n', '', 279, 259.00, 0.00, 1000, 0, 0, '1', 0, 1545918021, 2, 0, 0, '', '', ''),
 (198, 612, 'SKU436', 2, 'TCL-43S403-43-4K-UHD-HDR-Roku-Smart-LED-TV-Certified-Refurbished', 'TCL 43S403 43&quot; 4K UHD HDR Roku Smart LED TV (Certified Refurbished)', '<p><strong>Product works and looks like new. Comes with a 90-day warranty.</strong></p>\r\n\r\n<p>This Amazon Renewed product is professionally inspected and tested by an Amazon qualified supplier. Box and accessories may be generic.&nbsp;<a href=\"https://www.amazon.com/dp/B077GPXLCH/ref=sxbs_sxwds-deals_1?pf_rd_p=c32a1f21-f427-444c-bab6-1b04bcb652a2&pd_rd_wg=qik6u&pf_rd_r=RNM0ZYE4DZ1X7XM8YB69&pd_rd_i=B077GPXLCH&pd_rd_w=VecBC&pd_rd_r=174f5fe7-b72a-4907-b12e-1b0f764205c9&ie=UTF8&qid=1545917273&sr=1#renewedProgramDescriptionBtf\">Learn more</a></p>\r\n\r\n<ul>\r\n	<li>This Certified Refurbished product has been tested and certified to work and look like new, with minimal to no signs of wear, by a manufacturer or specialized third-party seller approved by Amazon. The product is backed by a minimum 90-day warranty, and may arrive in a generic brown or white box.</li>\r\n</ul>\r\n', '', 249, 229.00, 0.00, 1000, 0, 0, '1', 0, 1545918512, 0, 0, 0, '', '', ''),
 (199, 615, 'SKU570', 4, 'Element-ELEFW3916R-39-720p-HDTV-Certified-Refurbished', 'Element ELEFW3916R 39&quot; 720p HDTV (Certified Refurbished)', '<ul>\r\n	<li>Panel Resolution 1366 x 768</li>\r\n	<li>Dynamic Contrast Ratio 1000:1</li>\r\n	<li>Built -in 3D Vidoe Noise Reduction</li>\r\n	<li>Over-the-air ATSC/NTSC RF Input Support</li>\r\n	<li>On-line Manual: https://cdn.elementelectronics.com/app/uploads/2017/08/ELEFW3916-Manual.pdf</li>\r\n</ul>\r\n', '', 189, 169.00, 0.00, 1000, 0, 0, '1', 0, 1545918785, 17, 0, 0, '', '', ''),
 (200, 618, 'SKU579', 4, 'Insignia-NS-43DF710NA19-43-inch-4K-Ultra-HD-Smart-LED-TV-HDR-Fire-TV-Edition', 'Insignia NS-43DF710NA19 43-inch 4K Ultra HD Smart LED TV HDR - Fire TV Edition', '<ul>\r\n	<li>Insignia 4K UHD Smart TV &ndash; Fire TV Edition delivers true-to-life 4K Ultra HD picture quality with over 8 million pixels for stunning clarity, deep contrast, and vivid colors.</li>\r\n	<li>With the Fire TV experience built-in, enjoy tens of thousands of channels, apps, and Alexa skills, including Netflix, Prime Video, Hulu, HBO, SHOWTIME, STARZ, and more.</li>\r\n	<li>Fire TV Edition seamlessly integrates live over-the-air TV and streaming channels on a unified home screen (HD antenna required).</li>\r\n	<li>Easily control your TV with the included Voice Remote with Alexa&mdash;plus, launch apps, search for titles, play music, switch inputs, control smart home devices, and more, using just your voice.</li>\r\n	<li>Dimensions (W x H x D): TV without stand: 38.2&rdquo; x 22.5&rdquo; x 3.2&rdquo;, TV with stand: 38.2&rdquo; x 24.3&rdquo; x 8.9&rdquo;. Multiple device input/output options: 3 HDMI including 1 with ARC, USB, composite input, antenna/cable input, digital output (optical), audio output, Ethernet.</li>\r\n</ul>\r\n', '', 269, 249.00, 0.00, 1000, 0, 0, '1', 0, 1545918969, 0, 0, 0, '', '', ''),
@@ -6923,7 +7035,7 @@ INSERT INTO `products` (`productid`, `photoid`, `sku`, `brandid`, `cleanurl`, `n
 (209, 645, 'SKU356', 2, 'Nintendo-Switch-Bundle-6-items-32GB-Console-Gray-Joy-con-Game-Disc-Splatoon-2-128GB-Micro-SD-Card-Type-C-Cable-HDMI-Cable-Wall-Charger', 'Nintendo Switch Bundle (6 items): 32GB Console Gray Joy-con, Game Disc Splatoon 2, 128GB Micro SD Card, Type C Cable, HDMI Cable Wall Charger', '<ul>\r\n	<li>Bundle Includes: Switch console, Switch dock, Joy-Con (L) and Joy-Con (R), 2 Joy-Con strap accessories, 1 Joy-Con grip, AC adapter, HDMI cable,128GB SD Card, Game Disc Splatoon 2, Type C Cable, and HDMI CableBrand New sealed in original box. We ship From USA. For Delivery Address Outside USA: Buyer is responsible for import Duty, VAT, TAX and Broker Fee.Brand New sealed in original box. We ship From USA. For Delivery Address Outside USA: Buyer is responsible for import Duty, VAT, TAX and Broker</li>\r\n	<li>Enhanced Parental Control: The system includes various on-device parental controls, but parents can also download a smart device application that can be used to easily and conveniently monitor and set parental controls for Nintendo Switch.</li>\r\n	<li>Joy-Con controllers: Can be inserted into a Joy-Con grip accessory to be used like traditional controllers, held comfortably in each hand for independent left and right motion controls, or shared between two players for multiplayer gaming.</li>\r\n	<li>Surround sound: TV Mode supports 5.1 channel surround sound. Through the system&#39;s built-in audio jack, stereo speakers or headphones can be used when playing in handheld or tabletop modes.</li>\r\n	<li>Add this Nintendo Joy-Con to your Nintendo Switch console so friends can join in. Depending on the game, its two parts can be split or given to a second player, and it can be joined together or connected to the console for handheld play. Each part of this Nintendo Joy-Con has its own buttons, an accelerometer and a gyroscope for independent control.</li>\r\n</ul>\r\n', '', 539, 499.00, 0.00, 1000, 0, 0, '1', 0, 1545921567, 0, 0, 0, '', '', ''),
 (210, 648, 'SKU670', 4, 'PlayStation-4-Pro-1TB-Console', 'PlayStation 4 Pro 1TB Console', '<ul>\r\n	<li>4K TV Gaming &ndash; PS4 Pro outputs gameplay to your 4K TV</li>\r\n	<li>More HD Power &ndash; Turn on Boost Mode to give PS4 games access to the increased power of PS4 Pro</li>\r\n	<li>HDR Technology&ndash; With an HDR TV, compatible PS4 games display an unbelievably vibrant and lifelike range of colors</li>\r\n</ul>\r\n', '', 395, 375.00, 0.00, 1000, 0, 0, '1', 0, 1545921858, 1, 0, 0, '', '', ''),
 (211, 651, 'SKU74', 4, 'PlayStation-4-Pro-2TB-Limited-Edition-Console-500-Million-Bundle', 'PlayStation 4 Pro 2TB Limited Edition Console - 500 Million Bundle', '<ul>\r\n	<li>Translucent Shell &ndash; Commemorate 500 Million PlayStation systems sold with this Limited Edition PS4 Pro featuring a translucent blue console shell.</li>\r\n	<li>2TB Hard Drive &ndash; This massive hard drive provides tons of space for you to download and store games, apps, videos, screenshots, and more.</li>\r\n	<li>PlayStation Camera - Play and share with depth-sensing 3D technology that tracks you, your DUALSHOCK4 wireless controller, and PlayStation Move controllers. Personalize and share your gameplay livestreams with picture-in-picture video.</li>\r\n	<li>4K-TV Gaming &ndash; PS4 Pro outputs gameplay to your 4K TV. Many games, like Call of Duty: WWII, Gran Turismo Sport, and more, are optimized to look stunningly sharp and detailed when played on a 4K TV with PS4 Pro</li>\r\n</ul>\r\n', '', 789, 779.00, 0.00, 1000, 0, 0, '1', 0, 1545922214, 10, 0, 0, '', '', ''),
-(212, 654, 'SKU3583', 2, '', 'Xbox One S 500GB Console (Certified Refurbished) ', '<ul>\r\n	<li>This Certified Refurbished product is tested & certified by Microsoft to look and work like-new. The product includes all original accessories, and is backed by a 90-day warranty</li>\r\n	<li>500GB STORAGE CAPACITY: The Xbox One S has a generous 500GB of hard drive space which allows for ample game storage</li>\r\n	<li>4K ULTRA HD: Games and Blu-Ray streaming come to life in breathtaking 4K Ultra high definition</li>\r\n	<li>HIGH DYNAMIC RANGE: Your TV will display deeper color and richer contrast for enhanced picture quality</li>\r\n	<li>EXCLUSIVE TITLES: Play over 100 Xbox exclusive game titles like Forza Motorsport 7, Crackdown 3, State of Decay 2, and Gears of War 4</li>\r\n</ul>\r\n', '', 229, 209.00, 0.00, 1000, 0, 0, '1', 0, 1545922411, 1, 0, 0, '', '', ''),
+(212, 654, 'SKU3583', 2, '', 'Xbox One S 500GB Console (Certified Refurbished) ', '<ul>\r\n	<li>This Certified Refurbished product is tested & certified by Microsoft to look and work like-new. The product includes all original accessories, and is backed by a 90-day warranty</li>\r\n	<li>500GB STORAGE CAPACITY: The Xbox One S has a generous 500GB of hard drive space which allows for ample game storage</li>\r\n	<li>4K ULTRA HD: Games and Blu-Ray streaming come to life in breathtaking 4K Ultra high definition</li>\r\n	<li>HIGH DYNAMIC RANGE: Your TV will display deeper color and richer contrast for enhanced picture quality</li>\r\n	<li>EXCLUSIVE TITLES: Play over 100 Xbox exclusive game titles like Forza Motorsport 7, Crackdown 3, State of Decay 2, and Gears of War 4</li>\r\n</ul>\r\n', '', 229, 209.00, 0.00, 1000, 0, 0, '1', 0, 1545922411, 22, 0, 0, '', '', ''),
 (213, 657, 'SKU856', 2, 'Xbox-One-S-1TB-Console', 'Xbox One S 1TB Console', '<ul>\r\n	<li>Includes: 1TB Xbox One S console, wireless controller, full game download of Minecraft, Minecraft Starter, and Creators Pack, 1,000 Minecoins, 14-day Xbox Live Gold and 1-month Xbox Game Pass trial.</li>\r\n	<li>1,000 MINECOINS: Use them to get maps, skins, textures packs and more from the in-game Marketplace!</li>\r\n	<li>STARTER PACK: Greek Mythology Mash-up, Plastic Texture Pack, Skin Pack 1, and Villains Skin Pack</li>\r\n	<li>CREATORS: Adventurer&#39;s Dream & Winter Mini-Games Festival by Noxcrew, Relics of the Privateers by Imagiverse, PureBDcraft Texture Pack, Pastel Skin Pack by Eneija, & Wildlife Savanna by PixelHeads.</li>\r\n	<li>Play Minecraft with friends who are on Windows 10, mobile, and console</li>\r\n</ul>\r\n', '', 239, 219.00, 0.00, 1000, 0, 0, '1', 0, 1545922548, 1, 0, 0, '', '', ''),
 (214, 663, 'SKU223', 4, 'Ross-Simons-1.50-ct.-t.w.-Multi-Stone-Cluster-Ring-in-14kt-Yellow-Gold', 'Ross-Simons 1.50 ct. t.w. Multi-Stone Cluster Ring in 14kt Yellow Gold', '<ul>\r\n	<li>14kt yellow gold, multi-stone ring for women.</li>\r\n	<li>0.50 ct. t.w. amethyst, 0.20 ct. t.w. citrine, 0.10 ct. t.w. garnet, 0.10 ct. t.w. peridot, 0.20 ct. t.w. quartz, 0.40 ct. t.w. topaz. 1/2\" wide.</li>\r\n	<li>Luxury 14kt yellow gold ring.</li>\r\n	<li>Multiple shape lemon quartz, multiple shape blue topaz, multiple shape burgundy garnet, multiple shape yellow citrine, multiple shape green peridot and multiple shape multicolored amethyst. Polished 14kt yellow gold.</li>\r\n	<li>Includes jewelry presentation box and 30-day, 100% money-back guarantee.</li>\r\n</ul>\r\n', '', 455, 435.00, 0.00, 1000, 0, 0, '1', 0, 1545979894, 2, 0, 0, '', '', ''),
 (215, 665, 'SKU259', 4, '14k-Rose-Gold-Rose-Quartz-Fashion-Ring', '14k Rose Gold Rose Quartz Fashion Ring', '<ul>\r\n	<li>Beautiful complimentary gift box included with this purchase</li>\r\n	<li>Setting made entirely with genuine solid 14 karat gold</li>\r\n	<li>30 Day Satisfaction Guarantee</li>\r\n	<li>Photos may have been enlarged to show detail. Please see specifications below for product measurements.</li>\r\n</ul>\r\n', '', 699, 689.00, 0.00, 997, 0, 0, '1', 0, 1545980556, 58, 2, 0, '', '', ''),
@@ -6932,7 +7044,7 @@ INSERT INTO `products` (`productid`, `photoid`, `sku`, `brandid`, `cleanurl`, `n
 (218, 690, 'SKU666', 3, 'LetsBuyGold-10k-Yellow-Gold-Real-Genuine-Ruby-Womens-Band-Ring', '14kt Gold Lab Emerald 8x6mm Oval Celtic Trinity Knot Ring', '<ul>\r\n	<li>Premium quality lab-created Emerald</li>\r\n	<li>14 karat solid gold</li>\r\n	<li>Made in the USA</li>\r\n</ul>\r\n', '', 329, 299.00, 0.00, 1000, 0, 0, '1', 0, 1545985267, 3, 0, 0, '', '', ''),
 (219, 675, 'SKU9353', 4, '14kt-Gold-Garnet-and-Diamond-6mm-Heart-Claddagh-Ring', '14kt Gold Garnet and Diamond 6mm Heart Claddagh Ring', '<ul>\r\n	<li>Premium quality genuine Garnet</li>\r\n	<li>14 karat solid gold</li>\r\n	<li>Garnet is the birthstone of January</li>\r\n	<li>Comes with a free teddy bear and gift bag, perfect for gift giving</li>\r\n	<li>Made in the USA</li>\r\n</ul>\r\n', '', 219, 199.00, 0.00, 997, 0, 0, '1', 0, 1545985807, 2, 3, 0, '', '', ''),
 (220, 678, 'SKU2203', 3, '14kt-Gold-Lab-Pink-Sapphire-and-Diamond-5mm-Heart-Split-Band-Swirl-Ring', '14kt Gold Lab Pink Sapphire and Diamond 5mm Heart Split Band Swirl Ring', '<ul>\r\n	<li>Premium quality lab-created Pink Sapphire</li>\r\n	<li>14 karat solid gold</li>\r\n	<li>Made in the USA</li>\r\n</ul>\r\n', '', 249, 239.00, 0.00, 1000, 0, 0, '1', 0, 1545986032, 4, 0, 0, '', '', ''),
-(221, 681, 'SKU946', 4, '14kt-Gold-Emerald-and-Diamond-4mm-Round-filligree-Scroll-Ring', '14kt Gold Emerald and Diamond 4mm Round filligree Scroll Ring', '<ul>\r\n	<li>Premium (AA) quality genuine Emerald</li>\r\n	<li>14 karat solid gold</li>\r\n	<li>Made in the USA</li>\r\n</ul>\r\n', '', 209, 199.00, 0.00, 993, 0, 0, '1', 0, 1545986311, 6, 5, 0, '', '', ''),
+(221, 681, 'SKU946', 4, '14kt-Gold-Emerald-and-Diamond-4mm-Round-filligree-Scroll-Ring', '14kt Gold Emerald and Diamond 4mm Round filligree Scroll Ring', '<ul>\r\n	<li>Premium (AA) quality genuine Emerald</li>\r\n	<li>14 karat solid gold</li>\r\n	<li>Made in the USA</li>\r\n</ul>\r\n', '', 209, 199.00, 0.00, 993, 0, 0, '1', 0, 1545986311, 9, 5, 0, '', '', ''),
 (222, 684, 'SKU3567', 3, '14kt-Gold-Lab-Alexandrite-and-Diamond-6x4mm-Oval-filligree-Scroll-Ring', '14kt Gold Lab Alexandrite and Diamond 6x4mm Oval filligree Scroll Ring', '<ul>\r\n	<li>Premium quality, color-changing, lab-created Alexandrite (chyrsoberyl)</li>\r\n	<li>14 karat solid gold</li>\r\n	<li>Made in the USA</li>\r\n</ul>\r\n', '', 209, 199.00, 0.00, 1000, 0, 0, '1', 0, 1545986470, 2, 0, 0, '', '', ''),
 (223, 687, 'SKU224', 4, '14kt-Gold-Sapphire-and-Diamond-6x3mm-Marquise-Art-Deco-Ring', '14kt Gold Sapphire and Diamond 6x3mm Marquise Art Deco Ring', '<ul>\r\n	<li>Premium quality, color-changing, lab-created Alexandrite (chyrsoberyl)</li>\r\n	<li>14 karat solid gold</li>\r\n	<li>Made in the USA</li>\r\n</ul>\r\n', '', 209, 199.00, 0.00, 1000, 0, 0, '1', 0, 1545986631, 0, 0, 0, '', '', ''),
 (224, 693, 'SKU167', 2, 'Kate-Spade-New-York-Womens-Clay-Pave-Small-Square-Studs-Earrings', 'Five And Two Jewellery Dallas Rainbow Gold-Plated Hoop Earrings', '<ul>\r\n	<li>\r\n	<p>Mini hoop earrings from Five And Two Jewelry. Adorned with rainbow CZ detailing. Complete with a secure clasp closure.</p>\r\n\r\n	<p><strong>Content + Care</strong><br />\r\n	- Gold-plated brass, CZ<br />\r\n	- Wipe clean</p>\r\n\r\n	<p><strong>Size</strong><br />\r\n	- 8 mm</p>\r\n	</li>\r\n</ul>\r\n', '', 95, 85.00, 0.00, 999, 0, 0, '1', 0, 1545987440, 0, 1, 0, '', '', ''),
@@ -6965,7 +7077,7 @@ INSERT INTO `products` (`productid`, `photoid`, `sku`, `brandid`, `cleanurl`, `n
 (252, 774, 'SKU3689', 4, 'Fitzgerald-Pyramid-rhodium-plated-crystal-bracelet', 'Fitzgerald Pyramid rhodium-plated crystal bracelet', '<ul>\r\n	<li>Hand bracelet</li>\r\n	<li>Rhodium Plated</li>\r\n	<li>Cubic zirconia</li>\r\n	<li>Brass</li>\r\n	<li>Lobster clasp fastening</li>\r\n	<li>Imported</li>\r\n</ul>\r\n\r\n<p>Composition&nbsp;Brass, Rhodium, Cubic Zirconia</p>\r\n', '', 85, 55.00, 0.00, 1000, 0, 0, '1', 0, 1546005714, 0, 0, 0, '', '', ''),
 (253, 777, 'SKU3573', 2, 'Grid-Work-14-karat-gold-plated-bracelet', 'Grid Work 14-karat gold-plated bracelet', '<ul>\r\n	<li>Bracelet</li>\r\n	<li>Magnetic fastening</li>\r\n	<li>Imported</li>\r\n	<li>Gold-plated</li>\r\n	<li>14-karat gold</li>\r\n</ul>\r\n\r\n<p>Composition&nbsp;100% Metal</p>\r\n', '', 95, 75.00, 0.00, 1000, 0, 0, '1', 0, 1546005919, 0, 0, 0, '', '', ''),
 (254, 780, 'SKU2124', 2, 'Silver-tone-cuff', 'Silver-tone cuff', '<ul>\r\n	<li>Cuff</li>\r\n	<li>Silver-tone</li>\r\n	<li>Slips on</li>\r\n</ul>\r\n\r\n<p>Composition&nbsp;100% Metal</p>\r\n', '', 189, 139.00, 0.00, 1000, 0, 0, '1', 0, 1546006033, 0, 0, 0, '', '', ''),
-(255, 783, 'SKU3125', 4, 'Wholesale-Natural-Gemstone-Round-Spacer-Loose-Beads-4MM-6MM-8MM-10MM-12MM', 'Wholesale Natural Gemstone Round Spacer Loose Beads 4MM 6MM 8MM 10MM 12MM', '<p>&ldquo;Brand New, SPECIAL OFFER FOR BULK ORDER! ORDER 10 PACKS GET 1 PACK FOR FREE!&rdquo;</p>\r\n', '', 2, 1.00, 0.00, 1000, 0, 0, '1', 0, 1546007218, 0, 0, 0, '', '', ''),
+(255, 783, 'SKU3125', 4, 'Wholesale-Natural-Gemstone-Round-Spacer-Loose-Beads-4MM-6MM-8MM-10MM-12MM', 'Wholesale Natural Gemstone Round Spacer Loose Beads 4MM 6MM 8MM 10MM 12MM', '<p>&ldquo;Brand New, SPECIAL OFFER FOR BULK ORDER! ORDER 10 PACKS GET 1 PACK FOR FREE!&rdquo;</p>\r\n', '', 2, 1.00, 0.00, 1000, 0, 0, '1', 0, 1546007218, 1, 0, 0, '', '', ''),
 (256, 786, 'SKU3676', 2, '4-6-8-10mm-Lot-Bulk-Natural-Stone-Lava-Loose-Beads-DIY-Bracelet-Jewelry-Necklace', '4 6 8 10mm Lot Bulk Natural Stone Lava Loose Beads DIY Bracelet Jewelry Necklace', '<h1><span style=\"font-size:14px\">4 6 8 10mm Lot Bulk Natural Stone Lava Loose Beads DIY Bracelet Jewelry Necklace</span></h1>\r\n', '', 2, 0.99, 0.00, 1000, 0, 0, '1', 0, 1546007532, 9, 0, 0, '', '', ''),
 (257, 788, 'SKU346', 4, 'New-6-8mm-70PC-Faceted-purple-Rondelle-glass-Crystal-Beads', 'New 6*8mm 70PC Faceted purple Rondelle glass Crystal Beads', '<p>New 6*8mm 70PC Faceted purple Rondelle glass Crystal Beads</p>\r\n', '', 2, 1.00, 0.00, 1000, 0, 0, '1', 0, 1546007757, 0, 0, 0, '', '', ''),
 (258, 789, 'SKU386', 4, 'Wholesale-DIY-Jewelry-Faceted-70pcs-6-8mm-Red-AB-Rondelle-glass-Crystal-Beads', 'Wholesale DIY Jewelry Faceted 70pcs 6*8mm Red AB Rondelle glass Crystal Beads', '<h1><span style=\"font-size:12px\">Wholesale DIY Jewelry Faceted 70pcs 6*8mm Red AB Rondelle glass Crystal Beads</span></h1>\r\n', '', 2, 1.00, 0.00, 1000, 0, 0, '1', 0, 1546007873, 0, 0, 0, '', '', ''),
@@ -9090,7 +9202,7 @@ INSERT INTO `tax_rate_memberships` (`rateid`, `membershipid`) VALUES
 
 CREATE TABLE `templates` (
   `id` int NOT NULL,
-  `lng` varchar(3) NOT NULL DEFAULT '',
+  `lng` varchar(255) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci NOT NULL,
   `template` mediumtext,
   `time` int NOT NULL DEFAULT '0'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
@@ -9100,423 +9212,127 @@ CREATE TABLE `templates` (
 --
 
 INSERT INTO `templates` (`id`, `lng`, `template`, `time`) VALUES
-(2606795, 'en', 'home/category.php', 0),
-(2606797, 'en', 'common/products.tpl', 0),
-(2606798, 'en', 'static/about.php', 0),
-(2606799, 'en', 'admin/common/navigation.tpl', 0),
-(2606801, 'en', 'admin/pages/zone_edits.php', 0),
-(2606892, 'en', 'common/roles.php', 0),
-(2606893, 'en', 'common/modules.php', 0),
-(2606925, 'en', 'admin/common/navigation.php', 0),
-(2620508, 'en', 'admin/menu.php', 0),
-(2654924, 'en', 'admin/pages/product_invetory.php', 1482504510),
-(2794312, 'en', 'mobile/support_desk/ticket.php', 1512652926),
-(2998459, 'de', 'common/products.php', 0),
-(2998460, 'de', 'home/body.php', 0),
-(2998461, 'de', 'bread_crumbs.php', 0),
-(2998463, 'de', 'common/minicart.php', 0),
-(2998464, 'de', 'head.php', 0),
-(2998466, 'de', 'foot.php', 0),
-(2998467, 'de', 'left_menu.php', 0),
-(2998468, 'de', 'ajax_container.php', 0),
-(2998469, 'de', 'body.php', 0),
-(3106921, 'ru', 'home/body.php', 0),
-(3106922, 'ru', 'bread_crumbs.php', 0),
-(3106925, 'ru', 'common/minicart.php', 0),
-(3106926, 'ru', 'head.php', 0),
-(3106928, 'ru', 'foot.php', 0),
-(3106929, 'ru', 'left_menu.php', 0),
-(3106930, 'ru', 'common/products.php', 0),
-(3106931, 'ru', 'ajax_container.php', 0),
-(3106932, 'ru', 'body.php', 0),
-(3118549, 'fr', 'home/body.php', 1551887530),
-(3118550, 'fr', 'bread_crumbs.php', 1468573823),
-(3118553, 'fr', 'common/minicart.php', 1547030172),
-(3118554, 'fr', 'head.php', 1560623517),
-(3118556, 'fr', 'foot.php', 1524421884),
-(3118557, 'fr', 'left_menu.php', 1547140496),
-(3118558, 'fr', 'common/products.php', 1547230019),
-(3118559, 'fr', 'ajax_container.php', 1560602996),
-(3118560, 'fr', 'body.php', 1559922923),
-(3390148, 'en', 'invoice/print.php', 0),
-(3390149, 'en', 'admin/pages/category_products.php', 0),
-(3390150, 'en', 'admin/pages/taxes.php', 0),
-(3390151, 'en', 'admin/pages/statistic.php', 0),
-(3390152, 'en', 'admin/pages/profile.php', 0),
-(3390153, 'en', 'admin/pages/shipping_options.php', 0),
-(3390154, 'en', 'admin/pages/add_realtime_methods.php', 0),
-(3390157, 'en', 'mail/blog_comment.php', 0),
-(3390158, 'en', 'register/password.php', 0),
-(3390161, 'en', 'mail/restore_password.php', 0),
-(3390164, 'en', 'mail/send_to_friend.php', 0),
-(3390165, 'en', 'mobile/wishlist/body.php', 0),
-(3390168, 'en', 'mobile/profile/body.php', 0),
-(3390169, 'en', 'mobile/invoice/body.php', 0),
-(3390172, 'en', 'mobile/register/body.php', 0),
-(3390173, 'en', 'mobile/static_pages/body.php', 0),
-(3390177, 'en', 'mobile/blog/body.php', 0),
-(3390180, 'en', 'mobile/brands/body.php', 0),
-(3390183, 'en', 'admin/pages/warehouses.php', 0),
-(3390186, 'en', 'mail/contact_us.php', 0),
-(3390187, 'en', 'admin/pages/states.php', 0),
-(3390190, 'en', 'mail/buy1click.php', 0),
-(3390194, 'en', 'mail/ticket_message_posted_admin.php', 0),
-(3390195, 'en', 'mobile/gift_cards/body.php', 0),
-(3390197, 'en', 'invoice/pdf.php', 0),
-(3390198, 'en', 'mobile/help/create.php', 0),
-(3390202, 'en', 'mail/ticket_posted_admin.php', 0),
-(3390205, 'en', 'mail/ticket_message_posted.php', 0),
-(3390207, 'en', 'mobile/category/body.php', 0),
-(3390208, 'en', 'closed.php', 0),
-(3390209, 'en', 'mobile/login/body.php', 0),
-(3390210, 'en', 'mobile/cart/body.php', 0),
-(3390211, 'en', 'mobile/checkout/right_part.php', 0),
-(3390213, 'en', 'mobile/checkout/body.php', 0),
-(3390214, 'en', 'mobile/search/body.php', 0),
-(3390216, 'en', 'mobile/product/body.php', 0),
-(3390219, 'en', 'mobile/home/body.php', 0),
-(3390220, 'en', 'mobile/bread_crumbs.php', 0),
-(3390221, 'en', 'common/minicart_mobile.php', 0),
-(3390222, 'en', 'mobile/head.php', 0),
-(3390223, 'en', 'mobile/foot.php', 0),
-(3390225, 'en', 'mobile/ajax_container.php', 0),
-(3390226, 'en', 'mobile/body.php', 0),
-(3390229, 'en', 'mail/new_review.php', 0),
-(3390230, 'en', 'mobile/left_menu.php', 0),
-(3390231, 'en', 'gift_cards/body.php', 0),
-(3390232, 'en', 'wishlist/body.php', 0),
-(3390233, 'en', 'admin/pages/currencies.php', 0),
-(3390234, 'en', 'admin/pages/language.php', 0),
-(3390235, 'en', 'admin/pages/languages.php', 0),
-(3390236, 'en', 'testimonials/new.php', 0),
-(3390239, 'en', 'mail/testimonial.php', 0),
-(3390240, 'en', 'admin/pages/countries.php', 0),
-(3390243, 'en', 'admin/pages/coupons.php', 0),
-(3390244, 'en', 'admin/pages/gift_cards.php', 0),
-(3390245, 'en', 'admin/pages/memberships.php', 0),
-(3390247, 'en', 'admin/pages/news.php', 0),
-(3390248, 'en', 'admin/pages/letter.php', 0),
-(3390250, 'en', 'admin/pages/letters.php', 0),
-(3390251, 'en', 'admin/pages/sitemap.php', 0),
-(3390253, 'en', 'admin/pages/users.php', 0),
-(3390254, 'en', 'admin/pages/user.php', 0),
-(3390255, 'en', 'admin/pages/export.php', 0),
-(3390257, 'en', 'admin/pages/testimonials.php', 0),
-(3390258, 'en', 'admin/pages/shipping.php', 0),
-(3390259, 'en', 'admin/pages/tax_edit.php', 0),
-(3390260, 'en', 'admin/pages/zone_edit.php', 0),
-(3390261, 'en', 'admin/pages/zones.php', 0),
-(3390266, 'en', 'admin/pages/ticket.php', 0),
-(3390273, 'en', 'common/ticket_type.php', 0),
-(3390276, 'en', 'admin/pages/support_desk.php', 0),
-(3390277, 'en', 'admin/common/popup_product.php', 0),
-(3390278, 'en', 'admin/pages/search_keywords.php', 0),
-(3390279, 'en', 'admin/pages/category.php', 0),
-(3390282, 'en', 'testimonials/list.php', 0),
-(3390284, 'en', 'news/body.php', 0),
-(3390285, 'en', 'static_pages/body.php', 0),
-(3390286, 'en', 'common/instant_search.php', 0),
-(3390287, 'en', 'search/body.php', 0),
-(3390288, 'en', 'admin/pages/pages.php', 0),
-(3390289, 'en', 'admin/pages/homepage.php', 0),
-(3390291, 'en', 'admin/pages/blog.php', 0),
-(3390292, 'en', 'admin/pages/import.php', 0),
-(3390296, 'en', 'support_desk/support_desk.php', 0),
-(3390297, 'en', 'admin/pages/configuration.php', 0),
-(3390300, 'en', 'profile/body.php', 0),
-(3390303, 'en', 'mail/cart_reminder.php', 0),
-(3390305, 'en', 'admin/pages/brands.php', 0),
-(3390308, 'en', 'brands/body.php', 0),
-(3390309, 'en', 'admin/pages/login.php', 0),
-(3390312, 'en', 'admin/pages/reviews.php', 0),
-(3390313, 'en', 'admin/pages/shipping_charges.php', 0),
-(3390314, 'en', 'admin/pages/payment.php', 0),
-(3390320, 'en', 'admin/pages/products.php', 0),
-(3390321, 'en', 'admin/pages/categories.php', 0),
-(3390326, 'en', 'admin/pages/dashboard_products.php', 0),
-(3390327, 'en', 'admin/pages/dashboard.php', 0),
-(3390337, 'en', 'admin/pages/product_details.php', 0),
-(3390338, 'en', 'admin/pages/product_images.php', 0),
-(3390339, 'en', 'admin/pages/product_inventory.php', 0),
-(3390340, 'en', 'admin/pages/product_related.php', 0),
-(3390341, 'en', 'admin/pages/product_options_group.php', 0),
-(3390342, 'en', 'admin/pages/product_options.php', 0),
-(3390343, 'en', 'admin/pages/product_variants.php', 0),
-(3390344, 'en', 'admin/pages/product_variant_images.php', 0),
-(3390345, 'en', 'admin/pages/product_wholesale.php', 0),
-(3390346, 'en', 'admin/pages/product.php', 0),
-(3390348, 'en', 'admin/pages/orders.php', 0),
-(3390350, 'en', 'admin/pages/invoice.php', 0),
-(3390351, 'en', 'admin/head.php', 0),
-(3390352, 'en', 'admin/foot.php', 0),
-(3390354, 'en', 'admin/ajax_container.php', 0),
-(3390355, 'en', 'admin/body.php', 0),
-(3390359, 'en', 'blog/body.php', 0),
-(3390362, 'en', 'checkout/body.php', 0),
-(3390363, 'en', 'checkout/right_part.php', 0),
-(3390364, 'en', 'invoice/body.php', 0),
-(3390368, 'en', 'common/popup_product.php', 0),
-(3390371, 'en', 'common/ticket_status.php', 0),
-(3390374, 'en', 'common/ticket_priority.php', 0),
-(3390375, 'en', 'support_desk/ticket.php', 0),
-(3390376, 'en', 'help/create.php', 0),
-(3390389, 'en', 'product/body.php', 0),
-(3390397, 'en', 'mail/header.php', 0),
-(3390398, 'en', 'mail/footer.php', 0),
-(3390399, 'en', 'mail/registered.php', 0),
-(3391077, 'en', 'login/body.php', 0),
-(3391079, 'en', 'common/membership.php', 0),
-(3391080, 'en', 'register/body.php', 0),
-(3391485, 'en', 'common/navigation.php', 0),
-(3391486, 'en', 'common/products_results.php', 0),
-(3391487, 'en', 'common/banners.php', 0),
-(3391489, 'en', 'category/body.php', 0),
-(3391561, 'en', 'common/filter.php', 0),
-(3391566, 'en', 'home/body.php', 0),
-(3391567, 'en', 'bread_crumbs.php', 0),
-(3391571, 'en', 'head.php', 0),
-(3391573, 'en', 'foot.php', 0),
-(3391574, 'en', 'left_menu.php', 0),
-(3391575, 'en', 'common/products.php', 0),
-(3391576, 'en', 'ajax_container.php', 0),
-(3391577, 'en', 'body.php', 0),
-(3391638, 'en', 'common/minicart.php', 0),
-(3391639, 'en', 'common/popup_product_added.php', 0),
-(3391641, 'en', 'cart/mobile_title.php', 0),
-(3391642, 'en', 'cart/body.php', 0),
-(3411557, 'en', 'admin/pages/roles.php', 0),
-(3411700, 'en', 'admin/pages/role_edit.php', 0),
-(3421125, 'en', 'admin/pages/login_new.php', 0),
-(3441845, 'en', 'common/instant_search_admin.php', 0),
-(3504672, 'ru', 'common/translate.php', 0),
-(3506053, 'ru', 'wishlist/body.php', 0),
-(3506114, 'ru', 'common/membership.php', 0),
-(3506115, 'ru', 'profile/body.php', 0),
-(3506956, 'en', 'common/translate.php', 0),
-(3511481, 'de', 'common/translate.php', 0),
-(3518174, 'ru', 'admin/pages/language.php', 0),
-(3518175, 'ru', 'admin/ajax_container.php', 0),
-(3518176, 'ru', 'admin/head.php', 0),
-(3518177, 'ru', 'admin/foot.php', 0),
-(3518178, 'ru', 'admin/pages/login_new.php', 0),
-(3518179, 'ru', 'admin/body.php', 0),
-(3518200, 'ru', 'admin/pages/languages.php', 0),
-(3518231, 'ru', 'admin/pages/dashboard_products.php', 0),
-(3518232, 'ru', 'admin/pages/dashboard.php', 0),
-(3518739, 'ru', 'common/navigation.php', 0),
-(3518740, 'ru', 'admin/pages/orders.php', 1653860788),
-(3518741, 'ru', 'invoice/body.php', 0),
-(3518742, 'ru', 'admin/pages/invoice.php', 0),
-(3519319, 'ru', 'admin/pages/statistic.php', 1681065618),
-(3519320, 'ru', 'admin/pages/coupons.php', 0),
-(3519837, 'ru', 'admin/pages/gift_cards.php', 0),
-(3520188, 'ru', 'admin/pages/users.php', 0),
-(3520189, 'ru', 'admin/pages/user.php', 0),
-(3520405, 'ru', 'admin/pages/memberships.php', 1497130414),
-(3520406, 'ru', 'admin/pages/roles.php', 0),
-(3520407, 'ru', 'admin/pages/role_edit.php', 0),
-(3520756, 'ru', 'admin/pages/products.php', 0),
-(3520757, 'ru', 'admin/pages/product_details.php', 0),
-(3520758, 'ru', 'admin/pages/product_images.php', 0),
-(3520759, 'ru', 'admin/pages/product_inventory.php', 0),
-(3520760, 'ru', 'admin/pages/product_related.php', 0),
-(3520761, 'ru', 'admin/pages/product_options_group.php', 0),
-(3520762, 'ru', 'admin/pages/product_options.php', 0),
-(3520763, 'ru', 'admin/pages/product_variants.php', 0),
-(3520764, 'ru', 'admin/pages/product_variant_images.php', 0),
-(3520765, 'ru', 'admin/pages/product_wholesale.php', 0),
-(3520766, 'ru', 'admin/pages/product.php', 0),
-(3523091, 'ru', 'admin/common/popup_product.php', 1468573948),
-(3523092, 'ru', 'admin/pages/reviews.php', 0),
-(3523093, 'ru', 'admin/pages/categories.php', 0),
-(3523408, 'ru', 'admin/pages/category.php', 0),
-(3523409, 'ru', 'admin/pages/category_products.php', 1681422626),
-(3523410, 'ru', 'admin/pages/brands.php', 0),
-(3523687, 'ru', 'admin/pages/import.php', 1590839358),
-(3523688, 'ru', 'admin/pages/export.php', 1608833576),
-(3523689, 'ru', 'admin/pages/news.php', 0),
-(3523762, 'ru', 'admin/pages/letters.php', 1627737644),
-(3523763, 'ru', 'admin/pages/letter.php', 0),
-(3523836, 'ru', 'admin/pages/blog.php', 0),
-(3524223, 'ru', 'admin/pages/testimonials.php', 0),
-(3525070, 'ru', 'admin/pages/pages.php', 0),
-(3525071, 'ru', 'admin/pages/homepage.php', 0),
-(3525132, 'ru', 'admin/pages/shipping.php', 0),
-(3525133, 'ru', 'admin/pages/shipping_charges.php', 0),
-(3525566, 'ru', 'admin/pages/zones.php', 0),
-(3525723, 'ru', 'admin/pages/payment.php', 1681422754),
-(3525724, 'ru', 'admin/pages/tax_edit.php', 0),
-(3526181, 'ru', 'admin/pages/zone_edit.php', 0),
-(3526326, 'ru', 'admin/pages/countries.php', 0),
-(3526327, 'ru', 'admin/pages/states.php', 0),
-(3526472, 'ru', 'admin/pages/configuration.php', 0),
-(3526473, 'ru', 'admin/pages/currencies.php', 1547073090),
-(3526474, 'ru', 'common/ticket_type.php', 0),
-(3526475, 'ru', 'common/ticket_priority.php', 0),
-(3526476, 'ru', 'common/ticket_status.php', 0),
-(3526477, 'ru', 'admin/pages/support_desk.php', 0),
-(3526478, 'ru', 'admin/pages/ticket.php', 1617737460),
-(3526479, 'ru', 'admin/pages/search_keywords.php', 1560614922),
-(3526480, 'ru', 'admin/pages/sitemap.php', 1468573860),
-(3527263, 'ru', 'product/body.php', 0),
-(3527264, 'ru', 'common/popup_product.php', 0),
-(3527325, 'ru', 'help/create.php', 0),
-(3527326, 'ru', 'common/products_results.php', 0),
-(3527327, 'ru', 'common/banners.php', 0),
-(3527328, 'ru', 'category/body.php', 0),
-(3527329, 'ru', 'common/filter.php', 0),
-(3527850, 'ru', 'cart/mobile_title.php', 0),
-(3527851, 'ru', 'cart/body.php', 0),
-(3527852, 'ru', 'common/popup_product_added.php', 1654358110),
-(3528193, 'ru', 'gift_cards/body.php', 0),
-(3528554, 'ru', 'blog/body.php', 0),
-(3528619, 'ru', 'news/body.php', 0),
-(3528680, 'ru', 'static_pages/body.php', 1481401764),
-(3528681, 'ru', 'checkout/right_part.php', 0),
-(3528682, 'ru', 'checkout/body.php', 0),
-(3528803, 'ru', 'brands/body.php', 0),
-(3530834, 'ru', 'admin/pages/login.php', 1560518128),
-(3566962, 'js', 'script', 0),
-(3566966, 'js', 'admin_users', 0),
-(3566970, 'js', 'admin_product_variant_imagess', 0),
-(3566974, 'js', 'admin_str_replace', 0),
-(3566978, 'js', 'admin_warehouses', 1617739792),
-(3566982, 'js', 'news', 0),
-(3566986, 'js', 'jquery.ui.slider.min.js', 0),
-(3566990, 'js', 'jquery.ui.slider.min', 1512550674),
-(3566994, 'js', 'canvasjs.min', 0),
-(3566998, 'js', 'jquery.flot', 0),
-(3567002, 'js', 'jquery.flot.time', 0),
-(3567006, 'js', 'jquery.lazy', 0),
-(3567010, 'js', 'jquery.lazy.min', 1525213090),
-(3567014, 'js', 'mobile', 1630004594),
-(3567018, 'js', 'admin_import', 1361784862),
-(3567022, 'js', 'password', 1630004782),
-(3567026, 'js', 'admin_order_invoice', 1630004372),
-(3567030, 'js', 'invoice', 0),
-(3567034, 'js', 'blog', 1467291784),
-(3567038, 'js', 'jquery.min', 1715350131),
-(3567042, 'js', 'jquery.ui.core.min', 1351144192),
-(3567046, 'js', 'jquery.ui.widget.min', 1715350131),
-(3567050, 'js', 'jquery.ui.mouse.min', 1351144192),
-(3567054, 'js', 'jquery.ui.position.min', 1351144192),
-(3567058, 'js', 'jquery.ui.draggable.min', 1715350131),
-(3567062, 'js', 'jquery.ui.droppable.min', 1715350131),
-(3567066, 'js', 'login', 1766224081),
-(3567070, 'js', 'admin_login', 1630004794),
-(3567074, 'js', 'admin_configuration', 0),
-(3567078, 'js', 'jquery.ui.tooltip', 0),
-(3567082, 'js', 'browser', 1366969956),
-(3567086, 'js', 'admin_dashboard', 1406404466),
-(3567090, 'js', 'jquery.ui.sortable', 1715350131),
-(3567094, 'js', 'admin_product_images', 1630004788),
-(3567098, 'js', 'admin_product_options', 1617739762),
-(3567102, 'js', 'admin_product_variants', 1766224071),
-(3567106, 'js', 'admin_duplicate_row', 1410371282),
-(3567110, 'js', 'admin_product_variant_images', 1410451664),
-(3567114, 'js', 'admin_products', 1630004354),
-(3567118, 'js', 'admin_orders', 1617739698),
-(3567122, 'js', 'admin_memberships', 0),
-(3567126, 'js', 'admin_roles', 0),
-(3567130, 'js', 'admin_categories', 1406404466),
-(3567134, 'js', 'admin_popup_product', 1790170182),
-(3567138, 'js', 'admin_category', 1406411586),
-(3567142, 'js', 'admin_brands', 1411904362),
-(3567146, 'js', 'admin_news', 0),
-(3567150, 'js', 'newsletter', 0),
-(3567154, 'js', 'str_replace', 1411814584),
-(3567158, 'js', 'admin_blog', 0),
-(3567162, 'js', 'admin_shipping', 0),
-(3567166, 'js', 'admin_payment', 0),
-(3567170, 'js', 'admin_taxes', 1467103186),
-(3567174, 'js', 'admin_zones', 1467033122),
-(3567178, 'js', 'admin_countries', 1406404466),
-(3567182, 'js', 'admin', 1790233743),
-(3567255, 'css', 'admin_product_variant_imagess', 0),
-(3567256, 'css', 'admin_pages', 0),
-(3567257, 'css', 'bot', 1386156554),
-(3567258, 'css', 'admin_warehouses', 1482503444),
-(3567259, 'css', 'jquery.ui.slider.min', 1512550674),
-(3567260, 'css', 'jquery.ui.min', 0),
-(3567261, 'css', 'jquery-ui.min', 1512550674),
-(3567262, 'css', 'safari', 1389372128),
-(3567263, 'css', 'mobile', 1546694170),
-(3567264, 'css', 'ie', 1389372120),
-(3567265, 'css', 'ff', 1389372124),
-(3567266, 'css', 'admin_import', 1467193570),
-(3567267, 'css', 'admin_sitemap', 0),
-(3567268, 'css', 'password', 1373280310),
-(3567269, 'css', 'admin_statistic', 1411935724),
-(3567270, 'css', 'ticket', 0),
-(3567271, 'css', 'admin_order_invoice', 1482590180),
-(3567272, 'css', 'invoice', 1479067220),
-(3567273, 'css', 'login', 1479057974),
-(3567274, 'css', 'admin_login', 1654357410),
-(3567275, 'css', 'admin_configuration', 1467029282),
-(3567276, 'css', 'jquery.ui.tooltip', 1405644666),
-(3567277, 'css', 'admin_dashboard', 1680802907),
-(3567278, 'css', 'admin_product_images', 1466883810),
-(3567279, 'css', 'admin_product_variants', 1482589796),
-(3567280, 'css', 'admin_product_variant_images', 1410460030),
-(3567281, 'css', 'admin_products', 1560463512),
-(3567282, 'css', 'admin_orders', 1411935946),
-(3567283, 'css', 'admin_coupons', 0),
-(3567284, 'css', 'admin_users', 1410525758),
-(3567285, 'css', 'admin_memberships', 0),
-(3567286, 'css', 'admin_roles', 0),
-(3567287, 'css', 'admin_categories', 1559923424),
-(3567288, 'css', 'admin_popup', 1471089016),
-(3567289, 'css', 'admin_category', 1406409650),
-(3567290, 'css', 'admin_brands', 0),
-(3567291, 'css', 'admin_news', 0),
-(3567292, 'css', 'newsletter', 0),
-(3567293, 'css', 'admin_blog', 0),
-(3567294, 'css', 'admin_user', 1407782112),
-(3567295, 'css', 'admin_shipping', 0),
-(3567296, 'css', 'admin_payment', 0),
-(3567297, 'css', 'admin_taxes', 0),
-(3567298, 'css', 'admin_zones', 0),
-(3567299, 'css', 'admin_countries', 1409773208),
-(3567300, 'css', 'admin', 1790237114),
-(3567301, 'css', 'admin_new', 1790190205),
-(3567302, 'css', 'admin_responsive', 1790241670),
-(3567324, 'css', 'static', 1467127962),
-(3567325, 'css', 'banners', 1524952060),
-(3567326, 'css', 'home', 1790186558),
-(3567328, 'css', 'products', 1790015987),
-(3567329, 'css', 'popup', 1654344718),
-(3567330, 'css', 'product', 1790187797),
-(3567331, 'css', 'cart', 1481298360),
-(3567332, 'css', 'wishlist', 0),
-(3567333, 'css', 'checkout', 1790187405),
-(3567335, 'css', 'help', 1389363746),
-(3567336, 'css', 'testimonials', 1466615196),
-(3567337, 'css', 'news', 1654783716),
-(3567338, 'css', 'blog', 1681734011),
-(3567339, 'css', 'brands', 1654783936),
-(3567340, 'css', 'category', 1680727022),
-(3567341, 'css', 'style', 1790189145),
-(3567342, 'css', 'logged', 1466870052),
-(3567343, 'css', 'register', 1680618675),
-(3567344, 'css', 'responsive', 1790187460),
-(3567345, 'js', 'jquery.ui.touch-punch.min', 1418901836),
-(3567347, 'js', 'blog_bb', 1411750934),
-(3567348, 'js', 'banners', 1766224075),
-(3567349, 'js', 'home', 1766224050),
-(3567350, 'js', 'category', 1407610568),
-(3567351, 'js', 'products', 1790180968),
-(3567352, 'js', 'popup', 1405697764),
-(3567353, 'js', 'jquery.zoom.min', 1384263138),
-(3567354, 'js', 'product', 1779199092),
-(3567355, 'js', 'cart', 1363123832),
-(3567356, 'js', 'wishlist', 0),
-(3567357, 'js', 'states', 1766224147),
-(3567359, 'js', 'checkout', 1617740378),
-(3567360, 'js', 'testimonials', 1466612964),
-(3567361, 'js', 'ticket', 1766224151),
-(3567362, 'js', 'scripts', 1790188912),
-(3567363, 'js', 'logged', 1677186268),
-(3567364, 'js', 'register', 1766224122);
+(1, 'en', 'modules/OlegKhorev/SamplePage/sample_page.php', 0),
+(2, 'en', 'bread_crumbs.php', 0),
+(3, 'en', 'common/products.php', 0),
+(4, 'en', 'ajax_container.php', 0),
+(5, 'en', 'common/minicart.php', 0),
+(6, 'en', 'head.php', 0),
+(7, 'en', 'left_menu.php', 0),
+(8, 'en', 'foot.php', 0),
+(9, 'en', 'common/translate.php', 0),
+(10, 'en', 'body.php', 0),
+(11, 'css', 'style', 1790661556),
+(12, 'css', 'blog', 1790620953),
+(13, 'css', 'static', 1467127962),
+(14, 'css', 'banners', 1524952060),
+(15, 'css', 'home', 1790186558),
+(16, 'css', 'category', 1680727022),
+(17, 'css', 'products', 1790752804),
+(18, 'css', 'popup', 1654344718),
+(19, 'css', 'product', 1790621532),
+(20, 'css', 'cart', 1481298360),
+(21, 'css', 'checkout', 1790620321),
+(22, 'css', 'register', 1680618675),
+(23, 'css', 'help', 1389363746),
+(24, 'css', 'testimonials', 1466615196),
+(25, 'css', 'news', 1654783716),
+(26, 'css', 'brands', 1654783936),
+(27, 'css', 'login', 1479057974),
+(28, 'css', 'responsive', 1790752549),
+(29, 'css', 'OlegKhorev/SamplePage', 1790663845),
+(30, 'js', 'jquery.ui.touch-punch.min', 1418901836),
+(31, 'js', 'scripts', 1790664283),
+(32, 'js', 'blog_bb', 1411750934),
+(33, 'js', 'banners', 1766224075),
+(34, 'js', 'home', 1766224050),
+(35, 'js', 'category', 1407610568),
+(36, 'js', 'products', 1790180968),
+(37, 'js', 'popup', 1405697764),
+(38, 'js', 'jquery.zoom.min', 1384263138),
+(39, 'js', 'product', 1779199092),
+(40, 'js', 'cart', 1363123832),
+(41, 'js', 'states', 1766224147),
+(42, 'js', 'checkout', 1617740378),
+(43, 'js', 'testimonials', 1466612964),
+(44, 'js', 'ticket', 1766224151),
+(45, 'js', 'login', 1766224081),
+(46, 'js', 'register', 1766224122),
+(47, 'js_modules', 'OlegKhorev/SamplePage', 1790527628),
+(48, 'en', 'home/body.php', 0),
+(49, 'en', 'themes/OlegKhorev/SampleTheme/home/body.php', 0),
+(50, 'css', 'OlegKhorev/SampleTheme', 1790752657),
+(51, 'js_modules', 'OlegKhorev/SampleTheme', 0),
+(52, 'en', 'product/body.php', 0),
+(53, 'en', 'common/popup_product.php', 0),
+(54, 'js', 'browser', 1366969956),
+(55, 'en', 'common/navigation.php', 0),
+(56, 'en', 'common/products_results.php', 0),
+(57, 'en', 'common/banners.php', 0),
+(58, 'en', 'category/body.php', 0),
+(59, 'en', 'common/filter.php', 0),
+(60, 'en', 'admin/pages/login.php', 0),
+(61, 'en', 'admin/ajax_container.php', 0),
+(62, 'en', 'admin/foot.php', 0),
+(63, 'en', 'admin/pages/login_new.php', 0),
+(64, 'en', 'admin/body.php', 0),
+(65, 'css', 'admin_login', 1654357410),
+(66, 'css', 'admin', 1790665814),
+(67, 'js', 'admin_login', 1630004794),
+(68, 'js', 'admin', 1790669182),
+(69, 'en', 'admin/pages/dashboard_products.php', 0),
+(70, 'en', 'admin/pages/dashboard.php', 0),
+(71, 'en', 'admin/head.php', 0),
+(72, 'css', 'logged', 1466870052),
+(73, 'css', 'admin_dashboard', 1680802907),
+(74, 'css', 'admin_new', 1790692975),
+(75, 'css', 'admin_responsive', 1790692964),
+(76, 'js', 'logged', 1677186268),
+(77, 'js', 'admin_dashboard', 1406404466),
+(78, 'en', 'common/popup_product_added.php', 0),
+(79, 'en', 'cart/mobile_title.php', 0),
+(80, 'en', 'cart/body.php', 0),
+(81, 'en', 'checkout/right_part.php', 0),
+(82, 'en', 'checkout/body.php', 0),
+(83, 'en', 'invoice/body.php', 0),
+(84, 'css', 'invoice', 1479067220),
+(85, 'js', 'invoice', 0),
+(86, 'en', 'wishlist/body.php', 0),
+(87, 'en', 'common/membership.php', 0),
+(88, 'en', 'profile/body.php', 0),
+(89, 'en', 'gift_cards/body.php', 0),
+(90, 'en', 'blog/body.php', 0),
+(91, 'js', 'str_replace', 1411814584),
+(92, 'js', 'blog', 1467291784),
+(93, 'en', 'news/body.php', 0),
+(94, 'en', 'help/create.php', 0),
+(95, 'en', 'brands/body.php', 0),
+(96, 'en', 'static_pages/body.php', 0),
+(97, 'en', 'admin/pages/pages.php', 0),
+(98, 'en', 'admin/pages/modules.php', 0),
+(99, 'en', 'admin/pages/blog.php', 0),
+(100, 'css', 'OlegKhorev/NewModule', 0),
+(101, 'js_modules', 'OlegKhorev/NewModule', 1790664184),
+(102, 'en', 'themes/OlegKhorev/NewModule/home/body.php', 0),
+(103, 'en', 'modules/OlegKhorev/NewModule/new_module.php', 0),
+(104, 'en', 'modules/OlegKhorev/SamplePage/admin.php', 0),
+(105, 'js_module_sample', 'admin.js', 0),
+(116, 'js_module_sample_page', 'admin.js', 1790669447),
+(117, 'js', 'OlegKhorev/SamplePage', 1790527628),
+(118, 'js', 'OlegKhorev/SampleTheme', 0),
+(119, 'js', 'OlegKhorev/NewModule', 1790665058),
+(120, 'en', 'admin/pages/testimonials.php', 0),
+(121, 'en', 'testimonials/list.php', 0),
+(122, 'en', 'admin/pages/orders.php', 0),
+(123, 'en', 'admin/pages/invoice.php', 0),
+(124, 'css', 'admin_orders', 1411935946),
+(125, 'js', 'admin_orders', 1617739698),
+(126, 'css', 'admin_order_invoice', 1482590180),
+(127, 'js', 'admin_order_invoice', 1630004372),
+(128, 'en', 'admin/pages/users.php', 0),
+(129, 'css', 'admin_users', 1410525758),
+(130, 'en', 'common/instant_search.php', 0),
+(131, 'en', 'testimonials/new.php', 0);
 
 -- --------------------------------------------------------
 
@@ -9542,11 +9358,8 @@ CREATE TABLE `testimonials` (
 --
 
 INSERT INTO `testimonials` (`tid`, `status`, `message`, `userid`, `name`, `email`, `ip`, `company`, `url`, `date`) VALUES
-(3, 'A', 'Oleg is fabulous and he really cares about his clients. I would recommend him 100%. I didn\'t give him a whole lot to work with, just the links to a few websites I liked and what I liked about each one and he came back with an eye catching website design. Great help throughout the project and he has amazing skills to execute the work assigned to him and been very prompt to fulfill the task timely and efficiently.  He is the one I can count on to get what we needed in a timely manner and with good quality. Also any custom work that was required showed his incredible knowledge and willingness to learn Great work!\r\n\r\n', 852, 'Martin Lopuszak', '', '127.0.0.1', '', 'userequip.com', 1466628639),
-(4, 'A', 'Oleg is an outstanding programmer! He always figured out a way to do exactly what I needed. He\'s fast and his prices are very fair too! I would highly recommend him on any job.	', 848, 'Glenn Canady', '', '127.0.0.1', '', 'http://www.nsearch.com', 1546187267),
 (6, 'A', 'Oleg was really great to work with. He developed the webpage exactly how I envisioned it. Oleg was also very responsive and always made himself available. Whenever we came across website defects or roadblocks, Oleg worked with me to come up with a solution. I would highly recommend Oleg to anyone, he gets the job done perfectly!', 848, 'Amanda Bernard', '', '127.0.0.1', '', 'https://shawishmarket.com/', 1656440105),
-(7, 'A', 'Great working with Oleg. Best dev we have worked with and would recommend to anyone. He gets to understand what we need then execute quick. He will go out of his way to deliver. The platform is fast and our revenue has increased due to the great UX of the platform.', 848, 'James Bennett', '', '127.0.0.1', '', 'https://shop.celebratejustright.co.uk', 1656440130),
-(8, 'A', 'Working with Oleg is a pleasure. He provides quality work in a timely manner. He provides expert feedback and is able to provide solutions when problems arise. Oleg is very professional and works great with other members of the team. We are very happy to have found him!', 0, ' Joseph Andrew', '', '127.0.0.1', '', 'https://orisla.com/', 1666795558);
+(7, 'A', 'Great working with Oleg. Best dev we have worked with and would recommend to anyone. He gets to understand what we need then execute quick. He will go out of his way to deliver. The platform is fast and our revenue has increased due to the great UX of the platform.', 848, 'James Bennett', '', '127.0.0.1', '', 'https://shop.evengo.co.uk/', 1656440130);
 
 -- --------------------------------------------------------
 
@@ -11883,7 +11696,7 @@ INSERT INTO `users_carts` (`id`, `userid`, `email`, `cart`, `date`, `reminded_1`
 (1915, 0, '4o@o.ru', 'a:11:{s:8:\"products\";a:1:{i:0;a:36:{s:6:\"cartid\";i:1;s:9:\"productid\";s:3:\"129\";s:8:\"quantity\";i:1;s:7:\"options\";a:2:{i:226;s:3:\"845\";i:227;s:3:\"850\";}s:9:\"variantid\";s:3:\"270\";s:7:\"photoid\";s:3:\"412\";s:3:\"sku\";s:6:\"SKU171\";s:7:\"brandid\";s:1:\"4\";s:8:\"cleanurl\";s:26:\"STUSSY-SMOOTH-STOCK-LS-TEE\";s:4:\"name\";s:26:\"STUSSY SMOOTH STOCK LS TEE\";s:5:\"descr\";s:28:\"<p>SMOOTH STOCK LS TEE</p>\r\n\";s:8:\"keywords\";s:0:\"\";s:10:\"list_price\";s:2:\"57\";s:5:\"price\";s:7:\"49.0000\";s:6:\"weight\";s:4:\"0.00\";s:5:\"avail\";s:3:\"998\";s:11:\"avail_block\";s:1:\"0\";s:6:\"rating\";s:1:\"0\";s:6:\"status\";s:1:\"1\";s:7:\"deleted\";s:1:\"0\";s:8:\"add_date\";s:10:\"1545840730\";s:11:\"views_stats\";s:2:\"15\";s:11:\"sales_stats\";s:1:\"2\";s:9:\"del_stats\";s:1:\"0\";s:16:\"meta_description\";s:0:\"\";s:13:\"meta_keywords\";s:0:\"\";s:9:\"title_tag\";s:0:\"\";s:10:\"categoryid\";s:2:\"27\";s:5:\"title\";s:26:\"STUSSY SMOOTH STOCK LS TEE\";s:11:\"qty_per_box\";s:0:\"\";s:11:\"supplied_as\";s:0:\"\";s:13:\"supplier_code\";s:0:\"\";s:3:\"def\";s:1:\"0\";s:13:\"variant_photo\";N;s:5:\"photo\";a:8:{s:7:\"photoid\";s:3:\"412\";s:9:\"productid\";s:3:\"129\";s:3:\"alt\";s:0:\"\";s:4:\"file\";s:5:\"1.jpg\";s:4:\"size\";s:6:\"127584\";s:1:\"x\";s:4:\"1158\";s:1:\"y\";s:4:\"1228\";s:3:\"pos\";s:2:\"10\";}s:15:\"product_options\";a:2:{i:226;a:10:{s:7:\"groupid\";s:3:\"226\";s:9:\"productid\";s:3:\"129\";s:4:\"name\";s:4:\"Size\";s:8:\"fullname\";s:0:\"\";s:7:\"orderby\";s:2:\"10\";s:4:\"type\";s:1:\"g\";s:9:\"view_type\";s:1:\"p\";s:7:\"enabled\";s:1:\"1\";s:7:\"variant\";s:1:\"1\";s:6:\"option\";a:9:{s:8:\"optionid\";s:3:\"845\";s:7:\"groupid\";s:3:\"226\";s:4:\"name\";s:1:\"S\";s:7:\"orderby\";s:2:\"10\";s:7:\"enabled\";s:1:\"1\";s:14:\"price_modifier\";s:4:\"0.00\";s:19:\"price_modifier_type\";s:1:\"%\";s:15:\"weight_modifier\";s:4:\"0.00\";s:20:\"weight_modifier_type\";s:1:\"%\";}}i:227;a:10:{s:7:\"groupid\";s:3:\"227\";s:9:\"productid\";s:3:\"129\";s:4:\"name\";s:5:\"Color\";s:8:\"fullname\";s:0:\"\";s:7:\"orderby\";s:2:\"20\";s:4:\"type\";s:1:\"g\";s:9:\"view_type\";s:1:\"p\";s:7:\"enabled\";s:1:\"1\";s:7:\"variant\";s:1:\"1\";s:6:\"option\";a:9:{s:8:\"optionid\";s:3:\"850\";s:7:\"groupid\";s:3:\"227\";s:4:\"name\";s:5:\"White\";s:7:\"orderby\";s:2:\"10\";s:7:\"enabled\";s:1:\"1\";s:14:\"price_modifier\";s:4:\"0.00\";s:19:\"price_modifier_type\";s:1:\"%\";s:15:\"weight_modifier\";s:4:\"0.00\";s:20:\"weight_modifier_type\";s:1:\"%\";}}}}}s:8:\"subtotal\";d:49;s:19:\"discounted_subtotal\";d:49;s:14:\"subtotal_taxed\";d:49;s:5:\"total\";d:49;s:13:\"need_shipping\";i:1;s:13:\"shipping_cost\";d:13.949999999999999;s:10:\"shippingid\";s:4:\"2220\";s:11:\"tax_details\";a:11:{s:5:\"taxid\";s:1:\"1\";s:8:\"tax_name\";s:3:\"VAT\";s:16:\"tax_display_name\";s:3:\"VAT\";s:7:\"formula\";s:2:\"ST\";s:12:\"address_type\";s:1:\"B\";s:6:\"active\";s:1:\"Y\";s:18:\"price_includes_tax\";s:1:\"N\";s:21:\"display_including_tax\";s:1:\"N\";s:12:\"display_info\";s:0:\"\";s:9:\"regnumber\";s:0:\"\";s:8:\"priority\";s:1:\"0\";}s:3:\"tax\";d:6.2949999999999999;s:9:\"paymentid\";s:1:\"7\";}', 1562778869, 1, 1),
 (2239, 0, 'N', 'a:11:{s:8:\"products\";a:1:{i:0;a:35:{s:6:\"cartid\";i:1;s:9:\"productid\";s:3:\"113\";s:8:\"quantity\";i:1;s:7:\"options\";a:2:{i:194;s:3:\"713\";i:195;s:3:\"716\";}s:9:\"variantid\";s:3:\"174\";s:7:\"photoid\";s:3:\"367\";s:3:\"sku\";s:6:\"SKU110\";s:7:\"brandid\";s:1:\"4\";s:8:\"cleanurl\";s:42:\"MEN-Supima-Cotton-Crew-Neck-Short-Sleeve-T\";s:4:\"name\";s:42:\"MEN Supima Cotton Crew Neck Short Sleeve T\";s:5:\"descr\";s:548:\"<p>A 100% Supima&reg; cotton T-shirt thick enough to wear on its own or for layering.<br />\r\n- The luxurious jersey material uses 100% Supima&reg; cotton for a smooth feel, natural brightness and beautiful colors.<br />\r\n- A smooth silhouette from the bust down to the waist, with sleek shoulders and armholes.&nbsp;<br />\r\n- A narrower seam fold and stitching for a more delicate neckline.<br />\r\n- With a flattering neckline.<br />\r\n&nbsp;</p>\r\n\r\n<p>MATERIAL</p>\r\n\r\n<p>100% Cotton</p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p>CARE</p>\r\n\r\n<p>Cold Machine Wash</p>\r\n\";s:8:\"keywords\";s:0:\"\";s:10:\"list_price\";s:2:\"17\";s:5:\"price\";s:7:\"14.9000\";s:6:\"weight\";s:4:\"0.00\";s:5:\"avail\";s:3:\"994\";s:11:\"avail_block\";s:1:\"0\";s:6:\"rating\";s:1:\"0\";s:6:\"status\";s:1:\"1\";s:7:\"deleted\";s:1:\"0\";s:8:\"add_date\";s:10:\"1545827391\";s:11:\"views_stats\";s:2:\"61\";s:11:\"sales_stats\";s:1:\"9\";s:9:\"del_stats\";s:1:\"0\";s:16:\"meta_description\";s:0:\"\";s:13:\"meta_keywords\";s:0:\"\";s:9:\"title_tag\";s:0:\"\";s:10:\"categoryid\";s:2:\"26\";s:5:\"title\";s:42:\"MEN Supima Cotton Crew Neck Short Sleeve T\";s:11:\"qty_per_box\";s:0:\"\";s:11:\"supplied_as\";s:0:\"\";s:13:\"supplier_code\";s:0:\"\";s:3:\"def\";s:1:\"0\";s:13:\"variant_photo\";a:8:{s:7:\"imageid\";s:1:\"1\";s:9:\"variantid\";s:3:\"174\";s:3:\"alt\";s:0:\"\";s:3:\"pos\";s:2:\"10\";s:1:\"x\";s:4:\"1920\";s:1:\"y\";s:3:\"914\";s:4:\"file\";s:5:\"1.jpg\";s:4:\"size\";s:5:\"86714\";}s:15:\"product_options\";a:2:{i:194;a:10:{s:7:\"groupid\";s:3:\"194\";s:9:\"productid\";s:3:\"113\";s:4:\"name\";s:5:\"Color\";s:8:\"fullname\";s:0:\"\";s:7:\"orderby\";s:2:\"10\";s:4:\"type\";s:1:\"g\";s:9:\"view_type\";s:1:\"p\";s:7:\"enabled\";s:1:\"1\";s:7:\"variant\";s:1:\"1\";s:6:\"option\";a:9:{s:8:\"optionid\";s:3:\"713\";s:7:\"groupid\";s:3:\"194\";s:4:\"name\";s:5:\"Black\";s:7:\"orderby\";s:2:\"10\";s:7:\"enabled\";s:1:\"1\";s:14:\"price_modifier\";s:4:\"0.00\";s:19:\"price_modifier_type\";s:1:\"%\";s:15:\"weight_modifier\";s:4:\"0.00\";s:20:\"weight_modifier_type\";s:1:\"%\";}}i:195;a:10:{s:7:\"groupid\";s:3:\"195\";s:9:\"productid\";s:3:\"113\";s:4:\"name\";s:4:\"Size\";s:8:\"fullname\";s:0:\"\";s:7:\"orderby\";s:2:\"20\";s:4:\"type\";s:1:\"g\";s:9:\"view_type\";s:1:\"p\";s:7:\"enabled\";s:1:\"1\";s:7:\"variant\";s:1:\"1\";s:6:\"option\";a:9:{s:8:\"optionid\";s:3:\"716\";s:7:\"groupid\";s:3:\"195\";s:4:\"name\";s:1:\"S\";s:7:\"orderby\";s:2:\"10\";s:7:\"enabled\";s:1:\"1\";s:14:\"price_modifier\";s:4:\"0.00\";s:19:\"price_modifier_type\";s:1:\"%\";s:15:\"weight_modifier\";s:4:\"0.00\";s:20:\"weight_modifier_type\";s:1:\"%\";}}}}}s:8:\"subtotal\";d:14.9;s:19:\"discounted_subtotal\";d:14.9;s:14:\"subtotal_taxed\";d:14.9;s:5:\"total\";d:29.8595;s:13:\"need_shipping\";i:1;s:10:\"shippingid\";s:4:\"2220\";s:13:\"shipping_cost\";d:12.245;s:11:\"tax_details\";a:11:{s:5:\"taxid\";s:1:\"1\";s:8:\"tax_name\";s:3:\"VAT\";s:16:\"tax_display_name\";s:3:\"VAT\";s:7:\"formula\";s:2:\"ST\";s:12:\"address_type\";s:1:\"B\";s:6:\"active\";s:1:\"Y\";s:18:\"price_includes_tax\";s:1:\"N\";s:21:\"display_including_tax\";s:1:\"N\";s:12:\"display_info\";s:0:\"\";s:9:\"regnumber\";s:0:\"\";s:8:\"priority\";s:1:\"0\";}s:3:\"tax\";d:2.7145;s:9:\"paymentid\";s:1:\"2\";}', 1656435579, 0, 0),
 (2977, 0, 'spa@cart.com', 'a:11:{s:8:\"products\";a:1:{i:0;a:30:{s:6:\"cartid\";i:1;s:9:\"productid\";s:3:\"151\";s:8:\"quantity\";i:3;s:7:\"options\";a:1:{i:266;s:3:\"972\";}s:9:\"variantid\";b:0;s:7:\"photoid\";s:3:\"470\";s:3:\"sku\";s:6:\"SKU623\";s:7:\"brandid\";s:1:\"4\";s:8:\"cleanurl\";s:17:\"Beaded-Belt-Chain\";s:4:\"name\";s:17:\"Beaded Belt Chain\";s:5:\"descr\";s:90:\"<ul>\r\n	<li>Available In Silver</li>\r\n	<li>Beaded Metal</li>\r\n	<li>Pant Chain</li>\r\n</ul>\r\n\";s:8:\"keywords\";s:0:\"\";s:10:\"list_price\";s:2:\"14\";s:5:\"price\";d:8;s:6:\"weight\";d:0;s:5:\"avail\";s:4:\"1000\";s:11:\"avail_block\";s:1:\"0\";s:6:\"rating\";s:1:\"0\";s:6:\"status\";s:1:\"1\";s:7:\"deleted\";s:1:\"0\";s:8:\"add_date\";s:10:\"1545857988\";s:11:\"views_stats\";s:1:\"0\";s:11:\"sales_stats\";s:1:\"0\";s:9:\"del_stats\";s:1:\"0\";s:16:\"meta_description\";s:0:\"\";s:13:\"meta_keywords\";s:0:\"\";s:9:\"title_tag\";s:0:\"\";s:10:\"categoryid\";s:2:\"30\";s:5:\"photo\";a:8:{s:7:\"photoid\";s:3:\"470\";s:9:\"productid\";s:3:\"151\";s:3:\"alt\";s:0:\"\";s:4:\"file\";s:5:\"1.jpg\";s:4:\"size\";s:5:\"42905\";s:1:\"x\";s:3:\"760\";s:1:\"y\";s:4:\"1140\";s:3:\"pos\";s:1:\"0\";}s:15:\"product_options\";a:1:{i:266;a:10:{s:7:\"groupid\";s:3:\"266\";s:9:\"productid\";s:3:\"151\";s:4:\"name\";s:4:\"Size\";s:8:\"fullname\";s:0:\"\";s:7:\"orderby\";s:2:\"10\";s:4:\"type\";s:1:\"g\";s:9:\"view_type\";s:1:\"s\";s:7:\"enabled\";s:1:\"1\";s:7:\"variant\";s:1:\"0\";s:6:\"option\";a:9:{s:8:\"optionid\";s:3:\"972\";s:7:\"groupid\";s:3:\"266\";s:4:\"name\";s:2:\"OS\";s:7:\"orderby\";s:2:\"10\";s:7:\"enabled\";s:1:\"1\";s:14:\"price_modifier\";s:4:\"0.00\";s:19:\"price_modifier_type\";s:1:\"%\";s:15:\"weight_modifier\";s:4:\"0.00\";s:20:\"weight_modifier_type\";s:1:\"%\";}}}}}s:8:\"subtotal\";d:24;s:19:\"discounted_subtotal\";d:24;s:14:\"subtotal_taxed\";d:24;s:5:\"total\";d:26.4;s:13:\"need_shipping\";i:1;s:13:\"shipping_cost\";i:0;s:10:\"shippingid\";i:0;s:11:\"tax_details\";a:11:{s:5:\"taxid\";s:1:\"1\";s:8:\"tax_name\";s:3:\"VAT\";s:16:\"tax_display_name\";s:3:\"VAT\";s:7:\"formula\";s:2:\"ST\";s:12:\"address_type\";s:1:\"B\";s:6:\"active\";s:1:\"Y\";s:18:\"price_includes_tax\";s:1:\"N\";s:21:\"display_including_tax\";s:1:\"N\";s:12:\"display_info\";s:0:\"\";s:9:\"regnumber\";s:0:\"\";s:8:\"priority\";s:1:\"0\";}s:3:\"tax\";d:2.4;s:9:\"paymentid\";s:1:\"2\";}', 1677186113, 0, 0),
-(9468, 848, '', 'a:11:{s:8:\"products\";a:1:{i:0;a:38:{s:6:\"cartid\";i:1;s:9:\"productid\";s:3:\"123\";s:8:\"quantity\";i:1;s:7:\"options\";a:2:{i:214;s:3:\"805\";i:215;s:3:\"806\";}s:9:\"variantid\";s:2:\"54\";s:7:\"photoid\";s:3:\"397\";s:3:\"sku\";s:18:\"SKU111111111111111\";s:7:\"brandid\";s:1:\"4\";s:8:\"cleanurl\";s:48:\"ALTERNATIVE-Rocky-Eco-Fleece-Zip-Hoodie-Eco-True\";s:4:\"name\";s:48:\"ALTERNATIVE Rocky Eco-Fleece Zip Hoodie Eco True\";s:5:\"descr\";s:157:\"<p>alternative rocky eco-fleece zip hoodie eco true<br />\r\n<br />\r\n<br />\r\n<br />\r\nFashion Item for Man of type sweatshirts for Fall Winter Season 2017</p>\r\n\";s:8:\"keywords\";s:0:\"\";s:10:\"list_price\";s:2:\"65\";s:5:\"price\";s:7:\"59.0000\";s:6:\"weight\";s:4:\"0.00\";s:5:\"avail\";s:4:\"1000\";s:11:\"avail_block\";s:1:\"0\";s:6:\"rating\";s:1:\"0\";s:6:\"status\";s:1:\"1\";s:7:\"deleted\";s:1:\"0\";s:8:\"add_date\";s:10:\"1545836583\";s:11:\"views_stats\";s:2:\"54\";s:11:\"sales_stats\";s:1:\"2\";s:9:\"del_stats\";s:1:\"0\";s:16:\"meta_description\";s:0:\"\";s:13:\"meta_keywords\";s:0:\"\";s:9:\"title_tag\";s:0:\"\";s:10:\"categoryid\";s:2:\"27\";s:5:\"title\";s:48:\"ALTERNATIVE Rocky Eco-Fleece Zip Hoodie Eco True\";s:11:\"qty_per_box\";s:0:\"\";s:11:\"supplied_as\";s:0:\"\";s:13:\"supplier_code\";s:0:\"\";s:3:\"def\";s:1:\"0\";s:13:\"variant_photo\";N;s:5:\"photo\";a:8:{s:7:\"photoid\";s:3:\"397\";s:9:\"productid\";s:3:\"123\";s:3:\"alt\";s:0:\"\";s:4:\"file\";s:5:\"1.jpg\";s:4:\"size\";s:6:\"682078\";s:1:\"x\";s:4:\"1200\";s:1:\"y\";s:4:\"1300\";s:3:\"pos\";s:2:\"10\";}s:15:\"product_options\";a:2:{i:214;a:10:{s:7:\"groupid\";s:3:\"214\";s:9:\"productid\";s:3:\"123\";s:4:\"name\";s:4:\"Size\";s:8:\"fullname\";s:0:\"\";s:7:\"orderby\";s:2:\"10\";s:4:\"type\";s:1:\"g\";s:9:\"view_type\";s:1:\"p\";s:7:\"enabled\";s:1:\"1\";s:7:\"variant\";s:1:\"1\";s:6:\"option\";a:9:{s:8:\"optionid\";s:3:\"805\";s:7:\"groupid\";s:3:\"214\";s:4:\"name\";s:2:\"XL\";s:7:\"orderby\";s:2:\"50\";s:7:\"enabled\";s:1:\"1\";s:14:\"price_modifier\";s:5:\"15.00\";s:19:\"price_modifier_type\";s:1:\"%\";s:15:\"weight_modifier\";s:4:\"0.00\";s:20:\"weight_modifier_type\";s:1:\"%\";}}i:215;a:10:{s:7:\"groupid\";s:3:\"215\";s:9:\"productid\";s:3:\"123\";s:4:\"name\";s:5:\"Color\";s:8:\"fullname\";s:0:\"\";s:7:\"orderby\";s:2:\"20\";s:4:\"type\";s:1:\"g\";s:9:\"view_type\";s:1:\"p\";s:7:\"enabled\";s:1:\"1\";s:7:\"variant\";s:1:\"1\";s:6:\"option\";a:9:{s:8:\"optionid\";s:3:\"806\";s:7:\"groupid\";s:3:\"215\";s:4:\"name\";s:5:\"Green\";s:7:\"orderby\";s:2:\"10\";s:7:\"enabled\";s:1:\"1\";s:14:\"price_modifier\";s:4:\"0.00\";s:19:\"price_modifier_type\";s:1:\"%\";s:15:\"weight_modifier\";s:4:\"0.00\";s:20:\"weight_modifier_type\";s:1:\"%\";}}}s:5:\"brand\";a:9:{s:7:\"brandid\";s:1:\"4\";s:8:\"cleanurl\";s:5:\"Apple\";s:4:\"name\";s:5:\"Apple\";s:5:\"descr\";s:0:\"\";s:10:\"meta_title\";s:0:\"\";s:13:\"meta_keywords\";s:0:\"\";s:10:\"meta_descr\";s:0:\"\";s:6:\"active\";s:1:\"Y\";s:7:\"orderby\";s:2:\"30\";}s:11:\"brand_image\";a:6:{s:7:\"imageid\";s:3:\"143\";s:7:\"brandid\";s:1:\"4\";s:4:\"file\";s:15:\"brand-icon2.png\";s:1:\"x\";s:3:\"300\";s:1:\"y\";s:3:\"170\";s:4:\"size\";s:4:\"5388\";}}}s:8:\"subtotal\";d:59;s:19:\"discounted_subtotal\";d:59;s:14:\"subtotal_taxed\";d:59;s:5:\"total\";d:80.795;s:13:\"need_shipping\";i:1;s:10:\"shippingid\";s:4:\"2220\";s:13:\"shipping_cost\";d:14.45;s:11:\"tax_details\";a:11:{s:5:\"taxid\";s:1:\"1\";s:8:\"tax_name\";s:3:\"VAT\";s:16:\"tax_display_name\";s:3:\"VAT\";s:7:\"formula\";s:2:\"ST\";s:12:\"address_type\";s:1:\"B\";s:6:\"active\";s:1:\"Y\";s:18:\"price_includes_tax\";s:1:\"N\";s:21:\"display_including_tax\";s:1:\"N\";s:12:\"display_info\";s:0:\"\";s:9:\"regnumber\";s:0:\"\";s:8:\"priority\";s:1:\"0\";}s:3:\"tax\";d:7.345000000000001;s:9:\"paymentid\";s:1:\"7\";}', 1790241806, 0, 0);
+(12196, 848, '', 'a:11:{s:8:\"products\";a:4:{i:0;a:38:{s:6:\"cartid\";i:1;s:9:\"productid\";s:3:\"129\";s:8:\"quantity\";i:2;s:7:\"options\";a:2:{i:226;s:3:\"845\";i:227;s:3:\"850\";}s:9:\"variantid\";s:3:\"270\";s:7:\"photoid\";s:3:\"412\";s:3:\"sku\";s:6:\"SKU171\";s:7:\"brandid\";s:1:\"4\";s:8:\"cleanurl\";s:26:\"STUSSY-SMOOTH-STOCK-LS-TEE\";s:4:\"name\";s:26:\"STUSSY SMOOTH STOCK LS TEE\";s:5:\"descr\";s:28:\"<p>SMOOTH STOCK LS TEE</p>\r\n\";s:8:\"keywords\";s:0:\"\";s:10:\"list_price\";s:2:\"57\";s:5:\"price\";s:7:\"49.0000\";s:6:\"weight\";s:4:\"0.00\";s:5:\"avail\";s:3:\"988\";s:11:\"avail_block\";s:1:\"0\";s:6:\"rating\";s:1:\"0\";s:6:\"status\";s:1:\"1\";s:7:\"deleted\";s:1:\"0\";s:8:\"add_date\";s:10:\"1545840730\";s:11:\"views_stats\";s:2:\"93\";s:11:\"sales_stats\";s:1:\"9\";s:9:\"del_stats\";s:1:\"0\";s:16:\"meta_description\";s:0:\"\";s:13:\"meta_keywords\";s:0:\"\";s:9:\"title_tag\";s:0:\"\";s:10:\"categoryid\";s:2:\"27\";s:5:\"brand\";a:9:{s:7:\"brandid\";s:1:\"4\";s:8:\"cleanurl\";s:5:\"Apple\";s:4:\"name\";s:5:\"Apple\";s:5:\"descr\";s:0:\"\";s:10:\"meta_title\";s:0:\"\";s:13:\"meta_keywords\";s:0:\"\";s:10:\"meta_descr\";s:0:\"\";s:6:\"active\";s:1:\"Y\";s:7:\"orderby\";s:2:\"30\";}s:11:\"brand_image\";a:6:{s:7:\"imageid\";s:3:\"143\";s:7:\"brandid\";s:1:\"4\";s:4:\"file\";s:15:\"brand-icon2.png\";s:1:\"x\";s:3:\"300\";s:1:\"y\";s:3:\"170\";s:4:\"size\";s:4:\"5388\";}s:5:\"title\";s:26:\"STUSSY SMOOTH STOCK LS TEE\";s:11:\"qty_per_box\";s:0:\"\";s:11:\"supplied_as\";s:0:\"\";s:13:\"supplier_code\";s:0:\"\";s:3:\"def\";s:1:\"0\";s:13:\"variant_photo\";N;s:5:\"photo\";a:8:{s:7:\"photoid\";s:3:\"412\";s:9:\"productid\";s:3:\"129\";s:3:\"alt\";s:0:\"\";s:4:\"file\";s:5:\"1.jpg\";s:4:\"size\";s:6:\"127584\";s:1:\"x\";s:4:\"1158\";s:1:\"y\";s:4:\"1228\";s:3:\"pos\";s:2:\"10\";}s:15:\"product_options\";a:2:{i:226;a:10:{s:7:\"groupid\";s:3:\"226\";s:9:\"productid\";s:3:\"129\";s:4:\"name\";s:4:\"Size\";s:8:\"fullname\";s:0:\"\";s:7:\"orderby\";s:2:\"10\";s:4:\"type\";s:1:\"g\";s:9:\"view_type\";s:1:\"p\";s:7:\"enabled\";s:1:\"1\";s:7:\"variant\";s:1:\"1\";s:6:\"option\";a:9:{s:8:\"optionid\";s:3:\"845\";s:7:\"groupid\";s:3:\"226\";s:4:\"name\";s:1:\"S\";s:7:\"orderby\";s:2:\"10\";s:7:\"enabled\";s:1:\"1\";s:14:\"price_modifier\";s:4:\"0.00\";s:19:\"price_modifier_type\";s:1:\"%\";s:15:\"weight_modifier\";s:4:\"0.00\";s:20:\"weight_modifier_type\";s:1:\"%\";}}i:227;a:10:{s:7:\"groupid\";s:3:\"227\";s:9:\"productid\";s:3:\"129\";s:4:\"name\";s:5:\"Color\";s:8:\"fullname\";s:0:\"\";s:7:\"orderby\";s:2:\"20\";s:4:\"type\";s:1:\"g\";s:9:\"view_type\";s:1:\"p\";s:7:\"enabled\";s:1:\"1\";s:7:\"variant\";s:1:\"1\";s:6:\"option\";a:9:{s:8:\"optionid\";s:3:\"850\";s:7:\"groupid\";s:3:\"227\";s:4:\"name\";s:5:\"White\";s:7:\"orderby\";s:2:\"10\";s:7:\"enabled\";s:1:\"1\";s:14:\"price_modifier\";s:4:\"0.00\";s:19:\"price_modifier_type\";s:1:\"%\";s:15:\"weight_modifier\";s:4:\"0.00\";s:20:\"weight_modifier_type\";s:1:\"%\";}}}}i:1;a:3:{s:6:\"cartid\";i:2;s:6:\"amount\";s:2:\"15\";s:9:\"gift_card\";s:16:\"6D5E2C3DFFB605E2\";}i:2;a:32:{s:6:\"cartid\";i:3;s:9:\"productid\";s:3:\"255\";s:8:\"quantity\";i:1;s:7:\"options\";a:2:{i:466;s:4:\"1666\";i:467;s:4:\"1675\";}s:9:\"variantid\";b:0;s:7:\"photoid\";s:3:\"783\";s:3:\"sku\";s:7:\"SKU3125\";s:7:\"brandid\";s:1:\"4\";s:8:\"cleanurl\";s:73:\"Wholesale-Natural-Gemstone-Round-Spacer-Loose-Beads-4MM-6MM-8MM-10MM-12MM\";s:4:\"name\";s:73:\"Wholesale Natural Gemstone Round Spacer Loose Beads 4MM 6MM 8MM 10MM 12MM\";s:5:\"descr\";s:99:\"<p>&ldquo;Brand New, SPECIAL OFFER FOR BULK ORDER! ORDER 10 PACKS GET 1 PACK FOR FREE!&rdquo;</p>\r\n\";s:8:\"keywords\";s:0:\"\";s:10:\"list_price\";s:1:\"2\";s:5:\"price\";d:1;s:6:\"weight\";d:0;s:5:\"avail\";s:4:\"1000\";s:11:\"avail_block\";s:1:\"0\";s:6:\"rating\";s:1:\"0\";s:6:\"status\";s:1:\"1\";s:7:\"deleted\";s:1:\"0\";s:8:\"add_date\";s:10:\"1546007218\";s:11:\"views_stats\";s:1:\"1\";s:11:\"sales_stats\";s:1:\"0\";s:9:\"del_stats\";s:1:\"0\";s:16:\"meta_description\";s:0:\"\";s:13:\"meta_keywords\";s:0:\"\";s:9:\"title_tag\";s:0:\"\";s:10:\"categoryid\";s:2:\"42\";s:5:\"brand\";a:9:{s:7:\"brandid\";s:1:\"4\";s:8:\"cleanurl\";s:5:\"Apple\";s:4:\"name\";s:5:\"Apple\";s:5:\"descr\";s:0:\"\";s:10:\"meta_title\";s:0:\"\";s:13:\"meta_keywords\";s:0:\"\";s:10:\"meta_descr\";s:0:\"\";s:6:\"active\";s:1:\"Y\";s:7:\"orderby\";s:2:\"30\";}s:11:\"brand_image\";a:6:{s:7:\"imageid\";s:3:\"143\";s:7:\"brandid\";s:1:\"4\";s:4:\"file\";s:15:\"brand-icon2.png\";s:1:\"x\";s:3:\"300\";s:1:\"y\";s:3:\"170\";s:4:\"size\";s:4:\"5388\";}s:5:\"photo\";a:8:{s:7:\"photoid\";s:3:\"783\";s:9:\"productid\";s:3:\"255\";s:3:\"alt\";s:0:\"\";s:4:\"file\";s:5:\"1.jpg\";s:4:\"size\";s:6:\"150885\";s:1:\"x\";s:3:\"800\";s:1:\"y\";s:3:\"800\";s:3:\"pos\";s:2:\"10\";}s:15:\"product_options\";a:2:{i:466;a:10:{s:7:\"groupid\";s:3:\"466\";s:9:\"productid\";s:3:\"255\";s:4:\"name\";s:4:\"Size\";s:8:\"fullname\";s:0:\"\";s:7:\"orderby\";s:2:\"20\";s:4:\"type\";s:1:\"g\";s:9:\"view_type\";s:1:\"p\";s:7:\"enabled\";s:1:\"1\";s:7:\"variant\";s:1:\"0\";s:6:\"option\";a:9:{s:8:\"optionid\";s:4:\"1666\";s:7:\"groupid\";s:3:\"466\";s:4:\"name\";s:5:\"Lapis\";s:7:\"orderby\";s:2:\"10\";s:7:\"enabled\";s:1:\"1\";s:14:\"price_modifier\";s:4:\"0.00\";s:19:\"price_modifier_type\";s:1:\"%\";s:15:\"weight_modifier\";s:4:\"0.00\";s:20:\"weight_modifier_type\";s:1:\"%\";}}i:467;a:10:{s:7:\"groupid\";s:3:\"467\";s:9:\"productid\";s:3:\"255\";s:4:\"name\";s:5:\"Color\";s:8:\"fullname\";s:0:\"\";s:7:\"orderby\";s:2:\"30\";s:4:\"type\";s:1:\"g\";s:9:\"view_type\";s:1:\"p\";s:7:\"enabled\";s:1:\"1\";s:7:\"variant\";s:1:\"0\";s:6:\"option\";a:9:{s:8:\"optionid\";s:4:\"1675\";s:7:\"groupid\";s:3:\"467\";s:4:\"name\";s:3:\"8MM\";s:7:\"orderby\";s:2:\"30\";s:7:\"enabled\";s:1:\"1\";s:14:\"price_modifier\";s:4:\"0.00\";s:19:\"price_modifier_type\";s:1:\"%\";s:15:\"weight_modifier\";s:4:\"0.00\";s:20:\"weight_modifier_type\";s:1:\"%\";}}}}i:3;a:32:{s:6:\"cartid\";i:4;s:9:\"productid\";s:3:\"221\";s:8:\"quantity\";i:1;s:7:\"options\";a:2:{i:400;s:4:\"1281\";i:401;s:4:\"1282\";}s:9:\"variantid\";b:0;s:7:\"photoid\";s:3:\"681\";s:3:\"sku\";s:6:\"SKU946\";s:7:\"brandid\";s:1:\"4\";s:8:\"cleanurl\";s:61:\"14kt-Gold-Emerald-and-Diamond-4mm-Round-filligree-Scroll-Ring\";s:4:\"name\";s:61:\"14kt Gold Emerald and Diamond 4mm Round filligree Scroll Ring\";s:5:\"descr\";s:119:\"<ul>\r\n	<li>Premium (AA) quality genuine Emerald</li>\r\n	<li>14 karat solid gold</li>\r\n	<li>Made in the USA</li>\r\n</ul>\r\n\";s:8:\"keywords\";s:0:\"\";s:10:\"list_price\";s:3:\"209\";s:5:\"price\";d:218.9;s:6:\"weight\";d:0;s:5:\"avail\";s:3:\"993\";s:11:\"avail_block\";s:1:\"0\";s:6:\"rating\";s:1:\"0\";s:6:\"status\";s:1:\"1\";s:7:\"deleted\";s:1:\"0\";s:8:\"add_date\";s:10:\"1545986311\";s:11:\"views_stats\";s:1:\"8\";s:11:\"sales_stats\";s:1:\"5\";s:9:\"del_stats\";s:1:\"0\";s:16:\"meta_description\";s:0:\"\";s:13:\"meta_keywords\";s:0:\"\";s:9:\"title_tag\";s:0:\"\";s:10:\"categoryid\";s:2:\"38\";s:5:\"brand\";a:9:{s:7:\"brandid\";s:1:\"4\";s:8:\"cleanurl\";s:5:\"Apple\";s:4:\"name\";s:5:\"Apple\";s:5:\"descr\";s:0:\"\";s:10:\"meta_title\";s:0:\"\";s:13:\"meta_keywords\";s:0:\"\";s:10:\"meta_descr\";s:0:\"\";s:6:\"active\";s:1:\"Y\";s:7:\"orderby\";s:2:\"30\";}s:11:\"brand_image\";a:6:{s:7:\"imageid\";s:3:\"143\";s:7:\"brandid\";s:1:\"4\";s:4:\"file\";s:15:\"brand-icon2.png\";s:1:\"x\";s:3:\"300\";s:1:\"y\";s:3:\"170\";s:4:\"size\";s:4:\"5388\";}s:5:\"photo\";a:8:{s:7:\"photoid\";s:3:\"681\";s:9:\"productid\";s:3:\"221\";s:3:\"alt\";s:0:\"\";s:4:\"file\";s:5:\"1.jpg\";s:4:\"size\";s:5:\"15095\";s:1:\"x\";s:3:\"400\";s:1:\"y\";s:3:\"400\";s:3:\"pos\";s:2:\"10\";}s:15:\"product_options\";a:2:{i:400;a:10:{s:7:\"groupid\";s:3:\"400\";s:9:\"productid\";s:3:\"221\";s:4:\"name\";s:12:\"Stone Weight\";s:8:\"fullname\";s:0:\"\";s:7:\"orderby\";s:2:\"10\";s:4:\"type\";s:1:\"g\";s:9:\"view_type\";s:1:\"p\";s:7:\"enabled\";s:1:\"1\";s:7:\"variant\";s:1:\"0\";s:6:\"option\";a:9:{s:8:\"optionid\";s:4:\"1281\";s:7:\"groupid\";s:3:\"400\";s:4:\"name\";s:11:\"0.40 carats\";s:7:\"orderby\";s:2:\"20\";s:7:\"enabled\";s:1:\"1\";s:14:\"price_modifier\";s:5:\"10.00\";s:19:\"price_modifier_type\";s:1:\"%\";s:15:\"weight_modifier\";s:4:\"0.00\";s:20:\"weight_modifier_type\";s:1:\"%\";}}i:401;a:10:{s:7:\"groupid\";s:3:\"401\";s:9:\"productid\";s:3:\"221\";s:4:\"name\";s:5:\"Color\";s:8:\"fullname\";s:0:\"\";s:7:\"orderby\";s:2:\"20\";s:4:\"type\";s:1:\"g\";s:9:\"view_type\";s:1:\"p\";s:7:\"enabled\";s:1:\"1\";s:7:\"variant\";s:1:\"0\";s:6:\"option\";a:9:{s:8:\"optionid\";s:4:\"1282\";s:7:\"groupid\";s:3:\"401\";s:4:\"name\";s:11:\"silver gold\";s:7:\"orderby\";s:2:\"10\";s:7:\"enabled\";s:1:\"1\";s:14:\"price_modifier\";s:4:\"0.00\";s:19:\"price_modifier_type\";s:1:\"%\";s:15:\"weight_modifier\";s:4:\"0.00\";s:20:\"weight_modifier_type\";s:1:\"%\";}}}}}s:8:\"subtotal\";d:332.9;s:19:\"discounted_subtotal\";d:332.9;s:14:\"subtotal_taxed\";d:317.9;s:5:\"total\";d:332.9;s:13:\"need_shipping\";i:1;s:10:\"shippingid\";s:4:\"2220\";s:13:\"shipping_cost\";d:0;s:11:\"tax_details\";a:11:{s:5:\"taxid\";s:1:\"1\";s:8:\"tax_name\";s:3:\"VAT\";s:16:\"tax_display_name\";s:3:\"VAT\";s:7:\"formula\";s:2:\"ST\";s:12:\"address_type\";s:1:\"B\";s:6:\"active\";s:1:\"Y\";s:18:\"price_includes_tax\";s:1:\"N\";s:21:\"display_including_tax\";s:1:\"N\";s:12:\"display_info\";s:0:\"\";s:9:\"regnumber\";s:0:\"\";s:8:\"priority\";s:1:\"0\";}s:3:\"tax\";d:11.3;s:9:\"paymentid\";s:1:\"7\";}', 1790752866, 0, 0);
 
 -- --------------------------------------------------------
 
@@ -12223,7 +12036,7 @@ INSERT INTO `user_sessions` (`id`, `userid`, `name`, `value`) VALUES
 (22507, 857, 'recently', 'a:17:{i:0;s:3:\"113\";i:1;s:3:\"261\";i:2;s:3:\"260\";i:3;s:3:\"132\";i:4;s:3:\"118\";i:5;s:3:\"122\";i:8;s:3:\"126\";i:12;s:3:\"130\";i:14;s:3:\"121\";i:18;s:3:\"250\";i:28;s:3:\"154\";i:34;s:3:\"211\";i:35;s:3:\"264\";i:39;s:3:\"183\";i:40;s:3:\"166\";i:42;s:3:\"119\";i:43;s:3:\"215\";}'),
 (23361, 858, 'recently', 'a:2:{i:1;s:3:\"185\";i:3;s:3:\"215\";}'),
 (24647, 859, 'recently', 'a:8:{i:3;s:3:\"215\";i:46;s:3:\"247\";i:49;s:3:\"188\";i:60;s:3:\"190\";i:61;s:3:\"185\";i:63;s:3:\"113\";i:66;s:3:\"129\";i:67;s:3:\"170\";}'),
-(32026, 848, 'recently', 'a:19:{i:1;s:3:\"222\";i:2;s:3:\"218\";i:3;s:3:\"129\";i:4;s:3:\"131\";i:6;s:3:\"197\";i:7;s:3:\"195\";i:8;s:3:\"220\";i:10;s:3:\"113\";i:14;s:3:\"264\";i:15;s:3:\"263\";i:25;s:3:\"128\";i:27;s:3:\"123\";i:29;s:3:\"260\";i:44;s:3:\"215\";i:46;s:3:\"135\";i:47;s:3:\"136\";i:48;s:3:\"148\";i:49;s:3:\"149\";i:56;s:3:\"127\";}');
+(34774, 848, 'recently', 'a:20:{i:0;s:3:\"197\";i:1;s:3:\"195\";i:2;s:3:\"220\";i:3;s:3:\"264\";i:4;s:3:\"263\";i:5;s:3:\"128\";i:6;s:3:\"123\";i:7;s:3:\"260\";i:8;s:3:\"215\";i:9;s:3:\"135\";i:10;s:3:\"136\";i:12;s:3:\"149\";i:13;s:3:\"127\";i:14;s:3:\"186\";i:15;s:3:\"113\";i:16;s:3:\"187\";i:17;s:3:\"129\";i:19;s:3:\"255\";i:20;s:3:\"221\";i:28;s:3:\"148\";}');
 
 -- --------------------------------------------------------
 
@@ -13472,8 +13285,7 @@ INSERT INTO `wishlist` (`wlid`, `userid`, `productid`, `date`) VALUES
 (2, 848, 215, 1671894234),
 (3, 848, 260, 1680611677),
 (4, 848, 256, 1680613170),
-(5, 848, 218, 1680616987),
-(6, 848, 128, 1681662619);
+(5, 848, 218, 1680616987);
 
 -- --------------------------------------------------------
 
@@ -13878,6 +13690,12 @@ ALTER TABLE `memberships`
   ADD PRIMARY KEY (`membershipid`);
 
 --
+-- Индексы таблицы `modules`
+--
+ALTER TABLE `modules`
+  ADD PRIMARY KEY (`moduleid`);
+
+--
 -- Индексы таблицы `news`
 --
 ALTER TABLE `news`
@@ -14196,7 +14014,7 @@ ALTER TABLE `currencies`
 -- AUTO_INCREMENT для таблицы `languages`
 --
 ALTER TABLE `languages`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4060;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4141;
 
 --
 -- AUTO_INCREMENT для таблицы `languages_codes`
@@ -14215,6 +14033,12 @@ ALTER TABLE `letters`
 --
 ALTER TABLE `memberships`
   MODIFY `membershipid` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT для таблицы `modules`
+--
+ALTER TABLE `modules`
+  MODIFY `moduleid` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT для таблицы `news`
@@ -14250,13 +14074,13 @@ ALTER TABLE `option_groups`
 -- AUTO_INCREMENT для таблицы `orders`
 --
 ALTER TABLE `orders`
-  MODIFY `orderid` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
+  MODIFY `orderid` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=34;
 
 --
 -- AUTO_INCREMENT для таблицы `order_items`
 --
 ALTER TABLE `order_items`
-  MODIFY `itemid` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=53;
+  MODIFY `itemid` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=59;
 
 --
 -- AUTO_INCREMENT для таблицы `order_item_inventory`
@@ -14346,7 +14170,7 @@ ALTER TABLE `tax_rates`
 -- AUTO_INCREMENT для таблицы `templates`
 --
 ALTER TABLE `templates`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3567365;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=132;
 
 --
 -- AUTO_INCREMENT для таблицы `testimonials`
@@ -14382,7 +14206,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT для таблицы `users_carts`
 --
 ALTER TABLE `users_carts`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9469;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12197;
 
 --
 -- AUTO_INCREMENT для таблицы `users_remember`
@@ -14394,7 +14218,7 @@ ALTER TABLE `users_remember`
 -- AUTO_INCREMENT для таблицы `user_sessions`
 --
 ALTER TABLE `user_sessions`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32027;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=34775;
 
 --
 -- AUTO_INCREMENT для таблицы `variants`

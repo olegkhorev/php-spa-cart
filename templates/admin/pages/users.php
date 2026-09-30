@@ -1,3 +1,12 @@
+<?php
+/**
+* SPA-Cart
+* Copyright (c) Oleg Khorev
+*
+* Released under the MIT License.
+* https://github.com/olegkhorev/php-spa-cart
+*/
+?>
 <a href="/admin/user/new">{lng[Create new user account]}</a><br /><br />
 <form action="{$current_location}/admin/users/search" method="post" name="users_form">
 <input type="hidden" name="mode" value="" />

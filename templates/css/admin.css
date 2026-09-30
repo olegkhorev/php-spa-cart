@@ -874,7 +874,8 @@ input[disabled] {
 	line-height: 17px;
 	font-size: 14px;
 	background: #f8f8f8;
-	border-bottom: 1px solid #ccc;
+	border-bottom: 0;
+	border-radius: 16px 16px 0 0;
 }
 .db-stats-3 td {
 	background: transparent;
@@ -889,9 +890,15 @@ input[disabled] {
 .db-stats-3 table tr:nth-child(2n) td {
 	background: #f8f8f8;
 }
+.db-stats-3 table tr td:first-child {
+	background: #f8f8f8;
+}
 .db-stats-3 td.photo {
-	width: 50px;
+	width: 70px;
 	padding-right: 15px;
+}
+.db-stats-3 td.photo img {
+	border-radius: 100px;
 }
 .db-stats-3 td.name {
 	width: 100%;
@@ -1387,7 +1394,7 @@ body h1, body h2, body h3, body h4 {
     border: 0;
     background: var(--blue);
     color: #fff;
-	top: 30px;
+	top: -20px !important;
 }
 .admin-area .alerts a {
 	color: #fff;

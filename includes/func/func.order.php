@@ -1,4 +1,13 @@
 <?php
+/**
+* SPA-Cart
+* Copyright (c) Oleg Khorev
+*
+* Released under the MIT License.
+* https://github.com/olegkhorev/php-spa-cart
+*/
+?>
+<?php
 function order_status($orderid, $status, $calculate_processed = false) {
 	global $db, $order_statuses, $template, $company_name, $company_email, $config;
 	$order = $db->row("SELECT * FROM orders WHERE orderid='".addslashes($orderid)."'");

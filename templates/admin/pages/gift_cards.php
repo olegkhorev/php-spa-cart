@@ -1,3 +1,12 @@
+<?php
+/**
+* SPA-Cart
+* Copyright (c) Oleg Khorev
+*
+* Released under the MIT License.
+* https://github.com/olegkhorev/php-spa-cart
+*/
+?>
 <div class="padding-page gift_cards">
 <h3>{lng[Add a new gift card]}</h3>
 <form method="POST">

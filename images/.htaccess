@@ -1,0 +1,7 @@
+RewriteEngine On
+
+# If the request is a file and does NOT end with the allowed extensions
+RewriteCond %{REQUEST_FILENAME} -f
+RewriteCond %{REQUEST_URI} !(?i)\.(gif|jpe?g|png|js|svg)$
+# Block the request
+RewriteRule .* - [F,L]

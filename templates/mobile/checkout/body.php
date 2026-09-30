@@ -1,3 +1,12 @@
+<?php
+/**
+* SPA-Cart
+* Copyright (c) Oleg Khorev
+*
+* Released under the MIT License.
+* https://github.com/olegkhorev/php-spa-cart
+*/
+?>
 <div class="checkout-container">
 <h1><a href="{$current_location}/cart" class="ajax_link back-to-cart"><img src="/images/back_arrow.png" alt="" /></a>{lng[Checkout]}</h1>
 

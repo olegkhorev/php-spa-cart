@@ -1,4 +1,13 @@
 <?php
+/**
+* SPA-Cart
+* Copyright (c) Oleg Khorev
+*
+* Released under the MIT License.
+* https://github.com/olegkhorev/php-spa-cart
+*/
+?>
+<?php
 use FuzzyWuzzy\Fuzz;
 use FuzzyWuzzy\Process;
 use \Nullform\Fuzzio\Fuzzio;

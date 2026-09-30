@@ -40,6 +40,9 @@
 	padding: 10px 10px 30px 10px;}
 form[name="blogform"] a img {
 	margin: 0 5px -3px 0;}
+textarea[name="comment"] {
+	padding: 10px 15px;
+}
 @media only screen and (min-width: 800px) {
 	.blog .image {
 	    margin: 10px 20px 20px 0;

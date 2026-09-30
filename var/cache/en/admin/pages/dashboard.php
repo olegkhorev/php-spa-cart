@@ -1,3 +1,12 @@
+<?php 
+/**
+* SPA-Cart
+* Copyright (c) Oleg Khorev
+*
+* Released under the MIT License.
+* https://github.com/olegkhorev/php-spa-cart
+*/
+?>
 <table class="db-stats-1" cellspacing="30">
 <tr>
  <td class="ajax_link td-1" href='/admin/products'><span><?php echo $products;?></span><h2>Products</h2></td>

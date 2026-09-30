@@ -1,4 +1,13 @@
 <?php
+/**
+* SPA-Cart
+* Copyright (c) Oleg Khorev
+*
+* Released under the MIT License.
+* https://github.com/olegkhorev/php-spa-cart
+*/
+?>
+<?php
 $export_dir = SITE_ROOT . '/var/import_export';
 if (!is_dir($export_dir))
 	mkdir($export_dir);

@@ -1,4 +1,13 @@
 <?php
+/**
+* SPA-Cart
+* Copyright (c) Oleg Khorev
+*
+* Released under the MIT License.
+* https://github.com/olegkhorev/php-spa-cart
+*/
+?>
+<?php
 $template['location'] .= ' &gt; '.lng('Statistic');
 $template['head_title'] = lng('Statistic').' :: '.$template['head_title'];
 $today = mktime(0, 0, 0, date('n'), date('j'), date('Y'));

@@ -1,3 +1,12 @@
+<?php
+/**
+* SPA-Cart
+* Copyright (c) Oleg Khorev
+*
+* Released under the MIT License.
+* https://github.com/olegkhorev/php-spa-cart
+*/
+?>
 <div class="tabs">
 <a href="/profile"{if $section != 'orders'} class="active"{/if}>{lng[Your profile]}</a>
 <a href="/profile/orders"{if $section == 'orders'} class="active"{/if}>{lng[Orders history]}</a>

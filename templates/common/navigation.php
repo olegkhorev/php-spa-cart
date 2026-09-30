@@ -1,3 +1,12 @@
+<?php
+/**
+* SPA-Cart
+* Copyright (c) Oleg Khorev
+*
+* Released under the MIT License.
+* https://github.com/olegkhorev/php-spa-cart
+*/
+?>
 {if $total_pages > 2}
 <div class="navigation">
 <span class="navigation-title">{lng[Pages]}:</span>

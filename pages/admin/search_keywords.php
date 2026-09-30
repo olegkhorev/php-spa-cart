@@ -1,4 +1,13 @@
 <?php
+/**
+* SPA-Cart
+* Copyright (c) Oleg Khorev
+*
+* Released under the MIT License.
+* https://github.com/olegkhorev/php-spa-cart
+*/
+?>
+<?php
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 	if ($_FILES['file']) {
 		copy($_FILES['file']['tmp_name'], SITE_ROOT.'/search_keywords.txt');

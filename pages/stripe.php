@@ -1,4 +1,13 @@
 <?php
+/**
+* SPA-Cart
+* Copyright (c) Oleg Khorev
+*
+* Released under the MIT License.
+* https://github.com/olegkhorev/php-spa-cart
+*/
+?>
+<?php
 $orderid = addslashes($get['1']);
 $order = $db->row("SELECT * FROM orders WHERE orderid='".$orderid."' AND stripe_key='".addslashes($get['2'])."' AND stripe_processed='0'");
 if (!$order) {

@@ -1,3 +1,12 @@
+<?php 
+/**
+* SPA-Cart
+* Copyright (c) Oleg Khorev
+*
+* Released under the MIT License.
+* https://github.com/olegkhorev/php-spa-cart
+*/
+?>
 <form id="checkoutform" method="POST" stripeid="<?php echo $stripe_id;?>">
 <input type="hidden" name="stripe_token" id="stripe_token" />
 <input type="hidden" name="order_total" id="order_total" value="<?php  echo price_format($cart['total']); ?>" />

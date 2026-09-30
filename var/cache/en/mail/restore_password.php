@@ -1,3 +1,12 @@
+<?php 
+/**
+* SPA-Cart
+* Copyright (c) Oleg Khorev
+*
+* Released under the MIT License.
+* https://github.com/olegkhorev/php-spa-cart
+*/
+?>
 <?php include SITE_ROOT."/var/cache/en/mail/header.php";?>
 <?php echo $email_header;?>
 Dear <?php echo $user['firstname'];?>,

@@ -1,4 +1,13 @@
-<table width="1000">
+<?php 
+/**
+* SPA-Cart
+* Copyright (c) Oleg Khorev
+*
+* Released under the MIT License.
+* https://github.com/olegkhorev/php-spa-cart
+*/
+?>
+<table width="1000" class="invoice-top-box">
 <tr>
  <td width="50%">
 <h1>Shipping info</h1>

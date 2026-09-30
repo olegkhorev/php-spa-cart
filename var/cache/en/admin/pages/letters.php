@@ -1,3 +1,12 @@
+<?php 
+/**
+* SPA-Cart
+* Copyright (c) Oleg Khorev
+*
+* Released under the MIT License.
+* https://github.com/olegkhorev/php-spa-cart
+*/
+?>
 <a href="<?php  echo $current_location; ?>/admin/subscribtions/<?php  echo $get['2']; ?>/new">Add new</a>
 <br /><br />
 Total subscribers: <?php  echo $subscribers ? $subscribers : '0';?> <a href="/admin/subscribtions/<?php  echo $get['2']; ?>/export">Export</a>

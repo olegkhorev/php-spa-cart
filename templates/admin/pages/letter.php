@@ -1,3 +1,12 @@
+<?php
+/**
+* SPA-Cart
+* Copyright (c) Oleg Khorev
+*
+* Released under the MIT License.
+* https://github.com/olegkhorev/php-spa-cart
+*/
+?>
 {lng[Total subscribers]}: <?php echo $subscribers ? $subscribers : '0';?> <a href="/admin/subscribtions/export">{lng[Export]}</a>
 <br /><br />
 <script src="<?php echo $current_location; ?>/ckeditor/ckeditor.js"></script>

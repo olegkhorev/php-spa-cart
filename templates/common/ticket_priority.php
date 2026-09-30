@@ -1,3 +1,12 @@
+<?php
+/**
+* SPA-Cart
+* Copyright (c) Oleg Khorev
+*
+* Released under the MIT License.
+* https://github.com/olegkhorev/php-spa-cart
+*/
+?>
 {if $mode == "plain"}
 {if $value == "1"}{lng[lbl_ticket_priority_1]}{elseif $value == "2"}{lng[lbl_ticket_priority_2]}{elseif $value == "3"}{lng[lbl_ticket_priority_3]}{elseif $value == "4"}{lng[lbl_ticket_priority_4]}{/if}
 {elseif $mode == "static"}

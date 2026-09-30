@@ -1,3 +1,12 @@
+<?php 
+/**
+* SPA-Cart
+* Copyright (c) Oleg Khorev
+*
+* Released under the MIT License.
+* https://github.com/olegkhorev/php-spa-cart
+*/
+?>
 <div class="page-container">
 <div class="withleftmenu">
 <div class="left_filter">
@@ -22,6 +31,9 @@
 <?php if ($config['Visual']['visual_recently'] == 'Y' && $recently && $get['0'] != 'checkout') {?>
 <?php if ($get['0'] != 'product' && $get['0'] != 'home') {?>
 </div></div>
+<?php } ?>
+<?php if ($get['0'] == 'blog' && $get['1']) {?>
+</div>
 <?php } ?>
 </div>
 </div>

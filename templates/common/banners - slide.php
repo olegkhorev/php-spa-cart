@@ -1,3 +1,12 @@
+<?php
+/**
+* SPA-Cart
+* Copyright (c) Oleg Khorev
+*
+* Released under the MIT License.
+* https://github.com/olegkhorev/php-spa-cart
+*/
+?>
 <div id="banners"><ul style="width: {php echo count($banners) * 730;}px;">
 {foreach $banners as $k=>$v}
 <li id="banner_{$k}">

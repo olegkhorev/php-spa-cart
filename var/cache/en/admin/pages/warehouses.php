@@ -1,3 +1,12 @@
+<?php 
+/**
+* SPA-Cart
+* Copyright (c) Oleg Khorev
+*
+* Released under the MIT License.
+* https://github.com/olegkhorev/php-spa-cart
+*/
+?>
 <?php /* ?>
 <label><input type="checkbox" id="wenabled"<?php if ($config['warehouse_enabled']) {?> checked<?php } ?>> Enable warehouses</label>
 <div class="warehouses-area<?php if (!$config['warehouse_enabled']) {?> hidden<?php } ?>">

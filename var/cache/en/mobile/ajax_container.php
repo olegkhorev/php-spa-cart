@@ -1,3 +1,12 @@
+<?php 
+/**
+* SPA-Cart
+* Copyright (c) Oleg Khorev
+*
+* Released under the MIT License.
+* https://github.com/olegkhorev/php-spa-cart
+*/
+?>
 <div class="page-container">
 <?php if ($alerts) {?>
  <div class="alerts"><span onclick="javascript: $('.alerts').slideUp();"><b>X</b></span>

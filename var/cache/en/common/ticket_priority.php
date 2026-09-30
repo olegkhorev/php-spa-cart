@@ -1,3 +1,12 @@
+<?php 
+/**
+* SPA-Cart
+* Copyright (c) Oleg Khorev
+*
+* Released under the MIT License.
+* https://github.com/olegkhorev/php-spa-cart
+*/
+?>
 <?php if ($mode == "plain") {?>
 <?php if ($value == "1") {?>Can wait<?php } else if ($value == "2") {?>Normal<?php } else if ($value == "3") {?>High<?php } else if ($value == "4") {?>Hot Rush<?php } ?>
 <?php } else if ($mode == "static") {?>

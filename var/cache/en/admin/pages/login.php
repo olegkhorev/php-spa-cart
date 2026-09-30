@@ -1,3 +1,12 @@
+<?php 
+/**
+* SPA-Cart
+* Copyright (c) Oleg Khorev
+*
+* Released under the MIT License.
+* https://github.com/olegkhorev/php-spa-cart
+*/
+?>
 <h1>Please, login to use the admin area</h1>
 
 <form name="login" method="POST" action="/admin/login" class="noajax">

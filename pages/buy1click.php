@@ -1,4 +1,13 @@
 <?php
+/**
+* SPA-Cart
+* Copyright (c) Oleg Khorev
+*
+* Released under the MIT License.
+* https://github.com/olegkhorev/php-spa-cart
+*/
+?>
+<?php
 if ($_GET['phone']) {
 	extract($_GET);
 	if ($_SESSION['b1c_sent']['time'] > time() - 10) {

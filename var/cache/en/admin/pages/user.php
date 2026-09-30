@@ -1,3 +1,12 @@
+<?php 
+/**
+* SPA-Cart
+* Copyright (c) Oleg Khorev
+*
+* Released under the MIT License.
+* https://github.com/olegkhorev/php-spa-cart
+*/
+?>
 <a href="/admin/user/new">Create new user account</a><br /><br />
 <form method="post" name="user_form_admin"<?php /* ?><?php if (!$user['id']) {?> class="noajax"<?php } ?><?php */ ?>>
 <table cellpadding="2" class="user_table normal-table">

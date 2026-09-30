@@ -1,4 +1,12 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<?php
+/**
+* SPA-Cart
+* Copyright (c) Oleg Khorev
+*
+* Released under the MIT License.
+* https://github.com/olegkhorev/php-spa-cart
+*/
+?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:g="http://base.google.com/ns/1.0" xmlns:og="http://ogp.me/ns#" xmlns:fb="http://ogp.me/ns/fb#" class="area-c">
 <head>
 <meta charset="utf-8" />
@@ -100,7 +108,7 @@ $(function() {
   <script src='https://js.braintreegateway.com/web/3.54.2/js/three-d-secure.js'></script>
   <script src="https://js.braintreegateway.com/web/3.54.2/js/hosted-fields.min.js"></script>
 </head>
-<body class="{if $get['0'] == 'category' || $get['0'] == 'search' || ($get['0'] == 'brands' && $get['1'])} withfilter{/if}{if $classes} {$classes}{/if}" id="body-{$get['0']}">
+<body class="{if $get['0'] == 'category' || $get['0'] == 'search' || ($get['0'] == 'brands' && $get['1'])} withfilter{/if}{if $classes} {$classes}{/if}" id="body-{$get['0']}{if $module}-{$module['code']}{/if}">
 
 <div class="mobile-left_menu">
 {if $config['General']['shop_closed'] != 'Y'}

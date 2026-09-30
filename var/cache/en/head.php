@@ -1,3 +1,12 @@
+<?php 
+/**
+* SPA-Cart
+* Copyright (c) Oleg Khorev
+*
+* Released under the MIT License.
+* https://github.com/olegkhorev/php-spa-cart
+*/
+?>
 <div class="head-line">
 <?php if ($config['Visual']['visual_language'] == 'Y' && $languages) {?>
 <div class="language_select">
@@ -44,11 +53,11 @@
 <a class="parent-link ajax_link" href="/news">News</a>
 <a class="header-email ajax_link" class="parent-link" href="<?php if ($config['Tickets']['use_tickets']) {?>/support_desk<?php } else  { ?>/help<?php } ?>"><svg><use xlink:href="/images/sprite.svg#email"></use></svg><?php /* ?><img src="/images/icons/email.png" alt="Email us" /><?php */ ?> Email us</a>
 <div>
-<a class="parent-link ajax_link" href="/page/about.html">About CMS</a>
+<a class="parent-link no-ajax" href="/page/about.html">Modules</a>
 <ul>
- <li><a class="ajax_link" href="<?php echo $current_location;?>/page/scripts-structure.html">Scripts structure</a></li>
- <li><a class="ajax_link" href="<?php echo $current_location;?>/page/templages-engine.html">Templates engine</a></li>
- <li><a class="ajax_link" href="<?php echo $current_location;?>/page/MySQL-standards.html">MySQL standards</a></li>
+ <li><a class="ajax_link" href="<?php echo $current_location;?>/module/sample_page/sample_page">Custom module</a></li>
+ <li><a class="no-ajax" href="<?php echo $current_location;?>/module/force_theme/sample_theme">Custom theme</a></li>
+ <li><a class="no-ajax" href="<?php echo $current_location;?>/module/force_theme/default">Default theme</a></li>
 </ul>
 </div>
 

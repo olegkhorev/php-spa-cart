@@ -133,6 +133,7 @@
 		display: none;
 	}
 	.header-links {
+		top: 15px;
 	}
 	.header-links select {
 		float: right;
@@ -369,7 +370,7 @@
 		width: 22.3333%;
 	}
 	.db-stats-1, .db-stats-2, .db-stats-3 {
-		margin: -30px 0;
+		margin: -20px 0 -20px 0;
 	}
 	body .db-stats-1 td, body .db-stats-2 td {
 		margin-left: 0;
@@ -601,6 +602,33 @@ tr.two-inputs .mdl-textfield {
 	width: calc(100% - 320px);	
 }
 @media only screen and (max-width: 650px) {
+	.invoice-top-box {
+		width: 100%;
+	}
+	.invoice-top-box td {
+		display: block;
+		width: 100%;
+	}
+	.invoice-top-box td:first-child {
+		padding-bottom: 30px;
+	}
+	.invoice-top-box td:first-child h1 {
+		padding-bottom: 20px;
+		margin-top: -20px;
+	}
+	.invoice-top-box button {
+		width: 290px;
+	}
+	.invoice-top-box td:first-child button {
+		margin-top: -10px;
+	}
+	.invoice-top-box td:last-child button {
+		margin-top: 20px;
+	}
+	.invoice-top-box .mdl-textfield {
+		display: block;
+		margin: 10px 0;
+	}
 	#ai_iframe {
 		top: 100px;
 		left: 20px;

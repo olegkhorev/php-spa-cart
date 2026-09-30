@@ -1125,7 +1125,30 @@
 		display: none;
 	}
 }
+@media only screen and (max-width: 550px) {
+	table.new_testimonial td {
+		display: block !important;
+		text-align: left !important;
+	}
+	table.product td.details {
+		padding-top: 0;
+	}
+	#product-details {
+		margin-top: -40px;
+	}
+	.allow-cookies {
+		left: 50%;
+		transform: translate(-50%, 0);
+	}
+}
+
 @media only screen and (max-width: 500px) {
+	.brands .brand {
+		width: calc(50% - 45px);
+	}
+	.brands .brand img {
+		max-width: 100%;
+	}
 	.main-container {
 		display: block;
 	}
@@ -1233,6 +1256,14 @@
 	}
    	table.product-options select, table.product-options input {
    		max-width: 130px;
+	}
+}
+@media only screen and (max-width: 400px) {
+	.brands .brand {
+		width: 205px;
+		margin: 0 auto 20px auto;
+		display: block;
+		float: none;
 	}
 }
 @media only screen and (max-width: 375px) {

@@ -1,3 +1,12 @@
+<?php 
+/**
+* SPA-Cart
+* Copyright (c) Oleg Khorev
+*
+* Released under the MIT License.
+* https://github.com/olegkhorev/php-spa-cart
+*/
+?>
 <form name="pform" action="<?php echo $current_location;?>/admin/pages/<?php  echo $get['2']; ?>" method="post"<?php /* ?><?php if (!$pages && !$page['id']) {?> class="noajax"<?php } ?><?php */ ?>>
 <input type="hidden" name="mode" value="" />
 <?php 

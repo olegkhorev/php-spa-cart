@@ -1,4 +1,13 @@
 <?php
+/**
+* SPA-Cart
+* Copyright (c) Oleg Khorev
+*
+* Released under the MIT License.
+* https://github.com/olegkhorev/php-spa-cart
+*/
+?>
+<?php
 function func_select_product($productid, $variantid = false, $amount = 0) {
 	global $db, $userinfo;
 	global $warehouse_enabled;

@@ -1,3 +1,12 @@
+<?php 
+/**
+* SPA-Cart
+* Copyright (c) Oleg Khorev
+*
+* Released under the MIT License.
+* https://github.com/olegkhorev/php-spa-cart
+*/
+?>
 <ul class="admin-tabs">
 <li><a href="<?php echo $current_location;?>/admin/shipping">Shipping methods</a></li>
 <li class="active"><a href="<?php echo $current_location;?>/admin/shipping?mode=add_realtime_methods">Manage realtime shipping methods</a></li>

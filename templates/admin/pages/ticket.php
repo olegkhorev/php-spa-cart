@@ -1,3 +1,12 @@
+<?php
+/**
+* SPA-Cart
+* Copyright (c) Oleg Khorev
+*
+* Released under the MIT License.
+* https://github.com/olegkhorev/php-spa-cart
+*/
+?>
 {if $ticket}
 <h1>{lng[Ticket]} #{$ticket['ticketid']}</h1>
 {else}

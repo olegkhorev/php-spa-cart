@@ -1,3 +1,12 @@
+<?php
+/**
+* SPA-Cart
+* Copyright (c) Oleg Khorev
+*
+* Released under the MIT License.
+* https://github.com/olegkhorev/php-spa-cart
+*/
+?>
 {if count($bread_crumbs) > 1}
 <div class="bread_crumbs">
 {foreach $bread_crumbs as $k=>$v}

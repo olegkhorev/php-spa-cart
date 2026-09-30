@@ -1,4 +1,13 @@
 <?php 
+/**
+* SPA-Cart
+* Copyright (c) Oleg Khorev
+*
+* Released under the MIT License.
+* https://github.com/olegkhorev/php-spa-cart
+*/
+?>
+<?php 
 if ($get['2'] != 'recent') {?>
 <form method="POST">
 <input type="hidden" name="mode" value="search" />
@@ -101,8 +110,8 @@ if ($orders) {
 		';
   	}
 
-	echo '<tr class="resp-width-100">><td colspan="5" align="right"><hr />Total: $'.$total.'</td></tr>';
-	echo '<tr class="resp-width-100">><td colspan="5" align="right"><b>Total paid: $'.$total_paid.'</b></td></tr>';
+	echo '<tr class="resp-width-100"><td colspan="5" align="right"><hr />Total: $'.$total.'</td></tr>';
+	echo '<tr class="resp-width-100"><td colspan="5" align="right"><b>Total paid: $'.$total_paid.'</b></td></tr>';
 	echo '</table>';
 ?>
 <div class="fixed_save_button">

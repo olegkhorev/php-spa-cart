@@ -1,4 +1,13 @@
 <?php
+/**
+* SPA-Cart
+* Copyright (c) Oleg Khorev
+*
+* Released under the MIT License.
+* https://github.com/olegkhorev/php-spa-cart
+*/
+?>
+<?php
 set_error_handler('errorHandler');
 register_shutdown_function('errorShutdown');
 ini_set('log_errors', 1);

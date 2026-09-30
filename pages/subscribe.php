@@ -1,4 +1,13 @@
 <?php
+/**
+* SPA-Cart
+* Copyright (c) Oleg Khorev
+*
+* Released under the MIT License.
+* https://github.com/olegkhorev/php-spa-cart
+*/
+?>
+<?php
 extract($_GET);
 if ($db->field("SELECT COUNT(*) FROM subscribers WHERE email='".addslashes($email)."'")) {
 	exit(lng('You are already subscribed'));

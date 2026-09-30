@@ -1,3 +1,12 @@
+<?php
+/**
+* SPA-Cart
+* Copyright (c) Oleg Khorev
+*
+* Released under the MIT License.
+* https://github.com/olegkhorev/php-spa-cart
+*/
+?>
 <form method="POST" name="poform">
 <input type="hidden" name="section" value="options">
 <input type="hidden" name="mode" value="update">

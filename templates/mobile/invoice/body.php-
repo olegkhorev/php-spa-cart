@@ -1,3 +1,12 @@
+<?php
+/**
+* SPA-Cart
+* Copyright (c) Oleg Khorev
+*
+* Released under the MIT License.
+* https://github.com/olegkhorev/php-spa-cart
+*/
+?>
 {if $get['2'] != 'print' && !$is_mail} {if $get['2'] == 'success'}<div style="padding: 0 0 20px 0;">{lng[Your order placed successfully.]}</div>
  {elseif $get['2'] == 'failed'}<div style="padding: 0 0 20px 0; color: red;">{lng[We are unable to process your order.]}</div>
  {/if}

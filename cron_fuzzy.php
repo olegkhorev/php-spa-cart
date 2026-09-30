@@ -17,6 +17,7 @@ $products = $db->all("SELECT * FROM products WHERE status='1'");
 foreach ($products as $k=>$v) {
 	$v['descr'] = strip_tags($v['descr']);
 	$v['name'] = fuzzy_clean($v['name']);
+	$v['keywords'] = fuzzy_clean($v['keywords']);
 	$words = explode(' ', $v['name']);
 	$result[$v['productid']] = $v['name'];
 	foreach ($words as $w) {

@@ -1,3 +1,12 @@
+<?php 
+/**
+* SPA-Cart
+* Copyright (c) Oleg Khorev
+*
+* Released under the MIT License.
+* https://github.com/olegkhorev/php-spa-cart
+*/
+?>
 <script src="<?php echo $current_location;?>/ckeditor/ckeditor.js"></script>
 
 <?php  if ($get['2'] == 'add') { ?>

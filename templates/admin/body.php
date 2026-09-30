@@ -1,4 +1,12 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<?php
+/**
+* SPA-Cart
+* Copyright (c) Oleg Khorev
+*
+* Released under the MIT License.
+* https://github.com/olegkhorev/php-spa-cart
+*/
+?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" class="area-a">
 <head>
 <meta charset="utf-8" />
@@ -8,9 +16,6 @@
 <title><?php echo $head_title; ?></title>
 
 <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
-{*
-<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-*}
 <link rel="stylesheet" href="/materialize/material.orange-amber.min.css" />
 <script src="//code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
 <script src="//code.jquery.com/ui/1.14.1/jquery-ui.min.js" integrity="sha256-AlTido85uXPlSyyaZNsjJXeCs07eSv3r43kyCVc8ChI=" crossorigin="anonymous"></script>
@@ -240,6 +245,24 @@ if (!empty($js)) {
 </div>
  </li>
 {/if}
+{if $allow_pages['pages_9']['allow']}
+ <li>
+					<a href="javascript: void(0);" class="no-ajax">
+						<span class="icon"><ion-icon name="albums-outline"></ion-icon></span>
+						<span class="title">{lng[Modules]}</span>
+					</a>
+<div>
+{foreach $modules as $v}
+<a href="/admin/module_manage/{$v['code']}">{$v['module']}</a>
+
+{if in_array('modules', $allow_pages_ids) || $root_admin}
+<a href="/admin/modules">{lng[Modules]}</a>
+{/if}
+
+{/foreach}
+</div>
+ </li>
+{/if}
 {if $allow_pages['pages_5']['allow']}
  <li>
 					<a href="javascript: void(0);" class="no-ajax">
@@ -289,9 +312,6 @@ if (!empty($js)) {
 {/if}
 {if in_array('currencies', $allow_pages_ids) || $root_admin}
 <a href="/admin/currencies">{lng[Currencies]}</a>
-{/if}
-{if $root_admin}
-<a href="/cron_fuzzy.php?pswd=01230" class="no-ajax pointer-events-auto" target="_blank">{lng[Reset predictive search]}</a>
 {/if}
 </div>
  </li>

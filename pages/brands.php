@@ -1,4 +1,13 @@
 <?php
+/**
+* SPA-Cart
+* Copyright (c) Oleg Khorev
+*
+* Released under the MIT License.
+* https://github.com/olegkhorev/php-spa-cart
+*/
+?>
+<?php
 if (!empty($get['1'])) {
 	$brand = $db->row("SELECT b.*, i.imageid, i.file, i.x, i.y FROM brands b LEFT JOIN brand_images i ON b.brandid=i.brandid WHERE (b.brandid='".$get['1']."' OR b.cleanurl='".$get['1']."') AND b.active='Y'");
 	if (empty($brand)) {

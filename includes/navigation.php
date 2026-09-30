@@ -1,4 +1,13 @@
 <?php
+/**
+* SPA-Cart
+* Copyright (c) Oleg Khorev
+*
+* Released under the MIT License.
+* https://github.com/olegkhorev/php-spa-cart
+*/
+?>
+<?php
 if ($_POST['load_page']) {
     $page = $_POST['load_page'] + 1;
 } elseif ($_GET['page'])

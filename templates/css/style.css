@@ -1576,7 +1576,7 @@ html::-webkit-scrollbar-thumb {
 .language_select ul, .currency_select ul, .head-line-links div ul {
 	min-width: 150px;
 	position: absolute;
-	top: 35px;
+	top: 40px;
 	left: 0;
 	background: var(--theme-color-2);
 	padding: 10px 0;
@@ -2485,4 +2485,7 @@ body#body-help .main-container {
 }
 table.ui-datepicker-calendar, .ui-datepicker-calendar * {
 	border-spacing: 0 !important;
+}
+.popup.wl_popup .image {
+    text-align: center;
 }

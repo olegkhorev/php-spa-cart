@@ -1,4 +1,13 @@
 <?php
+/**
+* SPA-Cart
+* Copyright (c) Oleg Khorev
+*
+* Released under the MIT License.
+* https://github.com/olegkhorev/php-spa-cart
+*/
+?>
+<?php
 $template['location'] .= ' &gt; '.lng('Reviews');
 if ($_POST['mode'] == "search") {
 	$_SESSION['search_reviews'] = $_POST;

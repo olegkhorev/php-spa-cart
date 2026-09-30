@@ -1,6 +1,14 @@
+<?php 
+/**
+* SPA-Cart
+* Copyright (c) Oleg Khorev
+*
+* Released under the MIT License.
+* https://github.com/olegkhorev/php-spa-cart
+*/
+?>
 <div class="checkout-container">
-<h1><a href="<?php echo $current_location;?>/cart" class="cart-link back-to-cart"><img src="/images/back_arrow.png" alt="" /></a>Checkout</h1>
-
+<h1><a href="<?php echo $current_location;?>/cart" class="cart-link back-to-cart"><img src="/images/spacer.gif" alt="" /></a>Checkout</h1>
 <div align="left">
 <table width="100%" cellspacing="0" class="checkout_products">
 <?php foreach ($products as $v) {?>

@@ -1,3 +1,12 @@
+<?php 
+/**
+* SPA-Cart
+* Copyright (c) Oleg Khorev
+*
+* Released under the MIT License.
+* https://github.com/olegkhorev/php-spa-cart
+*/
+?>
 <div class="hidden filter-url"><?php echo $filter_url;?></div>
 <?php if ($get['0'] != 'brands') {?>
 <?php if ($filter['brandid']) {?>

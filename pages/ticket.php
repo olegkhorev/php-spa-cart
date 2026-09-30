@@ -1,4 +1,13 @@
 <?php
+/**
+* SPA-Cart
+* Copyright (c) Oleg Khorev
+*
+* Released under the MIT License.
+* https://github.com/olegkhorev/php-spa-cart
+*/
+?>
+<?php
 if ($get['1'] == 'status') {
 	$db->query("UPDATE tickets SET status='".addslashes($get['3'])."' WHERE ticketid='".addslashes($get['2'])."' AND userid='$login'");
 	exit;

@@ -1,4 +1,13 @@
 <?php
+/**
+* SPA-Cart
+* Copyright (c) Oleg Khorev
+*
+* Released under the MIT License.
+* https://github.com/olegkhorev/php-spa-cart
+*/
+?>
+<?php
 $category = $db->row("SELECT * FROM categories WHERE enabled=1 AND categoryid='".addslashes($categoryid)."'");
 if (!$category)
 	redirect('/');

@@ -1,3 +1,12 @@
+<?php
+/**
+* SPA-Cart
+* Copyright (c) Oleg Khorev
+*
+* Released under the MIT License.
+* https://github.com/olegkhorev/php-spa-cart
+*/
+?>
 <h1>{lng[Zone details]}</h1>
 
 <form method="post" name="zoneform" onsubmit="javascript: if (this.zone_name.value == '') { alert('{lng[Zone name must be entered]}'); return false; } else return saveSelects(new Array('zone_countries','zone_states'));"{*{if !$zone['zoneid']} class="noajax"{/if}*}>

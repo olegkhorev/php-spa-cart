@@ -1,3 +1,12 @@
+<?php
+/**
+* SPA-Cart
+* Copyright (c) Oleg Khorev
+*
+* Released under the MIT License.
+* https://github.com/olegkhorev/php-spa-cart
+*/
+?>
 <form action="{$current_location}/admin/countries/<?php echo $country['code']; ?>" method="post" name="states_form">
 <input type="hidden" name="mode" value="" />
 

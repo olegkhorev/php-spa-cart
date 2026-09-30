@@ -262,6 +262,10 @@ function ajax_clicks_admin() {
 	states_actions();
 	init_translate();	current_multirow = 0;	custom_elements();
 	reinitialize_mdl();
+	if ($('.exec_admin_page_js').length) {
+		eval($('.exec_admin_page_js').html());
+	}
+
 	$('.close-alerts').unbind('click').on('click', function() {		$('.alerts').slideUp();	});
 
 	$('#wenabled').change(function() {

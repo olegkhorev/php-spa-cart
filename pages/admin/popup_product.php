@@ -1,4 +1,13 @@
 <?php
+/**
+* SPA-Cart
+* Copyright (c) Oleg Khorev
+*
+* Released under the MIT License.
+* https://github.com/olegkhorev/php-spa-cart
+*/
+?>
+<?php
 if ($get['2']) {
 	$products = $db->all("SELECT p.productid, p.name FROM products p, category_products c WHERE c.categoryid='".$get['2']."' AND c.productid=p.productid GROUP BY p.productid ORDER BY c.orderby, p.name");
 	if ($products) {

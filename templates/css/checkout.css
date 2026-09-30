@@ -36,14 +36,23 @@ a.back-to-cart {	font-size: 17px;	text-decoration: none;
 a.back-to-cart:hover {
 	text-decoration: none;
 }
-#place_order h3 {	font-size: 17px;
-	border: 0;}
+a.back-to-cart img {
+	width: 16px;
+	height: 14px;
+	background: url(/images/back_arrow.png) center center no-repeat;
+}
+#place_order h3 {	font-size: 14px;
+	border: 0;
+	padding-bottom: 0;
+	margin-bottom: 6px;}
 #place_order h3 span {	float: right;
 	cursor: pointer;
 	text-decoration: underline;
 }
 #place_order select {	width: 100%;
-	margin: 0 0 10px 0;
+	margin: 0;
+	padding: 15px;
+	font-size: 18px;
 }
 #place_order td.line {	font-size: 11px;
 	padding: 5px 0;
@@ -78,5 +87,5 @@ a.back-to-cart:hover {
 }
 #place_order .group {
     min-width: 260px;
-	margin-top: 15px;
+	margin-top: 35px;
 }

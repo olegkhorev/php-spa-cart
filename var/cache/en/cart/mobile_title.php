@@ -1,3 +1,12 @@
+<?php 
+/**
+* SPA-Cart
+* Copyright (c) Oleg Khorev
+*
+* Released under the MIT License.
+* https://github.com/olegkhorev/php-spa-cart
+*/
+?>
 <?php if ($v['gift_card']) {?>
 <b>Gift Card</b><br />
 You will see the Gift Card key phrase on paid invoice

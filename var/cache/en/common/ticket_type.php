@@ -1,3 +1,12 @@
+<?php 
+/**
+* SPA-Cart
+* Copyright (c) Oleg Khorev
+*
+* Released under the MIT License.
+* https://github.com/olegkhorev/php-spa-cart
+*/
+?>
 <?php if ($mode == "static") {?>
 <?php if ($type == "C") {?>Contact us<?php } else if ($type == "P") {?>Product<?php } else if ($type == "T") {?>Ticket topic<?php } else if ($type == "M") {?>Ticket mailbox<?php } ?>
 <?php } else  { ?>

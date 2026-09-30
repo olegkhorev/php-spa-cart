@@ -1,3 +1,12 @@
+<?php
+/**
+* SPA-Cart
+* Copyright (c) Oleg Khorev
+*
+* Released under the MIT License.
+* https://github.com/olegkhorev/php-spa-cart
+*/
+?>
 <div class="news-content">
 {*
 <form method="POST" name="nform" onsubmit="javascript: if (document.nform.substring.value != 'Search') return true; else return false;">

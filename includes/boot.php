@@ -1,5 +1,14 @@
 <?php
 /**
+* SPA-Cart
+* Copyright (c) Oleg Khorev
+*
+* Released under the MIT License.
+* https://github.com/olegkhorev/php-spa-cart
+*/
+?>
+<?php
+/**
  * Functions that need to be loaded on every request.
  */
 
@@ -169,7 +178,7 @@ $template['company_slogan'] = $company_slogan;
 $template['css'][] = 'style';
 $template['js'][] = 'scripts';
 # Get templates
-$tmp = $db->all("SELECT template, time, lng FROM templates WHERE lng IN ('".$lng."', 'css', 'js')");
+$tmp = $db->all("SELECT template, time, lng FROM templates WHERE lng IN ('".$lng."', 'css', 'js', 'css_modules', 'js_modules')");
 if (!empty($tmp)) {
 	$templates = array();
 	foreach ($tmp as $v)

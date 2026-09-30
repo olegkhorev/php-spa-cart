@@ -1,3 +1,12 @@
+<?php
+/**
+* SPA-Cart
+* Copyright (c) Oleg Khorev
+*
+* Released under the MIT License.
+* https://github.com/olegkhorev/php-spa-cart
+*/
+?>
 <div class="foot">
  <ul class="foot-ul-1">
   <li>{lng[Get in touch with us]}</li>
@@ -17,6 +26,8 @@
   <li><a href="/news">{lng[News]}</a></li>
   <li><a href="/blog">{lng[Blog]}</a></li>
   <li><a href="/testimonials">{lng[Testimonials]}</a></li>
+  <li><a href="/page/about-us.html">{lng[About us]}</a></li>
+  <li><a href="/page/terms-n-conditions.html">{lng[Terms & Conditions]}</a></li>
  </ul>
 
 {if $categories_top_menu}

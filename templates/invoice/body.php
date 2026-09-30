@@ -1,3 +1,12 @@
+<?php
+/**
+* SPA-Cart
+* Copyright (c) Oleg Khorev
+*
+* Released under the MIT License.
+* https://github.com/olegkhorev/php-spa-cart
+*/
+?>
 {if !$pdf_invoice}
 {if $get['2'] != 'print' && !$is_mail}{if $userinfo['usertype'] == 'A' && $order['gift_card']}
 <b>Gift Card order: {$order['gift_card']}</b><br /><br />

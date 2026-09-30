@@ -1,3 +1,12 @@
+<?php 
+/**
+* SPA-Cart
+* Copyright (c) Oleg Khorev
+*
+* Released under the MIT License.
+* https://github.com/olegkhorev/php-spa-cart
+*/
+?>
 <svg><use xlink:href="/images/sprite.svg#cart"></use></svg>
 <?php if ($cart['products']) {?>
 <span class="hide4mobile">Products: </span><?php echo count($cart['products']);; ?>

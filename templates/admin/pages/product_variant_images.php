@@ -1,3 +1,12 @@
+<?php
+/**
+* SPA-Cart
+* Copyright (c) Oleg Khorev
+*
+* Released under the MIT License.
+* https://github.com/olegkhorev/php-spa-cart
+*/
+?>
 <form method="POST" name="vform" enctype='multipart/form-data' class="noajax">
 <input type="hidden" name="section" value="variant_images">
 <input type="hidden" name="mode" value="update">

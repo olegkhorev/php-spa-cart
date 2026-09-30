@@ -1,3 +1,12 @@
+<?php
+/**
+* SPA-Cart
+* Copyright (c) Oleg Khorev
+*
+* Released under the MIT License.
+* https://github.com/olegkhorev/php-spa-cart
+*/
+?>
 <div class="drag">
 <center><div class="pbar"><img src="/images/spacer.gif" /></div></center>
 <form name="upload" method="POST" enctype='multipart/form-data' class="noajax">

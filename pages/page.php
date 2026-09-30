@@ -1,4 +1,13 @@
 <?php
+/**
+* SPA-Cart
+* Copyright (c) Oleg Khorev
+*
+* Released under the MIT License.
+* https://github.com/olegkhorev/php-spa-cart
+*/
+?>
+<?php
 $page = $db->row("SELECT * FROM pages WHERE pageid='".$get['1']."' OR cleanurl='".str_replace('.html', '', $get['1'])."'");
 if ($page) {
 	$template['head_title'] = $page['title'].'. '.$template['head_title'];

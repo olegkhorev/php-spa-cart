@@ -1,3 +1,12 @@
+<?php
+/**
+* SPA-Cart
+* Copyright (c) Oleg Khorev
+*
+* Released under the MIT License.
+* https://github.com/olegkhorev/php-spa-cart
+*/
+?>
 {if $translate_mode}
 <a href="/admin/language?exit_translate_mode=1" class="mdl-button">Exit "Translate" mode</a>
 {else}

@@ -1,0 +1,286 @@
+:root {
+	--theme-color: #000 !important;
+	--theme-color-2: #000 !important;
+}
+body {
+    color: #fff;
+}
+body, .page-container {
+    background: #000;
+}
+#head, .scrolled #head {
+    background: #333;
+}
+.theme_color {
+    display: none;
+}
+a {
+    color: #fff;
+}
+h1, h2, h3, h4 {
+    color: #fff;
+}
+h3 {
+	color: #aaa;
+	border-bottom: 1px solid #333;
+}
+*::-webkit-scrollbar-thumb,
+body::-webkit-scrollbar-thumb,
+html::-webkit-scrollbar-thumb {
+    background: #333;
+}
+body .message-box, .testimonial div.name, .subheader table td h4, .subheader table td span {
+    color: #fff;
+}
+.mrp-subtitle {
+    color: #000;
+}
+.res-item, .res-sub-item, body .res-item:hover {
+    border: 0px !important;
+}
+.controls > .button-right {
+    background: linear-gradient(to left,#000,rgba(255,255,255,0.1));
+}
+.controls > .button-left {
+    background: linear-gradient(to right,#000,rgba(255,255,255,0.1))
+}
+.res-name a {
+    color: #fff !important;
+}
+.res-item button, .add2cart-product {
+    color: #fff !important;
+		background: #333 !important;
+}
+.res-item .res-price {
+  color: #fff !important;
+	background: #222 !important;
+	border-radius: 100px;
+}
+.res-item button, .add2cart-product {
+    border: 1px solid #777 !important;
+		background: #444 !important;
+}
+.res-item button:hover {
+		background: #222 !important;
+}
+.res-item button svg {
+    fill: #777;
+}
+.res-item button span, .add2cart-product span {
+    border: 1px solid #777 !important;
+}
+.home-tabs li.active, .product-tabs li.active, .res-item .discount, .save2wl, #foot-subscribe {
+    background: #333;
+    color: #fff;
+}
+.see_all a {
+    color: #000;
+}
+table#product-details *, table#product-details td.product-list-price s, table#product-details td.product-list-price s span, table.product-options strong, tr.product-details-tr, tr.product-details-tr *, .variants-data table td {
+    color: #fff;
+}
+.more-details-border, .buy-with-one-click {
+    border: 1px solid #fff;
+    color: #fff;
+}
+.link-button {
+    border: 1px solid #777;
+    color: #fff;
+		background: #333;
+}
+.link-button:before, .link-button:after {
+    background: #777;
+}
+#home-tabs, #product-tabs {
+    border-bottom: 3px solid #333 !important;
+}
+.home-tabs li, .product-tabs li {
+    color: #eee;
+}
+.price-breaks span {
+    color: #fff;
+}
+.price-breaks > div {
+    border-radius: 15px;
+    position: relative;
+    overflow: hidden;
+}
+.price-breaks div table th, .price-breaks div table th {
+    background: #333;
+    color: #fff !important;
+}
+.price-breaks table {
+  border-collapse: separate;
+  border-spacing: 1px;
+  background-color: #111;
+  border: 1px solid #111 !important;
+}
+.price-breaks div table * {
+    border: 0 !important;
+}
+.options_container div.option-name {
+    background: #333;
+    color: #fff;
+}
+#subscribe {
+    background: #111;
+}
+#subscribe input[type="text"], #foot-subscribe button {
+    color: #fff;
+}
+.left_filter h2 {
+	background: #333;
+	border-radius: 0 0 15px 15px;
+}
+body.scrolled .left_filter h2 {
+	border-radius: 15px;
+}
+.left_filter h4 {
+	color: #fff;
+}
+.left_filter h4.pointer {
+	border: 1px solid #333;
+}
+.res-sub-item .res-name {
+	background: rgba(55,55,55,.875);
+	border-radius: 15px;
+}
+.products-nav .second a, .navigation-title, .navigation a {
+	color: #aaa !important;
+	font-weight: 400;
+	text-decoration: none !important;
+}
+.products-nav .second a.direction-1 {
+	color: #fff !important;
+	background: url(/images/themes/OlegKhorev/SampleTheme/darrow.png) right 5px no-repeat
+}
+.products-nav .second a.direction-2 {
+	color: #fff !important;
+	background: url(/images/themes/OlegKhorev/SampleTheme/uarrow.png) right 5px no-repeat
+}
+.navigation-larrow img {
+	background: transparent url(/images/themes/OlegKhorev/SampleTheme/nav_arrow_left.gif) no-repeat left 3px;
+}
+.navigation-rarrow img {
+	background: transparent url(/images/themes/OlegKhorev/SampleTheme/nav_arrow_right.gif) no-repeat left 3px;
+}
+.res-zoom {
+	background: #222 !important;
+}
+.popup {
+	background: #333;
+}
+.main-button, button, input[type=button], input[type=submit] {
+	color: #fff;
+	background: #333;
+}
+.main-button:hover, button:hover, input[type=button]:hover, input[type=submit]:hover {
+	background: #222;
+}
+.added_price span {
+	color: #fff;
+}
+.cart_popup h1, .wl_popup h1, .checkout_popup h1 {
+	color: #fff;
+}
+select, input[type=text], input[type=password], input[type=file], textarea, .group {
+	border: 1px solid #bbb;
+	color: #fff;
+}
+select:hover, select:focus, input[type=text]:hover, input[type=password]:hover, textarea:hover, input[type=text]:focus, input[type=password]:focus, textarea:focus, .group:hover {
+	border: 1px solid #555;
+}
+.group.withval label, .group input:focus ~ label, .group-select label, .group textarea:focus ~ label {
+	color: #aaa;
+}
+.group.group-select select {
+	border: 0px !important;
+}
+a.back-to-cart img {
+	background: url(/images/themes/OlegKhorev/SampleTheme/back_arrow.png) center center no-repeat;
+}
+.alert_message, .note {
+	background: #333;
+}
+select:open option {
+  background-color: #333 !important;
+  color: #fff !important;
+}
+.invoice {
+	background: #333 !important;
+}
+.invoice-table h2 {
+	color: #fff !important;
+}
+.profile_popup button {
+	background: #444;
+}
+.popup .tabs {
+	border-bottom: 1px solid #555;
+}
+.popup .tabs a.active {
+	background: #555;
+	border-bottom: 1px solid #555;
+}
+.close_alert, .close-popup {
+	background: #333 !important;
+}
+input#helptext {
+    background: #333;
+    border: 0;
+}
+.brands .brand {
+	background: #333;
+	border: 1px solid #777;
+}
+table.product-options select, table.product-options input, .options_container div.option-name {
+	color: #fff;
+	background: #333;
+	border: 1px solid #777;
+}
+.area-c select {
+	background: #333 url('/images/themes/OlegKhorev/SampleTheme/select.png') right 10px center no-repeat !important;
+}
+.head-line-links > a, .head-line-links > div > a {
+	background: #333;
+}
+.head-line-links > div {
+	padding-right: 0px;
+	margin: 0 0 0 3px;
+}
+.head-line-links > div a {
+	padding-right: 30px;
+	background: #333 url(/images/down_arrow_white.png) right 10px center no-repeat;
+}
+.head-line-links > div ul, .head-line-links > div ul a {
+	background: #222;
+}
+.product_popup .options_container div.option-name {
+    padding: 8px;
+    text-align: center;
+}
+.see_all a {
+    color: #777;
+    text-decoration: none;
+    font-style: Italic;
+    font-weight: 400;
+    font-size: 13px;
+    position: absolute;
+    right: 10px;
+		bottom: 10px;
+}
+.unavailable {
+	background: #000 !important;
+	border: 2px solid #bbb !important;
+}
+.left_filter h4.pointer:before, .left_filter h4.pointer:after {
+	background: #fff;
+}
+@media only screen and (max-width: 850px) {
+	#head {
+		background: #fff !important;
+	}
+	html body.withfilter .left_filter {
+		background: #000 !important;
+	}
+}

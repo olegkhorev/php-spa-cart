@@ -1,3 +1,12 @@
+<?php 
+/**
+* SPA-Cart
+* Copyright (c) Oleg Khorev
+*
+* Released under the MIT License.
+* https://github.com/olegkhorev/php-spa-cart
+*/
+?>
 <div id="left_menu">
 <div class="mobile-menu-links">
 <?php if ($config['Visual']['visual_language'] == 'Y' && $languages) {?>

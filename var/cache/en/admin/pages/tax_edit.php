@@ -1,3 +1,12 @@
+<?php 
+/**
+* SPA-Cart
+* Copyright (c) Oleg Khorev
+*
+* Released under the MIT License.
+* https://github.com/olegkhorev/php-spa-cart
+*/
+?>
 <h1>Tax details</h1>
 
 <form method="post" name="taxdetailsform" onsubmit="javascript: return submitTaxForm();">

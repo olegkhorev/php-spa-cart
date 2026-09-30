@@ -1,3 +1,12 @@
+<?php 
+/**
+* SPA-Cart
+* Copyright (c) Oleg Khorev
+*
+* Released under the MIT License.
+* https://github.com/olegkhorev/php-spa-cart
+*/
+?>
 <form action="/admin/export<?php if ($_GET['product']) {?>?product=<?php echo $_GET['product'];?><?php } ?>" method="post" accept-charset="utf-8" class="list-form noajax" name="exportForm">
 
 <?php if ($_GET['product']) {?>

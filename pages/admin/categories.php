@@ -1,4 +1,13 @@
 <?php
+/**
+* SPA-Cart
+* Copyright (c) Oleg Khorev
+*
+* Released under the MIT License.
+* https://github.com/olegkhorev/php-spa-cart
+*/
+?>
+<?php
 func_load('category');
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
@@ -7,11 +16,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 	    if ($mode == 'update') {
 	        if (is_array($posted_data)) {
     	        foreach ($posted_data as $productid => $v) {
-        	        $query_data = array(
+        	        $to_update = array(
             	        'enabled' => (!empty($v['enabled']) ? 1 : 0),
                 	    'orderby' => intval($v['orderby']),
 	                );
-    	            $db->array2update("featured_products", $query_data, "productid='".addslashes($productid)."' AND categoryid='".$get['2']."'");
+    	            $db->array2update("featured_products", $to_update, "productid='".addslashes($productid)."' AND categoryid='".$get['2']."'");
         	    }
 	        }
     	} elseif ($mode == 'delete' && !empty($to_delete)) {

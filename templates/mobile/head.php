@@ -1,3 +1,12 @@
+<?php
+/**
+* SPA-Cart
+* Copyright (c) Oleg Khorev
+*
+* Released under the MIT License.
+* https://github.com/olegkhorev/php-spa-cart
+*/
+?>
 <div class="header">
 <div class="head-box">
 <a href="/" class="logo-link"><img src="/images/new/logo_new.png" alt="" /></a>

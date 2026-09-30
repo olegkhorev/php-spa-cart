@@ -120,31 +120,37 @@ if ($config['General']['shop_closed'] == 'Y' && $get['0'] != 'res_p') {
 	if ($get['0'] == 'home')
 		redirect('/');
 
-	# Check for clean URLs
-	if (is_numeric($get['0']))
-		$categoryid = $db->field("SELECT categoryid FROM categories WHERE categoryid='".$get['0']."' AND enabled=1");
-	else
-		$categoryid = $db->field("SELECT categoryid FROM categories WHERE cleanurl='".$get['0']."' AND enabled=1");
-	if ($categoryid) {
-		$get['0'] = 'category';
-		$template['get'] = $get;
-		include 'pages/category.php';
-	} else {
-		if ($get['0'] == 'product' && $get['1']) {
-			$productid = $get['1'];
-			include 'pages/product.php';
-		} else {
-			$productid = $db->field("SELECT productid FROM products WHERE cleanurl='".str_replace('.html', '', $get['0'])."' AND status<>2");
-			if ($productid) {
-				$get['0'] = 'product';
-				$template['get'] = $get;
-				include 'pages/product.php';
-			} else {
-				$script = 'pages/'.$get['0'].'.php';
-				if (file_exists($script))
-					include $script;
-				else
-					redirect('/');
+    if ($get['0'] == 'module') {
+        # URL example: /module/1/sample_page
+       	include 'pages/module.php';
+    } else {
+        # Check for clean URLs
+        if (is_numeric($get['0']))
+        	$categoryid = $db->field("SELECT categoryid FROM categories WHERE categoryid='".$get['0']."' AND enabled=1");
+        else
+        	$categoryid = $db->field("SELECT categoryid FROM categories WHERE cleanurl='".$get['0']."' AND enabled=1");
+
+        if ($categoryid) {
+        	$get['0'] = 'category';
+        	$template['get'] = $get;
+        	include 'pages/category.php';
+        } else {
+        	if ($get['0'] == 'product' && $get['1']) {
+        		$productid = $get['1'];
+        		include 'pages/product.php';
+        	} else {
+        		$productid = $db->field("SELECT productid FROM products WHERE cleanurl='".str_replace('.html', '', $get['0'])."' AND status<>2");
+        		if ($productid) {
+        			$get['0'] = 'product';
+        			$template['get'] = $get;
+        			include 'pages/product.php';
+        		} else {
+        			$script = 'pages/'.$get['0'].'.php';
+        			if (file_exists($script))
+        				include $script;
+        			else
+        				redirect('/');
+                }
 			}
 		}
 	}
@@ -192,7 +198,12 @@ if ($get['0'] == 'home' && lng('Homepage meta title')) {
 
 $template['page_title'] = $page_title;
 $template['bread_crumbs_html'] = get_template_contents('bread_crumbs.php');
+
 if ($get['0'] == 'admin') {
+    if ($https_domain == 'demo.spa-cart.com') {
+        redirect('https://demoadmin.spa-cart.com/admin', 1);
+    }
+
 	if ($_SESSION['alerts']) {
 		$template['alerts'] = $_SESSION['alerts'];
 	}
@@ -200,12 +211,16 @@ if ($get['0'] == 'admin') {
 	$template['ajax_container'] = get_template_contents('admin/ajax_container.php');
 	if ($_GET['its_ajax_page'])
 		$_SESSION['alerts'] = array();
-} else
+} else {
+    if ($https_domain == 'demoadmin.spa-cart.com')
+        redirect('https://demo.spa-cart.com', 1);
+
 	$template['ajax_container'] = get_template_contents('ajax_container.php');
+}
 
 if ($is_ajax) {
 	$_SESSION['alerts'] = array();
-	$result = array($template['ajax_container'], $page_title, $template['bread_crumbs_html'], $get['0'], $template['parentid'], $brand['brandid']);
+	$result = array($template['ajax_container'], $page_title, $template['bread_crumbs_html'], $get['0'], $template['parentid'], $brand['brandid'], $module['code']);
 	exit(json_encode($result));
 }
 
@@ -214,7 +229,7 @@ $template['get'] = $get;
 if (
 	$get['0'] == 'home' || $get['0'] == 'cart' || $get['0'] == 'checkout' || $get['0'] == 'help' || $get['0'] == 'page' ||
 	$get['0'] == 'invoice' || $get['0'] == 'testimonials' || $get['0'] == 'search' || $get['0'] == 'category' ||
-	$get['0'] == 'brands' || $get['0'] == 'blog' || $get['0'] == 'product' || $get['0'] == 'news' ||
+	$get['0'] == 'brands' || $get['0'] == 'blog' || $get['0'] == 'product' || $get['0'] == 'news' || $get['0'] == 'module' || 
 	$get['0'] == 'ticket' || $get['0'] == 'support_desk' || $get['0'] == 'gift_cards' || $get['0'] == 'login' || $get['0'] == 'register'
 )
 	$template['is_ajax_page'] = '1';
