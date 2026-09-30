@@ -80,7 +80,9 @@ http://[URL]/cron_fuzzy.php?pswd=01230 (I recommend to change the 01230 password
 It rebuilds the predictive search cache.
 
 
-## 2. After testing remove all the data and insert yours. You can use Import/Export to insert new values. Only new categories are not imported.
+## 2. Remove demo content
+
+After testing remove all the data and insert yours. You can use Import/Export to insert new values. Only new categories are not imported.
 
 
 ## 3. Helpful scripts
