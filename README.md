@@ -120,6 +120,8 @@ Modules are automatic installation, don't touch the core.
 
 Just add a link to module in your design.
 
+**Example** of custom module is in the "new_module.zip" archive.
+
 -----------
 
 Right now, SPA-Cart is focused on being a highly stable, lightweight engine in its current form. I am doing some long-term R&D in the background regarding future extensibility, but my priority is keeping the core stable.
