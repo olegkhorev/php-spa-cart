@@ -10,8 +10,8 @@ https://spa-cart.com/
 
 Article content:
 * [Installation](#1-installation)
-* [Remove demo content](#4-major-update)
-* [Helpful scripts](#4-major-update)
+* [Remove demo content](#2-remove-demo-content)
+* [Helpful scripts](#3-helpful-scripts)
 * [Major update](#4-major-update)
 
 ## 1. Installation
