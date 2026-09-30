@@ -1,4 +1,6 @@
-Hi, I’m Oleg.
+Hi,
+
+I’m Oleg.
 
 I am intentionally developing SPA-Cart slowly. Right now, my focus is 100% on deep thinking and slowly growing with community. If you love lightweight, vanilla PHP engineering and want to help think through architectural challenges, you are welcome here.
 
@@ -6,9 +8,9 @@ SPA-Cart - e-commerce Single Page Application
 
 https://spa-cart.com/
 
+* [Installation](# 4. Major update)
 
-
-### 1. Installation
+## 1. Installation
 
 **a.** Create MySQL database and upload files onto your server.
 
@@ -74,10 +76,10 @@ http://[URL]/cron_fuzzy.php?pswd=01230 (I recommend to change the 01230 password
 It rebuilds the predictive search cache.
 
 
-### 2. After testing remove all the data and insert yours. You can use Import/Export to insert new values. Only new categories are not imported.
+## 2. After testing remove all the data and insert yours. You can use Import/Export to insert new values. Only new categories are not imported.
 
 
-### 3. Helpful scripts
+## 3. Helpful scripts
 
 http://[URL]/reset.php?pswd=01230 (I recommend to change the 01230 password in the script)
 
@@ -88,7 +90,7 @@ http://[URL]/optimize.php?pswd=01230  (I recommend to change the 01230 password 
 
 it will the generate images cache.
 
-### 4. Major update
+## 4. Major update
 
 I have added modules & themes support to SPA-Cart.
 
