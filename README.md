@@ -88,6 +88,32 @@ http://[URL]/optimize.php?pswd=01230  (I recommend to change the 01230 password 
 
 it will the generate images cache.
 
+### 4. Major update
+
+I have launched modules & themes for SPA-Cart
+
+Custom module:
+https://demo.spa-cart.com/module/sample_page/sample_page
+
+Default theme:
+https://demo.spa-cart.com/
+
+Custom theme:
+https://demo.spa-cart.com/module/force_theme/sample_theme
+
+Back:
+https://demo.spa-cart.com/module/force_theme/default
+
+Admin area:
+https://demoadmin.spa-cart.com/admin/modules
+
+Admin area module management(so admin can manage every module)
+https://demoadmin.spa-cart.com/admin/module_manage/sample_page
+
+Modules are automatic installation, don't touch the core.
+
+Just add a link to module in your design.
+
 -----------
 
 Right now, SPA-Cart is focused on being a highly stable, lightweight engine in its current form. I am doing some long-term R&D in the background regarding future extensibility, but my priority is keeping the core stable.
