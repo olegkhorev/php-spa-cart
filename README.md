@@ -1,4 +1,6 @@
-Hi, I’m Oleg.
+Hi,
+
+I’m Oleg.
 
 I am intentionally developing SPA-Cart slowly. Right now, my focus is 100% on deep thinking and slowly growing with community. If you love lightweight, vanilla PHP engineering and want to help think through architectural challenges, you are welcome here.
 
@@ -6,9 +8,13 @@ SPA-Cart - e-commerce Single Page Application
 
 https://spa-cart.com/
 
+**Article content:**
+* [Installation](#1-installation)
+* [Remove demo content](#2-remove-demo-content)
+* [Helpful scripts](#3-helpful-scripts)
+* [Major update](#4-major-update)
 
-
-### 1. Installation
+## 1. Installation
 
 **a.** Create MySQL database and upload files onto your server.
 
@@ -74,10 +80,12 @@ http://[URL]/cron_fuzzy.php?pswd=01230 (I recommend to change the 01230 password
 It rebuilds the predictive search cache.
 
 
-### 2. After testing remove all the data and insert yours. You can use Import/Export to insert new values. Only new categories are not imported.
+## 2. Remove demo content
+
+After testing remove all the data and insert yours. You can use Import/Export to insert new values. Only new categories are not imported.
 
 
-### 3. Helpful scripts
+## 3. Helpful scripts
 
 http://[URL]/reset.php?pswd=01230 (I recommend to change the 01230 password in the script)
 
@@ -87,6 +95,40 @@ To generate the images cache, without parsing full website by users or Google, v
 http://[URL]/optimize.php?pswd=01230  (I recommend to change the 01230 password in the script)
 
 it will the generate images cache.
+
+## 4. Major update
+
+I have added modules & themes support to SPA-Cart.
+
+Custom module:
+
+https://demo.spa-cart.com/module/sample_page/sample_page
+
+Default theme:
+
+https://demo.spa-cart.com/
+
+Custom theme:
+
+https://demo.spa-cart.com/module/force_theme/sample_theme
+
+Back:
+
+https://demo.spa-cart.com/module/force_theme/default
+
+Admin area:
+
+https://demoadmin.spa-cart.com/admin/modules
+
+Admin area module management(so admin can manage every module)
+
+https://demoadmin.spa-cart.com/admin/module_manage/sample_page
+
+Modules are automatic installation, don't touch the core.
+
+Just add a link to module in your design.
+
+**Example** of custom module is in the "new_module.zip" archive.
 
 -----------
 
