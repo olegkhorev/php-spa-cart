@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Хост: MySQL-8.0:3306
--- Время создания: Окт 02 2026 г., 14:33
+-- Время создания: Окт 02 2026 г., 14:48
 -- Версия сервера: 8.0.43
 -- Версия PHP: 8.3.26
 
@@ -2860,7 +2860,6 @@ INSERT INTO `languages` (`id`, `lng`, `word`, `translation`) VALUES
 (1875, 'fr', 'Zones', 'Les Zones de'),
 (1876, 'fr', 'Detination zones', 'Detination zones'),
 (1877, 'fr', 'Site title', 'Très vite SPA-panier. Pas de recharger la page. Animation des popups. De nombreux modules.'),
-(1878, 'fr', 'Site description', '<p>Admin: a@a.com / 01230 <a href=\"http://demo.spa-cart.com/admin\" target=\"_blank\">http://demo.spa-cart.com/admin</a></p>\n\n<p>Ajaxfied pages. Toutes les pages sont URLs propres, même dans la zone d\'administration. Mise à jour simple/traduire le langage des étiquettes. Test&nbsp;coupon de 10% - &quot;test&quot;. Bande de test de la carte de crédit - 4111 1111 1111 1111 (tout d\'Expiration et CRYPTOGRAMME), compte Paypal de test - olegkhorev@gmail.com / 01234567 . C\'est juste sur le cadre de n\'importe quelle conception peut être appliquée.</p>\n\n<p>la version Mobile sera affichée une fois que vous visitez le site à partir de votre mobile.</p>\n\n<div>&nbsp;</div>\n'),
 (1879, 'fr', 'User', 'L\'utilisateur'),
 (1880, 'fr', 'newss', 'nouvelles pour'),
 (1881, 'fr', 'Buy with one click', 'Acheter en un seul clic'),
@@ -3060,8 +3059,7 @@ INSERT INTO `languages` (`id`, `lng`, `word`, `translation`) VALUES
 (2075, 'de', 'Password', 'Passwort'),
 (2076, 'de', 'Register', 'Registrieren'),
 (2077, 'de', 'Recovery password', 'Wiederherstellungskennwort'),
-(2078, 'de', 'Zone details', 'Zone details');
-INSERT INTO `languages` (`id`, `lng`, `word`, `translation`) VALUES
+(2078, 'de', 'Zone details', 'Zone details'),
 (2079, 'de', 'Zone name must be entered', 'Zone-name muss eingegeben werden'),
 (2080, 'de', 'Zone name', 'Zone name'),
 (2081, 'de', 'Update', 'Update'),
@@ -3078,7 +3076,8 @@ INSERT INTO `languages` (`id`, `lng`, `word`, `translation`) VALUES
 (2092, 'de', 'Save zone details', 'Speichern von zone details'),
 (2093, 'de', 'Membership', 'Mitgliedschaft'),
 (2094, 'de', 'Active', 'Aktiv'),
-(2095, 'de', 'Pos', 'Pos'),
+(2095, 'de', 'Pos', 'Pos');
+INSERT INTO `languages` (`id`, `lng`, `word`, `translation`) VALUES
 (2096, 'de', 'Assigned users', 'Die Zuordnung der Benutzer'),
 (2097, 'de', 'Delete selected', 'Ausgewählte löschen'),
 (2098, 'de', 'No memberships defined', 'Keine Mitgliedschaften definiert'),
@@ -3751,7 +3750,6 @@ INSERT INTO `languages` (`id`, `lng`, `word`, `translation`) VALUES
 (2765, 'de', 'Zones', 'Zonen'),
 (2766, 'de', 'Detination zones', 'Detination Zonen'),
 (2767, 'de', 'Site title', 'Sehr schnelle SPA-cart. Keine Seite Neuladen. Animierte pop-UPS. Viele Module.'),
-(2768, 'de', 'Site description', '<p>Admin-Bereich: a@a.com / 01230 <a href=\"http://demo.spa-cart.com/admin\" target=\"_blank\">http://demo.spa-cart.com/admin</a></p>\n\n<p>Ajaxfied Seiten. Alle Seiten sind clean URLs, auch in den admin-Bereich. Einfach aktualisieren/Sprache übersetzen labels. Test-Rabatt&nbsp;Gutschein 10% auf alles &quot;test&quot;. Streifen-test Kreditkarte - 4111 1111 1111 1111 (jede Ablaufdatum und CVV), Paypal test-account - olegkhorev@gmail.com / 01234567 . Dies ist nur Rahmen - jedem design angewendet werden kann.</p>\n\n<p>Mobile-version wird angezeigt, sobald Sie besuchen Sie die Seite von Ihrem Handy.</p>\n\n<div>&nbsp;</div>\n'),
 (2769, 'de', 'User', 'Benutzer'),
 (2770, 'de', 'newss', 'Nachrichten'),
 (2771, 'de', 'Buy with one click', 'Kaufen mit einem Klick'),
@@ -3929,8 +3927,7 @@ INSERT INTO `languages` (`id`, `lng`, `word`, `translation`) VALUES
 (2943, 'de', 'Clean URL should contain only letters and numbers and be not more 250 characters length. Allowed symbols: \"-\", \"_\", \".\". Also it should be without \".html\".', 'Clean URL sollte nur aus Buchstaben und zahlen und werden nicht mehr als 250 Zeichen Länge. Erlaubte Symbole: \"-\", \"_\", \".\". Es muss auch ohne \".html -\".'),
 (2944, 'de', 'Root', 'Root'),
 (2945, 'de', 'You cannot define the same product as related product.', 'Sie kann nicht definieren, das gleiche Produkt, wie im Zusammenhang mit Produkt.'),
-(2946, 'de', 'Such related productid already added to this product.', 'Bezüglich der productid, die bereits Hinzugefügt, um dieses Produkt.');
-INSERT INTO `languages` (`id`, `lng`, `word`, `translation`) VALUES
+(2946, 'de', 'Such related productid already added to this product.', 'Bezüglich der productid, die bereits Hinzugefügt, um dieses Produkt.'),
 (2947, 'de', 'New testimonial is here', 'Neues testimonial ist hier'),
 (2948, 'de', 'Enter 3 characters', 'Geben Sie die 3 Zeichen'),
 (2949, 'de', 'Enter 2 characters', 'Geben Sie 2 Zeichen'),
@@ -3963,7 +3960,8 @@ INSERT INTO `languages` (`id`, `lng`, `word`, `translation`) VALUES
 (2976, 'ru', 'Unset value', 'Сбросить значение'),
 (2977, 'ru', 'States', 'Регионы'),
 (2978, 'ru', 'Cities', 'Города'),
-(2979, 'ru', 'City mask examples', 'Примеры масок городов '),
+(2979, 'ru', 'City mask examples', 'Примеры масок городов ');
+INSERT INTO `languages` (`id`, `lng`, `word`, `translation`) VALUES
 (2980, 'ru', 'Zip/Postal codes', 'Почтовые индексы'),
 (2981, 'ru', 'Zipcode mask examples', 'Примеры масок почтовых индексов'),
 (2982, 'ru', 'Save zone details', 'Сохранять данные о зоне '),
@@ -4642,7 +4640,6 @@ INSERT INTO `languages` (`id`, `lng`, `word`, `translation`) VALUES
 (3655, 'ru', 'Zones', 'Зоны'),
 (3656, 'ru', 'Detination zones', 'Зоны пунктов назначения'),
 (3657, 'ru', 'Site title', 'Очень быстро СПА-корзина. Без перезагрузки страницы. Анимированные всплывающие окна. Многие модули.'),
-(3658, 'ru', 'Site description', '<P>в админку: a@a.com / 01230 <а href=\"http://demo.spa-cart.com/admin\" цель=\"_blank\">http://demo.spa-cart.com/admin</а></р>\n\n<Р>Ajaxfied страниц. Все страницы чистые URL-адреса, даже в админке. Простое обновление/перевести язык этикеток. Тест скидкой&nbsp;с купоном 10% - на &quot;тест&quot; по. Полоска тест на кредитную карту - 4111 1111 1111 1111 (любые действия и CVV), проверить счет PayPal - olegkhorev@gmail.com / 01234567 . Это просто основа - любая конструкция может быть применена.</п>\n\n<P>в мобильной версии будет показан, как только вы зайдете на сайт с вашего мобильного.</п>\n\nэлемент <div>&nbsp; с</див>\n'),
 (3659, 'ru', 'User', 'Пользователь'),
 (3660, 'ru', 'newss', 'новости'),
 (3661, 'ru', 'Buy with one click', 'Купить в один клик'),
@@ -4816,8 +4813,7 @@ INSERT INTO `languages` (`id`, `lng`, `word`, `translation`) VALUES
 (3829, 'ru', 'See full blog', 'Посмотреть весь блог'),
 (3830, 'ru', 'SPA-Cart', 'SPA-корзина'),
 (3831, 'ru', 'This clean URL already exist for another product.', 'Этот чистый URL-адрес уже существует для другого товара.'),
-(3832, 'ru', 'Variants has been added.', 'Варианты были добавлены.');
-INSERT INTO `languages` (`id`, `lng`, `word`, `translation`) VALUES
+(3832, 'ru', 'Variants has been added.', 'Варианты были добавлены.'),
 (3833, 'ru', 'Clean URL should contain only letters and numbers and be not more 250 characters length. Allowed symbols: \"-\", \"_\", \".\". Also it should be without \".html\".', 'Чистый URL должен содержать только буквы и цифры и быть не длиннее 250 символов. Разрешенные символы: \"-\", \"_\", \".\". Также он должен быть без \".html\".'),
 (3834, 'ru', 'Root', 'Корень'),
 (3835, 'ru', 'You cannot define the same product as related product.', 'Вы не можете определить один и тот же товар как похожий.'),
@@ -4848,7 +4844,8 @@ INSERT INTO `languages` (`id`, `lng`, `word`, `translation`) VALUES
 (3860, 'de', 'Homepage meta description', 'Homepage meta description'),
 (3861, 'en', 'Thank you for adding your testimonial. Now it will be waiting for our approval', 'Thank you for adding your testimonial. Now it will be waiting for our approval'),
 (3862, 'en', 'Recently viewed', 'Recently viewed'),
-(3863, 'en', 'Category title cannot be empty', 'Category title cannot be empty'),
+(3863, 'en', 'Category title cannot be empty', 'Category title cannot be empty');
+INSERT INTO `languages` (`id`, `lng`, `word`, `translation`) VALUES
 (3864, 'ru', 'Recently viewed', 'Недавно просмотренные'),
 (3865, 'fr', 'Recently viewed', 'Recently viewed'),
 (3866, 'en', 'Free call', 'Free call'),
@@ -6945,7 +6942,7 @@ CREATE TABLE `products` (
 --
 
 INSERT INTO `products` (`productid`, `photoid`, `sku`, `brandid`, `cleanurl`, `name`, `descr`, `keywords`, `list_price`, `price`, `weight`, `avail`, `avail_block`, `rating`, `status`, `deleted`, `add_date`, `views_stats`, `sales_stats`, `del_stats`, `meta_description`, `meta_keywords`, `title_tag`) VALUES
-(113, 367, 'SKU1', 4, 'MEN-Supima-Cotton-Crew-Neck-Short-Sleeve-T', 'MEN Supima Cotton Crew Neck Short Sleeve T', '<p>A 100% Supima&reg; cotton T-shirt thick enough to wear on its own or for layering.<br />\r\n- The luxurious jersey material uses 100% Supima&reg; cotton for a smooth feel, natural brightness and beautiful colors.<br />\r\n- A smooth silhouette from the bust down to the waist, with sleek shoulders and armholes.&nbsp;<br />\r\n- A narrower seam fold and stitching for a more delicate neckline.<br />\r\n- With a flattering neckline.<br />\r\n&nbsp;</p>\r\n\r\n<p>MATERIAL</p>\r\n\r\n<p>100% Cotton</p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p>CARE</p>\r\n\r\n<p>Cold Machine Wash</p>\r\n', '', 17, 14.90, 0.00, 1000, 0, 0, '1', 0, 1545827391, 115, 10, 0, '', '', ''),
+(113, 367, 'SKU1', 4, 'MEN-Supima-Cotton-Crew-Neck-Short-Sleeve-T', 'MEN Supima Cotton Crew Neck Short Sleeve T', '<p>A 100% Supima&reg; cotton T-shirt thick enough to wear on its own or for layering.<br />\r\n- The luxurious jersey material uses 100% Supima&reg; cotton for a smooth feel, natural brightness and beautiful colors.<br />\r\n- A smooth silhouette from the bust down to the waist, with sleek shoulders and armholes.&nbsp;<br />\r\n- A narrower seam fold and stitching for a more delicate neckline.<br />\r\n- With a flattering neckline.<br />\r\n&nbsp;</p>\r\n\r\n<p>MATERIAL</p>\r\n\r\n<p>100% Cotton</p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p>CARE</p>\r\n\r\n<p>Cold Machine Wash</p>\r\n', '', 17, 14.90, 0.00, 1000, 0, 0, '1', 0, 1545827391, 118, 10, 0, '', '', ''),
 (114, 370, 'SKU2', 3, 'MEN-Uniqlo-U-Crew-Neck-Short-Sleeve-T-Shirt', 'MEN Uniqlo U Crew Neck Short Sleeve T-Shirt', '<p>Made from 100% heavyweight cotton, this is the ultimate basic t-shirt.<br />\r\n- Relaxed, loose cut.<br />\r\n- A simple, stylish t-shirt.<br />\r\n&nbsp;</p>\r\n\r\n<p>MATERIAL</p>\r\n\r\n<p>Body：100% Cotton</p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p>CARE</p>\r\n\r\n<p>Machine Wash, Gentle Or Delicate</p>\r\n', '', 23, 19.90, 0.00, 1000, 0, 0, '1', 0, 1545831147, 7, 0, 0, '', '', ''),
 (115, 373, 'SKU115', 2, 'MEN-Packaged-Dry-Crew-Neck-Short-Sleeve-T-Shirt', 'MEN Packaged Dry Crew Neck Short Sleeve T-Shirt', '<p>Available in a great variety of colors. Our simple, versatile plain DRY t-shirt.<br />\r\n- Classic jersey material with DRY technology.&nbsp;<br />\r\n- A wide range of versatile colors, from basic colors to shades that look great in casual or sporty styles.&nbsp;<br />\r\n- The range also includes light and cool mottled shades.&nbsp;<br />\r\n- Stitching running from the shoulders to the neckline prevent any risk of bagginess.<br />\r\n&nbsp;</p>\r\n\r\n<p>MATERIAL</p>\r\n\r\n<p>[00White, 03Gray, 09Black, 09Black, 17Red, 19Wine, 25Orange, 42Yellow, 53Green, 58Dark Green, 60Light Blue, 69Navy]66% Cotton, 34% Polyester [12Pink, 55Green, 65Blue, 78Purple] 76% Polyester, 24% Cotton</p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p>CARE</p>\r\n\r\n<p>Machine Wash, Gentle Or Delicate</p>\r\n\r\n<p>&nbsp;</p>\r\n', '', 13, 9.90, 0.00, 1000, 0, 0, '1', 0, 1545833287, 9, 5, 0, '', '', ''),
 (116, 378, 'SKU4', 2, 'MEN-Packaged-Dry-V-Neck-Short-Sleeve-T-Shirt', 'MEN Packaged Dry V Neck Short Sleeve T-Shirt', '<p>Masculine V-neck! DRY technology keeps you fresh even in the heat.<br />\r\n- Made with special jersey material with quick-drying DRY technology.<br />\r\n&nbsp;</p>\r\n\r\n<p>MATERIAL</p>\r\n\r\n<p>66% Cotton, 34% Polyester</p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p>CARE</p>\r\n\r\n<p>Machine Wash, Gentle Or Delicate</p>\r\n', '', 13, 9.90, 0.00, 1000, 0, 0, '1', 0, 1545833593, 2, 0, 0, '', '', ''),
@@ -6961,7 +6958,7 @@ INSERT INTO `products` (`productid`, `photoid`, `sku`, `brandid`, `cleanurl`, `n
 (126, 405, 'SKU14', 3, 'STUSSY-TWO-TONE-HOOD', 'STUSSY TWO TONE HOOD', '<p>TWO TONE HOOD</p>\r\n', '', 149, 155.00, 0.00, 1000, 0, 0, '1', 0, 1545839936, 1, 0, 0, '', '', ''),
 (127, 407, 'SKU15', 2, 'STUSSY-BAJA-PONCHO', 'STUSSY BAJA PONCHO', '<p>BAJA PONCHO</p>\r\n', '', 139, 129.00, 0.00, 1000, 0, 0, '1', 0, 1545840185, 9, 3, 0, '', '', ''),
 (128, 409, 'SKU16', 3, 'STUSSY-STOCK-APP.-CREW', 'STUSSY STOCK APP. CREW', '<p>STOCK APP. CREW</p>\r\n', '', 99, 93.00, 0.00, 1000, 0, 0, '1', 0, 1545840457, 3, 0, 0, '', '', ''),
-(129, 412, 'SKU17', 4, 'STUSSY-SMOOTH-STOCK-LS-TEE', 'STUSSY SMOOTH STOCK LS TEE', '<p>SMOOTH STOCK LS TEE</p>\r\n', '', 57, 49.00, 0.00, 1000, 0, 0, '1', 0, 1545840730, 93, 12, 0, '', '', ''),
+(129, 412, 'SKU17', 4, 'STUSSY-SMOOTH-STOCK-LS-TEE', 'STUSSY SMOOTH STOCK LS TEE', '<p>SMOOTH STOCK LS TEE</p>\r\n', '', 57, 49.00, 0.00, 1000, 0, 0, '1', 0, 1545840730, 95, 12, 0, '', '', ''),
 (130, 415, 'SKU18', 2, 'OBEY-ANYWAY', 'OBEY ANYWAY', '<p>ANYWAY</p>\r\n', '', 128, 119.00, 0.00, 1000, 0, 0, '1', 0, 1545842317, 3, 0, 0, '', '', ''),
 (131, 417, 'SKU19', 3, 'SHOESHINE-FELPA-CAPPUCCIO-ZIP-REVERSIBILE-UOMO-NAVI-ECR', 'SHOESHINE FELPA CAPPUCCIO + ZIP REVERSIBILE UOMO - NAVI/ECR', '<p>FELPA CAPPUCCIO + ZIP REVERSIBILE UOMO - NAVI/ECR</p>\r\n', '', 129, 119.00, 0.00, 1000, 0, 0, '1', 0, 1545842568, 2, 0, 0, '', '', ''),
 (132, 420, 'SKU20', 2, 'TOMMY-HILFIGER-TJM-SMALL-TEXT-LONGSLEEVE', 'TOMMY HILFIGER TJM SMALL TEXT LONGSLEEVE', '<p>TJM SMALL TEXT LONGSLEEVE</p>\r\n', '', 59, 55.00, 0.00, 1000, 0, 0, '1', 0, 1545843329, 1, 0, 0, '', '', ''),
@@ -9237,7 +9234,7 @@ INSERT INTO `templates` (`id`, `lng`, `template`, `time`) VALUES
 (14, 'css', 'banners', 1524952060),
 (15, 'css', 'home', 1790186558),
 (16, 'css', 'category', 1680727022),
-(17, 'css', 'products', 1790752804),
+(17, 'css', 'products', 1790937374),
 (18, 'css', 'popup', 1654344718),
 (19, 'css', 'product', 1790621532),
 (20, 'css', 'cart', 1481298360),
@@ -9343,7 +9340,8 @@ INSERT INTO `templates` (`id`, `lng`, `template`, `time`) VALUES
 (130, 'en', 'common/instant_search.php', 0),
 (131, 'en', 'testimonials/new.php', 0),
 (132, 'en', 'login/body.php', 0),
-(133, 'en', 'admin/pages/payment.php', 0);
+(133, 'en', 'admin/pages/payment.php', 0),
+(134, 'en', 'register/body.php', 0);
 
 -- --------------------------------------------------------
 
@@ -9401,48 +9399,6 @@ CREATE TABLE `tickets` (
   `notes` mediumtext NOT NULL,
   `authkey` varchar(255) NOT NULL DEFAULT ''
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
-
---
--- Дамп данных таблицы `tickets`
---
-
-INSERT INTO `tickets` (`ticketid`, `productid`, `priority`, `userid`, `email`, `subject`, `message`, `status`, `type`, `open_date`, `date`, `read`, `admin_read`, `cat1`, `cat2`, `cat3`, `cat4`, `cat5`, `fields`, `notes`, `authkey`) VALUES
-('01AE3EC', 0, 3, '1', 'xcart@ya.ru', 'test', 'test', 'C', 'C', 0, 1468846741, 'Y', 'N', '', '', '', '', '', NULL, '', ''),
-('03A9B61', 0, 2, '1', 'xcart@ya.ru', '', '', 'C', 'C', 0, 1468923781, 'Y', 'N', '', '', '', '', '', NULL, '', ''),
-('11ECDE9', 0, 2, '1', 'xcart@ya.ru', '', '', 'C', 'C', 0, 1468923786, 'Y', 'N', '', '', '', '', '', NULL, '', ''),
-('147F7B7', 104, 2, '', 'test', 'Product #SKU104', 'test', 'O', 'P', 0, 1512675922, 'Y', 'Y', '', '', '', '', '', 'N;', '', ''),
-('2248D29', 0, 3, '1', 'xcart@ya.ru', 'test', 'test', 'C', 'C', 0, 1468846741, 'Y', 'N', '', '', '', '', '', NULL, '', ''),
-('2AFC15E', 0, 4, '848', 'a@a.com', 'Captcha', 'Test', 'O', 'C', 0, 1512652522, 'Y', 'Y', '', '', '', '', '', 'N;', '', ''),
-('3083670', 0, 3, '1', 'xcart@ya.ru', 'test', 'test', 'C', 'C', 0, 1468846113, 'Y', 'N', '', '', '', '', '', NULL, '', ''),
-('3195C9D', 0, 3, '1', 'xcart@ya.ru', 'test', 'test', 'C', 'C', 0, 1468845711, 'Y', 'N', '', '', '', '', '', NULL, '', ''),
-('3653122', 0, 3, '1', 'xcart@ya.ru', 'test', 'test', 'C', 'C', 0, 1468846962, 'Y', 'N', '', '', '', '', '', NULL, '', ''),
-('3E7E41E', 0, 3, '1', 'xcart@ya.ru', 'test', 'test', 'C', 'C', 0, 1468846962, 'Y', 'N', '', '', '', '', '', NULL, '', ''),
-('45D64EB', 0, 3, '1', 'xcart@ya.ru', 'test', 'test', 'C', 'C', 0, 1468845949, 'Y', 'N', '', '', '', '', '', NULL, '', ''),
-('47A78CC', 0, 3, '1', 'xcart@ya.ru', 'test', 'test', 'C', 'C', 0, 1468846118, 'Y', 'N', '', '', '', '', '', NULL, '', ''),
-('5947DEC', 0, 2, '1', 'xcart@ya.ru', 'asd', 'asd', 'C', 'C', 0, 1468924177, 'Y', 'Y', 'cat', 'sub', 'sub2', 'Sub 3', 'Sub 4.2', 'a:2:{s:9:\"field 4.2\";s:4:\"test\";s:9:\"field #23\";s:3:\"555\";}', '', ''),
-('5F24278', 0, 3, '1', 'xcart@ya.ru', 'test', 'test', '3', 'C', 0, 1468846864, 'Y', 'N', '', '', '', '', '', NULL, '', ''),
-('61B85E8', 0, 2, '', '1', '1', '1', 'O', 'C', 0, 1523170085, 'Y', 'N', '', '', '', '', '', 'N;', '', ''),
-('6A04B8B', 0, 2, '', 'test@test.com', '1', '2', 'O', 'C', 0, 1544550840, 'Y', 'Y', '', '', '', '', '', 'N;', '', '0ad72b71e5e48a795aca8903c86a2359'),
-('79AE5E3', 0, 3, '0', 'xcart@ya.ru', 'test', 'test', 'O', 'C', 0, 1468845858, 'Y', 'Y', '', '', '', '', '', NULL, '', ''),
-('79CCEBB', 0, 2, '1', 'xcart@ya.ru', '', '', 'C', 'C', 0, 1468923786, 'Y', 'N', '', '', '', '', '', NULL, '', ''),
-('8888E10', 0, 2, '', 't1', 'test', 'test', 'O', 'C', 0, 1617738949, 'Y', 'Y', '', '', '', '', '', 'N;', '', 'e0e42f98fd20f80813661ed79c23ced2'),
-('94CE989', 0, 3, '848', 'a@a.com', 'test', 'test', 'C', 'T', 0, 1512651961, 'Y', 'Y', '', '', '', '', '', 'N;', '', ''),
-('996F864', 39, 2, '', '123', 'Product #SKU1', '123', 'O', 'P', 0, 1523191375, 'Y', 'Y', '', '', '', '', '', 'N;', '', ''),
-('9A4AC88', 0, 2, '', '5', '5', '5', 'O', 'C', 0, 1523170276, 'Y', 'N', '', '', '', '', '', 'N;', '', ''),
-('9C9B1A9', 0, 0, '1', 'xcart@ya.ru', '', '', 'C', 'C', 0, 1474290179, 'Y', 'Y', 'AX 2012', 'RTM', 'Investigate an issue', 'Finance/GL/AP/AR', '', 'a:2:{s:27:\"Describe current state here\";s:37:\"test\r<br />test\r<br />test\r<br />test\";s:27:\"Describe desired state here\";s:37:\"test\r<br />test\r<br />test\r<br />test\";}', '', ''),
-('9FB15FA', 0, 0, '848', 'a@a.com', '', '', 'C', 'C', 0, 1474115763, 'Y', 'Y', 'AX 2012', 'RTM', 'Investigate an issue', 'Finance/GL/AP/AR', '', 'a:2:{s:27:\"Describe current state here\";s:4:\"test\";s:27:\"Describe desired state here\";s:4:\"test\";}', '', ''),
-('A338ED8', 0, 2, '', '123', '123', '123', 'O', 'C', 0, 1512654948, 'Y', 'N', '', '', '', '', '', 'N;', '', ''),
-('B20AE8B', 0, 2, '', 'test@test.com', '123', '123', 'O', 'C', 0, 1512655207, 'Y', 'Y', '', '', '', '', '', 'N;', '', ''),
-('BCFFBF1', 0, 3, '1', 'xcart@ya.ru', 'test', 'test', '3', 'C', 0, 1468846864, 'Y', 'N', '', '', '', '', '', NULL, '', ''),
-('BD4D1C3', 0, 3, '1', 'xcart@ya.ru', 'test', 'test', 'C', 'C', 0, 1468847018, 'Y', 'Y', '', '', '', '', '', NULL, '', ''),
-('BE2BD78', 0, 2, '1', 'xcart@ya.ru', '', '', 'C', 'C', 0, 1468923780, 'Y', 'N', '', '', '', '', '', NULL, '', ''),
-('CF7F94A', 0, 3, '1', 'xcart@ya.ru', 'test', 'test', 'C', 'C', 0, 1468847169, 'Y', 'N', '', '', '', '', '', NULL, '', ''),
-('F150503', 0, 2, '', '123', '123', '123', 'O', 'C', 0, 1512654944, 'Y', 'N', '', '', '', '', '', 'N;', '', ''),
-('F2DD941', 0, 3, '1', 'xcart@ya.ru', 'test', 'test', 'C', 'C', 0, 1468847018, 'Y', 'N', '', '', '', '', '', NULL, '', ''),
-('F3272BD', 0, 3, '1', 'xcart@ya.ru', 'test 3', 'test 2', 'C', 'C', 0, 1468847322, 'Y', 'Y', '', '', '', '', '', NULL, '', ''),
-('F57BA1D', 0, 2, '', '123', '123', '123', 'O', 'C', 0, 1512654919, 'Y', 'N', '', '', '', '', '', 'N;', '', ''),
-('FE6E4EB', 0, 2, '848', 'a@a.com', 'Test', 'Test', 'C', 'C', 0, 1671894273, 'Y', 'Y', '', '', '', '', '', 'N;', '', '06b1b38d62e9bcd825ae8c96da923c91'),
-('FECD8F8', 0, 2, '', 'olegkhorev@gmail.com', '123', '123', 'O', 'C', 0, 1523170237, 'Y', 'N', '', '', '', '', '', 'N;', '', '');
 
 -- --------------------------------------------------------
 
@@ -11403,84 +11359,6 @@ CREATE TABLE `tickets_emails` (
   `type` varchar(255) NOT NULL DEFAULT ''
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
 
---
--- Дамп данных таблицы `tickets_emails`
---
-
-INSERT INTO `tickets_emails` (`messageid`, `ticketid`, `date`, `crontab`, `from`, `to`, `type`) VALUES
-(0, '3195C9D', 1468845711, '', 'xcart@ya.ru', 'xcart@ya.ru', 'New ticket'),
-(0, '47A78CC', 1468846118, '', 'xcart@ya.ru', 'xcart@ya.ru', 'New ticket'),
-(0, '2248D29', 1468846741, '', 'xcart@ya.ru', 'xcart@ya.ru', 'New ticket'),
-(0, '01AE3EC', 1468846741, '', 'xcart@ya.ru', 'xcart@ya.ru', 'New ticket'),
-(0, '5F24278', 1468846864, '', 'xcart@ya.ru', 'xcart@ya.ru', 'New ticket'),
-(0, 'BCFFBF1', 1468846864, '', 'xcart@ya.ru', 'xcart@ya.ru', 'New ticket'),
-(0, '3E7E41E', 1468846962, '', 'xcart@ya.ru', 'xcart@ya.ru', 'New ticket'),
-(0, '3653122', 1468846962, '', 'xcart@ya.ru', 'xcart@ya.ru', 'New ticket'),
-(0, 'F2DD941', 1468847018, '', 'xcart@ya.ru', 'xcart@ya.ru', 'New ticket'),
-(0, 'BD4D1C3', 1468847018, '', 'xcart@ya.ru', 'xcart@ya.ru', 'New ticket'),
-(0, 'CF7F94A', 1468847169, '', 'xcart@ya.ru', 'xcart@ya.ru', 'New ticket'),
-(0, 'F3272BD', 1468847322, '', 'xcart@ya.ru', 'xcart@ya.ru', 'New ticket'),
-(0, 'D4C6AD0', 1468847322, '', 'xcart@ya.ru', 'xcart@ya.ru', 'New ticket'),
-(0, 'D3AF911', 1468847365, '', 'xcart@ya.ru', 'xcart@ya.ru', 'New ticket'),
-(33, 'F3272BD', 1468849884, '', 'xcart@ya.ru', 'xcart@ya.ru', 'New message'),
-(34, 'F3272BD', 1468849963, '', 'xcart@ya.ru', 'xcart@ya.ru', 'New message'),
-(35, 'F3272BD', 1468850027, '', 'xcart@ya.ru', 'xcart@ya.ru', 'New message'),
-(36, 'F3272BD', 1468850031, '', 'xcart@ya.ru', 'xcart@ya.ru', 'New message'),
-(38, 'F3272BD', 1468854380, '', 'xcart@ya.ru', 'xcart@ya.ru', 'New message'),
-(39, 'F3272BD', 1468854428, '', 'xcart@ya.ru', 'xcart@ya.ru', 'New message'),
-(40, 'F3272BD', 1468854776, '', 'xcart@ya.ru', 'xcart@ya.ru', 'New message'),
-(41, 'F3272BD', 1468854784, '', 'xcart@ya.ru', 'xcart@ya.ru', 'New message'),
-(42, 'F3272BD', 1468854831, '', 'xcart@ya.ru', 'xcart@ya.ru', 'New message'),
-(45, 'F3272BD', 1468855584, '', 'xcart@ya.ru', 'xcart@ya.ru', 'New message'),
-(46, 'F3272BD', 1468855588, '', 'xcart@ya.ru', 'xcart@ya.ru', 'New message'),
-(47, 'F3272BD', 1468855589, '', 'xcart@ya.ru', 'xcart@ya.ru', 'New message'),
-(48, 'F3272BD', 1468855637, '', 'xcart@ya.ru', 'xcart@ya.ru', 'New message'),
-(49, 'F3272BD', 1468855637, '', 'xcart@ya.ru', 'xcart@ya.ru', 'New message'),
-(50, 'F3272BD', 1468855692, '', 'xcart@ya.ru', 'xcart@ya.ru', 'New message'),
-(51, 'F3272BD', 1468859195, '', 'next@commercewill.com', 'xcart@ya.ru', 'New message'),
-(52, 'F3272BD', 1468866654, '', 'next@commercewill.com', 'xcart@ya.ru', 'New message'),
-(53, 'F3272BD', 1468866726, '', 'next@commercewill.com', 'xcart@ya.ru', 'New message'),
-(54, 'F3272BD', 1468867296, '', 'next@commercewill.com', 'xcart@ya.ru', 'New message'),
-(55, 'F3272BD', 1468867306, '', 'next@commercewill.com', 'xcart@ya.ru', 'New message'),
-(56, 'F3272BD', 1468867434, '', 'next@commercewill.com', 'xcart@ya.ru', 'New message'),
-(0, 'BE2BD78', 1468923780, '', 'xcart@ya.ru', 'xcart@yandex.ru', 'New ticket'),
-(0, '03A9B61', 1468923781, '', 'xcart@ya.ru', 'xcart@yandex.ru', 'New ticket'),
-(0, '11ECDE9', 1468923786, '', 'xcart@ya.ru', 'xcart@yandex.ru', 'New ticket'),
-(0, '79CCEBB', 1468923786, '', 'xcart@ya.ru', 'xcart@yandex.ru', 'New ticket'),
-(0, '5947DEC', 1468924177, '', 'xcart@ya.ru', 'xcart@yandex.ru', 'New ticket'),
-(63, 'F3272BD', 1469527422, 'Y', 'next@commercewill.com', 'xcart@yandex.ru', 'New message'),
-(64, 'F3272BD', 1469527425, 'Y', 'next@commercewill.com', 'xcart@yandex.ru', 'New message'),
-(65, 'F3272BD', 1469527425, 'Y', 'next@commercewill.com', 'xcart@yandex.ru', 'New message'),
-(66, '3195C9D', 1469527425, 'Y', 'next@commercewill.com', 'xcart@yandex.ru', 'New message'),
-(67, '5947DEC', 1470069378, 'Y', 'next@commercewill.com', 'xcart@yandex.ru', 'New message'),
-(0, '9FB15FA', 1474115763, '', 'a@a.com', 'info@nextoneconsulting.com', 'New ticket'),
-(0, '9C9B1A9', 1474290179, '', 'xcart@ya.ru', 'info@nextoneconsulting.com', 'New ticket'),
-(70, '79AE5E3', 1512651359, '', 'xcart@ya.ru', 'xcart@ya.ru', 'New message'),
-(71, '79AE5E3', 1512651390, '', 'xcart@ya.ru', 'xcart@ya.ru', 'New message'),
-(0, '94CE989', 1512651961, '', 'a@a.com', 'xcart@ya.ru', 'New ticket'),
-(0, '2AFC15E', 1512652522, '', 'a@a.com', 'xcart@ya.ru', 'New ticket'),
-(74, '2AFC15E', 1512652556, '', 'xcart@ya.ru', 'xcart@ya.ru', 'New message'),
-(75, '2AFC15E', 1512652569, '', 'xcart@ya.ru', 'a@a.com', 'New message'),
-(76, '2AFC15E', 1512652646, '', 'xcart@ya.ru', 'a@a.com', 'New message'),
-(0, 'F57BA1D', 1512654919, '', '123', 'xcart@ya.ru', 'New ticket'),
-(0, 'F150503', 1512654944, '', '123', 'xcart@ya.ru', 'New ticket'),
-(0, 'A338ED8', 1512654948, '', '123', 'xcart@ya.ru', 'New ticket'),
-(0, 'B20AE8B', 1512655207, '', 'test@test.com', 'xcart@ya.ru', 'New ticket'),
-(0, '147F7B7', 1512675922, '', 'test', 'xcart@ya.ru', 'New ticket'),
-(82, '147F7B7', 1512676484, '', 'xcart@ya.ru', 'test', 'New message'),
-(83, '147F7B7', 1512676546, '', 'xcart@ya.ru', 'test', 'New message'),
-(0, '61B85E8', 1523170085, '', '1', 'xcart@ya.ru', 'New ticket'),
-(0, 'FECD8F8', 1523170237, '', 'olegkhorev@gmail.com', 'xcart@ya.ru', 'New ticket'),
-(0, '9A4AC88', 1523170276, '', '5', 'xcart@ya.ru', 'New ticket'),
-(0, '996F864', 1523191375, '', '123', 'xcart@ya.ru', 'New ticket'),
-(0, '6A04B8B', 1544550840, '', 'test@test.com', 'xcart@ya.ru', 'New ticket'),
-(89, '6A04B8B', 1544550902, '', 'anything@gaga247.es', 'test@test.com', 'New message'),
-(90, '6A04B8B', 1544550965, '', 'anything@gaga247.es', 'test@test.com', 'New message'),
-(0, '8888E10', 1617738949, '', 't1', 'xcart@ya.ru', 'New ticket'),
-(92, '8888E10', 1617738955, '', 'anything@gaga247.es', 'xcart@ya.ru', 'New message'),
-(93, '8888E10', 1617738964, '', 'anything@gaga247.es', 'xcart@ya.ru', 'New message'),
-(0, 'FE6E4EB', 1671894273, '', 'a@a.com', 'test@test.com', 'New ticket');
-
 -- --------------------------------------------------------
 
 --
@@ -11498,104 +11376,6 @@ CREATE TABLE `tickets_messages` (
   `admin_read` char(1) NOT NULL DEFAULT 'N',
   `ip` varchar(255) NOT NULL DEFAULT ''
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
-
---
--- Дамп данных таблицы `tickets_messages`
---
-
-INSERT INTO `tickets_messages` (`messageid`, `ticketid`, `userid`, `email`, `message`, `date`, `read`, `admin_read`, `ip`) VALUES
-(2, '3195C9D', '1', 'xcart@ya.ru', 'test', 1468845711, 'Y', 'N', '127.0.0.1'),
-(3, '79AE5E3', '1', 'xcart@ya.ru', 'test 2', 1468845858, 'Y', 'Y', '127.0.0.1'),
-(4, '45D64EB', '1', 'xcart@ya.ru', 'test', 1468845949, 'Y', 'N', '127.0.0.1'),
-(5, '3083670', '1', 'xcart@ya.ru', 'test', 1468846113, 'Y', 'N', '127.0.0.1'),
-(6, '47A78CC', '1', 'xcart@ya.ru', 'test', 1468846118, 'Y', 'N', '127.0.0.1'),
-(7, '2248D29', '1', 'xcart@ya.ru', 'test', 1468846741, 'Y', 'N', '127.0.0.1'),
-(8, '01AE3EC', '1', 'xcart@ya.ru', 'test', 1468846741, 'Y', 'N', '127.0.0.1'),
-(9, '5F24278', '1', 'xcart@ya.ru', 'test', 1468846864, 'Y', 'N', '127.0.0.1'),
-(10, 'BCFFBF1', '1', 'xcart@ya.ru', 'test', 1468846864, 'Y', 'N', '127.0.0.1'),
-(11, '3E7E41E', '1', 'xcart@ya.ru', 'test', 1468846962, 'Y', 'N', '127.0.0.1'),
-(12, '3653122', '1', 'xcart@ya.ru', 'test', 1468846962, 'Y', 'N', '127.0.0.1'),
-(13, 'F2DD941', '1', 'xcart@ya.ru', 'test', 1468847018, 'Y', 'N', '127.0.0.1'),
-(14, 'BD4D1C3', '1', 'xcart@ya.ru', 'AS SD', 1468847018, 'Y', 'Y', '127.0.0.1'),
-(15, 'CF7F94A', '1', 'xcart@ya.ru', 'test', 1468847169, 'Y', 'N', '127.0.0.1'),
-(16, 'F3272BD', '1', 'xcart@ya.ru', 'test', 1468847322, 'Y', 'Y', '127.0.0.1'),
-(18, 'D3AF911', '1', 'xcart@ya.ru', 'SAAS', 1468847365, 'Y', 'Y', '127.0.0.1'),
-(19, 'F3272BD', '1', 'xcart@ya.ru', 'test', 1468849044, 'Y', 'Y', ''),
-(20, 'F3272BD', '1', 'xcart@ya.ru', 'test', 1468849048, 'Y', 'Y', ''),
-(21, 'F3272BD', '1', 'xcart@ya.ru', 'abc', 1468849218, 'Y', 'Y', ''),
-(22, 'F3272BD', '1', 'xcart@ya.ru', 'test', 1468849371, 'Y', 'Y', ''),
-(23, 'F3272BD', '1', 'xcart@ya.ru', 'test', 1468849404, 'Y', 'Y', ''),
-(24, 'F3272BD', '1', 'xcart@ya.ru', 'test', 1468849410, 'Y', 'Y', ''),
-(25, 'F3272BD', '1', 'xcart@ya.ru', 'test', 1468849414, 'Y', 'Y', ''),
-(26, 'F3272BD', '1', 'xcart@ya.ru', 'test', 1468849443, 'Y', 'Y', ''),
-(27, 'F3272BD', '1', 'xcart@ya.ru', 'test', 1468849469, 'Y', 'Y', ''),
-(28, 'F3272BD', '1', 'xcart@ya.ru', 'test', 1468849475, 'Y', 'Y', ''),
-(29, 'F3272BD', '1', 'xcart@ya.ru', 'test', 1468849480, 'Y', 'Y', ''),
-(30, 'F3272BD', '1', 'xcart@ya.ru', 'test', 1468849510, 'Y', 'Y', ''),
-(31, 'F3272BD', '1', 'xcart@ya.ru', 'test', 1468849517, 'Y', 'Y', ''),
-(32, 'F3272BD', '1', 'xcart@ya.ru', 'test', 1468849860, 'Y', 'Y', ''),
-(33, 'F3272BD', '1', 'xcart@ya.ru', 'test', 1468849884, 'Y', 'Y', ''),
-(34, 'F3272BD', '1', 'xcart@ya.ru', 'tasdas', 1468849963, 'Y', 'Y', ''),
-(35, 'F3272BD', '1', 'xcart@ya.ru', 'tasdas set', 1468850027, 'Y', 'Y', ''),
-(36, 'F3272BD', '1', 'xcart@ya.ru', 'tasdas', 1468850031, 'Y', 'Y', ''),
-(37, 'F3272BD', '1', '', 'test', 1468854311, 'Y', 'Y', ''),
-(38, 'F3272BD', '1', '', 'test', 1468854380, 'Y', 'Y', ''),
-(39, 'F3272BD', '1', 'xcart@ya.ru', 'abc', 1468854427, 'Y', 'Y', ''),
-(40, 'F3272BD', '1', 'xcart@ya.ru', 'test', 1468854776, 'Y', 'Y', ''),
-(41, 'F3272BD', '1', 'xcart@ya.ru', '1123', 1468854784, 'Y', 'Y', ''),
-(42, 'F3272BD', '1', 'xcart@ya.ru', '123', 1468854831, 'Y', 'Y', ''),
-(43, 'F3272BD', '1', 'xcart@ya.ru', 'SET', 1468847322, 'Y', 'Y', '127.0.0.1'),
-(44, 'F3272BD', '1', 'xcart@ya.ru', 'AS SD', 1468847018, 'Y', 'Y', '127.0.0.1'),
-(45, 'F3272BD', '1', 'xcart@ya.ru', 'set', 1468855584, 'Y', 'Y', ''),
-(46, 'F3272BD', '1', 'xcart@ya.ru', 'send', 1468855588, 'Y', 'Y', ''),
-(47, 'F3272BD', '1', 'xcart@ya.ru', 'send', 1468855589, 'Y', 'Y', ''),
-(48, 'F3272BD', '1', 'xcart@ya.ru', '123', 1468855637, 'Y', 'Y', ''),
-(49, 'F3272BD', '1', 'xcart@ya.ru', '123', 1468855637, 'Y', 'Y', ''),
-(50, 'F3272BD', '1', 'xcart@ya.ru', 'asd', 1468855692, 'Y', 'Y', ''),
-(51, 'F3272BD', '1', 'xcart@ya.ru', 'test', 1468859195, 'Y', 'Y', ''),
-(52, 'F3272BD', '1', 'xcart@ya.ru', 'aaaaaaaaaaaaaaaaaaaa', 1468866654, 'N', 'Y', ''),
-(53, 'F3272BD', '1', 'xcart@ya.ru', 'a', 1468866726, 'N', 'Y', ''),
-(54, 'F3272BD', '1', 'xcart@ya.ru', 'test', 1468867296, 'N', 'Y', ''),
-(55, 'F3272BD', '1', 'xcart@ya.ru', 'test', 1468867306, 'N', 'Y', ''),
-(56, 'F3272BD', '1', 'xcart@ya.ru', 'as asd asd adas ', 1468867434, 'N', 'Y', ''),
-(57, 'F3272BD', '1', 'xcart@ya.ru', 'Hei Hi\n\nSincerely yours,\nOleg Khorev,\nWeb developer\n\n\n18.07.2016, 23:09, \"next@commercewill.com\" :\n>', 1468869341, 'Y', 'Y', ''),
-(58, 'BE2BD78', '1', 'xcart@ya.ru', '', 1468923780, 'Y', 'N', '127.0.0.1'),
-(59, '03A9B61', '1', 'xcart@ya.ru', '', 1468923781, 'Y', 'N', '127.0.0.1'),
-(60, '11ECDE9', '1', 'xcart@ya.ru', '', 1468923786, 'Y', 'N', '127.0.0.1'),
-(61, '79CCEBB', '1', 'xcart@ya.ru', '', 1468923786, 'Y', 'N', '127.0.0.1'),
-(62, '5947DEC', '1', 'xcart@ya.ru', 'asd', 1468924177, 'Y', 'Y', '127.0.0.1'),
-(63, 'F3272BD', '1', 'xcart@ya.ru', 'test attachment\n\nSincerely yours,\nOleg Khorev,\nWeb developer\n\n\n18.07.2016, 23:09, \"next@commercewill.com\" :\n>', 1469527422, 'Y', 'N', ''),
-(64, 'F3272BD', '1', 'xcart@ya.ru', 'Nice to meet you my friend\n\nSincerely yours,\nOleg Khorev,\nWeb developer\n\n\n18.07.2016, 23:22, \"NextOneCons\" :\n>  ', 1469527425, 'Y', 'N', ''),
-(65, 'F3272BD', '1', 'xcart@ya.ru', 'hey\n\nSincerely yours,\nOleg Khorev,\nWeb developer\n\n\n18.07.2016, 23:09, \"next@commercewill.com\" :\n>', 1469527425, 'Y', 'N', ''),
-(66, '3195C9D', '1', 'xcart@ya.ru', 'Hello world\n\nSincerely yours,\nOleg Khorev,\nWeb developer\n\n\n19.07.2016, 00:01, \"NextOneCons\" :\n>', 1469527425, 'Y', 'N', ''),
-(67, '5947DEC', '1', 'xcart@ya.ru', 'Email reply\n\nSincerely yours,\nOleg Khorev,\nWeb developer\n\n\n28.07.2016, 14:54, \"NextOneCons\" :\n>', 1470069378, 'Y', 'N', ''),
-(68, '9FB15FA', '848', 'a@a.com', '', 1474115763, 'Y', 'Y', '127.0.0.1'),
-(69, '9C9B1A9', '1', 'xcart@ya.ru', '', 1474290179, 'Y', 'Y', '127.0.0.1'),
-(70, '79AE5E3', '848', 'a@a.com', 'test', 1512651359, 'N', 'Y', ''),
-(71, '79AE5E3', '848', 'a@a.com', 'test', 1512651390, 'N', 'Y', ''),
-(72, '94CE989', '848', 'a@a.com', 'test', 1512651961, 'Y', 'Y', '127.0.0.1'),
-(73, '2AFC15E', '848', 'a@a.com', 'Test', 1512652522, 'Y', 'Y', '127.0.0.1'),
-(74, '2AFC15E', '848', 'a@a.com', 'hey', 1512652556, 'Y', 'Y', ''),
-(75, '2AFC15E', '848', 'a@a.com', 'yes hey', 1512652569, 'Y', 'Y', ''),
-(76, '2AFC15E', '848', 'a@a.com', 'test', 1512652646, 'Y', 'Y', ''),
-(77, 'F57BA1D', '', '123', '123', 1512654919, 'Y', 'N', '127.0.0.1'),
-(78, 'F150503', '', '123', '123', 1512654944, 'Y', 'N', '127.0.0.1'),
-(79, 'A338ED8', '', '123', '123', 1512654948, 'Y', 'N', '127.0.0.1'),
-(80, 'B20AE8B', '', 'test@test.com', '123', 1512655207, 'Y', 'Y', '127.0.0.1'),
-(81, '147F7B7', '', 'test', 'test', 1512675922, 'Y', 'Y', '127.0.0.1'),
-(82, '147F7B7', '848', 'a@a.com', 'test', 1512676484, 'N', 'Y', ''),
-(83, '147F7B7', '848', 'a@a.com', 'test', 1512676546, 'N', 'Y', ''),
-(84, '61B85E8', '', '1', '1', 1523170085, 'Y', 'N', '127.0.0.1'),
-(85, 'FECD8F8', '', 'olegkhorev@gmail.com', '123', 1523170237, 'Y', 'N', '127.0.0.1'),
-(86, '9A4AC88', '', '5', '5', 1523170276, 'Y', 'N', '127.0.0.1'),
-(87, '996F864', '', '123', '123', 1523191375, 'Y', 'Y', '127.0.0.1'),
-(88, '6A04B8B', '', 'test@test.com', '2', 1544550840, 'Y', 'Y', '127.0.0.1'),
-(89, '6A04B8B', '848', 'a@a.com', 'test', 1544550902, 'Y', 'Y', ''),
-(90, '6A04B8B', '848', 'a@a.com', 'abc', 1544550965, 'Y', 'Y', ''),
-(91, '8888E10', '', 't1', 'test', 1617738949, 'Y', 'Y', '127.0.0.1'),
-(92, '8888E10', '', '', 'test', 1617738955, 'Y', 'Y', ''),
-(93, '8888E10', '', '', 'abc', 1617738964, 'Y', 'Y', ''),
-(94, 'FE6E4EB', '848', 'a@a.com', 'Test', 1671894273, 'Y', 'Y', '127.0.0.1');
 
 -- --------------------------------------------------------
 
@@ -12046,7 +11826,7 @@ INSERT INTO `user_sessions` (`id`, `userid`, `name`, `value`) VALUES
 (22507, 857, 'recently', 'a:17:{i:0;s:3:\"113\";i:1;s:3:\"261\";i:2;s:3:\"260\";i:3;s:3:\"132\";i:4;s:3:\"118\";i:5;s:3:\"122\";i:8;s:3:\"126\";i:12;s:3:\"130\";i:14;s:3:\"121\";i:18;s:3:\"250\";i:28;s:3:\"154\";i:34;s:3:\"211\";i:35;s:3:\"264\";i:39;s:3:\"183\";i:40;s:3:\"166\";i:42;s:3:\"119\";i:43;s:3:\"215\";}'),
 (23361, 858, 'recently', 'a:2:{i:1;s:3:\"185\";i:3;s:3:\"215\";}'),
 (24647, 859, 'recently', 'a:8:{i:3;s:3:\"215\";i:46;s:3:\"247\";i:49;s:3:\"188\";i:60;s:3:\"190\";i:61;s:3:\"185\";i:63;s:3:\"113\";i:66;s:3:\"129\";i:67;s:3:\"170\";}'),
-(34994, 848, 'recently', 'a:20:{i:0;s:3:\"197\";i:1;s:3:\"195\";i:2;s:3:\"220\";i:3;s:3:\"264\";i:4;s:3:\"263\";i:5;s:3:\"128\";i:6;s:3:\"123\";i:7;s:3:\"260\";i:8;s:3:\"215\";i:9;s:3:\"135\";i:10;s:3:\"136\";i:12;s:3:\"149\";i:13;s:3:\"127\";i:14;s:3:\"186\";i:15;s:3:\"113\";i:16;s:3:\"187\";i:17;s:3:\"129\";i:19;s:3:\"255\";i:20;s:3:\"221\";i:28;s:3:\"148\";}');
+(35006, 848, 'recently', 'a:20:{i:0;s:3:\"197\";i:1;s:3:\"195\";i:2;s:3:\"220\";i:3;s:3:\"264\";i:4;s:3:\"263\";i:5;s:3:\"128\";i:6;s:3:\"123\";i:7;s:3:\"260\";i:8;s:3:\"215\";i:9;s:3:\"135\";i:10;s:3:\"136\";i:12;s:3:\"149\";i:13;s:3:\"127\";i:14;s:3:\"186\";i:15;s:3:\"113\";i:16;s:3:\"187\";i:17;s:3:\"129\";i:19;s:3:\"255\";i:20;s:3:\"221\";i:28;s:3:\"148\";}');
 
 -- --------------------------------------------------------
 
@@ -14180,7 +13960,7 @@ ALTER TABLE `tax_rates`
 -- AUTO_INCREMENT для таблицы `templates`
 --
 ALTER TABLE `templates`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=134;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=135;
 
 --
 -- AUTO_INCREMENT для таблицы `testimonials`
@@ -14198,7 +13978,7 @@ ALTER TABLE `tickets_attachments`
 -- AUTO_INCREMENT для таблицы `tickets_messages`
 --
 ALTER TABLE `tickets_messages`
-  MODIFY `messageid` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=95;
+  MODIFY `messageid` int NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT для таблицы `tickets_predefined`
@@ -14228,7 +14008,7 @@ ALTER TABLE `users_remember`
 -- AUTO_INCREMENT для таблицы `user_sessions`
 --
 ALTER TABLE `user_sessions`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=34995;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=35007;
 
 --
 -- AUTO_INCREMENT для таблицы `variants`
