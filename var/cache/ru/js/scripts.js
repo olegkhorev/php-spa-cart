@@ -173,10 +173,6 @@ function ajax_clicks() {
 		return;
 
 	init_translate();
-	if ($('.exec_page_js').length) {
-		eval($('.exec_page_js').html());
-	}
-
 	$('.filter_switcher').unbind('click').on('click', function() {
 		$('body').toggleClass('filteropen');
 	});
@@ -238,6 +234,10 @@ function ajax_clicks() {
 
 		return false;
 	});
+
+	if ($('.exec_page_js').length) {
+		eval($('.exec_page_js').html());
+	}
 
 	$('#menu a, a.ajax_link, .ajax_mobile_link, .logo-link, .bread_crumbs a, #subcategories a, .brands a, .test-links a, .foot a').unbind('click').on('click', function(e) {
 		if ($(this).hasClass('no-ajax'))

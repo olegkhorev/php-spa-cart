@@ -56,7 +56,7 @@ if ($total_pages > 2) {
 } else {
 ?>
 <form method="post" name="blogform" enctype="multipart/form-data">
-<input type="file" name="install_archive" />
+<input type="file" name="install_archive" accept=".zip, application/zip, application/x-zip-compressed" />
 <button type="submit" name="btn">{lng[Install]}</button>
 <br /><br />
 <h3>{lng[Installation instructions]}:</h3>

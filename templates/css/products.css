@@ -107,9 +107,13 @@
 	float: right;
 }
 .see_all a {
-	font-weight: bold;
 	color: #ff6000;
-	text-decoration: underline;
+    font-style: Italic;
+    font-weight: 400;
+    text-decoration: none;
+    position: absolute;
+    right: 10px;
+	bottom: 10px;
 }
 .see_all a:hover {
 	text-decoration: none;

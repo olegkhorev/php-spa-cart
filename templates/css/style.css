@@ -1770,9 +1770,6 @@ body.scrolled div#head:before {
 	width: 60px;
 	height: 60px;
 	border-radius: 60px;
-	-webkit-box-shadow: 3px 3px 6px 0px rgba(50, 50, 50, 0.45);
-	-moz-box-shadow:    3px 3px 6px 0px rgba(50, 50, 50, 0.45);
-	box-shadow:         3px 3px 6px 0px rgba(50, 50, 50, 0.45);
 	float: left;
 	margin-right: 20px;
 

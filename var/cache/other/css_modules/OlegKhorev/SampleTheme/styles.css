@@ -180,7 +180,7 @@ body.scrolled .left_filter h2 {
 .added_price span {
 	color: #fff;
 }
-.cart_popup h1, .wl_popup h1, .checkout_popup h1 {
+.alert_message h1, .cart_popup h1, .wl_popup h1, .checkout_popup h1 {
 	color: #fff;
 }
 select, input[type=text], input[type=password], input[type=file], textarea, .group {

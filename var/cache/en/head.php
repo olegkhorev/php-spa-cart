@@ -124,7 +124,7 @@
 <div class="menu_right_part">
 <div class="mrp-row">
 <div class="mrp-rounded-box"><svg><use xlink:href="/images/sprite.svg#phone"></use></svg></div>
-<div class="mrp-title">Call Us</div>
+<div class="mrp-title">Call us</div>
 <div class="mrp-subtitle"><?php echo $config['Company']['company_phone'];?></div>
 <div class="mrp-subtitle-2">Free call</div>
 </div>
@@ -172,7 +172,7 @@
 <?php } ?>
 
 <div id="head_mobile">
-<?php /* ?><div class="header-phone">Call Us <?php echo $config['Company']['company_phone'];?></div><?php */ ?>
+<?php /* ?><div class="header-phone">Call us <?php echo $config['Company']['company_phone'];?></div><?php */ ?>
 <div id="minicart">
 <?php echo $minicart;?>
 </div>

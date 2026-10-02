@@ -124,7 +124,7 @@
 <div class="menu_right_part">
 <div class="mrp-row">
 <div class="mrp-rounded-box"><svg><use xlink:href="/images/sprite.svg#phone"></use></svg></div>
-<div class="mrp-title">{lng[Call Us]}</div>
+<div class="mrp-title">{lng[Call us]}</div>
 <div class="mrp-subtitle">{$config['Company']['company_phone']}</div>
 <div class="mrp-subtitle-2">{lng[Free call]}</div>
 </div>

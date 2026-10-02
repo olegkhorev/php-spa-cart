@@ -1770,9 +1770,6 @@ body.scrolled div#head:before {
 	width: 60px;
 	height: 60px;
 	border-radius: 60px;
-	-webkit-box-shadow: 3px 3px 6px 0px rgba(50, 50, 50, 0.45);
-	-moz-box-shadow:    3px 3px 6px 0px rgba(50, 50, 50, 0.45);
-	box-shadow:         3px 3px 6px 0px rgba(50, 50, 50, 0.45);
 	float: left;
 	margin-right: 20px;
 
@@ -2876,9 +2873,13 @@ box-shadow:         0px 0px 5px 0px rgba(50, 50, 50, 0.75);
 	float: right;
 }
 .see_all a {
-	font-weight: bold;
 	color: #ff6000;
-	text-decoration: underline;
+    font-style: Italic;
+    font-weight: 400;
+    text-decoration: none;
+    position: absolute;
+    right: 10px;
+	bottom: 10px;
 }
 .see_all a:hover {
 	text-decoration: none;

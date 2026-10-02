@@ -262,10 +262,6 @@ function ajax_clicks_admin() {
 	states_actions();
 	init_translate();	current_multirow = 0;	custom_elements();
 	reinitialize_mdl();
-	if ($('.exec_admin_page_js').length) {
-		eval($('.exec_admin_page_js').html());
-	}
-
 	$('.close-alerts').unbind('click').on('click', function() {		$('.alerts').slideUp();	});
 
 	$('#wenabled').change(function() {
@@ -348,6 +344,10 @@ function ajax_clicks_admin() {
 
 	if ($('#chart-line').length)
 		init_chart_line();
+
+	if ($('.exec_admin_page_js').length) {
+		eval($('.exec_admin_page_js').html());
+	}
 
 	$('.navigation-admin a, .admin-location a, .db-stats-3 a, .lines-table a, .admin-tabs a, .ajax_link, .left-admin-menu li div a, .navigation a').unbind('click').on('click', function(e) {
 		if ($(this).hasClass('no-ajax'))

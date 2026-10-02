@@ -43,7 +43,7 @@
  <div><h2>{lng[Ajaxfied pages]}</h2><p>{lng[All pages are clean URLs, even in the admin area]}</p></div>
  <div><h2>{lng[Language labels]}</h2><p>{lng[Easy to Update and Translate. Translate mode for easy and quick translation.]}</p></div>
  <div><h2>{lng[Design versatility]}</h2><p>{lng[This is a framework. Any design can be applied]}</p></div>
- <div><h2>{lng[Test our cart]}</h2><p>Test credit card<br />4111 1111 1111 1111<br />Paypal test account<br />olegkhorev@gmail.com / 01234567</p></div>
+ <div><h2>{lng[Test our cart]}</h2><p>Test credit card<br />4111 1111 1111 1111<br />Paypal test account<br />jackergon99@gmail.com / 01020304</p></div>
  <div><h2>{lng[Mobile version]}</h2><p>{lng[Available automatically from your mobile phone.]}</p></div>
 </div>
 </div>
