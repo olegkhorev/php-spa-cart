@@ -1,7 +1,11 @@
-.statistic th {	padding: 10px;}
-.statistic td {	padding: 7px 10px;
-	text-align: right;
+.statistic th {
+  padding: 10px;
 }
-.statistic td.title {	min-width: 170px;
-	text-align: left;
+.statistic td {
+  padding: 7px 10px;
+  text-align: right;
+}
+.statistic td.title {
+  min-width: 170px;
+  text-align: left;
 }

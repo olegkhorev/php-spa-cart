@@ -9,7 +9,9 @@
 ?>
 <form id="checkoutform" method="POST">
 <input type="hidden" name="stripe_token" id="stripe_token" />
-<input type="hidden" name="order_total" id="order_total" value="<?php echo price_format($cart['total']); ?>" />
+<input type="hidden" name="order_total" id="order_total" value="<?php echo price_format(
+    $cart["total"],
+); ?>" />
 {if $cart['need_shipping']}
 <h3>{lng[Shipping method]}</h3>
 {if $shipping_methods}
@@ -100,7 +102,8 @@ Free
 </tr>
 </table>
 </div>
-{if !$cart['coupon']}<div class="apply_coupon">{lng[Have a discount coupon?]}</div>
+{if !$cart['coupon']}
+<div class="apply_coupon">{lng[Have a discount coupon?]}</div>
 {/if}
 {if !$cart['gift_card']}
 <br />

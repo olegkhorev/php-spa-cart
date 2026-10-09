@@ -30,13 +30,13 @@ echo '-'.round($percent).'%';
 <a class="ajax_link"{*{if $device != 'mobile'} title="Move product to cart to add it"{/if}*} href="{$current_location}/{if $v['cleanurl']}{$v['cleanurl']}.html{else}product/{$v['productid']}{/if}">
 {if $v['photo']}
 <?php
-$image = $v['photo'];
-$image['new_width'] = 234;
-$image['class'] = 'product-image';
-$image['id'] = 'pid-'.$v['productid'];
-$image['new_height'] = 200;
-$image['center'] = 1;
-include SITE_ROOT . '/includes/image.php';
+$image = $v["photo"];
+$image["new_width"] = 234;
+$image["class"] = "product-image";
+$image["id"] = "pid-" . $v["productid"];
+$image["new_height"] = 200;
+$image["center"] = 1;
+include SITE_ROOT . "/includes/image.php";
 ?>
 {/if}
 </a>

@@ -1,1 +1,7 @@
-function submitBrand() {	if (document.brandform.name.value == '') {		document.brandform.name.focus();		bc = false;		alert("{lng[Brand name cannot be empty]}");	} else		document.brandform.submit();}
+function submitBrand() {
+  if (document.brandform.name.value == "") {
+    document.brandform.name.focus();
+    bc = false;
+    alert("{lng[Brand name cannot be empty]}");
+  } else document.brandform.submit();
+}

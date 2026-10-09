@@ -69,6 +69,7 @@
 </tr>
 </table>
 </form>
-{else}<br /><br />
+{else}
+<br /><br />
 {lng[Cart is empty]}
 {/if}

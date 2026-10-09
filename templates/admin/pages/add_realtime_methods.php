@@ -16,20 +16,18 @@
 <br />
 <h1>{lng[Manage realtime shipping methods]}</h1>
 
-<?php
-if ($config['Shipping']['enable_shipping'] != 'Y') {
-?>
+<?php if ($config["Shipping"]["enable_shipping"] != "Y") { ?>
 <b>{lng[Shipping is disabled. You can manage it <a href="configuration/Shipping">here</a>.]}</b>
-<?php
-} else {
-?>
+<?php } else { ?>
 
 <form method="post" name="shippingmethodsform">
 <input type="hidden" name="carrier" value="<?php echo $carrier; ?>" />
 <input type="hidden" name="mode" value="add_realtime_methods" />
 
 <script type="text/javascript">//<![CDATA[
-var expands = new Array(<?php foreach ($carriers as $v) echo "'".$v['code']."',"; ?>'');
+var expands = new Array(<?php foreach ($carriers as $v) {
+    echo "'" . $v["code"] . "',";
+} ?>'');
 function expand_all(flag) {
   var x;
   for (x = 0; x < expands.length; x++) {
@@ -56,38 +54,56 @@ function expand_all(flag) {
   </td>
 </tr>
 
-<?php
-	foreach ($carriers as $c) {
-		echo '<tr>
+<?php foreach ($carriers as $c) {
+    echo '<tr>
   <td style="background: #efefef; padding: 10px;">
-    <a href="javascript: void(0);" onclick="$(\'#box'.$c['code'].'\').show();">'.$c['shipping'].'</a>
+    <a href="javascript: void(0);" onclick="$(\'#box' .
+        $c["code"] .
+        '\').show();">' .
+        $c["shipping"] .
+        '</a>
   </td>
 </tr>
-<tr id="box'.$c['code'].'" class="hidden">
+<tr id="box' .
+        $c["code"] .
+        '" class="hidden">
   <td>
 
 <table cellpadding="2" cellspacing="1" width="100%">
 <tr>
-  <th width="50" style="cursor: pointer; text-decoration: underline;" onclick="javascript: change_state(\'.methods_'.$c['code'].'\');">{lng[Active]}</th>
+  <th width="50" style="cursor: pointer; text-decoration: underline;" onclick="javascript: change_state(\'.methods_' .
+        $c["code"] .
+        '\');">{lng[Active]}</th>
   <th>{lng[Shipping method]}</th>
   <th>{lng[Destination]}</th>
 </tr>';
-		foreach ($shipping as $s) {
-			if ($s['code'] == $c['code'] && $s['is_new'] != 'Y') {
-				echo '<tr>
-  <td align="center"><input class="methods_'.$c['code'].'" type="checkbox" name="data['.$s['shippingid'].'][active]" value="Y"'.($s['active'] == 'Y' ? ' checked="checked"' : '').' /></td>
-  <td>'.func_trademark($s['shipping']).'</td>
-  <td align="center">'.($s['destination'] == 'N' ? "{lng[National|escape]}" : "{lng[International|escape]}").'</td>
+    foreach ($shipping as $s) {
+        if ($s["code"] == $c["code"] && $s["is_new"] != "Y") {
+            echo '<tr>
+  <td align="center"><input class="methods_' .
+                $c["code"] .
+                '" type="checkbox" name="data[' .
+                $s["shippingid"] .
+                '][active]" value="Y"' .
+                ($s["active"] == "Y" ? ' checked="checked"' : "") .
+                ' /></td>
+  <td>' .
+                func_trademark($s["shipping"]) .
+                '</td>
+  <td align="center">' .
+                ($s["destination"] == "N"
+                    ? "{lng[National|escape]}"
+                    : "{lng[International|escape]}") .
+                '</td>
 </tr>';
-			}
-		}
+        }
+    }
 
-		echo '</table>
+    echo '</table>
 <br />
   </td>
 </tr>';
-	}
-?>
+} ?>
 
 <tr>
   <td>&nbsp;</td>
@@ -105,6 +121,5 @@ function expand_all(flag) {
 
 <br /><br />
 
-<?php
-}
+<?php }
 ?>

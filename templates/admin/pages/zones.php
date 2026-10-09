@@ -9,13 +9,9 @@
 ?>
 <h1>{lng[Destination zones]}</h1>
 
-<?php
-if ($zones) {
-?>
+<?php if ($zones) { ?>
 <a href="javascript: void(0);" onclick="javascript: check_all(document.zonesform, 'to_delete', true);">{lng[Check all]}</a> / <a href="javascript: void(0);" onclick="javascript: check_all(document.zonesform, 'to_delete', false);">{lng[Uncheck all]}</a>
-<?php
-}
-?>
+<?php } ?>
 
 <form method="post" name="zonesform">
 <input type="hidden" name="mode" value="delete" />
@@ -32,18 +28,23 @@ if ($zones) {
   <td><label>{lng[Zone name]}</label>{lng[Default zone]}</td>
 </tr>
 
-<?php
-if ($zones) {
-	foreach ($zones as $z) {
-		echo '<tr>
-  <td><input type="checkbox" name="to_delete['.$z['zoneid'].']" /></td>
-  <td><label>{lng[Zone name]}</label><a href="'.$current_location.'/admin/zones/'.$z['zoneid'].'">'.$z['zone_name'].'</a></td>
+<?php if ($zones) {
+    foreach ($zones as $z) {
+        echo '<tr>
+  <td><input type="checkbox" name="to_delete[' .
+            $z["zoneid"] .
+            ']" /></td>
+  <td><label>{lng[Zone name]}</label><a href="' .
+            $current_location .
+            "/admin/zones/" .
+            $z["zoneid"] .
+            '">' .
+            $z["zone_name"] .
+            '</a></td>
 		</tr>';
-	}
-?>
+    } ?>
 <?php
-}
-?>
+} ?>
 </table>
 {if $zones}
 <div class="fixed_save_button">

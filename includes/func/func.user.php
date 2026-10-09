@@ -8,7 +8,8 @@
 */
 ?>
 <?php
-function generateSalt($length = 16) {
+function generateSalt($length = 16)
+{
     $characters = '!@#$%^&*()_+-=;":|\/?.,><[]{}0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
     $randomString = '';
     for ($i = 0; $i < $length; $i++) {

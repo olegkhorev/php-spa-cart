@@ -11,10 +11,10 @@
 <div class="brand_page">
 {if $brand['imageid']}
 <?php
-		$image = $brand;
-		$image['new_width'] = 200;
-		$image['new_height'] = 400;
-		include SITE_ROOT . '/includes/brand_image.php';
+$image = $brand;
+$image["new_width"] = 200;
+$image["new_height"] = 400;
+include SITE_ROOT . "/includes/brand_image.php";
 ?>
 {/if}
 <h1>{$brand['name']}</h1>
@@ -42,11 +42,11 @@
 <a href="{$url}">
 <?php
 $image = $b;
-$image['new_width'] = 105;
-$image['new_height'] = 105;
-$image['valign'] = true;
-$image['center'] = true;
-include SITE_ROOT . '/includes/brand_image.php';
+$image["new_width"] = 105;
+$image["new_height"] = 105;
+$image["valign"] = true;
+$image["center"] = true;
+include SITE_ROOT . "/includes/brand_image.php";
 ?>
 {/if}
 </a><br />

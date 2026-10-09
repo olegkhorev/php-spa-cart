@@ -155,14 +155,10 @@ function original_message(id) {
 
 </table>
 {/if}
-<?php
-if ($total_pages > 2) {
-?>
+<?php if ($total_pages > 2) { ?>
 {include="common/navigation.php"}
 <br />
-<?php
-}
-?>
+<?php } ?>
 
 <div id="original_message">
 <h3>{lng[Request information]}</h3>

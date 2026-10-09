@@ -10,12 +10,13 @@
 <?php
 if ($_POST['load_page']) {
     $page = $_POST['load_page'] + 1;
-} elseif ($_GET['page'])
+} elseif ($_GET['page']) {
     $page = $_GET['page'];
-else
+} else {
     $page = 1;
+}
 
-$first_page = ($page - 1)* $objects_per_page;
+$first_page = ($page - 1) * $objects_per_page;
 
 $totalPages = ceil($total_items / $objects_per_page);
 $template['totalPages'] = $totalPages;

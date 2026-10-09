@@ -18,10 +18,10 @@
  <td valign="top">
 {if $p['photo']}
 <?php
-$image = $p['photo'];
-$image['new_width'] = 100;
-$image['new_height'] = 100;
-include SITE_ROOT . '/includes/image.php';
+$image = $p["photo"];
+$image["new_width"] = 100;
+$image["new_height"] = 100;
+include SITE_ROOT . "/includes/image.php";
 ?>
 {/if}
  </td>

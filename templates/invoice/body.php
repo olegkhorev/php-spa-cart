@@ -8,17 +8,21 @@
 */
 ?>
 {if !$pdf_invoice}
-{if $get['2'] != 'print' && !$is_mail}{if $userinfo['usertype'] == 'A' && $order['gift_card']}
+{if $get['2'] != 'print' && !$is_mail}
+{if $userinfo['usertype'] == 'A' && $order['gift_card']}
 <b>Gift Card order: {$order['gift_card']}</b><br /><br />
 {/if}
- {if $get['2'] == 'success'}<div class="checkout-success-message">{lng[Your order placed successfully.]}</div>
- {elseif $get['2'] == 'failed'}<div class="checkout-fail-message">{lng[We are unable to process your order.]}</div>
+ {if $get['2'] == 'success'}
+<div class="checkout-success-message">{lng[Your order placed successfully.]}</div>
+ {elseif $get['2'] == 'failed'}
+<div class="checkout-fail-message">{lng[We are unable to process your order.]}</div>
  {/if}
 <div class="print-invoice-button">
 <a href="/invoice/{$order['orderid']}/print" target="_blank" onclick="javascript: return print_invoice($(this));">{lng[Print invoice]}</a>
 <a href="/invoice_pdf/{$order['orderid']}" target="_blank">{lng[Download PDF invoice]}</a>
 <br /><br />
-</div>{/if}
+</div>
+{/if}
 {/if}
 <div style="width: 650px; margin: 0 auto; background: #fff; padding: 10px; {if $get['2'] != 'print' && !$is_mail}border: 1px solid #ccc;{/if}" class="invoice">
 <h1 style="text-align: center;">{lng[Invoice]}</h1>
@@ -165,17 +169,17 @@
 	 <td class="image hideonmobile" valign="top" style="padding-right: 10px;"><a href="{$http_location}/{$url}">
 {if $v['variant_photo']}
 <?php
-$image = $v['variant_photo'];
-$image['new_width'] = 100;
-$image['new_height'] = 100;
-include SITE_ROOT . '/includes/variant_image.php';
+$image = $v["variant_photo"];
+$image["new_width"] = 100;
+$image["new_height"] = 100;
+include SITE_ROOT . "/includes/variant_image.php";
 ?>
 {elseif $v['photo']}
 <?php
-$image = $v['photo'];
-$image['new_width'] = 100;
-$image['new_height'] = 100;
-include SITE_ROOT . '/includes/image.php';
+$image = $v["photo"];
+$image["new_width"] = 100;
+$image["new_height"] = 100;
+include SITE_ROOT . "/includes/image.php";
 ?>
 {/if}
 	  </a></td>

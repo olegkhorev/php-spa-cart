@@ -20,18 +20,27 @@
 </form>
  </td>
  <td>
-<h1>{lng[Order]} #<?php echo $order['orderid']; ?> <select id="status">
-<?php
-		foreach ($order_statuses as $k=>$v) {
-			echo '<option value="'.$k.'"'.($k == $order['status'] ? ' selected' : '').'>'.$v.'</option>';
-		}
-?>
+<h1>{lng[Order]} #<?php echo $order["orderid"]; ?> <select id="status">
+<?php foreach ($order_statuses as $k => $v) {
+    echo '<option value="' .
+        $k .
+        '"' .
+        ($k == $order["status"] ? " selected" : "") .
+        ">" .
+        $v .
+        "</option>";
+} ?>
 </select>
-<button onclick="javascript: self.location='/admin/invoice/<?php echo $order['orderid']; ?>/status/'+$('#status').val();">{lng[Save]}</button>
+<button onclick="javascript: self.location='/admin/invoice/<?php echo $order[
+    "orderid"
+]; ?>/status/'+$('#status').val();">{lng[Save]}</button>
 </h1>
 <small>{lng[Chagned status will be sent to customer]}</small>
 <br /><br />
-<div>{lng[Order date]}: <?php echo date($datetime_format, $order['date']); ?></div>
+<div>{lng[Order date]}: <?php echo date(
+    $datetime_format,
+    $order["date"],
+); ?></div>
 <div class="clear"></div>
 {if $order['transaction_id']}
 {lng[Transaction]} #: {$order['transaction_id']}

@@ -12,19 +12,27 @@
 <table cellpadding="2" class="user_table normal-table">
 <tr>
  <td class="name">{lng[First name]}</td>
- <td><input type="text" name="posted_data[firstname]" value="<?php echo escape($user['firstname']); ?>" /></td>
+ <td><input type="text" name="posted_data[firstname]" value="<?php echo escape(
+     $user["firstname"],
+ ); ?>" /></td>
 </td>
 <tr>
  <td class="name">{lng[Last name]}</td>
- <td><input type="text" name="posted_data[lastname]" value="<?php echo escape($user['lastname']); ?>" /></td>
+ <td><input type="text" name="posted_data[lastname]" value="<?php echo escape(
+     $user["lastname"],
+ ); ?>" /></td>
 </td>
 <tr>
  <td class="name">{lng[Phone]}</td>
- <td><input type="text" name="posted_data[phone]" value="<?php echo escape($user['phone']); ?>" /></td>
+ <td><input type="text" name="posted_data[phone]" value="<?php echo escape(
+     $user["phone"],
+ ); ?>" /></td>
 </td>
 <tr>
  <td class="name">{lng[Email]}</td>
- <td><input type="text" name="posted_data[email]" value="<?php echo escape($user['email']); ?>" /></td>
+ <td><input type="text" name="posted_data[email]" value="<?php echo escape(
+     $user["email"],
+ ); ?>" /></td>
 </td>
 <tr>
  <td class="name">{lng[Password]}</td>
@@ -36,8 +44,12 @@
  <td class="name">{lng[User type]}</td>
  <td>
 <select name="posted_data[usertype]">
-<option value="C"<?php if ($user['usertype'] == 'C') echo ' selected'; ?>>{lng[Customer]}</option>
-<option value="A"<?php if ($user['usertype'] == 'A') echo ' selected'; ?>>{lng[Administrator]}</option>
+<option value="C"<?php if ($user["usertype"] == "C") {
+    echo " selected";
+} ?>>{lng[Customer]}</option>
+<option value="A"<?php if ($user["usertype"] == "A") {
+    echo " selected";
+} ?>>{lng[Administrator]}</option>
 </select>
  </td>
 </td>
@@ -50,7 +62,9 @@
 <select name="posted_data[roleid]">
 <option value="0"></option>
 {foreach $roles as $v}
-<option value="{$v['roleid']}"<?php if ($user['roleid'] == $v['roleid']) echo ' selected'; ?>>{$v['title']}</option>
+<option value="{$v['roleid']}"<?php if ($user["roleid"] == $v["roleid"]) {
+    echo " selected";
+} ?>>{$v['title']}</option>
 {/foreach}
 </select>
  </td>
@@ -61,35 +75,50 @@
  <td class="name">{lng[Status]}</td>
  <td>
 <select name="posted_data[status]">
-<option value="1"<?php if ($user['status'] == 1) echo ' selected'; ?>>{lng[Active]}</option>
-<option value="0"<?php if (!$user['status'] && $user['email']) echo ' selected'; ?>>{lng[Not active]}</option>
+<option value="1"<?php if ($user["status"] == 1) {
+    echo " selected";
+} ?>>{lng[Active]}</option>
+<option value="0"<?php if (!$user["status"] && $user["email"]) {
+    echo " selected";
+} ?>>{lng[Not active]}</option>
 </select>
  </td>
 </tr>
 
 <tr>
  <td class="name">{lng[Address]}</td>
- <td><input type="text" name="posted_data[address]" value="<?php echo escape($user['address']); ?>" /></td>
+ <td><input type="text" name="posted_data[address]" value="<?php echo escape(
+     $user["address"],
+ ); ?>" /></td>
 </td>
 
 <tr>
  <td class="name">{lng[City]}</td>
- <td><input type="text" name="posted_data[city]" value="<?php echo escape($user['city']); ?>" /></td>
+ <td><input type="text" name="posted_data[city]" value="<?php echo escape(
+     $user["city"],
+ ); ?>" /></td>
 </td>
 
 <script>
 var states = {ldelim}{rdelim};
-	user_state = "<?php echo escape($user['state']); ?>";
-<?php
-foreach ($countries as $v) {
-	if (!empty($v['states'])) {
-		echo 'states.'.$v['code'].' = {states: []};'."\n";
-		foreach ($v['states'] as $k=>$s) {
-			echo 'states.'.$v['code'].'.states['.$k.'] = {code: "'.escape($s['code']).'", state: "'.escape($s['state']).'"};'."\n";
-		}
-	}
-}
-?>
+	user_state = "<?php echo escape($user["state"]); ?>";
+<?php foreach ($countries as $v) {
+    if (!empty($v["states"])) {
+        echo "states." . $v["code"] . " = {states: []};" . "\n";
+        foreach ($v["states"] as $k => $s) {
+            echo "states." .
+                $v["code"] .
+                ".states[" .
+                $k .
+                '] = {code: "' .
+                escape($s["code"]) .
+                '", state: "' .
+                escape($s["state"]) .
+                '"};' .
+                "\n";
+        }
+    }
+} ?>
 </script>
 
 <tr>
@@ -97,20 +126,28 @@ foreach ($countries as $v) {
  <td>
 <?php
 $found = false;
-foreach ($countries as $v)
-	if ($v['code'] == $user['country'] && !empty($v['states'])) {
-		$found = true;
-		echo '<select name="posted_data[state]" id="state">';
-		foreach ($v['states'] as $s)
-			echo '<option value="'.escape($s['code']).'"'.($s['code'] == $user['state'] ? ' selected' : '').'>'.$s['state'].'</option>';
+foreach ($countries as $v) {
+    if ($v["code"] == $user["country"] && !empty($v["states"])) {
+        $found = true;
+        echo '<select name="posted_data[state]" id="state">';
+        foreach ($v["states"] as $s) {
+            echo '<option value="' .
+                escape($s["code"]) .
+                '"' .
+                ($s["code"] == $user["state"] ? " selected" : "") .
+                ">" .
+                $s["state"] .
+                "</option>";
+        }
 
-		echo '</select>';
-	}
-if (!$found) {
-?>
- <input type="text" name="posted_data[state]" id="state" value="<?php echo escape($user['state']); ?>" /></td>
-<?php
+        echo "</select>";
+    }
 }
+if (!$found) { ?>
+ <input type="text" name="posted_data[state]" id="state" value="<?php echo escape(
+     $user["state"],
+ ); ?>" /></td>
+<?php }
 ?>
 </td>
 
@@ -119,18 +156,24 @@ if (!$found) {
  <td>
 <select name="posted_data[country]" id="country">
 <option value=""></option>
-<?php
-foreach ($countries as $v) {
-	echo '<option value="'.$v['code'].'"'.(($v['code'] == $user['country']) ? ' selected' : '').'>'.$v['country'].'</option>';
-}
-?>
+<?php foreach ($countries as $v) {
+    echo '<option value="' .
+        $v["code"] .
+        '"' .
+        ($v["code"] == $user["country"] ? " selected" : "") .
+        ">" .
+        $v["country"] .
+        "</option>";
+} ?>
 </select>
  </td>
 </td>
 
 <tr>
  <td class="name">{lng[Zip/Postal code]}</td>
- <td><input type="text" name="posted_data[zipcode]" value="<?php echo escape($user['zipcode']); ?>" /></td>
+ <td><input type="text" name="posted_data[zipcode]" value="<?php echo escape(
+     $user["zipcode"],
+ ); ?>" /></td>
 </td>
 
 <tr>
@@ -138,12 +181,19 @@ foreach ($countries as $v) {
  <td>
 <select name="posted_data[pending_membershipid]">
 <option value="0">{lng[No membership]}</option>
-<?php
-if ($memberships)
-	foreach ($memberships as $m) {
-		echo '<option value="'.$m['membershipid'].'"'.($user['pending_membershipid'] == $m['membershipid'] ? ' selected="selected"' : '').'>'.$m['membership'].'</option>';
-	}
-?>
+<?php if ($memberships) {
+    foreach ($memberships as $m) {
+        echo '<option value="' .
+            $m["membershipid"] .
+            '"' .
+            ($user["pending_membershipid"] == $m["membershipid"]
+                ? ' selected="selected"'
+                : "") .
+            ">" .
+            $m["membership"] .
+            "</option>";
+    };
+} ?>
 </select>
  </td>
 </td>
@@ -153,12 +203,19 @@ if ($memberships)
  <td>
 <select name="posted_data[membershipid]">
 <option value="0">{lng[No membership]}</option>
-<?php
-if ($memberships)
-	foreach ($memberships as $m) {
-		echo '<option value="'.$m['membershipid'].'"'.($user['membershipid'] == $m['membershipid'] ? ' selected="selected"' : '').'>'.$m['membership'].'</option>';
-	}
-?>
+<?php if ($memberships) {
+    foreach ($memberships as $m) {
+        echo '<option value="' .
+            $m["membershipid"] .
+            '"' .
+            ($user["membershipid"] == $m["membershipid"]
+                ? ' selected="selected"'
+                : "") .
+            ">" .
+            $m["membership"] .
+            "</option>";
+    };
+} ?>
 </select>
  </td>
 </td>

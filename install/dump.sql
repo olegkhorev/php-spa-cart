@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Хост: MySQL-8.0:3306
--- Время создания: Окт 02 2026 г., 14:48
+-- Время создания: Окт 09 2026 г., 00:39
 -- Версия сервера: 8.0.43
 -- Версия PHP: 8.3.26
 
@@ -70,11 +70,12 @@ CREATE TABLE `blog_comments` (
 --
 
 INSERT INTO `blog_comments` (`commentid`, `blogid`, `userid`, `name`, `message`, `date`, `active`, `ip`) VALUES
-(2, 2, 1, '', '[b]Test[/b] [i]comment[/i]', 1411814640, 'Y', '127.0.0.1'),
-(6, 2, 1, '', '[quote=Oleg Khorev][b]Test[/b] [i]comment[/i][/quote]\r\n\r\nLooks good that I can include quote into my comment.', 1467292003, 'Y', ''),
-(7, 2, 1, '', 'Nice animations. Fast framework.', 1467291979, 'Y', ''),
-(8, 2, 0, 'test', 'It\'s nice blog', 1467291959, 'Y', ''),
-(9, 2, 848, '', 'Hey guys', 1671894104, 'Y', '127.0.0.1');
+(13, 2, 848, '', '<b><i><u><a href=\"https://asdadas.com\" rel=\"nofollow\">asdasdas </a></u></i></b>\n', 1791487193, 'Y', ''),
+(14, 2, 848, '', '<b><i><u>asdsa</u></i></b>\n', 1791487878, 'Y', '127.0.0.1'),
+(15, 2, 848, '', '<p>asdasdsa</p>\n', 1791487882, 'Y', '127.0.0.1'),
+(16, 2, 848, '', '<p>11</p>\n', 1791487886, 'Y', '127.0.0.1'),
+(17, 2, 848, '', '<b><i>aaa</i></b>\n', 1791487893, 'Y', '127.0.0.1'),
+(18, 2, 848, '', '<a href=\"https://asdsada\" rel=\"nofollow\">assadas</a>\n', 1791487901, 'Y', '127.0.0.1');
 
 -- --------------------------------------------------------
 
@@ -5107,7 +5108,11 @@ INSERT INTO `languages` (`id`, `lng`, `word`, `translation`) VALUES
 (4137, 'fr', 'Welcome to new module', 'Welcome to new module'),
 (4138, 'de', 'Welcome to new module', 'Welcome to new module'),
 (4139, 'ru', 'Welcome to new module', 'Welcome to new module'),
-(4140, 'en', 'About us', 'About us');
+(4140, 'en', 'About us', 'About us'),
+(4141, 'en', 'Blog moderation', 'Blog moderation'),
+(4142, 'en', 'Your comment has been added and awaiting for our moderation.', 'Your comment has been added and awaiting for our moderation.'),
+(4143, 'en', 'Enter email to subscribe to our news', 'Enter email to subscribe to our news'),
+(4144, 'en', 'Enter email to subscribe', 'Enter email to subscribe');
 
 -- --------------------------------------------------------
 
@@ -6730,7 +6735,14 @@ INSERT INTO `orders` (`orderid`, `paymentid`, `shippingid`, `local_pickup`, `wid
 (33, 5, 2220, 0, 0, 848, 'a@a.com', 'Admin', 'Admin', 'New York', 'IL', 'US', 'address', '10001', '1234', '', 1, 1790620555, 464.00, '', 0.00, 0.00, 46.40, 'a:11:{s:5:\"taxid\";s:1:\"1\";s:8:\"tax_name\";s:3:\"VAT\";s:16:\"tax_display_name\";s:3:\"VAT\";s:7:\"formula\";s:2:\"ST\";s:12:\"address_type\";s:1:\"B\";s:6:\"active\";s:1:\"Y\";s:18:\"price_includes_tax\";s:1:\"N\";s:21:\"display_including_tax\";s:1:\"N\";s:12:\"display_info\";s:0:\"\";s:9:\"regnumber\";s:0:\"\";s:8:\"priority\";s:1:\"0\";}', 510.40, '', 0.00, 0, 0, 0, '4095468705ee1b139296df48dddefde7', '', '', '', 'Admin', 'Admin', 'New York', 'IL', 'US', 'address', '10001', '1234', NULL, NULL, '9b632d733790a3c077cf0e649889d97a'),
 (34, 8, 2220, 0, 0, 848, 'a@a.com', 'Admin', 'Admin', 'New York', 'IL', 'US', 'address', '10001', '1234', '', 1, 1790936957, 332.90, '', 0.00, 0.00, 33.29, 'a:11:{s:5:\"taxid\";s:1:\"1\";s:8:\"tax_name\";s:3:\"VAT\";s:16:\"tax_display_name\";s:3:\"VAT\";s:7:\"formula\";s:2:\"ST\";s:12:\"address_type\";s:1:\"B\";s:6:\"active\";s:1:\"Y\";s:18:\"price_includes_tax\";s:1:\"N\";s:21:\"display_including_tax\";s:1:\"N\";s:12:\"display_info\";s:0:\"\";s:9:\"regnumber\";s:0:\"\";s:8:\"priority\";s:1:\"0\";}', 366.19, '', 0.00, 0, 0, 0, 'fab0d98f5862856c7939cb98f5106661', '', '', '', 'Admin', 'Admin', 'New York', 'IL', 'US', 'address', '10001', '1234', NULL, NULL, 'e199d91a73822f99daddc8d3507d7436'),
 (35, 8, 2220, 0, 0, 848, 'a@a.com', 'Admin', 'Admin', 'New York', 'IL', 'US', 'address', '10001', '1234', '', 1, 1790937017, 49.00, '', 0.00, 13.95, 6.30, 'a:11:{s:5:\"taxid\";s:1:\"1\";s:8:\"tax_name\";s:3:\"VAT\";s:16:\"tax_display_name\";s:3:\"VAT\";s:7:\"formula\";s:2:\"ST\";s:12:\"address_type\";s:1:\"B\";s:6:\"active\";s:1:\"Y\";s:18:\"price_includes_tax\";s:1:\"N\";s:21:\"display_including_tax\";s:1:\"N\";s:12:\"display_info\";s:0:\"\";s:9:\"regnumber\";s:0:\"\";s:8:\"priority\";s:1:\"0\";}', 69.25, '', 0.00, 0, 0, 0, 'aae24eb3487223e6618d3a0d5f749eb5', '', '', '', 'Admin', 'Admin', 'New York', 'IL', 'US', 'address', '10001', '1234', NULL, NULL, 'c9ffbd08d020179a35064dbc50588a26'),
-(36, 8, 2220, 0, 0, 848, 'a@a.com', 'Admin', 'Admin', 'New York', 'IL', 'US', 'address', '10001', '1234', '', 1, 1790937161, 49.00, '', 0.00, 13.95, 6.30, 'a:11:{s:5:\"taxid\";s:1:\"1\";s:8:\"tax_name\";s:3:\"VAT\";s:16:\"tax_display_name\";s:3:\"VAT\";s:7:\"formula\";s:2:\"ST\";s:12:\"address_type\";s:1:\"B\";s:6:\"active\";s:1:\"Y\";s:18:\"price_includes_tax\";s:1:\"N\";s:21:\"display_including_tax\";s:1:\"N\";s:12:\"display_info\";s:0:\"\";s:9:\"regnumber\";s:0:\"\";s:8:\"priority\";s:1:\"0\";}', 69.25, '', 0.00, 0, 0, 0, 'cc6e5848ed2e28f349143ec88fab3b6c', '', '', '', 'Admin', 'Admin', 'New York', 'IL', 'US', 'address', '10001', '1234', NULL, NULL, 'f6ee13fa13e484b5831a7ec52540a8dd');
+(36, 8, 2220, 0, 0, 848, 'a@a.com', 'Admin', 'Admin', 'New York', 'IL', 'US', 'address', '10001', '1234', '', 1, 1790937161, 49.00, '', 0.00, 13.95, 6.30, 'a:11:{s:5:\"taxid\";s:1:\"1\";s:8:\"tax_name\";s:3:\"VAT\";s:16:\"tax_display_name\";s:3:\"VAT\";s:7:\"formula\";s:2:\"ST\";s:12:\"address_type\";s:1:\"B\";s:6:\"active\";s:1:\"Y\";s:18:\"price_includes_tax\";s:1:\"N\";s:21:\"display_including_tax\";s:1:\"N\";s:12:\"display_info\";s:0:\"\";s:9:\"regnumber\";s:0:\"\";s:8:\"priority\";s:1:\"0\";}', 69.25, '', 0.00, 0, 0, 0, 'cc6e5848ed2e28f349143ec88fab3b6c', '', '', '', 'Admin', 'Admin', 'New York', 'IL', 'US', 'address', '10001', '1234', NULL, NULL, 'f6ee13fa13e484b5831a7ec52540a8dd'),
+(37, 2, 2220, 0, 0, 848, 'a@a.com', 'Admin', 'Admin', 'New York', 'IL', 'US', 'address', '10001', '1234', '', 2, 1791490128, 49.00, '', 0.00, 13.95, 6.30, 'a:11:{s:5:\"taxid\";s:1:\"1\";s:8:\"tax_name\";s:3:\"VAT\";s:16:\"tax_display_name\";s:3:\"VAT\";s:7:\"formula\";s:2:\"ST\";s:12:\"address_type\";s:1:\"B\";s:6:\"active\";s:1:\"Y\";s:18:\"price_includes_tax\";s:1:\"N\";s:21:\"display_including_tax\";s:1:\"N\";s:12:\"display_info\";s:0:\"\";s:9:\"regnumber\";s:0:\"\";s:8:\"priority\";s:1:\"0\";}', 69.25, '', 0.00, 1, 1, 0, '5078a45fe90a0f4ccf55f94824fccc47', '', '6r5p6f2q', '', 'Admin', 'Admin', 'New York', 'IL', 'US', 'address', '10001', '1234', NULL, NULL, '295214473dba99416cc3ebb27c13ac62'),
+(38, 2, 2220, 0, 0, 848, 'a@a.com', 'Admin', 'Admin', 'New York', 'IL', 'US', 'address', '10001', '1234', '', 2, 1791490962, 49.00, '', 0.00, 13.95, 6.30, 'a:11:{s:5:\"taxid\";s:1:\"1\";s:8:\"tax_name\";s:3:\"VAT\";s:16:\"tax_display_name\";s:3:\"VAT\";s:7:\"formula\";s:2:\"ST\";s:12:\"address_type\";s:1:\"B\";s:6:\"active\";s:1:\"Y\";s:18:\"price_includes_tax\";s:1:\"N\";s:21:\"display_including_tax\";s:1:\"N\";s:12:\"display_info\";s:0:\"\";s:9:\"regnumber\";s:0:\"\";s:8:\"priority\";s:1:\"0\";}', 69.25, '', 0.00, 1, 1, 0, 'bcf66d2e5f7a82be571558a9e8ea942d', '', 'p5zcr4hk', '', 'Admin', 'Admin', 'New York', 'IL', 'US', 'address', '10001', '1234', NULL, NULL, '32f4412f27fe069ed94d856b50d2e1df'),
+(39, 8, 2220, 0, 0, 848, 'a@a.com', 'Admin', 'Admin', 'New York', 'IL', 'US', 'address', '10001', '1234', '', 1, 1791491315, 49.00, '', 0.00, 13.95, 6.30, 'a:11:{s:5:\"taxid\";s:1:\"1\";s:8:\"tax_name\";s:3:\"VAT\";s:16:\"tax_display_name\";s:3:\"VAT\";s:7:\"formula\";s:2:\"ST\";s:12:\"address_type\";s:1:\"B\";s:6:\"active\";s:1:\"Y\";s:18:\"price_includes_tax\";s:1:\"N\";s:21:\"display_including_tax\";s:1:\"N\";s:12:\"display_info\";s:0:\"\";s:9:\"regnumber\";s:0:\"\";s:8:\"priority\";s:1:\"0\";}', 69.25, '', 0.00, 0, 0, 0, '045430949ed4b73ee06c33e1cfda7702', '', '', '', 'Admin', 'Admin', 'New York', 'IL', 'US', 'address', '10001', '1234', NULL, NULL, 'c6e81b7a3f80790cfcf1d82d1400b6a2'),
+(40, 8, 2220, 0, 0, 848, 'a@a.com', 'Admin', 'Admin', 'New York', 'IL', 'US', 'address', '10001', '1234', '', 1, 1791491340, 199.00, '', 0.00, 0.00, 19.90, 'a:11:{s:5:\"taxid\";s:1:\"1\";s:8:\"tax_name\";s:3:\"VAT\";s:16:\"tax_display_name\";s:3:\"VAT\";s:7:\"formula\";s:2:\"ST\";s:12:\"address_type\";s:1:\"B\";s:6:\"active\";s:1:\"Y\";s:18:\"price_includes_tax\";s:1:\"N\";s:21:\"display_including_tax\";s:1:\"N\";s:12:\"display_info\";s:0:\"\";s:9:\"regnumber\";s:0:\"\";s:8:\"priority\";s:1:\"0\";}', 218.90, '', 0.00, 0, 0, 0, 'b9da6be2d2029a79384ea618e8a4b4ac', '', '', '', 'Admin', 'Admin', 'New York', 'IL', 'US', 'address', '10001', '1234', NULL, NULL, '8bcfe49315fa14cdb91dfeb0e06cf281'),
+(41, 8, 2220, 0, 0, 848, 'a@a.com', 'Admin', 'Admin', 'New York', 'IL', 'US', 'address', '10001', '1234', '', 1, 1791491618, 49.00, '', 0.00, 13.95, 6.30, 'a:11:{s:5:\"taxid\";s:1:\"1\";s:8:\"tax_name\";s:3:\"VAT\";s:16:\"tax_display_name\";s:3:\"VAT\";s:7:\"formula\";s:2:\"ST\";s:12:\"address_type\";s:1:\"B\";s:6:\"active\";s:1:\"Y\";s:18:\"price_includes_tax\";s:1:\"N\";s:21:\"display_including_tax\";s:1:\"N\";s:12:\"display_info\";s:0:\"\";s:9:\"regnumber\";s:0:\"\";s:8:\"priority\";s:1:\"0\";}', 69.25, '', 0.00, 0, 0, 0, '673a3234d13e80674867f194833a594d', '', '', '', 'Admin', 'Admin', 'New York', 'IL', 'US', 'address', '10001', '1234', NULL, NULL, '24f9c12bc6bdc4e911aadd6ed4c5a36b'),
+(42, 8, 2220, 0, 0, 848, 'a@a.com', 'Admin', 'Admin', 'New York', 'IL', 'US', 'address', '10001', '1234', '', 1, 1791491633, 49.00, '', 0.00, 13.95, 6.30, 'a:11:{s:5:\"taxid\";s:1:\"1\";s:8:\"tax_name\";s:3:\"VAT\";s:16:\"tax_display_name\";s:3:\"VAT\";s:7:\"formula\";s:2:\"ST\";s:12:\"address_type\";s:1:\"B\";s:6:\"active\";s:1:\"Y\";s:18:\"price_includes_tax\";s:1:\"N\";s:21:\"display_including_tax\";s:1:\"N\";s:12:\"display_info\";s:0:\"\";s:9:\"regnumber\";s:0:\"\";s:8:\"priority\";s:1:\"0\";}', 69.25, '', 0.00, 0, 0, 0, '6cf3c5f4044ed1e193438d97ef869e8f', '', '', '', 'Admin', 'Admin', 'New York', 'IL', 'US', 'address', '10001', '1234', NULL, NULL, '39c49e944d28863971fdce5a73bba75b'),
+(43, 8, 2220, 0, 0, 848, 'a@a.com', 'Admin', 'Admin', 'New York', 'IL', 'US', 'address', '10001', '1234', '', 1, 1791491755, 129.00, '', 0.00, 0.00, 12.90, 'a:11:{s:5:\"taxid\";s:1:\"1\";s:8:\"tax_name\";s:3:\"VAT\";s:16:\"tax_display_name\";s:3:\"VAT\";s:7:\"formula\";s:2:\"ST\";s:12:\"address_type\";s:1:\"B\";s:6:\"active\";s:1:\"Y\";s:18:\"price_includes_tax\";s:1:\"N\";s:21:\"display_including_tax\";s:1:\"N\";s:12:\"display_info\";s:0:\"\";s:9:\"regnumber\";s:0:\"\";s:8:\"priority\";s:1:\"0\";}', 141.90, '', 0.00, 0, 0, 0, '08eba2e6b4c045fb349b84a3edade20a', '', '', '', 'Admin', 'Admin', 'New York', 'IL', 'US', 'address', '10001', '1234', NULL, NULL, '55822ca0ed6c40aa4dbcfed9a6a542bc');
 
 -- --------------------------------------------------------
 
@@ -6818,7 +6830,14 @@ INSERT INTO `order_items` (`itemid`, `orderid`, `productid`, `price`, `weight`, 
 (61, 34, 255, 1.00, 0.00, 1, 'a:3:{s:15:\"product_options\";a:2:{i:466;a:10:{s:7:\"groupid\";s:3:\"466\";s:9:\"productid\";s:3:\"255\";s:4:\"name\";s:4:\"Size\";s:8:\"fullname\";s:0:\"\";s:7:\"orderby\";s:2:\"20\";s:4:\"type\";s:1:\"g\";s:9:\"view_type\";s:1:\"p\";s:7:\"enabled\";s:1:\"1\";s:7:\"variant\";s:1:\"0\";s:6:\"option\";a:9:{s:8:\"optionid\";s:4:\"1666\";s:7:\"groupid\";s:3:\"466\";s:4:\"name\";s:5:\"Lapis\";s:7:\"orderby\";s:2:\"10\";s:7:\"enabled\";s:1:\"1\";s:14:\"price_modifier\";s:4:\"0.00\";s:19:\"price_modifier_type\";s:1:\"%\";s:15:\"weight_modifier\";s:4:\"0.00\";s:20:\"weight_modifier_type\";s:1:\"%\";}}i:467;a:10:{s:7:\"groupid\";s:3:\"467\";s:9:\"productid\";s:3:\"255\";s:4:\"name\";s:5:\"Color\";s:8:\"fullname\";s:0:\"\";s:7:\"orderby\";s:2:\"30\";s:4:\"type\";s:1:\"g\";s:9:\"view_type\";s:1:\"p\";s:7:\"enabled\";s:1:\"1\";s:7:\"variant\";s:1:\"0\";s:6:\"option\";a:9:{s:8:\"optionid\";s:4:\"1675\";s:7:\"groupid\";s:3:\"467\";s:4:\"name\";s:3:\"8MM\";s:7:\"orderby\";s:2:\"30\";s:7:\"enabled\";s:1:\"1\";s:14:\"price_modifier\";s:4:\"0.00\";s:19:\"price_modifier_type\";s:1:\"%\";s:15:\"weight_modifier\";s:4:\"0.00\";s:20:\"weight_modifier_type\";s:1:\"%\";}}}s:7:\"options\";a:2:{i:466;s:4:\"1666\";i:467;s:4:\"1675\";}s:9:\"variantid\";b:0;}', ''),
 (62, 34, 221, 218.90, 0.00, 1, 'a:3:{s:15:\"product_options\";a:2:{i:400;a:10:{s:7:\"groupid\";s:3:\"400\";s:9:\"productid\";s:3:\"221\";s:4:\"name\";s:12:\"Stone Weight\";s:8:\"fullname\";s:0:\"\";s:7:\"orderby\";s:2:\"10\";s:4:\"type\";s:1:\"g\";s:9:\"view_type\";s:1:\"p\";s:7:\"enabled\";s:1:\"1\";s:7:\"variant\";s:1:\"0\";s:6:\"option\";a:9:{s:8:\"optionid\";s:4:\"1281\";s:7:\"groupid\";s:3:\"400\";s:4:\"name\";s:11:\"0.40 carats\";s:7:\"orderby\";s:2:\"20\";s:7:\"enabled\";s:1:\"1\";s:14:\"price_modifier\";s:5:\"10.00\";s:19:\"price_modifier_type\";s:1:\"%\";s:15:\"weight_modifier\";s:4:\"0.00\";s:20:\"weight_modifier_type\";s:1:\"%\";}}i:401;a:10:{s:7:\"groupid\";s:3:\"401\";s:9:\"productid\";s:3:\"221\";s:4:\"name\";s:5:\"Color\";s:8:\"fullname\";s:0:\"\";s:7:\"orderby\";s:2:\"20\";s:4:\"type\";s:1:\"g\";s:9:\"view_type\";s:1:\"p\";s:7:\"enabled\";s:1:\"1\";s:7:\"variant\";s:1:\"0\";s:6:\"option\";a:9:{s:8:\"optionid\";s:4:\"1282\";s:7:\"groupid\";s:3:\"401\";s:4:\"name\";s:11:\"silver gold\";s:7:\"orderby\";s:2:\"10\";s:7:\"enabled\";s:1:\"1\";s:14:\"price_modifier\";s:4:\"0.00\";s:19:\"price_modifier_type\";s:1:\"%\";s:15:\"weight_modifier\";s:4:\"0.00\";s:20:\"weight_modifier_type\";s:1:\"%\";}}}s:7:\"options\";a:2:{i:400;s:4:\"1281\";i:401;s:4:\"1282\";}s:9:\"variantid\";b:0;}', ''),
 (63, 35, 129, 49.00, 0.00, 1, 'a:3:{s:15:\"product_options\";a:2:{i:226;a:10:{s:7:\"groupid\";s:3:\"226\";s:9:\"productid\";s:3:\"129\";s:4:\"name\";s:4:\"Size\";s:8:\"fullname\";s:0:\"\";s:7:\"orderby\";s:2:\"10\";s:4:\"type\";s:1:\"g\";s:9:\"view_type\";s:1:\"p\";s:7:\"enabled\";s:1:\"1\";s:7:\"variant\";s:1:\"1\";s:6:\"option\";a:9:{s:8:\"optionid\";s:3:\"845\";s:7:\"groupid\";s:3:\"226\";s:4:\"name\";s:1:\"S\";s:7:\"orderby\";s:2:\"10\";s:7:\"enabled\";s:1:\"1\";s:14:\"price_modifier\";s:4:\"0.00\";s:19:\"price_modifier_type\";s:1:\"%\";s:15:\"weight_modifier\";s:4:\"0.00\";s:20:\"weight_modifier_type\";s:1:\"%\";}}i:227;a:10:{s:7:\"groupid\";s:3:\"227\";s:9:\"productid\";s:3:\"129\";s:4:\"name\";s:5:\"Color\";s:8:\"fullname\";s:0:\"\";s:7:\"orderby\";s:2:\"20\";s:4:\"type\";s:1:\"g\";s:9:\"view_type\";s:1:\"p\";s:7:\"enabled\";s:1:\"1\";s:7:\"variant\";s:1:\"1\";s:6:\"option\";a:9:{s:8:\"optionid\";s:3:\"850\";s:7:\"groupid\";s:3:\"227\";s:4:\"name\";s:5:\"White\";s:7:\"orderby\";s:2:\"10\";s:7:\"enabled\";s:1:\"1\";s:14:\"price_modifier\";s:4:\"0.00\";s:19:\"price_modifier_type\";s:1:\"%\";s:15:\"weight_modifier\";s:4:\"0.00\";s:20:\"weight_modifier_type\";s:1:\"%\";}}}s:7:\"options\";a:2:{i:226;s:3:\"845\";i:227;s:3:\"850\";}s:9:\"variantid\";s:3:\"270\";}', ''),
-(64, 36, 129, 49.00, 0.00, 1, 'a:3:{s:15:\"product_options\";a:2:{i:226;a:10:{s:7:\"groupid\";s:3:\"226\";s:9:\"productid\";s:3:\"129\";s:4:\"name\";s:4:\"Size\";s:8:\"fullname\";s:0:\"\";s:7:\"orderby\";s:2:\"10\";s:4:\"type\";s:1:\"g\";s:9:\"view_type\";s:1:\"p\";s:7:\"enabled\";s:1:\"1\";s:7:\"variant\";s:1:\"1\";s:6:\"option\";a:9:{s:8:\"optionid\";s:3:\"845\";s:7:\"groupid\";s:3:\"226\";s:4:\"name\";s:1:\"S\";s:7:\"orderby\";s:2:\"10\";s:7:\"enabled\";s:1:\"1\";s:14:\"price_modifier\";s:4:\"0.00\";s:19:\"price_modifier_type\";s:1:\"%\";s:15:\"weight_modifier\";s:4:\"0.00\";s:20:\"weight_modifier_type\";s:1:\"%\";}}i:227;a:10:{s:7:\"groupid\";s:3:\"227\";s:9:\"productid\";s:3:\"129\";s:4:\"name\";s:5:\"Color\";s:8:\"fullname\";s:0:\"\";s:7:\"orderby\";s:2:\"20\";s:4:\"type\";s:1:\"g\";s:9:\"view_type\";s:1:\"p\";s:7:\"enabled\";s:1:\"1\";s:7:\"variant\";s:1:\"1\";s:6:\"option\";a:9:{s:8:\"optionid\";s:3:\"850\";s:7:\"groupid\";s:3:\"227\";s:4:\"name\";s:5:\"White\";s:7:\"orderby\";s:2:\"10\";s:7:\"enabled\";s:1:\"1\";s:14:\"price_modifier\";s:4:\"0.00\";s:19:\"price_modifier_type\";s:1:\"%\";s:15:\"weight_modifier\";s:4:\"0.00\";s:20:\"weight_modifier_type\";s:1:\"%\";}}}s:7:\"options\";a:2:{i:226;s:3:\"845\";i:227;s:3:\"850\";}s:9:\"variantid\";s:3:\"270\";}', '');
+(64, 36, 129, 49.00, 0.00, 1, 'a:3:{s:15:\"product_options\";a:2:{i:226;a:10:{s:7:\"groupid\";s:3:\"226\";s:9:\"productid\";s:3:\"129\";s:4:\"name\";s:4:\"Size\";s:8:\"fullname\";s:0:\"\";s:7:\"orderby\";s:2:\"10\";s:4:\"type\";s:1:\"g\";s:9:\"view_type\";s:1:\"p\";s:7:\"enabled\";s:1:\"1\";s:7:\"variant\";s:1:\"1\";s:6:\"option\";a:9:{s:8:\"optionid\";s:3:\"845\";s:7:\"groupid\";s:3:\"226\";s:4:\"name\";s:1:\"S\";s:7:\"orderby\";s:2:\"10\";s:7:\"enabled\";s:1:\"1\";s:14:\"price_modifier\";s:4:\"0.00\";s:19:\"price_modifier_type\";s:1:\"%\";s:15:\"weight_modifier\";s:4:\"0.00\";s:20:\"weight_modifier_type\";s:1:\"%\";}}i:227;a:10:{s:7:\"groupid\";s:3:\"227\";s:9:\"productid\";s:3:\"129\";s:4:\"name\";s:5:\"Color\";s:8:\"fullname\";s:0:\"\";s:7:\"orderby\";s:2:\"20\";s:4:\"type\";s:1:\"g\";s:9:\"view_type\";s:1:\"p\";s:7:\"enabled\";s:1:\"1\";s:7:\"variant\";s:1:\"1\";s:6:\"option\";a:9:{s:8:\"optionid\";s:3:\"850\";s:7:\"groupid\";s:3:\"227\";s:4:\"name\";s:5:\"White\";s:7:\"orderby\";s:2:\"10\";s:7:\"enabled\";s:1:\"1\";s:14:\"price_modifier\";s:4:\"0.00\";s:19:\"price_modifier_type\";s:1:\"%\";s:15:\"weight_modifier\";s:4:\"0.00\";s:20:\"weight_modifier_type\";s:1:\"%\";}}}s:7:\"options\";a:2:{i:226;s:3:\"845\";i:227;s:3:\"850\";}s:9:\"variantid\";s:3:\"270\";}', ''),
+(65, 37, 129, 49.00, 0.00, 1, 'a:3:{s:15:\"product_options\";a:2:{i:226;a:10:{s:7:\"groupid\";s:3:\"226\";s:9:\"productid\";s:3:\"129\";s:4:\"name\";s:4:\"Size\";s:8:\"fullname\";s:0:\"\";s:7:\"orderby\";s:2:\"10\";s:4:\"type\";s:1:\"g\";s:9:\"view_type\";s:1:\"p\";s:7:\"enabled\";s:1:\"1\";s:7:\"variant\";s:1:\"1\";s:6:\"option\";a:9:{s:8:\"optionid\";s:3:\"845\";s:7:\"groupid\";s:3:\"226\";s:4:\"name\";s:1:\"S\";s:7:\"orderby\";s:2:\"10\";s:7:\"enabled\";s:1:\"1\";s:14:\"price_modifier\";s:4:\"0.00\";s:19:\"price_modifier_type\";s:1:\"%\";s:15:\"weight_modifier\";s:4:\"0.00\";s:20:\"weight_modifier_type\";s:1:\"%\";}}i:227;a:10:{s:7:\"groupid\";s:3:\"227\";s:9:\"productid\";s:3:\"129\";s:4:\"name\";s:5:\"Color\";s:8:\"fullname\";s:0:\"\";s:7:\"orderby\";s:2:\"20\";s:4:\"type\";s:1:\"g\";s:9:\"view_type\";s:1:\"p\";s:7:\"enabled\";s:1:\"1\";s:7:\"variant\";s:1:\"1\";s:6:\"option\";a:9:{s:8:\"optionid\";s:3:\"850\";s:7:\"groupid\";s:3:\"227\";s:4:\"name\";s:5:\"White\";s:7:\"orderby\";s:2:\"10\";s:7:\"enabled\";s:1:\"1\";s:14:\"price_modifier\";s:4:\"0.00\";s:19:\"price_modifier_type\";s:1:\"%\";s:15:\"weight_modifier\";s:4:\"0.00\";s:20:\"weight_modifier_type\";s:1:\"%\";}}}s:7:\"options\";a:2:{i:226;s:3:\"845\";i:227;s:3:\"850\";}s:9:\"variantid\";s:3:\"270\";}', ''),
+(66, 38, 129, 49.00, 0.00, 1, 'a:3:{s:15:\"product_options\";a:2:{i:226;a:10:{s:7:\"groupid\";s:3:\"226\";s:9:\"productid\";s:3:\"129\";s:4:\"name\";s:4:\"Size\";s:8:\"fullname\";s:0:\"\";s:7:\"orderby\";s:2:\"10\";s:4:\"type\";s:1:\"g\";s:9:\"view_type\";s:1:\"p\";s:7:\"enabled\";s:1:\"1\";s:7:\"variant\";s:1:\"1\";s:6:\"option\";a:9:{s:8:\"optionid\";s:3:\"845\";s:7:\"groupid\";s:3:\"226\";s:4:\"name\";s:1:\"S\";s:7:\"orderby\";s:2:\"10\";s:7:\"enabled\";s:1:\"1\";s:14:\"price_modifier\";s:4:\"0.00\";s:19:\"price_modifier_type\";s:1:\"%\";s:15:\"weight_modifier\";s:4:\"0.00\";s:20:\"weight_modifier_type\";s:1:\"%\";}}i:227;a:10:{s:7:\"groupid\";s:3:\"227\";s:9:\"productid\";s:3:\"129\";s:4:\"name\";s:5:\"Color\";s:8:\"fullname\";s:0:\"\";s:7:\"orderby\";s:2:\"20\";s:4:\"type\";s:1:\"g\";s:9:\"view_type\";s:1:\"p\";s:7:\"enabled\";s:1:\"1\";s:7:\"variant\";s:1:\"1\";s:6:\"option\";a:9:{s:8:\"optionid\";s:3:\"850\";s:7:\"groupid\";s:3:\"227\";s:4:\"name\";s:5:\"White\";s:7:\"orderby\";s:2:\"10\";s:7:\"enabled\";s:1:\"1\";s:14:\"price_modifier\";s:4:\"0.00\";s:19:\"price_modifier_type\";s:1:\"%\";s:15:\"weight_modifier\";s:4:\"0.00\";s:20:\"weight_modifier_type\";s:1:\"%\";}}}s:7:\"options\";a:2:{i:226;s:3:\"845\";i:227;s:3:\"850\";}s:9:\"variantid\";s:3:\"270\";}', ''),
+(67, 39, 129, 49.00, 0.00, 1, 'a:3:{s:15:\"product_options\";a:2:{i:226;a:10:{s:7:\"groupid\";s:3:\"226\";s:9:\"productid\";s:3:\"129\";s:4:\"name\";s:4:\"Size\";s:8:\"fullname\";s:0:\"\";s:7:\"orderby\";s:2:\"10\";s:4:\"type\";s:1:\"g\";s:9:\"view_type\";s:1:\"p\";s:7:\"enabled\";s:1:\"1\";s:7:\"variant\";s:1:\"1\";s:6:\"option\";a:9:{s:8:\"optionid\";s:3:\"845\";s:7:\"groupid\";s:3:\"226\";s:4:\"name\";s:1:\"S\";s:7:\"orderby\";s:2:\"10\";s:7:\"enabled\";s:1:\"1\";s:14:\"price_modifier\";s:4:\"0.00\";s:19:\"price_modifier_type\";s:1:\"%\";s:15:\"weight_modifier\";s:4:\"0.00\";s:20:\"weight_modifier_type\";s:1:\"%\";}}i:227;a:10:{s:7:\"groupid\";s:3:\"227\";s:9:\"productid\";s:3:\"129\";s:4:\"name\";s:5:\"Color\";s:8:\"fullname\";s:0:\"\";s:7:\"orderby\";s:2:\"20\";s:4:\"type\";s:1:\"g\";s:9:\"view_type\";s:1:\"p\";s:7:\"enabled\";s:1:\"1\";s:7:\"variant\";s:1:\"1\";s:6:\"option\";a:9:{s:8:\"optionid\";s:3:\"850\";s:7:\"groupid\";s:3:\"227\";s:4:\"name\";s:5:\"White\";s:7:\"orderby\";s:2:\"10\";s:7:\"enabled\";s:1:\"1\";s:14:\"price_modifier\";s:4:\"0.00\";s:19:\"price_modifier_type\";s:1:\"%\";s:15:\"weight_modifier\";s:4:\"0.00\";s:20:\"weight_modifier_type\";s:1:\"%\";}}}s:7:\"options\";a:2:{i:226;s:3:\"845\";i:227;s:3:\"850\";}s:9:\"variantid\";s:3:\"270\";}', ''),
+(68, 40, 221, 199.00, 0.00, 1, 'a:3:{s:15:\"product_options\";a:2:{i:400;a:10:{s:7:\"groupid\";s:3:\"400\";s:9:\"productid\";s:3:\"221\";s:4:\"name\";s:12:\"Stone Weight\";s:8:\"fullname\";s:0:\"\";s:7:\"orderby\";s:2:\"10\";s:4:\"type\";s:1:\"g\";s:9:\"view_type\";s:1:\"p\";s:7:\"enabled\";s:1:\"1\";s:7:\"variant\";s:1:\"0\";s:6:\"option\";a:9:{s:8:\"optionid\";s:4:\"1280\";s:7:\"groupid\";s:3:\"400\";s:4:\"name\";s:11:\"0.20 carats\";s:7:\"orderby\";s:2:\"10\";s:7:\"enabled\";s:1:\"1\";s:14:\"price_modifier\";s:4:\"0.00\";s:19:\"price_modifier_type\";s:1:\"%\";s:15:\"weight_modifier\";s:4:\"0.00\";s:20:\"weight_modifier_type\";s:1:\"%\";}}i:401;a:10:{s:7:\"groupid\";s:3:\"401\";s:9:\"productid\";s:3:\"221\";s:4:\"name\";s:5:\"Color\";s:8:\"fullname\";s:0:\"\";s:7:\"orderby\";s:2:\"20\";s:4:\"type\";s:1:\"g\";s:9:\"view_type\";s:1:\"p\";s:7:\"enabled\";s:1:\"1\";s:7:\"variant\";s:1:\"0\";s:6:\"option\";a:9:{s:8:\"optionid\";s:4:\"1282\";s:7:\"groupid\";s:3:\"401\";s:4:\"name\";s:11:\"silver gold\";s:7:\"orderby\";s:2:\"10\";s:7:\"enabled\";s:1:\"1\";s:14:\"price_modifier\";s:4:\"0.00\";s:19:\"price_modifier_type\";s:1:\"%\";s:15:\"weight_modifier\";s:4:\"0.00\";s:20:\"weight_modifier_type\";s:1:\"%\";}}}s:7:\"options\";a:2:{i:400;s:4:\"1280\";i:401;s:4:\"1282\";}s:9:\"variantid\";b:0;}', ''),
+(69, 41, 129, 49.00, 0.00, 1, 'a:3:{s:15:\"product_options\";a:2:{i:226;a:10:{s:7:\"groupid\";s:3:\"226\";s:9:\"productid\";s:3:\"129\";s:4:\"name\";s:4:\"Size\";s:8:\"fullname\";s:0:\"\";s:7:\"orderby\";s:2:\"10\";s:4:\"type\";s:1:\"g\";s:9:\"view_type\";s:1:\"p\";s:7:\"enabled\";s:1:\"1\";s:7:\"variant\";s:1:\"1\";s:6:\"option\";a:9:{s:8:\"optionid\";s:3:\"845\";s:7:\"groupid\";s:3:\"226\";s:4:\"name\";s:1:\"S\";s:7:\"orderby\";s:2:\"10\";s:7:\"enabled\";s:1:\"1\";s:14:\"price_modifier\";s:4:\"0.00\";s:19:\"price_modifier_type\";s:1:\"%\";s:15:\"weight_modifier\";s:4:\"0.00\";s:20:\"weight_modifier_type\";s:1:\"%\";}}i:227;a:10:{s:7:\"groupid\";s:3:\"227\";s:9:\"productid\";s:3:\"129\";s:4:\"name\";s:5:\"Color\";s:8:\"fullname\";s:0:\"\";s:7:\"orderby\";s:2:\"20\";s:4:\"type\";s:1:\"g\";s:9:\"view_type\";s:1:\"p\";s:7:\"enabled\";s:1:\"1\";s:7:\"variant\";s:1:\"1\";s:6:\"option\";a:9:{s:8:\"optionid\";s:3:\"850\";s:7:\"groupid\";s:3:\"227\";s:4:\"name\";s:5:\"White\";s:7:\"orderby\";s:2:\"10\";s:7:\"enabled\";s:1:\"1\";s:14:\"price_modifier\";s:4:\"0.00\";s:19:\"price_modifier_type\";s:1:\"%\";s:15:\"weight_modifier\";s:4:\"0.00\";s:20:\"weight_modifier_type\";s:1:\"%\";}}}s:7:\"options\";a:2:{i:226;s:3:\"845\";i:227;s:3:\"850\";}s:9:\"variantid\";s:3:\"270\";}', ''),
+(70, 42, 129, 49.00, 0.00, 1, 'a:3:{s:15:\"product_options\";a:2:{i:226;a:10:{s:7:\"groupid\";s:3:\"226\";s:9:\"productid\";s:3:\"129\";s:4:\"name\";s:4:\"Size\";s:8:\"fullname\";s:0:\"\";s:7:\"orderby\";s:2:\"10\";s:4:\"type\";s:1:\"g\";s:9:\"view_type\";s:1:\"p\";s:7:\"enabled\";s:1:\"1\";s:7:\"variant\";s:1:\"1\";s:6:\"option\";a:9:{s:8:\"optionid\";s:3:\"845\";s:7:\"groupid\";s:3:\"226\";s:4:\"name\";s:1:\"S\";s:7:\"orderby\";s:2:\"10\";s:7:\"enabled\";s:1:\"1\";s:14:\"price_modifier\";s:4:\"0.00\";s:19:\"price_modifier_type\";s:1:\"%\";s:15:\"weight_modifier\";s:4:\"0.00\";s:20:\"weight_modifier_type\";s:1:\"%\";}}i:227;a:10:{s:7:\"groupid\";s:3:\"227\";s:9:\"productid\";s:3:\"129\";s:4:\"name\";s:5:\"Color\";s:8:\"fullname\";s:0:\"\";s:7:\"orderby\";s:2:\"20\";s:4:\"type\";s:1:\"g\";s:9:\"view_type\";s:1:\"p\";s:7:\"enabled\";s:1:\"1\";s:7:\"variant\";s:1:\"1\";s:6:\"option\";a:9:{s:8:\"optionid\";s:3:\"850\";s:7:\"groupid\";s:3:\"227\";s:4:\"name\";s:5:\"White\";s:7:\"orderby\";s:2:\"10\";s:7:\"enabled\";s:1:\"1\";s:14:\"price_modifier\";s:4:\"0.00\";s:19:\"price_modifier_type\";s:1:\"%\";s:15:\"weight_modifier\";s:4:\"0.00\";s:20:\"weight_modifier_type\";s:1:\"%\";}}}s:7:\"options\";a:2:{i:226;s:3:\"845\";i:227;s:3:\"850\";}s:9:\"variantid\";s:3:\"270\";}', ''),
+(71, 43, 247, 129.00, 0.00, 1, 'a:3:{s:15:\"product_options\";a:2:{i:450;a:10:{s:7:\"groupid\";s:3:\"450\";s:9:\"productid\";s:3:\"247\";s:4:\"name\";s:3:\"Qty\";s:8:\"fullname\";s:0:\"\";s:7:\"orderby\";s:2:\"10\";s:4:\"type\";s:1:\"g\";s:9:\"view_type\";s:1:\"p\";s:7:\"enabled\";s:1:\"1\";s:7:\"variant\";s:1:\"0\";s:6:\"option\";a:9:{s:8:\"optionid\";s:4:\"1562\";s:7:\"groupid\";s:3:\"450\";s:4:\"name\";s:1:\"1\";s:7:\"orderby\";s:2:\"10\";s:7:\"enabled\";s:1:\"1\";s:14:\"price_modifier\";s:4:\"0.00\";s:19:\"price_modifier_type\";s:1:\"%\";s:15:\"weight_modifier\";s:4:\"0.00\";s:20:\"weight_modifier_type\";s:1:\"%\";}}i:451;a:10:{s:7:\"groupid\";s:3:\"451\";s:9:\"productid\";s:3:\"247\";s:4:\"name\";s:5:\"Color\";s:8:\"fullname\";s:0:\"\";s:7:\"orderby\";s:2:\"20\";s:4:\"type\";s:1:\"g\";s:9:\"view_type\";s:1:\"p\";s:7:\"enabled\";s:1:\"1\";s:7:\"variant\";s:1:\"0\";s:6:\"option\";a:9:{s:8:\"optionid\";s:4:\"1572\";s:7:\"groupid\";s:3:\"451\";s:4:\"name\";s:11:\"silver gold\";s:7:\"orderby\";s:2:\"10\";s:7:\"enabled\";s:1:\"1\";s:14:\"price_modifier\";s:4:\"0.00\";s:19:\"price_modifier_type\";s:1:\"%\";s:15:\"weight_modifier\";s:4:\"0.00\";s:20:\"weight_modifier_type\";s:1:\"%\";}}}s:7:\"options\";a:2:{i:450;s:4:\"1562\";i:451;s:4:\"1572\";}s:9:\"variantid\";b:0;}', '');
 
 -- --------------------------------------------------------
 
@@ -6897,7 +6916,7 @@ CREATE TABLE `payment_methods` (
 
 INSERT INTO `payment_methods` (`paymentid`, `name`, `details`, `offline`, `live`, `param1`, `param2`, `param3`, `param4`, `param5`, `orderby`, `enabled`) VALUES
 (1, 'Purchase Order', '', 1, 0, '', '', '', '', '', 50, 0),
-(2, 'Braintree', 'Braintree', 1, 0, 'h37htrb89y3cpgbf', 'j3kg2rtdydwmrmwm', '45986f5ab121176d32b2c99840c6e118', '', '', 0, 0),
+(2, 'Braintree', 'Braintree', 1, 0, 'h37htrb89y3cpgbf', 'j3kg2rtdydwmrmwm', '45986f5ab121176d32b2c99840c6e118', '', '', 0, 1),
 (3, 'Personal Check', 'US Funds only', 1, 0, '', '', '', '', '', 60, 0),
 (4, 'Cash on delivery', '', 1, 0, '', '', '', '', '', 40, 0),
 (5, 'Wire Transfer', '', 1, 0, '', '', '', '', '', 20, 1),
@@ -6958,7 +6977,7 @@ INSERT INTO `products` (`productid`, `photoid`, `sku`, `brandid`, `cleanurl`, `n
 (126, 405, 'SKU14', 3, 'STUSSY-TWO-TONE-HOOD', 'STUSSY TWO TONE HOOD', '<p>TWO TONE HOOD</p>\r\n', '', 149, 155.00, 0.00, 1000, 0, 0, '1', 0, 1545839936, 1, 0, 0, '', '', ''),
 (127, 407, 'SKU15', 2, 'STUSSY-BAJA-PONCHO', 'STUSSY BAJA PONCHO', '<p>BAJA PONCHO</p>\r\n', '', 139, 129.00, 0.00, 1000, 0, 0, '1', 0, 1545840185, 9, 3, 0, '', '', ''),
 (128, 409, 'SKU16', 3, 'STUSSY-STOCK-APP.-CREW', 'STUSSY STOCK APP. CREW', '<p>STOCK APP. CREW</p>\r\n', '', 99, 93.00, 0.00, 1000, 0, 0, '1', 0, 1545840457, 3, 0, 0, '', '', ''),
-(129, 412, 'SKU17', 4, 'STUSSY-SMOOTH-STOCK-LS-TEE', 'STUSSY SMOOTH STOCK LS TEE', '<p>SMOOTH STOCK LS TEE</p>\r\n', '', 57, 49.00, 0.00, 1000, 0, 0, '1', 0, 1545840730, 95, 12, 0, '', '', ''),
+(129, 412, 'SKU17', 4, 'STUSSY-SMOOTH-STOCK-LS-TEE', 'STUSSY SMOOTH STOCK LS TEE', '<p>SMOOTH STOCK LS TEE</p>\r\n', '', 57, 49.00, 0.00, 1000, 0, 0, '1', 0, 1545840730, 95, 17, 0, '', '', ''),
 (130, 415, 'SKU18', 2, 'OBEY-ANYWAY', 'OBEY ANYWAY', '<p>ANYWAY</p>\r\n', '', 128, 119.00, 0.00, 1000, 0, 0, '1', 0, 1545842317, 3, 0, 0, '', '', ''),
 (131, 417, 'SKU19', 3, 'SHOESHINE-FELPA-CAPPUCCIO-ZIP-REVERSIBILE-UOMO-NAVI-ECR', 'SHOESHINE FELPA CAPPUCCIO + ZIP REVERSIBILE UOMO - NAVI/ECR', '<p>FELPA CAPPUCCIO + ZIP REVERSIBILE UOMO - NAVI/ECR</p>\r\n', '', 129, 119.00, 0.00, 1000, 0, 0, '1', 0, 1545842568, 2, 0, 0, '', '', ''),
 (132, 420, 'SKU20', 2, 'TOMMY-HILFIGER-TJM-SMALL-TEXT-LONGSLEEVE', 'TOMMY HILFIGER TJM SMALL TEXT LONGSLEEVE', '<p>TJM SMALL TEXT LONGSLEEVE</p>\r\n', '', 59, 55.00, 0.00, 1000, 0, 0, '1', 0, 1545843329, 1, 0, 0, '', '', ''),
@@ -7050,7 +7069,7 @@ INSERT INTO `products` (`productid`, `photoid`, `sku`, `brandid`, `cleanurl`, `n
 (218, 690, 'SKU666', 3, 'LetsBuyGold-10k-Yellow-Gold-Real-Genuine-Ruby-Womens-Band-Ring', '14kt Gold Lab Emerald 8x6mm Oval Celtic Trinity Knot Ring', '<ul>\r\n	<li>Premium quality lab-created Emerald</li>\r\n	<li>14 karat solid gold</li>\r\n	<li>Made in the USA</li>\r\n</ul>\r\n', '', 329, 299.00, 0.00, 1000, 0, 0, '1', 0, 1545985267, 3, 0, 0, '', '', ''),
 (219, 675, 'SKU9353', 4, '14kt-Gold-Garnet-and-Diamond-6mm-Heart-Claddagh-Ring', '14kt Gold Garnet and Diamond 6mm Heart Claddagh Ring', '<ul>\r\n	<li>Premium quality genuine Garnet</li>\r\n	<li>14 karat solid gold</li>\r\n	<li>Garnet is the birthstone of January</li>\r\n	<li>Comes with a free teddy bear and gift bag, perfect for gift giving</li>\r\n	<li>Made in the USA</li>\r\n</ul>\r\n', '', 219, 199.00, 0.00, 997, 0, 0, '1', 0, 1545985807, 2, 3, 0, '', '', ''),
 (220, 678, 'SKU2203', 3, '14kt-Gold-Lab-Pink-Sapphire-and-Diamond-5mm-Heart-Split-Band-Swirl-Ring', '14kt Gold Lab Pink Sapphire and Diamond 5mm Heart Split Band Swirl Ring', '<ul>\r\n	<li>Premium quality lab-created Pink Sapphire</li>\r\n	<li>14 karat solid gold</li>\r\n	<li>Made in the USA</li>\r\n</ul>\r\n', '', 249, 239.00, 0.00, 1000, 0, 0, '1', 0, 1545986032, 4, 0, 0, '', '', ''),
-(221, 681, 'SKU946', 4, '14kt-Gold-Emerald-and-Diamond-4mm-Round-filligree-Scroll-Ring', '14kt Gold Emerald and Diamond 4mm Round filligree Scroll Ring', '<ul>\r\n	<li>Premium (AA) quality genuine Emerald</li>\r\n	<li>14 karat solid gold</li>\r\n	<li>Made in the USA</li>\r\n</ul>\r\n', '', 209, 199.00, 0.00, 993, 0, 0, '1', 0, 1545986311, 9, 6, 0, '', '', ''),
+(221, 681, 'SKU946', 4, '14kt-Gold-Emerald-and-Diamond-4mm-Round-filligree-Scroll-Ring', '14kt Gold Emerald and Diamond 4mm Round filligree Scroll Ring', '<ul>\r\n	<li>Premium (AA) quality genuine Emerald</li>\r\n	<li>14 karat solid gold</li>\r\n	<li>Made in the USA</li>\r\n</ul>\r\n', '', 209, 199.00, 0.00, 993, 0, 0, '1', 0, 1545986311, 9, 7, 0, '', '', ''),
 (222, 684, 'SKU3567', 3, '14kt-Gold-Lab-Alexandrite-and-Diamond-6x4mm-Oval-filligree-Scroll-Ring', '14kt Gold Lab Alexandrite and Diamond 6x4mm Oval filligree Scroll Ring', '<ul>\r\n	<li>Premium quality, color-changing, lab-created Alexandrite (chyrsoberyl)</li>\r\n	<li>14 karat solid gold</li>\r\n	<li>Made in the USA</li>\r\n</ul>\r\n', '', 209, 199.00, 0.00, 1000, 0, 0, '1', 0, 1545986470, 2, 0, 0, '', '', ''),
 (223, 687, 'SKU224', 4, '14kt-Gold-Sapphire-and-Diamond-6x3mm-Marquise-Art-Deco-Ring', '14kt Gold Sapphire and Diamond 6x3mm Marquise Art Deco Ring', '<ul>\r\n	<li>Premium quality, color-changing, lab-created Alexandrite (chyrsoberyl)</li>\r\n	<li>14 karat solid gold</li>\r\n	<li>Made in the USA</li>\r\n</ul>\r\n', '', 209, 199.00, 0.00, 1000, 0, 0, '1', 0, 1545986631, 0, 0, 0, '', '', ''),
 (224, 693, 'SKU167', 2, 'Kate-Spade-New-York-Womens-Clay-Pave-Small-Square-Studs-Earrings', 'Five And Two Jewellery Dallas Rainbow Gold-Plated Hoop Earrings', '<ul>\r\n	<li>\r\n	<p>Mini hoop earrings from Five And Two Jewelry. Adorned with rainbow CZ detailing. Complete with a secure clasp closure.</p>\r\n\r\n	<p><strong>Content + Care</strong><br />\r\n	- Gold-plated brass, CZ<br />\r\n	- Wipe clean</p>\r\n\r\n	<p><strong>Size</strong><br />\r\n	- 8 mm</p>\r\n	</li>\r\n</ul>\r\n', '', 95, 85.00, 0.00, 999, 0, 0, '1', 0, 1545987440, 0, 1, 0, '', '', ''),
@@ -7075,7 +7094,7 @@ INSERT INTO `products` (`productid`, `photoid`, `sku`, `brandid`, `cleanurl`, `n
 (244, 747, 'SKU753', 4, 'Rachel-Jackson-London-Rave-Behave-Gold-Pendant-Necklace', 'Rachel Jackson London Rave, Behave Gold Pendant Necklace', '<p>Reversible pendant necklace by London-based jewellery designer Rachel Jackson topped with cheeky slogan engraving. Gold plated construction finished with an adjustable length chain.</p>\r\n\r\n<p><strong>Content + Care</strong><br />\r\n- Gold-plated metal<br />\r\n- Wipe clean</p>\r\n\r\n<p><strong>Size</strong><br />\r\n- Pendant: 2 cm</p>\r\n', '', 139, 89.00, 0.00, 1000, 0, 0, '1', 0, 1546003712, 0, 0, 0, '', '', ''),
 (245, 750, 'SKU7642', 4, 'Gold-tone-bracelet', 'Gold-tone bracelet', '<ul>\r\n	<li>Chain link bracelet</li>\r\n	<li>Gold-tone</li>\r\n	<li>Brass</li>\r\n	<li>Magnetic clasp fastening</li>\r\n	<li>Imported</li>\r\n</ul>\r\n\r\n<p>Composition&nbsp;100% Brass</p>\r\n', '', 109, 89.00, 0.00, 1000, 0, 0, '1', 0, 1546004122, 0, 0, 0, '', '', ''),
 (246, 753, 'SKU893', 3, 'Silver-tone-crystal-bracelet', 'Silver-tone crystal bracelet', '<ul>\r\n	<li>Bracelet</li>\r\n	<li>Silver-tone</li>\r\n	<li>Cubic zirconia</li>\r\n	<li>Box clasp fastening</li>\r\n	<li>Imported</li>\r\n</ul>\r\n\r\n<p>Composition&nbsp;100% Metal</p>\r\n', '', 109, 89.00, 0.00, 1000, 0, 0, '1', 0, 1546004335, 1, 0, 0, '', '', ''),
-(247, 756, 'SKU8357', 2, 'Margaret-18-karat-gold-plated-sterling-silver-bracelet', 'Margaret 18-karat gold-plated sterling silver bracelet', '<ul>\r\n	<li>Bracelet</li>\r\n	<li>Sterling silver</li>\r\n	<li>Gold-plated</li>\r\n	<li>Lobster clasp fastening</li>\r\n</ul>\r\n\r\n<p>Composition&nbsp;100% Silver</p>\r\n', '', 159, 129.00, 0.00, 1000, 0, 0, '1', 0, 1546004527, 8, 0, 0, '', '', ''),
+(247, 756, 'SKU8357', 2, 'Margaret-18-karat-gold-plated-sterling-silver-bracelet', 'Margaret 18-karat gold-plated sterling silver bracelet', '<ul>\r\n	<li>Bracelet</li>\r\n	<li>Sterling silver</li>\r\n	<li>Gold-plated</li>\r\n	<li>Lobster clasp fastening</li>\r\n</ul>\r\n\r\n<p>Composition&nbsp;100% Silver</p>\r\n', '', 159, 129.00, 0.00, 1000, 0, 0, '1', 0, 1546004527, 8, 1, 0, '', '', ''),
 (248, 762, 'SKU8576', 3, '18-karat-gold-plated-sterling-silver-bracelet', '18-karat gold-plated sterling silver bracelet', '<ul>\r\n	<li>Bracelet</li>\r\n	<li>Sterling silver</li>\r\n	<li>Gold-plated</li>\r\n	<li>Tassels</li>\r\n	<li>Lobster clasp fastening</li>\r\n</ul>\r\n\r\n<p>Composition&nbsp;Metal, Plated gold</p>\r\n', '', 165, 135.00, 0.00, 1000, 0, 0, '1', 0, 1546004686, 0, 0, 0, '', '', ''),
 (249, 765, 'SKU8457', 2, 'Hammered-gold-tone-bracelet', 'Hammered gold-tone bracelet', '<ul>\r\n	<li>Bracelet</li>\r\n	<li>Gold-tone</li>\r\n	<li>Hammered</li>\r\n	<li>T-bar fastening</li>\r\n	<li>Imported</li>\r\n</ul>\r\n\r\n<p>Composition&nbsp;Metal</p>\r\n', '', 89, 69.00, 0.00, 1000, 0, 0, '1', 0, 1546004969, 0, 0, 0, '', '', ''),
 (250, 768, 'SKU466', 3, 'Gold-tone-finger-bracelet', 'Gold-tone finger bracelet', '<ul>\r\n	<li>Bracelet</li>\r\n	<li>Rose gold-tone</li>\r\n	<li>Designer stamp</li>\r\n	<li>Contrasting applications</li>\r\n	<li>Lobster clasp fastening</li>\r\n	<li>Imported</li>\r\n</ul>\r\n\r\n<p>Composition&nbsp;100% Metal</p>\r\n', '', 109, 89.00, 0.00, 1000, 0, 0, '1', 0, 1546005358, 1, 0, 0, '', '', ''),
@@ -9228,8 +9247,8 @@ INSERT INTO `templates` (`id`, `lng`, `template`, `time`) VALUES
 (8, 'en', 'foot.php', 0),
 (9, 'en', 'common/translate.php', 0),
 (10, 'en', 'body.php', 0),
-(11, 'css', 'style', 1790798047),
-(12, 'css', 'blog', 1790620953),
+(11, 'css', 'style', 1791491135),
+(12, 'css', 'blog', 1791488860),
 (13, 'css', 'static', 1467127962),
 (14, 'css', 'banners', 1524952060),
 (15, 'css', 'home', 1790186558),
@@ -9238,7 +9257,7 @@ INSERT INTO `templates` (`id`, `lng`, `template`, `time`) VALUES
 (18, 'css', 'popup', 1654344718),
 (19, 'css', 'product', 1790621532),
 (20, 'css', 'cart', 1481298360),
-(21, 'css', 'checkout', 1790620321),
+(21, 'css', 'checkout', 1791490934),
 (22, 'css', 'register', 1680618675),
 (23, 'css', 'help', 1389363746),
 (24, 'css', 'testimonials', 1466615196),
@@ -9248,7 +9267,7 @@ INSERT INTO `templates` (`id`, `lng`, `template`, `time`) VALUES
 (28, 'css', 'responsive', 1790752549),
 (29, 'css', 'OlegKhorev/SamplePage', 1790663845),
 (30, 'js', 'jquery.ui.touch-punch.min', 1418901836),
-(31, 'js', 'scripts', 1790836501),
+(31, 'js', 'scripts', 1791490509),
 (32, 'js', 'blog_bb', 1411750934),
 (33, 'js', 'banners', 1766224075),
 (34, 'js', 'home', 1766224050),
@@ -9257,9 +9276,9 @@ INSERT INTO `templates` (`id`, `lng`, `template`, `time`) VALUES
 (37, 'js', 'popup', 1405697764),
 (38, 'js', 'jquery.zoom.min', 1384263138),
 (39, 'js', 'product', 1779199092),
-(40, 'js', 'cart', 1363123832),
+(40, 'js', 'cart', 1791490486),
 (41, 'js', 'states', 1766224147),
-(42, 'js', 'checkout', 1617740378),
+(42, 'js', 'checkout', 1791491329),
 (43, 'js', 'testimonials', 1466612964),
 (44, 'js', 'ticket', 1766224151),
 (45, 'js', 'login', 1766224081),
@@ -9267,7 +9286,7 @@ INSERT INTO `templates` (`id`, `lng`, `template`, `time`) VALUES
 (47, 'js_modules', 'OlegKhorev/SamplePage', 1790527628),
 (48, 'en', 'home/body.php', 0),
 (49, 'en', 'themes/OlegKhorev/SampleTheme/home/body.php', 0),
-(50, 'css', 'OlegKhorev/SampleTheme', 0),
+(50, 'css', 'OlegKhorev/SampleTheme', 1791489758),
 (51, 'js_modules', 'OlegKhorev/SampleTheme', 0),
 (52, 'en', 'product/body.php', 0),
 (53, 'en', 'common/popup_product.php', 0),
@@ -9285,14 +9304,14 @@ INSERT INTO `templates` (`id`, `lng`, `template`, `time`) VALUES
 (65, 'css', 'admin_login', 1654357410),
 (66, 'css', 'admin', 1790665814),
 (67, 'js', 'admin_login', 1630004794),
-(68, 'js', 'admin', 1790836563),
+(68, 'js', 'admin', 1791487872),
 (69, 'en', 'admin/pages/dashboard_products.php', 0),
 (70, 'en', 'admin/pages/dashboard.php', 0),
 (71, 'en', 'admin/head.php', 0),
 (72, 'css', 'logged', 1466870052),
 (73, 'css', 'admin_dashboard', 1680802907),
 (74, 'css', 'admin_new', 1790692975),
-(75, 'css', 'admin_responsive', 1790692964),
+(75, 'css', 'admin_responsive', 1791489158),
 (76, 'js', 'logged', 1677186268),
 (77, 'js', 'admin_dashboard', 1406404466),
 (78, 'en', 'common/popup_product_added.php', 0),
@@ -9309,7 +9328,7 @@ INSERT INTO `templates` (`id`, `lng`, `template`, `time`) VALUES
 (89, 'en', 'gift_cards/body.php', 0),
 (90, 'en', 'blog/body.php', 0),
 (91, 'js', 'str_replace', 1411814584),
-(92, 'js', 'blog', 1467291784),
+(92, 'js', 'blog', 1791488735),
 (93, 'en', 'news/body.php', 0),
 (94, 'en', 'help/create.php', 0),
 (95, 'en', 'brands/body.php', 0),
@@ -9341,7 +9360,49 @@ INSERT INTO `templates` (`id`, `lng`, `template`, `time`) VALUES
 (131, 'en', 'testimonials/new.php', 0),
 (132, 'en', 'login/body.php', 0),
 (133, 'en', 'admin/pages/payment.php', 0),
-(134, 'en', 'register/body.php', 0);
+(134, 'en', 'register/body.php', 0),
+(135, 'en', 'mail/header.php', 0),
+(136, 'en', 'mail/footer.php', 0),
+(137, 'en', 'mail/blog_comment.php', 0),
+(138, 'css', 'admin_blog', 1791488020),
+(139, 'js', 'admin_blog', 0),
+(140, 'en', 'admin/pages/statistic.php', 1790523353),
+(141, 'en', 'admin/pages/coupons.php', 1790523353),
+(142, 'en', 'admin/pages/gift_cards.php', 1790523353),
+(143, 'en', 'admin/pages/memberships.php', 1790523353),
+(144, 'en', 'admin/pages/roles.php', 1790523353),
+(145, 'en', 'admin/pages/products.php', 1790523353),
+(146, 'en', 'admin/pages/reviews.php', 0),
+(147, 'en', 'admin/pages/news.php', 0),
+(148, 'css', 'admin_news', 0),
+(149, 'js', 'admin_news', 0),
+(150, 'en', 'admin/pages/categories.php', 0),
+(151, 'css', 'admin_categories', 1559923424),
+(152, 'css', 'admin_popup', 1471089016),
+(153, 'js', 'admin_categories', 1406404466),
+(154, 'js', 'admin_popup_product', 1790170182),
+(155, 'en', 'admin/pages/brands.php', 0),
+(156, 'en', 'admin/pages/letters.php', 0),
+(157, 'en', 'admin/pages/homepage.php', 0),
+(158, 'css', 'admin_category', 1406409650),
+(159, 'js', 'admin_category', 1406411586),
+(160, 'en', 'admin/pages/category.php', 0),
+(161, 'en', 'admin/pages/shipping.php', 0),
+(162, 'css', 'admin_shipping', 0),
+(163, 'js', 'admin_shipping', 0),
+(164, 'en', 'admin/pages/shipping_charges.php', 1790523353),
+(165, 'en', 'admin/pages/tax_edit.php', 1790523353),
+(166, 'en', 'admin/pages/zones.php', 1790523353),
+(167, 'en', 'admin/pages/countries.php', 1790523353),
+(168, 'en', 'admin/pages/configuration.php', 0),
+(169, 'en', 'admin/pages/languages.php', 1790523353),
+(170, 'en', 'admin/pages/currencies.php', 1790523353),
+(171, 'en', 'common/ticket_type.php', 0),
+(172, 'en', 'common/ticket_priority.php', 0),
+(173, 'en', 'common/ticket_status.php', 0),
+(174, 'en', 'admin/pages/support_desk.php', 0),
+(175, 'en', 'admin/pages/search_keywords.php', 1790523353),
+(176, 'en', 'admin/pages/sitemap.php', 1790523353);
 
 -- --------------------------------------------------------
 
@@ -11826,7 +11887,7 @@ INSERT INTO `user_sessions` (`id`, `userid`, `name`, `value`) VALUES
 (22507, 857, 'recently', 'a:17:{i:0;s:3:\"113\";i:1;s:3:\"261\";i:2;s:3:\"260\";i:3;s:3:\"132\";i:4;s:3:\"118\";i:5;s:3:\"122\";i:8;s:3:\"126\";i:12;s:3:\"130\";i:14;s:3:\"121\";i:18;s:3:\"250\";i:28;s:3:\"154\";i:34;s:3:\"211\";i:35;s:3:\"264\";i:39;s:3:\"183\";i:40;s:3:\"166\";i:42;s:3:\"119\";i:43;s:3:\"215\";}'),
 (23361, 858, 'recently', 'a:2:{i:1;s:3:\"185\";i:3;s:3:\"215\";}'),
 (24647, 859, 'recently', 'a:8:{i:3;s:3:\"215\";i:46;s:3:\"247\";i:49;s:3:\"188\";i:60;s:3:\"190\";i:61;s:3:\"185\";i:63;s:3:\"113\";i:66;s:3:\"129\";i:67;s:3:\"170\";}'),
-(35006, 848, 'recently', 'a:20:{i:0;s:3:\"197\";i:1;s:3:\"195\";i:2;s:3:\"220\";i:3;s:3:\"264\";i:4;s:3:\"263\";i:5;s:3:\"128\";i:6;s:3:\"123\";i:7;s:3:\"260\";i:8;s:3:\"215\";i:9;s:3:\"135\";i:10;s:3:\"136\";i:12;s:3:\"149\";i:13;s:3:\"127\";i:14;s:3:\"186\";i:15;s:3:\"113\";i:16;s:3:\"187\";i:17;s:3:\"129\";i:19;s:3:\"255\";i:20;s:3:\"221\";i:28;s:3:\"148\";}');
+(35908, 848, 'recently', 'a:20:{i:0;s:3:\"197\";i:1;s:3:\"195\";i:2;s:3:\"220\";i:3;s:3:\"264\";i:4;s:3:\"263\";i:5;s:3:\"128\";i:6;s:3:\"123\";i:7;s:3:\"260\";i:8;s:3:\"215\";i:9;s:3:\"135\";i:10;s:3:\"136\";i:12;s:3:\"149\";i:13;s:3:\"127\";i:14;s:3:\"186\";i:15;s:3:\"113\";i:16;s:3:\"187\";i:17;s:3:\"129\";i:19;s:3:\"255\";i:20;s:3:\"221\";i:28;s:3:\"148\";}');
 
 -- --------------------------------------------------------
 
@@ -12088,7 +12149,7 @@ INSERT INTO `variants` (`variantid`, `productid`, `avail`, `avail_block`, `price
 (267, 127, 1000, 0, 129.0000, 0.00, 'SKU1511111111', 'STUSSY BAJA PONCHO', '', '', '', 0),
 (268, 127, 1000, 0, 129.0000, 0.00, 'SKU15111111111', 'STUSSY BAJA PONCHO', '', '', '', 0),
 (269, 127, 1000, 0, 129.0000, 0.00, 'SKU151111111111', 'STUSSY BAJA PONCHO', '', '', '', 0),
-(270, 129, 988, 0, 49.0000, 0.00, 'SKU171', 'STUSSY SMOOTH STOCK LS TEE', '', '', '', 0),
+(270, 129, 984, 0, 49.0000, 0.00, 'SKU171', 'STUSSY SMOOTH STOCK LS TEE', '', '', '', 0),
 (271, 129, 1000, 0, 49.0000, 0.00, 'SKU1711', 'STUSSY SMOOTH STOCK LS TEE', '', '', '', 0),
 (272, 129, 998, 0, 49.0000, 0.00, 'SKU17111', 'STUSSY SMOOTH STOCK LS TEE', '', '', '', 0),
 (273, 129, 1000, 0, 49.0000, 0.00, 'SKU171111', 'STUSSY SMOOTH STOCK LS TEE', '', '', '', 0),
@@ -13756,7 +13817,7 @@ ALTER TABLE `blog`
 -- AUTO_INCREMENT для таблицы `blog_comments`
 --
 ALTER TABLE `blog_comments`
-  MODIFY `commentid` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `commentid` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 
 --
 -- AUTO_INCREMENT для таблицы `blog_images`
@@ -13804,7 +13865,7 @@ ALTER TABLE `currencies`
 -- AUTO_INCREMENT для таблицы `languages`
 --
 ALTER TABLE `languages`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4141;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4145;
 
 --
 -- AUTO_INCREMENT для таблицы `languages_codes`
@@ -13864,13 +13925,13 @@ ALTER TABLE `option_groups`
 -- AUTO_INCREMENT для таблицы `orders`
 --
 ALTER TABLE `orders`
-  MODIFY `orderid` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=37;
+  MODIFY `orderid` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=44;
 
 --
 -- AUTO_INCREMENT для таблицы `order_items`
 --
 ALTER TABLE `order_items`
-  MODIFY `itemid` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=65;
+  MODIFY `itemid` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=72;
 
 --
 -- AUTO_INCREMENT для таблицы `order_item_inventory`
@@ -13960,7 +14021,7 @@ ALTER TABLE `tax_rates`
 -- AUTO_INCREMENT для таблицы `templates`
 --
 ALTER TABLE `templates`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=135;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=177;
 
 --
 -- AUTO_INCREMENT для таблицы `testimonials`
@@ -13996,7 +14057,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT для таблицы `users_carts`
 --
 ALTER TABLE `users_carts`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12402;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12655;
 
 --
 -- AUTO_INCREMENT для таблицы `users_remember`
@@ -14008,7 +14069,7 @@ ALTER TABLE `users_remember`
 -- AUTO_INCREMENT для таблицы `user_sessions`
 --
 ALTER TABLE `user_sessions`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=35007;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=35909;
 
 --
 -- AUTO_INCREMENT для таблицы `variants`

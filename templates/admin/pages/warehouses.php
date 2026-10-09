@@ -29,10 +29,8 @@
 	<th width="5%" nowrap="nowrap" align="center">{lng[Enabled]}</th>
 </tr>
 
-<?php
-if ($warehouses) {
-	foreach ($warehouses as $v) {
-?>
+<?php if ($warehouses) {
+    foreach ($warehouses as $v) { ?>
 <tr>
 	<td><input type="checkbox" name="to_delete[{$v['wid']}]" /></td>
 	<td><input type="text" size="20" name="posted_data[{$v['wid']}][wcode]" value="{php echo escape($v['wcode'], 2);}" /></td>
@@ -42,9 +40,7 @@ if ($warehouses) {
 	<td align="center"><input type="text" size="5" name="posted_data[{$v['wid']}][pos]" value="{$v['pos']}" /></td>
 	<td align="center"><input type="checkbox" name="posted_data[{$v['wid']}][enabled]" value="1"{if $v['enabled']} checked{/if} /></td>
 </tr>
-<?php
-	}
-?>
+<?php } ?>
 <tr>
 	<td colspan="7">
 	<button>{lng[Update]}</button>
@@ -53,15 +49,14 @@ if ($warehouses) {
 </tr>
 <?php
 } else {
-?>
+     ?>
 
 <tr>
 	<td colspan="7" align="center"><br />{lng[No warehouses defined]}</td>
 </tr>
 
 <?php
-}
-?>
+} ?>
 
 <tr>
 	<td colspan="7"><br /><h3>{lng[Add new]}</h3></td>

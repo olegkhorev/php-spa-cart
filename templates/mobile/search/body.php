@@ -14,5 +14,7 @@
 <div class="products-results">
 {$products_results_html}
 </div>
-{else}<br />
-<center>{lng[No results found]}</center>{/if}
+{else}
+<br />
+<center>{lng[No results found]}</center>
+{/if}

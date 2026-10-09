@@ -9,14 +9,14 @@
 ?>
 <?php
 if ($_SERVER['REMOTE_ADDR'] == '127.0.0.1') {
-# LOCAL VERSION FOR DEVELOPMENT TO KEEP SAME SETTINGS FILE
-	# It recreate cached files on every call
-	define('DEVELOPMENT', true);
-	define('DEMO', false);
+    # LOCAL VERSION FOR DEVELOPMENT TO KEEP SAME SETTINGS FILE
+    # It recreate cached files on every call
+    define('DEVELOPMENT', true);
+    define('DEMO', false);
 } else {
-	# so here it's false
-	define('DEVELOPMENT', false);
-	define('DEMO', false);
+    # so here it's false
+    define('DEVELOPMENT', false);
+    define('DEMO', false);
 }
 
 $tmp = str_replace('/includes', '', dirname(__FILE__));
@@ -30,20 +30,20 @@ $is_mysqli = true;
 # MySQL server host
 $sql_server = '{{sql_server}}';
 if ($_SERVER['REMOTE_ADDR'] == '127.0.0.1' && php_sapi_name() != 'cli') {
-# LOCAL VERSION FOR DEVELOPMENT TO KEEP SAME SETTINGS FILE
-	$sql_user = '{{sql_user}}';
-	$sql_password = '{{sql_password}}';
-	$sql_database = '{{sql_database}}';
+    # LOCAL VERSION FOR DEVELOPMENT TO KEEP SAME SETTINGS FILE
+    $sql_user = '{{sql_user}}';
+    $sql_password = '{{sql_password}}';
+    $sql_database = '{{sql_database}}';
 
-	$http_domain = '{{http_host}}';
-	$https_domain = '{{http_host}}';
+    $http_domain = '{{http_host}}';
+    $https_domain = '{{http_host}}';
 } else {
-	$sql_user = '{{sql_user}}';
-	$sql_password = '{{sql_password}}';
-	$sql_database = '{{sql_database}}';
+    $sql_user = '{{sql_user}}';
+    $sql_password = '{{sql_password}}';
+    $sql_database = '{{sql_database}}';
 
-	$http_domain = '{{http_host}}';
-	$https_domain = '{{http_host}}';
+    $http_domain = '{{http_host}}';
+    $https_domain = '{{http_host}}';
 }
 
 # Use warehouse false or true
@@ -59,18 +59,19 @@ $design_mode = '{{design_mode}}';
 $web_dir = '';
 
 if ($_SERVER['HTTP_HOST'] != $http_domain && php_sapi_name() != 'cli') {
-	header("HTTP/1.1 301 Moved Permanently");
-	header("Location: http://".$http_domain.$_SERVER['REQUEST_URI']);
-	exit;
+    header("HTTP/1.1 301 Moved Permanently");
+    header("Location: http://".$http_domain.$_SERVER['REQUEST_URI']);
+    exit;
 }
 
 $http_location = 'http://'.$http_domain;
 $https_location = 'https://'.$https_domain;
 
-if ($_SERVER['HTTPS'])
-	$current_location = $https_location.$web_dir;
-else
-	$current_location = $http_location.$web_dir;
+if ($_SERVER['HTTPS']) {
+    $current_location = $https_location.$web_dir;
+} else {
+    $current_location = $http_location.$web_dir;
+}
 
 $ajax_delimiter = '|-|+|=|';
 $date_format = 'm/d/Y';

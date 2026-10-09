@@ -15,13 +15,13 @@
  <td class="photo"><a class="ajax_link" href="{$current_location}/admin/products/{$v['productid']}">
 {if $v['photo']}
 <?php
-$image = $v['photo'];
-$image['new_width'] = 40;
-$image['class'] = 'product-image';
-$image['id'] = 'pid-'.$v['productid'];
-$image['new_height'] = 40;
-$image['center'] = 1;
-include SITE_ROOT . '/includes/image.php';
+$image = $v["photo"];
+$image["new_width"] = 40;
+$image["class"] = "product-image";
+$image["id"] = "pid-" . $v["productid"];
+$image["new_height"] = 40;
+$image["center"] = 1;
+include SITE_ROOT . "/includes/image.php";
 ?>
 {/if}
 </a>

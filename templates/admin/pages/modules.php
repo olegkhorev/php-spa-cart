@@ -7,21 +7,14 @@
 * https://github.com/olegkhorev/php-spa-cart
 */
 ?>
-<?php
-if ($modules) {
-?>
+<?php if ($modules) { ?>
 <a href="{$current_location}/admin/modules/install" class="ajax_link">{lng[Install new]}</a>
 <br /><br />
 <form method="post" name="modulesform">
 <input type="hidden" name="mode" value="update" />
-<?php
-if ($total_pages > 2) {
-?>
+<?php if ($total_pages > 2) { ?>
 {include="common/navigation.php"}
-<?php
-	echo '<br />';
-}
-?>
+<?php echo "<br />";} ?>
 
 <table cellpadding="3" cellspacing="1" width="600" class="lines-table resp-table">
 <thead>
@@ -37,13 +30,13 @@ if ($total_pages > 2) {
 </thead>
 {foreach $modules as $v}
 <tr>
-	<td><label>{lng[Logo]}</label><img src="/images/modules/{$v['author']}/{$v['module']}/logo.png" alt="" /></td>
+	<td class="td-align-center"><label>{lng[Logo]}</label><img src="/images/modules/{$v['author']}/{$v['module']}/logo.png" alt="" /></td>
 	<td><label>{lng[Code]}</label>{$v['code']}</td>
 	<td><label>{lng[Author]}</label>{$v['author']}</td>
 	<td><label>{lng[Name]}</label>{$v['module']}</td>
 	<td><label>{lng[Comment]}</label>{$v['comment']}</td>
-	<td><label>{lng[Pos]}</label><input type="text" name="to_update[{$v['moduleid']}][pos]" size="3" value="{$v['pos']}" /></td>
-	<td><label>{lng[Enabled]}</label><input type="checkbox" name="to_update[{$v['moduleid']}][enabled]" value="1"{if $v['enabled']} checked{/if} /></td>
+	<td class="td-align-center"><label>{lng[Pos]}</label><input type="text" name="to_update[{$v['moduleid']}][pos]" size="3" value="{$v['pos']}" /></td>
+	<td class="td-align-center"><label>{lng[Enabled]}</label><input type="checkbox" name="to_update[{$v['moduleid']}][enabled]" value="1"{if $v['enabled']} checked{/if} /></td>
 </tr>
 {/foreach}
 </table>
@@ -52,9 +45,7 @@ if ($total_pages > 2) {
 </div>
 </form>
 
-<?php
-} else {
-?>
+<?php } else { ?>
 <form method="post" name="blogform" enctype="multipart/form-data">
 <input type="file" name="install_archive" accept=".zip, application/zip, application/x-zip-compressed" />
 <button type="submit" name="btn">{lng[Install]}</button>
@@ -72,8 +63,7 @@ code:new_module<br />
 author:OlegKhorev<br />
 module:NewModule<br />
 comment:Module installation example<br />
-template:new_module
+template:new_module<br /><br />
+You can review the module archive here: <a href="{$current_location}/files/new_module.zip" target="_blank">{$current_location}/files/new_module.zip</a>
 </form>
-<?php
-}
-?>
+<?php } ?>

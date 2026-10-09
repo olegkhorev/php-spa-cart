@@ -58,11 +58,13 @@
 {/if}
 <div id="dcart"><img src="{$current_location}/images/dcart.png" alt="" /><br />{lng[Move product here]}</div>
 <?php
-if (lng('Site title'))
-	echo "<br /><h1>".lng('Site title')."</h1>";
+if (lng("Site title")) {
+    echo "<br /><h1>" . lng("Site title") . "</h1>";
+}
 
-if (lng('Site description'))
-	echo "<br /><p>".lng('Site description')."</p>";
+if (lng("Site description")) {
+    echo "<br /><p>" . lng("Site description") . "</p>";
+}
 ?>
 
 {* Page container assign *}
@@ -278,17 +280,18 @@ if (lng('Site description'))
 {foreach $last_news as $b}
 <div class="news-item">
 {php $url = $current_location.'/news/'.($b['cleanurl'] ? $b['cleanurl'].'.html' : $b['newsid']);}
-<?php
-	if ($b['imageid']) {
-		echo '<a class="ajax_link" href="'.$url.'">';
-		$image = $b;
-		$image['new_width'] = 250;
-		$image['new_height'] = 200;
-		include SITE_ROOT . '/includes/news_image.php';
-		echo '</a>';
-	}
-?>
-<a class="ajax_link" href="{$url}"><h5>{$b['title']} (<span class="date"><?php echo date($date_format, $b['date']); ?></span>)</h5></a>
+<?php if ($b["imageid"]) {
+    echo '<a class="ajax_link" href="' . $url . '">';
+    $image = $b;
+    $image["new_width"] = 250;
+    $image["new_height"] = 200;
+    include SITE_ROOT . "/includes/news_image.php";
+    echo "</a>";
+} ?>
+<a class="ajax_link" href="{$url}"><h5>{$b['title']} (<span class="date"><?php echo date(
+    $date_format,
+    $b["date"],
+); ?></span>)</h5></a>
 <div class="short-descr message-box">{$b['descr']}</div>
 <br />
 <a class="news-more ajax_link link-button" href="{$url}">{lng[See full article]}</a>
@@ -315,17 +318,18 @@ if (lng('Site description'))
 <h2>{lng[Browse our blog]}</h2>
 <div class="news-item">
 {php $url = $current_location.'/blog/'.($last_blog['cleanurl'] ? $last_blog['cleanurl'].'.html' : $last_blog['blogid']);}
-<?php
-	if ($last_blog['imageid']) {
-		echo '<a class="ajax_link" href="'.$url.'">';
-		$image = $last_blog;
-	$image['new_width'] = 250;
-	$image['new_height'] = 200;
-	include SITE_ROOT . '/includes/blog_image.php';
-		echo '</a>';
-	}
-?>
-<a class="ajax_link" href="{$url}"><h5>{$last_blog['title']} (<span class="date"><?php echo date($date_format, $last_blog['date']); ?></span>)</h5></a>
+<?php if ($last_blog["imageid"]) {
+    echo '<a class="ajax_link" href="' . $url . '">';
+    $image = $last_blog;
+    $image["new_width"] = 250;
+    $image["new_height"] = 200;
+    include SITE_ROOT . "/includes/blog_image.php";
+    echo "</a>";
+} ?>
+<a class="ajax_link" href="{$url}"><h5>{$last_blog['title']} (<span class="date"><?php echo date(
+    $date_format,
+    $last_blog["date"],
+); ?></span>)</h5></a>
 <div class="short-descr message-box">{$last_blog['descr']}</div>
 <br />
 <a class="news-more ajax_link link-button" href="{$url}">{lng[See full blog]}</a>

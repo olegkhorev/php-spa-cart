@@ -10,7 +10,9 @@
 <div id="dcart"><img src="{$current_location}/images/dcart.png" alt="" /><br />{lng[Move product here]}</div>
 
 <h1>{$category['title']}</h1>
-{if $banners}{php $categoryid = $category['categoryid'];}{include="common/banners.php"}
+{if $banners}
+{php $categoryid = $category['categoryid'];}
+{include="common/banners.php"}
 <div class="category-banners-descr">
 {$category['description'];}
 </div>
@@ -22,9 +24,9 @@
 	<td>
 <?php
 $image = $category_icon;
-$image['new_width'] = 500;
-$image['new_height'] = 300;
-include SITE_ROOT . '/includes/icon.php';
+$image["new_width"] = 500;
+$image["new_height"] = 300;
+include SITE_ROOT . "/includes/icon.php";
 ?>
 </td>
 {/if}
@@ -45,10 +47,10 @@ include SITE_ROOT . '/includes/icon.php';
 {if $v['icon']}
 <a href="{$current_location}/{$url}">
 <?php
-$image = $v['icon'];
-$image['new_width'] = 234;
-$image['new_height'] = 200;
-include SITE_ROOT . '/includes/icon.php';
+$image = $v["icon"];
+$image["new_width"] = 234;
+$image["new_height"] = 200;
+include SITE_ROOT . "/includes/icon.php";
 ?>
 </a>
 {/if}
@@ -73,5 +75,7 @@ include SITE_ROOT . '/includes/icon.php';
 <div class="products-results">
 {$products_results_html}
 </div>
-{elseif !$subcategories}<br />
-<center>{lng[No products in this category]}</center>{/if}
+{elseif !$subcategories}
+<br />
+<center>{lng[No products in this category]}</center>
+{/if}

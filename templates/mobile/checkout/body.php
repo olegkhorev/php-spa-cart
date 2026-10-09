@@ -149,27 +149,40 @@ You can checkout as guest. Or <a href="/login">{lng[Login]}</a>, <a href="/regis
 <table cellpadding="2" class="checkout_user_table textinputs">
 <tr>
  <td class="name">{lng[First name]}</td>
- <td><input type="text" name="posted_data[firstname]" value="<?php echo escape($userinfo['firstname']); ?>" /></td>
+ <td><input type="text" name="posted_data[firstname]" value="<?php echo escape(
+     $userinfo["firstname"],
+ ); ?>" /></td>
 </td>
 <tr>
  <td class="name">{lng[Last name]}</td>
- <td><input type="text" name="posted_data[lastname]" value="<?php echo escape($userinfo['lastname']); ?>" /></td>
+ <td><input type="text" name="posted_data[lastname]" value="<?php echo escape(
+     $userinfo["lastname"],
+ ); ?>" /></td>
 </tr>
 <tr>
  <td class="name">{lng[Phone]}</td>
- <td><input type="text" name="posted_data[phone]" value="<?php echo escape($userinfo['phone'], 2); ?>" /></td>
+ <td><input type="text" name="posted_data[phone]" value="<?php echo escape(
+     $userinfo["phone"],
+     2,
+ ); ?>" /></td>
 </tr>
 <tr>
  <td class="name">{lng[Email]}</td>
- <td><input type="text" name="posted_data[email]" value="<?php echo escape($userinfo['email']); ?>" /></td>
+ <td><input type="text" name="posted_data[email]" value="<?php echo escape(
+     $userinfo["email"],
+ ); ?>" /></td>
 </tr>
 <tr>
  <td class="name">{lng[Address]}</td>
- <td><input type="text" name="posted_data[address]" value="<?php echo escape($userinfo['address']); ?>" /></td>
+ <td><input type="text" name="posted_data[address]" value="<?php echo escape(
+     $userinfo["address"],
+ ); ?>" /></td>
 </tr>
 <tr>
  <td class="name">{lng[City]}</td>
- <td><input type="text" name="posted_data[city]" value="<?php echo escape($userinfo['city']); ?>" /></td>
+ <td><input type="text" name="posted_data[city]" value="<?php echo escape(
+     $userinfo["city"],
+ ); ?>" /></td>
 </tr>
 
 <script>

@@ -9,7 +9,7 @@
 ?>
 <script src="{$current_location}/ckeditor/ckeditor.js"></script>
 
-<?php if ($get['2'] == 'add') { ?>
+<?php if ($get["2"] == "add") { ?>
 <h3>{lng[Add product]}</h3>
 <?php } ?>
 
@@ -18,34 +18,56 @@
 <table width="800" class="normal-table">
 <tr>
  <td>{lng[SKU]}</td>
- <td><input type="text" size="10" name="sku" value="<?php echo escape($product['sku']);?>" /></td>
+ <td><input type="text" size="10" name="sku" value="<?php echo escape(
+     $product["sku"],
+ ); ?>" /></td>
 </tr>
 <tr>
  <td>{lng[Name]}</td>
- <td><input type="text" size="80" name="name" value="<?php echo escape($product['name']);?>" onchange="javascript: if (this.form.cleanurl.value == '') copy_clean_url(this, this.form.cleanurl);" /></td>
+ <td><input type="text" size="80" name="name" value="<?php echo escape(
+     $product["name"],
+ ); ?>" onchange="javascript: if (this.form.cleanurl.value == '') copy_clean_url(this, this.form.cleanurl);" /></td>
 </tr>
 <tr>
  <td>{lng[Clean URL]}</td>
- <td><input type="text" size="80" name="cleanurl" value="<?php echo escape($product['cleanurl']);?>" /></td>
+ <td><input type="text" size="80" name="cleanurl" value="<?php echo escape(
+     $product["cleanurl"],
+ ); ?>" /></td>
 </tr>
 {if !$warehouse_enabled}
 <tr>
  <td>{lng[In stock]}</td>
- <td><input type="text" size="10" name="avail" value="<?php echo $product['name'] ? $product['avail'] : '1000'; ?>" />
+ <td><input type="text" size="10" name="avail" value="<?php echo $product[
+     "name"
+ ]
+     ? $product["avail"]
+     : "1000"; ?>" />
  </td>
 </tr>
 {/if}
 <tr>
  <td>{lng[Price]} ({$config['General']['currency_symbol']})</td>
- <td><input type="text" size="10" name="price" value="<?php echo $product['price'] ? $product['price'] : '0.00'; ?>" /></td>
+ <td><input type="text" size="10" name="price" value="<?php echo $product[
+     "price"
+ ]
+     ? $product["price"]
+     : "0.00"; ?>" /></td>
 </tr>
 <tr>
  <td>{lng[Market price]} ({$config['General']['currency_symbol']})</td>
- <td><input type="text" size="10" name="list_price" value="<?php echo $product['list_price'] ? $product['list_price'] : '0.00'; ?>" /></td>
+ <td><input type="text" size="10" name="list_price" value="<?php echo $product[
+     "list_price"
+ ]
+     ? $product["list_price"]
+     : "0.00"; ?>" /></td>
 </tr>
 <tr>
  <td>{lng[Weight]} ({$config['General']['weight_symbol']})</td>
- <td><input type="text" size="10" name="weight" value="<?php echo $product['weight'] ? $product['weight'] : '0.00'; ?>" /></td>
+ <td><input type="text" size="10" name="weight" value="<?php echo $product[
+     "weight"
+ ]
+     ? $product["weight"]
+     : "0.00"; ?>" /></td>
 </tr>
 <tr>
  <td>{lng[Category]}</td>
@@ -63,13 +85,19 @@
  <td class="data-name">{lng[Brand]}:</td>
  <td><select name="brandid">
  <option value=""></option>
-<?php
-if ($brands) {
-	foreach ($brands as $b) {
-		echo '<option value="'.$b['brandid'].'"'.($product['brandid'] == $b['brandid'] ?  ' selected="selected"' : '').'>'.$b['name'].'</option>';
-	}
-}
-?>
+<?php if ($brands) {
+    foreach ($brands as $b) {
+        echo '<option value="' .
+            $b["brandid"] .
+            '"' .
+            ($product["brandid"] == $b["brandid"]
+                ? ' selected="selected"'
+                : "") .
+            ">" .
+            $b["name"] .
+            "</option>";
+    }
+} ?>
  </select></td>
 </tr>
 <tr>
@@ -77,14 +105,20 @@ if ($brands) {
  <td>
 <select name="status">
 <option value="1">{lng[Available]}</option>
-<option value="2"<?php if ($product['status'] == 2) echo ' selected';?>>{lng[Not available]}</option>
-<option value="3"<?php if ($product['status'] == 3) echo ' selected';?>>{lng[Hidden, but available for sale]}</option>
+<option value="2"<?php if ($product["status"] == 2) {
+    echo " selected";
+} ?>>{lng[Not available]}</option>
+<option value="3"<?php if ($product["status"] == 3) {
+    echo " selected";
+} ?>>{lng[Hidden, but available for sale]}</option>
 </select>
  </td>
 </tr>
 <tr>
  <td>{lng[Keywords]}</td>
- <td><input type="text" size="80" name="keywords" value="<?php echo escape($product['keywords']);?>" /></td>
+ <td><input type="text" size="80" name="keywords" value="<?php echo escape(
+     $product["keywords"],
+ ); ?>" /></td>
 </tr>
 <tr>
  <td colspan="2"><br />{lng[Description]}<br />
@@ -97,20 +131,28 @@ if ($brands) {
 		    $('*').removeAttr("title");
 		});
 	</script>
-	<textarea class="ckeditor" id="ck_editor" name="descr" cols="100" rows="10"><?php echo $product['descr'];?></textarea><br />
+	<textarea class="ckeditor" id="ck_editor" name="descr" cols="100" rows="10"><?php echo $product[
+     "descr"
+ ]; ?></textarea><br />
  </td>
 </tr>
 <tr>
  <td>{lng[Meta title]}</td>
- <td><input type="text" size="80" name="title_tag" value="<?php echo escape($product['title_tag']);?>" /></td>
+ <td><input type="text" size="80" name="title_tag" value="<?php echo escape(
+     $product["title_tag"],
+ ); ?>" /></td>
 </tr>
 <tr>
  <td>{lng[Meta keywords]}</td>
- <td><input type="text" size="80" name="meta_keywords" value="<?php echo escape($product['meta_keywords']);?>" /></td>
+ <td><input type="text" size="80" name="meta_keywords" value="<?php echo escape(
+     $product["meta_keywords"],
+ ); ?>" /></td>
 </tr>
 <tr>
  <td>{lng[Meta description]}</td>
- <td><input type="text" size="80" name="meta_description" value="<?php echo escape($product['meta_description']);?>" /></td>
+ <td><input type="text" size="80" name="meta_description" value="<?php echo escape(
+     $product["meta_description"],
+ ); ?>" /></td>
 </tr>
 <tr>
  <td colspan="2"><br>

@@ -7,11 +7,16 @@
 * https://github.com/olegkhorev/php-spa-cart
 */
 ?>
-{if $get['2'] != 'print' && !$is_mail} {if $get['2'] == 'success'}<div style="padding: 0 0 20px 0;">{lng[Your order placed successfully.]}</div>
- {elseif $get['2'] == 'failed'}<div style="padding: 0 0 20px 0; color: red;">{lng[We are unable to process your order.]}</div>
- {/if}
+{if $get['2'] != 'print' && !$is_mail}
+ {if $get['2'] == 'success'}
+<div style="padding: 0 0 20px 0;">{lng[Your order placed successfully.]}</div>
+ {elseif $get['2'] == 'failed'}
+<div style="padding: 0 0 20px 0; color: red;">{lng[We are unable to process your order.]}</div>
+ {/if}
+
 <a href="/invoice/{$order['orderid']}/print" target="_blank" onclick="javascript: return print_invoice($(this));">{lng[Print invoice]}</a>
-<br /><br />{/if}
+<br /><br />
+{/if}
 <div style="width: 650px; margin: 0 auto; background: #fff; padding: 10px; {if $get['2'] != 'print' && !$is_mail}border: 1px solid #ccc;{/if}" class="invoice">
 <h1 style="text-align: center;">{lng[Invoice]}</h1>
 <h1 class="invoice-title"><span style="float: right;">{php echo date($datetime_format, $order['date']);}</span>{lng[Order]} #{$order['orderid']} ({$order_statuses[$order['status']]})</h1>
@@ -92,17 +97,17 @@ Payment method: {$order['payment_method']}{if $order['payment_details']} ({$orde
 	 <td class="image" valign="top" style="padding-right: 10px;"><a href="{$http_location}/{$url}">
 {if $v['variant_photo']}
 <?php
-$image = $v['variant_photo'];
-$image['new_width'] = 100;
-$image['new_height'] = 100;
-include SITE_ROOT . '/includes/variant_image.php';
+$image = $v["variant_photo"];
+$image["new_width"] = 100;
+$image["new_height"] = 100;
+include SITE_ROOT . "/includes/variant_image.php";
 ?>
 {elseif $v['photo']}
 <?php
-$image = $v['photo'];
-$image['new_width'] = 100;
-$image['new_height'] = 100;
-include SITE_ROOT . '/includes/image.php';
+$image = $v["photo"];
+$image["new_width"] = 100;
+$image["new_height"] = 100;
+include SITE_ROOT . "/includes/image.php";
 ?>
 {/if}
 	  </a></td>

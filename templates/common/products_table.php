@@ -25,12 +25,12 @@
 <td><div><a class="ajax_link" title="Move product to cart to add it" href="{$current_location}/{if $v['cleanurl']}{$v['cleanurl']}.html{else}product/{$v['productid']}{/if}">
 {if $v['photo']}
 <?php
-$image = $v['photo'];
-$image['new_width'] = 234;
-$image['class'] = 'product-image';
-$image['id'] = 'pid-'.$v['productid'];
-$image['new_height'] = 400;
-include SITE_ROOT . '/includes/image.php';
+$image = $v["photo"];
+$image["new_width"] = 234;
+$image["class"] = "product-image";
+$image["id"] = "pid-" . $v["productid"];
+$image["new_height"] = 400;
+include SITE_ROOT . "/includes/image.php";
 ?>
 {/if}
 </a>

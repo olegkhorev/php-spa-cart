@@ -8,87 +8,69 @@
 */
 ?>
 <?php
-#
-# Blog bbcodes
-#
-function func_blog_convert_string(&$str) {
-	# Common BB Codes
-	$bb_codes = array('b', 'i', 's', 'u');
-	foreach ($bb_codes as $code) {
-		$c = preg_match_all( '/\\['.$code.'\\](.*)\\[\\/'.$code.'\\]/isU', $str, $m );
-		if ($c != 0) {
-			for ($i = 0; $i < $c; $i++) {
-				$str = str_replace($m[0][$i], '<'.$code.'>'.$m[1][$i].'</'.$code.'>', $str);
-			}
-		}
-	}
+function blog_new_comment_parse_html($html)
+{
+    $allowed_tags = '<b><i><u><a><div><p><br>';
+    $html = strip_tags($html, $allowed_tags);
+    /*
+        # Parse links for nofollow tag
+        $pattern = '/(https?:\/\/[^\s]+)/';
+        $replacement = '<a href="$1" rel="nofollow" target="_blank">$1</a>';
+        $html = preg_replace($pattern, $replacement, $html);
+        exit($html.'-');
+    */
+    $html = preg_replace('#(( ){0,}<br( {0,})(/{0,1})>){1,}$#i', '', $html);
+    $html = mb_convert_encoding($html, 'HTML-ENTITIES', 'UTF-8'); // require mb_string
+    $dom = new DOMDocument();
 
-	# Image
-	$c = preg_match_all( '/\\[img\\](.*)\\[\\/img\\]/isU', $str, $m );
-	if ($c != 0) {
-		for ($i = 0; $i < $c; $i++) {
-			$str = str_replace($m[0][$i], '<img src="'.$m[1][$i].'">', $str);
-		}
-	}
+    $dom->loadHTML($html);
+    $nodes = $dom->getElementsByTagName('*'); //just get all nodes,
+    foreach ($nodes as $node) {
+        if ($node->nodeName == 'a') {
+            $rel = ['nofollow'];
+            $node->setAttribute('rel', implode(' ', $rel));
+            #			echo '<pre>';
+            #			exit(print_R($node));
+        }
 
-	# Link
-	$c = preg_match_all( '/\\[url\\](.*)\\[\\/url\\]/isU', $str, $m );
-	if ($c != 0) {
-		for ($i = 0; $i < $c; $i++) {
-			$str = str_replace($m[0][$i], '<a rel="nofollow" href="'.$m[1][$i].'">'.$m[1][$i].'</a>', $str);
-		}
-	}
+        if ($node->hasAttribute('onmouseover')) {
+            $node->removeAttribute('onmouseover');
+        }
 
-	# E-mail
-	$c = preg_match_all( '/\\[email\\](.*)\\[\\/email\\]/isU', $str, $m );
-	if ($c != 0) {
-		for ($i = 0; $i < $c; $i++) {
-			$str = str_replace($m[0][$i], '<a rel="nofollow" href="mailto: '.$m[1][$i].'">'.$m[1][$i].'</a>', $str);
-		}
-	}
+        if ($node->hasAttribute('onmouseout')) {
+            $node->removeAttribute('onmouseout');
+        }
 
-	# List
-	$c = preg_match_all( '/\\[list\\](.*)\\[\\/list\\]/isU', $str, $m );
-	if ($c != 0) {
-		for ($i = 0; $i < $c; $i++) {
-		        $to_replace = "<ul>";
-			$c2 = preg_match_all( '/\\[\*\\](.*)\\[\\/\*\\]/isU', $m['1']['0'], $m2);
-			if ($c2 != 0) {
-				for ($j = 0; $j < $c2; $j++) {
-				        $to_replace .= "<li>".$m2[1][$j]."</li>";
-				}
-			}
+        if ($node->hasAttribute('mouseenter')) {
+            $node->removeAttribute('mouseenter');
+        }
 
-		        $to_replace .= "</ul>";
+        if ($node->hasAttribute('mouseleave')) {
+            $node->removeAttribute('mouseleave');
+        }
 
-			$str = str_replace($m[0][$i], $to_replace, $str);
-		}
-	}
+        if ($node->hasAttribute('onload')) {
+            $node->removeAttribute('onload');
+        }
 
-	# Quote with author
-	$c = preg_match_all( '/\\[quote=(.*)\\](.*)\\[\\/quote\\]/isU', $str, $m );
-	if ($c != 0) {
-		for ($i = 0; $i < $c; $i++) {
-			$str = str_replace($m[0][$i], '<fieldset style="margin: 0px 20px; padding: 5px 10px; background: #eeeeee; border: 1px solid #999999;"><legend>'.$m[1][$i].'</legend>'.$m[2][$i].'</fieldset>', $str);
-		}
-	}
+        if ($node->hasAttribute('onclick')) {
+            $node->removeAttribute('onclick');
+        }
 
-	# Quote
-	$c = preg_match_all( '/\\[quote\\](.*)\\[\\/quote\\]/isU', $str, $m );
-	if ($c != 0) {
-		for ($i = 0; $i < $c; $i++) {
-			$str = str_replace($m[0][$i], '<div style="margin: 0px 20px; padding: 5px 10px; background: #eeeeee; border: 1px solid #999999;">'.$m[1][$i].'</div>', $str);
-		}
-	}
+        if ($node->hasAttribute('onchange')) {
+            $node->removeAttribute('onchange');
+        }
 
-	# Code
-	$c = preg_match_all( '/\\[code\\](.*)\\[\\/code\\]/isU', $str, $m );
-	if ($c != 0) {
-		for ($i = 0; $i < $c; $i++) {
-			$str = str_replace($m[0][$i], '<fieldset style="margin: 0px 20px; padding: 5px 10px; background: #eeeeee; border: 1px solid #999999;"><legend>'.lng('Code').'</legend>'.$m[1][$i].'</fieldset>', $str);
-		}
-	}
+        if ($node->hasAttribute('onkeydown')) {
+            $node->removeAttribute('onkeydown');
+        }
+    }
 
-	return $str;
+    $dom->removeChild($dom->doctype);
+    $html = $dom->saveHTML();
+    $html = str_replace('<html><body>', '', $html);
+    $html = str_replace('</body></html>', '', $html);
+    $html = $decoded = mb_convert_encoding($html, 'UTF-8', 'HTML-ENTITIES');
+
+    return $html;
 }
-

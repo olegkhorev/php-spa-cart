@@ -25,11 +25,9 @@
 <script defer src="/images/chart.umd.js"></script>
 
 <style type="text/css" media="all">
-<?php
-if (!empty($css)) {
-	include 'includes/css.php';
-}
-?>
+<?php if (!empty($css)) {
+    include "includes/css.php";
+} ?>
 </style>
 {if $login && $config['admin_theme_color'] && $userinfo['usertype'] == 'A'}
 <style id="custom_style">
@@ -42,10 +40,10 @@ if (!empty($css)) {
 <script type="text/javascript">
 var custId = 0;
 var current_area = 'A',
-	page = '<?php echo $get['1']; ?>',
+	page = '<?php echo $get["1"]; ?>',
 	pageid = '',
 	browser = <?php echo $browser; ?>,
-	current_location = '<?php echo $current_location;?>',
+	current_location = '<?php echo $current_location; ?>',
 	ajax_delimiter = '<?php echo $ajax_delimiter; ?>',
 	currency_symbol = '{$config['General']['currency_symbol']}',
 	weight_symbol = '{$config['General']['weight_symbol']}',
@@ -74,47 +72,38 @@ var current_area = 'A',
 var need_login = {if $_GET['mode'] == 'login'}1{else}0{/if};
 {/if}
 
-<?php
-if ($userinfo['usertype'] != 'A') {
-?>
+<?php if ($userinfo["usertype"] != "A") { ?>
 var login_form = [];
 login_form['email'] = "E-mail";
 login_form['password'] = "Password";
-<?php
-}
-?>
+<?php } ?>
 </script>
 <script src="/ckeditor/ckeditor.js"></script>
-
-<?php
-if (!empty($js)) {
-	include 'includes/js.php';
-}
-?>
+<script>
+CKEDITOR.disableAutoInline = true;
+</script>
+<?php if (!empty($js)) {
+    include "includes/js.php";
+} ?>
 
 <script src="/images/jquery.flot.js"></script>
 <script src="/images/jquery.flot.time.js"></script>
 </head>
 <body class="admin-area{if !$login || $userinfo['usertype'] != 'A'} no-logged{/if}">
-  <?php
-	if ($alerts) {
-		echo '<div class="alerts"><span class="close-alerts"><b>X</b> Close</span>';
-		foreach ($alerts as $v) {
-			if ($v['type'] == 'e') {
-?>
+  <?php if ($alerts) {
+      echo '<div class="alerts"><span class="close-alerts"><b>X</b> Close</span>';
+      foreach ($alerts as $v) {
+          if ($v["type"] == "e") { ?>
 <div class="error">{lng[Error]}:
-<?php
-				echo ' '.$v['content'].'</div>';
-			} else {
-				echo ' '.$v['content'].'<br>';
-			}
+<?php echo " " . $v["content"] . "</div>";} else {echo " " .
+                  $v["content"] .
+                  "<br>";}
 
-			echo '<br>';
-		}
+          echo "<br>";
+      }
 
-		echo '</div>';
-	}
-  ?>
+      echo "</div>";
+  } ?>
 {if !$login || $userinfo['usertype'] != 'A'}
 {include="admin/pages/login_new.php"}
 {else}
@@ -550,9 +539,7 @@ $('body').show();
   </script>
 
 {if false && $login && $design_mode}
-<?php
-include SITE_ROOT.'/theme.php';
-?>
+<?php include SITE_ROOT . "/theme.php"; ?>
 {/if}
 
 {if $login && $translate_mode}

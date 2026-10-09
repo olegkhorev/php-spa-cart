@@ -14,24 +14,24 @@ if (substr($_SERVER['REQUEST_URI'], 0, 8) != '/install')
 
 session_start();
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    if (!$_SESSION['sql']['imported']) {
-        $_SESSION['sql'] = $_POST;
-		$mysqli = mysqli_connect($_POST['sql_server'], $_POST['sql_user'], $_POST['sql_password'], $_POST['sql_database']);
-		if (!$mysqli) {
-		    echo "<pre>Error: cannot connect with MySQL." . PHP_EOL;
-		    echo "Error code: " . mysqli_connect_errno() . PHP_EOL;
-		    echo "Error text: " . mysqli_connect_error() . PHP_EOL;
-	    	exit('<a href="./">Refresh</a>');
-		}
+ if (!$_SESSION['sql']['imported']) {
+  $_SESSION['sql'] = $_POST;
+  $mysqli = mysqli_connect($_POST['sql_server'], $_POST['sql_user'], $_POST['sql_password'], $_POST['sql_database']);
+  if (!$mysqli) {
+   echo "<pre>Error: cannot connect with MySQL." . PHP_EOL;
+		 echo "Error code: " . mysqli_connect_errno() . PHP_EOL;
+		 echo "Error text: " . mysqli_connect_error() . PHP_EOL;
+	  exit('<a href="./">Refresh</a>');
+ }
 
-		if ($mysqli->connect_error) {
-		    die('Cannot connect to MySQL server.');
-		}
+ if ($mysqli->connect_error) {
+ die('Cannot connect to MySQL server.');
+ }
 
 // Temporary variable, used to store current query
 $templine = '';
 // Read in entire file
-$lines = file(SITE_ROOT.'/dump.sql');
+$lines = file(SITE_ROOT.'/install/dump.sql');
 echo '<center>';
 // Loop through each line
 foreach ($lines as $line)

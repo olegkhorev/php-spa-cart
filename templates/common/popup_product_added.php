@@ -10,17 +10,17 @@
 <div class="product-added">
 {if $product['variant_photo']}
 <?php
-	$image = $product['variant_photo'];
-	$image['new_width'] = 234;
-	$image['new_height'] = 200;
-	include SITE_ROOT . '/includes/variant_image.php';
+$image = $product["variant_photo"];
+$image["new_width"] = 234;
+$image["new_height"] = 200;
+include SITE_ROOT . "/includes/variant_image.php";
 ?>
 {elseif $product['photo']}
 <?php
-	$image = $product['photo'];
-	$image['new_width'] = 234;
-	$image['new_height'] = 200;
-	include SITE_ROOT . '/includes/image.php';
+$image = $product["photo"];
+$image["new_width"] = 234;
+$image["new_height"] = 200;
+include SITE_ROOT . "/includes/image.php";
 ?>
 {/if}
 <b>{$product['name']}</b> {lng[added to cart]}

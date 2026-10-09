@@ -7,12 +7,14 @@
 * https://github.com/olegkhorev/php-spa-cart
 */
 ?>
-{lng[Total subscribers]}: <?php echo $subscribers ? $subscribers : '0';?> <a href="/admin/subscribtions/export">{lng[Export]}</a>
+{lng[Total subscribers]}: <?php echo $subscribers
+    ? $subscribers
+    : "0"; ?> <a href="/admin/subscribtions/export">{lng[Export]}</a>
 <br /><br />
 <script src="<?php echo $current_location; ?>/ckeditor/ckeditor.js"></script>
 <form method="post" name="letterform" enctype="multipart/form-data">
 <input type="hidden" name="mode" value="save" />
-<input type="hidden" name="id" value="<?php echo $letter['id']; ?>" />
+<input type="hidden" name="id" value="<?php echo $letter["id"]; ?>" />
 
 {if ($get['3'] == 'new')}
 <h3>{lng[New letter|escape]}</h3>
@@ -20,18 +22,17 @@
 <h3>{$letter['subject']}</h3>
 {/if}
 
-<?php
-if ($letter['date']) {
-?>
-{lng[Added]}: <?php echo date($datetime_format, $letter['date']); ?>
-<?php
-}
-?>
+<?php if ($letter["date"]) { ?>
+{lng[Added]}: <?php echo date($datetime_format, $letter["date"]); ?>
+<?php } ?>
 
 <table cellpadding="3" cellspacing="1" width="90%" class="normal-table">
 <tr>
  <td><b>{lng[Subject]}:</b></td>
- <td><input type="text" name="subject" size="40" value="<?php echo escape($letter['subject'], 2); ?>" /></td>
+ <td><input type="text" name="subject" size="40" value="<?php echo escape(
+     $letter["subject"],
+     2,
+ ); ?>" /></td>
 </tr>
 
 <tr>
@@ -45,7 +46,9 @@ if ($letter['date']) {
 		    $('*').removeAttr("title");
 		});
 	</script>
-		<textarea class="ckeditor" id="ck_editor" cols="65" rows="7" name="message"><?php echo $letter['message']; ?></textarea>
+		<textarea class="ckeditor" id="ck_editor" cols="65" rows="7" name="message"><?php echo $letter[
+      "message"
+  ]; ?></textarea>
 <br /><br />
  </td>
 </tr>

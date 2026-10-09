@@ -15,14 +15,10 @@
 
 {if $tickets}
 
-<?php
-if ($total_pages > 2) {
-?>
+<?php if ($total_pages > 2) { ?>
 {include="common/navigation.php"}
 <br />
-<?php
-}
-?>
+<?php } ?>
 
 <table cellpadding="10" cellspacing="0" class="support-desk-table">
 
@@ -54,14 +50,10 @@ if ($total_pages > 2) {
 
 <br />
 
-<?php
-if ($total_pages > 2) {
-?>
+<?php if ($total_pages > 2) { ?>
 {include="common/navigation.php"}
 <br />
-<?php
-}
-?>
+<?php } ?>
 
 {else}
 {lng[lbl_no_tickets]}

@@ -187,14 +187,10 @@ function edit_message(id) {
 }
 </script>
 
-<?php
-if ($total_pages > 2) {
-?>
+<?php if ($total_pages > 2) { ?>
 {include="common/navigation.php"}
 <br />
-<?php
-}
-?>
+<?php } ?>
 
 <table cellspacing='0' cellpadding'0' width='100%' class="resp-table">
 {foreach $messages as $i}

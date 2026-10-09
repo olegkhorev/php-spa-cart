@@ -19,9 +19,9 @@
 {if $category_icon}
 <?php
 $image = $category_icon;
-$image['new_width'] = 500;
-$image['new_height'] = 300;
-include SITE_ROOT . '/includes/icon.php';
+$image["new_width"] = 500;
+$image["new_height"] = 300;
+include SITE_ROOT . "/includes/icon.php";
 ?>
 {/if}
 
@@ -38,10 +38,10 @@ include SITE_ROOT . '/includes/icon.php';
 {if $v['icon']}
 <a href="{$current_location}/{$url}">
 <?php
-$image = $v['icon'];
-$image['new_width'] = 234;
-$image['new_height'] = 200;
-include SITE_ROOT . '/includes/icon.php';
+$image = $v["icon"];
+$image["new_width"] = 234;
+$image["new_height"] = 200;
+include SITE_ROOT . "/includes/icon.php";
 ?>
 {/if}
 </div>
@@ -59,5 +59,7 @@ include SITE_ROOT . '/includes/icon.php';
 <div class="products-results">
 {$products_results_html}
 </div>
-{elseif !$subcategories}<br />
-<center>{lng[No products in this category]}</center>{/if}
+{elseif !$subcategories}
+<br />
+<center>{lng[No products in this category]}</center>
+{/if}

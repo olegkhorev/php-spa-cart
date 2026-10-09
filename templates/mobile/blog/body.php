@@ -26,20 +26,20 @@
 {if $blog['imageid']}
 <div class="image">
 <?php
-	$image = $blog;
-	$image['new_width'] = 750;
-	$image['new_height'] = 400;
-	include SITE_ROOT . '/includes/blog_image.php';
+$image = $blog;
+$image["new_width"] = 750;
+$image["new_height"] = 400;
+include SITE_ROOT . "/includes/blog_image.php";
 ?>
 </div>
 {/if}
 <div class="fulldescr">{$blog['fulldescr']}</div>
 
-<?php
-	if ($comments) {
-?>
+<?php if ($comments) { ?>
 <a name="comments"></a>
-<h3><?php echo $blog['comments'] ? $blog['comments'] : "0"; ?> {lng[Blog comments]}</h3>
+<h3><?php echo $blog["comments"]
+    ? $blog["comments"]
+    : "0"; ?> {lng[Blog comments]}</h3>
 
 <div align="right">{include="common/navigation.php"}</div>
 
@@ -70,7 +70,7 @@
 <br /><br />
 {else}
 <form method="post" name="blogform">
-<input type="hidden" name="blogid" value="<?php echo $blog['blogid']; ?>">
+<input type="hidden" name="blogid" value="<?php echo $blog["blogid"]; ?>">
 <a onmouseover="javascript: bbhelp('b');" onmouseout="javascript: bbhelp();" href="javascript: bbcode('[b]','[/b]');"><img alt="" src="{$current_location}/images/bbcodes/b.png" tabindex="-1"></a>
 <a onmouseover="javascript: bbhelp('i');" onmouseout="javascript: bbhelp();" href="javascript: bbcode('[i]','[/i]')"><img alt="" src="{$current_location}/images/bbcodes/i.png" tabindex="-2"></a>
 <a onmouseover="javascript: bbhelp('u');" onmouseout="javascript: bbhelp();" href="javascript: bbcode('[u]','[/u]')"><img alt="" src="{$current_location}/images/bbcodes/u.png" tabindex="-3"></a>
@@ -103,9 +103,7 @@
 <button type="button" onclick="javascript: new_comment();">{lng[Add]}</button>
 <br /><br />
 </form>
-<?php
-	}
-?>
+<?php } ?>
 {elseif $blogs}
 {if $total_pages > 2}
 <div align="right">{include="common/navigation.php"}</div>
@@ -116,16 +114,16 @@
 {php $url = $current_location.'/blog/'.($b['cleanurl'] ? $b['cleanurl'].'.html' : $b['blogid']);}
 <div class="author">
 <i>{$b['firstname']} {$b['lastname']}, {php echo $b['comments'] ? $b['comments'] : '0';} {lng[Comments]}</i>
-<a href="{$url}" class="simple-button"><?php echo $b['title']; ?></a>
+<a href="{$url}" class="simple-button"><?php echo $b["title"]; ?></a>
 </div>
 <div class="image">
 {if $b['imageid']}
 <a href="{$url}">
 <?php
-		$image = $b;
-		$image['new_width'] = 750;/*$config['Blog']['blogs_image_x'];*/
-		$image['new_height'] = 400;
-		include SITE_ROOT . '/includes/blog_image.php';
+$image = $b;
+$image["new_width"] = 750; /*$config['Blog']['blogs_image_x'];*/
+$image["new_height"] = 400;
+include SITE_ROOT . "/includes/blog_image.php";
 ?>
 </a>
 {/if}

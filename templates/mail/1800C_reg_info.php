@@ -24,4 +24,4 @@ Ready time (in min) {$seller_address.readytime}
 Subsidizing rate {$seller_address.subsidize}
 
 --
-<?php echo $company_name."\n".$company_email; ?>
+<?php echo $company_name . "\n" . $company_email; ?>

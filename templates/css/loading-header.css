@@ -7,9 +7,10 @@
   width: 100%;
   background-color: #159756;
   -webkit-animation: preloader-background linear 3.5s infinite;
-          animation: preloader-background linear 3.5s infinite;
+  animation: preloader-background linear 3.5s infinite;
 }
-.loading-header [role="progressbar"][aria-busy="true"]::before, .loading-header [role="progressbar"][aria-busy="true"]::after {
+.loading-header [role="progressbar"][aria-busy="true"]::before,
+.loading-header [role="progressbar"][aria-busy="true"]::after {
   display: block;
   position: absolute;
   top: 0;
@@ -18,8 +19,8 @@
   height: 8px;
   background: #afa;
   -webkit-animation: preloader-front linear 3.5s infinite;
-          animation: preloader-front linear 3.5s infinite;
-  content: '';
+  animation: preloader-front linear 3.5s infinite;
+  content: "";
 }
 .loading-header [role="progressbar"][aria-busy="true"]::before {
   right: 50%;
@@ -29,31 +30,39 @@
 }
 
 @-webkit-keyframes preloader-background {
-  0%, 24.9% {
+  0%,
+  24.9% {
     background-color: #159756;
   }
-  25%, 49.9% {
+  25%,
+  49.9% {
     background-color: #da4733;
   }
-  50%, 74.9% {
+  50%,
+  74.9% {
     background-color: #3b78e7;
   }
-  75%, 100% {
+  75%,
+  100% {
     background-color: #fdba2c;
   }
 }
 
 @keyframes preloader-background {
-  0%, 24.9% {
+  0%,
+  24.9% {
     background-color: #159756;
   }
-  25%, 49.9% {
+  25%,
+  49.9% {
     background-color: #da4733;
   }
-  50%, 74.9% {
+  50%,
+  74.9% {
     background-color: #3b78e7;
   }
-  75%, 100% {
+  75%,
+  100% {
     background-color: #fdba2c;
   }
 }

@@ -9,9 +9,7 @@
 ?>
 <h1>{lng[Shipping methods]}</h1>
 
-<?php
-if ($config['Shipping']['enable_shipping'] != 'Y') {
-?>
+<?php if ($config["Shipping"]["enable_shipping"] != "Y") { ?>
 
 <br />
 
@@ -19,15 +17,18 @@ if ($config['Shipping']['enable_shipping'] != 'Y') {
 
 <br />
 
-<?php
-} else {
-?>
+<?php } else { ?>
 
 <form method="post" name="shippingmethodsform">
-<input type="hidden" name="carrier" value="<?php echo escape($carrier, 2); ?>" />
+<input type="hidden" name="carrier" value="<?php echo escape(
+    $carrier,
+    2,
+); ?>" />
 
 <script type="text/javascript">//<![CDATA[
-var expands = new Array(<?php foreach ($carriers as $v) echo "'".$v['code']."',"; ?>'');
+var expands = new Array(<?php foreach ($carriers as $v) {
+    echo "'" . $v["code"] . "',";
+} ?>'');
 function expand_all(flag) {
   var x;
   for (x = 0; x < expands.length; x++) {
@@ -53,24 +54,48 @@ function expand_all(flag) {
   <th></th>
 </tr>
 </thead>
-<?php
-foreach ($shipping as $s) {
-	if ($s['code'] == "") {
-		echo '
+<?php foreach ($shipping as $s) {
+    if ($s["code"] == "") {
+        echo '
 <tr>
-  <td><label>{lng[Shipping method]}</label><input type="text" name="data['.$s['shippingid'].'][shipping]" size="27" value="'.escape($s['shipping'], 2).'" /></td>
-  <td align="center"><label>{lng[Delivery time]}</label><input type="text" name="data['.$s['shippingid'].'][shipping_time]" size="8" value="'.escape($s['shipping_time'], 2).'" /></td>
-  <td align="center" class="no-word-break"><label>{lng[Destination]}</label><select name="data['.$s['shippingid'].'][destination]">
-    <option value="I"'.($s['destination'] == 'I' ? ' selected="selected"' : '').'>{lng[International]}</option>
-    <option value="N"'.($s['destination'] == 'N' ? ' selected="selected"' : '').'>{lng[National]}</option>
+  <td><label>{lng[Shipping method]}</label><input type="text" name="data[' .
+            $s["shippingid"] .
+            '][shipping]" size="27" value="' .
+            escape($s["shipping"], 2) .
+            '" /></td>
+  <td align="center"><label>{lng[Delivery time]}</label><input type="text" name="data[' .
+            $s["shippingid"] .
+            '][shipping_time]" size="8" value="' .
+            escape($s["shipping_time"], 2) .
+            '" /></td>
+  <td align="center" class="no-word-break"><label>{lng[Destination]}</label><select name="data[' .
+            $s["shippingid"] .
+            '][destination]">
+    <option value="I"' .
+            ($s["destination"] == "I" ? ' selected="selected"' : "") .
+            '>{lng[International]}</option>
+    <option value="N"' .
+            ($s["destination"] == "N" ? ' selected="selected"' : "") .
+            '>{lng[National]}</option>
   </select></td>
-  <td align="center"><label>{lng[Pos]}</label><input type="text" name="data['.$s['shippingid'].'][orderby]" size="4" value="'.$s['orderby'].'" /></td>
-  <td nowrap="nowrap" align="center"><label>{lng[Active]}</label><input type="checkbox" name="data['.$s['shippingid'].'][active]" value="Y"'.($s['active'] == 'Y' ? ' checked="checked"' : '').' /></td>
-  <td><button type="button" onclick="self.location=\''.$current_location.'/admin/shipping/?mode=delete&amp;shippingid='.$s['shippingid'].'\'">{lng[Delete]}</button></td>
+  <td align="center"><label>{lng[Pos]}</label><input type="text" name="data[' .
+            $s["shippingid"] .
+            '][orderby]" size="4" value="' .
+            $s["orderby"] .
+            '" /></td>
+  <td nowrap="nowrap" align="center"><label>{lng[Active]}</label><input type="checkbox" name="data[' .
+            $s["shippingid"] .
+            '][active]" value="Y"' .
+            ($s["active"] == "Y" ? ' checked="checked"' : "") .
+            ' /></td>
+  <td class="td-align-center"><button type="button" onclick="self.location=\'' .
+            $current_location .
+            "/admin/shipping/?mode=delete&amp;shippingid=" .
+            $s["shippingid"] .
+            '\'">{lng[Delete]}</button></td>
 </tr>';
-	}
-}
-?>
+    }
+} ?>
 
 <tr>
   <td colspan="7" class="var-wh-100"><br /><h3>{lng[Add shipping method]}</td>
@@ -99,6 +124,5 @@ foreach ($shipping as $s) {
 
 <br /><br />
 
-<?php
-}
+<?php }
 ?>

@@ -21,13 +21,13 @@
 <a href="/login" class="ajax_link">{lng[Gift Cards]}</a>
 {/if}
 <hr />
-<?php
-$categories_menu = $categories_top_menu;
-?>
+<?php $categories_menu = $categories_top_menu; ?>
 {foreach $categories_menu as $k=>$v}
-<?php
-		echo '<a class="ajax_link" href="/'.($v['cleanurl'] ? $v['cleanurl'] : $v['categoryid']).'" class="root-link">'.$v['title'].'</a>';
-?>
+<?php echo '<a class="ajax_link" href="/' .
+    ($v["cleanurl"] ? $v["cleanurl"] : $v["categoryid"]) .
+    '" class="root-link">' .
+    $v["title"] .
+    "</a>"; ?>
 {/foreach}
 <hr />
 <a class="ajax_link" href="{$current_location}/brands">{lng[Brands]}</a>

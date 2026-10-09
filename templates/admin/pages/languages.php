@@ -32,19 +32,41 @@
 </tr>
 </thead>
 {if $languages}
-<?php
-foreach ($languages as $b) {
-	echo '<tr>
-	<td><input type="checkbox" name="to_delete['.$b['id'].']" value="Y" /></td>
-	<td align="center"><label>{lng[Code]}</label><input type="text" size="3" name="to_update['.$b['id'].'][code]" value="'.$b['code'].'" /></td>
-	<td align="center"><label>{lng[Name]}</label><input type="text" size="30" name="to_update['.$b['id'].'][name]" value="'.$b['name'].'" /></td>
-	<td align="center"><label>{lng[Active]}</label><input type="checkbox" name="to_update['.$b['id'].'][active]" value="1"'.($b['active'] ? ' checked="checked"' : '').' /></td>
-	<td align="center"><label>{lng[Pos]}</label><input type="text" size="3" name="to_update['.$b['id'].'][orderby]" value="'.$b['orderby'].'" /></td>
-	<td align="center"><label>{lng[Main]}</label><input type="radio" name="main_lang" value="'.$b['id'].'"'.($b['main'] ? ' checked="checked"' : '').' /></td>
-	<td align="center"><a href="/admin/language/'.$b['code'].'">{lng[Manage]}</a></td>
+<?php foreach ($languages as $b) {
+    echo '<tr>
+	<td><input type="checkbox" name="to_delete[' .
+        $b["id"] .
+        ']" value="Y" /></td>
+	<td align="center"><label>{lng[Code]}</label><input type="text" size="3" name="to_update[' .
+        $b["id"] .
+        '][code]" value="' .
+        $b["code"] .
+        '" /></td>
+	<td align="center"><label>{lng[Name]}</label><input type="text" size="30" name="to_update[' .
+        $b["id"] .
+        '][name]" value="' .
+        $b["name"] .
+        '" /></td>
+	<td align="center"><label>{lng[Active]}</label><input type="checkbox" name="to_update[' .
+        $b["id"] .
+        '][active]" value="1"' .
+        ($b["active"] ? ' checked="checked"' : "") .
+        ' /></td>
+	<td align="center"><label>{lng[Pos]}</label><input type="text" size="3" name="to_update[' .
+        $b["id"] .
+        '][orderby]" value="' .
+        $b["orderby"] .
+        '" /></td>
+	<td align="center"><label>{lng[Main]}</label><input type="radio" name="main_lang" value="' .
+        $b["id"] .
+        '"' .
+        ($b["main"] ? ' checked="checked"' : "") .
+        ' /></td>
+	<td align="center"><a href="/admin/language/' .
+        $b["code"] .
+        '">{lng[Manage]}</a></td>
 </tr>';
-}
-?>
+} ?>
 
 <tr>
 	<td colspan="7" class="var-wh-100">

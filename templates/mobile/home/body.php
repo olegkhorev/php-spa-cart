@@ -13,11 +13,13 @@
 {/if}
 
 <?php
-if (lng('Site title'))
-	echo "<h1>".lng('Site title')."</h1>";
+if (lng("Site title")) {
+    echo "<h1>" . lng("Site title") . "</h1>";
+}
 
-if (lng('Site description'))
-	echo "<br /><p>".lng('Site description')."</p>";
+if (lng("Site description")) {
+    echo "<br /><p>" . lng("Site description") . "</p>";
+}
 ?>
 
 {if $featured_products}
