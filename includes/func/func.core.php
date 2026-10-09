@@ -560,7 +560,6 @@ function func_get_ajax_css()
 {
     $array = array();
     $array[] = 'style';
-    $array[] = 'blog';
     $array[] = 'static';
     $array[] = 'banners';
     $array[] = 'home';
@@ -600,6 +599,7 @@ function func_get_ajax_js()
     $array[] = 'checkout';
     $array[] = 'testimonials';
     $array[] = 'ticket';
+    $array[] = 'blog';
 
     return $array;
 }
