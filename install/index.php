@@ -31,7 +31,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 // Temporary variable, used to store current query
 $templine = '';
 // Read in entire file
-$lines = file(SITE_ROOT.'/dump.sql');
+$lines = file(SITE_ROOT.'/install/dump.sql');
 echo '<center>';
 // Loop through each line
 foreach ($lines as $line)
