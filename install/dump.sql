@@ -6916,7 +6916,7 @@ CREATE TABLE `payment_methods` (
 
 INSERT INTO `payment_methods` (`paymentid`, `name`, `details`, `offline`, `live`, `param1`, `param2`, `param3`, `param4`, `param5`, `orderby`, `enabled`) VALUES
 (1, 'Purchase Order', '', 1, 0, '', '', '', '', '', 50, 0),
-(2, 'Braintree', 'Braintree', 1, 0, 'h37htrb89y3cpgbf', 'j3kg2rtdydwmrmwm', '45986f5ab121176d32b2c99840c6e118', '', '', 0, 1),
+(2, 'Braintree', 'Braintree', 1, 0, 'h37htrb89y3cpgbf', 'j3kg2rtdydwmrmwm', '45986f5ab121176d32b2c99840c6e118', '', '', 0, 0),
 (3, 'Personal Check', 'US Funds only', 1, 0, '', '', '', '', '', 60, 0),
 (4, 'Cash on delivery', '', 1, 0, '', '', '', '', '', 40, 0),
 (5, 'Wire Transfer', '', 1, 0, '', '', '', '', '', 20, 1),
