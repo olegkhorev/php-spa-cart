@@ -139,7 +139,7 @@ $(function() {
   <script src='https://js.braintreegateway.com/web/3.54.2/js/three-d-secure.js'></script>
   <script src="https://js.braintreegateway.com/web/3.54.2/js/hosted-fields.min.js"></script>
 </head>
-<body class="<?php if ($get['0'] == 'category' || $get['0'] == 'search' || ($get['0'] == 'brands' && $get['1'])) {?> withfilter<?php } ?><?php if ($classes) {?> <?php echo $classes;?><?php } ?>" id="body-<?php echo $get['0'];?><?php if ($module) {?>-<?php echo $module['code'];?><?php } ?>">
+<body class="<?php if ($get['0'] == 'category' || $get['0'] == 'search' || ($get['0'] == 'brands' && $get['1'])) {?> withfilter<?php } ?><?php if ($classes) {?> <?php echo $classes;?><?php } ?><?php if ($config['General']['shop_closed'] == 'Y') {?> shop-closed<?php } ?>" id="body-<?php echo $get['0'];?><?php if ($module) {?>-<?php echo $module['code'];?><?php } ?>">
 
 <div class="mobile-left_menu">
 <?php if ($config['General']['shop_closed'] != 'Y') {?>
@@ -211,7 +211,7 @@ Tawk_API.onLoad = function(){
 <!--End of Tawk.to Script-->
 <?php } ?>
 
-<?php if ($design_mode) {?>
+<?php if ($design_mode && $config['General']['shop_closed'] != 'Y') {?>
 <?php  include SITE_ROOT . "/theme.php"; ?>
 <?php } ?>
 

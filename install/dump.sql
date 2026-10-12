@@ -958,19 +958,9 @@ CREATE TABLE `payment_methods` (
 
 LOCK TABLES `payment_methods` WRITE;
 /*!40000 ALTER TABLE `payment_methods` DISABLE KEYS */;
-INSERT INTO `payment_methods` (`paymentid`, `name`, `details`, `offline`, `live`, `param1`, `param2`, `param3`, `param4`, `param5`, `orderby`, `enabled`) VALUES
-(1, 'Purchase Order', '', 1, 0, '', '', '', '', '', 50, 0),
-(2, 'Braintree', 'Braintree', 1, 0, 'h37htrb89y3cpgbf', 'j3kg2rtdydwmrmwm', '45986f5ab121176d32b2c99840c6e118', '', '', 0, 0),
-(3, 'Personal Check', 'US Funds only', 1, 0, '', '', '', '', '', 60, 0),
-(4, 'Cash on delivery', '', 1, 0, '', '', '', '', '', 40, 0),
-(5, 'Wire Transfer', '', 1, 0, '', '', '', '', '', 20, 1),
-(7, 'Stripe', 'Stripe', 0, 0, 'sk_test_9RM7bAvxX6ce8oF3Zn8uslyt', 'pk_test_wfHyIYtEG4R2Vo2u1l1UXR2o', '', '', '', 1, 1),
-(8, 'Paypal', '', 0, 0, 'jackergon991@gmail.com', '', '', '', '', 2, 1),
-(6, 'Fax Ordering', '(555) 555-5555', 1, 0, '', '', '', '', '', 30, 0);
+INSERT INTO `payment_methods` VALUES (1,'Purchase Order','',1,0,'','','','','',50,0),(2,'Braintree','Braintree',1,0,'h37htrb89y3cpgbf','j3kg2rtdydwmrmwm','45986f5ab121176d32b2c99840c6e118','','',0,0),(3,'Personal Check','US Funds only',1,0,'','','','','',60,0),(4,'Cash on delivery','',1,0,'','','','','',40,0),(5,'Wire Transfer','',1,0,'','','','','',20,1),(7,'Stripe','Stripe',0,0,'sk_test_9RM7bAvxX6ce8oF3Zn8uslyt','pk_test_wfHyIYtEG4R2Vo2u1l1UXR2o','','','',1,1),(8,'Paypal','',0,0,'jackergon991@gmail.com','','','','',2,1),(6,'Fax Ordering','(555) 555-5555',1,0,'','','','','',30,0);
 /*!40000 ALTER TABLE `payment_methods` ENABLE KEYS */;
 UNLOCK TABLES;
-
--- --------------------------------------------------------
 
 --
 -- Table structure for table `product_inventory`
@@ -2066,4 +2056,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2026-10-12 15:21:11
+-- Dump completed on 2026-10-12 15:14:04

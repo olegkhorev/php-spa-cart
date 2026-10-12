@@ -177,4 +177,5 @@ if (!$messages) {
 	$pop3->Close();
 }
 
+exit('Done');
 ?>

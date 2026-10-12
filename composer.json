@@ -1,6 +1,8 @@
 {
     "require": {
         "dompdf/dompdf": "^3.1",
-        "phpmailer/phpmailer": "^7.0"
+        "phpmailer/phpmailer": "^7.0",
+        "stripe/stripe-php": "16",
+        "loilo/fuse": "^7.1"
     }
 }

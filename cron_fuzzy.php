@@ -90,3 +90,5 @@ function fuzzy_clean($string) {
 			$string = str_replace('-', ' ', $string);
    return $string;
 }
+
+exit('Done');

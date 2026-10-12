@@ -326,6 +326,9 @@ button.big {
     background: #fff !important;
     width: 100%;
 }
+.shop-closed .allow-cookies {
+	display: none;
+}
 .pointer {
 	cursor: pointer;
 }
