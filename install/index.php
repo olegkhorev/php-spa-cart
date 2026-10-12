@@ -6,9 +6,7 @@ if (file_exists(SITE_ROOT . '/../includes/settings.php')) {
     header('Location: /');
     exit;
 }
-#echo '<pre>';
-#exit(print_R($_SERVER));
-#exit(substr($_SERVER['REQUEST_URI'], 0, 8));
+
 if (substr($_SERVER['REQUEST_URI'], 0, 8) != '/install')
  exit('SPA-Cart can be installed under own domain or subdomain only.');
 
@@ -27,9 +25,28 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
   if ($mysqli->connect_error) {
    die('Cannot connect to MySQL server.');
   }
- 
+
+  $templine = '';
+  $lines = file(SITE_ROOT.'/dump.sql');
+  foreach ($lines as $line) {
+   // Skip it if it's a comment
+   if (substr($line, 0, 2) == '--' || $line == '')
+    continue;
+
+   $templine .= $line;
+   if (substr(trim($line), -1, 1) == ';') {
+    // Perform the query and display error on SQL query
+    $mysqli->query($templine) or print('Error performing query \'<strong>' . $templine . '\': ' . mysqli_error($mysqli) . '<br /><br />');
+    // Reset temp variable to empty
+    $templine = '';
+   }
+  }
+
   $sql_install_data = implode("", file(SITE_ROOT.'/dump.sql'));
+  $sql_install_data = str_replace("\r", "", $sql_install_data);
+  $sql_install_data = str_replace("\n", "", $sql_install_data);
   $mysqli->query($sql_install_data) or die('Error importing Database file: ' . mysqli_error($mysqli) . '<br /><br />');
+
   $_SESSION['sql']['imported'] = '1';
  } else {
   $file_contents = file_get_contents(SITE_ROOT . '/../includes/settings.default.php');
