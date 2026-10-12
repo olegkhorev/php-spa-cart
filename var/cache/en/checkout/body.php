@@ -16,19 +16,9 @@
 	<tr>
 	 <td class="image"><a href="<?php echo $current_location;?>/<?php echo $url;?>">
 <?php if ($v['variant_photo']) {?>
-<?php 
-		$image = $v['variant_photo'];
-		$image['new_width'] = 100;
-		$image['new_height'] = 100;
-		include SITE_ROOT . '/includes/variant_image.php';
-?>
+<?php $image = $v["variant_photo"]; $image['new_width'] = 100; $image['new_height'] = 100; include SITE_ROOT . "/includes/variant_image.php"; ?>
 <?php } else if ($v['photo']) {?>
-<?php 
-		$image = $v['photo'];
-		$image['new_width'] = 100;
-		$image['new_height'] = 100;
-		include SITE_ROOT . '/includes/image.php';
-?>
+<?php $image = $v['photo']; $image['new_width'] = 100; $image['new_height'] = 100; include SITE_ROOT . "/includes/image.php"; ?>
 <?php } ?>
 
 	  </a></td>

@@ -496,19 +496,7 @@ $('body').show();
 	<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
 	<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 	<script>
-		// MenuToggle
-/*
-		let toggle = document.querySelector('.toggle');
-		let main = document.querySelector('.main');
-
-		toggle.onclick = function(){
-			navigation_admin.classList.toggle('active');
-			main.classList.toggle('active');
-		}
-*/
 		let navigation_admin = document.querySelector('.navigation-admin');
-
-		// add hovered class in selected list item
 		let list = document.querySelectorAll('.navigation-admin li');
 		function activeLink(){
 			list.forEach((item) =>
@@ -532,10 +520,6 @@ $('body').show();
 
 		list.forEach((item) => 
 		item.addEventListener('mouseout',deactiveLink));
-{*
-		list.forEach((item) => 
-		item.addEventListener('click',activeLinkClick));
-*}
   </script>
 
 {if false && $login && $design_mode}

@@ -15,10 +15,10 @@
   clear: both;
   display: block;
 }
+.brands .brand a {
+  text-decoration: none !important;
+}
 .brand_page img {
   float: left;
   margin: 0 10px 10px 0;
-}
-.brands .brand a {
-  text-decoration: none !important;
 }

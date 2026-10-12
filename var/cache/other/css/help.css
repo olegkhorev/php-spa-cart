@@ -1,8 +1,8 @@
 #error_mes {
-	display: none;
+  display: none;
 }
 #error_mes td {
-	color: #cc3300;
-	font-weight: bold;
-	padding-left: 5px;
+  color: #cc3300;
+  font-weight: bold;
+  padding-left: 5px;
 }

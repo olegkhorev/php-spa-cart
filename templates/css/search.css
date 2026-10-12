@@ -37,15 +37,15 @@
   left: 50%;
   margin-left: 280px !important;
 }
-.sort {
-  margin: 2px 0 10px 0px !important;
-}
 .filter .jspPane {
   margin-left: 0px !important;
 }
 .filter .jspVerticalBar,
 .filter .jspHorizontalBar {
   display: none;
+}
+.sort {
+  margin: 2px 0 10px 0px !important;
 }
 .country .jspVerticalBar,
 .state .jspVerticalBar,
@@ -65,12 +65,25 @@
 .position .jspVerticalBar {
   display: block;
 }
+.country .options,
+.state .options,
+.country1 .options,
+.state1 .options,
+country2 .options,
+.state2 .options,
+.country3 .options,
+.state3 .options {
+  max-height: 300px;
+}
 .select {
   width: 200px;
   margin: 0 0 2px 0;
 }
 .select .options {
   min-width: 210px;
+}
+.select .def {
+  color: #574e4e;
 }
 .country1 .options,
 .state1 .options,
@@ -89,18 +102,14 @@
 .position .options {
   min-width: 200px;
 }
-.country .options,
-.state .options,
-.country1 .options,
-.state1 .options,
-country2 .options,
-.state2 .options,
-.country3 .options,
-.state3 .options {
-  max-height: 300px;
-}
 .noedit .options {
   min-width: 204px;
+}
+.noedit {
+  margin: 10px 0 0 0;
+}
+.noedit .current {
+  cursor: pointer;
 }
 .ed_name1 .active,
 .ed_name2 .active,
@@ -114,12 +123,6 @@ country2 .options,
   width: 93%;
   padding: 0;
   margin: 0;
-}
-.noedit {
-  margin: 10px 0 0 0;
-}
-.noedit .current {
-  cursor: pointer;
 }
 .age {
   margin-top: 5px;
@@ -162,9 +165,6 @@ country2 .options,
 .dating a {
   padding: 5px 0 0 24px;
 }
-.select .def {
-  color: #574e4e;
-}
 .clear_filters {
   float: right;
   padding-right: 6px;
@@ -182,16 +182,16 @@ country2 .options,
 .job td {
   padding: 0 5px;
 }
-.ed_a_1 td,
-.ed_a_2 td {
-  padding: 5px 5px 0 10px;
-}
 .ed_a .button,
 .ed_a_1 .button,
 .ed_a_2 .button,
 .job .button {
   width: 10px;
   text-align: center;
+}
+.ed_a_1 td,
+.ed_a_2 td {
+  padding: 5px 5px 0 10px;
 }
 .job {
   margin-top: 5px;

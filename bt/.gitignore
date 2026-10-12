@@ -1,4 +1,7 @@
+/vendor
+/docs
+/tags
+composer.lock
 composer.phar
-.env
-/vendor/
-*.log
+*.tgz
+tests/fixtures/large_file.png

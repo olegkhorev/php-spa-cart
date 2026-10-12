@@ -26,21 +26,15 @@
 {/if}
 <div style="width: 650px; margin: 0 auto; background: #fff; padding: 10px; {if $get['2'] != 'print' && !$is_mail}border: 1px solid #ccc;{/if}" class="invoice">
 <h1 style="text-align: center;">{lng[Invoice]}</h1>
-{*
-{if $pdf_invoice}
-<table width="100%">
-<tr>
- <td width="50%" style="font-size: 16px;">{lng[Order]} #{$order['orderid']} ({$order_statuses[$order['status']]})</td>
- <td align="right" style="font-size: 16px;">{php echo date($datetime_format, $order['date']);}</td>
- </tr>
-</table>
-{else}
-{/if}
-*}
+
 <table class="invoice-table" style="width: 100%; margin: 10px auto 10px auto;">
 <tr>
  <td valign="top" width="50%" id="invoice-table-td-1" style="vertical-align: top;">
 <h2 style="margin: 0; padding: 10px 0; text-align: center;">{lng[Order]} #{$order['orderid']} ({$order_statuses[$order['status']]})</h1></h2>
+{if $order['status'] == '1' && $order['paymentid'] == '8'}
+<i>{lng[PayPal delivers the Paid status with delay]}</i>
+<br /><br />
+{/if}
 <div>
 {php echo date($datetime_format, $order['date']);}
 </div>
@@ -168,19 +162,9 @@
 	<tr>
 	 <td class="image hideonmobile" valign="top" style="padding-right: 10px;"><a href="{$http_location}/{$url}">
 {if $v['variant_photo']}
-<?php
-$image = $v["variant_photo"];
-$image["new_width"] = 100;
-$image["new_height"] = 100;
-include SITE_ROOT . "/includes/variant_image.php";
-?>
+{variant_image image=`$v["variant_photo"]` new_width=100 new_height=100}
 {elseif $v['photo']}
-<?php
-$image = $v["photo"];
-$image["new_width"] = 100;
-$image["new_height"] = 100;
-include SITE_ROOT . "/includes/image.php";
-?>
+{product_image image=`$v['photo']` new_width=100 new_height=100}
 {/if}
 	  </a></td>
 	  <td{if $pdf_invoice} width="60%"{else} width="100%"{/if} valign="top">

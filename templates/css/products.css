@@ -17,6 +17,21 @@
 .products .photos td div {
   position: relative;
 }
+.products td span {
+  float: right;
+}
+.products td span.currency {
+  float: none;
+}
+.products table a {
+  text-decoration: none;
+}
+.products table a:hover {
+  text-decoration: underline;
+}
+.products .product-image {
+  border-radius: 25px;
+}
 .view-quicklook {
   cursor: pointer;
   width: 60px;
@@ -38,21 +53,6 @@
   top: 50% !important;
   left: 50% !important;
   margin: -15px 0 0 -15px;
-}
-.products td span {
-  float: right;
-}
-.products td span.currency {
-  float: none;
-}
-.products table a {
-  text-decoration: none;
-}
-.products table a:hover {
-  text-decoration: underline;
-}
-.products .product-image {
-  border-radius: 25px;
 }
 .move2cart {
   z-index: 5;
@@ -167,11 +167,11 @@ table.product-options {
   color: #f36731;
   padding: 10px 0;
 }
-.res-buttons .out-of-stock {
-  text-align: center;
-}
 .out-of-stock span {
   color: #494948;
+}
+.res-buttons .out-of-stock {
+  text-align: center;
 }
 .withfilter .withleftmenu {
   float: left;
@@ -193,10 +193,6 @@ table.product-options {
   height: 100%;
   vertical-align: top;
   overflow-y: auto;
-}
-.main-container {
-  display: table-cell;
-  vertical-align: top;
 }
 .left_filter h2 {
   padding: 10px 15px;
@@ -292,6 +288,13 @@ table.product-options {
 .left_filter ul li:hover {
   text-decoration: none;
 }
+.left_filter {
+  position: relative;
+}
+.main-container {
+  display: table-cell;
+  vertical-align: top;
+}
 .selected-filter {
   cursor: pointer;
   text-decoration: underline;
@@ -319,6 +322,14 @@ table.product-options {
   font-size: 16px;
   z-index: 10;
 }
+.res-item:hover .save2wl {
+  opacity: 1;
+  top: 0px;
+  right: 0px;
+}
+.res-item:hover .res-rating {
+  margin-top: 5px;
+}
 .save2wl {
   opacity: 0;
   transition: 0.25s;
@@ -333,15 +344,9 @@ table.product-options {
 .save2wl svg {
   fill: #fff;
 }
-.res-item:hover .save2wl {
-  opacity: 1;
-  top: 0px;
-  right: 0px;
-}
 .category-details td:first-child img {
   border-radius: 25px;
 }
-
 .added_price {
   font-size: 18px;
 }
@@ -353,9 +358,6 @@ table.product-options {
   margin-top: 10px;
   display: block;
   font-size: 16px;
-}
-.left_filter {
-  position: relative;
 }
 /*
 .left_filter.fixed {
@@ -369,9 +371,6 @@ table.product-options {
   z-index: 5;
   position: relative;
   transition: 0.45s;
-}
-.res-item:hover .res-rating {
-  margin-top: 5px;
 }
 #left_filter.loading_filter {
   min-height: 70px;

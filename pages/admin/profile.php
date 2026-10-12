@@ -10,44 +10,45 @@
 <?php
 redirect('/admin/user/'.$login);
 func_load('user');
-if ($get['2'])
-	$user_id = $get['2'];
-else
-	$user_id = $login;
+if ($get['2']) {
+    $user_id = $get['2'];
+} else {
+    $user_id = $login;
+}
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-	extract($_POST);
-	$update = array(
-		'firstname'		=> mb_substr($firstname, 0, 32, 'utf-8'),
-		'lastname'		=> mb_substr($lastname, 0, 32, 'utf-8'),
-		'address'		=> $address,
-		'city'			=> $city,
-		'zipcode'		=> $zipcode,
-		'phone'			=> $phone
-	);
+    extract($_POST);
+    $update = array(
+        'firstname'		=> mb_substr($firstname, 0, 32, 'utf-8'),
+        'lastname'		=> mb_substr($lastname, 0, 32, 'utf-8'),
+        'address'		=> $address,
+        'city'			=> $city,
+        'zipcode'		=> $zipcode,
+        'phone'			=> $phone
+    );
 
-	if (!empty($password) && $password != lng('Password')) {
-		$salt = generateSalt();
-		$update['salt'] = $salt;
-		$update['password'] = md5($password.$salt);
-	}
+    if (!empty($password) && $password != lng('Password')) {
+        $salt = generateSalt();
+        $update['salt'] = $salt;
+        $update['password'] = md5($password.$salt);
+    }
 
-	if ($db->field("SELECT COUNT(*) as cnt FROM users WHERE id<>'".$user_id."' AND email='".addslashes($email)."'"))
-		$_SESSION['alerts'][] = array(
-			'type'		=> 'e',
-			'content'	=> 'This email already registered'
-		);
-	else {
-		$update['email'] = $email;
-		$_SESSION['alerts'][] = array(
-			'type'		=> 'i',
-			'content'	=> 'Changes has been successfully made'
-		);
-	}
+    if ($db->field("SELECT COUNT(*) as cnt FROM users WHERE id<>'".$user_id."' AND email='".addslashes($email)."'")) {
+        $_SESSION['alerts'][] = array(
+            'type'		=> 'e',
+            'content'	=> 'This email already registered'
+        );
+    } else {
+        $update['email'] = $email;
+        $_SESSION['alerts'][] = array(
+            'type'		=> 'i',
+            'content'	=> 'Changes has been successfully made'
+        );
+    }
 
-	$db->array2update('users', $update, "id='".$user_id."'");
+    $db->array2update('users', $update, "id='".$user_id."'");
 
-	redirect('/admin/profile');
+    redirect('/admin/profile');
 }
 
 $template['section'] = $get['1'];

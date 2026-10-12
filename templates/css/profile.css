@@ -42,6 +42,10 @@
   padding: 2px;
   width: 310px;
 }
+.privacy h2 {
+  margin: 10px 0 5px 0;
+  padding: 0;
+}
 .dating td {
   vertical-align: top;
   line-height: 20px;
@@ -51,10 +55,6 @@
   padding: 5px 0 0 0;
   color: #ccc;
   border-bottom: 1px solid #f5f5f5;
-}
-.privacy h2 {
-  margin: 10px 0 5px 0;
-  padding: 0;
 }
 .how_find_love,
 .how_make_money {
@@ -84,6 +84,19 @@
 .city .options {
   min-height: 300px;
   min-width: 159px;
+}
+.country .current,
+.state .current,
+.city .current,
+.ed_name .current,
+.ed_faculty .current,
+.company .current,
+.position .current {
+  border: 0px;
+  outline: none;
+  width: 93%;
+  padding: 0;
+  margin: 0;
 }
 .select.state,
 .select.city {
@@ -143,19 +156,6 @@ h2 {
 }
 .new_ed input,
 .new_job input {
-  margin: 0;
-}
-.country .current,
-.state .current,
-.city .current,
-.ed_name .current,
-.ed_faculty .current,
-.company .current,
-.position .current {
-  border: 0px;
-  outline: none;
-  width: 93%;
-  padding: 0;
   margin: 0;
 }
 .ed_name .active,

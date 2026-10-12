@@ -17,12 +17,7 @@
 <tr>
  <td valign="top">
 {if $p['photo']}
-<?php
-$image = $p["photo"];
-$image["new_width"] = 100;
-$image["new_height"] = 100;
-include SITE_ROOT . "/includes/image.php";
-?>
+{product_image image=`$p['photo']` new_width=100 new_height=100}
 {/if}
  </td>
  <td valign="top"><a href="{$url}?{$link_add}">{$p['name']}</a></td>

@@ -8,35 +8,33 @@
 */
 ?>
 <?php if (!$pdf_invoice) {?>
-<?php if ($get['2'] != 'print' && !$is_mail) {?><?php if ($userinfo['usertype'] == 'A' && $order['gift_card']) {?>
+<?php if ($get['2'] != 'print' && !$is_mail) {?>
+<?php if ($userinfo['usertype'] == 'A' && $order['gift_card']) {?>
 <b>Gift Card order: <?php echo $order['gift_card'];?></b><br /><br />
 <?php } ?>
- <?php if ($get['2'] == 'success') {?><div class="checkout-success-message">Your order placed successfully.</div>
- <?php } else if ($get['2'] == 'failed') {?><div class="checkout-fail-message">We are unable to process your order.</div>
+ <?php if ($get['2'] == 'success') {?>
+<div class="checkout-success-message">Your order placed successfully.</div>
+ <?php } else if ($get['2'] == 'failed') {?>
+<div class="checkout-fail-message">We are unable to process your order.</div>
  <?php } ?>
 <div class="print-invoice-button">
 <a href="/invoice/<?php echo $order['orderid'];?>/print" target="_blank" onclick="javascript: return print_invoice($(this));">Print invoice</a>
 <a href="/invoice_pdf/<?php echo $order['orderid'];?>" target="_blank">Download PDF invoice</a>
 <br /><br />
-</div><?php } ?>
+</div>
+<?php } ?>
 <?php } ?>
 <div style="width: 650px; margin: 0 auto; background: #fff; padding: 10px; <?php if ($get['2'] != 'print' && !$is_mail) {?>border: 1px solid #ccc;<?php } ?>" class="invoice">
 <h1 style="text-align: center;">Invoice</h1>
-<?php /* ?>
-<?php if ($pdf_invoice) {?>
-<table width="100%">
-<tr>
- <td width="50%" style="font-size: 16px;">Order #<?php echo $order['orderid'];?> (<?php echo $order_statuses[$order['status']];?>)</td>
- <td align="right" style="font-size: 16px;"><?php echo date($datetime_format, $order['date']);; ?></td>
- </tr>
-</table>
-<?php } else  { ?>
-<?php } ?>
-<?php */ ?>
+
 <table class="invoice-table" style="width: 100%; margin: 10px auto 10px auto;">
 <tr>
  <td valign="top" width="50%" id="invoice-table-td-1" style="vertical-align: top;">
 <h2 style="margin: 0; padding: 10px 0; text-align: center;">Order #<?php echo $order['orderid'];?> (<?php echo $order_statuses[$order['status']];?>)</h1></h2>
+<?php if ($order['status'] == '1' && $order['paymentid'] == '8') {?>
+<i>PayPal delivers the Paid status with delay</i>
+<br /><br />
+<?php } ?>
 <div>
 <?php echo date($datetime_format, $order['date']);; ?>
 </div>
@@ -164,19 +162,9 @@ Tracking number: <?php echo $order['tracking'];?>
 	<tr>
 	 <td class="image hideonmobile" valign="top" style="padding-right: 10px;"><a href="<?php echo $http_location;?>/<?php echo $url;?>">
 <?php if ($v['variant_photo']) {?>
-<?php 
-$image = $v['variant_photo'];
-$image['new_width'] = 100;
-$image['new_height'] = 100;
-include SITE_ROOT . '/includes/variant_image.php';
-?>
+<?php $image = $v["variant_photo"]; $image['new_width'] = 100; $image['new_height'] = 100; include SITE_ROOT . "/includes/variant_image.php"; ?>
 <?php } else if ($v['photo']) {?>
-<?php 
-$image = $v['photo'];
-$image['new_width'] = 100;
-$image['new_height'] = 100;
-include SITE_ROOT . '/includes/image.php';
-?>
+<?php $image = $v['photo']; $image['new_width'] = 100; $image['new_height'] = 100; include SITE_ROOT . "/includes/image.php"; ?>
 <?php } ?>
 	  </a></td>
 	  <td<?php if ($pdf_invoice) {?> width="60%"<?php } else  { ?> width="100%"<?php } ?> valign="top">

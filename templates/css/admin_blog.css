@@ -1,9 +1,9 @@
 .blog_post_comments a {
-  text-decoration: underline !important;
+	text-decoration: underline !important;
 }
 .blog_post_comments a:hover {
-  text-decoration: none !important;
+	text-decoration: none !important;
 }
 #newrecord {
-  border: 1px solid var(--blue);
+	border: 1px solid var(--blue);
 }

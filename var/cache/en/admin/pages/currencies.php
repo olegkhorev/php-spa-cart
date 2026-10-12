@@ -25,19 +25,43 @@
 </tr>
 </thead>
 <?php if ($currencies) {?>
-<?php 
-foreach ($currencies as $b) {
-	echo '<tr>
-	<td><input type="checkbox" name="to_delete['.$b['id'].']" value="Y" /></td>
-	<td align="center"><label>Currency code</label><input type="text" size="20" name="to_update['.$b['id'].'][code]" value="'.$b['code'].'" /></td>
-	<td align="center"><label>Rate</label><input type="text" size="20" name="to_update['.$b['id'].'][rate]" value="'.$b['rate'].'" /></td>
-	<td align="center"><label>Symbol</label><input type="text" size="20" name="to_update['.$b['id'].'][symbol]" value="'.$b['symbol'].'" /></td>
-	<td align="center"><label>Active</label><input type="checkbox" name="to_update['.$b['id'].'][active]" value="1"'.($b['active'] ? ' checked="checked"' : '').' /></td>
-	<td align="center"><label>Pos</label><input type="text" size="5" name="to_update['.$b['id'].'][orderby]" value="'.$b['orderby'].'" /></td>
-	<td align="center"><label>Main</label><input type="radio" name="main_currency" value="'.$b['id'].'"'.($b['main'] ? ' checked="checked"' : '').' /></td>
+<?php  foreach ($currencies as $b) {
+    echo '<tr>
+	<td><input type="checkbox" name="to_delete[' .
+        $b["id"] .
+        ']" value="Y" /></td>
+	<td align="center"><label>Currency code</label><input type="text" size="20" name="to_update[' .
+        $b["id"] .
+        '][code]" value="' .
+        $b["code"] .
+        '" /></td>
+	<td align="center"><label>Rate</label><input type="text" size="20" name="to_update[' .
+        $b["id"] .
+        '][rate]" value="' .
+        $b["rate"] .
+        '" /></td>
+	<td align="center"><label>Symbol</label><input type="text" size="20" name="to_update[' .
+        $b["id"] .
+        '][symbol]" value="' .
+        $b["symbol"] .
+        '" /></td>
+	<td align="center"><label>Active</label><input type="checkbox" name="to_update[' .
+        $b["id"] .
+        '][active]" value="1"' .
+        ($b["active"] ? ' checked="checked"' : "") .
+        ' /></td>
+	<td align="center"><label>Pos</label><input type="text" size="5" name="to_update[' .
+        $b["id"] .
+        '][orderby]" value="' .
+        $b["orderby"] .
+        '" /></td>
+	<td align="center"><label>Main</label><input type="radio" name="main_currency" value="' .
+        $b["id"] .
+        '"' .
+        ($b["main"] ? ' checked="checked"' : "") .
+        ' /></td>
 </tr>';
-}
-?>
+} ?>
 
 <tr>
 	<td colspan="7" class="var-wh-100">

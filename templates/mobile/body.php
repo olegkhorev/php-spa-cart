@@ -53,11 +53,8 @@
 <link rel="shortcut icon" href="/favicon.png" type="image/vnd.microsoft.icon" />
 <title>{$page_title}</title>
 <style type="text/css" media="all">
-<?php include SITE_ROOT . "/includes/css.php"; ?>
+{include_css}
 </style>
-{*
-<script src="https://checkout.stripe.com/checkout.js"></script>
-*}
 <script type="text/javascript">
 var current_area = 'C',
 	page = '{$get['0']}',
@@ -157,6 +154,7 @@ $(function() {
 <div class="cssload-container"><div class="cssload-speeding-wheel"></div></div>
 </div>
 
-<?php include SITE_ROOT . "/includes/js.php"; ?>
+{include_js}
+
 </body>
 </html>

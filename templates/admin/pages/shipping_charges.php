@@ -46,7 +46,7 @@
 <br /><br />
 
 <?php if ($shipping_rates_avail > 0) { ?>
-<div align="right" class="mobile-text-left"><a href="#addrate">{lng[Add shipping rates values]}</a></div>
+<div align="right" class="mobile-text-left"><a href="javascript: void(0);" onclick="javascript: add_shipping_rates_values();";>{lng[Add shipping rates values]}</a></div>
 
 <br /><br />
 
@@ -212,14 +212,10 @@ if ($shipping_method["rates"]) {
 </div>
 </form>
 
-<br /><br /><br />
-
-<a name="addrate"></a>
-
 <?php } ?>
 
 <br />
-<h3>{lng[Add shipping charges]}</h3>
+<h3 id="add_shipping_charges_scroll">{lng[Add shipping charges]}</h3>
 <?php if ($shipping != "") { ?>
 
 <form method="post" name="addshippingrate">

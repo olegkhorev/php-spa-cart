@@ -22,12 +22,7 @@
 <tr>
 {if $category_icon}
 	<td>
-<?php
-$image = $category_icon;
-$image["new_width"] = 500;
-$image["new_height"] = 300;
-include SITE_ROOT . "/includes/icon.php";
-?>
+{category_icon image=`$category_icon` new_width=500 new_height=300}
 </td>
 {/if}
 
@@ -46,12 +41,7 @@ include SITE_ROOT . "/includes/icon.php";
 {php $url = $v['cleanurl'] ? $v['cleanurl'] : $v['categoryid'];}
 {if $v['icon']}
 <a href="{$current_location}/{$url}">
-<?php
-$image = $v["icon"];
-$image["new_width"] = 234;
-$image["new_height"] = 200;
-include SITE_ROOT . "/includes/icon.php";
-?>
+{category_icon image=`$v["icon"]` new_width=234 new_height=200}
 </a>
 {/if}
 </div>

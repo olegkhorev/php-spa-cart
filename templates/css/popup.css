@@ -25,12 +25,6 @@
   -webkit-transition: all 0.2s ease 0s;
   transition: all 0.2s ease 0s;
 }
-.popup.no_animation {
-  transform-origin: 50% 50% 0;
-  -webkit-transform-origin: 50% 50% 0;
-  -webkit-transition: all 0s ease 0s;
-  transition: all 0s ease 0s;
-}
 .popup img.close {
   position: absolute;
   top: -20px;
@@ -41,6 +35,12 @@
   -webkit-border-radius: 10px;
   -moz-border-radius: 10px;
   border-radius: 10px;
+}
+.popup.no_animation {
+  transform-origin: 50% 50% 0;
+  -webkit-transform-origin: 50% 50% 0;
+  -webkit-transition: all 0s ease 0s;
+  transition: all 0s ease 0s;
 }
 .coupon_alert {
   width: 350px;

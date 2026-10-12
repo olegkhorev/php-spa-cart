@@ -12,11 +12,11 @@
   position: relative;
   float: left;
 }
-.banners-slider div {
-  display: none;
-}
 #banners div#banner_0 {
   display: block;
+}
+.banners-slider div {
+  display: none;
 }
 .banners-slider div img {
   width: 100%;

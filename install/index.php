@@ -6,9 +6,7 @@ if (file_exists(SITE_ROOT . '/../includes/settings.php')) {
     header('Location: /');
     exit;
 }
-#echo '<pre>';
-#exit(print_R($_SERVER));
-#exit(substr($_SERVER['REQUEST_URI'], 0, 8));
+
 if (substr($_SERVER['REQUEST_URI'], 0, 8) != '/install')
  exit('SPA-Cart can be installed under own domain or subdomain only.');
 
@@ -22,69 +20,65 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 		 echo "Error code: " . mysqli_connect_errno() . PHP_EOL;
 		 echo "Error text: " . mysqli_connect_error() . PHP_EOL;
 	  exit('<a href="./">Refresh</a>');
- }
+  }
 
- if ($mysqli->connect_error) {
- die('Cannot connect to MySQL server.');
- }
+  if ($mysqli->connect_error) {
+   die('Cannot connect to MySQL server.');
+  }
 
-// Temporary variable, used to store current query
-$templine = '';
-// Read in entire file
-$lines = file(SITE_ROOT.'/install/dump.sql');
-echo '<center>';
-// Loop through each line
-foreach ($lines as $line)
-{
-// Skip it if it's a comment
-if (substr($line, 0, 2) == '--' || $line == '')
+  $templine = '';
+  $lines = file(SITE_ROOT.'/dump.sql');
+  foreach ($lines as $line) {
+   // Skip it if it's a comment
+   if (substr($line, 0, 2) == '--' || $line == '')
     continue;
 
-// Add this line to the current segment
-$templine .= $line;
-// If it has a semicolon at the end, it's the end of the query
-if (substr(trim($line), -1, 1) == ';')
-{
-    // Perform the query
+   $templine .= $line;
+   if (substr(trim($line), -1, 1) == ';') {
+    // Perform the query and display error on SQL query
     $mysqli->query($templine) or print('Error performing query \'<strong>' . $templine . '\': ' . mysqli_error($mysqli) . '<br /><br />');
     // Reset temp variable to empty
     $templine = '';
-}
-}
- echo "Tables imported successfully";
-echo '</center>';
-        $_SESSION['sql']['imported'] = '1';
-    } else {
-        $file_contents = file_get_contents(SITE_ROOT . '/../includes/settings.default.php');
-        extract($_POST);
-        $new_file = str_replace('{{sql_server}}', $_SESSION['sql']['sql_server'], $file_contents);
-        $new_file = str_replace('{{sql_user}}', $_SESSION['sql']['sql_user'], $new_file);
-        $new_file = str_replace('{{sql_password}}', $_SESSION['sql']['sql_password'], $new_file);
-        $new_file = str_replace('{{sql_database}}', $_SESSION['sql']['sql_database'], $new_file);
-        $new_file = str_replace('{{http_host}}', $http_host, $new_file);
-        if ($https_enabled) {
-            $new_file = str_replace('{{parent_host}}', 'https://'.$http_host, $new_file);
-        } else
-            $new_file = str_replace('{{parent_host}}', 'http://'.$http_host, $new_file);
+   }
+  }
 
-        $new_file = str_replace('{{web_dir}}', $web_dir, $new_file);
-        $new_file = str_replace('{{parent_page}}', $parent_page, $new_file);
-        if ($is_image_magick)
-            $new_file = str_replace('{{is_image_magick}}', '1', $new_file);
-        else
-            $new_file = str_replace('{{is_image_magick}}', '', $new_file);
+  $sql_install_data = implode("", file(SITE_ROOT.'/dump.sql'));
+  $sql_install_data = str_replace("\r", "", $sql_install_data);
+  $sql_install_data = str_replace("\n", "", $sql_install_data);
+  $mysqli->query($sql_install_data) or die('Error importing Database file: ' . mysqli_error($mysqli) . '<br /><br />');
 
-        if ($design_mode)
-            $new_file = str_replace('{{design_mode}}', '1', $new_file);
-        else
-            $new_file = str_replace('{{design_mode}}', '', $new_file);
-
-        $new_file = str_replace('{{payment_currency}}', $payment_currency, $new_file);
-        $fp = fopen(SITE_ROOT . '/../includes/settings.php', 'w+');
-        fputs($fp, $new_file);
-        fclose($fp);
-        exit('Admin area access info: a@a.com / 01230 . Don\'t forget to change this password. <a href="/">Visit site</a>');
-    }
+  $_SESSION['sql']['imported'] = '1';
+ } else {
+  $file_contents = file_get_contents(SITE_ROOT . '/../includes/settings.default.php');
+  extract($_POST);
+  $new_file = str_replace('{{sql_server}}', $_SESSION['sql']['sql_server'], $file_contents);
+  $new_file = str_replace('{{sql_user}}', $_SESSION['sql']['sql_user'], $new_file);
+  $new_file = str_replace('{{sql_password}}', $_SESSION['sql']['sql_password'], $new_file);
+  $new_file = str_replace('{{sql_database}}', $_SESSION['sql']['sql_database'], $new_file);
+  $new_file = str_replace('{{http_host}}', $http_host, $new_file);
+  if ($https_enabled) {
+      $new_file = str_replace('{{parent_host}}', 'https://'.$http_host, $new_file);
+  } else
+      $new_file = str_replace('{{parent_host}}', 'http://'.$http_host, $new_file);
+ 
+  $new_file = str_replace('{{web_dir}}', $web_dir, $new_file);
+  $new_file = str_replace('{{parent_page}}', $parent_page, $new_file);
+  if ($is_image_magick)
+      $new_file = str_replace('{{is_image_magick}}', '1', $new_file);
+  else
+      $new_file = str_replace('{{is_image_magick}}', '', $new_file);
+ 
+  if ($design_mode)
+      $new_file = str_replace('{{design_mode}}', '1', $new_file);
+  else
+      $new_file = str_replace('{{design_mode}}', '', $new_file);
+ 
+  $new_file = str_replace('{{payment_currency}}', $payment_currency, $new_file);
+  $fp = fopen(SITE_ROOT . '/../includes/settings.php', 'w+');
+  fputs($fp, $new_file);
+  fclose($fp);
+  exit('Admin area access info: a@a.com / 01230 . Don\'t forget to change this password. <a href="/">Visit site</a>');
+ }
 }
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">

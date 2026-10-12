@@ -4,13 +4,14 @@ namespace Braintree\Dispute;
 use Braintree\Instance;
 
 /**
- * Evidence details for a dispute
+ * Status History for a dispute
  *
  * @package    Braintree
  *
- * @property-read string $effective_date
+ * @property-read \DateTime $disbursementDate
+ * @property-read \DateTime $effectiveDate
  * @property-read string $status
- * @property-read date   $timestamp
+ * @property-read \DateTime $timestamp
  */
 class StatusHistoryDetails extends Instance
 {

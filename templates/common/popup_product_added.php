@@ -9,19 +9,9 @@
 ?>
 <div class="product-added">
 {if $product['variant_photo']}
-<?php
-$image = $product["variant_photo"];
-$image["new_width"] = 234;
-$image["new_height"] = 200;
-include SITE_ROOT . "/includes/variant_image.php";
-?>
+{variant_image image=`$product["variant_photo"]` new_width=234 new_height=200}
 {elseif $product['photo']}
-<?php
-$image = $product["photo"];
-$image["new_width"] = 234;
-$image["new_height"] = 200;
-include SITE_ROOT . "/includes/image.php";
-?>
+{product_image image=`$product['photo']` new_width=234 new_height=200}
 {/if}
 <b>{$product['name']}</b> {lng[added to cart]}
 <br /><br />

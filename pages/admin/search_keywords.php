@@ -9,16 +9,16 @@
 ?>
 <?php
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-	if ($_FILES['file']) {
-		copy($_FILES['file']['tmp_name'], SITE_ROOT.'/search_keywords.txt');
-	}
+    if ($_FILES['file']) {
+        copy($_FILES['file']['tmp_name'], SITE_ROOT.'/search_keywords.txt');
+    }
 
-	$_SESSION['alerts'][] = array(
-		'type'		=> 'i',
-		'content'	=> lng('Successful')
-	);
+    $_SESSION['alerts'][] = array(
+        'type'		=> 'i',
+        'content'	=> lng('Successful')
+    );
 
-	redirect('/admin/search_keywords');
+    redirect('/admin/search_keywords');
 }
 
 $template['location'] .= ' &gt; '.lng('Search keywords');

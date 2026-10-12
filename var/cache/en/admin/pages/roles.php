@@ -13,9 +13,7 @@
 <a href="/admin/roles/new" class="ajax_link">New role</a><br />
 
 <table cellpadding="3" cellspacing="1" width="600" class="lines-table resp-table">
-<?php 
-if ($roles) {
-?>
+<?php  if ($roles) { ?>
 <thead>
 <tr>
 	<th width="10">&nbsp;</th>
@@ -23,28 +21,24 @@ if ($roles) {
 	<th width="15%" align="center">Pos</th>
 </tr>
 </thead>
-<?php 
-	foreach ($roles as $v) {
-?>
+<?php  foreach ($roles as $v) { ?>
 <tr>
-	<td width="10"><input type="checkbox" name="to_delete[]" value="<?php  echo $v['roleid']; ?>" /></td>
+	<td width="10"><input type="checkbox" name="to_delete[]" value="<?php  echo $v[
+     "roleid"
+ ]; ?>" /></td>
 	<td><label>Title</label><a href="/admin/roles/<?php echo $v['roleid'];?>" class="ajax_link"><?php echo $v['title'];?></a></td>
-	<td align="center"><label>Pos</label><input type="text" size="5" name="posted_data[<?php  echo $v['roleid']; ?>][pos]" value="<?php  echo $v['pos']; ?>" /></td>
+	<td align="center"><label>Pos</label><input type="text" size="5" name="posted_data[<?php  echo $v[
+     "roleid"
+ ]; ?>][pos]" value="<?php  echo $v["pos"]; ?>" /></td>
 </tr>
-<?php 
-	}
-?>
-<?php 
-} else  {
-?>
+<?php  } ?>
+<?php  } else  { ?>
 
 <tr>
 	<td colspan="3" align="center"><br />No Roles defined</td>
 </tr>
 
-<?php 
-}
-?>
+<?php  } ?>
 
 </table>
 

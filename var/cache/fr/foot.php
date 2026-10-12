@@ -1,8 +1,13 @@
+<?php 
+/**
+* SPA-Cart
+* Copyright (c) Oleg Khorev
+*
+* Released under the MIT License.
+* https://github.com/olegkhorev/php-spa-cart
+*/
+?>
 <div class="foot">
-<?php /* ?>
- <a href="<?php if ($config['Tickets']['use_tickets']) {?>/support_desk<?php } else  { ?>/help<?php } ?>">Contactez-nous</a> &nbsp; <a href="/page/about.html">Sur</a> &nbsp; <a href="/page/terms-n-conditions.html">Termes & Conditions</a>
- <span>Copyright &copy;<?php if ($config['Company']['start_year'] && $config['Company']['start_year'] != date('Y')) {?><?php echo $config['Company']['start_year'];?> - <?php } ?><?php echo date('Y');; ?>. Developed by <a href="http://upwork.com/fl/ecommerce" class="no-ajax" target="_blank">Oleg Khorev</a></span>
-<?php */ ?>
  <ul class="foot-ul-1">
   <li>Entrer en contact avec nous</li>
   <li>Téléphone: <?php echo $config['Company']['company_phone'];?></li>
@@ -21,6 +26,8 @@
   <li><a href="/news">News</a></li>
   <li><a href="/blog">Blog</a></li>
   <li><a href="/testimonials">Témoignages</a></li>
+  <li><a href="/page/about-us.html">About us</a></li>
+  <li><a href="/page/terms-n-conditions.html">Termes & Conditions</a></li>
  </ul>
 
 <?php if ($categories_top_menu) {?>
@@ -37,5 +44,5 @@
 <div class="clear"></div>
 <hr />
  <img src="/images/payment_methods.png" class="foot-pm" alt="Les méthodes de paiement" />
-<span class="copyright">&copy; <?php if ($config['Company']['start_year'] && $config['Company']['start_year'] != date('Y')) {?><?php echo $config['Company']['start_year'];?> - <?php } ?><?php echo date('Y');; ?>. Developed by <a href="http://upwork.com/fl/ecommerce" class="no-ajax" target="_blank">Oleg Khorev</a></span>
+<span class="copyright">&copy; <?php if ($config['Company']['start_year'] && $config['Company']['start_year'] != date('Y')) {?><?php echo $config['Company']['start_year'];?> - <?php } ?><?php echo date('Y');; ?>. Developed by <a href="https://spa-cart.com/" class="no-ajax" target="_blank">Oleg Khorev</a></span>
 </div>

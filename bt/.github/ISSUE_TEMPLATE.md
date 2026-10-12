@@ -1,5 +1,6 @@
 ### General information
 
+* SDK/Library version: <!-- Example: 4.7.2 -->
 * Environment: <!-- Is this issue in Sandbox or Production? -->
 * Language, language version, and OS: <!-- Example: Java 1.8.0_101-b13 on Ubuntu 16.10 -->
 

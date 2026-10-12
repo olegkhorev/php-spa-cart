@@ -85,8 +85,8 @@ function fuzzy_generate_phrases($text) {
 }
 	
 function fuzzy_clean($string) {
-   $string = str_replace(' ', '-', $string); // Replaces all spaces with hyphens.
+   $string = str_replace(' ', '-', $string);
    $string = preg_replace('/[^A-Za-z0-9\-]/', '', $string);
-			$string = str_replace('-', ' ', $string); // Replaces all spaces with hyphens.
+			$string = str_replace('-', ' ', $string);
    return $string;
 }

@@ -52,8 +52,9 @@
 <title>{lng[Invoice]} #<?php echo $order["orderid"]; ?></title>
 
 <style type="text/css" media="all">
-<?php include SITE_ROOT . "/includes/css.php"; ?>
+{include_css}
 </style>
+
 <script type="text/javascript">
 var current_area = 'A',
 	page = '<?php echo $get["0"]; ?>',
@@ -72,6 +73,8 @@ var current_area = 'A',
 <div style="float: left;">
 {include="invoice/body.php"}
 </div>
-<?php include SITE_ROOT . "/includes/js.php"; ?>
+
+{include_js}
+
 </body>
 </html>

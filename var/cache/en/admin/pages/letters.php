@@ -7,21 +7,22 @@
 * https://github.com/olegkhorev/php-spa-cart
 */
 ?>
-<a href="<?php  echo $current_location; ?>/admin/subscribtions/<?php  echo $get['2']; ?>/new">Add new</a>
+<a href="<?php  echo $current_location; ?>/admin/subscribtions/<?php  echo $get[
+    "2"
+]; ?>/new">Add new</a>
 <br /><br />
-Total subscribers: <?php  echo $subscribers ? $subscribers : '0';?> <a href="/admin/subscribtions/<?php  echo $get['2']; ?>/export">Export</a>
+Total subscribers: <?php  echo $subscribers
+    ? $subscribers
+    : "0"; ?> <a href="/admin/subscribtions/<?php  echo $get[
+     "2"
+ ]; ?>/export">Export</a>
 <br /><br />
 <form method="post" name="newsform">
 <input type="hidden" name="mode" value="delete" />
 
-<?php 
-if ($total_pages > 2) {
-?>
+<?php  if ($total_pages > 2) { ?>
 <?php include SITE_ROOT."/var/cache/en/common/navigation.php";?>
-<?php 
-	echo '<br />';
-}
-?>
+<?php  echo "<br />";} ?>
 
 <a href="javascript: void(0);" onclick="javascript: check_all(document.newsform, 'to_delete', true);">Check all</a> / <a href="javascript: void(0);" onclick="javascript: check_all(document.newsform, 'to_delete', false);">Uncheck all</a>
 
@@ -33,15 +34,25 @@ if ($total_pages > 2) {
 	<th width="30%">Date</th>
 </tr>
 </thead>
-<?php 
-foreach ($letters as $l) {
-	echo '<tr>
-	<td><input type="checkbox" name="to_delete['.$l['id'].']" value="Y" /></td>
-	<td><label>Subject</label><a href="'.$current_location.'/admin/subscribtions/'.$get['2'].'/'.$l['id'].'">'.$l['subject'].'</a></td>
-	<td align="center"><label>Date</label>'.date($datetime_format, $l['date'])."</td>
+<?php  foreach ($letters as $l) {
+    echo '<tr>
+	<td><input type="checkbox" name="to_delete[' .
+        $l["id"] .
+        ']" value="Y" /></td>
+	<td><label>Subject</label><a href="' .
+        $current_location .
+        "/admin/subscribtions/" .
+        $get["2"] .
+        "/" .
+        $l["id"] .
+        '">' .
+        $l["subject"] .
+        '</a></td>
+	<td align="center"><label>Date</label>' .
+        date($datetime_format, $l["date"]) .
+        "</td>
 </tr>";
-}
-?>
+} ?>
 
 </table>
 <div class="fixed_save_button">

@@ -1,57 +1,134 @@
-# Braintree PHP Example
+# Braintree PHP library
 
-[![Build Status](https://travis-ci.org/braintree/braintree_php_example.svg?branch=master)](https://travis-ci.org/braintree/braintree_php_example)
+The Braintree PHP library provides integration access to the Braintree Gateway.
 
-An example Braintree integration for PHP.
+## Please Note
+> **The Payment Card Industry (PCI) Council has [mandated](https://blog.pcisecuritystandards.org/migrating-from-ssl-and-early-tls) that early versions of TLS be retired from service.  All organizations that handle credit card information are required to comply with this standard. As part of this obligation, Braintree is updating its services to require TLS 1.2 for all HTTPS connections. Braintree will also require HTTP/1.1 for all connections. Please see our [technical documentation](https://github.com/paypal/tls-update) for more information.**
 
-## Setup Instructions
+## Dependencies
 
-1. Install composer within the example directory. You can find instructions on how to install composer [on composer's site](https://getcomposer.org/download/).
+PHP version >= 5.4.0 is required.
 
-2. Run composer:
+The following PHP extensions are required:
 
-  ```sh
-  php composer.phar install
-  ```
+* curl
+* dom
+* hash
+* openssl
+* xmlwriter
 
-  Or if you installed composer globally:
+## Quick Start Example
 
-  ```sh
-  composer install
-  ```
+```php
+<?php
 
-3. Copy the contents of `example.env` into a new file named `.env` and fill in your Braintree API credentials. Credentials can be found by navigating to Account > My User > View Authorizations in the Braintree Control Panel. Full instructions can be [found on our support site](https://articles.braintreepayments.com/control-panel/important-gateway-credentials#api-credentials).
+require_once 'PATH_TO_BRAINTREE/lib/Braintree.php';
 
-4. Start the internal PHP server on port 3000:
+// Instantiate a Braintree Gateway either like this:
+$gateway = new Braintree_Gateway([
+    'environment' => 'sandbox',
+    'merchantId' => 'your_merchant_id',
+    'publicKey' => 'your_public_key',
+    'privateKey' => 'your_private_key'
+]);
 
-  ```sh
-  php -S localhost:3000 -t public_html
-  ```
+// or like this:
+$config = new Braintree_Configuration([
+    'environment' => 'sandbox',
+    'merchantId' => 'your_merchant_id',
+    'publicKey' => 'your_public_key',
+    'privateKey' => 'your_private_key'
+]);
+$gateway = new Braintree\Gateway($config)
 
-## Deploying to Heroku
+// Then, create a transaction:
+$result = $gateway->transaction()->sale([
+    'amount' => '1000.00',
+    'paymentMethodNonce' => 'nonceFromTheClient',
+    'options' => [ 'submitForSettlement' => true ]
+]);
 
-You can deploy this app directly to Heroku to see the app live. Skip the setup instructions above and click the button below. This will walk you through getting this app up and running on Heroku in minutes.
+if ($result->success) {
+    print_r("success!: " . $result->transaction->id);
+} else if ($result->transaction) {
+    print_r("Error processing transaction:");
+    print_r("\n  code: " . $result->transaction->processorResponseCode);
+    print_r("\n  text: " . $result->transaction->processorResponseText);
+} else {
+    print_r("Validation errors: \n");
+    print_r($result->errors->deepAll());
+}
+```
 
-[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/braintree/braintree_php_example&env[BT_ENVIRONMENT]=sandbox)
+Both PSR-0 and PSR-4 namespacing are supported. If you are using composer with `--classmap-authoritative` or
+`--optimize-autoloader` enabled, you'll have to reference classes using PSR-4 namespacing:
 
-## Running Tests
+```php
+$gateway = new Braintree\Gateway([
+    'environment' => 'sandbox',
+    'merchantId' => 'your_merchant_id',
+    'publicKey' => 'your_public_key',
+    'privateKey' => 'your_private_key'
+]);
 
-All tests are integration tests. Integration tests make API calls to Braintree and require that you set up your Braintree credentials. You can run this project's integration tests by adding your sandbox API credentials to `.env` and running `./vendor/bin/phpunit --testsuite integration` on the command line.
+// or
 
-## Testing Transactions
+$config = new Braintree\Configuration([
+    'environment' => 'sandbox',
+    'merchantId' => 'your_merchant_id',
+    'publicKey' => 'your_public_key',
+    'privateKey' => 'your_private_key'
+]);
+$gateway = new Braintree\Gateway($config)
+```
 
-Sandbox transactions must be made with [sample credit card numbers](https://developers.braintreepayments.com/reference/general/testing/php#credit-card-numbers), and the response of a `Braintree_Transaction::sale()` call is dependent on the [amount of the transaction](https://developers.braintreepayments.com/reference/general/testing/php#test-amounts).
+## HHVM Support
 
-## Pro Tips
+The Braintree PHP library will run on HHVM >= 3.4.2.
 
- * Run `php -S 0.0.0.0:3000 -t public_html` when launching the internal PHP server to listen on all interfaces on port 3000.
+## Google App Engine Support
 
-## Help
+When using Google App Engine include the curl extention in your `php.ini` file (see [#190](https://github.com/braintree/braintree_php/issues/190) for more information):
 
- * Found a bug? Have a suggestion for improvement? Want to tell us we're awesome? [Submit an issue](https://github.com/braintree/braintree_php_example/issues)
- * Trouble with your integration? Contact [Braintree Support](https://support.braintreepayments.com/) / support@braintreepayments.com
- * Want to contribute? [Submit a pull request](https://help.github.com/articles/creating-a-pull-request)
+```ini
+extension = "curl.so"
+```
 
-## Disclaimer
+and turn off accepting gzip responses:
 
-This code is provided as is and is only intended to be used for illustration purposes. This code is not production-ready and is not meant to be used in a production environment. This repository is to be used as a tool to help merchants learn how to integrate with Braintree. Any use of this repository or any of its code in a production environment is highly discouraged.
+```php
+$gateway = new Braintree\Gateway([
+    'environment' => 'sandbox',
+    // ...
+    'acceptGzipEncoding' => false,
+]);
+```
+
+## Legacy PHP Support
+
+Version [2.40.0](https://github.com/braintree/braintree_php/releases/tag/2.40.0) is compatible with PHP 5.2 and 5.3. You can find it on our releases page.
+
+## Documentation
+
+ * [Official documentation](https://developers.braintreepayments.com/php/sdk/server/overview)
+
+## Developing (Docker)
+
+The `Makefile` and `Dockerfile` will build an image containing the dependencies and drop you to a terminal where you can run tests.
+
+```
+make
+```
+
+## Testing
+
+The unit specs can be run by anyone on any system, but the integration specs are meant to be run against a local development server of our gateway code. These integration specs are not meant for public consumption and will likely fail if run on your system. To run unit tests use rake: `rake test:unit`.
+
+The benefit of the `rake` tasks is that testing covers default `hhvm` and `php` interpreters. However, if you want to run tests manually simply use the following command:
+```
+phpunit tests/unit/
+```
+
+## License
+
+See the LICENSE file.

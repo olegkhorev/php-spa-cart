@@ -9,23 +9,23 @@
 ?>
 <?php
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-	extract($_POST);
-	foreach ($data as $k=>$v) {
-		$v['enabled'] = $v['enabled'] ? 1 : 0;
-		if (DEMO) {
-			unset($v['mode']);
-			unset($v['param1']);
-			unset($v['param2']);
-		}
+    extract($_POST);
+    foreach ($data as $k => $v) {
+        $v['enabled'] = $v['enabled'] ? 1 : 0;
+        if (DEMO) {
+            unset($v['mode']);
+            unset($v['param1']);
+            unset($v['param2']);
+        }
 
-		$db->array2update("payment_methods", $v, "paymentid='".addslashes($k)."'");
-	}
+        $db->array2update("payment_methods", $v, "paymentid='".addslashes($k)."'");
+    }
 
-	$_SESSION['alerts'][] = array(
-		'content'	=> 'Payment methods has been successfully updated'
-	);
+    $_SESSION['alerts'][] = array(
+        'content'	=> 'Payment methods has been successfully updated'
+    );
 
-	redirect('/admin/payment');
+    redirect('/admin/payment');
 }
 
 $template['head_title'] = lng('Payment methods').' :: '.$template['head_title'];

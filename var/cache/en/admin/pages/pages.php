@@ -7,11 +7,11 @@
 * https://github.com/olegkhorev/php-spa-cart
 */
 ?>
-<form name="pform" action="<?php echo $current_location;?>/admin/pages/<?php  echo $get['2']; ?>" method="post"<?php /* ?><?php if (!$pages && !$page['id']) {?> class="noajax"<?php } ?><?php */ ?>>
+<form name="pform" action="<?php echo $current_location;?>/admin/pages/<?php  echo $get[
+    "2"
+]; ?>" method="post"<?php /* ?><?php if (!$pages && !$page['id']) {?> class="noajax"<?php } ?><?php */ ?>>
 <input type="hidden" name="mode" value="" />
-<?php 
-if (empty($get['2'])) {
-?>
+<?php  if (empty($get["2"])) { ?>
 
 <table cellpadding="3" width="600" cellspacing="1" class="lines-table resp-table">
 <thead>
@@ -21,18 +21,18 @@ if (empty($get['2'])) {
 	<th width="100">Pos</th>
 </tr>
 </thead>
-<?php 
-if ($pages) {
-	foreach ($pages as $p) {
-?>
+<?php  if ($pages) {
+    foreach ($pages as $p) { ?>
 <tr>
-	<td><input type="checkbox" name="to_delete[<?php  echo $p['pageid'];?>]" /></td>
-	<td><label>Page</label><a href="<?php  echo $current_location.'/admin/pages/'.$p['pageid']; ?>"><?php  echo $p['title']; ?></a></td>
-	<td><label>Pos</label><input size="5" type="text" name="to_update[<?php  echo $p['pageid'];?>][orderby]" value="<?php  echo $p['orderby'];?>"></td>
+	<td><input type="checkbox" name="to_delete[<?php  echo $p["pageid"]; ?>]" /></td>
+	<td><label>Page</label><a href="<?php  echo $current_location .
+     "/admin/pages/" .
+     $p["pageid"]; ?>"><?php  echo $p["title"]; ?></a></td>
+	<td><label>Pos</label><input size="5" type="text" name="to_update[<?php  echo $p[
+     "pageid"
+ ]; ?>][orderby]" value="<?php  echo $p["orderby"]; ?>"></td>
 </tr>
-<?php 
-	}
-?>
+<?php  } ?>
 </table>
 <div class="fixed_save_button">
 <button type="button" onclick="javascript: submitForm(this, 'update');">Update</button>
@@ -40,16 +40,14 @@ if ($pages) {
 </div>
 <?php 
 } else  {
-?>
+     ?>
 No pages
 <?php 
-}
-?>
+} ?>
 <br /><br />
-<a href="<?php  echo $current_location.'/admin/pages/new'; ?>">Add new</a>
-<?php 
-} else  {
-?>
+<a href="<?php  echo $current_location .
+    "/admin/pages/new"; ?>">Add new</a>
+<?php  } else  { ?>
 <script src="/ckeditor/ckeditor.js"></script>
 <script>
 CKEDITOR.config.protectedSource.push( /<\?[\s\S]*?\?>/g );   // PHP Code
@@ -59,7 +57,10 @@ CKEDITOR.config.protectedSource.push( /<\?[\s\S]*?\?>/g );   // PHP Code
 	<td height="10" nowrap="nowrap">Page title</td>
 	<td width="10" height="10"></td>
 	<td height="10">
-		<input type="text" name="title" maxlength="255" size="80" value="<?php  echo escape($page['title'], 2); ?>" onchange="javascript: if (this.form.cleanurl.value == '') copy_clean_url(this, this.form.cleanurl);" />
+		<input type="text" name="title" maxlength="255" size="80" value="<?php  echo escape(
+      $page["title"],
+      2,
+  ); ?>" onchange="javascript: if (this.form.cleanurl.value == '') copy_clean_url(this, this.form.cleanurl);" />
 	</td>
 </tr>
 
@@ -67,7 +68,10 @@ CKEDITOR.config.protectedSource.push( /<\?[\s\S]*?\?>/g );   // PHP Code
 	<td height="10" nowrap="nowrap">Clean URL</td>
 	<td width="10" height="10"></td>
 	<td height="10">
-		<input type="text" name="cleanurl" maxlength="255" size="80" value="<?php  echo escape($page['cleanurl'], 2); ?>" />
+		<input type="text" name="cleanurl" maxlength="255" size="80" value="<?php  echo escape(
+      $page["cleanurl"],
+      2,
+  ); ?>" />
 	</td>
 </tr>
 
@@ -84,7 +88,9 @@ CKEDITOR.config.protectedSource.push( /<\?[\s\S]*?\?>/g );   // PHP Code
 		    $('*').removeAttr("title");
 		});
 	</script>
-		<textarea class="ckeditor" id="ck_editor" cols="65" rows="7" name="content"><?php  echo $page['content']; ?></textarea>
+		<textarea class="ckeditor" id="ck_editor" cols="65" rows="7" name="content"><?php  echo $page[
+      "content"
+  ]; ?></textarea>
 	</td>
 </tr>
 
@@ -92,7 +98,10 @@ CKEDITOR.config.protectedSource.push( /<\?[\s\S]*?\?>/g );   // PHP Code
 	<td height="10" nowrap="nowrap">Title tag</td>
 	<td width="10" height="10"></td>
 	<td height="10">
-		<input type="text" size="65" name="meta_title" value="<?php  echo escape($page['meta_title'], 2); ?>" />
+		<input type="text" size="65" name="meta_title" value="<?php  echo escape(
+      $page["meta_title"],
+      2,
+  ); ?>" />
 	</td>
 </tr>
 
@@ -100,7 +109,9 @@ CKEDITOR.config.protectedSource.push( /<\?[\s\S]*?\?>/g );   // PHP Code
 	<td height="10" nowrap="nowrap">Meta keywords</td>
 	<td width="10" height="10"></td>
 	<td height="10">
-		<textarea cols="65" rows="4" name="meta_keywords"><?php  echo $page['meta_keywords']; ?></textarea>
+		<textarea cols="65" rows="4" name="meta_keywords"><?php  echo $page[
+      "meta_keywords"
+  ]; ?></textarea>
 	</td>
 </tr>
 
@@ -108,7 +119,9 @@ CKEDITOR.config.protectedSource.push( /<\?[\s\S]*?\?>/g );   // PHP Code
 	<td height="10" nowrap="nowrap">Meta description</td>
 	<td width="10" height="10"></td>
 	<td height="10">
-		<textarea cols="65" rows="4" name="meta_description"><?php  echo $page['meta_description']; ?></textarea>
+		<textarea cols="65" rows="4" name="meta_description"><?php  echo $page[
+      "meta_description"
+  ]; ?></textarea>
 	</td>
 </tr>
 
@@ -118,7 +131,5 @@ CKEDITOR.config.protectedSource.push( /<\?[\s\S]*?\?>/g );   // PHP Code
 <button class="button-margin-left" type="submit">Save</button>
 </div>
 
-<?php 
-}
-?>
+<?php  } ?>
 </form>

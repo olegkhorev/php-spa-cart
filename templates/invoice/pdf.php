@@ -12,7 +12,7 @@
 <meta charset="utf-8" />
 <title>{lng[Invoice]} #<?php echo $order["orderid"]; ?></title>
 <style type="text/css" media="all">
-<?php include SITE_ROOT . "/includes/css.php"; ?>
+{include_css}
 body {
     font-family: sans-serif;
     font-size: 13px;

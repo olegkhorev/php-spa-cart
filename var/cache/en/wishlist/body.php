@@ -20,12 +20,7 @@
 	<tr>
 	 <td class="image"><a href="<?php echo $current_location;?>/<?php echo $url;?>">
 	<?php if ($v['product']['photo']) {?>
-<?php 
-		$image = $v['product']['photo'];
-		$image['new_width'] = 100;
-		$image['new_height'] = 100;
-		include SITE_ROOT . '/includes/image.php';
-?>
+<?php $image = $v['product']['photo']; $image['new_width'] = 100; $image['new_height'] = 100; include SITE_ROOT . "/includes/image.php"; ?>
 	<?php } ?>
 	 </a></td>
 	 <td><a href="<?php echo $current_location;?>/<?php echo $url;?>"><?php echo $v['product']['name'];?></a></td>
@@ -37,9 +32,12 @@
 <br />
 <hr />
 <br />
-<button type="button" class="clear-wl"<?php  if (!$is_ajax) echo ' onclick="self.location=\'wishlist/clear\'"'; ?>>Clear wishlist</button>
+<button type="button" class="clear-wl"<?php  if (!$is_ajax) {
+    echo ' onclick="self.location=\'wishlist/clear\'"';
+} ?>>Clear wishlist</button>
 </form>
-<?php } else  { ?><br />
+<?php } else  { ?>
+<br />
 Wishlist is empty
 <br /><br />
 <?php } ?>

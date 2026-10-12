@@ -83,9 +83,9 @@ foreach ($brand_images as $k=>$v) {
 }
 
 $dimensions = array(
-array(100, 100),
-array(234, 200),
-array(95, 95),
+	array(100, 100),
+	array(234, 200),
+	array(95, 95),
 );
 
 $variant_images = $db->all("SELECT * FROM variant_images ORDER BY imageid");
@@ -103,13 +103,13 @@ foreach ($variant_images as $k=>$v) {
 }
 
 $dimensions = array(
-array(100, 100),
-array(125, 400),
-array(400, 100),
-array(500, 400),
-array(700, 400),
-array(750, 400),
-array(800, 400),
+	array(100, 100),
+	array(125, 400),
+	array(400, 100),
+	array(500, 400),
+	array(700, 400),
+	array(750, 400),
+	array(800, 400),
 );
 
 $blog_images = $db->all("SELECT * FROM blog_images ORDER BY imageid");

@@ -1,30 +1,106 @@
-function quote_comment(id, name) {
-	var text = document.getElementById('comment_'+id).innerHTML;
+function go_to_comments() {
+  $("html, body").animate(
+    {
+      scrollTop: $("#blog_comments_section").offset().top - 90,
+    },
+    500,
+  );
+}
 
-	text = str_replace("&gt;", ">", text);
-	text = str_replace("&lt;", "<", text);
+function leave_comments() {
+  $("html, body").animate(
+    {
+      scrollTop: $("#blog_bb_buttons").offset().top - 120,
+    },
+    500,
+  );
+}
 
-	document.blogform.comment.value += '[quote='+name+']'+text+'[/quote]'+"\n\n";
+function quote_comment_html(id, name) {
+  $("#newrecord").html(
+    '<div class="quote_blog_post_comment">' +
+      $("#comment_" + id).html() +
+      "</div><br />",
+  );
+  $("html, body").animate(
+    {
+      scrollTop: $("#blog_bb_buttons").offset().top - 120,
+    },
+    500,
+  );
 
-    $('html, body').animate({
-        scrollTop: $('[name="comment"]').offset().top
-    }, 500);
-
-	document.blogform.comment.focus();
+  moveCursorToEnd($("#newrecord")[0]);
 }
 
 function new_comment() {
-	if (!document.blogform.comment.value) {
-		alert("Пожалуйста, введите ваш комментарий.");
-		document.blogform.comment.focus();
-		return false;
-	}
+  document.blogform.comment.value = $("#newrecord").html();
+  if (!document.blogform.comment.value) {
+    alert("Пожалуйста, введите ваш комментарий.");
+    document.blogform.comment.focus();
+    return false;
+  }
 
-	if (document.blogform.new_name && !document.blogform.new_name.value) {
-		alert("Пожалуйста, введите ваше имя");
-		document.blogform.new_name.focus();
-		return false;
-	}
+  if (document.blogform.new_name && !document.blogform.new_name.value) {
+    alert("Пожалуйста, введите ваше имя");
+    document.blogform.new_name.focus();
+    return false;
+  }
 
-	document.blogform.submit();
+  document.blogform.submit();
+}
+
+var doc = document,
+  blog_bb_link_clicked = false;
+function iBold() {
+  doc.execCommand("bold", false, null);
+}
+
+function iUnderline() {
+  doc.execCommand("underline", false, null);
+}
+
+function iItalic() {
+  doc.execCommand("italic", false, null);
+}
+
+function iLinkClick() {
+  var n = window.getSelection().anchorNode;
+  if (n) {
+    n = n.parentNode;
+    var l = $("#iLinkClickA")[0];
+    if (n.nodeName.toLowerCase() == "a") {
+      $("#iLinkClickA").removeClass("clicked_bb_a");
+      doc.execCommand("Unlink", false, null);
+    } else {
+      $("#iLinkClickA").addClass("clicked_bb_a");
+      doc.execCommand("createLink", false, prompt("Link URL:", "https://"));
+    }
+  }
+}
+
+function moveCursorToEnd(element) {
+  // Focus the element first
+  element.focus();
+
+  // Check if the browser supports Selection API
+  if (
+    typeof window.getSelection !== "undefined" &&
+    typeof document.createRange !== "undefined"
+  ) {
+    const range = document.createRange();
+
+    // Select all the contents inside the element
+    range.selectNodeContents(element);
+
+    // Collapse the range to the end point (false = collapse to end, true = collapse to start)
+    range.collapse(false);
+
+    const selection = window.getSelection();
+
+    // Clear any current text selections
+    selection.removeAllRanges();
+
+    // Add the new range which places the cursor at the end
+    selection.addRange(range);
+  }
 }

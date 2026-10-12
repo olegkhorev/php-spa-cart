@@ -52,7 +52,7 @@
 <title>{$page_title}</title>
 <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
 <style type="text/css" media="all">
-<?php include SITE_ROOT . "/includes/css.php"; ?>
+{include_css}
 </style>
 {if $config['theme_color']}
 <style id="custom_style">
@@ -62,7 +62,6 @@
 }
 </style>
 {/if}
-{*<script src="https://checkout.stripe.com/checkout.js"></script>*}
 <script type="text/javascript">
 var current_area = 'C',
 	page = '{$get['0']}',
@@ -140,7 +139,7 @@ $(function() {
   <script src='https://js.braintreegateway.com/web/3.54.2/js/three-d-secure.js'></script>
   <script src="https://js.braintreegateway.com/web/3.54.2/js/hosted-fields.min.js"></script>
 </head>
-<body class="{if $get['0'] == 'category' || $get['0'] == 'search' || ($get['0'] == 'brands' && $get['1'])} withfilter{/if}{if $classes} {$classes}{/if}" id="body-{$get['0']}{if $module}-{$module['code']}{/if}">
+<body class="{if $get['0'] == 'category' || $get['0'] == 'search' || ($get['0'] == 'brands' && $get['1'])} withfilter{/if}{if $classes} {$classes}{/if}{if $config['General']['shop_closed'] == 'Y'} shop-closed{/if}" id="body-{$get['0']}{if $module}-{$module['code']}{/if}">
 
 <div class="mobile-left_menu">
 {if $config['General']['shop_closed'] != 'Y'}
@@ -151,8 +150,6 @@ $(function() {
 <div class="loading-header">
 <div aria-busy="true" aria-label="Loading, please wait." role="progressbar"></div>
 </div>
-
-{*<div class="body-loading"><div></div></div>*}
 
 {if $config['General']['shop_closed'] != 'Y'}
 <div id="head">
@@ -191,7 +188,8 @@ $(function() {
 <script src="//code.jquery.com/ui/1.14.1/jquery-ui.min.js" integrity="sha256-AlTido85uXPlSyyaZNsjJXeCs07eSv3r43kyCVc8ChI=" crossorigin="anonymous"></script>
 <link rel="stylesheet" href="//code.jquery.com/ui/1.14.1/themes/base/jquery-ui.css" type="text/css" />
 
-<?php include SITE_ROOT . "/includes/js.php"; ?>
+{include_js}
+
 <img src="/images/scrolltop.png" alt="" id="scrolltop" />
 
 {if $config['General']['tawk_to_site_id']}
@@ -213,7 +211,7 @@ Tawk_API.onLoad = function(){
 <!--End of Tawk.to Script-->
 {/if}
 
-{if $design_mode}
+{if $design_mode && $config['General']['shop_closed'] != 'Y'}
 <?php include SITE_ROOT . "/theme.php"; ?>
 {/if}
 

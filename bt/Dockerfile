@@ -1,12 +1,14 @@
-FROM php:5.6.25
+FROM debian:jessie
 
-RUN apt-get update && apt-get install -y build-essential zip unzip
+RUN apt-get update
+RUN apt-get -y install gnupg curl
 
-ENV APP_HOME /braintree_php_example
-RUN mkdir $APP_HOME
-WORKDIR $APP_HOME
+# For installing hhvm
+RUN apt-get install -y apt-transport-https software-properties-common
+RUN apt-key adv --recv-keys --keyserver hkp://keyserver.ubuntu.com:80 0xB4112585D386EB94
+RUN echo deb https://dl.hhvm.com/debian jessie main > /etc/apt/sources.list.d/hhvm.list
+RUN apt-get update
 
-ADD composer.* $APP_HOME/
-RUN php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');" && php composer-setup.php && php composer.phar install
+RUN apt-get -y install rake php5 php5-cli php5-curl php-pear hhvm phpunit
 
-ADD . $APP_HOME
+WORKDIR /braintree-php

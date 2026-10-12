@@ -10,17 +10,49 @@
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:g="http://base.google.com/ns/1.0" xmlns:og="http://ogp.me/ns#" xmlns:fb="http://ogp.me/ns/fb#" class="area-c">
 <head>
 <meta charset="utf-8" />
-<meta name="keywords" content="<?php  if ($get['0'] == 'home' && lng('Homepage meta keywords')) echo lng('Homepage meta keywords'); else if ($product['meta_keywords']) echo $product['meta_keywords']; else if ($category['meta_keywords']) echo $category['meta_keywords']; else if ($static_page['meta_keywords']) echo $static_page['meta_keywords']; else if ($blog['meta_keywords']) echo $blog['meta_keywords']; else if ($brand['meta_keywords']) echo $brand['meta_keywords']; else  echo "";?>">
-<meta name="description" content="<?php  if ($get['0'] == 'home' && lng('Homepage meta description')) echo lng('Homepage meta description'); else if ($product['meta_description']) echo $product['meta_description']; else if ($category['meta_description']) echo $category['meta_description']; else if ($static_page['meta_description']) echo $static_page['meta_description']; else if ($blog['meta_description']) echo $blog['meta_description']; else if ($brand['meta_description']) echo $brand['meta_description']; else  echo "";?>">
+<meta name="keywords" content="<?php  if (
+    $get["0"] == "home" &&
+    lng("Homepage meta keywords")
+) {
+    echo lng("Homepage meta keywords");
+} else if ($product["meta_keywords"]) {
+    echo $product["meta_keywords"];
+} else if ($category["meta_keywords"]) {
+    echo $category["meta_keywords"];
+} else if ($static_page["meta_keywords"]) {
+    echo $static_page["meta_keywords"];
+} else if ($blog["meta_keywords"]) {
+    echo $blog["meta_keywords"];
+} else if ($brand["meta_keywords"]) {
+    echo $brand["meta_keywords"];
+} else  {
+    echo "";
+} ?>">
+<meta name="description" content="<?php  if (
+    $get["0"] == "home" &&
+    lng("Homepage meta description")
+) {
+    echo lng("Homepage meta description");
+} else if ($product["meta_description"]) {
+    echo $product["meta_description"];
+} else if ($category["meta_description"]) {
+    echo $category["meta_description"];
+} else if ($static_page["meta_description"]) {
+    echo $static_page["meta_description"];
+} else if ($blog["meta_description"]) {
+    echo $blog["meta_description"];
+} else if ($brand["meta_description"]) {
+    echo $brand["meta_description"];
+} else  {
+    echo "";
+} ?>">
 <meta name="robots" content="ALL">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <link rel="shortcut icon" href="/favicon.png" type="image/vnd.microsoft.icon" />
 <title><?php echo $page_title;?></title>
 <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
 <style type="text/css" media="all">
-<?php 
-include SITE_ROOT.'/includes/css.php';
-?>
+<?php include SITE_ROOT . "/includes/css.php"; ?>
 </style>
 <?php if ($config['theme_color']) {?>
 <style id="custom_style">
@@ -30,7 +62,6 @@ include SITE_ROOT.'/includes/css.php';
 }
 </style>
 <?php } ?>
-<?php /* ?><script src="https://checkout.stripe.com/checkout.js"></script><?php */ ?>
 <script type="text/javascript">
 var current_area = 'C',
 	page = '<?php echo $get['0'];?>',
@@ -120,8 +151,6 @@ $(function() {
 <div aria-busy="true" aria-label="Loading, please wait." role="progressbar"></div>
 </div>
 
-<?php /* ?><div class="body-loading"><div></div></div><?php */ ?>
-
 <?php if ($config['General']['shop_closed'] != 'Y') {?>
 <div id="head">
 <?php echo $head;?>
@@ -132,43 +161,17 @@ $(function() {
 <?php include SITE_ROOT."/var/cache/en/ajax_container.php";?>
 </div>
 
-<?php /* ?>
-<div class="page-container">
-<?php if ($alerts) {?>
- <div class="alerts"><span onclick="javascript: $('.alerts').slideUp();"><b>X</b></span>
- <?php foreach ($alerts as $v) {?>
-  <?php if ($v['type'] == 'e') {?><div class="error">Error: <?php echo $v['content'];?></div><?php } else  { ?><?php echo $v['content'];?><br><?php } ?><br>
- <?php } ?>
- </div>
-<?php } ?>
-
-<div id="bread_crumbs_container"><?php echo $bread_crumbs_html;?></div>
-
-<div class="content" align="left">
-<?php if (false && !$no_left_menu) {?>
-<?php echo $left_menu;;?>
-<?php } ?>
-
-	<div id="center"<?php if (true || $no_left_menu == 'Y') {?> class="no_left_menu"'<?php } ?>>
-<?php echo $page;?>
-	</div>
-</div>
-<div class="clear"></div>
-</div>
-<?php */ ?>
 <div class="loading">
-<?php /* ?>
-<img src="<?php echo $current_location;?>/images/spacer.gif" alt="..."/>
-<?php */ ?>
 <div class="cssload-container"><div class="cssload-speeding-wheel"></div></div>
 </div>
+
 <?php if ($config['General']['shop_closed'] != 'Y') {?>
 <?php if ($config['Visual']['visual_subscribe'] == 'Y') {?>
 <div id="foot-subscribe">
 <div class="foot-subscribe">
 <form method="POST" action="/subscribe" id="subsform">
 <div id="subscribe">
-<input placeholder="Subscribe to our news here..." type="text" id="sub-email" name="email" />
+<input placeholder="Enter email to subscribe" type="text" id="sub-email" name="email" />
 <button>Subscribe</button>
 </div>
 </form>
@@ -185,12 +188,7 @@ $(function() {
 <script src="//code.jquery.com/ui/1.14.1/jquery-ui.min.js" integrity="sha256-AlTido85uXPlSyyaZNsjJXeCs07eSv3r43kyCVc8ChI=" crossorigin="anonymous"></script>
 <link rel="stylesheet" href="//code.jquery.com/ui/1.14.1/themes/base/jquery-ui.css" type="text/css" />
 
-<?php 
-include SITE_ROOT.'/includes/js.php';
-?>
-<?php /* ?>
-<script src="http://connect.facebook.net/en-en/all.js"></script>
-<?php */ ?>
+<?php include SITE_ROOT . "/includes/js.php"; ?>
 
 <img src="/images/scrolltop.png" alt="" id="scrolltop" />
 
@@ -214,9 +212,7 @@ Tawk_API.onLoad = function(){
 <?php } ?>
 
 <?php if ($design_mode) {?>
-<?php 
-include SITE_ROOT.'/theme.php';
-?>
+<?php  include SITE_ROOT . "/theme.php"; ?>
 <?php } ?>
 
 <?php if ($translate_mode) {?>

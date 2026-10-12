@@ -11,9 +11,6 @@
 {foreach $products as $v}
 <div class="res-item">
 <div class="res-zoom">
-{*
-<div data-productid="{$v['productid']}" class="quick-look main-button">{lng[Quicklook]}</div>
-*}
 </div>
 <div class="photo">
 {if $v['list_price'] > $v['price']}
@@ -29,22 +26,9 @@ echo '-'.round($percent).'%';
 
 <a class="ajax_link"{*{if $device != 'mobile'} title="Move product to cart to add it"{/if}*} href="{$current_location}/{if $v['cleanurl']}{$v['cleanurl']}.html{else}product/{$v['productid']}{/if}">
 {if $v['photo']}
-<?php
-$image = $v["photo"];
-$image["new_width"] = 234;
-$image["class"] = "product-image";
-$image["id"] = "pid-" . $v["productid"];
-$image["new_height"] = 200;
-$image["center"] = 1;
-include SITE_ROOT . "/includes/image.php";
-?>
+{product_image image=`$v['photo']` class=`"product-image"` id=`"pid-".$v["productid"]` new_width=234 new_height=200 center=1}
 {/if}
 </a>
-{*
-{if $device != 'mobile'}
-<span class="move2cart">{lng[Move me to cart]}</span>
-{/if}
-*}
 </div>
  <div class="res-name"><a class="ajax_link" href="{$current_location}/{if $v['cleanurl']}{$v['cleanurl']}.html{else}product/{$v['productid']}{/if}">{$v['name']}</a></div>
  <div class="res-price">
@@ -62,10 +46,6 @@ include SITE_ROOT . "/includes/image.php";
 Out of stock
 </div>
 {/if}
-{*
-<br />
-<a class="main-button" onclick="javascript: return {if $login}add_wishlist({$v['productid']});{else}login_popup();{/if}" href="javascript: void(0);">{lng[Add to wishlist]}</a>
-*}
  </div>
 </div>
 {/foreach}

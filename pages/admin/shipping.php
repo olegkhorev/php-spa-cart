@@ -25,30 +25,33 @@ $carriers = $db->all("SELECT code, shipping, COUNT(*) as total_methods FROM ship
 $carrier_valid = false;
 
 if (!empty($carriers)) {
-    $carrier_names = array (
+    $carrier_names = array(
         'CPC' => "Canada Post",
         'USPS' => 'U.S.P.S.',
         'APOST' => "Australia Post",
     );
 
-    foreach ($carriers as $k=>$v) {
-        if ($v['code'] == $carrier)
+    foreach ($carriers as $k => $v) {
+        if ($v['code'] == $carrier) {
             $carrier_valid = true;
+        }
 
         $_carrier_total_enabled = $db->field("SELECT COUNT(*) FROM shipping WHERE code='$v[code]' AND active='Y' $intershipper_cond ");
 
-        if (!empty($carrier_names[$v['code']]))
+        if (!empty($carrier_names[$v['code']])) {
             $_carrier_name = $carrier_names[$v['code']];
-        else
+        } else {
             $_carrier_name = preg_replace("/^([^ ]+).*$/", "\\1", $v['shipping']);
+        }
 
         $carriers[$k]['shipping'] = $_carrier_name;
         $carriers[$k]['total_enabled'] = $_carrier_total_enabled;
     }
 }
 
-if (!$carrier_valid)
+if (!$carrier_valid) {
     $carrier = '';
+}
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     if ($mode == 'add_realtime_methods') {
@@ -57,17 +60,20 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     if (!empty($data)) {
         foreach ($data as $id => $arr) {
-            if ($mode == 'add_realtime_methods' || isset($arr['shipping']))
+            if ($mode == 'add_realtime_methods' || isset($arr['shipping'])) {
                 $arr['active'] = isset($arr['active']) ? 'Y' : 'N';
-            else
+            } else {
                 $arr['active'] = 'Y';
+            }
 
             $arr['is_cod'] = isset($arr['is_cod']) ? 'Y' : 'N';
-            if (empty($arr['weight_min']))
+            if (empty($arr['weight_min'])) {
                 $arr['weight_min'] = 0;
+            }
 
-            if (empty($arr['weight_limit']))
+            if (empty($arr['weight_limit'])) {
                 $arr['weight_limit'] = 0;
+            }
 
             $arr['weight_min'] = $arr['weight_min'];
             $arr['weight_limit'] = $arr['weight_limit'];
@@ -78,11 +84,13 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     if (!empty($add['shipping'])) {
         $add['active'] = isset($add['active']) ? 'Y' : 'N';
         $add['is_cod'] = isset($add['is_cod']) ? 'Y' : 'N';
-        if (empty($add['weight_min']))
+        if (empty($add['weight_min'])) {
             $add['weight_min'] = 0;
+        }
 
-        if (empty($add['weight_limit']))
+        if (empty($add['weight_limit'])) {
             $add['weight_limit'] = 0;
+        }
 
         $add['weight_min'] = $add['weight_min'];
         $add['weight_limit'] = $add['weight_limit'];
@@ -103,9 +111,9 @@ $condition = '';
 
 $template['head_title'] = lng('Shipping methods').' :: '.$template['head_title'];
 if ($mode == 'add_realtime_methods') {
-	$template['location'] .= ' &gt; <a href="'.$current_location.'/admin/shipping">'.lng('Shipping methods').'</a> &gt; '.lng('Manage realtime shipping methods');
+    $template['location'] .= ' &gt; <a href="'.$current_location.'/admin/shipping">'.lng('Shipping methods').'</a> &gt; '.lng('Manage realtime shipping methods');
 } else {
-	$template['location'] .= ' &gt; '.lng('Shipping methods');
+    $template['location'] .= ' &gt; '.lng('Shipping methods');
     $condition .= " AND (code = '' OR active = 'Y')";
 }
 
@@ -130,8 +138,8 @@ if (!empty($shipping)) {
 
 if ($active_shipping_vars >= $max_input_vars && $_GET['alert'] != 'Y') {
     $_SESSION['alerts'][] = array(
-   		'type'		=> 'e',
-   		'content'	=> 'PHP variable max_input_vars is '.$max_input_vars.' when shipping methods are '.$active_shipping_vars
+        'type'		=> 'e',
+        'content'	=> 'PHP variable max_input_vars is '.$max_input_vars.' when shipping methods are '.$active_shipping_vars
     );
 
     redirect($_SERVER['REQUET_URI'].'?&alert=Y');
@@ -142,10 +150,11 @@ $template['new_shipping'] = $new_shipping;
 $template['carriers'] = $carriers;
 $template['carrier'] = $carrier;
 
-if ($mode == 'add_realtime_methods')
-	$template['page'] = get_template_contents('admin/pages/add_realtime_methods.php');
-else
-	$template['page'] = get_template_contents('admin/pages/shipping.php');
+if ($mode == 'add_realtime_methods') {
+    $template['page'] = get_template_contents('admin/pages/add_realtime_methods.php');
+} else {
+    $template['page'] = get_template_contents('admin/pages/shipping.php');
+}
 
 $template['css'][] = 'admin_shipping';
 $template['js'][] = 'admin_shipping';

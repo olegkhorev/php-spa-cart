@@ -25,13 +25,9 @@
         echo '<div data-id="' .
             $v["photoid"] .
             '"><img src="/images/close.gif" class="remove" alt="" />';
-        $image = $v;
-        $image["new_width"] = 100;
-        $image["new_height"] = 100;
-        $image["center"] = 1;
-        $image["is_admin"] = 1;
-
-        include "includes/image.php";
+?>
+{product_image image=`$v` new_width=100 new_height=100 center=1}
+<?php
         echo "</div>";
     }
 } ?>

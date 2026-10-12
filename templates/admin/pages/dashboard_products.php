@@ -12,15 +12,7 @@
 <tr>
  <td class="photo"><a target="_blank" href="/admin/products/{$v['productid']}">
 {if $v['photo']}
-<?php
-$image = $v["photo"];
-$image["new_width"] = 50;
-$image["class"] = "product-image";
-$image["id"] = "pid-" . $v["productid"];
-$image["new_height"] = 50;
-$image["center"] = 1;
-include SITE_ROOT . "/includes/image.php";
-?>
+{product_image image=`$v['photo']` class=`"product-image"` id=`"pid-".$v["productid"]` new_width=50 new_height=50 center=1}
 {/if}
 </a>
  </td>

@@ -85,6 +85,10 @@ textarea[name="comment"] {
   margin: 0 0 10px 0;
   border: 1px solid var(--theme-color-2);
 }
+#iLinkClickA {
+  background: transparent !important;
+  box-shadow: none !important;
+}
 @media only screen and (min-width: 800px) {
   .blog .image {
     margin: 10px 20px 20px 0;

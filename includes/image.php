@@ -59,6 +59,7 @@ if (!file_exists($new_file)) {
 
         if ($image['new_width'] / $image['x'] > $image['new_height'] / $image['y']) {
             $height = $image['new_height'];
+#            exit($height.'-'.$image['new_height']);
             $width = $image['x'] * $image['new_height'] / $image['y'];
         } else {
             $width = $image['new_width'];

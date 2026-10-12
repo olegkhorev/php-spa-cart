@@ -20,18 +20,27 @@
 </form>
  </td>
  <td>
-<h1>Order #<?php  echo $order['orderid']; ?> <select id="status">
-<?php 
-		foreach ($order_statuses as $k=>$v) {
-			echo '<option value="'.$k.'"'.($k == $order['status'] ? ' selected' : '').'>'.$v.'</option>';
-		}
-?>
+<h1>Order #<?php  echo $order["orderid"]; ?> <select id="status">
+<?php  foreach ($order_statuses as $k => $v) {
+    echo '<option value="' .
+        $k .
+        '"' .
+        ($k == $order["status"] ? " selected" : "") .
+        ">" .
+        $v .
+        "</option>";
+} ?>
 </select>
-<button onclick="javascript: self.location='/admin/invoice/<?php  echo $order['orderid']; ?>/status/'+$('#status').val();">Save</button>
+<button onclick="javascript: self.location='/admin/invoice/<?php  echo $order[
+    "orderid"
+]; ?>/status/'+$('#status').val();">Save</button>
 </h1>
 <small>Chagned status will be sent to customer</small>
 <br /><br />
-<div>Order date: <?php  echo date($datetime_format, $order['date']); ?></div>
+<div>Order date: <?php  echo date(
+    $datetime_format,
+    $order["date"],
+); ?></div>
 <div class="clear"></div>
 <?php if ($order['transaction_id']) {?>
 Transaction #: <?php echo $order['transaction_id'];?>

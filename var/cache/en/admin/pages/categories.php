@@ -8,37 +8,39 @@
 */
 ?>
 <?php 
-if ($category_location)
-	echo $category_location.'<hr />';
+if ($category_location) {
+    echo $category_location . "<hr />";
+}
 if ($category) {
-	if ($category['enabled'] != 1)
-		echo "<font color='#c60'>";
-?>
+    if ($category["enabled"] != 1) {
+        echo "<font color='#c60'>";
+    } ?>
 Category disabled
 <?php 
-		echo "</font><br /><br />";
-
-	echo '<a href="/admin/category/'.$category['categoryid'].'">';
+echo "</font><br /><br />";
+echo '<a href="/admin/category/' . $category["categoryid"] . '">';
 ?>
 Modify category
 <?php 
-	echo '</a> | ';
-	echo '<a href="/admin/category/'.$category['categoryid'].'/products">';
+echo "</a> | ";
+echo '<a href="/admin/category/' . $category["categoryid"] . '/products">';
 ?>
 Category products
 <?php 
-	echo '</a> | ';
-	echo '<a href="javascript: void(0);" onclick="javascript: confirm(\'\', $(\'#delete_category\'), \'/admin/category/'.escape($category['categoryid'], 3).'/delete\'); return false;">';
+echo "</a> | ";
+echo '<a href="javascript: void(0);" onclick="javascript: confirm(\'\', $(\'#delete_category\'), \'/admin/category/' .
+    escape($category["categoryid"], 3) .
+    '/delete\'); return false;">';
 ?>
 Delete category
-<?php 
-	echo '</a><br /><br />';
-?>
+<?php  echo "</a><br /><br />"; ?>
 <h3>List of subcategories</h3><br />
 <?php 
 }
 ?>
-<form action="<?php echo $current_location;?>/admin/categories/<?php  echo $category['categoryid']; ?>" method="post" name="categories_form">
+<form action="<?php echo $current_location;?>/admin/categories/<?php  echo $category[
+    "categoryid"
+]; ?>" method="post" name="categories_form">
 <input type="hidden" name="mode" value="" />
 
 <table cellpadding="2" cellspacing="1" class="categories lines-table resp-table">
@@ -51,36 +53,56 @@ Delete category
   <th align="center">Subcategories</th>
 </tr>
 </thead>
-<?php 
-
-if (empty($categories)) {
-?>
+<?php  if (empty($categories)) { ?>
 <tr>
  <td colspan="6" align="center" class="var-wh-100 submit-row"><br />No categories<br /><br /></td>
 </tr>
-<?php 
-} else  {
-	foreach ($categories as $v) {
-		echo '<tr>
-  <td width="1%"><label>Enabled</label><input type="checkbox" size="3" name="posted_data['.$v['categoryid'].'][enabled]" maxlength="3" value="1"'.($v['enabled'] ? ' checked="checked"' : '').'" /></td>
-  <td width="1%"><label>Pos</label><input type="text" size="3" name="posted_data['.$v['categoryid'].'][orderby]" maxlength="3" value="'.$v['orderby'].'" /></td>
-  <td width="1%"><label>&nbsp;</label><input type="radio" name="cat" value="'.$v['categoryid'].'" /></td>
-  <td><label>Category name</label><a href="/admin/categories/'.$v['categoryid'].'">'.$v['title'].'</a> (<a href="/admin/category/'.$v['categoryid'].'">Edit)</a>)</td>
-  <td align="center"><label>Products</label><a href="/admin/category/'.$v['categoryid'].'/products">'.$v['products'].'</a> ('.$v['products_global'].')</td>
-  <td align="center"><label>Subcategories</label><a href="/admin/categories/'.$v['categoryid'].'">'.$v['subcategories'].'</a></td>
+<?php  } else  {foreach ($categories as $v) {
+        echo '<tr>
+  <td width="1%" class="td-align-center"><label>Enabled</label><input type="checkbox" size="3" name="posted_data[' .
+            $v["categoryid"] .
+            '][enabled]" maxlength="3" value="1"' .
+            ($v["enabled"] ? ' checked="checked"' : "") .
+            '" /></td>
+  <td width="1%"><label>Pos</label><input type="text" size="3" name="posted_data[' .
+            $v["categoryid"] .
+            '][orderby]" maxlength="3" value="' .
+            $v["orderby"] .
+            '" /></td>
+  <td width="1%"><label>&nbsp;</label><input type="radio" name="cat" value="' .
+            $v["categoryid"] .
+            '" /></td>
+  <td><label>Category name</label><a href="/admin/categories/' .
+            $v["categoryid"] .
+            '">' .
+            $v["title"] .
+            '</a> (<a href="/admin/category/' .
+            $v["categoryid"] .
+            '">Edit)</a>)</td>
+  <td align="center"><label>Products</label><a href="/admin/category/' .
+            $v["categoryid"] .
+            '/products">' .
+            $v["products"] .
+            "</a> (" .
+            $v["products_global"] .
+            ')</td>
+  <td align="center"><label>Subcategories</label><a href="/admin/categories/' .
+            $v["categoryid"] .
+            '">' .
+            $v["subcategories"] .
+            '</a></td>
 		</tr>';
-	}
-?>
+    } ?>
 </table>
 <br />
 <button type="button" onclick="javascript: submitForm(this, '');">Update</button>
 <br /><br />
 <button type="button" onclick="javascript: self.location='/admin/category/'+document.categories_form.cat.value;">Modify selected</button>
 <button type="button" onclick="javascript: submitForm(this, 'delete');">Delete selected</button>
-<?php 
-}
-?>
-<button type="button" onclick="self.location='/admin/category?parentid=<?php  echo $category['categoryid']; ?>'">Add new category</button>
+<?php  } ?>
+<button type="button" onclick="self.location='/admin/category?parentid=<?php  echo $category[
+    "categoryid"
+]; ?>'">Add new category</button>
 </form>
 
 <br /><br />
@@ -90,7 +112,9 @@ if (empty($categories)) {
 <h3>Featured products</h3>
 
 <a href="javascript: void(0);" onclick="javascript: check_all(document.fpform, 'to_delete', true);">Check all</a> / <a href="javascript: void(0);" onclick="javascript: check_all(document.fpform, 'to_delete', false);">Uncheck all</a>
-<form action="<?php echo $current_location;?>/admin/categories/<?php  echo $category['categoryid'];?>" method="post" name="fpform">
+<form action="<?php echo $current_location;?>/admin/categories/<?php  echo $category[
+    "categoryid"
+]; ?>" method="post" name="fpform">
 <input type="hidden" name="mode" value="update" />
 <input type="hidden" name="action" value="featured_products" />
 
@@ -103,19 +127,25 @@ if (empty($categories)) {
   <th width="15%" align="center">Active</th>
 </tr>
 </thead>
-<?php 
-if ($featured_products) {
-	foreach ($featured_products as $v) {
-?>
-r>
-  <td><input type="checkbox" name="to_delete[<?php  echo $v['productid']; ?>]" /></td>
-  <td><label>Product name</label><b><a href="<?php echo $current_location;?>/admin/products/<?php  echo $v['productid']; ?>" target="_blank"><?php  echo $v['name']; ?></a></b></td>
-  <td align="center"><label>Pos</label><input type="text" name="posted_data[<?php  echo $v['productid']; ?>][orderby]" size="5" value="<?php  echo $v['orderby']; ?>" /></td>
-  <td align="center"><label>Active</label><input type="checkbox" name="posted_data[<?php  echo $v['productid']; ?>][enabled]"<?php  if ($v['enabled']) echo ' checked="checked"'; ?> /></td>
+<?php  if ($featured_products) {
+    foreach ($featured_products as $v) { ?>
+<tr>
+  <td><input type="checkbox" name="to_delete[<?php  echo $v[
+      "productid"
+  ]; ?>]" /></td>
+  <td><label>Product name</label><b><a href="<?php echo $current_location;?>/admin/products/<?php  echo $v[
+      "productid"
+  ]; ?>" target="_blank"><?php  echo $v["name"]; ?></a></b></td>
+  <td align="center"><label>Pos</label><input type="text" name="posted_data[<?php  echo $v[
+      "productid"
+  ]; ?>][orderby]" size="5" value="<?php  echo $v["orderby"]; ?>" /></td>
+  <td align="center"><label>Active</label><input type="checkbox" name="posted_data[<?php  echo $v[
+      "productid"
+  ]; ?>][enabled]"<?php  if ($v["enabled"]) {
+    echo ' checked="checked"';
+} ?> /></td>
 </tr>
-<?php 
-	}
-?>
+<?php  } ?>
 <tr>
   <td colspan="4" class="var-wh-100">
   <button type="button" onclick="javascript: document.fpform.mode.value = 'delete'; document.fpform.submit();">Delete selected</button> &nbsp; <button type="submit">Update</button>
@@ -124,15 +154,14 @@ r>
 
 <?php 
 } else  {
-?>
+     ?>
 
 <tr>
 	<td colspan="4" align="center" class="var-wh-100">No featured products in this category</td>
 </tr>
 
 <?php 
-}
-?>
+} ?>
 
 <tr>
 <td colspan="4" class="var-wh-100"><br /><h3>Add product</td>

@@ -4,7 +4,7 @@ var $window = $(window),
   original_title,
   original_page,
   original_bread_crumbs,
-  history_push = false,
+  history_push = true,
   $animation_elements = $(
     ".page-container-2, .page-container-news, .page-container-blog",
   ),
@@ -235,7 +235,7 @@ function ajax_clicks() {
           $(".ajax_container").html(r[0]);
           $("#bread_crumbs_container").html(r[2]);
           ajax_clicks();
-          if (!history_push)
+          if (history_push)
             window.history.pushState(
               {
                 pageTitle: r[1],
@@ -316,7 +316,7 @@ function ajax_clicks() {
           $("#bread_crumbs_container").html(r[2]);
           ajax_clicks();
           page = r[3];
-          if (!history_push)
+          if (history_push)
             window.history.pushState(
               {
                 pageTitle: r[1],
@@ -335,6 +335,7 @@ function ajax_clicks() {
           recalc_menus(r[3], r[4]);
           proceed_clicks(r[3]);
           tabs_clicks();
+          history_push = true;
         },
       });
 
@@ -384,7 +385,7 @@ window.onpopstate = function (e) {
         '"></a>',
     );
     ajax_clicks_admin();
-    history_push = true;
+    history_push = false;
     $(".click_history").click();
     $(".click_history").remove();
     return;
@@ -397,7 +398,7 @@ window.onpopstate = function (e) {
         '"></a>',
     );
     ajax_clicks();
-    history_push = true;
+    history_push = false;
     $(".click_history").click();
     $(".click_history").remove();
   }
@@ -587,17 +588,14 @@ function confirm(text, o, goto) {
 function fade() {
   if ($(".fade").length == 0) {
     $("html").prepend('<div class="fade"></div>');
-    $(".fade").height($(document).height());
     $(".fade").show();
-  } else $(".fade").height($(document).height());
+  }
 
   $(".fade")
     .unbind("click")
     .on("click", function () {
       bc = false;
       removePopups();
-      return;
-      bc = true;
     });
 }
 
@@ -650,7 +648,6 @@ function unfade() {
     return;
   }
 
-  $(".prev").remove();
   $(".fade").remove();
 }
 

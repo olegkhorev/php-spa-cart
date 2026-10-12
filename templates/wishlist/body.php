@@ -20,12 +20,7 @@
 	<tr>
 	 <td class="image"><a href="{$current_location}/{$url}">
 	{if $v['product']['photo']}
-<?php
-$image = $v["product"]["photo"];
-$image["new_width"] = 100;
-$image["new_height"] = 100;
-include SITE_ROOT . "/includes/image.php";
-?>
+{product_image image=`$v['product']['photo']` new_width=100 new_height=100}
 	{/if}
 	 </a></td>
 	 <td><a href="{$current_location}/{$url}">{$v['product']['name']}</a></td>

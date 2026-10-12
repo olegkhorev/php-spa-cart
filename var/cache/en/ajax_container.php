@@ -28,7 +28,7 @@
 	<div id="center"<?php if (true || $no_left_menu == 'Y') {?> class="no_left_menu"<?php } ?>>
 <?php echo $page;?>
 
-<?php if ($config['Visual']['visual_recently'] == 'Y' && $recently && $get['0'] != 'checkout') {?>
+<?php if ($config['General']['shop_closed'] != 'Y' && $config['Visual']['visual_recently'] == 'Y' && $recently && $get['0'] != 'checkout') {?>
 <?php if ($get['0'] != 'product' && $get['0'] != 'home') {?>
 </div></div>
 <?php } ?>
@@ -85,10 +85,11 @@
 </div>
 </div>
 <?php if ($alerts) {?>
- <div class="alerts"><span onclick="javascript: $('.alerts').slideUp();" class="close_alert"><b></b></span>
+ <div class="alerts"><span onclick="javascript: $('.alerts').slideUp(); unfade();" class="close_alert"><b></b></span>
  <?php foreach ($alerts as $v) {?>
   <?php if ($v['type'] == 'e') {?><div class="error">Error: <?php echo $v['content'];?></div><?php } else  { ?><?php echo $v['content'];?><br><?php } ?><br>
  <?php } ?>
  </div>
+	<div class="fade" style="display: block;"></div>
 <?php } ?>
 <div class="clear"></div>

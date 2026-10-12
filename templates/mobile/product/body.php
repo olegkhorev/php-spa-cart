@@ -13,26 +13,14 @@
 
 <div class="photo">
  <div id="zoom-mobile">
-<?php
-$image = $photos[0];
-$image['new_width'] = 2000;
-$image['new_height'] = 4000;
-$image['link'] = 'Y';
-include SITE_ROOT . '/includes/image.php';
-?>
-</div>
+{product_image image=`$photos[0]` new_width=2000 new_height=4000 link='Y'}
+ </div>
 <table>
 {if count($photos) > 1} {foreach $photos as $k=>$v}  {if $k == 0 || $k == 3 || $k == 7}
 <tr>
 {/if}
  <td>
-<?php$image = $v;
-$image['new_width'] = 95;
-$image['new_height'] = 95;
-$image['link'] = 'Y';
-$image['blank'] = 'Y';
-include SITE_ROOT . '/includes/image.php';
-?>
+{product_image image=`$v["product"]["photo"]` new_width=95 new_height=95 link='Y' blank='Y'}
  </td>
   {if $k == 2 || $k == 6}
 </tr>
@@ -130,15 +118,7 @@ variants[{$oid}][{$k}][4][{$v2['groupid']}] = {$v2['optionid']};
 
  {if $v['images']}
   {foreach $v['images'] as $k2=>$v2}
-<?php
-$image = $v2;
-$image['new_width'] = 95;
-$image['new_height'] = 95;
-$image['only_url'] = 'Y';
-ob_start();
-include SITE_ROOT . '/includes/variant_image.php';
-$image_url = ob_get_clean();
-?>
+{variant_image image=`$v2` new_width=95 new_height=95 only_url="Y" ob_variant_fix="Y"}
 variants[{$oid}][{$k}][5][{$k2}] = "<a href='{$current_location}/photos/variant/{$v2['variantid']}/{$v2['imageid']}/{$v2['file']}' onclick='javascript: return switch_photo($(this));' rev='width: {$v2['x']}, height: {$v2['y']}'><img src='{$image_url}' alt='{php echo escape($v2['alt'], 3);}' /></a>";
   {/foreach}
  {/if}

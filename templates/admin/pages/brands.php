@@ -73,22 +73,14 @@
 <tr>
  <td valign="top" class="hide-td-for-mdl"></td>
  <td><div class="select-title">{lng[Image]}</div>
-<?php if ($brand["image"]) {
-
-    $image = $brand["image"];
-    $image["new_width"] = 400;
-    $image["new_height"] = 100;
-    $image["link"] = "Y";
-    $image["blank"] = "Y";
-    include SITE_ROOT . "/includes/brand_image.php";
-    ?>
+{if $brand['image']}
+{brand_image image=`$brand['image']` new_width=400 new_height=100 link="Y" blank="Y"}
 <br />
  <a href="<?php echo $current_location .
      "/admin/brands/" .
      $brand["brandid"] .
      "/?mode=delete_image"; ?>">{lng[Delete image]}</a><br />
-<?php
-} ?>
+{/if}
 <input type="file" name="userfile" />
  </td>
 </tr>

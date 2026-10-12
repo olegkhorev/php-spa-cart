@@ -169,10 +169,9 @@
              $category_icon["file"] .
              '" target="_blank">';
      }
-     $image = $category_icon;
-     $image["new_width"] = 500;
-     $image["new_height"] = 100;
-     include SITE_ROOT . "/includes/icon.php";
+?>
+{category_icon image=`$category_icon` new_width=500 new_height=100}
+<?php
      if ($category_icon["y"] > 100) {
          echo "</a>";
      }

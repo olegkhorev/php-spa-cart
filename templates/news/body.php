@@ -8,13 +8,6 @@
 */
 ?>
 <div class="news-content">
-{*
-<form method="POST" name="nform" onsubmit="javascript: if (document.nform.substring.value != 'Search') return true; else return false;">
-<div class="news-search"><input value="<?php echo $news_substring
-    ? $news_substring
-    : "Search"; ?>" onfocus="javascript: if (this.value == 'Search') this.value = '';" onblur="javascript: if (this.value == '') this.value = 'Search';" type="text" name="substring" /><input type="image" src="/images/spacer.gif" alt="" /></div>
-</form>
-*}
 <h1>{lng[News]}</h1>
 
 <?php if ($news) { ?>
@@ -22,14 +15,11 @@
 <div class="news">
 <div class="date"><?php echo date($date_format, $news["date"]); ?></div>
 <h1 class="title"><?php echo $news["title"]; ?></h1>
-<?php if ($news["imageid"]) {
-    echo '<div class="image">';
-    $image = $news;
-    $image["new_width"] = 700;
-    $image["new_height"] = 400;
-    include SITE_ROOT . "/includes/news_image.php";
-    echo "</div>";
-} ?>
+{if $news['imageid']}
+<div class="image">
+{news_image image=`$news['image']` new_width=700 new_height=400}
+</div>
+{/if}
 <div class="fulldescr">{$news['fulldescr']}</div>
 <div class="back"><a href="/news" class="ajax_link">{lng[Back to News mainpage]}</a></div>
 </div>
@@ -55,14 +45,11 @@ if ($news_substring) {
     $b["date"],
 ); ?></span>)</h5></a>
 <div class="news-item">
-<?php if ($b["imageid"]) {
-    echo '<a class="ajax_link" href="' . $url . '">';
-    $image = $b;
-    $image["new_width"] = 250;
-    $image["new_height"] = 200;
-    include SITE_ROOT . "/includes/news_image.php";
-    echo "</a>";
-} ?>
+{if $b['imageid']}
+<a class="ajax_link" href="{$url}">
+{news_image image=`$b` new_width=250 new_height=200}
+</a>
+{/if}
 <div class="short-descr message-box">{$b['descr']}</div>
 <br />
 <a class="news-more ajax_link link-button" href="{$url}">{lng[See full article]}</a>

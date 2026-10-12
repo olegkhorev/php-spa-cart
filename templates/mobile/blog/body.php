@@ -25,12 +25,7 @@
 <img src="{$current_location}/images/blog_date.gif" alt="" /> {php echo date($datetime_format, $blog['date']);}
 {if $blog['imageid']}
 <div class="image">
-<?php
-$image = $blog;
-$image["new_width"] = 750;
-$image["new_height"] = 400;
-include SITE_ROOT . "/includes/blog_image.php";
-?>
+{blog_image image=`$blog` new_width=750 new_height=400}
 </div>
 {/if}
 <div class="fulldescr">{$blog['fulldescr']}</div>
@@ -119,12 +114,7 @@ include SITE_ROOT . "/includes/blog_image.php";
 <div class="image">
 {if $b['imageid']}
 <a href="{$url}">
-<?php
-$image = $b;
-$image["new_width"] = 750; /*$config['Blog']['blogs_image_x'];*/
-$image["new_height"] = 400;
-include SITE_ROOT . "/includes/blog_image.php";
-?>
+{blog_image image=`$b` new_width=750 new_height=400}
 </a>
 {/if}
 </div>

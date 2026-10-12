@@ -7,21 +7,14 @@
 * https://github.com/olegkhorev/php-spa-cart
 */
 ?>
-<?php 
-if ($modules) {
-?>
+<?php  if ($modules) { ?>
 <a href="<?php echo $current_location;?>/admin/modules/install" class="ajax_link">Install new</a>
 <br /><br />
 <form method="post" name="modulesform">
 <input type="hidden" name="mode" value="update" />
-<?php 
-if ($total_pages > 2) {
-?>
+<?php  if ($total_pages > 2) { ?>
 <?php include SITE_ROOT."/var/cache/en/common/navigation.php";?>
-<?php 
-	echo '<br />';
-}
-?>
+<?php  echo "<br />";} ?>
 
 <table cellpadding="3" cellspacing="1" width="600" class="lines-table resp-table">
 <thead>
@@ -37,13 +30,13 @@ if ($total_pages > 2) {
 </thead>
 <?php foreach ($modules as $v) {?>
 <tr>
-	<td><label>Logo</label><img src="/images/modules/<?php echo $v['author'];?>/<?php echo $v['module'];?>/logo.png" alt="" /></td>
+	<td class="td-align-center"><label>Logo</label><img src="/images/modules/<?php echo $v['author'];?>/<?php echo $v['module'];?>/logo.png" alt="" /></td>
 	<td><label>Code</label><?php echo $v['code'];?></td>
 	<td><label>Author</label><?php echo $v['author'];?></td>
 	<td><label>Name</label><?php echo $v['module'];?></td>
 	<td><label>Comment</label><?php echo $v['comment'];?></td>
-	<td><label>Pos</label><input type="text" name="to_update[<?php echo $v['moduleid'];?>][pos]" size="3" value="<?php echo $v['pos'];?>" /></td>
-	<td><label>Enabled</label><input type="checkbox" name="to_update[<?php echo $v['moduleid'];?>][enabled]" value="1"<?php if ($v['enabled']) {?> checked<?php } ?> /></td>
+	<td class="td-align-center"><label>Pos</label><input type="text" name="to_update[<?php echo $v['moduleid'];?>][pos]" size="3" value="<?php echo $v['pos'];?>" /></td>
+	<td class="td-align-center"><label>Enabled</label><input type="checkbox" name="to_update[<?php echo $v['moduleid'];?>][enabled]" value="1"<?php if ($v['enabled']) {?> checked<?php } ?> /></td>
 </tr>
 <?php } ?>
 </table>
@@ -52,9 +45,7 @@ if ($total_pages > 2) {
 </div>
 </form>
 
-<?php 
-} else  {
-?>
+<?php  } else  { ?>
 <form method="post" name="blogform" enctype="multipart/form-data">
 <input type="file" name="install_archive" accept=".zip, application/zip, application/x-zip-compressed" />
 <button type="submit" name="btn">Install</button>
@@ -72,8 +63,7 @@ code:new_module<br />
 author:OlegKhorev<br />
 module:NewModule<br />
 comment:Module installation example<br />
-template:new_module
+template:new_module<br /><br />
+You can review the module archive here: <a href="<?php echo $current_location;?>/files/new_module.zip" target="_blank"><?php echo $current_location;?>/files/new_module.zip</a>
 </form>
-<?php 
-}
-?>
+<?php  } ?>

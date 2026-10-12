@@ -4,11 +4,21 @@ input.def {
 .alert_message.register_alert {
   position: absolute;
 }
+.alert_message.register_alert {
+  position: absolute;
+  margin-top: 0;
+}
 .register_alert {
   width: 380px;
   margin-left: -190px;
   padding: 20px;
   overflow-x: hidden;
+}
+.register_alert h1 {
+  margin-bottom: -10px;
+}
+.register_alert .group {
+  margin-top: 30px;
 }
 .regsec {
   line-height: 45px;
@@ -23,9 +33,6 @@ input.def {
 }
 .regsec .firstname {
   margin-right: 10px;
-}
-.register,
-.login-link {
 }
 .regsec input[type="text"],
 .regsec input[type="password"] {
@@ -44,13 +51,6 @@ input.def {
   border: 1px solid #ccc;
   cursor: pointer;
 }
-.register_alert h1 {
-  margin-bottom: -10px;
-}
-.register_alert .group {
-  margin-top: 30px;
-}
-.alert_message.register_alert {
-  position: absolute;
-  margin-top: 0;
+.register,
+.login-link {
 }

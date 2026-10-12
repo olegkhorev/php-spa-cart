@@ -48,7 +48,7 @@
 <h3>Featured products<a class="float-right" target="_blank" href="/admin/categories">(Manage)</a></h3>
 <?php 
 $products = $featured_products;
-$type = 'F';
+$type = "F";
 ?>
 <?php include SITE_ROOT."/var/cache/en/admin/pages/dashboard_products.php";?>
  </td>
@@ -56,7 +56,7 @@ $type = 'F';
 <h3>New arrivals</h3>
 <?php 
 $products = $new_arrivals;
-$type = 'N';
+$type = "N";
 ?>
 <?php include SITE_ROOT."/var/cache/en/admin/pages/dashboard_products.php";?>
  </td>
@@ -64,7 +64,7 @@ $type = 'N';
 <h3>Bestsellers</h3>
 <?php 
 $products = $bestsellers;
-$type = 'B';
+$type = "B";
 ?>
 <?php include SITE_ROOT."/var/cache/en/admin/pages/dashboard_products.php";?>
  </td>
@@ -72,7 +72,7 @@ $type = 'B';
 <h3>Most viewed</h3>
 <?php 
 $products = $most_viewed;
-$type = 'M';
+$type = "M";
 ?>
 <?php include SITE_ROOT."/var/cache/en/admin/pages/dashboard_products.php";?>
  </td>
@@ -173,21 +173,29 @@ $type = 'M';
  <td class="first">
 <h3>Bestsellers</h3>
 <ul>
-<?php 
-foreach ($bestsellers as $v) {
-		echo '<li><a href="/admin/products/'.$v['productid'].'">'.$v['name'].'</a> ('.$v['sales_stats'].' sales)</li>';
-	}
-?>
+<?php  foreach ($bestsellers as $v) {
+    echo '<li><a href="/admin/products/' .
+        $v["productid"] .
+        '">' .
+        $v["name"] .
+        "</a> (" .
+        $v["sales_stats"] .
+        " sales)</li>";
+} ?>
 </ul>
  </td>
  <td class="second">
 <h3>Most viewed</h3>
 <ul>
-<?php 
-foreach ($most_viewed as $v) {
-		echo '<li><a href="/admin/products/'.$v['productid'].'">'.$v['name'].'</a> ('.$v['views_stats'].' views)</li>';
-	}
-?>
+<?php  foreach ($most_viewed as $v) {
+    echo '<li><a href="/admin/products/' .
+        $v["productid"] .
+        '">' .
+        $v["name"] .
+        "</a> (" .
+        $v["views_stats"] .
+        " views)</li>";
+} ?>
 </ul>
  </td>
 </tr>

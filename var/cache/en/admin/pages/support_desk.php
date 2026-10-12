@@ -108,7 +108,11 @@
 <tr>
         <td align="right" nowrap="nowrap">Search period:</td>
         <td width="10">&nbsp;</td>
-        <td><input type="text" id="date_from" name="posted_data[date_from]" value="<?php  echo $search_prefilled['date_from']; ?>" size="7" /> - <input type="text" id="date_to" name="posted_data[date_to]" value="<?php  echo $search_prefilled['date_to']; ?>" size="7" /></td>
+        <td><input type="text" id="date_from" name="posted_data[date_from]" value="<?php  echo $search_prefilled[
+            "date_from"
+        ]; ?>" size="7" /> - <input type="text" id="date_to" name="posted_data[date_to]" value="<?php  echo $search_prefilled[
+    "date_to"
+]; ?>" size="7" /></td>
 </tr>
 
 <tr>
@@ -151,14 +155,10 @@ No tickets found
 
 <div align="right"><a href="/admin/support_desk/">Search again</a></div>
 
-<?php 
-if ($total_pages > 2) {
-?>
+<?php  if ($total_pages > 2) { ?>
 <?php include SITE_ROOT."/var/cache/en/common/navigation.php";?>
 <br />
-<?php 
-}
-?>
+<?php  } ?>
 
 <br /><a href="javascript: void(0);" onclick="javascript: check_all(document.ticketsform, 'to_delete', true);">Check all</a> / <a href="javascript: void(0);" onclick="javascript: check_all(document.ticketsform, 'to_delete', false);">Uncheck all</a>
 
@@ -210,14 +210,10 @@ if ($total_pages > 2) {
 
 <br />
 
-<?php 
-if ($total_pages > 2) {
-?>
+<?php  if ($total_pages > 2) { ?>
 <?php include SITE_ROOT."/var/cache/en/common/navigation.php";?>
 <br />
-<?php 
-}
-?>
+<?php  } ?>
 
 <?php } ?>
 

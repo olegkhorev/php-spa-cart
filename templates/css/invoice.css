@@ -15,11 +15,11 @@
 table.subtotal {
   border-top: 1px solid #574e4e;
 }
-.subtotal td {
-  padding: 0 0 0 5px;
-}
 table.subtotal td {
   line-height: 24px;
+}
+.subtotal td {
+  padding: 0 0 0 5px;
 }
 tr.totals td {
   font-weight: bold;

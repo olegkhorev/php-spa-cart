@@ -13,25 +13,20 @@
 <?php } ?>
 </div>
 <hr />
-  <?php 
-	if ($alerts) {
-		echo '<div class="alerts"><span class="close-alerts"><b>X</b> Close</span>';
-		foreach ($alerts as $v) {
-			if ($v['type'] == 'e') {
-?>
+  <?php  if ($alerts) {
+      echo '<div class="alerts"><span class="close-alerts"><b>X</b> Close</span>';
+      foreach ($alerts as $v) {
+          if ($v["type"] == "e") { ?>
 <div class="error">Error:
-<?php 
-				echo ' '.$v['content'].'</div>';
-			} else  {
-				echo ' '.$v['content'].'<br>';
-			}
+<?php  echo " " . $v["content"] . "</div>";} else  {echo " " .
+                  $v["content"] .
+                  "<br>";}
 
-			echo '<br>';
-		}
+          echo "<br>";
+      }
 
-		echo '</div>';
-	}
-  ?>
+      echo "</div>";
+  } ?>
 
 <br />
 <?php echo $page;?>

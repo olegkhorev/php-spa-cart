@@ -1,3 +1,21 @@
+function go_to_comments() {
+  $("html, body").animate(
+    {
+      scrollTop: $("#blog_comments_section").offset().top - 90,
+    },
+    500,
+  );
+}
+
+function leave_comments() {
+  $("html, body").animate(
+    {
+      scrollTop: $("#blog_bb_buttons").offset().top - 120,
+    },
+    500,
+  );
+}
+
 function quote_comment_html(id, name) {
   $("#newrecord").html(
     '<div class="quote_blog_post_comment">' +

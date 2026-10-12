@@ -13,18 +13,20 @@ extract($_POST);
 $maxvalue = 9999999.99;
 if ($type == 'R') {
     if ($config['Shipping']['realtime_shipping'] != 'Y') {
-    	$_SESSION['alerts'][] = array(
-    		'type'		=> 'e',
-    		'content'	=> lng('Realtime shipping is disabled.')
-    	);
+        $_SESSION['alerts'][] = array(
+            'type'		=> 'e',
+            'content'	=> lng('Realtime shipping is disabled.')
+        );
 
         redirect("/configuration/Shipping");
     }
-} else
+} else {
     $type = 'D';
+}
 
 $type_condition = " AND type = '".$type."'";
-function func_shipping_set_apply_to_parameter($zone_id, $ship_id, $apply_to) {
+function func_shipping_set_apply_to_parameter($zone_id, $ship_id, $apply_to)
+{
     global $type_condition, $db;
 
     $upd_condition = "zoneid = '".$zone_id."' AND shippingid = '".$ship_id."'".$type_condition;
@@ -40,9 +42,10 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
     if ($mode == 'delete') {
         if (is_array($posted_data)) {
             $deleted = false;
-            foreach ($posted_data as $rateid=>$v) {
-                if (empty($v['to_delete']))
+            foreach ($posted_data as $rateid => $v) {
+                if (empty($v['to_delete'])) {
                     continue;
+                }
 
                 $db->query("DELETE FROM shipping_rates WHERE rateid='".$rateid."' ".$type_condition);
             }
@@ -69,11 +72,13 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 
         if (is_array($apply_to)) {
             foreach ($apply_to as $zone_id => $shipping_methods) {
-                if (!is_array($shipping_methods))
-                	continue;
+                if (!is_array($shipping_methods)) {
+                    continue;
+                }
 
-                foreach ($shipping_methods as $ship_id => $value)
+                foreach ($shipping_methods as $ship_id => $value) {
                     func_shipping_set_apply_to_parameter($zone_id, $ship_id, $value);
+                }
             }
         }
     }
@@ -107,19 +112,21 @@ $zoneid = addslashes($zoneid);
 $shippingid = addslashes($shippingid);
 $zone_condition = (!empty($zoneid) ? " and shipping_rates.zoneid='$zoneid'" : "");
 $method_condition = (!empty($shippingid) ? " and shipping_rates.shippingid='$shippingid'" : "");
-$realtime_condition = ($config['Shipping']['realtime_shipping']=="Y"?" AND shipping.code=''":"");
-$shipping_rates = $db->all("SELECT shipping_rates.*, shipping.shipping, shipping.shipping_time, shipping.destination FROM shipping, shipping_rates WHERE shipping_rates.shippingid=shipping.shippingid AND shipping.active='Y'".$type_condition.$zone_condition.$method_condition.($type=="R"?" AND code!='' ":$realtime_condition)." ORDER BY shipping.orderby, shipping_rates.maxweight");
-$zones = array(array('zoneid'=>0,'zone'=>lng('Default zone')));
+$realtime_condition = ($config['Shipping']['realtime_shipping'] == "Y" ? " AND shipping.code=''" : "");
+$shipping_rates = $db->all("SELECT shipping_rates.*, shipping.shipping, shipping.shipping_time, shipping.destination FROM shipping, shipping_rates WHERE shipping_rates.shippingid=shipping.shippingid AND shipping.active='Y'".$type_condition.$zone_condition.$method_condition.($type == "R" ? " AND code!='' " : $realtime_condition)." ORDER BY shipping.orderby, shipping_rates.maxweight");
+$zones = array(array('zoneid' => 0,'zone' => lng('Default zone')));
 $_tmp = $db->all("SELECT zoneid, zone_name as zone FROM zones ORDER BY zoneid");
-if (!empty($_tmp))
-    $zones = array_merge($zones,$_tmp);
+if (!empty($_tmp)) {
+    $zones = array_merge($zones, $_tmp);
+}
 
 if (is_array($zones) && is_array($shipping_rates)) {
     foreach ($zones as $zone) {
         $shipping_rates_list = array();
         foreach ($shipping_rates as $shipping_rate) {
-            if ($shipping_rate['zoneid'] != $zone['zoneid'])
+            if ($shipping_rate['zoneid'] != $zone['zoneid']) {
                 continue;
+            }
 
             $shipping_rates_list[$shipping_rate['shippingid']]['shipping'] = $shipping_rate['shipping'];
             $shipping_rates_list[$shipping_rate['shippingid']]['destination'] = $shipping_rate['destination'];
@@ -134,10 +141,11 @@ if (is_array($zones) && is_array($shipping_rates)) {
     }
 }
 
-if ($type == 'R')
+if ($type == 'R') {
     $shipping = $db->all("SELECT * FROM shipping WHERE active='Y' AND code!='' ORDER BY shipping, orderby");
-else
+} else {
     $shipping = $db->all("SELECT * FROM shipping WHERE active='Y' $realtime_condition ORDER BY shipping, orderby");
+}
 
 $template['shipping'] = $shipping;
 $template['zones'] = $zones;

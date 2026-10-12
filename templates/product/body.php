@@ -21,33 +21,15 @@
 <tr>
  <td class="photo">
  <div id="zoom">
-<?php
-$image = $photos[0];
-$image['new_width'] = 2000;
-$image['new_height'] = 4000;
-$image['link'] = 'Y';
-include SITE_ROOT . '/includes/image.php';
-
-$image['only_url'] = 'Y';
-ob_start();
-include SITE_ROOT . '/includes/image.php';
-$image_url = ob_get_clean();
-echo '<meta property="og:image" content="'.$image_url.'" />';
-
-?>
+{product_image image=`$photos[0]` new_width=2000 new_height=4000 link='Y'}
+{product_image image=`$photos[0]` new_width=2000 new_height=4000 link='Y' only_url='Y' ob_product_fix='Y'}
 </div>
 <table>
 {if count($photos) > 1} {foreach $photos as $k=>$v}  {if $k == 0 || $k == 4 || $k == 9}
 <tr>
 {/if}
  <td>
-<?php$image = $v;
-$image['new_width'] = 95;
-$image['new_height'] = 95;
-$image['link'] = 'Y';
-$image['blank'] = 'Y';
-include SITE_ROOT . '/includes/image.php';
-?>
+{product_image image=`$v` new_width=95 new_height=95 link='Y' blank='Y'}
  </td>
   {if $k == 3 || $k == 8}
 </tr>
@@ -106,9 +88,7 @@ exceptions[{$oid}][{$k}][{$g}] = {$o};
 exceptions[{$oid}] = [];
 {/if}
 </script>
-{*
-<h3>{lng[Product details]}</h3>
-*}
+
 <table id="product-details">
 {if $average_rating}
 <tr>
@@ -152,15 +132,7 @@ variants[{$oid}][{$k}][4][{$v2['groupid']}] = {$v2['optionid']};
 
  {if $v['images']}
   {foreach $v['images'] as $k2=>$v2}
-<?php
-$image = $v2;
-$image['new_width'] = 95;
-$image['new_height'] = 95;
-$image['only_url'] = 'Y';
-ob_start();
-include SITE_ROOT . '/includes/variant_image.php';
-$image_url = ob_get_clean();
-?>
+{variant_image image=`$v2` new_width=95 new_height=95 only_url="Y" only_url="Y" ob_variant_fix='Y'}
 variants[{$oid}][{$k}][5][{$k2}] = "<a href='{$current_location}/photos/variant/{$v2['variantid']}/{$v2['imageid']}/{$v2['file']}' onclick='javascript: return switch_photo($(this));' rev='width: {$v2['x']}, height: {$v2['y']}'><img src='{$image_url}' alt='{php echo escape($v2['alt'], 3);}' /></a>";
   {/foreach}
  {/if}
@@ -315,12 +287,7 @@ options[{$oid}] = [];
 <div class="prod-md-brand">
 {if $product['brand_image']}
 <a href="/brands/{$product['brand']['cleanurl']}" class="ajax_link">
-<?php
-		$image = $product['brand_image'];
-		$image['new_width'] = 205;
-		$image['new_height'] = 205;
-		include SITE_ROOT . '/includes/brand_image.php';
-?>
+{brand_image image=`$product['brand_image']` new_width=205 new_height=205}
 </a>
 {/if}
 <a href="/brands/{$product['brand']['cleanurl']}" class="ajax_link">{$product['brand']['name']}</a>

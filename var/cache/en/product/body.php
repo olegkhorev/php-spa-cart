@@ -21,33 +21,15 @@
 <tr>
  <td class="photo">
  <div id="zoom">
-<?php 
-$image = $photos[0];
-$image['new_width'] = 2000;
-$image['new_height'] = 4000;
-$image['link'] = 'Y';
-include SITE_ROOT . '/includes/image.php';
-
-$image['only_url'] = 'Y';
-ob_start();
-include SITE_ROOT . '/includes/image.php';
-$image_url = ob_get_clean();
-echo '<meta property="og:image" content="'.$image_url.'" />';
-
-?>
+<?php $image = $photos[0]; $image['new_width'] = 2000; $image['new_height'] = 4000; $image['link'] = 'Y'; include SITE_ROOT . "/includes/image.php"; ?>
+<?php $image = $photos[0]; $image['new_width'] = 2000; $image['new_height'] = 4000; $image['link'] = 'Y'; $image['only_url'] = 'Y'; ob_start(); include SITE_ROOT . "/includes/image.php"; $image_url = ob_get_clean(); echo '<meta property="og:image" content="'.$image_url.'" />'; ?>
 </div>
 <table>
 <?php if (count($photos) > 1) {?> <?php foreach ($photos as $k=>$v) {?>  <?php if ($k == 0 || $k == 4 || $k == 9) {?>
 <tr>
 <?php } ?>
  <td>
-<?php $image = $v;
-$image['new_width'] = 95;
-$image['new_height'] = 95;
-$image['link'] = 'Y';
-$image['blank'] = 'Y';
-include SITE_ROOT . '/includes/image.php';
-?>
+<?php $image = $v; $image['new_width'] = 95; $image['new_height'] = 95; $image['link'] = 'Y'; $image['blank'] = 'Y'; include SITE_ROOT . "/includes/image.php"; ?>
  </td>
   <?php if ($k == 3 || $k == 8) {?>
 </tr>
@@ -106,9 +88,7 @@ exceptions[<?php echo $oid;?>][<?php echo $k;?>][<?php echo $g;?>] = <?php echo 
 exceptions[<?php echo $oid;?>] = [];
 <?php } ?>
 </script>
-<?php /* ?>
-<h3>Product details</h3>
-<?php */ ?>
+
 <table id="product-details">
 <?php if ($average_rating) {?>
 <tr>
@@ -152,15 +132,7 @@ variants[<?php echo $oid;?>][<?php echo $k;?>][4][<?php echo $v2['groupid'];?>] 
 
  <?php if ($v['images']) {?>
   <?php foreach ($v['images'] as $k2=>$v2) {?>
-<?php 
-$image = $v2;
-$image['new_width'] = 95;
-$image['new_height'] = 95;
-$image['only_url'] = 'Y';
-ob_start();
-include SITE_ROOT . '/includes/variant_image.php';
-$image_url = ob_get_clean();
-?>
+<?php $image = $v2; $image['new_width'] = 95; $image['new_height'] = 95; $image['only_url'] = "Y"; ob_start(); include SITE_ROOT . "/includes/variant_image.php"; $image_url = ob_get_clean(); ?>
 variants[<?php echo $oid;?>][<?php echo $k;?>][5][<?php echo $k2;?>] = "<a href='<?php echo $current_location;?>/photos/variant/<?php echo $v2['variantid'];?>/<?php echo $v2['imageid'];?>/<?php echo $v2['file'];?>' onclick='javascript: return switch_photo($(this));' rev='width: <?php echo $v2['x'];?>, height: <?php echo $v2['y'];?>'><img src='<?php echo $image_url;?>' alt='<?php echo escape($v2['alt'], 3);; ?>' /></a>";
   <?php } ?>
  <?php } ?>
@@ -315,12 +287,7 @@ options[<?php echo $oid;?>] = [];
 <div class="prod-md-brand">
 <?php if ($product['brand_image']) {?>
 <a href="/brands/<?php echo $product['brand']['cleanurl'];?>" class="ajax_link">
-<?php 
-		$image = $product['brand_image'];
-		$image['new_width'] = 205;
-		$image['new_height'] = 205;
-		include SITE_ROOT . '/includes/brand_image.php';
-?>
+<?php $image = $product['brand_image']; $image['new_width'] = 205; $image['new_height'] = 205; include SITE_ROOT . "/includes/brand_image.php"; ?>
 </a>
 <?php } ?>
 <a href="/brands/<?php echo $product['brand']['cleanurl'];?>" class="ajax_link"><?php echo $product['brand']['name'];?></a>

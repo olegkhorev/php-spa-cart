@@ -28,7 +28,7 @@
 	<div id="center"{if true || $no_left_menu == 'Y'} class="no_left_menu"{/if}>
 {$page}
 
-{if $config['Visual']['visual_recently'] == 'Y' && $recently && $get['0'] != 'checkout'}
+{if $config['General']['shop_closed'] != 'Y' && $config['Visual']['visual_recently'] == 'Y' && $recently && $get['0'] != 'checkout'}
 {if $get['0'] != 'product' && $get['0'] != 'home'}
 </div></div>
 {/if}
@@ -85,10 +85,11 @@
 </div>
 </div>
 {if $alerts}
- <div class="alerts"><span onclick="javascript: $('.alerts').slideUp();" class="close_alert"><b></b></span>
+ <div class="alerts"><span onclick="javascript: $('.alerts').slideUp(); unfade();" class="close_alert"><b></b></span>
  {foreach $alerts as $v}
   {if $v['type'] == 'e'}<div class="error">Error: {$v['content']}</div>{else}{$v['content']}<br>{/if}<br>
  {/foreach}
  </div>
+	<div class="fade" style="display: block;"></div>
 {/if}
 <div class="clear"></div>

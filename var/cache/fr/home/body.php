@@ -1,3 +1,12 @@
+<?php 
+/**
+* SPA-Cart
+* Copyright (c) Oleg Khorev
+*
+* Released under the MIT License.
+* https://github.com/olegkhorev/php-spa-cart
+*/
+?>
 <?php if ($banners) {?>
 <?php /* ?> Page container assign <?php */ ?>
 </div>
@@ -27,16 +36,18 @@
     </div>
 </div>
 
+<?php if ($config['Visual']['visual_boxes_below_banner'] == 'Y') {?>
 <div class="boxes-homepage-line">
 <div class="boxes-homepage">
  <div><h2>Admin area</h2><p>Admin: a@a.com<br />Pass: 01230<br /><a href="https://demo.spa-cart.com/admin" target="_blank">https://demo.spa-cart.com/admin</a></p></div>
  <div><h2>Ajaxfied pages</h2><p>All pages are clean URLs, even in the admin area</p></div>
  <div><h2>La langue des étiquettes</h2><p>Easy to Update and Translate. Translate mode for easy and quick translation.</p></div>
  <div><h2>Design versatility</h2><p>This is a framework. Any design can be applied</p></div>
- <div><h2>Test our cart</h2><p>Test credit card<br />4111 1111 1111 1111<br />Paypal test account<br />olegkhorev@gmail.com / 01234567</p></div>
+ <div><h2>Test our cart</h2><p>Test credit card<br />4111 1111 1111 1111<br />Paypal test account<br />jackergon99@gmail.com / 01020304</p></div>
  <div><h2>Mobile version</h2><p>Available automatically from your mobile phone.</p></div>
 </div>
 </div>
+<?php } ?>
 <div class="clear"></div>
 
 <?php if (lng('Site title') || lng('Site description')) {?>
@@ -47,11 +58,13 @@
 <?php } ?>
 <div id="dcart"><img src="<?php echo $current_location;?>/images/dcart.png" alt="" /><br />Déplacer le produit ici</div>
 <?php 
-if (lng('Site title'))
-	echo "<br /><h1>".lng('Site title')."</h1>";
+if (lng("Site title")) {
+    echo "<br /><h1>" . lng("Site title") . "</h1>";
+}
 
-if (lng('Site description'))
-	echo "<br /><p>".lng('Site description')."</p>";
+if (lng("Site description")) {
+    echo "<br /><p>" . lng("Site description") . "</p>";
+}
 ?>
 
 <?php /* ?> Page container assign <?php */ ?>
@@ -62,6 +75,7 @@ if (lng('Site description'))
 </div>
 <?php } ?>
 
+<?php if ($config['Visual']['visual_testimonials'] == 'Y') {?>
 <div class="page-container page-container-testimonials">
 <div class="content">
 	<div id="center" class="no_left_menu">
@@ -85,6 +99,7 @@ if (lng('Site description'))
 </div>
 <div class="clear"></div>
 </div>
+<?php } ?>
 
 <div id="home-tabs">
 <ul class="home-tabs">
@@ -123,7 +138,7 @@ if (lng('Site description'))
 </div>
 <?php } ?>
 
-<?php if ($bestsellers) {?>
+<?php if ($config['Visual']['visual_bestsellers'] == 'Y' && $bestsellers) {?>
 <?php /* ?> End page container <?php */ ?>
 </div>
 </div>
@@ -165,7 +180,7 @@ if (lng('Site description'))
 </div>
 <?php } ?>
 
-<?php if ($most_viewed) {?>
+<?php if ($config['Visual']['visual_most_viewed'] == 'Y' && $most_viewed) {?>
 <?php /* ?> End page container <?php */ ?>
 </div>
 </div>
@@ -207,7 +222,7 @@ if (lng('Site description'))
 </div>
 <?php } ?>
 
-<?php if ($new_arrivals) {?>
+<?php if ($config['Visual']['visual_new_arrivals'] == 'Y' && $new_arrivals) {?>
 <?php /* ?> End page container <?php */ ?>
 </div>
 </div>
@@ -249,7 +264,7 @@ if (lng('Site description'))
 </div>
 <?php } ?>
 
-<?php if ($last_news) {?>
+<?php if ($config['Visual']['visual_news'] == 'Y' && $last_news) {?>
 <?php /* ?> Page container assign <?php */ ?>
 </div>
 </div>
@@ -265,17 +280,15 @@ if (lng('Site description'))
 <?php foreach ($last_news as $b) {?>
 <div class="news-item">
 <?php $url = $current_location.'/news/'.($b['cleanurl'] ? $b['cleanurl'].'.html' : $b['newsid']);; ?>
-<?php 
-	if ($b['imageid']) {
-		echo '<a class="ajax_link" href="'.$url.'">';
-		$image = $b;
-		$image['new_width'] = 250;
-		$image['new_height'] = 200;
-		include SITE_ROOT . '/includes/news_image.php';
-		echo '</a>';
-	}
-?>
-<a class="ajax_link" href="<?php echo $url;?>"><h5><?php echo $b['title'];?> (<span class="date"><?php  echo date($date_format, $b['date']); ?></span>)</h5></a>
+<?php if ($b['imageid']) {?>
+<a class="ajax_link" href="<?php echo $url;?>">
+<?php $image = $b; $image['new_width'] = 250; $image['new_height'] = 200; include SITE_ROOT . "/includes/news_image.php"; ?>
+</a>
+<?php } ?>
+<a class="ajax_link" href="<?php echo $url;?>"><h5><?php echo $b['title'];?> (<span class="date"><?php  echo date(
+    $date_format,
+    $b["date"],
+); ?></span>)</h5></a>
 <div class="short-descr message-box"><?php echo $b['descr'];?></div>
 <br />
 <a class="news-more ajax_link link-button" href="<?php echo $url;?>">Voir l'article complet</a>
@@ -287,7 +300,7 @@ if (lng('Site description'))
 </div>
 <?php } ?>
 
-<?php if ($last_blog) {?>
+<?php if ($config['Visual']['visual_blogs'] == 'Y' && $last_blog) {?>
 <?php /* ?> Page container assign <?php */ ?>
 </div>
 </div>
@@ -302,17 +315,15 @@ if (lng('Site description'))
 <h2>Parcourez notre blog</h2>
 <div class="news-item">
 <?php $url = $current_location.'/blog/'.($last_blog['cleanurl'] ? $last_blog['cleanurl'].'.html' : $last_blog['blogid']);; ?>
-<?php 
-	if ($last_blog['imageid']) {
-		echo '<a class="ajax_link" href="'.$url.'">';
-		$image = $last_blog;
-	$image['new_width'] = 250;
-	$image['new_height'] = 200;
-	include SITE_ROOT . '/includes/blog_image.php';
-		echo '</a>';
-	}
-?>
-<a class="ajax_link" href="<?php echo $url;?>"><h5><?php echo $last_blog['title'];?> (<span class="date"><?php  echo date($date_format, $last_blog['date']); ?></span>)</h5></a>
+<?php if ($last_blog["imageid"]) {?>
+<a class="ajax_link" href="<?php echo $url;?>">
+<?php $image = $last_blog; $image['new_width'] = 250; $image['new_height'] = 200; include SITE_ROOT . "/includes/blog_image.php"; ?>
+</a>
+<?php } ?>
+<a class="ajax_link" href="<?php echo $url;?>"><h5><?php echo $last_blog['title'];?> (<span class="date"><?php  echo date(
+    $date_format,
+    $last_blog["date"],
+); ?></span>)</h5></a>
 <div class="short-descr message-box"><?php echo $last_blog['descr'];?></div>
 <br />
 <a class="news-more ajax_link link-button" href="<?php echo $url;?>">Voir plein de blog</a>

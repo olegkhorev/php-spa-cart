@@ -103,22 +103,14 @@
 <tr>
  <td valign="top" class="hide-td-for-mdl"></td>
  <td><div class="select-title">{lng[Image]}</div>
-<?php if ($blog["image"]) {
-
-    $image = $blog["image"];
-    $image["new_width"] = 400;
-    $image["new_height"] = 100;
-    $image["link"] = "Y";
-    $image["blank"] = "Y";
-    include SITE_ROOT . "/includes/blog_image.php";
-    ?>
+{if $blog['image']}
+{blog_image image=`$blog['image']` new_width=400 new_height=100 link="Y" blank="Y"}
 <br />
  <a href="<?php echo $current_location .
      "/admin/blog/" .
      $blog["blogid"] .
      "/?mode=delete_image"; ?>">{lng[Delete image]}</a><br />
-<?php
-} ?>
+{/if}
 <input type="file" name="userfile" />
  </td>
 </tr>
@@ -292,7 +284,7 @@ echo "</table>";
  <td><button type="button" onclick="javascript: iBold();"><b>B</b></button></td>
  <td><button type="button" onclick="javascript: iItalic();"><i>I</i></button></td>
  <td><button type="button" onclick="javascript: iUnderline();"><u>U</u></button></td>
- <td><button type="button" id="iLinkClickA" onclick="javascript: iLinkClick();">&nbsp;A&nbsp;</button></td>
+ <td><button type="button" id="iLinkClickA" onclick="javascript: iLinkClick();">&nbsp;&#128279;&nbsp;</button></td>
 </tr>
 </tbody>
 </table>

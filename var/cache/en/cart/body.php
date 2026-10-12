@@ -24,19 +24,9 @@
 	<tr>
 	 <td class="image"><a href="<?php echo $current_location;?>/<?php echo $url;?>">
 	<?php if ($v['variant_photo']) {?>
-<?php 
-		$image = $v['variant_photo'];
-		$image['new_width'] = 100;
-		$image['new_height'] = 100;
-		include SITE_ROOT . '/includes/variant_image.php';
-?>
+<?php $image = $v["variant_photo"]; $image['new_width'] = 100; $image['new_height'] = 100; include SITE_ROOT . "/includes/variant_image.php"; ?>
 	<?php } else if ($v['photo']) {?>
-<?php 
-		$image = $v['photo'];
-		$image['new_width'] = 100;
-		$image['new_height'] = 100;
-		include SITE_ROOT . '/includes/image.php';
-?>
+<?php $image = $v['photo']; $image['new_width'] = 100; $image['new_height'] = 100; include SITE_ROOT . "/includes/image.php"; ?>
 	<?php } ?>
 	  </a>
 <div class="cart4mobile">
@@ -75,7 +65,13 @@
 <br />
 <table width="100%">
 <tr>
- <td><button<?php  if ($is_ajax) echo ' type="button"'; ?> class="update-cart">Update</button> &nbsp; <button type="button" class="clear-cart main-button"<?php  if (!$is_ajax) echo ' onclick="self.location=\'cart/clear\'"'; ?>>Clear cart</button></td>
+ <td><button<?php  if ($is_ajax) {
+     echo ' type="button"';
+ } ?> class="update-cart">Update</button> &nbsp; <button type="button" class="clear-cart main-button"<?php  if (
+     !$is_ajax
+ ) {
+     echo ' onclick="self.location=\'cart/clear\'"';
+ } ?>>Clear cart</button></td>
  <td align="right" class="cart-line-height">
  Subtotal: <?php echo '<span class="currency">'.currency_symbol().'</span>'.price_format_currency($cart['subtotal']); ?><br />
 <?php if ($cart['coupon']) {?>
@@ -92,6 +88,7 @@ Tax(<?php echo $cart['tax_details']['tax_name'];?>): <?php echo '<span class="cu
 </tr>
 </table>
 </form>
-<?php } else  { ?><br /><br />
+<?php } else  { ?>
+<br /><br />
 Cart is empty
 <?php } ?>

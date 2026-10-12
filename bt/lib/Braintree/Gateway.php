@@ -214,6 +214,15 @@ class Gateway
 
     /**
      *
+     * @return TransactionLineItemGateway
+     */
+    public function transactionLineItem()
+    {
+        return new TransactionLineItemGateway($this);
+    }
+
+    /**
+     *
      * @return TransparentRedirectGateway
      */
     public function transparentRedirect()
@@ -232,6 +241,15 @@ class Gateway
 
     /**
      *
+     * @return UsBankAccountVerificationGateway
+     */
+    public function usBankAccountVerification()
+    {
+        return new UsBankAccountVerificationGateway($this);
+    }
+
+    /**
+     *
      * @return IdealPaymentGateway
      */
     public function idealPayment()
@@ -246,6 +264,15 @@ class Gateway
     public function webhookNotification()
     {
         return new WebhookNotificationGateway($this);
+    }
+
+    /**
+     *
+     * @return WebhookTestingGateway
+     */
+    public function webhookTesting()
+    {
+        return new WebhookTestingGateway($this);
     }
 }
 class_alias('Braintree\Gateway', 'Braintree_Gateway');

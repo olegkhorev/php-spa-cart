@@ -23,13 +23,20 @@ class WebhookNotification extends Base
     const PARTNER_MERCHANT_CONNECTED = 'partner_merchant_connected';
     const PARTNER_MERCHANT_DISCONNECTED = 'partner_merchant_disconnected';
     const PARTNER_MERCHANT_DECLINED = 'partner_merchant_declined';
+    const OAUTH_ACCESS_REVOKED = 'oauth_access_revoked';
     const CHECK = 'check';
     const ACCOUNT_UPDATER_DAILY_REPORT = 'account_updater_daily_report';
     const CONNECTED_MERCHANT_STATUS_TRANSITIONED = 'connected_merchant_status_transitioned';
     const CONNECTED_MERCHANT_PAYPAL_STATUS_CHANGED = 'connected_merchant_paypal_status_changed';
     const IDEAL_PAYMENT_COMPLETE = 'ideal_payment_complete';
     const IDEAL_PAYMENT_FAILED = 'ideal_payment_failed';
+    // NEXT_MAJOR_VERSION remove GRANTED_PAYMENT_INSTRUMENT_UPDATE. Kind is not sent by Braintree Gateway.
+    // Kind will either be GRANTOR_UPDATED_GRANTED_PAYMENT_METHOD or RECIPIENT_UPDATED_GRANTED_PAYMENT_METHOD.
     const GRANTED_PAYMENT_INSTRUMENT_UPDATE = 'granted_payment_instrument_update';
+    const GRANTOR_UPDATED_GRANTED_PAYMENT_METHOD = 'grantor_updated_granted_payment_method';
+    const RECIPIENT_UPDATED_GRANTED_PAYMENT_METHOD = 'recipient_updated_granted_payment_method';
+    const GRANTED_PAYMENT_METHOD_REVOKED = 'granted_payment_method_revoked';
+    const LOCAL_PAYMENT_COMPLETED = "local_payment_completed";
 
     public static function parse($signature, $payload) {
         return Configuration::gateway()->webhookNotification()->parse($signature, $payload);
@@ -49,6 +56,10 @@ class WebhookNotification extends Base
     protected function _initialize($attributes)
     {
         $this->_attributes = $attributes;
+
+        if (!isset($attributes['sourceMerchantId'])) {
+            $this->_set('sourceMerchantId', null);
+        }
 
         if (isset($attributes['subject']['apiErrorResponse'])) {
             $wrapperNode = $attributes['subject']['apiErrorResponse'];
@@ -76,6 +87,10 @@ class WebhookNotification extends Base
             $this->_set('partnerMerchant', PartnerMerchant::factory($wrapperNode['partnerMerchant']));
         }
 
+        if (isset($wrapperNode['oauthApplicationRevocation'])) {
+            $this->_set('oauthAccessRevocation', OAuthAccessRevocation::factory($wrapperNode['oauthApplicationRevocation']));
+        }
+
         if (isset($wrapperNode['connectedMerchantStatusTransitioned'])) {
             $this->_set('connectedMerchantStatusTransitioned', ConnectedMerchantStatusTransitioned::factory($wrapperNode['connectedMerchantStatusTransitioned']));
         }
@@ -98,6 +113,14 @@ class WebhookNotification extends Base
 
         if (isset($wrapperNode['grantedPaymentInstrumentUpdate'])) {
             $this->_set('grantedPaymentInstrumentUpdate', GrantedPaymentInstrumentUpdate::factory($wrapperNode['grantedPaymentInstrumentUpdate']));
+        }
+
+        if ($attributes['kind'] == self::GRANTED_PAYMENT_METHOD_REVOKED) {
+            $this->_set('revokedPaymentMethodMetadata', RevokedPaymentMethodMetadata::factory($wrapperNode));
+        }
+
+        if (isset($wrapperNode['localPayment'])) {
+            $this->_set('localPaymentCompleted', LocalPaymentCompleted::factory($wrapperNode['localPayment']));
         }
 
         if (isset($wrapperNode['errors'])) {

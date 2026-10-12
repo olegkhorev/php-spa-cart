@@ -11,88 +11,86 @@
 <input type="hidden" name="section" value="variant_images">
 <input type="hidden" name="mode" value="update">
 
-<?php 
-if ($has_images == 'Y') {?>
+<?php  if ($has_images == "Y") { ?>
 <a href="javascript: void(0);" onclick="javascript: check_all(document.vform, 'to_delete', true);">Check all</a> / <a href="javascript: void(0);" onclick="javascript: check_all(document.vform, 'to_delete', false);">Uncheck all</a>
 <table class="variant-images-table">
 <tbody>
-<?php 
-	foreach ($variants as $v) {
-		if ($v['images']) {?>
+<?php  foreach ($variants as $v) {
+    if ($v["images"]) { ?>
 <tr>
  <td valign="top" style="vertical-align: top;" class="var-images-td-1">
 <table>
-<?php 
-			foreach ($v['options'] as $o) {
-?>
+<?php  foreach ($v["options"] as $o) { ?>
  <tr>
-  <td nowrap><b><?php  echo $o['group_name']; ?>:</b></td>
-  <td nowrap><?php  echo $o['name']; ?></td>
+  <td nowrap><b><?php  echo $o["group_name"]; ?>:</b></td>
+  <td nowrap><?php  echo $o["name"]; ?></td>
  </tr>
-<?php 
-			}
-?>
+<?php  } ?>
 </table>
  </td>
  <td> &nbsp;</td>
  <td class="variant_images var-images-td-2">
-<?php 
-			foreach ($v['images'] as $img) {?>
+<?php  foreach ($v["images"] as $img) { ?>
 <div>
-<a href="<?php  echo $current_location . '/photos/variant/' . $img['variantid'] . '/' . $img['imageid'] . '/' . $img['file']; ?>" target="_blank"><img src="<?php  echo $current_location . '/photos/variant/' . $img['variantid'] . '/' . $img['imageid'] . '/' . $img['file']; ?>" height="70" alt="" /></a>
-<input type="checkbox" name="to_delete[<?php  echo $img['imageid']; ?>]" />
+<a href="<?php  echo $current_location .
+    "/photos/variant/" .
+    $img["variantid"] .
+    "/" .
+    $img["imageid"] .
+    "/" .
+    $img["file"]; ?>" target="_blank"><img src="<?php  echo $current_location .
+    "/photos/variant/" .
+    $img["variantid"] .
+    "/" .
+    $img["imageid"] .
+    "/" .
+    $img["file"]; ?>" height="70" alt="" /></a>
+<input type="checkbox" name="to_delete[<?php  echo $img["imageid"]; ?>]" />
 <br />
 Alt:<br />
-<input type="text" name="posted_data[<?php  echo $img['imageid']; ?>][alt]" value="<?php  echo escape($img['alt']); ?>" /><br />
+<input type="text" name="posted_data[<?php  echo $img[
+    "imageid"
+]; ?>][alt]" value="<?php  echo escape($img["alt"]); ?>" /><br />
 Pos:<br />
-<input type="text" size="5" name="posted_data[<?php  echo $img['imageid']; ?>][pos]" value="<?php  echo $img['pos']; ?>" />
+<input type="text" size="5" name="posted_data[<?php  echo $img[
+    "imageid"
+]; ?>][pos]" value="<?php  echo $img["pos"]; ?>" />
 </div>
-<?php 
-			}
-?>
+<?php  } ?>
  </td>
 </tr>
 <tr>
  <td colspan="3">&nbsp;</td>
 </tr>
-<?php 
-		}
-	}
-?>
+<?php  }
+} ?>
 </tbody>
 <tr>
  <td colspan="3"><button>Update</button> <button type="button" onclick="submitForm(this, 'delete');">Delete selected</button><br /><br /></td>
 </tr>
 </table>
-<?php 
-}
-?>
+<?php  } ?>
 
 <div class="addnew">
 <h3>Add image</h3>
 <table>
-<?php 
-foreach ($option_groups as $v) {
-?>
+<?php  foreach ($option_groups as $v) { ?>
 
 <tr>
- <td width="150" valign="top"><?php  echo $v['name']; ?></td>
+ <td width="150" valign="top"><?php  echo $v["name"]; ?></td>
  <td valign="top">
- <select name="new_group[<?php  echo $v['groupid']; ?>][]" multiple size="10">
-<?php 
-if ($v['options']) {	foreach ($v['options'] as $o) {
-?>
- <option value="<?php  echo $o['optionid']; ?>"><?php  echo $o['name']; ?></option>
-<?php 
-	}
-}
-?>
+ <select name="new_group[<?php  echo $v["groupid"]; ?>][]" multiple size="10">
+<?php  if ($v["options"]) {
+    foreach ($v["options"] as $o) { ?>
+ <option value="<?php  echo $o["optionid"]; ?>"><?php  echo $o[
+    "name"
+]; ?></option>
+<?php  }
+} ?>
  </select>
  </td>
 </tr>
-<?php 
-}
-?>
+<?php  } ?>
 <tr>
  <td colspan="2">
 <br />

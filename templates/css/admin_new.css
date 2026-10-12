@@ -4,6 +4,13 @@
   box-sizing: border-box;
   font-family: "Ubuntu", sans-serif;
 }
+*::-webkit-scrollbar-thumb,
+body::-webkit-scrollbar-thumb,
+html::-webkit-scrollbar-thumb {
+  background: var(--blue);
+  border-radius: 99em;
+  border: 6px solid var(--theme-color-2);
+}
 :root {
   --blue: #4caf50;
   --white: #fff;
@@ -14,6 +21,32 @@
 body {
   min-height: 100vh;
   overflow-x: hidden;
+}
+body .close_alert,
+body .close-popup {
+  background: var(--blue) !important;
+}
+body .db-stats-1 td {
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3) !important;
+}
+body .db-stats-2 td {
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3) !important;
+}
+body .db-stats-1 td,
+body .db-stats-2 td {
+  border-radius: 3px !important;
+  transition: 0.5s;
+  position: relative;
+  top: 0;
+  overflow: hidden;
+}
+body .db-stats-1 td:hover,
+body .db-stats-2 td:hover {
+  top: -5px;
+}
+body .db-stats-2 td {
+  border: 0 !important;
+  padding: 26px 28px !important;
 }
 .container {
   position: relative;
@@ -27,9 +60,6 @@ body {
   border-left: 10px solid var(--blue);
   transition: 0.5s;
   overflow: hidden;
-}
-.navigation-admin.active {
-  width: 80px;
 }
 .navigation-admin ul {
   position: absolute;
@@ -132,9 +162,6 @@ body {
 .navigation-admin ul li a.no-ajax {
   pointer-events: none;
 }
-.pointer-events-auto {
-  pointer-events: auto !important;
-}
 .navigation-admin ul li:hover a,
 .navigation-admin ul li.hovered a,
 .navigation-admin ul li.clicked a {
@@ -161,9 +188,7 @@ body {
   text-align: start;
   white-space: nowrap;
 }
-
 /* curve outside */
-
 .navigation-admin ul li:hover a::before,
 .navigation-admin ul li.hovered a::before,
 .navigation-admin ul li.clicked a::before {
@@ -192,7 +217,12 @@ body {
   box-shadow: 35px -35px 0 10px var(--white);
   pointer-events: none;
 }
-
+.navigation-admin.active {
+  width: 80px;
+}
+.pointer-events-auto {
+  pointer-events: auto !important;
+}
 /* main */
 .main {
   position: absolute;
@@ -217,6 +247,16 @@ body {
 }
 .header-links {
   z-index: 11;
+}
+.header-links {
+  float: right;
+  position: absolute;
+  top: 6px;
+  right: 15px;
+}
+.header-links a {
+  margin-right: 10px;
+  text-decoration: none;
 }
 .toggle {
   position: relative;
@@ -252,16 +292,6 @@ body {
   top: 0;
   left: 10px;
   font-size: 1.2em;
-}
-.header-links {
-  float: right;
-  position: absolute;
-  top: 6px;
-  right: 15px;
-}
-.header-links a {
-  margin-right: 10px;
-  text-decoration: none;
 }
 .mainBox {
   position: relative;
@@ -305,6 +335,12 @@ table th {
   -ms-transform: rotate(45deg);
   transform: rotate(45deg);
 }
+.mdl-button {
+  transition: 0.25s;
+}
+.mdl-button:hover {
+  transform: scale(1.1);
+}
 .mdl-textfield--floating-label.is-focused .mdl-textfield__label,
 .mdl-textfield--floating-label.is-dirty .mdl-textfield__label,
 .mdl-textfield--floating-label.has-placeholder .mdl-textfield__label {
@@ -313,10 +349,6 @@ table th {
   left: 5px;
 }
 .mdl-textfield__label:after {
-  background: var(--blue) !important;
-}
-body .close_alert,
-body .close-popup {
   background: var(--blue) !important;
 }
 body.admin-area.no-logged .navigation-admin {
@@ -351,20 +383,11 @@ body.admin-area.no-logged .main {
 .mdl-textfield label:before {
   display: none;
 }
-.mdl-textfield--floating-label .mdl-textfield__label {
-  top: 12px;
-  left: 15px;
-}
 .mdl-textfield input,
 .mdl-textfield textarea {
   padding-left: 15px;
   padding-right: 40px;
   border: 0 !important;
-}
-.mdl-textfield.is-focused,
-.mdl-textfield:hover {
-  border: 2px solid var(--blue);
-  top: -5px;
 }
 .mdl-textfield .clear {
   display: block;
@@ -378,6 +401,15 @@ body.admin-area.no-logged .main {
   top: 5px;
   right: 7px;
   cursor: pointer;
+}
+.mdl-textfield--floating-label .mdl-textfield__label {
+  top: 12px;
+  left: 15px;
+}
+.mdl-textfield.is-focused,
+.mdl-textfield:hover {
+  border: 2px solid var(--blue);
+  top: -5px;
 }
 .mdl-textfield.is-dirty .clear {
   opacity: 1;
@@ -405,24 +437,6 @@ body.admin-area.no-logged .main {
 .new-checkbox input {
   position: relative;
   top: 5px;
-}
-body .db-stats-1 td {
-  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3) !important;
-}
-body .db-stats-2 td {
-  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3) !important;
-}
-body .db-stats-1 td,
-body .db-stats-2 td {
-  border-radius: 3px !important;
-  transition: 0.5s;
-  position: relative;
-  top: 0;
-  overflow: hidden;
-}
-body .db-stats-1 td:hover,
-body .db-stats-2 td:hover {
-  top: -5px;
 }
 .db-stats-1 td.td-1 {
   background-image: linear-gradient(
@@ -485,9 +499,25 @@ body .db-stats-2 td:hover {
 .db-stats-1 td.td-4:after {
   background: #dd4b39;
 }
-body .db-stats-2 td {
-  border: 0 !important;
-  padding: 26px 28px !important;
+.db-stats-1 td {
+  height: 115px;
+}
+.db-stats-1 td span,
+.db-stats-2 td span {
+  position: absolute;
+  right: 20px;
+  bottom: 20px;
+  z-index: 10;
+  font-size: 38px;
+}
+.db-stats-1 td h2,
+.db-stats-2 td h2 {
+  position: absolute;
+  left: 20px;
+  top: 20px;
+  z-index: 10;
+  padding: 0 !important;
+  font-size: 18px;
 }
 .db-stats-2 td * {
   color: #fff !important;
@@ -608,6 +638,9 @@ body .db-stats-2 td {
 .db-stats-2 td.td-8:after {
   background: #4caf50;
 }
+.db-stats-2 td {
+  height: 115px;
+}
 .db-stats-3 h3 {
   position: relative;
   overflow: hidden;
@@ -623,29 +656,6 @@ body .db-stats-2 td {
   -webkit-transform: rotate(30deg);
   transform: rotate(30deg);
   background: rgba(0, 0, 0, 0.07);
-}
-.db-stats-1 td {
-  height: 115px;
-}
-.db-stats-2 td {
-  height: 115px;
-}
-.db-stats-1 td span,
-.db-stats-2 td span {
-  position: absolute;
-  right: 20px;
-  bottom: 20px;
-  z-index: 10;
-  font-size: 38px;
-}
-.db-stats-1 td h2,
-.db-stats-2 td h2 {
-  position: absolute;
-  left: 20px;
-  top: 20px;
-  z-index: 10;
-  padding: 0 !important;
-  font-size: 18px;
 }
 table.lines-table a {
   position: relative;
@@ -671,19 +681,6 @@ table.lines-table a:after {
 table.lines-table a:hover:before,
 table.lines-table a:hover:after {
   right: -30px;
-}
-.mdl-button {
-  transition: 0.25s;
-}
-.mdl-button:hover {
-  transform: scale(1.1);
-}
-*::-webkit-scrollbar-thumb,
-body::-webkit-scrollbar-thumb,
-html::-webkit-scrollbar-thumb {
-  background: var(--blue);
-  border-radius: 99em;
-  border: 6px solid var(--theme-color-2);
 }
 table.lines-table th a {
   color: #fff;

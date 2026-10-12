@@ -16,19 +16,9 @@
 	<tr>
 	 <td class="image"><a href="{$current_location}/{$url}">
 {if $v['variant_photo']}
-<?php
-$image = $v["variant_photo"];
-$image["new_width"] = 100;
-$image["new_height"] = 100;
-include SITE_ROOT . "/includes/variant_image.php";
-?>
+{variant_image image=`$v["variant_photo"]` new_width=100 new_height=100}
 {elseif $v['photo']}
-<?php
-$image = $v["photo"];
-$image["new_width"] = 100;
-$image["new_height"] = 100;
-include SITE_ROOT . "/includes/image.php";
-?>
+{product_image image=`$v['photo']` new_width=100 new_height=100}
 {/if}
 
 	  </a></td>

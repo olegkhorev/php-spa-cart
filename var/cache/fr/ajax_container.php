@@ -1,8 +1,17 @@
+<?php 
+/**
+* SPA-Cart
+* Copyright (c) Oleg Khorev
+*
+* Released under the MIT License.
+* https://github.com/olegkhorev/php-spa-cart
+*/
+?>
 <div class="page-container">
 <div class="withleftmenu">
 <div class="left_filter">
 <h2>Sélection étroite</h2>
-<div id="left_filter">
+<div id="left_filter" class="loading_filter">
 <div class="cssload-container"><div class="cssload-speeding-wheel"></div></div>
 
 </div>
@@ -19,9 +28,12 @@
 	<div id="center"<?php if (true || $no_left_menu == 'Y') {?> class="no_left_menu"<?php } ?>>
 <?php echo $page;?>
 
-<?php if ($recently && $get['0'] != 'checkout') {?>
+<?php if ($config['Visual']['visual_recently'] == 'Y' && $recently && $get['0'] != 'checkout') {?>
 <?php if ($get['0'] != 'product' && $get['0'] != 'home') {?>
 </div></div>
+<?php } ?>
+<?php if ($get['0'] == 'blog' && $get['1']) {?>
+</div>
 <?php } ?>
 </div>
 </div>
@@ -73,10 +85,11 @@
 </div>
 </div>
 <?php if ($alerts) {?>
- <div class="alerts"><span onclick="javascript: $('.alerts').slideUp();"><b>X</b></span>
+ <div class="alerts"><span onclick="javascript: $('.alerts').slideUp(); unfade();" class="close_alert"><b></b></span>
  <?php foreach ($alerts as $v) {?>
   <?php if ($v['type'] == 'e') {?><div class="error">Error: <?php echo $v['content'];?></div><?php } else  { ?><?php echo $v['content'];?><br><?php } ?><br>
  <?php } ?>
  </div>
+	<div class="fade" style="display: block;"></div>
 <?php } ?>
 <div class="clear"></div>

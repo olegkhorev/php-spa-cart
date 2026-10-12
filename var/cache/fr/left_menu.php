@@ -1,6 +1,15 @@
+<?php 
+/**
+* SPA-Cart
+* Copyright (c) Oleg Khorev
+*
+* Released under the MIT License.
+* https://github.com/olegkhorev/php-spa-cart
+*/
+?>
 <div id="left_menu">
 <div class="mobile-menu-links">
-<?php if ($languages) {?>
+<?php if ($config['Visual']['visual_language'] == 'Y' && $languages) {?>
 <div class="language_select mobile_languages_select">
 Language:
 <select>
@@ -11,7 +20,7 @@ Language:
 </div>
 <?php } ?>
 
-<?php if ($currencies) {?>
+<?php if ($config['Visual']['visual_currency'] == 'Y' && $currencies) {?>
 <div class="currency_select mobile_currency_select">
 De change:
 <select>
@@ -22,7 +31,7 @@ De change:
 </div>
 <?php } ?>
 
-<?php if ($currencies || $languages) {?>
+<?php if (($config['Visual']['visual_language'] == 'Y' && $languages) || ($currencies && $config['Visual']['visual_currency'] == 'Y')) {?>
 <div class="clear"></div>
 <hr />
 <?php } ?>
@@ -41,13 +50,13 @@ De change:
 <a href="/login" class="ajax_link">Les Cartes-Cadeaux</a>
 <?php } ?>
 <hr />
-<?php 
-$categories_menu = $categories_top_menu;
-?>
+<?php  $categories_menu = $categories_top_menu; ?>
 <?php foreach ($categories_menu as $k=>$v) {?>
-<?php 
-		echo '<a class="ajax_link" href="/'.($v['cleanurl'] ? $v['cleanurl'] : $v['categoryid']).'" class="root-link">'.$v['title'].'</a>';
-?>
+<?php  echo '<a class="ajax_link" href="/' .
+    ($v["cleanurl"] ? $v["cleanurl"] : $v["categoryid"]) .
+    '" class="root-link">' .
+    $v["title"] .
+    "</a>"; ?>
 <?php } ?>
 <hr />
 <a class="ajax_link" href="<?php echo $current_location;?>/brands">Marques</a>

@@ -96,19 +96,9 @@ Payment method: {$order['payment_method']}{if $order['payment_details']} ({$orde
 	<tr>
 	 <td class="image" valign="top" style="padding-right: 10px;"><a href="{$http_location}/{$url}">
 {if $v['variant_photo']}
-<?php
-$image = $v["variant_photo"];
-$image["new_width"] = 100;
-$image["new_height"] = 100;
-include SITE_ROOT . "/includes/variant_image.php";
-?>
+{variant_image image=`$v['variant_photo']` new_width=100 new_height=100}
 {elseif $v['photo']}
-<?php
-$image = $v["photo"];
-$image["new_width"] = 100;
-$image["new_height"] = 100;
-include SITE_ROOT . "/includes/image.php";
-?>
+{product_image image=`$v['photo']` new_width=100 new_height=100 link='Y'}
 {/if}
 	  </a></td>
 	  <td width="100%" valign="top">

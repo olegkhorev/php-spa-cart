@@ -15,14 +15,20 @@
   <th width="150">States</th>
 </tr>
 </thead>
-<?php 
-foreach ($countries as $v) {
-	echo '<tr>
-  <td align="center"><label>Code</label>'.$v['code'].'</td>
-  <td><label>Country</label>'.$v['country'].'</td>
-  <td align="center"><label>States</label><a href="/admin/countries/'.$v['code'].'">Manage</a> '.($v['states'] ? '('.$v['states'].')' : '').'</td>
+<?php  foreach ($countries as $v) {
+    echo '<tr>
+  <td align="center"><label>Code</label>' .
+        $v["code"] .
+        '</td>
+  <td><label>Country</label>' .
+        $v["country"] .
+        '</td>
+  <td align="center"><label>States</label><a href="/admin/countries/' .
+        $v["code"] .
+        '">Manage</a> ' .
+        ($v["states"] ? "(" . $v["states"] . ")" : "") .
+        '</td>
 </tr>';
-}
-?>
+} ?>
 
 </table>

@@ -16,13 +16,19 @@
 <tr>
   <td class="name">Name:</td>
   <td class="star">*</td>
-  <td><input id="testimonial_name" type="text" size="32" name="name" value="<?php  echo escape($preentered['name'], 2); ?>" /></td>
+  <td><input id="testimonial_name" type="text" size="32" name="name" value="<?php  echo escape(
+      $preentered["name"],
+      2,
+  ); ?>" /></td>
 </tr>
 
 <tr>
   <td class="name">Your site URL:</td>
   <td></td>
-  <td><input type="text" size="32" name="url" value="<?php  echo escape($preentered['url'], 2); ?>" /></td>
+  <td><input type="text" size="32" name="url" value="<?php  echo escape(
+      $preentered["url"],
+      2,
+  ); ?>" /></td>
 </tr>
 
 <tr>

@@ -9,33 +9,37 @@
 ?>
 <?php
 $products = $db->all("SELECT p.* FROM products p, featured_products fp WHERE fp.productid=p.productid AND fp.categoryid=0 AND fp.enabled=1 AND p.status=1 ORDER BY fp.orderby");
-foreach ($products as $k=>$v) {
-	if ($v['photoid'])
-		$products[$k]['photo'] = $db->row("SELECT * FROM products_photos WHERE photoid='".$v['photoid']."'");
+foreach ($products as $k => $v) {
+    if ($v['photoid']) {
+        $products[$k]['photo'] = $db->row("SELECT * FROM products_photos WHERE photoid='".$v['photoid']."'");
+    }
 }
 
 $template['featured_products'] = $products;
 
 $bestsellers = $db->all("SELECT * FROM products WHERE status=1 AND sales_stats>0 ORDER BY sales_stats DESC LIMIT 8");
-foreach ($bestsellers as $k=>$v) {
-	if ($v['photoid'])
-		$bestsellers[$k]['photo'] = $db->row("SELECT * FROM products_photos WHERE photoid='".$v['photoid']."'");
+foreach ($bestsellers as $k => $v) {
+    if ($v['photoid']) {
+        $bestsellers[$k]['photo'] = $db->row("SELECT * FROM products_photos WHERE photoid='".$v['photoid']."'");
+    }
 }
 
 $template['bestsellers'] = $bestsellers;
 
 $most_viewed = $db->all("SELECT * FROM products WHERE status=1 AND views_stats>0 ORDER BY views_stats DESC LIMIT 8");
-foreach ($most_viewed as $k=>$v) {
-	if ($v['photoid'])
-		$most_viewed[$k]['photo'] = $db->row("SELECT * FROM products_photos WHERE photoid='".$v['photoid']."'");
+foreach ($most_viewed as $k => $v) {
+    if ($v['photoid']) {
+        $most_viewed[$k]['photo'] = $db->row("SELECT * FROM products_photos WHERE photoid='".$v['photoid']."'");
+    }
 }
 
 $template['most_viewed'] = $most_viewed;
 
 $new_arrivals = $db->all("SELECT * FROM products WHERE status=1 ORDER BY add_date DESC LIMIT 8");
-foreach ($new_arrivals as $k=>$v) {
-	if ($v['photoid'])
-		$new_arrivals[$k]['photo'] = $db->row("SELECT * FROM products_photos WHERE photoid='".$v['photoid']."'");
+foreach ($new_arrivals as $k => $v) {
+    if ($v['photoid']) {
+        $new_arrivals[$k]['photo'] = $db->row("SELECT * FROM products_photos WHERE photoid='".$v['photoid']."'");
+    }
 }
 
 $template['new_arrivals'] = $new_arrivals;
@@ -59,72 +63,76 @@ $template['gift_cards'] = $db->field("SELECT COUNT(*) FROM gift_cards");
 
 $tmp = $db->all("SELECT * FROM orders WHERE date>'".strtotime(date('M').' 1,'.date('Y'))."' ORDER BY orderid");
 if ($tmp) {
-	$month_totals = array();
-	for ($i = 1; $i < 31; $i++) {
-		$tmp2 = mktime(0,0,0,date('m'),$i,date('Y'));
-		$month_totals[$tmp2] = 0;
-	}
+    $month_totals = array();
+    for ($i = 1; $i < 31; $i++) {
+        $tmp2 = mktime(0, 0, 0, date('m'), $i, date('Y'));
+        $month_totals[$tmp2] = 0;
+    }
 
-	foreach ($tmp as $k=>$v) {
-		$tmp2 = mktime(0,0,0,date('m', $v['date']),date('d', $v['date']),date('Y', $v['date']));
-		$month_totals[$tmp2] += $v['total'];
-	}
+    foreach ($tmp as $k => $v) {
+        $tmp2 = mktime(0, 0, 0, date('m', $v['date']), date('d', $v['date']), date('Y', $v['date']));
+        $month_totals[$tmp2] += $v['total'];
+    }
 
-	if (count($month_totals) > 1)
-		$template['month_totals'] = $month_totals;
+    if (count($month_totals) > 1) {
+        $template['month_totals'] = $month_totals;
+    }
 }
 
 $tmp = $db->all("SELECT * FROM orders WHERE date>'".
-				strtotime((
-						   intval(date('M'))-1
-						   ).' 1,'.date('Y'))
-				."' AND date<'".strtotime(date('M').' 1,'.date('Y'))."' ORDER BY orderid");
+                strtotime((
+                    intval(date('M')) - 1
+                ).' 1,'.date('Y'))
+                ."' AND date<'".strtotime(date('M').' 1,'.date('Y'))."' ORDER BY orderid");
 if ($tmp) {
-	$month_totals = array();
-	for ($i = 1; $i < 31; $i++) {
-		$tmp2 = mktime(0,0,0,date('m')-1,$i,date('Y'));
-		$month_totals[$tmp2] = 0;
-	}
+    $month_totals = array();
+    for ($i = 1; $i < 31; $i++) {
+        $tmp2 = mktime(0, 0, 0, date('m') - 1, $i, date('Y'));
+        $month_totals[$tmp2] = 0;
+    }
 
-	foreach ($tmp as $k=>$v) {
-		$tmp2 = mktime(0,0,0,date('m', $v['date']),date('d', $v['date']),date('Y', $v['date']));
-		$month_totals[$tmp2] += $v['total'];
-	}
+    foreach ($tmp as $k => $v) {
+        $tmp2 = mktime(0, 0, 0, date('m', $v['date']), date('d', $v['date']), date('Y', $v['date']));
+        $month_totals[$tmp2] += $v['total'];
+    }
 
-	if (count($month_totals) > 1)
-		$template['month_totals_2'] = $month_totals;
+    if (count($month_totals) > 1) {
+        $template['month_totals_2'] = $month_totals;
+    }
 }
 
 $orders = $db->all("SELECT * FROM orders ORDER BY orderid");
 if ($orders) {
-	foreach ($orders as $k=>$v) {
-		$order = $v;
-		$hour = date('H', $v['date']);
-		if ($hour > 16) {
-			$start_date = $end_date = date('Y-m-d', $v['date'] + 30000);
-			if ($v['status'] == '2') {
-				if ($v['date'] + 142800 < time())
-					$order['icon'] = 2;
-				else if ($v['date'] + 56400 < time())
-					$order['icon'] = 1;
-			}
-		} else {
-			$start_date = $end_date = date('Y-m-d', $v['date']);
-			if ($v['status'] == '2') {
-				if (date('d', $v['date']) < (date('d') - 1))
-					$order['icon'] = 2;
-				else if (date('d', $v['date']) < date('d'))
-					$order['icon'] = 1;
-			}
-		}
+    foreach ($orders as $k => $v) {
+        $order = $v;
+        $hour = date('H', $v['date']);
+        if ($hour > 16) {
+            $start_date = $end_date = date('Y-m-d', $v['date'] + 30000);
+            if ($v['status'] == '2') {
+                if ($v['date'] + 142800 < time()) {
+                    $order['icon'] = 2;
+                } elseif ($v['date'] + 56400 < time()) {
+                    $order['icon'] = 1;
+                }
+            }
+        } else {
+            $start_date = $end_date = date('Y-m-d', $v['date']);
+            if ($v['status'] == '2') {
+                if (date('d', $v['date']) < (date('d') - 1)) {
+                    $order['icon'] = 2;
+                } elseif (date('d', $v['date']) < date('d')) {
+                    $order['icon'] = 1;
+                }
+            }
+        }
 
-		$order['start_date'] = $start_date;
-		$order['end_date'] = $end_date;
+        $order['start_date'] = $start_date;
+        $order['end_date'] = $end_date;
 
-		$orders[$k] = $order;
-	}
+        $orders[$k] = $order;
+    }
 
-	$template['orders'] = $orders;
+    $template['orders'] = $orders;
 }
 
 $today = mktime(0, 0, 0, date('n'), date('j'), date('Y'));
@@ -145,8 +153,8 @@ $template['total_month_paid'] = $db->field("SELECT SUM(total) FROM orders WHERE 
 
 $last_30_days_all = [];
 $orders = $db->all("SELECT orderid, date, total FROM orders WHERE date>=".(time() - 30 * 24 * 3600));
-foreach ($orders as $k=>$v) {
-	$last_30_days_all[date('m/d', $v['date'])] += $v['total'];
+foreach ($orders as $k => $v) {
+    $last_30_days_all[date('m/d', $v['date'])] += $v['total'];
 }
 
 $template['last_30_days_all'] = $last_30_days_all;
@@ -155,8 +163,8 @@ $last_30_days_paid = [];
 $orders = $db->all("SELECT orderid, date, total FROM orders WHERE status IN ('2', '3', '6') AND date>=".(time() - 30 * 24 * 3600));
 #echo '<pre>';
 #exit(print_R($orders));
-foreach ($orders as $k=>$v) {
-	$last_30_days_paid[date('m/d', $v['date'])] += $v['total'];
+foreach ($orders as $k => $v) {
+    $last_30_days_paid[date('m/d', $v['date'])] += $v['total'];
 }
 
 $template['last_30_days_paid'] = $last_30_days_paid;

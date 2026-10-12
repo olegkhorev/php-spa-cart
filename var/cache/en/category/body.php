@@ -10,7 +10,9 @@
 <div id="dcart"><img src="<?php echo $current_location;?>/images/dcart.png" alt="" /><br />Move product here</div>
 
 <h1><?php echo $category['title'];?></h1>
-<?php if ($banners) {?><?php $categoryid = $category['categoryid'];; ?><?php include SITE_ROOT."/var/cache/en/common/banners.php";?>
+<?php if ($banners) {?>
+<?php $categoryid = $category['categoryid'];; ?>
+<?php include SITE_ROOT."/var/cache/en/common/banners.php";?>
 <div class="category-banners-descr">
 <?php echo $category['description'];;?>
 </div>
@@ -20,12 +22,7 @@
 <tr>
 <?php if ($category_icon) {?>
 	<td>
-<?php 
-$image = $category_icon;
-$image['new_width'] = 500;
-$image['new_height'] = 300;
-include SITE_ROOT . '/includes/icon.php';
-?>
+<?php $image = $category_icon; $image['new_width'] = 500; $image['new_height'] = 300; include SITE_ROOT . "/includes/category_icon.php"; ?>
 </td>
 <?php } ?>
 
@@ -44,12 +41,7 @@ include SITE_ROOT . '/includes/icon.php';
 <?php $url = $v['cleanurl'] ? $v['cleanurl'] : $v['categoryid'];; ?>
 <?php if ($v['icon']) {?>
 <a href="<?php echo $current_location;?>/<?php echo $url;?>">
-<?php 
-$image = $v['icon'];
-$image['new_width'] = 234;
-$image['new_height'] = 200;
-include SITE_ROOT . '/includes/icon.php';
-?>
+<?php $image = $v["icon"]; $image['new_width'] = 234; $image['new_height'] = 200; include SITE_ROOT . "/includes/category_icon.php"; ?>
 </a>
 <?php } ?>
 </div>
@@ -73,5 +65,7 @@ include SITE_ROOT . '/includes/icon.php';
 <div class="products-results">
 <?php echo $products_results_html;?>
 </div>
-<?php } else if (!$subcategories) {?><br />
-<center>No products in this category</center><?php } ?>
+<?php } else if (!$subcategories) {?>
+<br />
+<center>No products in this category</center>
+<?php } ?>

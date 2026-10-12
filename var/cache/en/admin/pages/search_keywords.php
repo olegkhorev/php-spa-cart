@@ -29,12 +29,11 @@ Don't forget to generate Google sitemap to include search keywords and then subm
 </form>
 <br />
 <h3>What is in database already</h3>
-<?php 
-if ($search_keywords) {
-	foreach ($search_keywords as $v)
-		echo $v.'<br />';
-
+<?php  if ($search_keywords) {
+    foreach ($search_keywords as $v) {
+        echo $v . "<br />";
+    }
 } else  {
-	echo 'No keywords';
+    echo "No keywords";
 }
 ?>

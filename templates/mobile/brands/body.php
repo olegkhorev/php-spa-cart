@@ -10,12 +10,7 @@
 {if $brand}
 <div class="brand_page">
 {if $brand['imageid']}
-<?php
-$image = $brand;
-$image["new_width"] = 200;
-$image["new_height"] = 400;
-include SITE_ROOT . "/includes/brand_image.php";
-?>
+{brand_image image=`$brand` new_width=200 new_height=400}
 {/if}
 <h1>{$brand['name']}</h1>
 <br />
@@ -40,14 +35,7 @@ include SITE_ROOT . "/includes/brand_image.php";
 <div class="brand">
 {if $b['imageid']}
 <a href="{$url}">
-<?php
-$image = $b;
-$image["new_width"] = 105;
-$image["new_height"] = 105;
-$image["valign"] = true;
-$image["center"] = true;
-include SITE_ROOT . "/includes/brand_image.php";
-?>
+{brand_image image=`$b` new_width=105 new_height=105 center=1 valign=1}
 {/if}
 </a><br />
 <a href="{$url}">{$b['name']}</a>

@@ -5,6 +5,10 @@
   padding: 5px;
   vertical-align: top;
 }
+.category-details td:first-child img {
+  max-width: 275px;
+  margin-right: 10px;
+}
 .category-banners-descr {
   float: right;
   width: 100%;
@@ -44,8 +48,4 @@
 .res-sub-item:hover .photo img,
 .res-item:hover .photo img {
   transform: scale(1.05);
-}
-.category-details td:first-child img {
-  max-width: 275px;
-  margin-right: 10px;
 }

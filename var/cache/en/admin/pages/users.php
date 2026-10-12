@@ -46,7 +46,7 @@ foreach ($users as $k=>$v) {
  <td><label>User name</label><a href="<?php echo $current_location;?>/admin/user/<?php  echo $v['id']; ?>"><?php  echo $v['firstname'].' '.$v['lastname']; ?></a></td>
  <td><label>User email</label><?php  echo $v['email']; ?></a></td>
  <td align="center"><label>User role</label><?php  if ($v['usertype'] == 'A') {?>Administrator<?php } else  {?>Customer<?php } ?></a></td>
- <td class="no-word-break"><label>Status</label>
+ <td class="no-word-break td-align-center"><label>Status</label>
 <select name="status[<?php  echo $v['id']; ?>]">
 <option value="1"<?php  if ($v['status'] == 1) echo ' selected="selected"'; ?>>Active</option>
 <option value="0"<?php  if (empty($v['status'])) echo ' selected="selected"'; ?>>Not active</option>

@@ -9,7 +9,9 @@
 ?>
 <form id="checkoutform" method="POST" stripeid="<?php echo $stripe_id;?>">
 <input type="hidden" name="stripe_token" id="stripe_token" />
-<input type="hidden" name="order_total" id="order_total" value="<?php  echo price_format($cart['total']); ?>" />
+<input type="hidden" name="order_total" id="order_total" value="<?php  echo price_format(
+    $cart["total"],
+); ?>" />
 <?php if ($cart['need_shipping']) {?>
 <h3>Shipping method</h3>
 <?php if ($shipping_methods) {?>
@@ -121,7 +123,8 @@ Free
 </tr>
 </table>
 </div>
-<?php if (!$cart['coupon']) {?><div class="apply_coupon">Have a discount coupon?</div>
+<?php if (!$cart['coupon']) {?>
+<div class="apply_coupon">Have a discount coupon?</div>
 <?php } ?>
 <?php if (!$cart['gift_card']) {?>
 <br />
@@ -156,7 +159,7 @@ braintree.client.create({
     client: clientInstance,
     styles: {
       'input': {
-        'color': '#282c37',
+        'color': '#999',
         'font-size': '16px',
         'transition': 'color 0.1s',
         'line-height': '3'
@@ -243,7 +246,8 @@ braintree.client.create({
     braintree.threeDSecure.create({
       authorization: client_token,
       version: 2
-	}, function (createError, threeDSecure_obj) {		threeDSecure = threeDSecure_obj;
+	}, function (createError, threeDSecure_obj) {
+		threeDSecure = threeDSecure_obj;
 
     });
 <?php */ ?>

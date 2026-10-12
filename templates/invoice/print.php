@@ -52,7 +52,9 @@
 <title>{lng[Invoice]} #<?php echo $order["orderid"]; ?></title>
 
 <style type="text/css" media="all">
-<?php include SITE_ROOT . "/includes/css.php"; ?>
+
+{include_css}
+
 </style>
 <script type="text/javascript">
 var current_area = 'A',
@@ -77,6 +79,7 @@ var current_area = 'A',
 <script src="//code.jquery.com/ui/1.14.1/jquery-ui.min.js" integrity="sha256-AlTido85uXPlSyyaZNsjJXeCs07eSv3r43kyCVc8ChI=" crossorigin="anonymous"></script>
 <link rel="stylesheet" href="//code.jquery.com/ui/1.14.1/themes/base/jquery-ui.css" type="text/css" />
 
-<?php include SITE_ROOT . "/includes/js.php"; ?>
+{include_js}
+
 </body>
 </html>

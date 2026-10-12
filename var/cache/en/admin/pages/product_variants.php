@@ -12,30 +12,23 @@
 <input type="hidden" name="mode" value="update">
 
 Filter variants:
-<?php 
-foreach ($option_groups as $g) {?>
- <select name="variants_filter[<?php  echo $g['groupid']; ?>]">
- <option value=""><?php  echo $g['name']; ?></option>
-<?php 
-	if ($g['options']) {
-		foreach ($g['options'] as $o) {
-?>
- <option value="<?php  echo $o['optionid']; ?>"<?php  echo $o['selected'] == 'Y' ? ' selected="selected"' : ''; ?>><?php  echo $o['name']; ?></option>
-<?php 
-		}
-	}
-?>
+<?php  foreach ($option_groups as $g) { ?>
+ <select name="variants_filter[<?php  echo $g["groupid"]; ?>]">
+ <option value=""><?php  echo $g["name"]; ?></option>
+<?php  if ($g["options"]) {
+    foreach ($g["options"] as $o) { ?>
+ <option value="<?php  echo $o["optionid"]; ?>"<?php  echo $o["selected"] == "Y"
+    ? ' selected="selected"'
+    : ""; ?>><?php  echo $o["name"]; ?></option>
+<?php  }
+} ?>
  </select>
 &nbsp;
-<?php 
-}
-?>
+<?php  } ?>
 <button type="button" onclick="javascript: submitForm(this, 'filter');">Submit</button>
 <button type="button" onclick="javascript: submitForm(this, 'reset_filter');">Reset</button>
 <br />
-<?php 
-if ($variants) {
-?>
+<?php  if ($variants) { ?>
 <br />
 <a href="javascript: void(0);" onclick="javascript: check_all(document.vform, 'to_delete', true);">Check all</a> / <a href="javascript: void(0);" onclick="javascript: check_all(document.vform, 'to_delete', false);">Uncheck all</a>
   <table cellspacing="0" class="resp-table resp-table-100 admin-variants-table" style="margin-bottom: 0px;">
@@ -56,49 +49,63 @@ if ($variants) {
       <th>Default</th>
     </tr>
    </thead>
-<?php 
-foreach ($variants as $v) {
-?>
+<?php  foreach ($variants as $v) { ?>
     <tr>
-      <td align="center"><input type="checkbox" name="to_delete[<?php  echo $v['variantid']; ?>]" value="1" /></td>
+      <td align="center"><input type="checkbox" name="to_delete[<?php  echo $v[
+          "variantid"
+      ]; ?>]" value="1" /></td>
 	  <td class="admin-variants-table-2"><label>Options</label>
 <table>
 <tr>
-<?php 
-foreach ($v['options'] as $vo) {
-	foreach ($option_groups as $g) {		if ($g['groupid'] == $vo['groupid'] && $g['options']) {
-?>
- <td><?php  echo $g['name']; ?>:</td>
+<?php  foreach ($v["options"] as $vo) {
+    foreach ($option_groups as $g) {
+        if ($g["groupid"] == $vo["groupid"] && $g["options"]) { ?>
+ <td><?php  echo $g["name"]; ?>:</td>
  <td>
-<?php 
-			foreach ($g['options'] as $o) {				if ($vo['optionid'] == $o['optionid']) {
-					echo $o['name'];
-				}
-			}
-?>
+<?php  foreach ($g["options"] as $o) {
+    if ($vo["optionid"] == $o["optionid"]) {
+        echo $o["name"];
+    }
+} ?>
  </td>
-<?php 
-		}
-	}
-}
-?>
+<?php  }
+    }
+} ?>
 </tr>
 </table>
 	  </td>
-      <td><label>Product title</label><input type="text" size="40" name="posted_data[<?php  echo $v['variantid']; ?>][title]" value="<?php  echo $v['title']; ?>" /></td>
-      <td><label>SKU</label><input type="text" name="posted_data[<?php  echo $v['variantid']; ?>][sku]" value="<?php  echo $v['sku']; ?>" /></td>
-      <td><label>Price</label><input type="text" size="10" name="posted_data[<?php  echo $v['variantid']; ?>][price]" value="<?php  echo $v['price']; ?>" /></td>
-      <td><label>Weight</label><input type="text" size="10" name="posted_data[<?php  echo $v['variantid']; ?>][weight]" value="<?php  echo $v['weight']; ?>" /></td>
+      <td><label>Product title</label><input type="text" size="40" name="posted_data[<?php  echo $v[
+          "variantid"
+      ]; ?>][title]" value="<?php  echo $v["title"]; ?>" /></td>
+      <td><label>SKU</label><input type="text" name="posted_data[<?php  echo $v[
+          "variantid"
+      ]; ?>][sku]" value="<?php  echo $v["sku"]; ?>" /></td>
+      <td><label>Price</label><input type="text" size="10" name="posted_data[<?php  echo $v[
+          "variantid"
+      ]; ?>][price]" value="<?php  echo $v["price"]; ?>" /></td>
+      <td><label>Weight</label><input type="text" size="10" name="posted_data[<?php  echo $v[
+          "variantid"
+      ]; ?>][weight]" value="<?php  echo $v["weight"]; ?>" /></td>
 <?php if ($warehouse_enabled) {?>
       <td>
       <span class="define-var-wh" data-variantid="<?php echo $v['variantid'];?>">Define</span></td>
 <?php } else  { ?>
-      <td><label>Avail</label><input type="text" size="5" name="posted_data[<?php  echo $v['variantid']; ?>][avail]" value="<?php  echo $v['avail']; ?>" /></td>
+      <td><label>Avail</label><input type="text" size="5" name="posted_data[<?php  echo $v[
+          "variantid"
+      ]; ?>][avail]" value="<?php  echo $v["avail"]; ?>" /></td>
 <?php } ?>
-      <td onclick="javascript: wholetoggle(<?php  echo $v['variantid']; ?>, $(this).find('a'));" class="wplink"><label>Wholesale</label><a href="javascript: void(0);">[+]</a> (<?php  echo count($v['wholesale']); ?>)</td>
-      <td align="center"><label>Default</label><input type="radio" name="posted_data[<?php  echo $v['variantid']; ?>][def]" value="1" <?php  echo $v['def'] ? ' checked="checked"' : ''; ?> /></td>
+      <td onclick="javascript: wholetoggle(<?php  echo $v[
+          "variantid"
+      ]; ?>, $(this).find('a'));" class="wplink"><label>Wholesale</label><a href="javascript: void(0);">[+]</a> (<?php  echo count(
+    $v["wholesale"],
+); ?>)</td>
+      <td align="center"><label>Default</label><input type="radio" name="posted_data[<?php  echo $v[
+          "variantid"
+      ]; ?>][def]" value="1" <?php  echo $v["def"]
+    ? ' checked="checked"'
+    : ""; ?> /></td>
     </tr>
-	<tr id="wholesale-<?php  echo $v['variantid']; ?>" style="display: none;">
+	<tr id="wholesale-<?php  echo $v["variantid"]; ?>" style="display: none;">
 		<td colspan="5" class="mobile-none"></td>
 		<td colspan="5" class="var-wh-100">
 <table  width="100%"cellspacing="0" cellpadding="3" id="wp_table" class="variants-wholesale-table">
@@ -110,49 +117,80 @@ foreach ($v['options'] as $vo) {
 	<th width="100%"></th>
 </tr>
 </thead>
-<?php 
-if ($v['wholesale']) {	foreach ($v['wholesale'] as $w) {
-?>
-<tr id="wp_tr-<?php  echo $w['priceid']; ?>">
-	<td id="wp_box_1"><label>Quantity</label><input type="text" size="5" name="wprices[<?php  echo $v['variantid']; ?>][<?php  echo $w['priceid']; ?>][quantity]" value="<?php  echo $w['quantity']; ?>" /></td>
-	<td id="wp_box_2"><label>Price</label><input type="text" size="7" name="wprices[<?php  echo $v['variantid']; ?>][<?php  echo $w['priceid']; ?>][price]" value="<?php  echo $w['price']; ?>" /></td>
+<?php  if ($v["wholesale"]) {
+    foreach ($v["wholesale"] as $w) { ?>
+<tr id="wp_tr-<?php  echo $w["priceid"]; ?>">
+	<td id="wp_box_1"><label>Quantity</label><input type="text" size="5" name="wprices[<?php  echo $v[
+     "variantid"
+ ]; ?>][<?php  echo $w["priceid"]; ?>][quantity]" value="<?php  echo $w[
+    "quantity"
+]; ?>" /></td>
+	<td id="wp_box_2"><label>Price</label><input type="text" size="7" name="wprices[<?php  echo $v[
+     "variantid"
+ ]; ?>][<?php  echo $w["priceid"]; ?>][price]" value="<?php  echo $w[
+    "price"
+]; ?>" /></td>
 	<td id="wp_box_3" class="no-word-break"><label>Membership</label>
-<select name="wprices[<?php  echo $v['variantid']; ?>][<?php  echo $w['priceid']; ?>][membershipid]">
+<select name="wprices[<?php  echo $v["variantid"]; ?>][<?php  echo $w[
+    "priceid"
+]; ?>][membershipid]">
 <option value="0">All</option>
-<?php 
-if ($memberships)
-	foreach ($memberships as $m) {		echo '<option value="'.$m['membershipid'].'"'.($m['membershipid'] == $w['membershipid'] ? ' selected="selected"' : '').'>'.$m['membership'].'</option>';	}
-?>
+<?php  if ($memberships) {
+    foreach ($memberships as $m) {
+        echo '<option value="' .
+            $m["membershipid"] .
+            '"' .
+            ($m["membershipid"] == $w["membershipid"]
+                ? ' selected="selected"'
+                : "") .
+            ">" .
+            $m["membership"] .
+            "</option>";
+    };
+} ?>
 </select>
  	</td>
-	<td><label>Remove</label><div class="removed"><input type="hidden" name="wprices[<?php  echo $v['variantid']; ?>][<?php  echo $w['priceid']; ?>][removed]" value="" /><a href="javascript: void(0);" onclick="javascript: remove_wp(<?php  echo $w['priceid']; ?>);">-</a> <a href="javascript: void(0);" class="wprem" onclick="javascript: restore_wp(<?php  echo $w['priceid']; ?>);">Restore</a></div></td>
+	<td><label>Remove</label><div class="removed"><input type="hidden" name="wprices[<?php  echo $v[
+     "variantid"
+ ]; ?>][<?php  echo $w[
+    "priceid"
+]; ?>][removed]" value="" /><a href="javascript: void(0);" onclick="javascript: remove_wp(<?php  echo $w[
+    "priceid"
+]; ?>);">-</a> <a href="javascript: void(0);" class="wprem" onclick="javascript: restore_wp(<?php  echo $w[
+    "priceid"
+]; ?>);">Restore</a></div></td>
 </tr>
-<?php 
-	}
-}
-?>
-<tr id="wp_tr_<?php  echo $v['variantid']; ?>">
-	<td id="wp_box_1"><label>Quantity</label><input type="text" size="5" name="new_wprice[<?php  echo $v['variantid']; ?>][0][quantity]" value="1" /></td>
-	<td id="wp_box_2"><label>Price</label><input type="text" size="7" name="new_wprice[<?php  echo $v['variantid']; ?>][0][price]" value="0.00" /></td>
+<?php  }
+} ?>
+<tr id="wp_tr_<?php  echo $v["variantid"]; ?>">
+	<td id="wp_box_1"><label>Quantity</label><input type="text" size="5" name="new_wprice[<?php  echo $v[
+     "variantid"
+ ]; ?>][0][quantity]" value="1" /></td>
+	<td id="wp_box_2"><label>Price</label><input type="text" size="7" name="new_wprice[<?php  echo $v[
+     "variantid"
+ ]; ?>][0][price]" value="0.00" /></td>
 	<td id="wp_box_3" class="no-word-break"><label>Membership</label>
-<select name="new_wprice[<?php  echo $v['variantid']; ?>][0][membershipid]">
+<select name="new_wprice[<?php  echo $v["variantid"]; ?>][0][membershipid]">
 <option value="0">All</option>
-<?php 
-if ($memberships)
-	foreach ($memberships as $m) {
-		echo '<option value="'.$m['membershipid'].'">'.$m['membership'].'</option>';
-	}
-?>
+<?php  if ($memberships) {
+    foreach ($memberships as $m) {
+        echo '<option value="' .
+            $m["membershipid"] .
+            '">' .
+            $m["membership"] .
+            "</option>";
+    };
+} ?>
 </select>
  	</td>
-	<td><a href="javascript: void(0);" onclick="duplicate_row($('#wp_tr_<?php  echo $v['variantid']; ?>'), $(this));" class="duplicate_plus">+</a></td>
+	<td><a href="javascript: void(0);" onclick="duplicate_row($('#wp_tr_<?php  echo $v[
+     "variantid"
+ ]; ?>'), $(this));" class="duplicate_plus">+</a></td>
 </tr>
 </table>
 		</td>
 	</tr>
-<?php 
-}
-?>
+<?php  } ?>
 
   </table>
 
@@ -160,32 +198,28 @@ if ($memberships)
     <button>Update</button>
     <button type="button" onclick="submitForm(this, 'delete');">Delete selected</button>
 <br /><br />
-<?php 
-}
-?>
+<?php  } ?>
 
 <h3>New variant</h3>
 <table class="new_variant">
-<?php 
-foreach ($option_groups as $v) {?>
+<?php  foreach ($option_groups as $v) { ?>
 <tr>
- <td width="150" valign="top"><?php  echo $v['name'];?></td>
+ <td width="150" valign="top"><?php  echo $v["name"]; ?></td>
  <td valign="top">
- <select name="new_variants[<?php  echo $v['groupid']; ?>][]" multiple size="10" id="po-<?php  echo $v['groupid']; ?>">
-<?php 
-if ($v['options']) {	foreach ($v['options'] as $o) {
-?>
- <option value="<?php  echo $o['optionid']; ?>"><?php  echo $o['name']; ?></option>
-<?php 
-	}
-}
-?>
+ <select name="new_variants[<?php  echo $v[
+     "groupid"
+ ]; ?>][]" multiple size="10" id="po-<?php  echo $v["groupid"]; ?>">
+<?php  if ($v["options"]) {
+    foreach ($v["options"] as $o) { ?>
+ <option value="<?php  echo $o["optionid"]; ?>"><?php  echo $o[
+    "name"
+]; ?></option>
+<?php  }
+} ?>
  </select>
  </td>
 </tr>
-<?php 
-}
-?>
+<?php  } ?>
 <tr>
  <td colspan="2">
 <button type="button" onclick="javascript: submitForm(this, 'add');">Add</button> <button type="button" onclick="javascript: all_possible();">Create all possible variants</button>

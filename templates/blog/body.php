@@ -16,28 +16,22 @@
 <div class="blog">
 <div class="actions">
 {if $comments}
-<img src="{$current_location}/images/comments.gif" alt="" /> <a href="{$_REQUEST_URI}#comments">{lng[Go to comments|escape]}</a>&nbsp;
+<img src="{$current_location}/images/comments.gif" alt="" /> <a href="javascript: void(0);" onclick="javascript: go_to_comments();">{lng[Go to comments|escape]}</a>&nbsp;
 {/if}
-<img src="{$current_location}/images/leave_comment.gif" alt="" /> <a href="{$REQUEST_URI}#leave_comment">{lng[Leave a comment]}</a>
+<img src="{$current_location}/images/leave_comment.gif" alt="" /> <a href="avascript: void(0);" onclick="javascript: leave_comments();">{lng[Leave a comment]}</a>
 </div>
 <h1>{$blog['title']}</h1>
 <br />
 <img src="{$current_location}/images/blog_date.gif" alt="" /> {php echo date($datetime_format, $blog['date']);}
 {if $blog['imageid']}
 <div class="image">
-<?php
-$image = $blog;
-$image["new_width"] = 750;
-$image["new_height"] = 400;
-include SITE_ROOT . "/includes/blog_image.php";
-?>
+{blog_image image=`$blog` new_width=750 new_height=400}
 </div>
 {/if}
 <div class="fulldescr">{$blog['fulldescr']}</div>
 
 <?php if ($comments) { ?>
-<a name="comments"></a>
-<h3><?php echo $blog["comments"]
+<h3 id="blog_comments_section"><?php echo $blog["comments"]
     ? $blog["comments"]
     : "0"; ?> {lng[Blog comments]}</h3>
 
@@ -77,7 +71,7 @@ include SITE_ROOT . "/includes/blog_image.php";
  <td><button type="button" onclick="javascript: iBold();"><b>B</b></button></td>
  <td><button type="button" onclick="javascript: iItalic();"><i>I</i></button></td>
  <td><button type="button" onclick="javascript: iUnderline();"><u>U</u></button></td>
- <td><button type="button" id="iLinkClickA" onclick="javascript: iLinkClick();">&nbsp;A&nbsp;</button></td>
+ <td><button type="button" id="iLinkClickA" onclick="javascript: iLinkClick();">&nbsp;&#128279;&nbsp;</button></td>
 </tr>
 </tbody>
 </table>
@@ -119,12 +113,7 @@ include SITE_ROOT . "/includes/blog_image.php";
 <div class="image">
 {if $b['imageid']}
 <a href="{$url}" class="ajax_link">
-<?php
-$image = $b;
-$image["new_width"] = 250;
-$image["new_height"] = 250;
-include SITE_ROOT . "/includes/blog_image.php";
-?>
+{blog_image image=`$b` new_width=250 new_height=250}
 </a>
 {/if}
 </div>
@@ -132,7 +121,6 @@ include SITE_ROOT . "/includes/blog_image.php";
 <div class="message-box">{$b['descr']}</div>
 <div align="right">
 <a class="ajax_link link-button" href="{$url}">{lng[Read blog]}</a>&nbsp;
-<a href="{$url}#leave_comment" class="link-button">{lng[Leave a comment]}</a>
 </div>
 </div>
 <div class="clear"></div>

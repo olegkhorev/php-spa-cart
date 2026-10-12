@@ -1,42 +1,35 @@
+<?php 
+/**
+* SPA-Cart
+* Copyright (c) Oleg Khorev
+*
+* Released under the MIT License.
+* https://github.com/olegkhorev/php-spa-cart
+*/
+?>
 <?php if ($config['General']['recaptcha_key']) {?>
 <script src='https://www.google.com/recaptcha/api.js?onload=recaptchaOnload&render=explicit' async defer></script>
 <?php } ?>
 
 <div id="dcart"><img src="<?php echo $current_location;?>/images/dcart.png" alt="" /><br />Déplacer le produit ici</div>
+<?php if (!$oid) {?>
  <h1 class="fn title product-title"><?php echo $product['name'];?></h1>
  <h1 class="fntitle hidden"><?php echo $product['name'];?></h1>
 <br />
+<?php } ?>
 <table class="product">
 <tr>
  <td class="photo">
  <div id="zoom">
-<?php 
-$image = $photos[0];
-$image['new_width'] = 2000;
-$image['new_height'] = 4000;
-$image['link'] = 'Y';
-include SITE_ROOT . '/includes/image.php';
-
-$image['only_url'] = 'Y';
-ob_start();
-include SITE_ROOT . '/includes/image.php';
-$image_url = ob_get_clean();
-echo '<meta property="og:image" content="'.$image_url.'" />';
-
-?>
+<?php $image = $photos[0]; $image['new_width'] = 2000; $image['new_height'] = 4000; $image['link'] = 'Y'; include SITE_ROOT . "/includes/image.php"; ?>
+<?php $image = $photos[0]; $image['new_width'] = 2000; $image['new_height'] = 4000; $image['link'] = 'Y'; $image['only_url'] = 'Y'; ob_start(); include SITE_ROOT . "/includes/image.php"; $image_url = ob_get_clean(); echo '<meta property="og:image" content="'.$image_url.'" />'; ?>
 </div>
 <table>
 <?php if (count($photos) > 1) {?> <?php foreach ($photos as $k=>$v) {?>  <?php if ($k == 0 || $k == 4 || $k == 9) {?>
 <tr>
 <?php } ?>
  <td>
-<?php $image = $v;
-$image['new_width'] = 95;
-$image['new_height'] = 95;
-$image['link'] = 'Y';
-$image['blank'] = 'Y';
-include SITE_ROOT . '/includes/image.php';
-?>
+<?php $image = $v; $image['new_width'] = 95; $image['new_height'] = 95; $image['link'] = 'Y'; $image['blank'] = 'Y'; include SITE_ROOT . "/includes/image.php"; ?>
  </td>
   <?php if ($k == 3 || $k == 8) {?>
 </tr>
@@ -66,6 +59,11 @@ product_avail[<?php echo $oid;?>] = <?php echo $product['avail'];?>;
  <td class="details">
 <?php if ($oid == 1) {?> <div class="see_all"><a class="ajax_link" href="<?php echo $current_location;?>/<?php echo $product['cleanurl'] ? $product['cleanurl'].'.html' : 'product/'.$product['productid'];; ?>">Voir plus de détails</a></div>
 <?php } ?>
+
+<?php if ($oid) {?>
+ <h1 class="fn title product-title"><?php echo $product['name'];?></h1>
+ <h1 class="fntitle hidden"><?php echo $product['name'];?></h1>
+<?php } ?>
 <form name="product-details" action="<?php echo $current_location;?>/cart/add" onsubmit="return add_to_cart();">
 <input type="hidden" name="productid" value="<?php echo $product['productid'];?>" />
 
@@ -90,9 +88,7 @@ exceptions[<?php echo $oid;?>][<?php echo $k;?>][<?php echo $g;?>] = <?php echo 
 exceptions[<?php echo $oid;?>] = [];
 <?php } ?>
 </script>
-<?php /* ?>
-<h3>Détails du produit</h3>
-<?php */ ?>
+
 <table id="product-details">
 <?php if ($average_rating) {?>
 <tr>
@@ -109,11 +105,11 @@ exceptions[<?php echo $oid;?>] = [];
 <?php $save_price = $product['list_price'] - $product['price'];; ?>
 <?php $save_percentage = round(100 - 100 * $product['price'] / $product['list_price']);; ?>
 <tr>
- <td class="name">Liste de prix:</td>
+ <td class="name">Market price:</td>
  <td class="value product-list-price"><s><?php echo '<span class="currency">'.currency_symbol().'</span>'.price_format_currency($product['list_price']); ?></s>, save <b><?php echo '<span class="currency">'.currency_symbol().'</span>'.price_format_currency($save_price); ?> (<?php echo $save_percentage;?>%)</b></td>
 </tr>
 <?php } ?>
-<tr<?php if (!$product['weight']) {?> class="hidden"<?php } ?>>
+<tr<?php if (!$product['weight'] || $product['weight'] == '0.00') {?> class="hidden"<?php } ?>>
  <td class="name">Poids:</td>
  <td class="value product-weight"><?php echo price_format($product['weight']).' <span class="weight-symbol">lbs</span>'; ?></td>
 </tr>
@@ -136,15 +132,7 @@ variants[<?php echo $oid;?>][<?php echo $k;?>][4][<?php echo $v2['groupid'];?>] 
 
  <?php if ($v['images']) {?>
   <?php foreach ($v['images'] as $k2=>$v2) {?>
-<?php 
-$image = $v2;
-$image['new_width'] = 95;
-$image['new_height'] = 95;
-$image['only_url'] = 'Y';
-ob_start();
-include SITE_ROOT . '/includes/variant_image.php';
-$image_url = ob_get_clean();
-?>
+<?php $image = $v2; $image['new_width'] = 95; $image['new_height'] = 95; $image['only_url'] = "Y"; ob_start(); include SITE_ROOT . "/includes/variant_image.php"; $image_url = ob_get_clean(); ?>
 variants[<?php echo $oid;?>][<?php echo $k;?>][5][<?php echo $k2;?>] = "<a href='<?php echo $current_location;?>/photos/variant/<?php echo $v2['variantid'];?>/<?php echo $v2['imageid'];?>/<?php echo $v2['file'];?>' onclick='javascript: return switch_photo($(this));' rev='width: <?php echo $v2['x'];?>, height: <?php echo $v2['y'];?>'><img src='<?php echo $image_url;?>' alt='<?php echo escape($v2['alt'], 3);; ?>' /></a>";
   <?php } ?>
  <?php } ?>
@@ -292,9 +280,19 @@ options[<?php echo $oid;?>] = [];
 </tr>
 </table>
  </td>
+<?php if (!$oid) {?>
  <td class="more-details">
 <div class="more-details-border">
-Marque: 
+<?php if ($product['brand']) {?>
+<div class="prod-md-brand">
+<?php if ($product['brand_image']) {?>
+<a href="/brands/<?php echo $product['brand']['cleanurl'];?>" class="ajax_link">
+<?php $image = $product['brand_image']; $image['new_width'] = 205; $image['new_height'] = 205; include SITE_ROOT . "/includes/brand_image.php"; ?>
+</a>
+<?php } ?>
+<a href="/brands/<?php echo $product['brand']['cleanurl'];?>" class="ajax_link"><?php echo $product['brand']['name'];?></a>
+</div>
+<?php } ?>
 <a class="main-button buy-with-one-click" onclick="javascript: buy_one_click(<?php echo $product['productid'];?>);" href="javascript: void(0);">Acheter en un seul clic</a>
 <br /><br />
 <a href="/ticket?productid=<?php echo $product['productid'];?>" class="ajax_link link-button">Posez une question sur ce produit</a>
@@ -318,6 +316,7 @@ Marque:
 <?php } ?>
 </div>
  </td>
+<?php } ?>
 </tr>
 </table>
 </form>

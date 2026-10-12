@@ -1,5 +1,14 @@
+<?php 
+/**
+* SPA-Cart
+* Copyright (c) Oleg Khorev
+*
+* Released under the MIT License.
+* https://github.com/olegkhorev/php-spa-cart
+*/
+?>
 <div class="head-line">
-<?php if ($languages) {?>
+<?php if ($config['Visual']['visual_language'] == 'Y' && $languages) {?>
 <div class="language_select">
 <div>
 <?php foreach ($languages as $c) {?>
@@ -13,17 +22,10 @@
 <?php } ?>
 </ul>
 </div>
-<?php /* ?>
-<select>
-<?php foreach ($languages as $c) {?>
-<option value="<?php echo $c['id'];?>"<?php if ($current_language['id'] == $c['id'] || (!$current_language['id'] && $c['main'])) {?> selected<?php } ?>><?php echo $c['name'];?></option>
-<?php } ?>
-</select>
-<?php */ ?>
 </div>
 <?php } ?>
 
-<?php if ($currencies) {?>
+<?php if ($config['Visual']['visual_currency'] == 'Y' && $currencies) {?>
 <div class="currency_select">
 <div><?php foreach ($currencies as $c) {?><?php if ($current_currency['id'] == $c['id'] || (!$current_currency['id'] && $c['main'])) {?><?php echo $c['code'];?><?php } ?><?php } ?>
 <ul>
@@ -32,13 +34,6 @@
 <?php } ?>
 </ul>
 </div>
-<?php /* ?>
-<select>
-<?php foreach ($currencies as $c) {?>
-<option value="<?php echo $c['id'];?>"<?php if ($current_currency['id'] == $c['id'] || (!$current_currency['id'] && $c['main'])) {?> selected<?php } ?>><?php echo $c['code'];?></option>
-<?php } ?>
-</select>
-<?php */ ?>
 </div>
 <?php } ?>
 
@@ -58,11 +53,11 @@
 <a class="parent-link ajax_link" href="/news">News</a>
 <a class="header-email ajax_link" class="parent-link" href="<?php if ($config['Tickets']['use_tickets']) {?>/support_desk<?php } else  { ?>/help<?php } ?>"><svg><use xlink:href="/images/sprite.svg#email"></use></svg><?php /* ?><img src="/images/icons/email.png" alt="Écrivez-nous" /><?php */ ?> Écrivez-nous</a>
 <div>
-<a class="parent-link ajax_link" href="/page/about.html">Au sujet de la CMS</a>
+<a class="parent-link no-ajax" href="/page/about.html">Les Modules de</a>
 <ul>
- <li><a class="ajax_link" href="<?php echo $current_location;?>/page/scripts-structure.html">Scripts structure</a></li>
- <li><a class="ajax_link" href="<?php echo $current_location;?>/page/templages-engine.html">Templates engine</a></li>
- <li><a class="ajax_link" href="<?php echo $current_location;?>/page/MySQL-standards.html">MySQL standards</a></li>
+ <li><a class="ajax_link" href="<?php echo $current_location;?>/module/sample_page/sample_page">Custom module</a></li>
+ <li><a class="no-ajax" href="<?php echo $current_location;?>/module/force_theme/sample_theme">Custom theme</a></li>
+ <li><a class="no-ajax" href="<?php echo $current_location;?>/module/force_theme/default">Default theme</a></li>
 </ul>
 </div>
 
@@ -82,34 +77,14 @@
 
 
 <div class="header desktop_head">
-<?php /* ?>
-<div class="top-line">
-<div class="free-shipping">
-<svg><use xlink:href="/images/sprite.svg#delivery"></use></svg>
- Livraison gratuite sur les commandes de plus de $100 (états-unis uniquement)</div>
-<div class="social-icons">
-<a href="http://facebook.com" target="_blank"><svg><use xlink:href="/images/sprite.svg#facebook"></use></svg></a>
-<a href="http://twitter.com" target="_blank"><svg><use xlink:href="/images/sprite.svg#twitter"></use></svg></a>
-<a href="http://facebook.com" target="_blank"><svg><use xlink:href="/images/sprite.svg#pin"></use></svg></a>
-</div>
-<div class="links">
-</div>
-</div>
-<?php */ ?>
-
 <a href="/" class="logo-link"><img src="/images/logo_new.png" alt="" /></a>
-<?php if ($mobile_link) {?>
-<a class="mobile-version" href="<?php echo $mobile_link;?>">Mobile version</a>
-<?php } ?>
 <div class="menu-container">
 <ul id="menu">
 <?php if ($categories_top_menu) {?>
  <?php foreach ($categories_top_menu as $k=>$v) {?>
  <li id="menu-<?php echo $v['categoryid'];?>" class="<?php if ($v['subcategories']) {?>with-drop-down <?php } ?><?php if ($v['categoryid'] == $parentid) {?> active<?php } ?>"><a class="parent-link" href="<?php echo $current_location;?>/<?php if ($v['cleanurl']) {?><?php echo $v['cleanurl'];?><?php } else  { ?><?php echo $v['categoryid'];?><?php } ?>"><?php echo $v['title'];?></a>
   <?php if ($v['subcategories']) {?>
-<?php /* ?><div class="submenu-fade"></div><?php */ ?>
   <ul>
-<?php /* ?>	<li class="top-part"></li><?php */ ?>
    <?php foreach ($v['subcategories'] as $s) {?>
    <li><a href="<?php echo $current_location;?>/<?php if ($s['cleanurl']) {?><?php echo $s['cleanurl'];?><?php } else  { ?><?php echo $s['categoryid'];?><?php } ?>"><?php echo $s['title'];?></a>
 	<?php if ($s['subcategories']) {?><div>
@@ -134,17 +109,6 @@
 </ul>
 <?php } ?>
   </li>
-<?php /* ?>
-  <li id="menu-blog"<?php if ($get['0'] == 'blog') {?> class="active"<?php } ?>><a class="parent-link" href="<?php echo $current_location;?>/blog">Blog</a></li>
-  <li id="menu-page"<?php if ($get['0'] == 'page') {?> class="active"<?php } ?>><a class="parent-link" href="/page/about.html">Au sujet de la CMS</a>
-<ul>
- <li><a href="<?php echo $current_location;?>/page/scripts-structure.html">Scripts structure</a></li>
- <li><a href="<?php echo $current_location;?>/page/templages-engine.html">Templates engine</a></li>
- <li><a href="<?php echo $current_location;?>/page/MySQL-standards.html">MySQL standards</a></li>
-</ul>
-  </li>
-  <li id="menu-news"<?php if ($get['0'] == 'news') {?> class="active"<?php } ?>><a class="parent-link" href="/news">News</a>
-<?php */ ?>
   <li class="search-dd"><svg><use xlink:href="/images/sprite.svg#search"></use></svg>
 <form method="POST" action="/search" class="searchform searchform_desktop">
 <div class="search">
@@ -175,6 +139,7 @@
 </div>
 </div>
 
+<?php if ($config['Visual']['visual_3_boxes'] == 'Y') {?>
 <div class="subheader">
 <table>
 <tr>
@@ -202,6 +167,9 @@
 </tr>
 </table>
 </div>
+<?php } else  { ?>
+<div class="subheader_break"></div>
+<?php } ?>
 
 <div id="head_mobile">
 <?php /* ?><div class="header-phone">Appelez-Nous <?php echo $config['Company']['company_phone'];?></div><?php */ ?>

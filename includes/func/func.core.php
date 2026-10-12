@@ -248,6 +248,65 @@ function get_template_contents($filename, $force = false)
             }
         }
 
+        # Include CSS
+        $content = str_replace('{include_css}', '<?php include SITE_ROOT . "/includes/css.php"; ?>', $content);
+
+        # Include JS
+        $content = str_replace('{include_js}', '<?php include SITE_ROOT . "/includes/js.php"; ?>', $content);
+
+        /*
+         * Parse images
+        */
+        $parse_images_regex = '/(\w+)=(?:`([^`]*)`|(\S+))/';
+
+        # Categpry icons
+        preg_match_all('/\{category_icon\s+((?:`[^`]*`|[^}`])*)\}/', $content, $tags, PREG_SET_ORDER);
+        foreach ($tags as $tag) {
+            preg_match_all($parse_images_regex, $tag[1], $matches, PREG_SET_ORDER);
+            $php_code = func_template_image($matches, 'category_icon');
+            $content = str_replace('{category_icon '.$tag['1'].'}', $php_code, $content);
+        }
+
+        # Brand images
+        preg_match_all('/\{brand_image\s+((?:`[^`]*`|[^}`])*)\}/', $content, $tags, PREG_SET_ORDER);
+        foreach ($tags as $tag) {
+            preg_match_all($parse_images_regex, $tag[1], $matches, PREG_SET_ORDER);
+            $php_code = func_template_image($matches, 'brand_image');
+            $content = str_replace('{brand_image '.$tag['1'].'}', $php_code, $content);
+        }
+
+        # Product images
+        preg_match_all('/\{product_image\s+((?:`[^`]*`|[^}`])*)\}/', $content, $tags, PREG_SET_ORDER);
+        foreach ($tags as $tag) {
+            preg_match_all($parse_images_regex, $tag[1], $matches, PREG_SET_ORDER);
+            $php_code = func_template_image($matches, 'image');
+            $content = str_replace('{product_image '.$tag['1'].'}', $php_code, $content);
+        }
+
+        # Variant images
+        preg_match_all('/\{variant_image\s+((?:`[^`]*`|[^}`])*)\}/', $content, $tags, PREG_SET_ORDER);
+        foreach ($tags as $tag) {
+            preg_match_all($parse_images_regex, $tag[1], $matches, PREG_SET_ORDER);
+            $php_code = func_template_image($matches, 'variant_image');
+            $content = str_replace('{variant_image '.$tag['1'].'}', $php_code, $content);
+        }
+
+        # Blog images
+        preg_match_all('/\{blog_image\s+((?:`[^`]*`|[^}`])*)\}/', $content, $tags, PREG_SET_ORDER);
+        foreach ($tags as $tag) {
+            preg_match_all($parse_images_regex, $tag[1], $matches, PREG_SET_ORDER);
+            $php_code = func_template_image($matches, 'blog_image');
+            $content = str_replace('{blog_image '.$tag['1'].'}', $php_code, $content);
+        }
+
+        # News images
+        preg_match_all('/\{news_image\s+((?:`[^`]*`|[^}`])*)\}/', $content, $tags, PREG_SET_ORDER);
+        foreach ($tags as $tag) {
+            preg_match_all($parse_images_regex, $tag[1], $matches, PREG_SET_ORDER);
+            $php_code = func_template_image($matches, 'news_image');
+            $content = str_replace('{news_image '.$tag['1'].'}', $php_code, $content);
+        }
+
         $content = str_replace("else", "else ", $content);
         $tmp = explode("/", $filename);
         $add = '';
@@ -276,6 +335,42 @@ function get_template_contents($filename, $force = false)
     }
 }
 
+function func_template_image($matches, $image_file) {
+    $attrs = [];
+    foreach ($matches as $a) {
+        $attrs[$a[1]] = isset($a[3]) ? $a[3] : $a[2];
+    }
+
+    $php_code = '<?php ';
+    # To-do - product zoom image fix
+    $ob_product_fix = false;
+
+    # To-do - variant zoom image fix
+    $ob_variant_fix = false;
+    foreach ($attrs as $k=>$v) {
+        if ($k == 'image') {
+            $php_code .= '$'.$k.' = '.$v.'; ';
+        } elseif (in_array($k, ['class', 'id', 'new_width', 'new_height', 'center', 'only_url', 'link', 'blank', 'valign'])) {
+            $php_code .= '$image[\''.$k.'\'] = '.$v.'; ';
+        } elseif ($k == 'id') {
+            $php_code .= '$image['.$k.'] = '.$v.'; ';
+        } elseif ($k == 'ob_product_fix') {
+            $ob_product_fix = true;
+        } elseif ($k == 'ob_variant_fix') {
+            $ob_variant_fix = true;
+        }
+    }
+
+    if ($ob_product_fix) {
+        $php_code .= 'ob_start(); include SITE_ROOT . "/includes/'.$image_file.'.php"; $image_url = ob_get_clean(); echo \'<meta property="og:image" content="\'.$image_url.\'" />\'; ?>';
+    } elseif ($ob_variant_fix) {
+        $php_code .= 'ob_start(); include SITE_ROOT . "/includes/'.$image_file.'.php"; $image_url = ob_get_clean(); ?>';
+    } else {
+        $php_code .= 'include SITE_ROOT . "/includes/'.$image_file.'.php"; ?>';
+    }
+
+    return $php_code;
+}
 function lng($word, $replace = array())
 {
     global $db, $lng;

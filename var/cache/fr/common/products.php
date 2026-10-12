@@ -1,10 +1,16 @@
+<?php 
+/**
+* SPA-Cart
+* Copyright (c) Oleg Khorev
+*
+* Released under the MIT License.
+* https://github.com/olegkhorev/php-spa-cart
+*/
+?>
 <div class="responsive-columns products"<?php if ($tag_id) {?> id="<?php echo $tag_id;?>"<?php } ?>>
 <?php foreach ($products as $v) {?>
 <div class="res-item">
 <div class="res-zoom">
-<?php /* ?>
-<div data-productid="<?php echo $v['productid'];?>" class="quick-look main-button">Quicklook</div>
-<?php */ ?>
 </div>
 <div class="photo">
 <?php if ($v['list_price'] > $v['price']) {?>
@@ -20,22 +26,9 @@ echo '-'.round($percent).'%';
 
 <a class="ajax_link"<?php /* ?><?php if ($device != 'mobile') {?> title="Move product to cart to add it"<?php } ?><?php */ ?> href="<?php echo $current_location;?>/<?php if ($v['cleanurl']) {?><?php echo $v['cleanurl'];?>.html<?php } else  { ?>product/<?php echo $v['productid'];?><?php } ?>">
 <?php if ($v['photo']) {?>
-<?php 
-$image = $v['photo'];
-$image['new_width'] = 234;
-$image['class'] = 'product-image';
-$image['id'] = 'pid-'.$v['productid'];
-$image['new_height'] = 200;
-$image['center'] = 1;
-include SITE_ROOT . '/includes/image.php';
-?>
+<?php $image = $v['photo']; $image['class'] = "product-image"; $image['id'] = "pid-".$v["productid"]; $image['new_width'] = 234; $image['new_height'] = 200; $image['center'] = 1; include SITE_ROOT . "/includes/image.php"; ?>
 <?php } ?>
 </a>
-<?php /* ?>
-<?php if ($device != 'mobile') {?>
-<span class="move2cart">Me déplacer au panier</span>
-<?php } ?>
-<?php */ ?>
 </div>
  <div class="res-name"><a class="ajax_link" href="<?php echo $current_location;?>/<?php if ($v['cleanurl']) {?><?php echo $v['cleanurl'];?>.html<?php } else  { ?>product/<?php echo $v['productid'];?><?php } ?>"><?php echo $v['name'];?></a></div>
  <div class="res-price">
@@ -53,10 +46,6 @@ include SITE_ROOT . '/includes/image.php';
 Out of stock
 </div>
 <?php } ?>
-<?php /* ?>
-<br />
-<a class="main-button" onclick="javascript: return <?php if ($login) {?>add_wishlist(<?php echo $v['productid'];?>);<?php } else  { ?>login_popup();<?php } ?>" href="javascript: void(0);">Ajouter à la liste d'envies</a>
-<?php */ ?>
  </div>
 </div>
 <?php } ?>

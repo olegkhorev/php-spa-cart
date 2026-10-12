@@ -29,11 +29,13 @@ Sample template theme
 <?php } ?>
 <div id="dcart"><img src="<?php echo $current_location;?>/images/dcart.png" alt="" /><br />Move product here</div>
 <?php 
-if (lng('Site title'))
-	echo "<br /><h1>".lng('Site title')."</h1>";
+if (lng("Site title")) {
+    echo "<br /><h1>" . lng("Site title") . "</h1>";
+}
 
-if (lng('Site description'))
-	echo "<br /><p>".lng('Site description')."</p>";
+if (lng("Site description")) {
+    echo "<br /><p>" . lng("Site description") . "</p>";
+}
 ?>
 
 <?php /* ?> Page container assign <?php */ ?>
