@@ -14,7 +14,7 @@
 </div>
 <hr />
   <?php if ($alerts) {
-      echo '<div class="alerts"><span class="close-alerts"><b>X</b> Close</span>';
+      echo '<div class="alerts admin-alerts"><span class="close-alerts"><b>X</b> Close</span>';
       foreach ($alerts as $v) {
           if ($v["type"] == "e") { ?>
 <div class="error">{lng[Error]}:

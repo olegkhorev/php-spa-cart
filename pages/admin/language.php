@@ -10,12 +10,12 @@
 <?php
 if ($_GET['translate_mode']) {
     $_SESSION['translate_mode'] = 1;
-    redirect('/admin/language');
+    redirect('admin/language');
 }
 
 if ($_GET['exit_translate_mode']) {
     $_SESSION['translate_mode'] = '';
-    redirect('/admin/language');
+    redirect('admin/language');
 }
 
 if ($_GET['mode'] == 'export') {
@@ -87,7 +87,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         );
     }
 
-    redirect('/admin/language/'.$get['2']);
+    redirect('admin/language/'.$get['2']);
 }
 
 $template['location'] .= ' &gt; <a href="/admin/language">'.lng('Languages').'</a>';
@@ -95,7 +95,7 @@ $template['head_title'] = lng('Languages').' :: '.$template['head_title'];
 if ($get['2']) {
     $language_data = $db->row("SELECT * FROM languages_codes WHERE code='".addslashes($get['2'])."'");
     if (!$language_data) {
-        redirect('/admin/language');
+        redirect('admin/language');
     }
 
     $template["language_data"] = $language_data;

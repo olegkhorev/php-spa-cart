@@ -31,3 +31,4 @@
 {/foreach}
 </table>
 {/if}
+</div>

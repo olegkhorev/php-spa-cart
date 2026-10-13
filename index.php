@@ -228,7 +228,7 @@ $template['get'] = $get;
 
 if (
 	$get['0'] == 'home' || $get['0'] == 'cart' || $get['0'] == 'checkout' || $get['0'] == 'help' || $get['0'] == 'page' ||
-	$get['0'] == 'invoice' || $get['0'] == 'testimonials' || $get['0'] == 'search' || $get['0'] == 'category' ||
+	$get['0'] == 'invoice' || $get['0'] == 'testimonials' || $get['0'] == 'search' || $get['0'] == 'category' || $get['0'] == 'invoice' ||
 	$get['0'] == 'brands' || $get['0'] == 'blog' || $get['0'] == 'product' || $get['0'] == 'news' || $get['0'] == 'module' || 
 	$get['0'] == 'ticket' || $get['0'] == 'support_desk' || $get['0'] == 'gift_cards' || $get['0'] == 'login' || $get['0'] == 'register'
 )

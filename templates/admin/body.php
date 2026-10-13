@@ -115,7 +115,7 @@ CKEDITOR.disableAutoInline = true;
 				<li>
 					<a href="/" class="logo-link no-ajax" target="_blank">
 						<span class="icon"><img src="/images/logo_admin.png" alt="" /></span>
-						<span class="title">SPA-Cart</span>
+						<span class="title">SPA-Cart {$config['version']}</span>
 					</a>
 				</li>
 				<li>

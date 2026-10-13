@@ -40,7 +40,7 @@ td.photo td,
  */
 table.product-options {
   margin: 10px 0 0 0 !important;
-  max-width: 600px;
+  width: 100%;
 }
 table.product-options td {
   vertical-align: top;
@@ -87,6 +87,10 @@ table.product-options input {
 }
 .product_popup table.product-options td textarea {
   width: 135px;
+}
+.product_popup .product-options .product-option {
+  display: block;
+  width: 100%;
 }
 .po-1,
 .po-3,
@@ -827,6 +831,7 @@ table#product-details td.product-list-price b {
 .add-to-wl-product svg {
   width: 36px;
   height: 36px;
+  margin-left: 10px;
 }
 .buy-with-one-click {
   border: 1px solid var(--theme-color-2);

@@ -14,7 +14,7 @@ if ($_GET['mode'] == 'delete_image') {
     unlink($dir.'/'.$image['file']);
     rmdir($dir);
     $db->query("DELETE FROM brand_images WHERE brandid='".$get['2']."'");
-    redirect("/admin/brands/".$get['2']);
+    redirect("admin/brands/".$get['2']);
 }
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
@@ -130,7 +130,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $get['2'] = $brandid;
     }
 
-    redirect("/admin/brands".(!empty($get['2']) ? "/".$get['2'] : ""));
+    redirect("admin/brands".(!empty($get['2']) ? "/".$get['2'] : ""));
 }
 
 if ($get['2'] == 'new') {
@@ -143,7 +143,7 @@ if ($get['2'] == 'new') {
                 'content' => lng('No brand found')
         );
 
-        redirect("/admin/brands");
+        redirect("admin/brands");
     }
 
     $brand['image'] = $db->row("SELECT * FROM brand_images WHERE brandid='".$get['2']."'");
@@ -162,7 +162,7 @@ if ($get['2'] == 'new') {
         $brands = $db->all("SELECT * FROM brands ORDER BY orderby, name LIMIT $first_page, $objects_per_page");
         $template["brands"] = $brands;
     } else {
-        redirect('/admin/brands/new');
+        redirect('admin/brands/new');
     }
 }
 

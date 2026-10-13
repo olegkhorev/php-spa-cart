@@ -46,4 +46,4 @@ $template['is_mail'] = 'Y';
 $message = get_template_contents('invoice/body.php');
 func_mail($order['firstname'].' '.$order['lastname'], $order['email'], $config['Company']['orders_department'], $subject, $message);
 func_mail($config['Company']['company_name'], $config['Company']['orders_department'], $order['email'], $subject, $message);
-redirect('/invoice/'.$orderid.'/success');
+redirect('invoice/'.$orderid.'/success');

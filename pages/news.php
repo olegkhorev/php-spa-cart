@@ -11,13 +11,13 @@
 func_load('news');
 if ($_GET['nosearch']) {
     $_SESSION['news_substring'] = '';
-    redirect('/news');
+    redirect('news');
 }
 
 if ($_SERVER['REQUEST_METHOD'] == "POST") {
     extract($_POST);
     $_SESSION['news_substring'] = $substring;
-    redirect('/news');
+    redirect('news');
 }
 
 $template['head_title'] = lng('News').'. '.$template['head_title'];
@@ -31,7 +31,7 @@ if (!empty($get['1'])) {
                 'content' => lng('News not found')
         );
 
-        redirect('/news');
+        redirect('news');
     }
 
     $template['bread_crumbs'][] = array('', $news['title']);

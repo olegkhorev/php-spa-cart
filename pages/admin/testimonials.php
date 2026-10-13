@@ -22,7 +22,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
         $db->array2update("testimonials", $to_edit, "tid='".$get['2']."'");
     }
 
-    redirect('/admin/testimonials'.($get['2'] ? '/'.$get['2'] : ''));
+    redirect('admin/testimonials'.($get['2'] ? '/'.$get['2'] : ''));
 }
 
 if ($get['2']) {

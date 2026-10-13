@@ -9,6 +9,11 @@
 ?>
 <?php
 func_load('category', 'product');
+if ($get['2'] == 'reset') {
+    $_SESSION['search_products'] = array();
+    $get['2'] = '';
+    $template['get'] = $get;
+}
 
 if (empty($section)) {
     $section = $get['3'];
@@ -55,7 +60,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         }
 
         func_recalculate_subcount();
-        redirect('/admin/products');
+        redirect('admin/products');
     }
 
     if (empty($section)) {
@@ -183,7 +188,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                     'type'		=> 'i',
                     'content'	=> 'Product has been successfully cloned'
                 );
-                redirect('/admin/products/'.$new_productid);
+                redirect('admin/products/'.$new_productid);
             } elseif ($_POST['mode'] == 'delete') {
                 func_delete_product($get['2']);
                 $_SESSION['alerts'][] = array(
@@ -192,7 +197,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 );
 
                 func_recalculate_subcount();
-                redirect('/admin/products');
+                redirect('admin/products');
             }
 
             if ($get['2'] == 'add') {
@@ -262,7 +267,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 'content'	=> 'Product has been successfully saved'
             );
 
-            redirect('/admin/products/'.$productid);
+            redirect('admin/products/'.$productid);
         } else {
             if ($mode == 'search') {
                 foreach ($_POST as $k => $v) {
@@ -278,7 +283,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 }
             }
 
-            redirect('/admin/products');
+            redirect('admin/products');
         }
     } elseif ($section == 'images') {
         if ($_FILES) {
@@ -375,7 +380,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             exit;
         }
 
-        redirect('/admin/products/'.$get['2'].'/images');
+        redirect('admin/products/'.$get['2'].'/images');
     } elseif ($section == 'related') {
         if ($mode == 'update') {
             if (!empty($newproductid)) {
@@ -407,7 +412,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             }
         }
 
-        redirect('/admin/products/'.$get['2'].'/related');
+        redirect('admin/products/'.$get['2'].'/related');
     } elseif ($section == 'options') {
         if ($get['4']) {
             $old_group_variant = $db->field("SELECT variant FROM option_groups WHERE groupid='".$get['4']."'");
@@ -473,7 +478,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 }
             }
 
-            redirect('/admin/products/'.$get['2'].'/options/'.$get['4']);
+            redirect('admin/products/'.$get['2'].'/options/'.$get['4']);
         } else {
             if ($mode == 'update') {
                 foreach ($posted_data as $k => $v) {
@@ -520,7 +525,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             }
         }
 
-        redirect('/admin/products/'.$get['2'].'/options');
+        redirect('admin/products/'.$get['2'].'/options');
     } elseif ($section == 'variants') {
         if ($mode == 'filter') {
             $filter = '';
@@ -531,12 +536,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             }
 
             if (empty($filter)) {
-                redirect('/admin/products/'.$get['2'].'/variants');
+                redirect('admin/products/'.$get['2'].'/variants');
             } else {
-                redirect('/admin/products/'.$get['2'].'/variants?filter='.$filter);
+                redirect('admin/products/'.$get['2'].'/variants?filter='.$filter);
             }
         } elseif ($mode == 'reset_filter') {
-            redirect('/admin/products/'.$get['2'].'/variants');
+            redirect('admin/products/'.$get['2'].'/variants');
         } elseif ($mode == 'add' && !empty($new_variants)) {
             $variants = array();
             $data = $db->all("SELECT * FROM variants WHERE productid='".$get['2']."'");
@@ -674,7 +679,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             }
         }
 
-        redirect('/admin/products/'.$get['2'].'/variants');
+        redirect('admin/products/'.$get['2'].'/variants');
     } elseif ($section == 'variant_images') {
         if ($mode == 'upload' && !empty($new_group)) {
             $groups = $new_group;
@@ -764,14 +769,14 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             }
         }
 
-        redirect('/admin/products/'.$get['2'].'/variant_images');
+        redirect('admin/products/'.$get['2'].'/variant_images');
     } elseif ($section == 'inventory') {
         $db->query("DELETE FROM product_inventory WHERE productid='$get[2]' AND variantid=0");
         foreach ($posted_data as $k => $v) {
             $db->query("INSERT INTO product_inventory SET productid='$get[2]', wid='$k', avail='$v'");
         }
 
-        redirect('/admin/products/'.$get['2'].'/inventory');
+        redirect('admin/products/'.$get['2'].'/inventory');
     } elseif ($section == 'wholesale') {
         if ($mode == 'update') {
             if (!empty($new_wp)) {
@@ -794,7 +799,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             }
         }
 
-        redirect('/admin/products/'.$get['2'].'/wholesale');
+        redirect('admin/products/'.$get['2'].'/wholesale');
     }
 }
 
@@ -885,7 +890,7 @@ if ($get['2']) {
 
                 $template['option_groups'] = $option_groups;
             } else {
-                redirect('/admin/products/'.$get['2']);
+                redirect('admin/products/'.$get['2']);
             }
 
             if (!empty($filter)) {
@@ -907,7 +912,9 @@ if ($get['2']) {
             foreach ($tmp as $tmp2) {
                 $tmp2['options'] = $db->all("SELECT og.name, o.optionid, og.groupid, og.name FROM variant_items as vi INNER JOIN options AS o ON vi.optionid=o.optionid INNER JOIN option_groups AS og ON og.groupid=o.groupid WHERE vi.variantid='".$tmp2['variantid']."' ORDER BY og.orderby, o.orderby, o.name");
                 $tmp2['wholesale'] = $db->all("SELECT * FROM wholesale_prices WHERE variantid='".$tmp2['variantid']."' ORDER BY membershipid, quantity");
-                $tmp2['warehouses'] = $db->all("SELECT w.*, i.avail FROM warehouses w LEFT JOIN product_inventory i ON w.wid=i.wid AND i.productid='".$get['2']."' AND i.variantid='".$tmp2['variantid']."' WHERE w.enabled=1 ORDER BY w.pos");
+		if ($warehouse_enabled)
+                	$tmp2['warehouses'] = $db->all("SELECT w.*, i.avail FROM warehouses w LEFT JOIN product_inventory i ON w.wid=i.wid AND i.productid='".$get['2']."' AND i.variantid='".$tmp2['variantid']."' WHERE w.enabled=1 ORDER BY w.pos");
+
                 if (is_array($filter) && !empty($filter)) {
                     $found = true;
                     foreach ($filter as $k => $v) {
@@ -954,7 +961,7 @@ if ($get['2']) {
 
                 $template['option_groups'] = $option_groups;
             } else {
-                redirect('/admin/products/'.$get['2']);
+                redirect('admin/products/'.$get['2']);
             }
 
             $variants = $db->all("SELECT * FROM variants WHERE productid='".$get['2']."' ORDER BY variantid");
@@ -1043,7 +1050,9 @@ if ($get['2']) {
     $where = array();
 
     if (!empty($search_products['substring'])) {
-        $where[] = "(p.name LIKE '%".$search_products['substring']."%' OR p.descr LIKE '%".$search_products['substring']."%' OR p.keywords LIKE '%".$search_products['substring']."%')";
+	$where[] = "MATCH(p.name, p.descr, p.keywords) AGAINST ('+".$search_products['substring']."*' IN BOOLEAN MODE)";
+	# To-do: check if the line above works in all Operation Systems
+        # $where[] = "(p.name LIKE '%".$search_products['substring']."%' OR p.descr LIKE '%".$search_products['substring']."%' OR p.keywords LIKE '%".$search_products['substring']."%')";
     }
 
     if ($search_products['categoryid']) {

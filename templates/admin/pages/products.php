@@ -12,7 +12,7 @@
 } else {
     $direction = "&direction=1";
 } ?>
-<h3>{lng[Products]}</h3>
+<h3 class="products-title-h3">{lng[Products]} <a class="ajax_link link-button" href="/admin/products/add">{lng[Add new product]}</a></h3>
 <form method="POST" name="psform" href="/admin/products">
 <input type="hidden" name="mode" value="search" />
 <table class="search_table">
@@ -23,7 +23,7 @@
      2,
  ); ?>" size="40" />
 &nbsp;
-<button>{lng[Search]}</button>
+<button>{lng[Search]}</button> &nbsp; &nbsp; <a class="ajax_link" href="{$current_location}/admin/products/reset">{lng[Reset filter]}</a>
  </td>
 </tr>
 <tr>

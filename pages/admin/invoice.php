@@ -11,12 +11,12 @@
 func_load('order', 'product');
 if ($_POST['tracking'] || $_POST['tracking_url']) {
     $db->query("UPDATE orders SET tracking='".addslashes($_POST['tracking'])."', tracking_url='".addslashes($_POST['tracking_url'])."' WHERE orderid='".addslashes($get['2'])."'");
-    redirect('/admin/invoice/'.$get['2']);
+    redirect('admin/invoice/'.$get['2']);
 }
 
 if ($get['3'] == 'status') {
     order_status($get['2'], $get['4']);
-    redirect('/admin/invoice/'.$get['2']);
+    redirect('admin/invoice/'.$get['2']);
 }
 
 $orderinfo = func_orderinfo(addslashes($get['2']));
@@ -32,7 +32,7 @@ if ($orderinfo) {
     $template['location'] .= ' &gt; <a href="/admin/orders">'.lng('Orders').'</a> &gt; '.lng('Order invoice').' #'.$orderinfo['order']['orderid'];
     $template['head_title'] = lng('Order invoice').' #'.$orderinfo['order']['orderid'].' :: '.$template['head_title'];
 } else {
-    redirect('/');
+    redirect('');
 }
 
 if ($_POST['update_wh']) {

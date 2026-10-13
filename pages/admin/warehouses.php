@@ -29,7 +29,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         }
     }
 
-    redirect("/admin/warehouses");
+    redirect("admin/warehouses");
 }
 
 $template['location'] .= ' &gt; Warehouses ';

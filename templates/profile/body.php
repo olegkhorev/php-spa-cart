@@ -14,7 +14,7 @@
 <br />
 {if $section == 'orders'}
  {if $orders}
-<table cellspacing="0" cellpadding="15">
+<table cellspacing="0" cellpadding="15" class="account-invoices-list">
   {foreach $orders as $k=>$v}
 <tr>
  <td><a href="/invoice/{$v['orderid']}">#{$v['orderid']}</a></td>

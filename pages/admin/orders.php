@@ -11,7 +11,8 @@
 func_load('order');
 if ($get['2'] == 'reset') {
     $_SESSION['search_orders'] = array();
-    redirect('/admin/orders');
+    $get['2'] = '';
+    $template['get'] = $get;
 }
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
@@ -28,7 +29,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         }
     }
 
-    redirect('/admin/orders'.($get['2'] ? '/'.$get['2'] : ''));
+    redirect('admin/orders'.($get['2'] ? '/'.$get['2'] : ''));
 }
 
 $template['location'] .= ' &gt; '.lng('Orders');
@@ -40,7 +41,7 @@ if ($get['2'] == 'recent') {
         $objects_per_page = 30;
         require SITE_ROOT."/includes/navigation.php";
         $template["navigation_script"] = $current_location."/admin/orders/recent?";
-        $template['orders'] = $db->all("SELECT * FROM orders".$search_condition." ORDER BY orderid DESC LIMIT $first_page, $objects_per_page");
+        $template['orders'] = $db->all("SELECT * FROM orders ORDER BY orderid DESC LIMIT $first_page, $objects_per_page");
     }
 } else {
     $where = array();

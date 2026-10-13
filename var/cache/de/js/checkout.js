@@ -71,11 +71,13 @@ function checkout_actions() {
 
       if (!allgood) return false;
 
+      func_disable_button($('#checkout_user_form button'));
       $.ajax({
         type: "POST",
         url: "/checkout/user_form",
         data: $("#checkout_user_form").serialize(),
         success: function (data) {
+          func_disable_button($('#checkout_user_form button'), 1);
           if (data == "Email") {
             alert("Enterd email already registered for another user");
           } else {
@@ -102,6 +104,7 @@ function checkout_actions() {
   $("#place_order button")
     .unbind("click")
     .on("click", function (e) {
+      func_disable_button($('#place_order button'));
       if ($("#paymentid").val() == 7) {
         aload();
         $(".checkout_popup").css("pointer-events", "auto");
@@ -118,6 +121,7 @@ function checkout_actions() {
                 sessionId: data,
               })
               .then(function (result) {
+                func_disable_button($('#place_order button'), 1);
                 alert("Unable to redirect to Stripe");
                 // If `redirectToCheckout` fails due to a browser or network
                 // error, display the localized error message to your customer
@@ -134,6 +138,7 @@ function checkout_actions() {
         hostedFieldsInstance_obj.tokenize(function (err, payload) {
           if (err) {
             unload();
+            func_disable_button($('#place_order button'), 1);
             $(".checkout_popup").css("pointer-events", "auto");
             alert(err.message);
             console.error(err);
@@ -160,6 +165,7 @@ function checkout_actions() {
                 },
                 function (verifyError, payload) {
                   unload();
+                  func_disable_button($('#place_order button'), 1);
                   $(".checkout_popup").css("pointer-events", "auto");
                   if (verifyError) {
                     alert(verifyError.message);
@@ -189,9 +195,10 @@ function checkout_actions() {
                     url: "/checkout/place_order",
                     data: $("#checkoutform").serialize(), // serializes the form's elements.
                     success: function (data) {
+                      func_disable_button($('#place_order button'), 1);
                       if (data == "Error") {
-                        $(".checkout_popup").css("pointer-events", "auto");
                         unload();
+                        $(".checkout_popup").css("pointer-events", "auto");
                         $(".checkout_popup").css("pointer-events", "auto");
                         alert("Please, contact site administrator");
                       } else if (data == "StripeError") {
@@ -215,6 +222,7 @@ function checkout_actions() {
           url: "/checkout/place_order",
           data: $("#checkoutform").serialize(), // serializes the form's elements.
           success: function (data) {
+            func_disable_button($('#place_order button'), 1);
             if (data == "Error") {
               alert("Please, contact site administrator");
             } else if (data == "StripeError") {
@@ -251,8 +259,10 @@ function checkout_actions() {
         return false;
       }
 
+      func_disable_button($('.coupon_screen button'));
       $.ajax({ url: "/checkout?gc=" + $(".coupon_screen input").val() }).done(
         function (r) {
+          func_disable_button($('.coupon_screen button'), 1);
           if (r == "S") {
             $(".coupon_alert").remove();
             refresh_coupon();
@@ -282,9 +292,11 @@ function checkout_actions() {
         return false;
       }
 
+      func_disable_button($('.coupon_screen button'));
       $.ajax({
         url: "/checkout?coupon=" + $(".coupon_screen input").val(),
       }).done(function (r) {
+        func_disable_button($('.coupon_screen button'), 1);
         if (r == "S") {
           $(".coupon_alert").remove();
           refresh_coupon();

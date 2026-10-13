@@ -9,7 +9,7 @@
 ?>
 <?php
 if (!$login) {
-    redirect('/ticket');
+    redirect('ticket');
 }
 
 func_load('ticket');
@@ -20,7 +20,7 @@ if ($get['1'] == 'cancel') {
         'content'	=> lng('Subscription cancelled')
     );
 
-    redirect('/support_desk');
+    redirect('support_desk');
 }
 
 if ($userinfo['subscribed']) {

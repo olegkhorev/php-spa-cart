@@ -1,6 +1,4 @@
 <?php
-ini_set('log_errors','On');
-ini_set('display_errors','Off');
-include 'includes/boot.php';
-$_SESSION = array();
+session_start();
+$_SESSION = [];
 exit('Session cleaned');

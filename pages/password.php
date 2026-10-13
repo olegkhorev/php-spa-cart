@@ -10,7 +10,7 @@
 <?php
 $get = array_map('addslashes', $get);
 if (!$get['2']) {
-    redirect('/');
+    redirect('');
 }
 
 func_load('user');
@@ -21,7 +21,7 @@ if (!$id) {
         'content'	=> 'Link to change password is incorrect.'
     );
 
-    redirect('/');
+    redirect('');
 }
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
@@ -41,7 +41,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         'content'	=> 'Password has been changed.'
     );
 
-    redirect('/');
+    redirect('');
 }
 
 $template['page'] = get_template_contents('register/password.php');

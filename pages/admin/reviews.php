@@ -9,9 +9,15 @@
 ?>
 <?php
 $template['location'] .= ' &gt; '.lng('Reviews');
+if ($get['2'] == 'reset') {
+    $_SESSION['search_reviews'] = array();
+    $get['2'] = '';
+    $template['get'] = $get;
+}
+
 if ($_POST['mode'] == "search") {
     $_SESSION['search_reviews'] = $_POST;
-    redirect("/admin/reviews?mode=search");
+    redirect("admin/reviews?mode=search");
 }
 
 if ($_SERVER['REQUEST_METHOD'] == "POST") {
@@ -36,7 +42,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
         );
     }
 
-    redirect("/admin/reviews?mode=search");
+    redirect("admin/reviews?mode=search");
 }
 
 extract($_GET);

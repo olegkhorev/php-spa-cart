@@ -8,7 +8,7 @@
 */
 ?>
 {include="mail/header.php"}
-{lng[lbl_reply_above_here]}<br /><br />
+{lng[Reply above here]}<br /><br />
 
 {$email_header}
 
@@ -23,11 +23,11 @@
 <p />A new message on your ticket #{$ticket['ticketid']}
 
 {*{if $ticket['userid']}*}
-<p />{lng[lbl_full_ticket]}<br />
+<p />{lng[Full ticket]}<br />
 <a href="{$http_location}/ticket/{$ticket['ticketid']}?authkey={$ticket['authkey']}">{$http_location}/ticket/{$ticket['ticketid']}?authkey={$ticket['authkey']}</a>
 {*{/if}*}
 
-<p />{lng[lbl_ticket_subject]}: {$ticket['subject']}
+<p />{lng[Ticket subject]}: {$ticket['subject']}
 
 <hr size='1' />
 

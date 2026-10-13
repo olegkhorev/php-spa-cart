@@ -11,7 +11,7 @@
 func_load('ticket');
 if ($get['2'] == 'reset') {
     $_SESSION['search_sd'] = array();
-    redirect('/admin/support_desk');
+    redirect('admin/support_desk');
 }
 
 $tmp = func_ticket_cats();
@@ -56,7 +56,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST" && !empty($_POST['mode'])) {
         }
     }
 
-    redirect("/admin/support_desk/?mode=search".$pagestr);
+    redirect("admin/support_desk/?mode=search".$pagestr);
 }
 
 if ($_SERVER['REQUEST_METHOD'] == "POST" && $get['2'] == 'search') {
@@ -67,7 +67,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST" && $get['2'] == 'search') {
     $_SESSION['search_sd']['cat3'] = $tmp[2];
     $_SESSION['search_sd']['cat4'] = $tmp[3];
     $_SESSION['search_sd']['cat5'] = $tmp[4];
-    redirect("/admin/support_desk/?mode=search");
+    redirect("admin/support_desk/?mode=search");
 }
 
 if ($_GET['mode'] == "search") {
@@ -202,7 +202,7 @@ if ($_GET['mode'] == "search") {
             'content' => lng('lbl_no_tickets_found')
         );
 
-        redirect("/admin/support_desk");
+        redirect("admin/support_desk");
     }
 
     if (!empty($tickets)) {

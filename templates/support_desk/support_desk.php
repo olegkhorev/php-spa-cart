@@ -11,7 +11,7 @@
 <div class="support_desk">
 <br />
 
-<div{if !$can_post_ticket} class="hidden1"{/if} id="post_ticket" align="right"><button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored" onclick="self.location='/ticket';">{lng[New ticket]}</button></div>
+<div{if !$can_post_ticket} class="hidden1"{/if} id="post_ticket" align="right"><button class="button_ajax_link" href="/ticket">{lng[New ticket]}</button></div>
 
 {if $tickets}
 
@@ -56,7 +56,7 @@
 <?php } ?>
 
 {else}
-{lng[lbl_no_tickets]}
+{lng[You have no tickets]}
 {/if}
 
 {*

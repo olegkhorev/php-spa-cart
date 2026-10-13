@@ -84,7 +84,7 @@ if ($config['Visual']['visual_news'] == 'Y') {
 }
 
 if ($config['Visual']['visual_blogs'] == 'Y') {
-    $last_blog = $db->row("SELECT b.*, i.imageid, i.file, i.x, i.y, u.firstname, u.lastname FROM blog b LEFT JOIN users u ON u.id=b.author LEFT JOIN blog_images i ON b.blogid=i.blogid WHERE b.active='Y'$date_condition ORDER BY b.blogid DESC");
+    $last_blog = $db->row("SELECT b.*, i.imageid, i.file, i.x, i.y, u.firstname, u.lastname FROM blog b LEFT JOIN users u ON u.id=b.author LEFT JOIN blog_images i ON b.blogid=i.blogid WHERE b.active='Y' ORDER BY b.blogid DESC");
     if ($last_blog) {
         $last_blog['comments'] = $db->field("SELECT COUNT(*) FROM blog_comments WHERE blogid='".$last_blog['blogid']."' AND active='Y'");
         $last_blog["descr"] = func_eol2br($last_blog["descr"]);

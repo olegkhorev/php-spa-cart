@@ -128,7 +128,7 @@
 {/if}
 {else}
 <tr>
- <td valign='top' align='right'>{lng[lbl_attach_files}:</td>
+ <td valign='top' align='right'>{lng[Attach files}:</td>
  <td width='10'>&nbsp;</td>
  <td>
 <table cellspacing="1" cellpadding="2" id="wp_table">

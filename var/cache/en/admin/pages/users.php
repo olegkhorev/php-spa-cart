@@ -71,7 +71,7 @@ No users found
 } else  {
 ?>
 <h3>Users management</h3><br />
-<table cellpadding="2" cellspacing="1" class="users_management">
+<table cellpadding="2" cellspacing="1" class="users_management search_table">
 <tr>
  <td class="name">Search for</td>
  <td><input type="text" name="substring" value="<?php  echo escape($users_search['substring']); ?>" size="80" /></td>

@@ -9,14 +9,14 @@
 ?>
 <?php
 if (!$login) {
-    redirect('/login');
+    redirect('login');
 }
 
 func_load('blog');
 if ($_SERVER['REQUEST_METHOD'] == "POST") {
     extract($_POST);
 
-    redirect('/gift_cards');
+    redirect('gift_cards');
 }
 
 $gift_cards = $db->all("SELECT * FROM gift_cards WHERE userid='$login' ORDER BY date DESC");

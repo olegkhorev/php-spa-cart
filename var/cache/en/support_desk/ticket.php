@@ -26,81 +26,51 @@
 <input type="hidden" name="productid" value="<?php echo $product['productid'];?>">
 
 <div class="ticket-div">
-<table cellspacing="1" cellpadding="2" width="" class="tickettable">
-<tr>
- <td valign="top" class="width-50p">
- <table width="100%">
 <?php if (!$login) {?>
-<tr>
- <td class='data-name' align="right">Email:</td>
- <td class="star">*</td>
- <td>
-<div class="its4mobile">Email</div>
- <input type="text" name="email" id="ticket_email" value="<?php echo escape($predefined['email'], 2);; ?>"></td>
-</tr>
+ <div class="group">
+  <input type="text" name="email" id="ticket_email" value="<?php echo escape($predefined['email'], 2);; ?>"></td>
+  <span class="highlight"></span>
+  <span class="bar"></span>
+  <label>Email</label>
+ </div>
 <?php } ?>
 
-<tr>
- <td class='data-name' align="right">Ticket priority:</td>
- <td>&nbsp;</td>
-<?php $name="priority"; $value=$predefined['priority'];; ?>
- <td>
-<div class="its4mobile">Ticket priority</div>
- <?php include SITE_ROOT."/var/cache/en/common/ticket_priority.php";?></td>
-</tr>
+ <?php $name="priority"; $value=$predefined['priority'];; ?>
+ <div class="group group-select">
+  <?php include SITE_ROOT."/var/cache/en/common/ticket_priority.php";?>
+  <span class="highlight"></span>
+  <span class="bar"></span>
+  <label>Ticket priority</label>
+ </div>
 
-<tr>
- <td class='data-name' align="right">Subject:</td>
- <td class="star">*</td>
- <td>
-<div class="its4mobile">Subject</div>
- <input type="text" name="subject" id="ticket_subject" value="<?php echo escape($predefined['subject'], 2);; ?>"></td>
-</tr>
+ <div class="group">
+  <input type="text" name="subject" id="ticket_subject" value="<?php echo escape($predefined['subject'], 2);; ?>"></td>
+  <span class="highlight"></span>
+  <span class="bar"></span>
+  <label>Subject</label>
+ </div>
 
-<tr>
- <td class='data-name' valign="top" align="right">Message:</td>
- <td class="star">*</td>
- <td>
-<div class="its4mobile">Message</div>
- <textarea name="message" id="ticket_message"><?php echo $predefined['message'];?></textarea></td>
-</tr>
+ <div class="group">
+  <textarea name="message" id="ticket_message"><?php echo $predefined['message'];?></textarea></td>
+  <span class="highlight"></span>
+  <span class="bar"></span>
+  <label>Message</label>
+ </div>
 
-<tr>
- <td class="data-name" valign="top" align="right"></td>
- <td>&nbsp;</td>
- <td>
-<label class="drop-down">Upload files:</label><br /><br />
-<input size="40" type="file" name="attachments[]"><br />
-<input size="40" type="file" name="attachments[]"><br />
-<input size="40" type="file" name="attachments[]">
- </td>
-</tr>
+ <div class="group">
+  <input size="40" type="file" name="attachments[]">
+  <span class="highlight"></span>
+  <span class="bar"></span>
+ </div>
 
-<tr>
- <td class="data-name" valign="top" align="right"></td>
- <td>&nbsp;</td>
- <td class="error-cc3300"><b id="error_mes">Please, select all categories, enter your subject and message</b></td>
-</tr>
+ <div class="error-cc3300"><b id="error_mes">Please, select all categories, enter your subject and message</b></div>
 
-<tr>
- <td class="data-name" valign="top" align="right"></td>
- <td>&nbsp;</td>
- <td>
 <?php if ($config['General']['recaptcha_key']) {?>
 <div id="recaptcha_ticket" data-sitekey="<?php echo $config['General']['recaptcha_key'];?>"></div><br />
 <?php } ?>
- </td>
-</tr>
 
-<tr>
- <td class="data-name" valign="top" align="right"></td>
- <td>&nbsp;</td>
- <td><button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored" type="button" onclick="submit_ticket();">Create ticket</button></td>
-</tr>
-</table>
- </td>
-</tr>
-</table>
+<button type="button" onclick="submit_ticket();">Create ticket</button>
+
 </div>
 </form>
 
@@ -155,14 +125,10 @@ function original_message(id) {
 
 </table>
 <?php } ?>
-<?php 
-if ($total_pages > 2) {
-?>
+<?php  if ($total_pages > 2) { ?>
 <?php include SITE_ROOT."/var/cache/en/common/navigation.php";?>
 <br />
-<?php 
-}
-?>
+<?php  } ?>
 
 <div id="original_message">
 <h3>Request information</h3>
@@ -209,14 +175,12 @@ Message:<br />
 <table cellspacing="0" cellpadding="0" width="100%">
 <tr>
  <td width="400" valign="top"><textarea cols="52" rows="7" name="message" id="post_new_message"></textarea></td>
- <td valign="top"><b>Upload files</b><br />
-<input size="40" type="file" name="attachments[]"><br />
-<input size="40" type="file" name="attachments[]"><br />
+ <td valign="top"><b>Upload file</b><br />
 <input size="40" type="file" name="attachments[]">
  </td>
 </tr>
 <tr>
- <td><div id="error_mes"><b>Please, enter your message.</b></div></td>
+ <td><div id="error_mes"><b>err_ticket_message</b></div></td>
  <td align="right"><button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored">Send message</button>&nbsp;</td>
 </tr>
 </table>

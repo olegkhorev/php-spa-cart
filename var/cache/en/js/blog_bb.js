@@ -1,15 +1,15 @@
 var helptext = [];
-helptext["b"] = "Bold";
-helptext["i"] = "Italic";
-helptext["u"] = "Underlined";
-helptext["s"] = "Line through";
-helptext["url"] = "Link";
-helptext["email"] = "Email";
-helptext["img"] = "Image";
-helptext["list"] = "List";
-helptext["li"] = "List point";
-helptext["quote"] = "Quote";
-helptext["code"] = "Code";
+helptext["b"] = "blog_bbcode_b";
+helptext["i"] = "blog_bbcode_i";
+helptext["u"] = "blog_bbcode_u";
+helptext["s"] = "blog_bbcode_s";
+helptext["url"] = "blog_bbcode_url";
+helptext["email"] = "blog_bbcode_email";
+helptext["img"] = "blog_bbcode_img";
+helptext["list"] = "blog_bbcode_list";
+helptext["li"] = "blog_bbcode_li";
+helptext["quote"] = "blog_bbcode_quote";
+helptext["code"] = "blog_bbcode_code";
 
 function bbcode(open, end) {
   var tArea = document.blogform.comment;

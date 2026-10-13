@@ -43,7 +43,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     $db->array2update("users", $posted_data, "id='".$id."'");
 
-    redirect('/admin/user/'.$id);
+    redirect('admin/user/'.$id);
 }
 
 $template["memberships"] = $db->all("SELECT m.*, COUNT(u.id) as users FROM memberships m LEFT JOIN users u ON u.membershipid = m.membershipid GROUP BY m.membershipid ORDER BY m.orderby, m.membership");

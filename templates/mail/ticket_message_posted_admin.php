@@ -18,11 +18,11 @@
 
 <p />Priority: {php $mode='static'; $value=$ticket['priority'];}{include="common/ticket_priority.php"}
 
-<p />{lng[lbl_full_ticket]}<br />
+<p />{lng[Full ticket]}<br />
 
 <a href="{$http_location}/admin/ticket/{$ticket['ticketid']}">{$http_location}/admin/ticket/{$ticket['ticketid']}</a>
 
-<p />{lng[lbl_ticket_subject]}: {$ticket['subject']}
+<p />{lng[Ticket subject]}: {$ticket['subject']}
 
 <hr size='1' />
 

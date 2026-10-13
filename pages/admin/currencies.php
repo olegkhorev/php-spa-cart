@@ -28,7 +28,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         }
     }
 
-    redirect("/admin/currencies");
+    redirect("admin/currencies");
 }
 
 $template['location'] .= ' &gt; '.lng('Currencies management');

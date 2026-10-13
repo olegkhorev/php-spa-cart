@@ -9,7 +9,7 @@
 ?>
 <?php
 if (!$login) {
-    redirect('/');
+    redirect('');
 }
 
 if ($_GET['add']) {
@@ -31,14 +31,14 @@ if ($get['1'] == 'remove') {
     if ($is_ajax) {
         exit;
     } else {
-        redirect('/wishlist');
+        redirect('wishlist');
     }
 } elseif ($get['1'] == 'clear') {
     $db->query("DELETE FROM wishlist WHERE userid='".$login."'");
     if ($is_ajax) {
         exit;
     } else {
-        redirect('/wishlist');
+        redirect('wishlist');
     }
 }
 

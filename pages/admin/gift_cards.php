@@ -20,7 +20,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
         }
     }
 
-    redirect('/admin/gift_cards');
+    redirect('admin/gift_cards');
 }
 
 $gift_cards = $db->all("SELECT * FROM gift_cards ORDER BY date DESC");

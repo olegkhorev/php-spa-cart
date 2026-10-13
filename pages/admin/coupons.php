@@ -44,7 +44,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         }
     }
 
-    redirect("/admin/coupons");
+    redirect("admin/coupons");
 }
 
 $template['location'] .= ' &gt; Coupons ';

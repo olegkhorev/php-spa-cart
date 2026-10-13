@@ -8,25 +8,25 @@
 */
 ?>
 <?php if ($mode == "plain") {?>
-<?php if ($value == "1") {?>Can wait<?php } else if ($value == "2") {?>Normal<?php } else if ($value == "3") {?>High<?php } else if ($value == "4") {?>Hot Rush<?php } ?>
+<?php if ($value == "1") {?>Low<?php } else if ($value == "2") {?>Medium<?php } else if ($value == "3") {?>Normal<?php } else if ($value == "4") {?>High<?php } ?>
 <?php } else if ($mode == "static") {?>
 <?php if ($value == "1") {?>
-<font color="blue">Can wait</font>
+<font color="blue">Low</font>
 <?php } else if ($value == "2") {?>
-<font color="black">Normal</font>
+<font color="black">Medium</font>
 <?php } else if ($value == "3") {?>
-<font color="red">High</font>
+<font color="red">Normal</font>
 <?php } else if ($value == "4") {?>
-<font color="red"><b>Hot Rush</b></font>
+<font color="red"><b>High</b></font>
 <?php } ?>
 <?php } else  { ?>
 <select name="<?php echo $name;?>" <?php echo $extra;?>>
 <?php if ($empty == "Y") {?>
-<option value=""<?php if ($value == "") {?> selected<?php } ?>>All</option>
+<option value=""<?php if ($value == "") {?> selected<?php } ?>>Select priority</option>
 <?php } ?>
-<option value="1"<?php if ($value == "1") {?> selected<?php } ?>>Can wait</option>
-<option value="2"<?php if ($value == "2" || (!$value && $empty != "Y")) {?> selected<?php } ?>>Normal</option>
-<option value="3"<?php if ($value == "3") {?> selected<?php } ?>>High</option>
-<option value="4"<?php if ($value == "4") {?> selected<?php } ?>>Hot Rush</option>
+<option value="1"<?php if ($value == "1") {?> selected<?php } ?>>Low</option>
+<option value="2"<?php if ($value == "2" || (!$value && $empty != "Y")) {?> selected<?php } ?>>Medium</option>
+<option value="3"<?php if ($value == "3") {?> selected<?php } ?>>Normal</option>
+<option value="4"<?php if ($value == "4") {?> selected<?php } ?>>High</option>
 </select>
 <?php } ?>

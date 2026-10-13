@@ -13,7 +13,7 @@ if ($login) {
         exit(lng('You are already logged in. Please, refresh the page'));
     }
 
-    redirect('/profile');
+    redirect('profile');
 }
 
 func_load('user');
@@ -51,7 +51,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 'content'	=> lng('Captcha is incorrect.')
             );
 
-            redirect('/register');
+            redirect('register');
             exit;
         }
     }
@@ -68,7 +68,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             'content'	=> 'Your  E-mail already registered.<br><a href="#" onclick="return login();">Login</a> or <a href="#" onclick="return restore_password()">recover password</a>'
         );
 
-        redirect('/register');
+        redirect('register');
     } else {
         $salt = generateSalt();
         $insert = array(
@@ -106,7 +106,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             exit('G');
         }
 
-        redirect('/');
+        redirect('');
     }
 }
 

@@ -411,19 +411,20 @@ transition: all 0.2s ease 0s;
 }
 .alerts {
     margin-top: 60px;
-	position: fixed;
-	top: 5px;
-	left: 50%;
-	width: 300px;
-	min-height: 50px;
-	margin-left: -160px;
-	padding: 5px 10px;
-	border-radius: 8px;
-	background: #ffffff;
-	z-index: 120;
-    -webkit-box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.15);
-    -moz-box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.15);
+    position: fixed;
+    top: 5px;
+    left: 50%;
+    width: 300px;
+    min-height: 50px;
+    margin-left: -160px;
+    padding: 5px 10px;
+    border-radius: 8px;
+    background: #ffffff;
+    z-index: 500;
     box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.15);
+    border: 10px solid var(--theme-color-2);
+    border-radius: 32px;
+    padding: 15px 20px;
 }
 .alerts span {
 	float: right;
@@ -1223,10 +1224,11 @@ a.navigation-larrow, a.navigation-rarrow {
   font-size:18px;
   padding: 10px 15px;
   display:block;
-    width: 100%;
-    box-sizing: border-box;
+  width: 100%;
+  box-sizing: border-box;
   border:none;
   border: 0 !important;
+	max-width: 100%;
 }
 .group input:focus, .group textarea:focus { outline:none; }
 /* LABEL ======================================= */
@@ -1327,8 +1329,9 @@ a.navigation-larrow, a.navigation-rarrow {
 .gift_cards input {
 	padding: 10px;
 	border-radius: 10px;
-	margin: 10px 0 0 0;
+	margin: 10px 10px 0 0;
 	font-size: 19px;
+	min-width: 250px;
 }
 .gift_cards h3 {
 	margin-top: 20px;
@@ -1981,7 +1984,11 @@ td:nth-child(2) .sh-rounded-box svg, td:nth-child(3) .sh-rounded-box svg {
     position: relative;
     overflow: hidden;
 }
-.res-item button:after, .add2cart-product:after {
+button {
+	overflow: hidden;
+	position: relative;
+}
+.res-item button:after, .add2cart-product:after, button:after {
 	content: " ";
 	position: absolute;
 	left: -100px;
@@ -1993,7 +2000,7 @@ td:nth-child(2) .sh-rounded-box svg, td:nth-child(3) .sh-rounded-box svg {
 -ms-transform: rotate(45deg);
 transform: rotate(45deg);
 }
-.res-item button:hover:after, .add2cart-product:hover:after {
+button:hover:after, .res-item button:hover:after, .add2cart-product:hover:after {
 	left: 30px;
 	animation: add2cart 1.4s infinite ease-in-out;
 }
@@ -2445,4 +2452,17 @@ table.ui-datepicker-calendar, .ui-datepicker-calendar * {
 }
 .popup.wl_popup .image {
     text-align: center;
+}
+.button_disabled {
+	pointer-events: none !important;
+	opacity: 0.5 !important;
+}
+#body-support_desk .main-container {
+	display: block;
+}
+.support_desk {
+	width: 100%;
+}
+#post_ticket {
+    float: right;
 }

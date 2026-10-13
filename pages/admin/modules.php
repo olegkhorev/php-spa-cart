@@ -19,9 +19,13 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
             $db->array2update("modules", $to_update, "moduleid='".addslashes($k)."'");
         }
+
+        $_SESSION['alerts'][] = array(
+            'content'	=> lng('Modules updated')
+        );
     } elseif ($_FILES['install_archive']['tmp_name']) {
         $dir = SITE_ROOT . '/var/tmp/install_module';
-        @mkdir($dir);
+        mkdir($dir);
         copy($_FILES['install_archive']['tmp_name'], $dir.'/module.zip');
         $zip = new ZipArchive();
         $zip->open($dir.'/module.zip');
@@ -82,9 +86,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         ];
 
         $db->array2insert('modules', $to_insert);
+        func_delete_directory(SITE_ROOT . '/var/tmp/install_module');
     }
 
-    redirect("/admin/modules");
+    redirect("admin/modules");
 }
 
 if ($get['2'] == 'install') {

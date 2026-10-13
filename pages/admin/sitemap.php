@@ -122,7 +122,7 @@ if ($get['2'] == 'generate') {
         'content'	=> lng('Your sitemap successfully generated')
     );
 
-    redirect('/admin/sitemap');
+    redirect('admin/sitemap');
 }
 
 $template['page'] = get_template_contents('admin/pages/sitemap.php');

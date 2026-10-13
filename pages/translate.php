@@ -9,7 +9,7 @@
 ?>
 <?php
 if (!$login || $userinfo['usertype'] != 'A' || !$translate_mode) {
-    redirect('/');
+    redirect('');
 }
 
 $_GET['lbl'] = str_replace('&amp;', '&', $_GET['lbl']);

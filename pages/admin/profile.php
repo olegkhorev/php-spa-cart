@@ -8,7 +8,7 @@
 */
 ?>
 <?php
-redirect('/admin/user/'.$login);
+redirect('admin/user/'.$login);
 func_load('user');
 if ($get['2']) {
     $user_id = $get['2'];
@@ -48,7 +48,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     $db->array2update('users', $update, "id='".$user_id."'");
 
-    redirect('/admin/profile');
+    redirect('admin/profile');
 }
 
 $template['section'] = $get['1'];

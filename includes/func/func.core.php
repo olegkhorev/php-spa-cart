@@ -905,3 +905,24 @@ function func_copy_folder($source, $destination)
         }
     }
 }
+
+function func_delete_directory($dirPath) {
+    if (!is_dir($dirPath)) {
+        return false;
+    }
+
+    $iterator = new RecursiveIteratorIterator(
+        new RecursiveDirectoryIterator($dirPath, RecursiveDirectoryIterator::SKIP_DOTS),
+        RecursiveIteratorIterator::CHILD_FIRST
+    );
+
+    foreach ($iterator as $file) {
+        if ($file->isDir()) {
+            rmdir($file->getRealPath());
+        } else {
+            unlink($file->getRealPath());
+        }
+    }
+
+    return rmdir($dirPath);
+}

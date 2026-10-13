@@ -10,7 +10,7 @@
 <?php
 $category = $db->row("SELECT * FROM categories WHERE enabled=1 AND categoryid='".addslashes($categoryid)."'");
 if (!$category) {
-    redirect('/');
+    redirect('');
 }
 
 $template['head_title'] = $category['title'].'. '.$template['head_title'];

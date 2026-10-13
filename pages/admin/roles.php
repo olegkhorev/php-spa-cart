@@ -50,7 +50,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $db->array2update("users", array("roleid" => 0), $delete_string);
     }
 
-    redirect('/admin/roles');
+    redirect('admin/roles');
 }
 
 $template['head_title'] = lng('Roles').' :: '.$template['head_title'];

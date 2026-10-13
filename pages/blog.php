@@ -53,7 +53,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
         if (!$antibot_err && (!empty($login) || !empty($new_name))) {
             $blog = $db->row("SELECT * FROM blog WHERE blogid='".addslashes($blogid)."' AND active='Y'");
             if (!$blog) {
-                redirect('/');
+                redirect('');
             }
 
             $_SESSION['new_comment'] = '';
@@ -119,7 +119,7 @@ if (!empty($get['1'])) {
                 'content' => lng('Blog not found')
         );
 
-        redirect('/blog');
+        redirect('blog');
     }
 
     $template['head_title'] = $blog['title'].'. '.$template['head_title'];

@@ -18,7 +18,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         'content'	=> lng('Successful')
     );
 
-    redirect('/admin/search_keywords');
+    redirect('admin/search_keywords');
 }
 
 $template['location'] .= ' &gt; '.lng('Search keywords');

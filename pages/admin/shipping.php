@@ -97,14 +97,14 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $db->array2insert('shipping', $add);
     }
 
-    redirect('/admin/shipping/'.(!empty($carrier) ? "?carrier=$carrier" : ''));
+    redirect('admin/shipping/'.(!empty($carrier) ? "?carrier=$carrier" : ''));
 }
 
 if ($mode == 'delete') {
     $db->query("DELETE FROM shipping WHERE shippingid='$shippingid'");
     $db->query("DELETE FROM shipping_rates WHERE shippingid='$shippingid'");
 
-    redirect('/admin/shipping');
+    redirect('admin/shipping');
 }
 
 $condition = '';

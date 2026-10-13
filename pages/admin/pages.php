@@ -54,7 +54,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             'content'	=> 'Page has been successfully saved'
         );
 
-        redirect('/admin/pages/'.$pageid);
+        redirect('admin/pages/'.$pageid);
     } elseif ($mode == 'delete' && !empty($to_delete)) {
         foreach ($to_delete as $k => $v) {
             $db->query("DELETE FROM pages WHERE pageid='".addslashes($k)."'");
@@ -65,7 +65,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         }
     }
 
-    redirect('/admin/pages');
+    redirect('admin/pages');
 }
 
 if ($get['2']) {

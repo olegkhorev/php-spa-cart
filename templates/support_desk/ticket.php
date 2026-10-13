@@ -26,81 +26,51 @@
 <input type="hidden" name="productid" value="{$product['productid']}">
 
 <div class="ticket-div">
-<table cellspacing="1" cellpadding="2" width="" class="tickettable">
-<tr>
- <td valign="top" class="width-50p">
- <table width="100%">
 {if !$login}
-<tr>
- <td class='data-name' align="right">{lng[Email]}:</td>
- <td class="star">*</td>
- <td>
-<div class="its4mobile">{lng[Email]}</div>
- <input type="text" name="email" id="ticket_email" value="{php echo escape($predefined['email'], 2);}"></td>
-</tr>
+ <div class="group">
+  <input type="text" name="email" id="ticket_email" value="{php echo escape($predefined['email'], 2);}"></td>
+  <span class="highlight"></span>
+  <span class="bar"></span>
+  <label>{lng[Email]}</label>
+ </div>
 {/if}
 
-<tr>
- <td class='data-name' align="right">{lng[Ticket priority]}:</td>
- <td>&nbsp;</td>
-{php $name="priority"; $value=$predefined['priority'];}
- <td>
-<div class="its4mobile">{lng[Ticket priority]}</div>
- {include="common/ticket_priority.php"}</td>
-</tr>
+ {php $name="priority"; $value=$predefined['priority'];}
+ <div class="group group-select">
+  {include="common/ticket_priority.php"}
+  <span class="highlight"></span>
+  <span class="bar"></span>
+  <label>{lng[Ticket priority]}</label>
+ </div>
 
-<tr>
- <td class='data-name' align="right">{lng[Subject]}:</td>
- <td class="star">*</td>
- <td>
-<div class="its4mobile">{lng[Subject]}</div>
- <input type="text" name="subject" id="ticket_subject" value="{php echo escape($predefined['subject'], 2);}"></td>
-</tr>
+ <div class="group">
+  <input type="text" name="subject" id="ticket_subject" value="{php echo escape($predefined['subject'], 2);}"></td>
+  <span class="highlight"></span>
+  <span class="bar"></span>
+  <label>{lng[Subject]}</label>
+ </div>
 
-<tr>
- <td class='data-name' valign="top" align="right">{lng[Message]}:</td>
- <td class="star">*</td>
- <td>
-<div class="its4mobile">{lng[Message]}</div>
- <textarea name="message" id="ticket_message">{$predefined['message']}</textarea></td>
-</tr>
+ <div class="group">
+  <textarea name="message" id="ticket_message">{$predefined['message']}</textarea></td>
+  <span class="highlight"></span>
+  <span class="bar"></span>
+  <label>{lng[Message]}</label>
+ </div>
 
-<tr>
- <td class="data-name" valign="top" align="right"></td>
- <td>&nbsp;</td>
- <td>
-<label class="drop-down">{lng[Upload files]}:</label><br /><br />
-<input size="40" type="file" name="attachments[]"><br />
-<input size="40" type="file" name="attachments[]"><br />
-<input size="40" type="file" name="attachments[]">
- </td>
-</tr>
+ <div class="group">
+  <input size="40" type="file" name="attachments[]">
+  <span class="highlight"></span>
+  <span class="bar"></span>
+ </div>
 
-<tr>
- <td class="data-name" valign="top" align="right"></td>
- <td>&nbsp;</td>
- <td class="error-cc3300"><b id="error_mes">{lng[Please, select all categories, enter your subject and message]}</b></td>
-</tr>
+ <div class="error-cc3300"><b id="error_mes">{lng[Please, select all categories, enter your subject and message]}</b></div>
 
-<tr>
- <td class="data-name" valign="top" align="right"></td>
- <td>&nbsp;</td>
- <td>
 {if $config['General']['recaptcha_key']}
 <div id="recaptcha_ticket" data-sitekey="{$config['General']['recaptcha_key']}"></div><br />
 {/if}
- </td>
-</tr>
 
-<tr>
- <td class="data-name" valign="top" align="right"></td>
- <td>&nbsp;</td>
- <td><button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored" type="button" onclick="submit_ticket();">{lng[Create ticket]}</button></td>
-</tr>
-</table>
- </td>
-</tr>
-</table>
+<button type="button" onclick="submit_ticket();">{lng[Create ticket]}</button>
+
 </div>
 </form>
 
@@ -205,9 +175,7 @@ Message:<br />
 <table cellspacing="0" cellpadding="0" width="100%">
 <tr>
  <td width="400" valign="top"><textarea cols="52" rows="7" name="message" id="post_new_message"></textarea></td>
- <td valign="top"><b>{lng[Upload files]}</b><br />
-<input size="40" type="file" name="attachments[]"><br />
-<input size="40" type="file" name="attachments[]"><br />
+ <td valign="top"><b>{lng[Upload file]}</b><br />
 <input size="40" type="file" name="attachments[]">
  </td>
 </tr>

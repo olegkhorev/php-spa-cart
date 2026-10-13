@@ -114,7 +114,7 @@ if ($cart['products']) {
     $_SESSION['cart'] = $cart;
     $template['products'] = $cart['products'];
 } else {
-    redirect('/cart');
+    redirect('cart');
 }
 
 if ($get['1'] == 'user_form') {
@@ -230,7 +230,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 'content'	=> $checkout_reason
             );
 
-            redirect('/checkout');
+            redirect('checkout');
         }
 
         if ($paymentid == 2) {
@@ -451,7 +451,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         if ($is_ajax) {
             exit($orderid.'/');
         } else {
-            redirect('/invoice/'.$orderid);
+            redirect('invoice/'.$orderid);
         }
     }
 }

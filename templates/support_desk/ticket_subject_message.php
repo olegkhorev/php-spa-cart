@@ -44,7 +44,7 @@ ticket_cats[{$k}][5][{$k2}] = ["{php echo escape($f['field'], 2);}", "{$f['requi
  <td class='data-name' align="right"></td>
  <td>&nbsp;</td>
 {php $name="priority"; $value=$predefined['priority'];}
- <td><label class="drop-down">{lng[lbl_ticket_priority]}:</label><br />{include="common/ticket_priority.php"}</td>
+ <td><label class="drop-down">{lng[Ticket priority]}:</label><br />{include="common/ticket_priority.php"}</td>
 </tr>
  </table>
  </td>
@@ -77,7 +77,7 @@ ticket_cats[{$k}][5][{$k2}] = ["{php echo escape($f['field'], 2);}", "{$f['requi
  <td class="data-name" valign="top" align="right"></td>
  <td>&nbsp;</td>
  <td>
-<label class="drop-down">{lng[lbl_ticket_upload_files]}:</label><br /><br />
+<label class="drop-down">{lng[Upload files]}:</label><br /><br />
 <input size="40" type="file" name="attachments[]"><br />
 <input size="40" type="file" name="attachments[]"><br />
 <input size="40" type="file" name="attachments[]">
@@ -183,7 +183,7 @@ Message:<br />
 </div>
 
 <br />
-<h3>{lng[lbl_post_new_message]}</h3>
+<h3>{lng[Post a new message]}</h3>
 <a name="create_new"></a>
 <form method="POST" name="mesform" action="/ticket/{$ticket['ticketid']}" enctype="multipart/form-data" onsubmit="javascript: if(document.mesform.message.value == '') { document.getElementById('error_mes').style.display='block'; return false; } else { document.getElementById('error_mes').style.display='none'; this.disabled=true; submitForm(this, 'create_new'); }">
 <input type="hidden" name="mode" value="create_new">
@@ -191,7 +191,7 @@ Message:<br />
 <table cellspacing="0" cellpadding="0" width="100%">
 <tr>
  <td width="400" valign="top"><textarea cols="52" rows="7" name="message" onkeyup="javascript: if(this.value && document.getElementById('error_mes').style.display == 'block') document.getElementById('error_mes').style.display='none';"></textarea></td>
- <td valign="top"><b>{lng[lbl_ticket_upload_files]}</b><br />
+ <td valign="top"><b>{lng[Upload files]}</b><br />
 <input size="40" type="file" name="attachments[]"><br />
 <input size="40" type="file" name="attachments[]"><br />
 <input size="40" type="file" name="attachments[]">

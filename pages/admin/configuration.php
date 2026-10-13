@@ -9,7 +9,7 @@
 ?>
 <?php
 if (empty($get['2'])) {
-    redirect('/admin/configuration/General');
+    redirect('admin/configuration/General');
 }
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
@@ -41,7 +41,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         'content'	=> 'Settings have been successfully saved'
     );
 
-    redirect("/admin/configuration".(!empty($get['2']) ? "/".$get['2'] : ""));
+    redirect("admin/configuration".(!empty($get['2']) ? "/".$get['2'] : ""));
 }
 
 $conf = $db->all("SELECT * FROM config WHERE category='".$get['2']."' ORDER BY orderby");

@@ -14,7 +14,7 @@
 {elseif $status == "C"}
 {lng[Closed]}
 {elseif $status == "S"}
-{lng[lbl_ticket_scheduled]}
+{lng[Ticket scheduled]}
 {elseif $status == "1"}
 {lng[Waiting for consultant]}
 {elseif $status == "2"}
@@ -32,7 +32,7 @@
 <option value="O"{if $status == "O"} selected{/if}>{lng[Open]}</option>
 <option value="C"{if $status == "C"} selected{/if}>{lng[Closed]}</option>
 {*
-<option value="S"{if $status == "S"} selected{/if}>{lng[lbl_ticket_scheduled]}</option>
+<option value="S"{if $status == "S"} selected{/if}>{lng[Ticket scheduled]}</option>
 *}
 {*
 <option value="1"{if $status == "1"} selected{/if}>{lng[Waiting for consultant]}</option>

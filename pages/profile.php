@@ -9,7 +9,7 @@
 ?>
 <?php
 if (!$login) {
-    redirect('/register');
+    redirect('register');
 }
 
 func_load('user');
@@ -59,7 +59,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         exit;
     }
 
-    redirect('/profile');
+    redirect('profile');
 }
 
 $template['section'] = $get['1'];

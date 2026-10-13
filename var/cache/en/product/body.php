@@ -64,7 +64,7 @@ product_avail[<?php echo $oid;?>] = <?php echo $product['avail'];?>;
  <h1 class="fn title product-title"><?php echo $product['name'];?></h1>
  <h1 class="fntitle hidden"><?php echo $product['name'];?></h1>
 <?php } ?>
-<form name="product-details" action="<?php echo $current_location;?>/cart/add" onsubmit="return add_to_cart();">
+<form name="product-details" action="<?php echo $current_location;?>/cart/add" onsubmit="return add_to_cart('', '', this);">
 <input type="hidden" name="productid" value="<?php echo $product['productid'];?>" />
 
 <br />

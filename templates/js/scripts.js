@@ -58,7 +58,7 @@ $(document).on("keyup", function (e) {
 
     if (!getCookie("allow_cookies") && !$("html.area-a").length) {
       $("body").append(
-        '<div class="allow-cookies"><p>{lng[We use cookies for better user experience]}</p><button>{lng[Accept]}</button></div>',
+        '<div class="allow-cookies"><p>{lng[We use cookies for a better user experience]}</p><button>{lng[Accept]}</button></div>',
       );
       $(".allow-cookies button").on("click", function () {
         $(".allow-cookies").remove();
@@ -78,9 +78,11 @@ $(document).on("keyup", function (e) {
     $("#subsform").on("submit", function () {
       var r = /^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/;
       if ($("#sub-email").val() && r.test($("#sub-email").val())) {
+        func_disable_button($('#foot-subscribe button'));
         $.ajax({
           url: "/subscribe?email=" + $("#sub-email").val(),
         }).done(function (r) {
+          func_disable_button($('#foot-subscribe button'), 1);
           alert(r);
           $(".alert_message").css("top", "150px");
           unfade();
@@ -102,7 +104,7 @@ $(document).on("keyup", function (e) {
 
     $(document).on("click", function () {
       if (bc != false) {
-        $(".popup, .alert_message, .alerts").not(".login_alert").remove();
+        $(".popup, .alert_message, .alerts:not(.admin-alerts)").not(".login_alert").remove();
         $(".login_alert").hide();
         unfade();
       }
@@ -222,6 +224,7 @@ function ajax_clicks() {
           '<div id="content-loading"><div class="cssload-container"><div class="cssload-speeding-wheel"></div></div></div>',
         );
       }, 1000);
+      func_disable_button($('.search button'));
       $.ajax({
         dataType: "json",
         url: h,
@@ -229,6 +232,7 @@ function ajax_clicks() {
           self.location = h;
         },
         success: function (r) {
+          func_disable_button($('.search button'), 1);
           clearTimeout(site_loader_to);
           $("#content-loading").remove();
           $("body").attr("id", "body-search");
@@ -261,8 +265,13 @@ function ajax_clicks() {
     eval($(".exec_page_js").html());
   }
 
+  if ($('#body-invoice').length) {
+    // Close overlay from the invoice page
+    $('body').click();
+  }
+
   $(
-    "#menu a, a.ajax_link, .ajax_mobile_link, .logo-link, .bread_crumbs a, #subcategories a, .brands a, .test-links a, .foot a",
+    "#menu a, a.ajax_link, .account-invoices-list a, .button_ajax_link, .ajax_mobile_link, .logo-link, .bread_crumbs a, #subcategories a, .brands a, .test-links a, .foot a",
   )
     .unbind("click")
     .on("click", function (e) {
@@ -704,25 +713,22 @@ function wl_actions() {
   });
 }
 
-function setCookie(cn, v, ed, seconds) {
-  if (seconds) {
-    var date = new Date(new Date().getTime() + ed * 1000);
-    document.cookie =
-      cn +
-      "=" +
-      v +
-      (ed == null ? "" : "; expires=" + date.toUTCString()) +
-      "; path=/;"; //
-  } else {
-    var e = new Date();
-    e.setDate(e.getDate() + ed);
-    document.cookie =
-      cn +
-      "=" +
-      v +
-      (ed == null ? "" : "; expires=" + e.toUTCString()) +
-      "; path=/;";
+function setCookie(name, value, expires, inSeconds) {
+  var cookie = encodeURIComponent(name) + "=" + encodeURIComponent(value);
+
+  if (expires != null) {
+    var amount = Number(expires);
+    if (!isNaN(amount)) {
+      var ms = inSeconds ? amount * 1000 : amount * 24 * 60 * 60 * 1000;
+      var date = new Date(Date.now() + ms);
+      cookie += "; expires=" + date.toUTCString();
+    }
   }
+
+  cookie += "; path=/; SameSite=Lax";
+  if (location.protocol === "https:") cookie += "; Secure";
+
+  document.cookie = cookie;
 }
 
 function getCookie(cn) {
@@ -1024,4 +1030,12 @@ function init_translate() {
 
 function str_replace(search, replace, subject) {
   return subject.split(search).join(replace);
+}
+
+function func_disable_button(btn, enable) {
+  if (enable) {
+    btn.removeClass("button_disabled");
+  } else {
+    btn.addClass("button_disabled");
+  }
 }

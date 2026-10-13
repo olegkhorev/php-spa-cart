@@ -9,7 +9,7 @@
 ?>
 <?php
 if ($login && $userinfo['usertype'] == 'A') {
-    redirect('/admin');
+    redirect('admin');
 }
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
@@ -20,7 +20,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             'content'	=> lng('Invalid form token. Please, try once again.')
         );
 
-        redirect('/admin/login');
+        redirect('admin/login');
     }
 
     $user = $db->row("SELECT * FROM users WHERE email='".addslashes($email)."' AND status=1");
@@ -33,14 +33,14 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         if ($login_redirect) {
             redirect($login_redirect);
         } else {
-            redirect('/admin');
+            redirect('admin');
         }
     } else {
         $_SESSION['alerts'][] = array(
             'type'		=> 'e',
             'content'	=> lng('login_incorrect')
         );
-        redirect('/admin');
+        redirect('admin');
     }
 }
 

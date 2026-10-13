@@ -98,7 +98,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && $get['2']) {
         );
     }
 
-    redirect("/admin/subscribtions/".$id);
+    redirect("admin/subscribtions/".$id);
 } elseif ($_SERVER['REQUEST_METHOD'] == 'POST') {
     extract($_POST);
     if ($to_delete) {
@@ -107,7 +107,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && $get['2']) {
         }
     }
 
-    redirect("/admin/subscribtions");
+    redirect("admin/subscribtions");
 }
 
 if ($get['2']) {
@@ -132,7 +132,7 @@ if ($get['2']) {
 
         $template["letters"] = $letters;
     } else {
-        redirect('/admin/subscribtions/new');
+        redirect('admin/subscribtions/new');
     }
 
     $template['page'] = get_template_contents('admin/pages/letters.php');

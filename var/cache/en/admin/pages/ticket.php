@@ -128,7 +128,7 @@
 <?php } ?>
 <?php } else  { ?>
 <tr>
- <td valign='top' align='right'>{lng[lbl_attach_files}:</td>
+ <td valign='top' align='right'>{lng[Attach files}:</td>
  <td width='10'>&nbsp;</td>
  <td>
 <table cellspacing="1" cellpadding="2" id="wp_table">
@@ -187,14 +187,10 @@ function edit_message(id) {
 }
 </script>
 
-<?php 
-if ($total_pages > 2) {
-?>
+<?php  if ($total_pages > 2) { ?>
 <?php include SITE_ROOT."/var/cache/en/common/navigation.php";?>
 <br />
-<?php 
-}
-?>
+<?php  } ?>
 
 <table cellspacing='0' cellpadding'0' width='100%' class="resp-table">
 <?php foreach ($messages as $i) {?>

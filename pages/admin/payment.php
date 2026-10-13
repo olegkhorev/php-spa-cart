@@ -25,7 +25,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         'content'	=> 'Payment methods has been successfully updated'
     );
 
-    redirect('/admin/payment');
+    redirect('admin/payment');
 }
 
 $template['head_title'] = lng('Payment methods').' :: '.$template['head_title'];

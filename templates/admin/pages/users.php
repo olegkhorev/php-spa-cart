@@ -71,7 +71,7 @@ foreach ($users as $k=>$v) {
 } else {
 ?>
 <h3>{lng[Users management]}</h3><br />
-<table cellpadding="2" cellspacing="1" class="users_management">
+<table cellpadding="2" cellspacing="1" class="users_management search_table">
 <tr>
  <td class="name">{lng[Search for]}</td>
  <td><input type="text" name="substring" value="<?php echo escape($users_search['substring']); ?>" size="80" /></td>

@@ -1066,6 +1066,10 @@
   }
 }
 @media only screen and (max-width: 600px) {
+  .product-options .product-option {
+    display: block;
+    width: 100%;
+  }
   .news-item .message-box {
     margin-left: 0;
     padding: 10px 15px !important;

@@ -4,3 +4,7 @@ Options -Indexes
   Allow from all
 </Files>
 
+<FilesMatch "\.php$">
+  Order Allow,Deny
+  Deny from all
+</FilesMatch>

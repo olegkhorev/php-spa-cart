@@ -70,7 +70,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             }
         }
 
-        redirect('/admin/homepage/banners');
+        redirect('admin/homepage/banners');
     } else {
         $db->query("REPLACE INTO languages SET lng='".$lng."', word='Site title', translation='".addslashes($site_title)."'");
         $db->query("REPLACE INTO languages SET lng='".$lng."', word='Site description', translation='".addslashes(htmlspecialchars_decode($site_description))."'");
@@ -83,7 +83,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             'content'	=> 'Homepage has been successfully saved'
         );
 
-        redirect('/admin/homepage');
+        redirect('admin/homepage');
     }
 }
 

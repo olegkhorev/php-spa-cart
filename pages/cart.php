@@ -33,7 +33,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 exit(get_template_contents('common/minicart.php'));
             }
         } else {
-            redirect('/cart');
+            redirect('cart');
         }
 
         exit;
@@ -119,7 +119,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 exit(get_template_contents('common/minicart.php').$ajax_delimiter.get_template_contents('common/popup_product_added.php'));
             }
         } else {
-            redirect('/cart');
+            redirect('cart');
         }
     } else {
         foreach ($quantity as $k => $v) {
@@ -134,7 +134,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             }
         }
 
-        redirect('/cart');
+        redirect('cart');
     }
 }
 
@@ -160,7 +160,7 @@ if ($get['1'] == 'remove') {
             exit(get_template_contents('common/minicart.php'));
         }
     } else {
-        redirect('/cart');
+        redirect('cart');
     }
 } elseif ($get['1'] == 'clear') {
     $_SESSION['cart'] = array();
@@ -174,7 +174,7 @@ if ($get['1'] == 'remove') {
             exit(get_template_contents('common/minicart.php'));
         }
     } else {
-        redirect('/');
+        redirect('');
     }
 }
 

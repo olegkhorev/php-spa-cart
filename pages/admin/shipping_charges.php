@@ -18,7 +18,7 @@ if ($type == 'R') {
             'content'	=> lng('Realtime shipping is disabled.')
         );
 
-        redirect("/configuration/Shipping");
+        redirect("configuration/Shipping");
     }
 } else {
     $type = 'D';
@@ -105,7 +105,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
         }
     }
 
-    redirect("/admin/shipping_charges?zoneid=".$zoneid."&shippingid=".$shippingid."&type=".$type);
+    redirect("admin/shipping_charges?zoneid=".$zoneid."&shippingid=".$shippingid."&type=".$type);
 }
 
 $zoneid = addslashes($zoneid);

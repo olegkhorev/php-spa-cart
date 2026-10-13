@@ -92,7 +92,7 @@ function products_clicks() {
     .unbind("click")
     .on("click", function () {
       bc = false;
-      add_to_cart($(this).attr("id").replace("pid", ""), "Y");
+      add_to_cart($(this).attr("id").replace("pid", ""), "Y", this);
     });
 }
 

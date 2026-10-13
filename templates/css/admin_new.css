@@ -379,14 +379,16 @@ body.admin-area.no-logged .main {
 .mdl-textfield input {
   border: 0;
 }
-.mdl-textfield label:after,
-.mdl-textfield label:before {
+.mdl-textfield label:after, .mdl-textfield label:before {
   display: none;
 }
-.mdl-textfield input,
-.mdl-textfield textarea {
+.mdl-textfield input {
   padding-left: 15px;
   padding-right: 40px;
+  border: 0 !important;
+}
+.mdl-textfield textarea {
+  padding: 15px 40px 15px 15px;
   border: 0 !important;
 }
 .mdl-textfield .clear {

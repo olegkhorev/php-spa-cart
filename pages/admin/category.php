@@ -13,7 +13,7 @@ func_load('category');
 if ($get['3'] == 'delete') {
     $parentid = $db->field("SELECT parentid FROM categories WHERE categoryid='".$get['2']."'");
     func_delete_category($get['2']);
-    redirect('/admin/categories/'.$parentid);
+    redirect('admin/categories/'.$parentid);
 }
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
@@ -28,13 +28,13 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             $db->query("UPDATE categories SET parentid='".$categoryid."' WHERE categoryid='".$get['2']."'");
         }
 
-        redirect('/admin/category/'.$get['2']);
+        redirect('admin/category/'.$get['2']);
     } elseif ($mode == 'category_products') {
         foreach ($posted_data as $k => $v) {
             $db->array2update("category_products", $v, "categoryid='".$get['2']."' AND productid='".addslashes($k)."'");
         }
 
-        redirect('/admin/category/'.$get['2'].'/products');
+        redirect('admin/category/'.$get['2'].'/products');
     } elseif ($get['3'] == 'banners') {
         $userfile = $_FILES['userfile'];
         if ($mode == "add" && !empty($userfile['name'])) {
@@ -91,7 +91,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             }
         }
 
-        redirect('/admin/category/'.$get['2'].'/banners');
+        redirect('admin/category/'.$get['2'].'/banners');
     }
 
     if (empty($title)) {
@@ -99,7 +99,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             'type'		=> 'e',
             'content'	=> lng('Category title cannot be empty')
         );
-        redirect('/admin/category/'.$get['2']);
+        redirect('admin/category/'.$get['2']);
     }
 
     # Check for cleanurl
@@ -113,7 +113,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
             $_SESSION['saved_data'] = $_POST;
             header('where_redirect: '.'/admin/category?parentid='.$parentid);
-            redirect('/admin/category?parentid='.$parentid);
+            redirect('admin/category?parentid='.$parentid);
         } elseif (!func_check_cleanurl($cleanurl)) {
             $_SESSION['alerts'][] = array(
                 'type'		=> 'e',
@@ -121,7 +121,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             );
 
             $_SESSION['saved_data'] = $_POST;
-            redirect('/admin/category?parentid='.$parentid);
+            redirect('admin/category?parentid='.$parentid);
         }
     }
 
@@ -208,7 +208,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         'content'	=> 'Category has been successfully saved'
     );
 
-    redirect('/admin/category/'.$categoryid);
+    redirect('admin/category/'.$categoryid);
 }
 
 if ($get['2']) {

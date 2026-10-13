@@ -13,7 +13,7 @@
 <input type="hidden" name="albumid" value="<?php  echo $album["albumid"]; ?>" />
 <div class="upsec">
 <div class="fileButton">
-Drop files here to upload.<br /><br />Or click to select
+Drop files here to upload.<br><br>Or click to select
 <input type="file" name="file" multiple accept="image/*" />
 </div>
 </div>

@@ -27,7 +27,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         }
     }
 
-    redirect('/admin/countries'.($get['2'] ? '/'.$get['2'] : ''));
+    redirect('admin/countries'.($get['2'] ? '/'.$get['2'] : ''));
 }
 
 if ($get['2']) {

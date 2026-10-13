@@ -8,7 +8,7 @@
 */
 ?>
 <?php include SITE_ROOT."/var/cache/en/mail/header.php";?>
-:: Reply ABOVE THIS LINE to post a comment to the ticket ::<br /><br />
+Reply above here<br /><br />
 
 <?php echo $email_header;?>
 
@@ -23,11 +23,11 @@ Hello,
 <p />A new message on your ticket #<?php echo $ticket['ticketid'];?>
 
 <?php /* ?><?php if ($ticket['userid']) {?><?php */ ?>
-<p />To see full ticket, please, follow here<br />
+<p />Full ticket<br />
 <a href="<?php echo $http_location;?>/ticket/<?php echo $ticket['ticketid'];?>?authkey=<?php echo $ticket['authkey'];?>"><?php echo $http_location;?>/ticket/<?php echo $ticket['ticketid'];?>?authkey=<?php echo $ticket['authkey'];?></a>
 <?php /* ?><?php } ?><?php */ ?>
 
-<p />Subject: <?php echo $ticket['subject'];?>
+<p />Ticket subject: <?php echo $ticket['subject'];?>
 
 <hr size='1' />
 

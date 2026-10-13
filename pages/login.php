@@ -13,7 +13,7 @@ if ($login) {
         exit(lng('You are already logged in. Please, refresh the page'));
     }
 
-    redirect('/');
+    redirect('');
 }
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
@@ -43,7 +43,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             'type'		=> 'e',
             'content'	=> lng('login_incorrect')
         );
-        redirect('/login');
+        redirect('login');
     }
 }
 

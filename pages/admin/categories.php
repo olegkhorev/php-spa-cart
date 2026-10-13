@@ -36,7 +36,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             $db->query("REPLACE INTO featured_products (productid, orderby, enabled, categoryid) VALUES ('".addslashes($newproductid)."','".addslashes($neworderby)."','".addslashes($newenabled)."', '$get[2]')");
         }
 
-        redirect('/admin/categories'.($get['2'] ? '/'.$get['2'] : '').'#featured');
+        redirect('admin/categories'.($get['2'] ? '/'.$get['2'] : '').'#featured');
     } else {
         if ($mode == 'delete' && $cat) {
             func_delete_category($cat);
@@ -50,7 +50,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             }
         }
 
-        redirect('/admin/categories'.($get['2'] ? '/'.$get['2'] : ''));
+        redirect('admin/categories'.($get['2'] ? '/'.$get['2'] : ''));
     }
 }
 

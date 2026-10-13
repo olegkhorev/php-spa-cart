@@ -17,9 +17,9 @@ if ($_GET['popup']) {
     }
 } else {
     if (!$product) {
-        redirect('/');
+        redirect('');
     } elseif ($get['1'] == $productid && !empty($product['cleanurl'])) {
-        redirect('/'.$product['cleanurl'].'.html', false, true);
+        redirect(''.$product['cleanurl'].'.html', false, true);
     }
 }
 
@@ -153,9 +153,9 @@ if ($_POST['mode'] == 'send_to_friend') {
     );
 
     if ($product['cleanurl']) {
-        redirect('/'.$product['cleanurl'].'.html', false, true);
+        redirect(''.$product['cleanurl'].'.html', false, true);
     } else {
-        redirect('/product/'.$product['productid']);
+        redirect('product/'.$product['productid']);
     }
 }
 

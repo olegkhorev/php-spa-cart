@@ -37,7 +37,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 'content'	=> lng('Captcha is incorrect.')
             );
 
-            redirect('/help');
+            redirect('help');
         }
     }
 
@@ -53,7 +53,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         'content'	=> lng('Your letter has been sent. We will contact you as soon as possible.')
     );
 
-    redirect('/help');
+    redirect('help');
 }
 
 $template['head_title'] = lng('Contact us').'. '.$template['head_title'];

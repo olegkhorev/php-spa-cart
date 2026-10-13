@@ -60,7 +60,7 @@ table td {
         </tr>
         <tr>
                 <td></td>
-                <td><button>{lng[Search]}</button></td>
+                <td><button>{lng[Search]}</button> &nbsp; &nbsp; <a class="ajax_link" href="{$current_location}/admin/reviews/reset">{lng[Reset filter]}</a></td>
         </tr>
 </table>
 </form>

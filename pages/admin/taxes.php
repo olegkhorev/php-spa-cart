@@ -9,7 +9,7 @@
 ?>
 <?php
 if (!$get['2']) {
-    redirect('/admin/taxes/1');
+    redirect('admin/taxes/1');
 }
 
 extract($_GET);
@@ -125,7 +125,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             );
         }
 
-        redirect('/admin/taxes/'.$taxid);
+        redirect('admin/taxes/'.$taxid);
     } elseif ($mode == 'update_rates' && !empty($get['2'])) {
         $taxid = $get['2'];
         if (!empty($posted_data) && is_array($posted_data)) {
@@ -140,7 +140,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             }
         }
 
-        redirect('/admin/taxes/'.$taxid.'#rates');
+        redirect('admin/taxes/'.$taxid.'#rates');
     } elseif ($mode == 'rate_details' && !empty($taxid)) {
         $rateid = intval($rateid);
         $zoneid = intval($zoneid);
@@ -201,7 +201,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         }
     }
 
-    redirect('/admin/taxes/'.$taxid);
+    redirect('admin/taxes/'.$taxid);
 }
 
 $template["memberships"] = $memberships = $db->all("SELECT m.*, COUNT(u.id) as users FROM memberships m LEFT JOIN users u ON u.membershipid = m.membershipid GROUP BY m.membershipid ORDER BY m.orderby, m.membership");

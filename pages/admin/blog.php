@@ -237,7 +237,7 @@ if ($get['2'] == 'new') {
 
         $template["blogs"] = $blogs;
     } else {
-        redirect('/admin/blog/new');
+        redirect('admin/blog/new');
     }
 
     $tmp = $db->all("SELECT * FROM blog b LEFT JOIN users u ON b.author=u.id ORDER BY u.firstname");

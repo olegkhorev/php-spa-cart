@@ -68,10 +68,12 @@ function product_clicks() {
     .on("click", function () {
       var val = $("#gift_card").val();
       if (val) {
+        func_disable_button($('.gift_cards button'));
         $.ajax({
           type: "POST",
           url: current_location + "/cart/add_gc/" + val,
         }).done(function (r) {
+          func_disable_button($('.gift_cards button'), 1);
           if (r) {
             alert("Gift Card added to cart");
             $("#minicart").html(r);
@@ -507,6 +509,7 @@ function postprocess(ql) {
         50000,
       );
     });
+
     $(".related-to-cart").on("click", function () {
       if ($(this).hasClass("no-options")) {
         var pid = $(this).attr("id").replace("p", "");
@@ -1833,7 +1836,7 @@ function validate_gq() {
   return false;
 }
 
-function add_to_cart(productid, is_quick) {
+function add_to_cart(productid, is_quick, button) {
   aload();
   $(".product_popup")
     .css("opacity", 1)
@@ -1850,6 +1853,7 @@ function add_to_cart(productid, is_quick) {
       '<div class="popup no_animation cart_popup hidden"></div>',
     );
 
+  func_disable_button($(button));
   $.ajax({
     url: current_location + "/cart/add",
     type: "POST",
@@ -1859,6 +1863,7 @@ function add_to_cart(productid, is_quick) {
         : $(qadd + 'form[name="product-details"]').serialize(),
   }).done(function (r) {
     unload();
+    func_disable_button($(button), 1);
     if (r == "1") {
       alert("S'il vous plaît, sélectionnez options");
       return false;

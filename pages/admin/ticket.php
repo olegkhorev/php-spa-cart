@@ -49,7 +49,7 @@ if (!$ticket) {
         'content'	=> lng('No such ticket')
     );
 
-    redirect("/admin/support_desk");
+    redirect("admin/support_desk");
 }
 
 $ticketid = $ticket['ticketid'];
@@ -73,7 +73,7 @@ if ($mode == 'delete_message') {
         $db->query("DELETE FROM tickets_attachments WHERE messageid='$messageid'");
     }
 
-    redirect("/admin/ticket/$ticketid#messages");
+    redirect("admin/ticket/$ticketid#messages");
 }
 
 if ($mode == "clone_message") {
@@ -110,7 +110,7 @@ if ($mode == "clone_message") {
         'content'	=> 'Message has been successfully cloned'
     );
 
-    redirect("/admin/ticket/".$ticketid);
+    redirect("admin/ticket/".$ticketid);
 }
 
 if ($mode == "move") {
@@ -152,7 +152,7 @@ if ($mode == "move") {
         'content'	=> 'Ticket has been successfully moved'
     );
 
-    redirect("/admin/ticket/".$to);
+    redirect("admin/ticket/".$to);
 }
 
 if ($_SERVER['REQUEST_METHOD'] == "POST") {
@@ -183,7 +183,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
                 $top_message['content'] .= '<a href="ticket.php?ticketid='.$v.'">#'.$v.'</a><br />';
             }
 
-            redirect("/admin/support_desk");
+            redirect("admin/support_desk");
         } else {
             $to_insert['login'] = $customer_login;
             $ticketid = func_create_ticket($to_insert, $attachments);
@@ -240,7 +240,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
             'content'	=> lng('lbl_ticket_deleted')
         );
 
-        redirect('/admin/support_desk');
+        redirect('admin/support_desk');
     } elseif (!empty($ticketid)) {
         $cats = explode('|||', $ticket_category);
         $ticket = $_POST['ticket'];
@@ -268,7 +268,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
         $arg = '#';
     }
 
-    redirect('/admin/ticket/'.$ticketid.$arg);
+    redirect('admin/ticket/'.$ticketid.$arg);
     exit;
 }
 

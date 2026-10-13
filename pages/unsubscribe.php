@@ -14,4 +14,4 @@ $_SESSION['alerts'][] = array(
     'content'	=> lng('You have been unsubscribed')
 );
 
-redirect('/');
+redirect('');

@@ -18,15 +18,15 @@ Hello,
 
 <p />Priority: <?php $mode='static'; $value=$ticket['priority'];; ?><?php include SITE_ROOT."/var/cache/en/common/ticket_priority.php";?>
 
-<p />To see full ticket, please, follow here<br />
+<p />Full ticket<br />
 
 <a href="<?php echo $http_location;?>/admin/ticket/<?php echo $ticket['ticketid'];?>"><?php echo $http_location;?>/admin/ticket/<?php echo $ticket['ticketid'];?></a>
 
-<p />Subject: <?php echo $ticket['subject'];?>
+<p />Ticket subject: <?php echo $ticket['subject'];?>
 
 <hr size='1' />
 
-Message:
+Ticket message:
 
 <p /><?php echo $ticket['message'];?>
 

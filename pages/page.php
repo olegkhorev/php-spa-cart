@@ -13,7 +13,7 @@ if ($page) {
     $template['head_title'] = $page['title'].'. '.$template['head_title'];
     $template['static_page'] = $page;
 } else {
-    redirect('/');
+    redirect('');
 }
 
 $template['page'] = get_template_contents('static_pages/body.php');

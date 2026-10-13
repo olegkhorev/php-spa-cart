@@ -88,7 +88,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             );
         }
 
-        redirect("/admin/zones/".$get['2']);
+        redirect("admin/zones/".$get['2']);
     }
 
     if ($mode == 'delete' && is_array($to_delete)) {
@@ -121,10 +121,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             }
         }
 
-        redirect('/admin/zones/'.$new_zoneid);
+        redirect('admin/zones/'.$new_zoneid);
     }
 
-    redirect('/admin/zones');
+    redirect('admin/zones');
 }
 
 $template['head_title'] = lng('Zones').' :: '.$template['head_title'];
@@ -132,7 +132,7 @@ if ($get['2'] == 'add' or !empty($get['2'])) {
     if ($get['2'] != 'add') {
         $zone = $db->row("SELECT * FROM zones WHERE zoneid='".$get['2']."'");
         if (empty($zone)) {
-            redirect('/admin/zones');
+            redirect('admin/zones');
         }
 
         $template['zone'] = $zone;

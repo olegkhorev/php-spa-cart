@@ -39,7 +39,7 @@ if ($get['1'] == 'new') {
                     'content'	=> lng('Captcha is incorrect.')
                 );
 
-                redirect('/testimonials/new');
+                redirect('testimonials/new');
             }
         }
 
@@ -65,7 +65,7 @@ if ($get['1'] == 'new') {
         $subject = $config['Company']['company_name'].': '.lng('New testimonial');
         func_mail($config['Company']['company_name'], $config['Company']['support_department'], '', $subject, $message);
 
-        redirect('/testimonials');
+        redirect('testimonials');
     }
 
     if (!$_SESSION['new_testimonial']) {

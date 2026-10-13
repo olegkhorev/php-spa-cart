@@ -40,6 +40,9 @@
   text-align: center;
 }
 @media only screen and (max-width: 650px) {
+  .search_table [align="right"] {
+    text-align: left;
+  }
   .td-align-center {
     text-align: left;
   }

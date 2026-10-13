@@ -93,7 +93,7 @@ function restore_password() {
 }
 
 function login_clicks() {
-  $("form[name=login] button")
+  $('form[name=login] button')
     .unbind("click")
     .on("click", function () {
       var r = /^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/,
@@ -109,11 +109,13 @@ function login_clicks() {
         return false;
       }
 
+      func_disable_button($('form[name=login] button'));
       $.ajax({
         type: "POST",
         url: "/login",
         data: $("form[name=login]").serialize(), // serializes the form's elements.
         success: function (data) {
+          func_disable_button($('form[name=login] button'), 1);
           if (data == "E") {
             $(".register-email-error").fadeIn();
           } else if (data == "P") {

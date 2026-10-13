@@ -9,9 +9,9 @@
 ?>
 <?php
 if ($get["2"] != "recent") { ?>
-<form method="POST">
+<form method="POST" action="/admin/orders">
 <input type="hidden" name="mode" value="search" />
-<table cellspacing="1" cellpadding="3" class="orders_search">
+<table cellspacing="1" cellpadding="3" class="orders_search search_table">
 <tr>
  <td align="right">{lng[Order #ID]}</td>
  <td><input type="text" name="orderid" size="5" value="<?php echo $search_orders[
@@ -46,43 +46,43 @@ if ($get["2"] != "recent") { ?>
  </td>
 </tr>
 <tr>
- <td valign="top" width="170" align="right">{lng[Search by date]}</td>
- <td>
+ <td class="search_table_date_lbl" width="170" align="right">{lng[Search by date]}</td>
+ <td class="search_table_date_period">
 <label><input type="radio" name="date_period" value="0"<?php if (
     !$search_orders["date_period"]
 ) {
     echo ' checked="checked"';
-} ?> /> {lng[All dates]}</label><br />
+} ?> /> {lng[All dates]}</label>
 <label><input type="radio" name="date_period" value="1"<?php if (
     $search_orders["date_period"] == "1"
 ) {
     echo ' checked="checked"';
-} ?> /> {lng[Today]}</label><br />
+} ?> /> {lng[Today]}</label>
 <label><input type="radio" name="date_period" value="2"<?php if (
     $search_orders["date_period"] == "2"
 ) {
     echo ' checked="checked"';
-} ?> /> {lng[This week]}</label><br />
+} ?> /> {lng[This week]}</label>
 <label><input type="radio" name="date_period" value="3"<?php if (
     $search_orders["date_period"] == "3"
 ) {
     echo ' checked="checked"';
-} ?> /> {lng[This month]}</label><br />
+} ?> /> {lng[This month]}</label>
 <label><input type="radio" name="date_period" value="4"<?php if (
     $search_orders["date_period"] == "4"
 ) {
     echo ' checked="checked"';
-} ?> /> {lng[Date period]}:</label><br />
+} ?> /> {lng[Date period]}:</label>
 <input type="text" id="date_from" name="date_from" value="<?php echo $search_orders[
     "date_from"
-]; ?>" size="7" /> - <input type="text" id="date_to" name="date_to" value="<?php echo $search_orders[
+]; ?>" size="7" /><div class="date_from_to"> - </div><input type="text" id="date_to" name="date_to" value="<?php echo $search_orders[
     "date_to"
 ]; ?>" size="7" />
  </td>
 </tr>
 <tr>
  <td></td>
- <td><br /><button>{lng[Search]}</button> &nbsp; <a href="{$current_location}/admin/orders/reset">{lng[Reset filter]}</a></td>
+ <td><br /><button>{lng[Search]}</button> &nbsp; &nbsp; <a class="ajax_link" href="{$current_location}/admin/orders/reset">{lng[Reset filter]}</a></td>
 </tr>
 </table>
 </form>

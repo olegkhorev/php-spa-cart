@@ -33,7 +33,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $db->array2update("users", array("pending_membershipid" => 0), "pending_".$delete_string);
     }
 
-    redirect('/admin/memberships');
+    redirect('admin/memberships');
 }
 
 $template["memberships"] = $db->all("SELECT m.*, COUNT(u.id) as users FROM memberships m LEFT JOIN users u ON u.membershipid = m.membershipid GROUP BY m.membershipid ORDER BY m.orderby, m.membership");

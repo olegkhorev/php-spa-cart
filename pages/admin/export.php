@@ -31,7 +31,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             'content'	=> lng('Please, select options to export')
         );
 
-        redirect('/admin/export');
+        redirect('admin/export');
     }
 
     session_write_close();

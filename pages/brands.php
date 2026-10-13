@@ -16,7 +16,7 @@ if (!empty($get['1'])) {
                 'content' => lng('Brand not found')
         );
 
-        redirect('/brands');
+        redirect('brands');
     }
 
     $template['head_title'] = $brand['name'].'. '.$template['head_title'];

@@ -289,7 +289,7 @@ if (empty($_SESSION['login'])) {
     if (empty($userinfo)) {
         $_SESSION['login'] = '';
         func_setcookie('remember', '');
-        redirect('/');
+        redirect('');
     }
 
     $template['userinfo'] = $userinfo;

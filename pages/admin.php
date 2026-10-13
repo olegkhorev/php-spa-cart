@@ -236,7 +236,7 @@ if (($role) && $check_role_page && $userinfo['usertype'] == 'A') {
             'content'	=> 'You don\'t have access to this page'
         );
 
-        redirect('/admin');
+        redirect('admin');
     }
 
     foreach ($role_pages as $k => $v) {
@@ -267,7 +267,7 @@ if (empty($get['1'])) {
 if (file_exists($script)) {
     include $script;
 } else {
-    redirect('/');
+    redirect('');
 }
 
 $template['css'][] = 'admin';

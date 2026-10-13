@@ -48,7 +48,7 @@ if ($get['1']) {
             'content'	=> lng('You need to be logged in to access this page')
         );
 
-        redirect('/');
+        redirect('');
     }
 
     if ($_SESSION['mytickets']) {
@@ -59,7 +59,7 @@ if ($get['1']) {
                 'content'	=> lng('You need to be logged in to access this page')
             );
 
-            redirect('/');
+            redirect('');
         }
     } else {
         $ticket = $db->row("SELECT * FROM tickets WHERE ticketid='".$get['1']."' AND userid='$login'");
@@ -71,7 +71,7 @@ if ($get['1']) {
             'content'	=> lng('You have no access to this ticket')
         );
 
-        redirect("/support_desk");
+        redirect("support_desk");
     }
 
     $ticketid = $ticket['ticketid'];
@@ -118,7 +118,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
                     'content'	=> lng('Captcha is incorrect.')
                 );
 
-                redirect('/ticket'.($productid ? '?productid='.$productid : ''));
+                redirect('ticket'.($productid ? '?productid='.$productid : ''));
             }
         }
 
@@ -129,7 +129,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
                 'content'	=> lng('Please, enter all fields.')
             );
 
-            redirect('/ticket'.($productid ? '?productid='.$productid : ''));
+            redirect('ticket'.($productid ? '?productid='.$productid : ''));
         }
 
         if ($ticket_field) {
@@ -167,6 +167,10 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
         $ticketid = func_create_ticket($to_insert, $attachments, true);
         $_SESSION['mytickets'][] = $ticketid;
         $_SESSION['predefined_ticket'] = '';
+        $_SESSION['alerts'][] = array(
+            'type'		=> 'i',
+            'content'	=> lng('Ticket created. Please, wait our answer to your email.')
+        );
     } elseif ($mode == 'create_new') {
         if (empty($message)) {
             $_SESSION['predefined_ticket'] = $_POST;
@@ -197,14 +201,13 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 
         $arg = "#m".$messageid;
         $_SESSION['predefined_ticket'] = '';
+        $_SESSION['alerts'][] = array(
+            'type'		=> 'i',
+            'content'	=> lng('Ticket message posted. Please, wait our answer to your email.')
+        );
     }
 
-    $_SESSION['alerts'][] = array(
-        'type'		=> 'i',
-        'content'	=> lng('Ticket created. Please, wait our answer to your email.')
-    );
-
-    redirect("/ticket/".$ticketid);
+    redirect("ticket/".$ticketid);
 }
 
 if (!empty($ticketid)) {
@@ -237,7 +240,7 @@ if (!empty($ticketid)) {
 
 if ($_GET['productid']) {
     $product = $db->row("SELECT * FROM products WHERE productid='".addslashes($_GET['productid'])."'");
-    if (!$_SESSION['predefined_ticket']['subject']) {
+    if ($_SESSION['predefined_ticket'] && !$_SESSION['predefined_ticket']['subject']) {
         $_SESSION['predefined_ticket']['subject'] = 'Product #'.$product['sku'];
     }
 

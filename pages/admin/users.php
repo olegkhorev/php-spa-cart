@@ -28,7 +28,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $_SESSION['users_search'] = $_POST;
     }
 
-    redirect('/admin/users/search');
+    redirect('admin/users/search');
 }
 
 if ($get['2'] == 'search') {
@@ -96,7 +96,7 @@ if ($get['2'] == 'search') {
             'type'		=> 'i',
             'content'	=> 'No users found'
         );
-        redirect('/admin/users');
+        redirect('admin/users');
     }
 } else {
     $template['location'] .= ' &gt; '.lng('Users management');

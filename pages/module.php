@@ -20,7 +20,7 @@ if ($get['1'] == 'force_theme' && $get['2'] != 'default') {
 }
 
 if (!$module) {
-    redirect('/');
+    redirect('');
 }
 
 $template['module'] = $module;
@@ -30,5 +30,5 @@ $script = $module_dir.$get['2'].'.php';
 if (file_exists($script)) {
     include $script;
 } else {
-    redirect('/');
+    redirect('');
 }

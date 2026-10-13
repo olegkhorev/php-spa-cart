@@ -28,7 +28,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             'content'	=> lng('Please, select file to import')
         );
 
-        redirect('/admin/import');
+        redirect('admin/import');
     }
 
     func_load('product', 'category', 'brands');

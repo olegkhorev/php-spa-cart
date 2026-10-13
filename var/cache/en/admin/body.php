@@ -115,7 +115,7 @@ CKEDITOR.disableAutoInline = true;
 				<li>
 					<a href="/" class="logo-link no-ajax" target="_blank">
 						<span class="icon"><img src="/images/logo_admin.png" alt="" /></span>
-						<span class="title">SPA-Cart</span>
+						<span class="title">SPA-Cart <?php echo $config['version'];?></span>
 					</a>
 				</li>
 				<li>
@@ -335,7 +335,7 @@ CKEDITOR.disableAutoInline = true;
 <a href="/admin/search_keywords">Search keywords</a>
 <?php } ?>
 <?php if (in_array('sitemap', $allow_pages_ids) || $root_admin) {?>
-<a href="/admin/sitemap">Google sitemap</a>
+<a href="/admin/sitemap">Google Sitemap</a>
 <?php } ?>
 </div>
  </li>

@@ -16,7 +16,7 @@ if ($_GET['mode'] == 'delete_image') {
     unlink($dir.'/'.$image['file']);
     rmdir($dir);
     $db->query("DELETE FROM news_images WHERE newsid='".$get['2']."'");
-    redirect("/admin/news/".$get['2']);
+    redirect("admin/news/".$get['2']);
 }
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
@@ -140,7 +140,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         'content'	=> 'News has been successfully saved'
     );
 
-    redirect("/admin/news".(!empty($get['2']) ? "/".$get['2'] : ""));
+    redirect("admin/news".(!empty($get['2']) ? "/".$get['2'] : ""));
 }
 
 if ($get['2'] == 'new') {
@@ -153,7 +153,7 @@ if ($get['2'] == 'new') {
                 'content' => lng('No news found')
         );
 
-        redirect("/admin/news");
+        redirect("admin/news");
     }
 
     $news['image'] = $db->row("SELECT * FROM news_images WHERE newsid='".$get['2']."'");
@@ -180,7 +180,7 @@ if ($get['2'] == 'new') {
 
         $template["newss"] = $newss;
     } else {
-        redirect('/admin/news/new');
+        redirect('admin/news/new');
     }
 }
 

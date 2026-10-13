@@ -14,7 +14,7 @@ Open
 <?php } else if ($status == "C") {?>
 Closed
 <?php } else if ($status == "S") {?>
-Scheduled
+Ticket scheduled
 <?php } else if ($status == "1") {?>
 Waiting for consultant
 <?php } else if ($status == "2") {?>
@@ -32,7 +32,7 @@ Cancelled
 <option value="O"<?php if ($status == "O") {?> selected<?php } ?>>Open</option>
 <option value="C"<?php if ($status == "C") {?> selected<?php } ?>>Closed</option>
 <?php /* ?>
-<option value="S"<?php if ($status == "S") {?> selected<?php } ?>>Scheduled</option>
+<option value="S"<?php if ($status == "S") {?> selected<?php } ?>>Ticket scheduled</option>
 <?php */ ?>
 <?php /* ?>
 <option value="1"<?php if ($status == "1") {?> selected<?php } ?>>Waiting for consultant</option>

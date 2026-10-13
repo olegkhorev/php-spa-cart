@@ -353,6 +353,22 @@ table.product-options input,
 .left_filter h4.pointer:after {
   background: #fff;
 }
+#original_message {
+  background: #333;
+  border: 1px solid #111;
+}
+#original_message h3 {
+  border-bottom: 1px solid #111;
+}
+#original_message font {
+  color: #fff;
+}
+.alerts {
+    color: var(--theme-color);
+}
+.add-to-wl-product svg {
+  fill: #fff;
+}
 @media only screen and (max-width: 850px) {
   #head {
     background: #fff !important;

@@ -325,6 +325,7 @@ function ajax_clicks_admin() {
         }
       });
 
+    func_disable_button($('button'));
     $.ajax({
       url: h,
       type: "POST",
@@ -336,6 +337,7 @@ function ajax_clicks_admin() {
         self.location = h;
       },
       success: function (r, textStatus, request) {
+        func_disable_button($('button'), 1);
         $("#content-loading").remove();
         if (request.getResponseHeader("where_redirect")) {
           $(".goback-admin").attr(

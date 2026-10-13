@@ -11,7 +11,7 @@
 func_load('product');
 $product = func_select_product($get['1']);
 if (!$product) {
-    redirect('/');
+    redirect('');
 }
 
 $db->query("UPDATE products SET views_stats='".($product['views_stats'] + 1)."' WHERE productid='$product[productid]'");

@@ -96,6 +96,7 @@ function profile_popup(url_add) {
             bb = true;
           });
 
+          ajax_clicks();
           profile_clicks();
           mdl_elements();
         },
@@ -111,11 +112,13 @@ function profile_clicks() {
   $('form[name="user_form"]')
     .unbind("submit")
     .on("submit", function () {
+      func_disable_button($('form[name="user_form"] button'));
       $.ajax({
         type: "POST",
         url: "/profile",
         data: $('form[name="user_form"]').serialize(), // serializes the form's elements.
         success: function (data) {
+          func_disable_button($('form[name="user_form"] button'), 1);
           if (data == "Email") {
             alert("Enterd email already registered for another user");
           } else {

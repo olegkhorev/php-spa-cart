@@ -64,7 +64,7 @@ product_avail[{$oid}] = {$product['avail']};
  <h1 class="fn title product-title">{$product['name']}</h1>
  <h1 class="fntitle hidden">{$product['name']}</h1>
 {/if}
-<form name="product-details" action="{$current_location}/cart/add" onsubmit="return add_to_cart();">
+<form name="product-details" action="{$current_location}/cart/add" onsubmit="return add_to_cart('', '', this);">
 <input type="hidden" name="productid" value="{$product['productid']}" />
 
 <br />
