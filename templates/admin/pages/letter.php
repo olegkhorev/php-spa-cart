@@ -7,6 +7,12 @@
 * https://github.com/olegkhorev/php-spa-cart
 */
 ?>
+{if $get['2'] == 'new'}
+<h1>{lng[New letter]}</h1>
+{else}
+<h1>{$letter['subject']}</h1>
+{/if}
+<br />
 {lng[Total subscribers]}: <?php echo $subscribers
     ? $subscribers
     : "0"; ?> <a href="/admin/subscribtions/export">{lng[Export]}</a>

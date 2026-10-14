@@ -36,6 +36,12 @@ if ($userinfo['usertype'] == 'A') {
         $_SESSION['invoices'][] = addslashes($get['1']);
         redirect('invoice/'.$get['1']);
     }
+} elseif ($_COOKIE['remember_paypal_redirect_id']) {
+    $check_order = $db->row("SELECT * FROM orders WHERE orderid='".addslashes($_COOKIE['remember_paypal_redirect_id'])."'");
+    if ($check_order) {
+        $_SESSION['invoices'][] = addslashes($get['1']);
+        redirect('invoice/'.$get['1']);
+    }
 }
 
 if (!$found) {
@@ -50,6 +56,10 @@ if (!$found) {
 }
 
 $orderinfo = func_orderinfo(addslashes($get['1']));
+if ($_GET['PayerID']) {
+    redirect('invoice/'.$orderinfo['order']['orderid'].'/success');
+}
+
 if ($orderinfo) {
     $template['order'] = $orderinfo['order'];
     $template['products'] = $orderinfo['products'];

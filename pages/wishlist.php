@@ -57,9 +57,10 @@ if ($wishlist) {
     $template['wishlist'] = $wishlist;
 }
 
-$template['page'] = get_template_contents('wishlist/body.php');
-
-if ($is_ajax) {
-    $result = array($template['page'], $page_title, $template['bread_crumbs_html'], $get['0'], $template['parentid']);
+if ($is_ajax && !$_GET['its_ajax_page']) {
+    $template['page'] = get_template_contents('wishlist/body.php');
+    $result = array($template['page'], lng('Wishlist'), $template['bread_crumbs_html'], $get['0'], $template['parentid']);
     exit(json_encode($result));
 }
+
+$template['page'] = get_template_contents('wishlist/page.php');

@@ -8,8 +8,9 @@
 */
 ?>
 <?php  if ($blogs) { ?>
-<a href="<?php echo $current_location;?>/admin/blog/new">Add new</a>
-<br /><br />
+<h1 class="products-title-h3">Blog <a class="ajax_link link-button" href="/admin/blog/new">Add new post</a></h1>
+<br />
+
 <form method="post" name="blogsform">
 <input type="hidden" name="mode" value="update" />
 
@@ -18,6 +19,8 @@
 <?php  echo "<br />";} ?>
 
 <a href="javascript: void(0);" onclick="javascript: check_all(document.blogsform, 'to_delete', true);">Check all</a> / <a href="javascript: void(0);" onclick="javascript: check_all(document.blogsform, 'to_delete', false);">Uncheck all</a>
+
+<br /><br />
 
 <table cellpadding="3" cellspacing="1" width="600" class="lines-table resp-table">
 <thead>
@@ -61,6 +64,8 @@
 </div>
 </form>
 
+<br />
+
 <h3>Authors</h3>
 <?php  foreach ($authors as $id => $v) {
     echo '<a href="' .
@@ -77,9 +82,9 @@
 <form method="post" name="blogform" enctype="multipart/form-data">
 
 <?php if ($get['2'] == 'new') {?>
-<h3>New blog</h3>
+<h1>New blog</h1>
 <?php } else  { ?>
-<h3><?php echo $blog['title'];?></h3>
+<h1><?php echo $blog['title'];?></h1>
 <?php } ?>
 
 <table cellpadding="3" cellspacing="1" width="90%" class="normal-table">

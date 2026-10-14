@@ -40,9 +40,9 @@ Currency:
 <?php if ($login) {?>
 <a href="/profile" class="ajax_link">Account</a>
 <a href="/profile/orders" class="ajax_link">Orders history</a>
-<a href="/wishlist" class="ajax_link">Wishlist</a>
-<a href="/logout">Logout</a>
+<a href="/wishlist" class="ajax_link mobile_wishlist_link">Wishlist</a>
 <a href="/gift_cards" class="ajax_link">Gift Cards</a>
+<a href="/logout">Logout</a>
 <?php } else  { ?>
 <a href="/login" class="ajax_link">Login</a>
 <a href="/register" class="ajax_link">Register</a>
@@ -61,7 +61,7 @@ Currency:
 <hr />
 <a class="ajax_link" href="<?php echo $current_location;?>/brands">Brands</a>
 <a class="ajax_link" href="<?php echo $current_location;?>/blog">Blog</a>
-<a class="ajax_link" href="/page/about.html">About CMS</a>
+<a class="ajax_link" href="/page/about-us.html">About us</a>
 <a class="ajax_link" href="<?php if ($config['Tickets']['use_tickets']) {?>/support_desk<?php } else  { ?>/help<?php } ?>">Contact</a>
 </div>
 </div>

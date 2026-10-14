@@ -7,13 +7,7 @@
 * https://github.com/olegkhorev/php-spa-cart
 */
 ?>
-<div class="padding-page gift_cards">
-<h3>{lng[Add a new gift card]}</h3>
-<form method="POST">
-<input type="text" name="amount" placeholder="Enter Gift Card amount $" />
-<button>{lng[Create]}</button>
-</form>
-
+<h1>{lng[Gift cards]}</h1>
 {if $gift_cards}
 <form method="POST">
 <h3>{lng[Earlier purchased gift cards]}</h3>
@@ -39,6 +33,19 @@
 </tr>
 {/foreach}
 </table>
+<br />
+{if $total_pages > 2}
+{include="common/navigation.php"}
+<br />
+{/if}
+
 <button type="button" onclick="javascript: if (confirmed || confirm('', $(this))) submitForm(this, 'delete');">{lng[Delete selected]}</button>
 </form>
 {/if}
+<div class="padding-page gift_cards">
+<h3>{lng[Add a new gift card]}</h3>
+<form method="POST">
+<input type="text" name="amount" placeholder="Enter Gift Card amount $" />
+<br /><br />
+<button>{lng[Add]}</button>
+</form>

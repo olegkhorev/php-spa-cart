@@ -7,7 +7,8 @@
 * https://github.com/olegkhorev/php-spa-cart
 */
 ?>
-<h1>Google Sitemap</h1>
+<h1>Sitemap</h1>
+<br />
 Register in Google webmaster and submit .txt and .xml file there.<br /><br />
 You can submit sitemap to other search engines too.<br /><br />
 

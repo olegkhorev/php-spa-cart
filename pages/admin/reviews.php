@@ -15,13 +15,13 @@ if ($get['2'] == 'reset') {
     $template['get'] = $get;
 }
 
-if ($_POST['mode'] == "search") {
-    $_SESSION['search_reviews'] = $_POST;
-    redirect("admin/reviews?mode=search");
-}
-
 if ($_SERVER['REQUEST_METHOD'] == "POST") {
     extract($_POST);
+    if ($get['2'] == 'search') {
+        $_SESSION['search_reviews'] = $_POST;
+        redirect('admin/reviews/search');
+    }
+
     if ($mode == "delete" && !empty($to_delete)) {
         foreach ($to_delete as $k => $v) {
             $db->query("DELETE FROM reviews WHERE id='$k'");
@@ -45,8 +45,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
     redirect("admin/reviews?mode=search");
 }
 
-extract($_GET);
-if ($mode == "search") {
+if ($get['2'] == 'search') {
     $data = $_SESSION['search_reviews'];
     $condition = array();
     $data = array_map('addslashes', $data);

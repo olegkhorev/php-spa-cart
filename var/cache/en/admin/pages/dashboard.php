@@ -33,9 +33,6 @@
 
 
 <div class="income_all_chart hidden"><?php echo json_encode($last_30_days_all); ?></div>
-<?php /* ?>
-<div class="income_paid_chart hidden"><?php echo json_encode($last_30_days_paid); ?></div>
-<?php */ ?>
 <h1>All orders</h1>
 <div class="chart-container chart-container--line" style="max-width: calc(100% - 60px);">
 <canvas id="chart-line"></canvas>

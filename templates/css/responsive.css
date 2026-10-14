@@ -1,3 +1,6 @@
+.visible-mobile {
+  display: none;
+}
 .filter_switcher {
   display: none;
 }
@@ -1066,6 +1069,9 @@
   }
 }
 @media only screen and (max-width: 600px) {
+  .res-item .res-buttons span {
+    display: none;
+  }
   .product-options .product-option {
     display: block;
     width: 100%;
@@ -1163,7 +1169,7 @@
   }
   .checkout_products {
     width: 100%;
-    max-width: 85%;
+    max-width: none;
     margin-top: 15px;
   }
   .checkout-container {
@@ -1173,8 +1179,10 @@
   #checkout_table #custom_details,
   #checkout_table #place_order {
     display: block;
-    max-width: 90%;
     width: 100%;
+  }
+  #checkout_table #place_order {
+    padding-left: 0;
   }
   .group-select select {
     max-width: 80%;
@@ -1237,6 +1245,12 @@
   }
 }
 @media only screen and (max-width: 450px) {
+  .visible-mobile {
+    display: block;
+  }
+  .padding-page.gift_cards {
+    padding: 0;
+  }
   #checkout_table #custom_details,
   #checkout_table #place_order {
     width: 100%;
@@ -1245,8 +1259,11 @@
   #checkout_table .group {
     max-width: 100%;
   }
+  #place_order {
+    padding-left: 0 !important;
+  }
   #checkoutform {
-    max-width: 300px;
+    max-width: 100%;
   }
   #quantity {
     min-width: 100px;

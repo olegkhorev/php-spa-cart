@@ -7,12 +7,14 @@
 * https://github.com/olegkhorev/php-spa-cart
 */
 ?>
+<h1 class="products-title-h3">{lng[Products]} <a class="ajax_link link-button" href="/admin/products/add">{lng[Add new product]}</a></h1>
+<br />
+
 <?php if (!isset($_GET["direction"]) || $_GET["direction"]) {
     $direction = "&direction=0";
 } else {
     $direction = "&direction=1";
 } ?>
-<h3 class="products-title-h3">{lng[Products]} <a class="ajax_link link-button" href="/admin/products/add">{lng[Add new product]}</a></h3>
 <form method="POST" name="psform" href="/admin/products">
 <input type="hidden" name="mode" value="search" />
 <table class="search_table">
@@ -147,16 +149,21 @@
  <td><br /><button>{lng[Search]}</button></td>
 </tr>
 </table>
-<br /><br />
-<?php if (empty($products)) { ?>
-{lng[No products found]}
-<?php } else { ?>
-
-<?php if ($total_pages > 2) { ?>
-{include="common/navigation.php"}
 <br />
-<?php } ?>
-<br /><a href="javascript: void(0);" onclick="javascript: check_all(document.psform, 'to_delete', true);">{lng[Check all]}</a> / <a href="javascript: void(0);" onclick="javascript: check_all(document.psform, 'to_delete', false);">{lng[Uncheck all]}</a>
+{if !$products}
+<br />
+{lng[No products found]}
+{else}
+<h3>{lng[Product search results]}</h3>
+{if $total_pages > 2}
+{include="common/navigation.php"}
+{/if}
+
+<br />
+
+<a href="javascript: void(0);" onclick="javascript: check_all(document.psform, 'to_delete', true);">{lng[Check all]}</a> / <a href="javascript: void(0);" onclick="javascript: check_all(document.psform, 'to_delete', false);">{lng[Uncheck all]}</a>
+
+<br /><br />
 
 <table width="100%" class="lines-table resp-table products-table">
 <thead>
@@ -221,7 +228,7 @@
 <button type="button" onclick="if (confirm('Are you sure?', $(this)) || confirmed) submitForm(this, 'delete_products');">{lng[Delete selected]}</button>
 </div>
 
-<?php } ?>
+{/if}
 </form>
 
 <script>

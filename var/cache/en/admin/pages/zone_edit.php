@@ -16,24 +16,25 @@
 
 <tr>
   <td>Zone name</td>
-  <td><input type="text" size="50" name="zone_name" value="<?php  echo escape($zone['zone_name'], 2); ?>" />
+  <td><input type="text" size="50" name="zone_name" value="<?php  echo escape(
+      $zone["zone_name"],
+      2,
+  ); ?>" />
 <br /><br />
 <button type="submit"><?php if ($zone['zone_name']) {?>Update<?php } else  { ?>Create<?php } ?></button>
-<?php 
-if ($zoneid) {
-?>
+<?php  if ($zoneid) { ?>
 &nbsp;&nbsp;
 <button type="button" onclick="javascript: submitForm(this, 'clone');">Clone</button>
-<?php 
-}
-?>
+<?php  } ?>
   </td>
 </tr>
 </table>
+<br /><br />
+* Hold Ctrl and click to select
 
 <table cellpadding="3" cellspacing="1" width="1000" class="mobile-zone_edit-table">
 <tr>
-  <td colspan="3"><br /><br /><h3>Countries</td>
+  <td colspan="3"><h3>Countries</td>
 </tr>
 
 <tr>
@@ -46,10 +47,9 @@ if ($zoneid) {
   <td>
 <input type="hidden" id="zone_countries_store" name="zone_countries_store" value="" />
 <select id="zone_countries" multiple="multiple" class="width-100p border-radius-25" size="20">
-<?php 
-foreach ($zone_countries as $c)
-	echo '<option value="'.$c['code'].'">'.$c['country'].'</option>';
-?>
+<?php  foreach ($zone_countries as $c) {
+    echo '<option value="' . $c["code"] . '">' . $c["country"] . "</option>";
+} ?>
 <option value="">&nbsp;</option>
 </select>
 <script>
@@ -63,10 +63,9 @@ normalizeSelect('zone_countries');
   </td>
   <td>
 <select id="rest_countries" multiple="multiple" class="width-100p border-radius-25" size="20">
-<?php 
-foreach ($rest_countries as $c)
-	echo '<option value="'.$c['code'].'">'.$c['country'].'</option>';
-?>
+<?php  foreach ($rest_countries as $c) {
+    echo '<option value="' . $c["code"] . '">' . $c["country"] . "</option>";
+} ?>
 </select>
   </td>
 </tr>
@@ -85,10 +84,17 @@ foreach ($rest_countries as $c)
   <td>
 <input type="hidden" id="zone_states_store" name="zone_states_store" value="" />
 <select id="zone_states" multiple="multiple" class="width-100p border-radius-25" size="20">
-<?php 
-foreach ($zone_states as $s)
-	echo '<option value="'.$s['country_code'].'_'.$s['code'].'">'.substr($s['country'], 0, 30).': '.$s['state'].'</option>';
-?>
+<?php  foreach ($zone_states as $s) {
+    echo '<option value="' .
+        $s["country_code"] .
+        "_" .
+        $s["code"] .
+        '">' .
+        substr($s["country"], 0, 30) .
+        ": " .
+        $s["state"] .
+        "</option>";
+} ?>
 <option value="">&nbsp;</option>
 </select>
 <script type="text/javascript">
@@ -102,10 +108,17 @@ normalizeSelect('zone_states');
   </td>
   <td>
 <select id="rest_states" name="rest_states" multiple="multiple" class="width-100p border-radius-25" size="20">
-<?php 
-foreach ($rest_states as $s)
-	echo '<option value="'.$s['country_code'].'_'.$s['code'].'">'.substr($s['country'], 0, 17).': '.$s['state'].'</option>';
-?>
+<?php  foreach ($rest_states as $s) {
+    echo '<option value="' .
+        $s["country_code"] .
+        "_" .
+        $s["code"] .
+        '">' .
+        substr($s["country"], 0, 17) .
+        ": " .
+        $s["state"] .
+        "</option>";
+} ?>
 </select>
   </td>
 </tr>
@@ -122,11 +135,14 @@ foreach ($rest_states as $s)
 
 <tr>
   <td>
-<textarea cols="40" rows="20" class="width-100p border-radius-25" name="zone_cities"><?php 
-foreach ($zone_elements as $e)
-	if ($e['field_type'] == 'T')
-		echo $e['field']."\n";
-?></textarea>
+<textarea cols="40" rows="20" class="width-100p border-radius-25" name="zone_cities"><?php  foreach (
+    $zone_elements
+    as $e
+) {
+    if ($e["field_type"] == "T") {
+        echo $e["field"] . "\n";
+    }
+} ?></textarea>
   </td>
   <td align="center">&nbsp;</td>
   <td valign="top">New Yo%<br />Washington<br />Los Angeles<br />Dallas</td>
@@ -144,7 +160,14 @@ foreach ($zone_elements as $e)
 
 <tr>
   <td>
-<textarea cols="40" rows="20" class="width-100p border-radius-25" name="zone_zipcodes"><?php  foreach ($zone_elements as $e) if ($e['field_type'] == 'Z') echo $e['field']."\n";?></textarea>
+<textarea cols="40" rows="20" class="width-100p border-radius-25" name="zone_zipcodes"><?php  foreach (
+    $zone_elements
+    as $e
+) {
+    if ($e["field_type"] == "Z") {
+        echo $e["field"] . "\n";
+    }
+} ?></textarea>
   </td>
   <td align="center">&nbsp;</td>
   <td valign="top">1000%<br />38245<br />4320%</td>

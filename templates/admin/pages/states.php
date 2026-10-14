@@ -7,6 +7,9 @@
 * https://github.com/olegkhorev/php-spa-cart
 */
 ?>
+<h1>{lng[States]}</h1>
+<br />
+
 <form action="{$current_location}/admin/countries/<?php echo $country[
     "code"
 ]; ?>" method="post" name="states_form">
@@ -42,19 +45,19 @@
 } else {
      ?>
  <tr>
-  <td colspan="3" align="center" class="var-wh-100">{lng[No states defined in this country]}</td>
+  <td colspan="3" align="center" class="var-wh-100 background-transparent">{lng[No states defined in this country]}</td>
  </tr>
 <?php
 } ?>
 
 <tr>
- <td colspan="3" class="var-wh-100"><h3>{lng[Add new]}</h3></td>
+ <td colspan="3" class="var-wh-100 background-transparent"><h3>{lng[Add new]}</h3></td>
 </tr>
 
 <tr>
-  <td>&nbsp;</td>
-  <td width="5%" align="center"><label>{lng[Code]}</label><input type="text" name="new_state[code]" size="10" /></td>
-  <td align="center"><label>{lng[States]}</label><input type="text" name="new_state[state]" size="35" /></td>
+  <td class="background-transparent">&nbsp;</td>
+  <td class="background-transparent" width="5%" align="center"><label>{lng[Code]}</label><input type="text" name="new_state[code]" size="10" /></td>
+  <td class="background-transparent" align="center"><label>{lng[States]}</label><input type="text" name="new_state[state]" size="35" /></td>
 </tr>
 
 </table>

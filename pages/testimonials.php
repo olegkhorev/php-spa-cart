@@ -62,7 +62,7 @@ if ($get['1'] == 'new') {
         );
 
         $message = get_template_contents('mail/testimonial.php');
-        $subject = $config['Company']['company_name'].': '.lng('New testimonial');
+        $subject = $config['Company']['company_name'].': '.lng('Write testimonial');
         func_mail($config['Company']['company_name'], $config['Company']['support_department'], '', $subject, $message);
 
         redirect('testimonials');
@@ -76,8 +76,8 @@ if ($get['1'] == 'new') {
 
     $template['preentered'] = $_SESSION['new_testimonial'];
     $template['bread_crumbs'][] = array('/testimonials', "Testimonials");
-    $template['bread_crumbs'][] = array('', "New testimonial");
-    $template['head_title'] = lng('New testimonial').'. '.$template['head_title'];
+    $template['bread_crumbs'][] = array('', "Write testimonial");
+    $template['head_title'] = lng('Write testimonial').'. '.$template['head_title'];
     $template['page'] = get_template_contents('testimonials/new.php');
 } else {
     $total_items = $db->field("SELECT COUNT(*) FROM testimonials WHERE status='A'");

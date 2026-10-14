@@ -23,8 +23,12 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
     redirect('admin/gift_cards');
 }
 
-$gift_cards = $db->all("SELECT * FROM gift_cards ORDER BY date DESC");
-if (!empty($gift_cards)) {
+$total_items = $db->field("SELECT COUNT(*) FROM gift_cards");
+if ($total_items > 0) {
+    $objects_per_page = 20;
+    require SITE_ROOT."/includes/navigation.php";
+    $template["navigation_script"] = $current_location."/admin/gift_cards?";
+    $gift_cards = $db->all("SELECT * FROM gift_cards ORDER BY date DESC");
     foreach ($gift_cards as $k => $v) {
         if ($v['userid']) {
             $gift_cards[$k]['user'] = $db->row("SELECT * FROM users WHERE id='".$v['userid']."'");
@@ -34,4 +38,6 @@ if (!empty($gift_cards)) {
     $template["gift_cards"] = $gift_cards;
 }
 
+$template['location'] .= ' &gt; '.lng('Gift cards');
+$template['head_title'] = lng('Gift cards').' :: '.$template['head_title'];
 $template['page'] = get_template_contents('admin/pages/gift_cards.php');

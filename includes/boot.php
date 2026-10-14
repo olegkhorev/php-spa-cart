@@ -129,6 +129,8 @@ $tmp = $db->all("SELECT * FROM config ORDER BY category, orderby");
 foreach ($tmp as $v) {
     if ($v['category']) {
         $config[$v['category']][$v['name']] = $v['value'];
+    } elseif ($v['module_code']) {
+        $config[$v['module_code']][$v['name']] = $v['value'];
     } else {
         $config[$v['name']] = $v['value'];
     }

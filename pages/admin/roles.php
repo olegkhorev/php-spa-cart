@@ -73,6 +73,7 @@ if ($get['2']) {
 
         $role['pages'] = $pages;
         $template["role"] = $role;
+        $template['location'] .= ' &gt; '.$role['title'];
     }
 
     $template['page'] = get_template_contents('admin/pages/role_edit.php');

@@ -510,8 +510,16 @@ div.logo {
   cursor: help;
 }
 .products_popup {
+  width: 800px;
+  max-width: 90% !important;
   transform: translate(-50%, 0) !important;
   left: 50% !important;
+}
+.products_popup table {
+  max-width: none !important;
+}
+.products_popup table .categories, .products_popup table .products {
+  width: 50%;
 }
 .popup a,
 .alert_message a {
@@ -837,16 +845,25 @@ table.lines-table td.value {
   padding-top: 10px;
 }
 table th:first-child {
-  border-radius: 20px 0 0 0;
+border-radius: 28px 0 0 28px;
 }
 table th:last-child {
-  border-radius: 0 20px 0 0;
+border-radius: 0 28px 28px 0;
+}
+table.lines-table tbody tr:nth-child(2n) td:last-child {
+    border-radius: 0 28px 28px 0;
+}
+table.lines-table tbody tr:nth-child(2n) td:first-child {
+    border-radius: 28px 0 0 28px;
 }
 table tr:last-child > td:first-child {
   border-radius: 0 0 0 20px;
 }
 table tr:last-child > td:last-child {
   border-radius: 0 0 20px 0;
+}
+table tbody tr th:first-child input[type="checkbox"], table tbody tr td:first-child input[type="checkbox"] {
+  margin-left: 10px;
 }
 table td {
   vertical-align: middle;
@@ -1636,4 +1653,14 @@ table.new_variant select, .border-radius-25 {
 }
 table.lines-table.resp-table textarea {
     padding: 7px 15px;
+}
+.gift_cards input:not([type="checkbox"]) {
+  margin: 0;
+}
+.background-transparent, table.lines-table tbody tr:nth-child(2n) td.background-transparent {
+  background: transparent !important;
+}
+.statistics-totals {
+  text-align: right;
+  padding: 20px 0;
 }

@@ -96,7 +96,7 @@ Name <font color='#880000'>*</font>: <input type="text" size="30" name="new_name
 </form>
 <?php  } ?>
 <?php } else if ($blogs) {?>
-<h1>Our blog</h1><br />
+<h1>Blog</h1><br />
 <?php if ($total_pages > 2) {?>
 <div align="right"><?php include SITE_ROOT."/var/cache/en/common/navigation.php";?></div>
 <br />

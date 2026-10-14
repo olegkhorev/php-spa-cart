@@ -88,9 +88,20 @@ function cart_clicks() {
           if (top < $(window).scrollTop()) top = $(window).scrollTop() + 30;
 
           $(".cart_popup").css("top", top + "px");
+          $(".cart_popup img").on('load', function() {
+            var top =
+              $(window).scrollTop() +
+              $(window).height() / 2 -
+              $(".cart_popup").height() / 2 -
+              50;
+            if (top < $(window).scrollTop()) top = $(window).scrollTop() + 30;
+          
+            $(".cart_popup").css("top", top + "px");
+          });
+
           $(".cart_popup").css(
             "left",
-            $(window).width() / 2 - $(".cart_popup").width() / 2 - 10 + "px",
+            $(window).width() / 2 - $(".cart_popup").outerWidth() / 2 + "px",
           );
           $(".cart_popup")
             .css("opacity", 0)
@@ -116,7 +127,7 @@ function cart_clicks() {
             $(".cart_popup").css("top", top + "px");
             $(".cart_popup").css(
               "left",
-              $(window).width() / 2 - $(".cart_popup").width() / 2 - 10 + "px",
+              $(window).width() / 2 - $(".cart_popup").outerWidth() / 2 + "px",
             );
           });
 
@@ -169,9 +180,20 @@ function cart_clicks() {
           if (top < $(window).scrollTop()) top = $(window).scrollTop() + 30;
 
           $(".wl_popup").css("top", top + "px");
+          $(".wl_popup img").on('load', function() {
+            var top =
+              $(window).scrollTop() +
+              $(window).height() / 2 -
+              $(".wl_popup").height() / 2 -
+              50;
+            if (top < $(window).scrollTop()) top = $(window).scrollTop() + 30;
+          
+            $(".wl_popup").css("top", top + "px");
+          });
+
           $(".wl_popup").css(
             "left",
-            $(window).width() / 2 - $(".wl_popup").width() / 2 - 10 + "px",
+            $(window).width() / 2 - $(".wl_popup").outerWidth() / 2 + "px",
           );
           $(".wl_popup")
             .css("opacity", 0)
@@ -184,7 +206,31 @@ function cart_clicks() {
               $(".wl_popup").css("transform", "matrix(1, 0, 0, 1, 0, 0)");
             }, 200);
           }, 200);
+/*
+          var top =
+            $(window).scrollTop() +
+            $(window).height() / 2 -
+            $(".wl_popup").height() / 2 -
+            50;
+          if (top < $(window).scrollTop()) top = $(window).scrollTop() + 30;
 
+          $(".wl_popup").css("top", top + "px");
+          $(".wl_popup").css(
+            "left",
+            $(window).width() / 2 - $(".wl_popup").outerWidth() / 2 + "px",
+          );
+          $(".wl_popup")
+            .css("opacity", 0)
+            .css("transform", "matrix(0.1, 0, 0, 0.1, 0, 0)");
+          setTimeout(function () {
+            $(".wl_popup")
+              .css("opacity", 1)
+              .css("transform", "matrix(1.1, 0, 0, 1.1, 0, 70)");
+            setTimeout(function () {
+              $(".wl_popup").css("transform", "matrix(1, 0, 0, 1, 0, 0)");
+            }, 200);
+          }, 200);
+*/
           $(".wl_popup").show();
           $(window).resize(function () {
             var top =
@@ -197,7 +243,7 @@ function cart_clicks() {
             $(".wl_popup").css("top", top + "px");
             $(".wl_popup").css(
               "left",
-              $(window).width() / 2 - $(".cart_popup").width() / 2 - 10 + "px",
+              $(window).width() / 2 - $(".cart_popup").outerWidth() / 2 + "px",
             );
           });
 
@@ -268,8 +314,7 @@ function cart_clicks() {
           $(".checkout_popup").css(
             "left",
             $(window).width() / 2 -
-              $(".checkout_popup").width() / 2 -
-              10 +
+              $(".checkout_popup").outerWidth() / 2 +
               "px",
           );
           $(".checkout_popup")
@@ -297,8 +342,7 @@ function cart_clicks() {
             $(".checkout_popup").css(
               "left",
               $(window).width() / 2 -
-                $(".checkout_popup").width() / 2 -
-                10 +
+                $(".checkout_popup").outerWidth() / 2 +
                 "px",
             );
           });

@@ -11,7 +11,10 @@
     "2"
 ]; ?>" method="post"<?php /* ?><?php if (!$pages && !$page['id']) {?> class="noajax"<?php } ?><?php */ ?>>
 <input type="hidden" name="mode" value="" />
-<?php  if (empty($get["2"])) { ?>
+<?php if (!$get['2']) {?>
+
+<h1 class="products-title-h3">Pages <a class="ajax_link link-button" href="/admin/pages/new">Add new</a></h1>
+<br />
 
 <table cellpadding="3" width="600" cellspacing="1" class="lines-table resp-table">
 <thead>
@@ -38,16 +41,17 @@
 <button type="button" onclick="javascript: submitForm(this, 'update');">Update</button>
 <button type="button" onclick="javascript: submitForm(this, 'delete');">Delete selected</button>
 </div>
-<?php 
-} else  {
-     ?>
-No pages
-<?php 
-} ?>
-<br /><br />
-<a href="<?php  echo $current_location .
-    "/admin/pages/new"; ?>">Add new</a>
-<?php  } else  { ?>
+<?php } else  { ?>
+No pages found
+<?php } ?>
+<?php } else  { ?>
+
+<?php if ($get['2'] == 'new') {?>
+<h1>Add page</h1>
+<?php } else  { ?>
+<h1><?php echo $page['title'];?></h1>
+<?php } ?>
+
 <script src="/ckeditor/ckeditor.js"></script>
 <script>
 CKEDITOR.config.protectedSource.push( /<\?[\s\S]*?\?>/g );   // PHP Code
@@ -131,5 +135,5 @@ CKEDITOR.config.protectedSource.push( /<\?[\s\S]*?\?>/g );   // PHP Code
 <button class="button-margin-left" type="submit">Save</button>
 </div>
 
-<?php  } ?>
+<?php } ?>
 </form>

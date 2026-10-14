@@ -7,6 +7,13 @@
 * https://github.com/olegkhorev/php-spa-cart
 */
 ?>
+<?php if ($get["2"] == 'add') {?>
+<h1>Add product</h1>
+<?php } else  { ?>
+<h1>Edit product</h1>
+<br />
+<?php } ?>
+
 <?php  echo $product_tabs; ?>
 <div class="clear"></div>
 

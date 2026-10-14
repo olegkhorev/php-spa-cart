@@ -25,6 +25,9 @@
 </div>
 <?php } ?>
 <?php } else if ($brands) {?>
+<h1>Brands</h1>
+<br />
+
 <?php if ($total_pages > 2) {?>
 <div align="right"><?php include SITE_ROOT."/var/cache/en/common/navigation.php";?></div>
 <br />

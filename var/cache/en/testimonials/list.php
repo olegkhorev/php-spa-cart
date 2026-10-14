@@ -13,7 +13,7 @@ login_popup();
 </script>
 <?php } ?>
 <br />
-<button onclick="self.location='<?php echo $current_location;?>/testimonials/new';">Write testimonial</button>
+<button class="button_ajax_link" href="<?php echo $current_location;?>/testimonials/new">Write testimonial</button>
 <br /><br />
 <hr size="1" />
 <?php if ($total_pages > 2) {?>
@@ -37,8 +37,3 @@ login_popup();
 <?php include SITE_ROOT."/var/cache/en/common/navigation.php";?>
 <br />
 <?php } ?>
-
-<hr size="1" />
-<br />
-<button onclick="self.location='<?php echo $current_location;?>/testimonials/new';">Write testimonial</button>
-<br />

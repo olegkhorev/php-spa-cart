@@ -32,7 +32,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 }
 
 if ($get['2'] == 'search') {
-    $template['location'] .= ' &gt; <a href="'.$current_location.'/admin/users">'.lng('Users management').'</a>';
+    $template['location'] .= ' &gt; <a href="'.$current_location.'/admin/users">'.lng('Users').'</a>';
     $template['location'] .= ' &gt; '.lng('Search results').'';
     $data = $templage['users_search'] = $_SESSION['users_search'];
     $conditions = array();
@@ -99,11 +99,11 @@ if ($get['2'] == 'search') {
         redirect('admin/users');
     }
 } else {
-    $template['location'] .= ' &gt; '.lng('Users management');
+    $template['location'] .= ' &gt; '.lng('Users');
     $template["memberships"] = $db->all("SELECT m.*, COUNT(u.id) as users FROM memberships m LEFT JOIN users u ON u.membershipid = m.membershipid GROUP BY m.membershipid ORDER BY m.orderby, m.membership");
 }
 
-$template['head_title'] = lng('Users management').' :: '.$template['head_title'];
+$template['head_title'] = lng('Users').' :: '.$template['head_title'];
 
 $template['page'] = get_template_contents('admin/pages/users.php');
 

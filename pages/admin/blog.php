@@ -194,7 +194,7 @@ if ($get['2'] == 'new') {
     if (empty($blog)) {
         $_SESSION['alerts'][] = array(
                 'type' => 'e',
-                'content' => lng('No blog found')
+                'content' => lng('No post found')
         );
 
         redirect("admin/blog");

@@ -12,8 +12,9 @@ table td {
 	vertical-align: middle;
 }
 </style>
-<h3>{lng[Search for reviews]}</h3>
-<form method="POST" href="/admin/reviews?mode=search">
+<h1>{lng[Reviews]}</h1>
+<br />
+<form method="POST" href="/admin/reviews/search">
 <input type="hidden" name="mode" value="search">
 <table width="100%" align="center" cellpadding="2" cellspacing="1"class="search_table reviews_search_table">
         <tr>
@@ -66,8 +67,8 @@ table td {
 </form>
 
 {if $reviews}
-        <br />
-<h3>Search results</h3>
+<br />
+<h3>{lng[Review search results]}</h3>
 
 {if $total_pages > 2}
 {include="common/navigation.php"}
@@ -75,9 +76,13 @@ table td {
 {/if}
 
 <form action="/admin/reviews" method="post" name="reviewsform">
-        <input type="hidden" name="mode" value="edit">
+<input type="hidden" name="mode" value="edit">
+
 <a href="javascript: void(0);" onclick="javascript: check_all(document.reviewsform, 'to_delete', true);">{lng[Check all]}</a> / <a href="javascript: void(0);" onclick="javascript: check_all(document.reviewsform, 'to_delete', false);">{lng[Uncheck all]}</a>
-        <table border="0" cellpadding="5" cellspacing="0" class="lines-table resp-table">
+
+<br /><br />
+
+<table border="0" cellpadding="5" cellspacing="0" class="lines-table resp-table">
 <thead>
                 <tr>
                         <th></th>
@@ -110,7 +115,7 @@ table td {
                         </td>
                         <td valign="top" width="15%"><label>{lng[IP]}</label>{$r['remote_ip']}</td>
                         <td valign="top" width="15%"><label>{lng[Name]}</label>{$r['name']}</td>
-                        <td valign="top" width="45%"><label>{lng[Message]}</label><textarea cols="40" rows="3" name="to_update[{$r['id']}][message]" class="border-radius-25">{$r['message']}</textarea></td>
+                        <td valign="top" width="45%"><label>{lng[Message]}</label><textarea cols="40" rows="5" name="to_update[{$r['id']}][message]" class="border-radius-25">{$r['message']}</textarea></td>
                         <td valign="top" width="10%"><label>{lng[Product ID/SKU]}</label><a href="/admin/products/{$r['productid']}" target="_blank">{$r['productid']}/{$r['sku']}</a></td>
                 </tr>
 {/foreach}
@@ -129,4 +134,7 @@ table td {
 {include="common/navigation.php"}
 <br />
 {/if}
+{elseif $get['2'] == 'search'}
+<br />
+{lng[No reviews found]}
 {/if}

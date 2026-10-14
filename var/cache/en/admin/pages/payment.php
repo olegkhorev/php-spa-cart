@@ -8,6 +8,7 @@
 */
 ?>
 <h1>Payment methods</h1>
+<br />
 
 <form method="post" class="payment_methods">
 <table cellpadding="2" cellspacing="1" width="900" class="lines-table resp-table">

@@ -7,6 +7,9 @@
 * https://github.com/olegkhorev/php-spa-cart
 */
 ?>
+<h1>Search keywords</h1>
+<br />
+
 Search keywords are helpful if you have specific products to display, so user came directly to your search page from google.<br /><br />
 Don't forget to generate Google sitemap to include search keywords and then submit it once again where it is needed. Google parse sitemap automatically.
 <br /><br />

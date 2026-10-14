@@ -7,12 +7,14 @@
 * https://github.com/olegkhorev/php-spa-cart
 */
 ?>
+<h1 class="products-title-h3">Products <a class="ajax_link link-button" href="/admin/products/add">Add new product</a></h1>
+<br />
+
 <?php  if (!isset($_GET["direction"]) || $_GET["direction"]) {
     $direction = "&direction=0";
 } else  {
     $direction = "&direction=1";
 } ?>
-<h3 class="products-title-h3">Products <a class="ajax_link link-button" href="/admin/products/add">Add new product</a></h3>
 <form method="POST" name="psform" href="/admin/products">
 <input type="hidden" name="mode" value="search" />
 <table class="search_table">
@@ -147,16 +149,21 @@
  <td><br /><button>Search</button></td>
 </tr>
 </table>
-<br /><br />
-<?php  if (empty($products)) { ?>
-No products found
-<?php  } else  { ?>
-
-<?php  if ($total_pages > 2) { ?>
-<?php include SITE_ROOT."/var/cache/en/common/navigation.php";?>
 <br />
-<?php  } ?>
-<br /><a href="javascript: void(0);" onclick="javascript: check_all(document.psform, 'to_delete', true);">Check all</a> / <a href="javascript: void(0);" onclick="javascript: check_all(document.psform, 'to_delete', false);">Uncheck all</a>
+<?php if (!$products) {?>
+<br />
+No products found
+<?php } else  { ?>
+<h3>Product search results</h3>
+<?php if ($total_pages > 2) {?>
+<?php include SITE_ROOT."/var/cache/en/common/navigation.php";?>
+<?php } ?>
+
+<br />
+
+<a href="javascript: void(0);" onclick="javascript: check_all(document.psform, 'to_delete', true);">Check all</a> / <a href="javascript: void(0);" onclick="javascript: check_all(document.psform, 'to_delete', false);">Uncheck all</a>
+
+<br /><br />
 
 <table width="100%" class="lines-table resp-table products-table">
 <thead>
@@ -221,7 +228,7 @@ No products found
 <button type="button" onclick="if (confirm('Are you sure?', $(this)) || confirmed) submitForm(this, 'delete_products');">Delete selected</button>
 </div>
 
-<?php  } ?>
+<?php } ?>
 </form>
 
 <script>

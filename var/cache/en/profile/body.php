@@ -13,6 +13,7 @@
 </div>
 <br />
 <?php if ($section == 'orders') {?>
+<h1 class="visible-mobile">Orders history</h1>
  <?php if ($orders) {?>
 <table cellspacing="0" cellpadding="15" class="account-invoices-list">
   <?php foreach ($orders as $k=>$v) {?>

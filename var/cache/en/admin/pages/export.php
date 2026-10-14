@@ -7,6 +7,7 @@
 * https://github.com/olegkhorev/php-spa-cart
 */
 ?>
+<h1>Export catalog</h1>
 <form action="/admin/export<?php if ($_GET['product']) {?>?product=<?php echo $_GET['product'];?><?php } ?>" method="post" accept-charset="utf-8" class="list-form noajax" name="exportForm">
 
 <?php if ($_GET['product']) {?>

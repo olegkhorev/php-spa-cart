@@ -7,6 +7,7 @@
 * https://github.com/olegkhorev/php-spa-cart
 */
 ?>
+<h1>Import catalog</h1>
 <form method="post" accept-charset="utf-8" class="list-form noajax" name="exportForm" enctype="multipart/form-data">
 <br />
 <table width="800" class="import" cellspacing="1" cellpadding="2">

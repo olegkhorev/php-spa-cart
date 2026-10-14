@@ -1,9 +1,10 @@
 .checkout-container {
-  width: 600px;
+  width: 100%;
   margin: 0 auto;
 }
 .checkout_popup {
-  width: 600px;
+  width: 800px;
+  max-width: 90%;
   padding: 20px 20px 30px 20px;
 }
 .checkout_popup h1 {
@@ -123,8 +124,20 @@ a.back-to-cart img {
   width: 100%;
 }
 #checkout_table .group {
-  max-width: 90%;
+    max-width: none;
 }
 #cc-info {
   margin-top: 20px;
+}
+#checkout_table {
+  width: 100%;
+}
+#checkout_table #custom_details, #checkout_table #place_order {
+  width: 50%;
+}
+#checkout_table #custom_details {
+  padding-right: 10px;
+}
+#checkout_table #place_order {
+  padding-left: 10px;
 }

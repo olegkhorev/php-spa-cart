@@ -7,6 +7,9 @@
 * https://github.com/olegkhorev/php-spa-cart
 */
 ?>
+<h1>Countries</h1>
+<br />
+
 <table cellpadding="2" cellspacing="1" class="lines-table resp-table">
 <thead>
 <tr>

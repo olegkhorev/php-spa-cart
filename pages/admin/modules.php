@@ -8,6 +8,7 @@
 */
 ?>
 <?php
+func_load('modules');
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     extract($_POST);
     if ($mode == 'update') {
@@ -24,6 +25,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             'content'	=> lng('Modules updated')
         );
     } elseif ($_FILES['install_archive']['tmp_name']) {
+        echo 'Installing module...<br />';
         $dir = SITE_ROOT . '/var/tmp/install_module';
         mkdir($dir);
         copy($_FILES['install_archive']['tmp_name'], $dir.'/module.zip');
@@ -32,6 +34,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $zip->extractTo($dir);
         $zip->close();
 
+        echo 'Gathering the module data...<br />';
         $data = array_map('trim', file($dir.'/module.data'));
         $array = [];
         foreach ($data as $v) {
@@ -39,33 +42,45 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             $array[$tmp[0]] = $tmp[1];
         }
 
+        echo 'Checking if module is already installed...<br />';
+        $exits = $db->field("SELECT moduleid FROM modules WHERE code='".addslashes($array['code'])."'");
+        if ($exits) {
+            exit('<b>Module already exists.</b>');
+        }
+
+        echo 'Creating the module directory...<br />';
         $dir_module = SITE_ROOT . '/images/modules/'.$array['author'].'/'.$array['module'];
         mkdir($dir_module, 0755, true);
         $file = $dir.'/logo.png';
         copy($file, $dir_module.'/'.basename($file));
 
+        echo 'Copying function...<br />';
         $dir_module = SITE_ROOT . '/includes/func';
         $file = $dir.'/func.'.$array['code'].'.php';
         copy($file, $dir_module.'/'.basename($file));
 
+        echo 'Copying scripts...<br />';
         $dir_module = SITE_ROOT . '/modules/'.$array['author'].'/'.$array['module'];
         mkdir($dir_module, 0755, true);
         foreach (glob($dir.'/pages/*') as $file) {
             copy($file, $dir_module.'/'.basename($file));
         }
 
+        echo 'Copying templates...<br />';
         $dir_module = SITE_ROOT . '/templates/modules/'.$array['author'].'/'.$array['module'];
         mkdir($dir_module, 0755, true);
         foreach (glob($dir.'/templates/*') as $file) {
             copy($file, $dir_module.'/'.basename($file));
         }
 
+        echo 'Copying images...<br />';
         $dir_module = SITE_ROOT . '/images/themes/'.$array['author'].'/'.$array['module'];
         mkdir($dir_module, 0755, true);
         foreach (glob($dir.'/themes/images/*') as $file) {
             copy($file, $dir_module.'/'.basename($file));
         }
 
+        echo 'Copying theme files(if any)...<br />';
         $dir_module = SITE_ROOT . '/templates/themes/'.$array['author'].'/'.$array['module'];
         mkdir($dir_module, 0755, true);
         foreach (glob($dir.'/themes/templates/*') as $file) {
@@ -76,6 +91,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             }
         }
 
+        echo 'Inserting database record...<br />';
         $to_insert = [
             'code'		=> $array['code'],
             'author'	=> $array['author'],
@@ -87,6 +103,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
         $db->array2insert('modules', $to_insert);
         func_delete_directory(SITE_ROOT . '/var/tmp/install_module');
+        exit('<br /><b>Congratulations. The module has been successfully installed.</b><br /><hr /><br /><a href="'.$current_location.'/admin/modules">Go to modules</a>');
     }
 
     redirect("admin/modules");

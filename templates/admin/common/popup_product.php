@@ -7,7 +7,7 @@
 * https://github.com/olegkhorev/php-spa-cart
 */
 ?>
-<table id="popup_product" width="700">
+<table id="popup_product" width="100%">
 <tr>
  <th>{lng[Category]}</th>
  <th>{lng[Product]}</th>
@@ -17,3 +17,6 @@
  <td class="products"></td>
 </tr>
 </table>
+<br />
+&nbsp; * {lng[Double click to select]}
+<br />

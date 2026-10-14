@@ -9,10 +9,6 @@
 ?>
 <script src="{$current_location}/ckeditor/ckeditor.js"></script>
 
-<?php if ($get["2"] == "add") { ?>
-<h3>{lng[Add product]}</h3>
-<?php } ?>
-
 <form method="POST" enctype='multipart/form-data' name="pform"{*if $get['2'] == 'add'} class="noajax"{/if*}>
 <input type="hidden" name="mode" value="" />
 <table width="800" class="normal-table">

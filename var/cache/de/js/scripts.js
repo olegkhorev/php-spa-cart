@@ -58,7 +58,7 @@ $(document).on("keyup", function (e) {
 
     if (!getCookie("allow_cookies") && !$("html.area-a").length) {
       $("body").append(
-        '<div class="allow-cookies"><p>We use cookies for better user experience</p><button>Accept</button></div>',
+        '<div class="allow-cookies"><p>We use cookies for a better user experience</p><button>Accept</button></div>',
       );
       $(".allow-cookies button").on("click", function () {
         $(".allow-cookies").remove();
@@ -104,7 +104,7 @@ $(document).on("keyup", function (e) {
 
     $(document).on("click", function () {
       if (bc != false) {
-        $(".popup, .alert_message, .alerts").not(".login_alert").remove();
+        $(".popup, .alert_message, .alerts:not(.admin-alerts)").not(".login_alert").remove();
         $(".login_alert").hide();
         unfade();
       }
@@ -265,8 +265,13 @@ function ajax_clicks() {
     eval($(".exec_page_js").html());
   }
 
+  if ($('#body-invoice').length) {
+    // Close overlay from the invoice page
+    $('body').click();
+  }
+
   $(
-    "#menu a, a.ajax_link, .button_ajax_link, .ajax_mobile_link, .logo-link, .bread_crumbs a, #subcategories a, .brands a, .test-links a, .foot a",
+    "#menu a, a.ajax_link, .account-invoices-list a, .button_ajax_link, .ajax_mobile_link, .logo-link, .bread_crumbs a, #subcategories a, .brands a, .test-links a, .foot a",
   )
     .unbind("click")
     .on("click", function (e) {

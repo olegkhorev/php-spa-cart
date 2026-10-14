@@ -7,7 +7,11 @@
 * https://github.com/olegkhorev/php-spa-cart
 */
 ?>
-<a href="/admin/user/new">{lng[Create new user account]}</a><br /><br />
+{if $get['2'] == 'new'}
+<h1>{lng[New user]}</h1>
+{else}
+<h1>{lng[Modify user]}</h1>
+{/if}
 <form method="post" name="user_form_admin"{*{if !$user['id']} class="noajax"{/if}*}>
 <table cellpadding="2" class="user_table normal-table">
 <tr>

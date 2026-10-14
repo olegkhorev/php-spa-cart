@@ -1896,7 +1896,7 @@ function add_to_cart(productid, is_quick, button) {
       .css("opacity", 0)
       .css(
         "left",
-        $(window).width() / 2 - $(".cart_popup").width() / 2 - 20 + "px",
+        $(window).width() / 2 - $(".cart_popup").outerWidth() / 2 + "px",
       );
     $(".cart_popup").removeClass("no_animation");
     $(".cart_popup")
@@ -1924,7 +1924,7 @@ function add_to_cart(productid, is_quick, button) {
       $(".cart_popup").css("top", top + "px");
       $(".cart_popup").css(
         "left",
-        $(window).width() / 2 - $(".cart_popup").width() / 2 - 20 + "px",
+        $(window).width() / 2 - $(".cart_popup").outerWidth() / 2 + "px",
       );
     });
 
@@ -2058,6 +2058,10 @@ function add_wishlist(id) {
   $.ajax({
     url: current_location + "/wishlist?add=" + id,
   }).done(function (r) {
+    if ($(window).width() < 850 && $('#body-wishlist').length) {
+      $('.mobile_wishlist_link').click();
+    }
+
     alert("Product has been added to your Wishlist");
   });
 }

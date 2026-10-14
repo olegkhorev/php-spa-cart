@@ -12,8 +12,9 @@ table td {
 	vertical-align: middle;
 }
 </style>
-<h3>Search for reviews</h3>
-<form method="POST" href="/admin/reviews?mode=search">
+<h1>Reviews</h1>
+<br />
+<form method="POST" href="/admin/reviews/search">
 <input type="hidden" name="mode" value="search">
 <table width="100%" align="center" cellpadding="2" cellspacing="1"class="search_table reviews_search_table">
         <tr>
@@ -66,8 +67,8 @@ table td {
 </form>
 
 <?php if ($reviews) {?>
-        <br />
-<h3>Search results</h3>
+<br />
+<h3>Review search results</h3>
 
 <?php if ($total_pages > 2) {?>
 <?php include SITE_ROOT."/var/cache/en/common/navigation.php";?>
@@ -75,9 +76,13 @@ table td {
 <?php } ?>
 
 <form action="/admin/reviews" method="post" name="reviewsform">
-        <input type="hidden" name="mode" value="edit">
+<input type="hidden" name="mode" value="edit">
+
 <a href="javascript: void(0);" onclick="javascript: check_all(document.reviewsform, 'to_delete', true);">Check all</a> / <a href="javascript: void(0);" onclick="javascript: check_all(document.reviewsform, 'to_delete', false);">Uncheck all</a>
-        <table border="0" cellpadding="5" cellspacing="0" class="lines-table resp-table">
+
+<br /><br />
+
+<table border="0" cellpadding="5" cellspacing="0" class="lines-table resp-table">
 <thead>
                 <tr>
                         <th></th>
@@ -110,7 +115,7 @@ table td {
                         </td>
                         <td valign="top" width="15%"><label>IP</label><?php echo $r['remote_ip'];?></td>
                         <td valign="top" width="15%"><label>Name</label><?php echo $r['name'];?></td>
-                        <td valign="top" width="45%"><label>Message</label><textarea cols="40" rows="3" name="to_update[<?php echo $r['id'];?>][message]" class="border-radius-25"><?php echo $r['message'];?></textarea></td>
+                        <td valign="top" width="45%"><label>Message</label><textarea cols="40" rows="5" name="to_update[<?php echo $r['id'];?>][message]" class="border-radius-25"><?php echo $r['message'];?></textarea></td>
                         <td valign="top" width="10%"><label>Product ID/SKU</label><a href="/admin/products/<?php echo $r['productid'];?>" target="_blank"><?php echo $r['productid'];?>/<?php echo $r['sku'];?></a></td>
                 </tr>
 <?php } ?>
@@ -129,4 +134,7 @@ table td {
 <?php include SITE_ROOT."/var/cache/en/common/navigation.php";?>
 <br />
 <?php } ?>
+<?php } else if ($get['2'] == 'search') {?>
+<br />
+No reviews found
 <?php } ?>

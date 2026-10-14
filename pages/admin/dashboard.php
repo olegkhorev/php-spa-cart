@@ -161,8 +161,6 @@ $template['last_30_days_all'] = $last_30_days_all;
 
 $last_30_days_paid = [];
 $orders = $db->all("SELECT orderid, date, total FROM orders WHERE status IN ('2', '3', '6') AND date>=".(time() - 30 * 24 * 3600));
-#echo '<pre>';
-#exit(print_R($orders));
 foreach ($orders as $k => $v) {
     $last_30_days_paid[date('m/d', $v['date'])] += $v['total'];
 }

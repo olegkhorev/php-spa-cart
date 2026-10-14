@@ -30,6 +30,7 @@ body {
     -webkit-font-smoothing: antialiased !important;
     background: #fff;
 	color: #2b2a29;
+	overflow-x: hidden;
 }
 body svg {
 	width: 24px;
@@ -1289,9 +1290,6 @@ a.navigation-larrow, a.navigation-rarrow {
 .material-form .group {
 	width: 300px;
 }
-#checkoutform {
-	max-width: 260px;
-}
 /* active state */
 .group.withval label, .group input:focus ~ label, .group-select label, .group textarea:focus ~ label {
   top: -25px;
@@ -1326,7 +1324,7 @@ a.navigation-larrow, a.navigation-rarrow {
 #body-home .content {
 	min-height: 50px;
 }
-.gift_cards input {
+.gift_cards input:not([type="checkbox"]) {
 	padding: 10px;
 	border-radius: 10px;
 	margin: 10px 10px 0 0;
@@ -2465,4 +2463,10 @@ table.ui-datepicker-calendar, .ui-datepicker-calendar * {
 }
 #post_ticket {
     float: right;
+}
+#body-wishlist .main-container, body#body-cart .main-container, #body-checkout .main-container {
+	display: block;
+}
+#body-wishlist .image img, #body-cart .image img, #body-checkout .image img {
+	border-radius: 15px;
 }

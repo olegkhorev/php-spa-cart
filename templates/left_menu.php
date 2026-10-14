@@ -40,9 +40,9 @@
 {if $login}
 <a href="/profile" class="ajax_link">{lng[Account]}</a>
 <a href="/profile/orders" class="ajax_link">{lng[Orders history]}</a>
-<a href="/wishlist" class="ajax_link">{lng[Wishlist]}</a>
-<a href="/logout">{lng[Logout]}</a>
+<a href="/wishlist" class="ajax_link mobile_wishlist_link">{lng[Wishlist]}</a>
 <a href="/gift_cards" class="ajax_link">{lng[Gift Cards]}</a>
+<a href="/logout">{lng[Logout]}</a>
 {else}
 <a href="/login" class="ajax_link">{lng[Login]}</a>
 <a href="/register" class="ajax_link">{lng[Register]}</a>
@@ -61,7 +61,7 @@
 <hr />
 <a class="ajax_link" href="{$current_location}/brands">{lng[Brands]}</a>
 <a class="ajax_link" href="{$current_location}/blog">{lng[Blog]}</a>
-<a class="ajax_link" href="/page/about.html">{lng[About CMS]}</a>
+<a class="ajax_link" href="/page/about-us.html">{lng[About us]}</a>
 <a class="ajax_link" href="{if $config['Tickets']['use_tickets']}/support_desk{else}/help{/if}">{lng[Contact]}</a>
 </div>
 </div>

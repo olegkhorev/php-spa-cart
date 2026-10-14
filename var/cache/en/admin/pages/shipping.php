@@ -8,7 +8,7 @@
 */
 ?>
 <h1>Shipping methods</h1>
-
+<br />
 <?php  if ($config["Shipping"]["enable_shipping"] != "Y") { ?>
 
 <br />
@@ -98,20 +98,19 @@ function expand_all(flag) {
 } ?>
 
 <tr>
-  <td colspan="7" class="var-wh-100"><br /><h3>Add shipping method</td>
+  <td colspan="7" class="var-wh-100 background-transparent"><br /><h3>Add shipping method</td>
 </tr>
 
 <tr>
-  <td><label>Shipping method</label><input type="text" name="add[shipping]" size="27" /></td>
-  <td align="center"><label>Delivery time</label><input type="text" name="add[shipping_time]" size="10" /></td>
-  <td align="center" class="no-word-break"><label>Destination</label><select name="add[destination]">
+  <td class="background-transparent"><label>Shipping method</label><input type="text" name="add[shipping]" size="27" /></td>
+  <td align="center" class="background-transparent"><label>Delivery time</label><input type="text" name="add[shipping_time]" size="10" /></td>
+  <td align="center" class="background-transparent no-word-break"><label>Destination</label><select name="add[destination]">
     <option value="I">International</option>
     <option value="N">National</option>
   </select></td>
-
-  <td align="center"><label>Pos</label><input type="text" name="add[orderby]" size="4" value="0" /></td>
-  <td align="center"><label>Active</label><input type="checkbox" name="add[active]" value="Y" checked="checked" /></td>
-  <td></td>
+  <td align="center" class="background-transparent"><label>Pos</label><input type="text" name="add[orderby]" size="4" value="0" /></td>
+  <td align="center" class="background-transparent"><label>Active</label><input type="checkbox" name="add[active]" value="Y" checked="checked" /></td>
+  <td class="background-transparent"></td>
 </tr>
 
 </table>

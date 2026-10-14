@@ -13,7 +13,7 @@ login_popup();
 </script>
 {/if}
 <br />
-<button onclick="self.location='{$current_location}/testimonials/new';">{lng[Write testimonial]}</button>
+<button class="button_ajax_link" href="{$current_location}/testimonials/new">{lng[Write testimonial]}</button>
 <br /><br />
 <hr size="1" />
 {if $total_pages > 2}
@@ -37,8 +37,3 @@ login_popup();
 {include="common/navigation.php"}
 <br />
 {/if}
-
-<hr size="1" />
-<br />
-<button onclick="self.location='{$current_location}/testimonials/new';">{lng[Write testimonial]}</button>
-<br />

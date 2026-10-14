@@ -7,17 +7,18 @@
 * https://github.com/olegkhorev/php-spa-cart
 */
 ?>
+<h1>{lng[Categories]}</h1>
+<br />
+{if $category_location}
+{lng[Category path]}: {$category_location}<hr />
+{/if}
 <?php
-if ($category_location) {
-    echo $category_location . "<hr />";
-}
 if ($category) {
-    if ($category["enabled"] != 1) {
-        echo "<font color='#c60'>";
-    } ?>
-{lng[Category disabled|escape]}
+?>
+{if $category["enabled"] != 1}
+<font color="#c60">{lng[Category disabled|escape]}</font>
+{/if}
 <?php
-echo "</font><br /><br />";
 echo '<a href="/admin/category/' . $category["categoryid"] . '">';
 ?>
 {lng[Modify category|escape]}
@@ -78,7 +79,7 @@ echo '<a href="javascript: void(0);" onclick="javascript: confirm(\'\', $(\'#del
             $v["title"] .
             '</a> (<a href="/admin/category/' .
             $v["categoryid"] .
-            '">{lng[Edit|escape]})</a>)</td>
+            '">{lng[Edit|escape]}</a>)</td>
   <td align="center"><label>{lng[Products]}</label><a href="/admin/category/' .
             $v["categoryid"] .
             '/products">' .
@@ -94,7 +95,7 @@ echo '<a href="javascript: void(0);" onclick="javascript: confirm(\'\', $(\'#del
 		</tr>';
     } ?>
 </table>
-<br />
+<br /><br />
 <button type="button" onclick="javascript: submitForm(this, '');">{lng[Update]}</button>
 <br /><br />
 <button type="button" onclick="javascript: self.location='/admin/category/'+document.categories_form.cat.value;">{lng[Modify selected]}</button>
@@ -112,6 +113,9 @@ echo '<a href="javascript: void(0);" onclick="javascript: confirm(\'\', $(\'#del
 <h3>{lng[Featured products]}</h3>
 
 <a href="javascript: void(0);" onclick="javascript: check_all(document.fpform, 'to_delete', true);">{lng[Check all]}</a> / <a href="javascript: void(0);" onclick="javascript: check_all(document.fpform, 'to_delete', false);">{lng[Uncheck all]}</a>
+
+<br /><br />
+
 <form action="{$current_location}/admin/categories/<?php echo $category[
     "categoryid"
 ]; ?>" method="post" name="fpform">
@@ -147,7 +151,8 @@ echo '<a href="javascript: void(0);" onclick="javascript: confirm(\'\', $(\'#del
 </tr>
 <?php } ?>
 <tr>
-  <td colspan="4" class="var-wh-100">
+  <td colspan="4" class="var-wh-100 background-transparent">
+<br />
   <button type="button" onclick="javascript: document.fpform.mode.value = 'delete'; document.fpform.submit();">{lng[Delete selected]}</button> &nbsp; <button type="submit">{lng[Update]}</button>
   </td>
 </tr>
@@ -157,19 +162,19 @@ echo '<a href="javascript: void(0);" onclick="javascript: confirm(\'\', $(\'#del
      ?>
 
 <tr>
-	<td colspan="4" align="center" class="var-wh-100">{lng[No featured products in this category]}</td>
+	<td colspan="4" align="center" class="var-wh-100 background-transparent">{lng[No featured products in this category]}</td>
 </tr>
 
 <?php
 } ?>
 
 <tr>
-<td colspan="4" class="var-wh-100"><br /><h3>{lng[Add product]}</td>
+<td colspan="4" class="var-wh-100 background-transparent"><br /><h3>{lng[Add product]}</td>
 </tr>
 
 <tr>
-  <td>&nbsp;</td>
-  <td class="no-word-break"><label>{lng[Select product]}</label>
+  <td class="background-transparent">&nbsp;</td>
+  <td class="background-transparent no-word-break"><label>{lng[Select product]}</label>
     <input type="hidden" name="newproductid" />
     <input type="text" size="35" name="newproduct" disabled="disabled" />
 <script>
@@ -178,12 +183,13 @@ var popup_product_pid = document.fpform.newproductid,
 </script>
     <button type="button" onclick="javascript: popup_product();">{lng[Browse...]}</button>
   </td>
-  <td align="center"><label>{lng[Pos]}</label><input type="text" name="neworderby" size="5" /></td>
-  <td align="center"><label>{lng[Active]}</label><input type="checkbox" name="newenabled" checked="checked" /></td>
+  <td class="background-transparent" align="center"><label>{lng[Pos]}</label><input type="text" name="neworderby" size="5" /></td>
+  <td class="background-transparent" align="center"><label>{lng[Active]}</label><input type="checkbox" name="newenabled" checked="checked" /></td>
 </tr>
 
 <tr>
-  <td colspan="4" class="var-wh-100">
+  <td colspan="4" class="var-wh-100 background-transparent">
+<br />
   <button type="button" onclick="javascript: document.fpform.mode.value = 'add'; document.fpform.submit();">{lng[Add new]}</button>
   </td>
 </tr>

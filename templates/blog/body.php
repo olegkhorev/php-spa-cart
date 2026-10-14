@@ -96,7 +96,7 @@
 </form>
 <?php } ?>
 {elseif $blogs}
-<h1>{lng[Our blog]}</h1><br />
+<h1>{lng[Blog]}</h1><br />
 {if $total_pages > 2}
 <div align="right">{include="common/navigation.php"}</div>
 <br />

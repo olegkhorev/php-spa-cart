@@ -7,11 +7,14 @@
 * https://github.com/olegkhorev/php-spa-cart
 */
 ?>
+<?php if ($get["2"] == 'new') {?>
+<h1>New role</h1>
+<?php } else  { ?>
+<h1>Edit role</h1>
+<?php } ?>
+<br />
 <form method="post" name="roleform">
 <input type="hidden" name="mode" value="<?php if ($role) {?>save<?php } else  { ?>add<?php } ?>" />
-<?php  if ($get["2"] == "new") { ?>
-	<h3>New role</h3>
-<?php  } ?>
 
 <table cellpadding="3" cellspacing="1" width="90%" class="normal-table">
 
@@ -46,6 +49,8 @@
 </optgroup>
 <?php } ?>
 </select>
+<br /><br />
+* Hold Ctrl and click to select
  </td>
 </tr>
 

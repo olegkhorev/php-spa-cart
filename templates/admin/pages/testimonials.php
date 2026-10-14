@@ -7,6 +7,10 @@
 * https://github.com/olegkhorev/php-spa-cart
 */
 ?>
+<h1>{lng[Testimonials]}</h1>
+
+<br />
+
 <form method="post" name="testimonialsform">
 <input type="hidden" name="mode" value="update" />
 
@@ -57,6 +61,9 @@
 <?php } ?>
 
 <a href="javascript: void(0);" onclick="javascript: check_all(document.testimonialsform, 'to_delete', true);">{lng[Check all]}</a> / <a href="javascript: void(0);" onclick="javascript: check_all(document.testimonialsform, 'to_delete', false);">{lng[Uncheck all]}</a>
+
+<br /><br />
+
 <table cellpadding="3" cellspacing="0" width="900" class="lines-table resp-table">
 <thead>
 <tr>

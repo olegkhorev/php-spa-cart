@@ -844,4 +844,7 @@ tr.two-inputs .mdl-textfield {
   .new-ticket-message-table td * {
     max-width: 300px;
   }
+  .products-title-h3 a {
+    display: none;
+  }
 }

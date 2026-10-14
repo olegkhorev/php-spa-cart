@@ -25,6 +25,9 @@
 </div>
 {/if}
 {elseif $brands}
+<h1>{lng[Brands]}</h1>
+<br />
+
 {if $total_pages > 2}
 <div align="right">{include="common/navigation.php"}</div>
 <br />

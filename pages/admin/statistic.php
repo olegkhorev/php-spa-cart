@@ -10,19 +10,38 @@
 <?php
 $template['location'] .= ' &gt; '.lng('Statistic');
 $template['head_title'] = lng('Statistic').' :: '.$template['head_title'];
+
 $today = mktime(0, 0, 0, date('n'), date('j'), date('Y'));
-$template['orders_today'] = $db->field("SELECT COUNT(orderid) FROM orders WHERE date>=".$today);
+$orders_today = [];
+$orders = $db->all("SELECT orderid, date, total FROM orders WHERE date>=".$today);
+foreach ($orders as $k => $v) {
+    $orders_today[date('m/d', $v['date'])] += $v['total'];
+}
+
+$template['orders_today'] = $orders_today;
 $template['total_today'] = $db->field("SELECT SUM(total) FROM orders WHERE date>=".$today);
 $template['total_today_paid'] = $db->field("SELECT SUM(total) FROM orders WHERE status IN ('2', '3', '6') AND date>=".$today);
 
 $first_weekday = time() - date("w") * 86400;
 $week = mktime(0, 0, 0, date("n", $first_weekday), date("j", $first_weekday), date("Y", $first_weekday));
-$template['orders_week'] = $db->field("SELECT COUNT(orderid) FROM orders WHERE date>=".$week);
+$orders_week = [];
+$orders = $db->all("SELECT orderid, date, total FROM orders WHERE date>=".$week);
+foreach ($orders as $k => $v) {
+    $orders_week[date('m/d', $v['date'])] += $v['total'];
+}
+
+$template['orders_week'] = $orders_week;
 $template['total_week'] = $db->field("SELECT SUM(total) FROM orders WHERE date>=".$week);
 $template['total_week_paid'] = $db->field("SELECT SUM(total) FROM orders WHERE status IN ('2', '3', '6') AND date>=".$week);
 
 $month = mktime(0, 0, 0, date("n"), 1, date("Y"));
-$template['orders_month'] = $db->field("SELECT COUNT(orderid) FROM orders WHERE date>=".$month);
+$orders_month = [];
+$orders = $db->all("SELECT orderid, date, total FROM orders WHERE date>=".$month);
+foreach ($orders as $k => $v) {
+    $orders_month[date('m/d', $v['date'])] += $v['total'];
+}
+
+$template['orders_month'] = $orders_month;
 $template['total_month'] = $db->field("SELECT SUM(total) FROM orders WHERE date>=".$month);
 $template['total_month_paid'] = $db->field("SELECT SUM(total) FROM orders WHERE status IN ('2', '3', '6') AND date>=".$month);
 

@@ -7,6 +7,11 @@
 * https://github.com/olegkhorev/php-spa-cart
 */
 ?>
+<script>
+// Close overlay from the invoice page
+$('.fade').click();
+</script>
+
 {if !$pdf_invoice}
 {if $get['2'] != 'print' && !$is_mail}
 {if $userinfo['usertype'] == 'A' && $order['gift_card']}

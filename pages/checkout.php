@@ -396,6 +396,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         } elseif ($paymentid == 8) {
             if ($login) {
                 func_setcookie('remember_paypal_redirect', $login);
+            } else {
+                func_setcookie('remember_paypal_redirect_id', $orderid);
             }
 
             $payment_method = $db->row("SELECT * FROM payment_methods WHERE paymentid=8");

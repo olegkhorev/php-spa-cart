@@ -7,6 +7,9 @@
 * https://github.com/olegkhorev/php-spa-cart
 */
 ?>
+<h1><?php echo $language_data['name'];?></h1>
+<br />
+
 <?php if ($translate_mode) {?>
 <a href="/admin/language?exit_translate_mode=1" class="mdl-button">Exit "Translate" mode</a>
 <?php } else  { ?>

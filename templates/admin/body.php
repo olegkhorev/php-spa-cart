@@ -135,14 +135,14 @@ CKEDITOR.disableAutoInline = true;
 <a href="/admin/orders/recent">{lng[Recent orders]}</a>
 {/if}
 {if in_array('orders', $allow_pages_ids) || $root_admin}
-<a href="/admin/orders">{lng[Search orders]}</a>
+<a href="/admin/orders">{lng[Orders]}</a>
 <a href="/admin/statistic">{lng[Statistic]}</a>
 {/if}
 {if in_array('coupons', $allow_pages_ids) || $root_admin}
 <a href="/admin/coupons">{lng[Discount coupons]}</a>
 {/if}
 {if in_array('gift_cards', $allow_pages_ids) || $root_admin}
-<a href="/admin/gift_cards">{lng[Gift Cards]}</a>
+<a href="/admin/gift_cards">{lng[Gift cards]}</a>
 {/if}
 </div>
  </li>
@@ -156,10 +156,10 @@ CKEDITOR.disableAutoInline = true;
 					</a>
 <div>
 {if in_array('users', $allow_pages_ids) || $root_admin}
-<a href="/admin/users">{lng[Browse users]}</a>
+<a href="/admin/users">{lng[Users]}</a>
 {/if}
 {if in_array('users', $allow_pages_ids) || $root_admin}
-<a href="/admin/user/new">{lng[Create new user]}</a>
+<a href="/admin/user/new">{lng[New user]}</a>
 {/if}
 {if in_array('memberships', $allow_pages_ids) || $root_admin}
 <a href="/admin/memberships">{lng[Membership levels]}</a>
@@ -243,12 +243,10 @@ CKEDITOR.disableAutoInline = true;
 <div>
 {foreach $modules as $v}
 <a href="/admin/module_manage/{$v['code']}">{$v['module']}</a>
-
+{/foreach}
 {if in_array('modules', $allow_pages_ids) || $root_admin}
 <a href="/admin/modules">{lng[Modules]}</a>
 {/if}
-
-{/foreach}
 </div>
  </li>
 {/if}
@@ -335,7 +333,7 @@ CKEDITOR.disableAutoInline = true;
 <a href="/admin/search_keywords">{lng[Search keywords]}</a>
 {/if}
 {if in_array('sitemap', $allow_pages_ids) || $root_admin}
-<a href="/admin/sitemap">{lng[Google Sitemap]}</a>
+<a href="/admin/sitemap">{lng[Sitemap]}</a>
 {/if}
 </div>
  </li>

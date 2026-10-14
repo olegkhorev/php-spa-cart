@@ -96,6 +96,7 @@ function profile_popup(url_add) {
             bb = true;
           });
 
+          ajax_clicks();
           profile_clicks();
           mdl_elements();
         },

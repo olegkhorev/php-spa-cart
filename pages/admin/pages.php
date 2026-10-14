@@ -71,7 +71,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 if ($get['2']) {
     $page = $db->row("SELECT * FROM pages WHERE pageid='".$get['2']."'");
     $template['page'] = $page;
-    $template['location'] .= ' &gt; <a href="'.$current_location.'/admin/pages">'.lng('Pages').'</a> &gt; '.$page['title'];
+    $template['location'] .= ' &gt; <a href="'.$current_location.'/admin/pages">'.lng('Pages').'</a>';
+    if ($get['2'] == 'new') {
+        $template['location'] .= ' &gt; '.lng('Add page');
+    } else {
+        $template['location'] .= ' &gt; '.$page['title'];
+    }
 } else {
     $pages = $db->all("SELECT * FROM pages ORDER BY orderby, pageid");
     $template['pages'] = $pages;

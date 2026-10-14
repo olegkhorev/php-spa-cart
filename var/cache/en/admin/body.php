@@ -135,7 +135,7 @@ CKEDITOR.disableAutoInline = true;
 <a href="/admin/orders/recent">Recent orders</a>
 <?php } ?>
 <?php if (in_array('orders', $allow_pages_ids) || $root_admin) {?>
-<a href="/admin/orders">Search orders</a>
+<a href="/admin/orders">Orders</a>
 <a href="/admin/statistic">Statistic</a>
 <?php } ?>
 <?php if (in_array('coupons', $allow_pages_ids) || $root_admin) {?>
@@ -156,10 +156,10 @@ CKEDITOR.disableAutoInline = true;
 					</a>
 <div>
 <?php if (in_array('users', $allow_pages_ids) || $root_admin) {?>
-<a href="/admin/users">Browse users</a>
+<a href="/admin/users">Users</a>
 <?php } ?>
 <?php if (in_array('users', $allow_pages_ids) || $root_admin) {?>
-<a href="/admin/user/new">Create new user</a>
+<a href="/admin/user/new">New user</a>
 <?php } ?>
 <?php if (in_array('memberships', $allow_pages_ids) || $root_admin) {?>
 <a href="/admin/memberships">Membership levels</a>
@@ -243,11 +243,9 @@ CKEDITOR.disableAutoInline = true;
 <div>
 <?php foreach ($modules as $v) {?>
 <a href="/admin/module_manage/<?php echo $v['code'];?>"><?php echo $v['module'];?></a>
-
+<?php } ?>
 <?php if (in_array('modules', $allow_pages_ids) || $root_admin) {?>
 <a href="/admin/modules">Modules</a>
-<?php } ?>
-
 <?php } ?>
 </div>
  </li>
@@ -335,7 +333,7 @@ CKEDITOR.disableAutoInline = true;
 <a href="/admin/search_keywords">Search keywords</a>
 <?php } ?>
 <?php if (in_array('sitemap', $allow_pages_ids) || $root_admin) {?>
-<a href="/admin/sitemap">Google Sitemap</a>
+<a href="/admin/sitemap">Sitemap</a>
 <?php } ?>
 </div>
  </li>

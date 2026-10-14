@@ -50,12 +50,12 @@ $template["memberships"] = $db->all("SELECT m.*, COUNT(u.id) as users FROM membe
 
 if ($get['2'] == 'new') {
     $user = $_SESSION['new_user'];
-    $template['location'] .= ' &gt; <a href="'.$current_location.'/admin/users">'.lng('Users management').'</a>';
+    $template['location'] .= ' &gt; <a href="'.$current_location.'/admin/users">'.lng('Users').'</a>';
     $template['location'] .= ' &gt; New user';
     $template['head_title'] = lng('New user').' :: '.$template['head_title'];
 } else {
     $user = $db->row("SELECT * FROM users WHERE id='".$get['2']."'");
-    $template['location'] .= ' &gt; <a href="'.$current_location.'/admin/users">'.lng('Users management').'</a>';
+    $template['location'] .= ' &gt; <a href="'.$current_location.'/admin/users">'.lng('Users').'</a>';
     $template['location'] .= ' &gt; '.$user['firstname'].' '.$user['lastname'];
     $template['head_title'] = lng('User').' '.$user['firstname'].' '.$user['lastname'].' :: '.$template['head_title'];
 }

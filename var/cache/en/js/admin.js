@@ -215,6 +215,12 @@ function ajax_clicks_admin() {
 
   if ($("#chart-line").length) init_chart_line();
 
+  if ($(".statistics_charts").length) {
+    $(".statistics_charts").each(function() {
+      init_statistics_charts(this, $(this).attr('rel'));
+    });
+  }
+
   if ($(".exec_admin_page_js").length) {
     eval($(".exec_admin_page_js").html());
   }
@@ -436,7 +442,7 @@ function popup_product() {
         $(".products_popup").css("top", top + "px");
         $(".products_popup").css(
           "left",
-          $(window).width() / 2 - $(".products_popup").width() / 2 - 10 + "px",
+          $(window).width() / 2 - $(".products_popup").width() / 2 + "px",
         );
       });
 

@@ -8,8 +8,9 @@
 */
 ?>
 <?php  if ($brands) { ?>
-<a href="<?php echo $current_location;?>/admin/brands/new">Add new</a>
-<br /><br />
+<h1 class="products-title-h3">Brands <a class="ajax_link link-button" href="/admin/brands/new">Add new brand</a></h1>
+<br />
+
 <form method="post" name="brandsform">
 <input type="hidden" name="mode" value="update" />
 
@@ -18,6 +19,8 @@
 <?php  echo "<br />";} ?>
 
 <a href="javascript: void(0);" onclick="javascript: check_all(document.brandsform, 'to_delete', true);">Check all</a> / <a href="javascript: void(0);" onclick="javascript: check_all(document.brandsform, 'to_delete', false);">Uncheck all</a>
+
+<br /><br />
 
 <table cellpadding="3" cellspacing="1" width="600" class="lines-table resp-table">
 <thead>
@@ -60,14 +63,14 @@
 </form>
 
 <?php  } else  { ?>
+<?php if (($get['2'] == 'new')) {?>
+<h1>New brand</h1>
+<?php } else  { ?>
+<h1><?php echo $brand['name'];?></h1>
+<?php } ?>
+
 <script src="<?php echo $current_location;?>/ckeditor/ckeditor.js"></script>
 <form method="post" name="brandform" enctype="multipart/form-data">
-
-<?php if (($get['2'] == 'new')) {?>
-<h3>New brand</h3>
-<?php } else  { ?>
-<h3><?php echo $brand['title'];?></h3>
-<?php } ?>
 
 <table cellpadding="3" cellspacing="1" width="90%" class="normal-table">
 <tr>

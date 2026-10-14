@@ -7,10 +7,10 @@
 * https://github.com/olegkhorev/php-spa-cart
 */
 ?>
-<a href="<?php  echo $current_location; ?>/admin/subscribtions/<?php  echo $get[
-    "2"
-]; ?>/new">Add new</a>
-<br /><br />
+
+<h1 class="products-title-h3">Subscriptions <a class="ajax_link link-button" href="/admin/subscribtions/new">Add new</a></h1>
+<br />
+
 Total subscribers: <?php  echo $subscribers
     ? $subscribers
     : "0"; ?> <a href="/admin/subscribtions/<?php  echo $get[

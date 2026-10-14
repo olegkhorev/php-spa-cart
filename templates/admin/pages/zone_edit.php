@@ -29,10 +29,12 @@
   </td>
 </tr>
 </table>
+<br /><br />
+* {lng[Hold Ctrl and click to select]}
 
 <table cellpadding="3" cellspacing="1" width="1000" class="mobile-zone_edit-table">
 <tr>
-  <td colspan="3"><br /><br /><h3>{lng[Countries]}</td>
+  <td colspan="3"><h3>{lng[Countries]}</td>
 </tr>
 
 <tr>

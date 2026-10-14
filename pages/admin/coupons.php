@@ -47,7 +47,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     redirect("admin/coupons");
 }
 
-$template['location'] .= ' &gt; Coupons ';
+$template['location'] .= ' &gt; '.lng('Discount coupons');
 $total_items = $db->field("SELECT COUNT(*) FROM coupons");
 if ($total_items > 0) {
     $objects_per_page = 30;
@@ -58,5 +58,5 @@ if ($total_items > 0) {
 }
 
 $template['page'] = get_template_contents('admin/pages/coupons.php');
-$template['head_title'] = 'Coupons :: '.$template['head_title'];
+$template['head_title'] = lng('Discount coupons').' :: '.$template['head_title'];
 $template['css'][] = 'admin_coupons';

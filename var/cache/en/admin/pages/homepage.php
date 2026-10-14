@@ -7,6 +7,8 @@
 * https://github.com/olegkhorev/php-spa-cart
 */
 ?>
+<h1>Homepage</h1>
+<br />
 <?php  if (empty($_GET["parentid"])) { ?>
 <ul class="admin-tabs">
 <li<?php  if (empty($get["2"])) {
@@ -59,7 +61,7 @@
 </tr>
 <?php  } ?>
 <tr>
-	<td colspan="5" class="var-wh-100">
+	<td colspan="5" class="var-wh-100 background-transparent">
 	<button type="button" onclick="javascript: submitForm(this, 'update');">Update</button> &nbsp;	<button type="button" onclick="javascript: submitForm(this, 'delete');">Delete selected</button>
 	</td>
 </tr>
@@ -68,25 +70,25 @@
 } else  {
      ?>
 <tr>
- <td colspan="5" align="center" class="var-wh-100">No banners for this category</td>
+ <td colspan="5" align="center" class="var-wh-100 background-transparent">No banners for this category</td>
 </tr>
 <?php 
 } ?>
 
 <tr>
-<td colspan="5" class="var-wh-100"><br /><h3>Add new</td>
+<td colspan="5" class="var-wh-100 background-transparent"><br /><h3>Add new</td>
 </tr>
 
 <tr>
-	<td>&nbsp;</td>
-	<td><label>Banner</label><input type="file" size="10" name="userfile" /></td>
-	<td><label>Link</label><input size="30" type="text" name="new_url"></td>
-	<td><label>Alt</label><input size="30" type="text" name="new_alt"></td>
-	<td align="center"><label>Pos</label><input type="text" size="5" name="new_pos" /></td>
+	<td class="background-transparent">&nbsp;</td>
+	<td class="background-transparent"><label>Banner</label><input type="file" size="10" name="userfile" /></td>
+	<td class="background-transparent"><label>Link</label><input size="30" type="text" name="new_url"></td>
+	<td class="background-transparent"><label>Alt</label><input size="30" type="text" name="new_alt"></td>
+	<td class="background-transparent" align="center"><label>Pos</label><input type="text" size="5" name="new_pos" /></td>
 </tr>
 
 <tr>
-	<td colspan="5" class="var-wh-100">
+	<td colspan="5" class="var-wh-100 background-transparent">
 <button type="button" onclick="javascript: submitForm(this, 'add');">Add</button>
 	</td>
 </tr>

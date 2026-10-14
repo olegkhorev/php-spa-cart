@@ -7,23 +7,23 @@
 * https://github.com/olegkhorev/php-spa-cart
 */
 ?>
-<?php if (!$tickets) {?>
-
+<?php if ($_GET['mode'] == "search" && $tickets) {?>
+<h1 class="products-title-h3">Support desk <a class="ajax_link link-button" href="/admin/support_desk">Search again</a></h1>
+<?php } else  { ?>
+<h1>Support desk</h1>
+<?php } ?>
 <br />
 
-<h3>Search for tickets</h3>
-
+<?php if (!$tickets) {?>
 <form name="searchform" action="/admin/support_desk/search" method="post" href="/admin/support_desk/?mode=search">
 
 <table cellpadding="4" cellspacing="0" width="100%" class="search_table search_table-support-desk">
-
 <?php $empty='Y'; $name="posted_data[type]"; $type=$search_prefilled['type'];; ?>
 <tr>
         <td align='right'>Type:</td>
         <td width="10">&nbsp;</td>
         <td><?php include SITE_ROOT."/var/cache/en/common/ticket_type.php";?></td>
 </tr>
-
 <?php if ($ticket_cats) {?>
 <?php $ticket_cat = $search_prefilled['cat1'].'|||'.$search_prefilled['cat2'].'|||'.$search_prefilled['cat3'].'|||'.$search_prefilled['cat4'].'|||'.$search_prefilled['cat5'];; ?>
 <tr>
@@ -138,29 +138,14 @@
 
 <?php if ($_GET['mode'] == "search" && $tickets) {?>
 
-<a name="results"></a>
-
-<?php if ($_GET['mode'] == "search") {?>
-<?php if ($total_items > "0") {?>
-Results found: <?php echo $total_items;?><br />
-Displaying <?php echo $first_item;?>-<?php echo $last_item;?> results
-<?php } else  { ?>
-No tickets found
-<?php } ?>
-<?php } ?>
-
-<br /><br />
-
-<h3>Search results</h3>
-
-<div align="right"><a href="/admin/support_desk/">Search again</a></div>
-
 <?php  if ($total_pages > 2) { ?>
 <?php include SITE_ROOT."/var/cache/en/common/navigation.php";?>
 <br />
 <?php  } ?>
 
-<br /><a href="javascript: void(0);" onclick="javascript: check_all(document.ticketsform, 'to_delete', true);">Check all</a> / <a href="javascript: void(0);" onclick="javascript: check_all(document.ticketsform, 'to_delete', false);">Uncheck all</a>
+<a href="javascript: void(0);" onclick="javascript: check_all(document.ticketsform, 'to_delete', true);">Check all</a> / <a href="javascript: void(0);" onclick="javascript: check_all(document.ticketsform, 'to_delete', false);">Uncheck all</a>
+
+<br /><br />
 
 <form action="tickets.php" method="post" name="ticketsform">
 <input type="hidden" name="mode" value="" />

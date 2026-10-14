@@ -9,6 +9,7 @@
 ?>
 <?php 
 if ($get["2"] != "recent") { ?>
+<h1>Orders</h1>
 <form method="POST" action="/admin/orders">
 <input type="hidden" name="mode" value="search" />
 <table cellspacing="1" cellpadding="3" class="orders_search search_table">
@@ -88,7 +89,8 @@ if ($get["2"] != "recent") { ?>
 </form>
 <h3>Search results</h3>
 <?php  } else  { ?>
-<h3>Recent orders</h3>
+<h1>Recent orders</h1>
+<br />
 <?php  }
 if ($total_pages > 2) { ?>
 <?php include SITE_ROOT."/var/cache/en/common/navigation.php";?>

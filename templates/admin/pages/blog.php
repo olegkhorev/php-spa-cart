@@ -8,8 +8,9 @@
 */
 ?>
 <?php if ($blogs) { ?>
-<a href="{$current_location}/admin/blog/new">{lng[Add new]}</a>
-<br /><br />
+<h1 class="products-title-h3">{lng[Blog]} <a class="ajax_link link-button" href="/admin/blog/new">{lng[Add new post]}</a></h1>
+<br />
+
 <form method="post" name="blogsform">
 <input type="hidden" name="mode" value="update" />
 
@@ -18,6 +19,8 @@
 <?php echo "<br />";} ?>
 
 <a href="javascript: void(0);" onclick="javascript: check_all(document.blogsform, 'to_delete', true);">{lng[Check all]}</a> / <a href="javascript: void(0);" onclick="javascript: check_all(document.blogsform, 'to_delete', false);">{lng[Uncheck all]}</a>
+
+<br /><br />
 
 <table cellpadding="3" cellspacing="1" width="600" class="lines-table resp-table">
 <thead>
@@ -61,6 +64,8 @@
 </div>
 </form>
 
+<br />
+
 <h3>{lng[Authors]}</h3>
 <?php foreach ($authors as $id => $v) {
     echo '<a href="' .
@@ -77,9 +82,9 @@
 <form method="post" name="blogform" enctype="multipart/form-data">
 
 {if $get['2'] == 'new'}
-<h3>{lng[New blog|escape]}</h3>
+<h1>{lng[New blog|escape]}</h1>
 {else}
-<h3>{$blog['title']}</h3>
+<h1>{$blog['title']}</h1>
 {/if}
 
 <table cellpadding="3" cellspacing="1" width="90%" class="normal-table">

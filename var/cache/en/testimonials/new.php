@@ -11,6 +11,7 @@
 <script src='https://www.google.com/recaptcha/api.js?onload=recaptchaOnload&render=explicit' async defer></script>
 <?php } ?>
 
+<h1>Write testimonial</h1>
 <form method="POST" onsubmit="javascript: return check_new_testimonial();">
 <table class="new_testimonial">
 <tr>

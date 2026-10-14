@@ -128,7 +128,7 @@ table.product-options {
   margin: 0px !important;
 }
 .product-added {
-  width: 500px;
+  width: 100%;
 }
 .product-added img {
   float: left;

@@ -8,8 +8,8 @@
 */
 ?>
 <?php  if ($modules) { ?>
-<a href="<?php echo $current_location;?>/admin/modules/install" class="ajax_link">Install new</a>
-<br /><br />
+<h1 class="products-title-h3">Modules <a class="ajax_link link-button" href="/admin/modules/install">Install new</a></h1>
+<br />
 <form method="post" name="modulesform">
 <input type="hidden" name="mode" value="update" />
 <?php  if ($total_pages > 2) { ?>
@@ -46,7 +46,9 @@
 </form>
 
 <?php  } else  { ?>
-<form method="post" name="blogform" enctype="multipart/form-data">
+<h1>Install new module</h1>
+<br />
+<form method="post" class="noajax" name="blogform" enctype="multipart/form-data">
 <input type="file" name="install_archive" accept=".zip, application/zip, application/x-zip-compressed" />
 <button type="submit" name="btn">Install</button>
 <br /><br />

@@ -7,6 +7,8 @@
 * https://github.com/olegkhorev/php-spa-cart
 */
 ?>
+<h1>{lng[Discount coupons]}</h1>
+<br />
 <form method="post">
 <input type="hidden" name="mode" value="update" />
 

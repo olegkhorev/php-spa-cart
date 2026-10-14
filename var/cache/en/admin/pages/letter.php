@@ -7,12 +7,20 @@
 * https://github.com/olegkhorev/php-spa-cart
 */
 ?>
-Total subscribers: <?php  echo $subscribers ? $subscribers : '0';?> <a href="/admin/subscribtions/export">Export</a>
+<?php if ($get['2'] == 'new') {?>
+<h1>New letter</h1>
+<?php } else  { ?>
+<h1><?php echo $letter['subject'];?></h1>
+<?php } ?>
+<br />
+Total subscribers: <?php  echo $subscribers
+    ? $subscribers
+    : "0"; ?> <a href="/admin/subscribtions/export">Export</a>
 <br /><br />
 <script src="<?php  echo $current_location; ?>/ckeditor/ckeditor.js"></script>
 <form method="post" name="letterform" enctype="multipart/form-data">
 <input type="hidden" name="mode" value="save" />
-<input type="hidden" name="id" value="<?php  echo $letter['id']; ?>" />
+<input type="hidden" name="id" value="<?php  echo $letter["id"]; ?>" />
 
 <?php if (($get['3'] == 'new')) {?>
 <h3>New letter</h3>
@@ -20,18 +28,17 @@ Total subscribers: <?php  echo $subscribers ? $subscribers : '0';?> <a href="/ad
 <h3><?php echo $letter['subject'];?></h3>
 <?php } ?>
 
-<?php 
-if ($letter['date']) {
-?>
-Added: <?php  echo date($datetime_format, $letter['date']); ?>
-<?php 
-}
-?>
+<?php  if ($letter["date"]) { ?>
+Added: <?php  echo date($datetime_format, $letter["date"]); ?>
+<?php  } ?>
 
 <table cellpadding="3" cellspacing="1" width="90%" class="normal-table">
 <tr>
  <td><b>Subject:</b></td>
- <td><input type="text" name="subject" size="40" value="<?php  echo escape($letter['subject'], 2); ?>" /></td>
+ <td><input type="text" name="subject" size="40" value="<?php  echo escape(
+     $letter["subject"],
+     2,
+ ); ?>" /></td>
 </tr>
 
 <tr>
@@ -45,7 +52,9 @@ Added: <?php  echo date($datetime_format, $letter['date']); ?>
 		    $('*').removeAttr("title");
 		});
 	</script>
-		<textarea class="ckeditor" id="ck_editor" cols="65" rows="7" name="message"><?php  echo $letter['message']; ?></textarea>
+		<textarea class="ckeditor" id="ck_editor" cols="65" rows="7" name="message"><?php  echo $letter[
+      "message"
+  ]; ?></textarea>
 <br /><br />
  </td>
 </tr>

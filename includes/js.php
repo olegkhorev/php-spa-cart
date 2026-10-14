@@ -17,15 +17,21 @@ foreach ($js as $v) {
 
 $default_js = func_get_ajax_js();
 $js_cache = '';
-foreach ($default_js as $v) {
-    $js_cache .= file_get_contents(SITE_ROOT . '/var/cache/'.$lng.'/js/'.$v.'.js', 'js');
+if (DEVELOPMENT) {
+    foreach ($default_js as $v) {
+        echo '<script src="/var/cache/'.$lng.'/js/'.$v.'.js?'.$css_js_cache.'"></script>'."\n";
+    }
+} else {
+    foreach ($default_js as $v) {
+        $js_cache .= file_get_contents(SITE_ROOT . '/var/cache/'.$lng.'/js/'.$v.'.js', 'js');
+    }
+
+    $fp = fopen(SITE_ROOT . '/var/cache/'.$lng.'/js.js', 'w');
+    fputs($fp, $js_cache);
+    fclose($fp);
+
+    echo '<script src="/var/cache/'.$lng.'/js.js?'.$css_js_cache.'"></script>';
 }
-
-$fp = fopen(SITE_ROOT . '/var/cache/'.$lng.'/js.js', 'w');
-fputs($fp, $js_cache);
-fclose($fp);
-
-echo '<script src="/var/cache/'.$lng.'/js.js?'.$css_js_cache.'"></script>';
 
 $dir = SITE_ROOT.'/var/cache/'.$lng.'/js_modules';
 $modules_js = func_get_modules_ajax_js();
@@ -36,14 +42,19 @@ foreach ($modules_js as $v) {
     }
 
     func_put_javascript_content(SITE_ROOT.'/templates/modules/'.$v.'/scripts.js', $dir.'/'.$v.'/scripts.js', $v, 'js_modules');
-    $modules_js_cache .= file_get_contents($dir.'/'.$v.'/scripts.js');
+    if (DEVELOPMENT) {
+        echo '<script src="/var/cache/'.$lng.'/js_modules/'.$v.'/scripts.js?'.$css_js_cache.'"></script>'."\n";
+    } else {
+        $modules_js_cache .= file_get_contents($dir.'/'.$v.'/scripts.js');
+    }
 }
 
-$fp = fopen(SITE_ROOT . '/var/cache/'.$lng.'/js_modules.js', 'w');
-fputs($fp, $modules_js_cache);
-fclose($fp);
-
-echo '<script src="/var/cache/'.$lng.'/js_modules.js?'.$css_js_cache.'"></script>';
+if (!DEVELOPMENT) {
+    $fp = fopen(SITE_ROOT . '/var/cache/'.$lng.'/js_modules.js', 'w');
+    fputs($fp, $modules_js_cache);
+    fclose($fp);
+    echo '<script src="/var/cache/'.$lng.'/js_modules.js?'.$css_js_cache.'"></script>';
+}
 
 $already = array();
 foreach ($js as $v) {

@@ -16,16 +16,22 @@ foreach ($css as $v) {
 }
 
 $default_css = func_get_ajax_css();
-$css_cache = '';
-foreach ($default_css as $v) {
-    $css_cache .= file_get_contents(SITE_ROOT . '/var/cache/other/css/'.$v.'.css');
+if (DEVELOPMENT) {
+    foreach ($default_css as $v) {
+        echo '@import url("/var/cache/other/css/'.$v.'.css?'.$css_js_cache.'");'."\n";
+    }
+} else {
+    $css_cache = '';
+    foreach ($default_css as $v) {
+        $css_cache .= file_get_contents(SITE_ROOT . '/var/cache/other/css/'.$v.'.css');
+    }
+
+    $fp = fopen(SITE_ROOT . '/var/cache/css.css', 'w');
+    fputs($fp, $css_cache);
+    fclose($fp);
+
+    echo '@import url("/var/cache/css.css?'.$css_js_cache.'");';
 }
-
-$fp = fopen(SITE_ROOT . '/var/cache/css.css', 'w');
-fputs($fp, $css_cache);
-fclose($fp);
-
-echo '@import url("/var/cache/css.css?'.$css_js_cache.'");';
 
 if ($get['0'] != 'admin') {
     $dir = SITE_ROOT.'/var/cache/other/css_modules';
@@ -37,13 +43,19 @@ if ($get['0'] != 'admin') {
         }
 
         func_put_css_content(SITE_ROOT.'/templates/modules/'.$v.'/styles.css', $dir.'/'.$v.'/styles.css', $v, 'css');
-        $modules_css_cache .= file_get_contents(SITE_ROOT . '/var/cache/other/css_modules/'.$v.'/styles.css');
+        if (DEVELOPMENT) {
+            echo '@import url("/var/cache/other/css_modules/'.$v.'/styles.css?'.$css_js_cache.($_SESSION['current_theme'] ? $_SESSION['current_theme']['code'] : '').'");'."\n";
+        } else {
+            $modules_css_cache .= file_get_contents(SITE_ROOT . '/var/cache/other/css_modules/'.$v.'/styles.css');
+        }
     }
 
     $fp = fopen(SITE_ROOT . '/var/cache/css_modules.css', 'w');
     fputs($fp, $modules_css_cache);
     fclose($fp);
-    echo '@import url("/var/cache/css_modules.css?'.$css_js_cache.($_SESSION['current_theme'] ? $_SESSION['current_theme']['code'] : '').'");';
+    if (!DEVELOPMENT) {
+        echo '@import url("/var/cache/css_modules.css?'.$css_js_cache.($_SESSION['current_theme'] ? $_SESSION['current_theme']['code'] : '').'");';
+    }
 }
 
 $already = array();

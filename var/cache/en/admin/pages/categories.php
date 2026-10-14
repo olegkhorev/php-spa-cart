@@ -7,17 +7,18 @@
 * https://github.com/olegkhorev/php-spa-cart
 */
 ?>
+<h1>Categories</h1>
+<br />
+<?php if ($category_location) {?>
+Category path: <?php echo $category_location;?><hr />
+<?php } ?>
 <?php 
-if ($category_location) {
-    echo $category_location . "<hr />";
-}
 if ($category) {
-    if ($category["enabled"] != 1) {
-        echo "<font color='#c60'>";
-    } ?>
-Category disabled
+?>
+<?php if ($category["enabled"] != 1) {?>
+<font color="#c60">Category disabled</font>
+<?php } ?>
 <?php 
-echo "</font><br /><br />";
 echo '<a href="/admin/category/' . $category["categoryid"] . '">';
 ?>
 Modify category
@@ -78,7 +79,7 @@ Delete category
             $v["title"] .
             '</a> (<a href="/admin/category/' .
             $v["categoryid"] .
-            '">Edit)</a>)</td>
+            '">Edit</a>)</td>
   <td align="center"><label>Products</label><a href="/admin/category/' .
             $v["categoryid"] .
             '/products">' .
@@ -94,7 +95,7 @@ Delete category
 		</tr>';
     } ?>
 </table>
-<br />
+<br /><br />
 <button type="button" onclick="javascript: submitForm(this, '');">Update</button>
 <br /><br />
 <button type="button" onclick="javascript: self.location='/admin/category/'+document.categories_form.cat.value;">Modify selected</button>
@@ -112,6 +113,9 @@ Delete category
 <h3>Featured products</h3>
 
 <a href="javascript: void(0);" onclick="javascript: check_all(document.fpform, 'to_delete', true);">Check all</a> / <a href="javascript: void(0);" onclick="javascript: check_all(document.fpform, 'to_delete', false);">Uncheck all</a>
+
+<br /><br />
+
 <form action="<?php echo $current_location;?>/admin/categories/<?php  echo $category[
     "categoryid"
 ]; ?>" method="post" name="fpform">
@@ -147,7 +151,8 @@ Delete category
 </tr>
 <?php  } ?>
 <tr>
-  <td colspan="4" class="var-wh-100">
+  <td colspan="4" class="var-wh-100 background-transparent">
+<br />
   <button type="button" onclick="javascript: document.fpform.mode.value = 'delete'; document.fpform.submit();">Delete selected</button> &nbsp; <button type="submit">Update</button>
   </td>
 </tr>
@@ -157,19 +162,19 @@ Delete category
      ?>
 
 <tr>
-	<td colspan="4" align="center" class="var-wh-100">No featured products in this category</td>
+	<td colspan="4" align="center" class="var-wh-100 background-transparent">No featured products in this category</td>
 </tr>
 
 <?php 
 } ?>
 
 <tr>
-<td colspan="4" class="var-wh-100"><br /><h3>Add product</td>
+<td colspan="4" class="var-wh-100 background-transparent"><br /><h3>Add product</td>
 </tr>
 
 <tr>
-  <td>&nbsp;</td>
-  <td class="no-word-break"><label>Select product</label>
+  <td class="background-transparent">&nbsp;</td>
+  <td class="background-transparent no-word-break"><label>Select product</label>
     <input type="hidden" name="newproductid" />
     <input type="text" size="35" name="newproduct" disabled="disabled" />
 <script>
@@ -178,12 +183,13 @@ var popup_product_pid = document.fpform.newproductid,
 </script>
     <button type="button" onclick="javascript: popup_product();">Browse...</button>
   </td>
-  <td align="center"><label>Pos</label><input type="text" name="neworderby" size="5" /></td>
-  <td align="center"><label>Active</label><input type="checkbox" name="newenabled" checked="checked" /></td>
+  <td class="background-transparent" align="center"><label>Pos</label><input type="text" name="neworderby" size="5" /></td>
+  <td class="background-transparent" align="center"><label>Active</label><input type="checkbox" name="newenabled" checked="checked" /></td>
 </tr>
 
 <tr>
-  <td colspan="4" class="var-wh-100">
+  <td colspan="4" class="var-wh-100 background-transparent">
+<br />
   <button type="button" onclick="javascript: document.fpform.mode.value = 'add'; document.fpform.submit();">Add new</button>
   </td>
 </tr>

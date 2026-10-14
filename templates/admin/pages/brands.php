@@ -8,8 +8,9 @@
 */
 ?>
 <?php if ($brands) { ?>
-<a href="{$current_location}/admin/brands/new">{lng[Add new]}</a>
-<br /><br />
+<h1 class="products-title-h3">{lng[Brands]} <a class="ajax_link link-button" href="/admin/brands/new">{lng[Add new brand]}</a></h1>
+<br />
+
 <form method="post" name="brandsform">
 <input type="hidden" name="mode" value="update" />
 
@@ -18,6 +19,8 @@
 <?php echo "<br />";} ?>
 
 <a href="javascript: void(0);" onclick="javascript: check_all(document.brandsform, 'to_delete', true);">{lng[Check all]}</a> / <a href="javascript: void(0);" onclick="javascript: check_all(document.brandsform, 'to_delete', false);">{lng[Uncheck all]}</a>
+
+<br /><br />
 
 <table cellpadding="3" cellspacing="1" width="600" class="lines-table resp-table">
 <thead>
@@ -60,14 +63,14 @@
 </form>
 
 <?php } else { ?>
+{if ($get['2'] == 'new')}
+<h1>{lng[New brand]}</h1>
+{else}
+<h1>{$brand['name']}</h1>
+{/if}
+
 <script src="{$current_location}/ckeditor/ckeditor.js"></script>
 <form method="post" name="brandform" enctype="multipart/form-data">
-
-{if ($get['2'] == 'new')}
-<h3>{lng[New brand|escape]}</h3>
-{else}
-<h3>{$brand['title']}</h3>
-{/if}
 
 <table cellpadding="3" cellspacing="1" width="90%" class="normal-table">
 <tr>

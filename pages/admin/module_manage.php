@@ -8,6 +8,7 @@
 */
 ?>
 <?php
+func_load('modules');
 $module = $db->row("SELECT * FROM modules WHERE code='".$get['2']."'");
 if (!file_exists(SITE_ROOT . '/includes/func/func.'.$module['code'].'.php')) {
     $_SESSION['alerts'][] = array(

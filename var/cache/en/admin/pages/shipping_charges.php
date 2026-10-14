@@ -13,6 +13,8 @@
 <h1>Shipping markups</h1>
 <?php  } ?>
 
+<br />
+
 <form method="get" name="zoneform">
 
 <input type="hidden" name="type" value="<?php echo $type;?>" />
@@ -46,7 +48,7 @@
 <br /><br />
 
 <?php  if ($shipping_rates_avail > 0) { ?>
-<div align="right" class="mobile-text-left"><a href="javascript: void(0);" onclick="javascript: add_shipping_rates_values();";>Add shipping rates values</a></div>
+<div align="right" class="mobile-text-left"><a href="javascript: void(0);" onclick="javascript: add_shipping_rates_values();" class="link-button">Add shipping rates values</a></div>
 
 <br /><br />
 
@@ -63,13 +65,13 @@
 <?php  foreach ($zones_list as $z) {
     if ($z["shipping_methods"]) {
         echo '<tr>
-  <td><h3>' .
+  <td class="background-transparent"><h3>' .
             $z["zone"]["zone"] .
             '</h3></td>
 </tr>';
         if ($z["shipping_methods"]) {
             foreach ($z["shipping_methods"] as $shipid => $shipping_method) {
-                echo '<tr><td><hr /></td></tr>
+                echo '
 <tr>
   <th>
 <table cellpadding="2" cellspacing="0" width="100%">
@@ -106,10 +108,6 @@ echo ')</label></b></th>
 </tr>
 </table>
   </th>
-</tr>
-
-<tr>
-  <td><hr /></td>
 </tr>
 
 <tr>
@@ -187,9 +185,6 @@ if ($shipping_method["rates"]) {
             '][weight_rate]" size="5" value="' .
             $shipping_rate["weight_rate"] .
             '" /></td>
-</tr>
-<tr>
-  <td colspan="7" class="mobile-none"><hr /></td>
 </tr>
 ';
     }

@@ -7,14 +7,15 @@
 * https://github.com/olegkhorev/php-spa-cart
 */
 ?>
-<a href="/admin/user/new">{lng[Create new user account]}</a><br /><br />
+<h1 class="products-title-h3">{lng[Users]} <a href="/admin/user/new" class="link-button ajax_link">{lng[Create new user account]}</a><br /><br /></h1>
+
 <form action="{$current_location}/admin/users/search" method="post" name="users_form">
 <input type="hidden" name="mode" value="" />
 
 <?php
 if ($get['2'] == 'search') {
 ?>
-<a href="{$current_location}/admin/users" class="search_again">{lng[Search again]}</a>
+<a href="{$current_location}/admin/users" class="search_again ajax_link link-button">{lng[Search again]}</a>
 <h3>{lng[Users search results]}</h3>
 <?php
 if ($users) {
@@ -70,7 +71,6 @@ foreach ($users as $k=>$v) {
 }
 } else {
 ?>
-<h3>{lng[Users management]}</h3><br />
 <table cellpadding="2" cellspacing="1" class="users_management search_table">
 <tr>
  <td class="name">{lng[Search for]}</td>

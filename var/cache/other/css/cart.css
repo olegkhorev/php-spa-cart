@@ -1,6 +1,7 @@
 .cart_popup,
 .wl_popup {
-  max-width: 600px;
+  width: 800px;
+  max-width: 90%;
   min-width: 400px;
   padding: 10px;
 }

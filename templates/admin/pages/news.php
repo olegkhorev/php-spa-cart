@@ -8,8 +8,9 @@
 */
 ?>
 <?php if ($newss) { ?>
-<a href="<?php echo $current_location; ?>/admin/news/new">{lng[Add new]}</a>
-<br /><br />
+<h1 class="products-title-h3">{lng[News]} <a class="ajax_link link-button" href="/admin/news/new">{lng[Add new product]}</a></h1>
+<br />
+
 <form method="post" name="newssform">
 <input type="hidden" name="mode" value="update" />
 
@@ -18,6 +19,8 @@
 <?php echo "<br />";} ?>
 
 <a href="javascript: void(0);" onclick="javascript: check_all(document.newssform, 'to_delete', true);">{lng[Check all]}</a> / <a href="javascript: void(0);" onclick="javascript: check_all(document.newssform, 'to_delete', false);">{lng[Uncheck all]}</a>
+
+<br /><br />
 
 <table cellpadding="3" cellspacing="1" width="600" class="lines-table resp-table">
 <thead>

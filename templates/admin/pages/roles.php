@@ -7,10 +7,12 @@
 * https://github.com/olegkhorev/php-spa-cart
 */
 ?>
+<h1>{lng[Roles]}</h1>
+<br />
 <form method="post">
 <input type="hidden" name="mode" value="update" />
 
-<a href="/admin/roles/new" class="ajax_link">{lng[New role]}</a><br />
+<a href="/admin/roles/new" class="ajax_link link-button">{lng[New role]}</a><br /><br />
 
 <table cellpadding="3" cellspacing="1" width="600" class="lines-table resp-table">
 <?php if ($roles) { ?>

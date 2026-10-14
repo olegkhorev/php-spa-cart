@@ -32,8 +32,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     redirect('admin/orders'.($get['2'] ? '/'.$get['2'] : ''));
 }
 
-$template['location'] .= ' &gt; '.lng('Orders');
-$template['head_title'] = lng('Orders').' :: '.$template['head_title'];
 if ($get['2'] == 'recent') {
     $tmp = $db->all("SELECT COUNT(orderid) as cnt FROM orders LIMIT 90");
     $total_items = $tmp['0']['cnt'];
@@ -43,6 +41,9 @@ if ($get['2'] == 'recent') {
         $template["navigation_script"] = $current_location."/admin/orders/recent?";
         $template['orders'] = $db->all("SELECT * FROM orders ORDER BY orderid DESC LIMIT $first_page, $objects_per_page");
     }
+
+    $template['location'] .= ' &gt; '.lng('Recent orders');
+    $template['head_title'] = lng('Recent orders').' :: '.$template['head_title'];
 } else {
     $where = array();
     $end_date = time();
@@ -95,6 +96,9 @@ if ($get['2'] == 'recent') {
         $template["navigation_script"] = $current_location."/admin/orders?";
         $template['orders'] = $db->all("SELECT * FROM orders".$search_condition." ORDER BY orderid DESC LIMIT $first_page, $objects_per_page");
     }
+
+    $template['location'] .= ' &gt; '.lng('Orders');
+    $template['head_title'] = lng('Orders').' :: '.$template['head_title'];
 }
 
 $template['page'] = get_template_contents('admin/pages/orders.php');
