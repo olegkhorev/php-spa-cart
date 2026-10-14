@@ -200,7 +200,7 @@ $template['page_title'] = $page_title;
 $template['bread_crumbs_html'] = get_template_contents('bread_crumbs.php');
 
 if ($get['0'] == 'admin') {
-    if ($https_domain == 'demo.spa-cart.com') {
+	if ($https_domain == 'demo.spa-cart.com') {
         redirect('https://demoadmin.spa-cart.com/admin', 1);
     }
 
@@ -212,8 +212,9 @@ if ($get['0'] == 'admin') {
 	if ($_GET['its_ajax_page'])
 		$_SESSION['alerts'] = array();
 } else {
-    if ($https_domain == 'demoadmin.spa-cart.com')
-        redirect('https://demo.spa-cart.com', 1);
+	if ($https_domain == 'demoadmin.spa-cart.com' && $get['0'] != 'module') {
+	    redirect('https://demo.spa-cart.com', 1);
+    }
 
 	$template['ajax_container'] = get_template_contents('ajax_container.php');
 }

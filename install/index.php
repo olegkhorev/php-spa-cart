@@ -223,10 +223,10 @@ if (is_writeable(SITE_ROOT.'/../files')) {
 </tr>
 
 <tr>
-  <td colspan="2">/includes/</td>
+  <td colspan="2">/images/</td>
   <td>
 <?php
-if (is_writeable(SITE_ROOT.'/../includes')) {
+if (is_writeable(SITE_ROOT.'/../images')) {
  echo '<font color="green">Good</font>';
 } else {
  echo '<font color="red">Bad</font>';
@@ -240,6 +240,45 @@ if (is_writeable(SITE_ROOT.'/../includes')) {
   <td>
 <?php
 if (is_writeable(SITE_ROOT.'/../photos')) {
+ echo '<font color="green">Good</font>';
+} else {
+ echo '<font color="red">Bad</font>';
+}
+?>
+  </td>
+</tr>
+
+<tr>
+  <td colspan="2">/includes/</td>
+  <td>
+<?php
+if (is_writeable(SITE_ROOT.'/../includes')) {
+ echo '<font color="green">Good</font>';
+} else {
+ echo '<font color="red">Bad</font>';
+}
+?>
+  </td>
+</tr>
+
+<tr>
+  <td colspan="2">/modules/</td>
+  <td>
+<?php
+if (is_writeable(SITE_ROOT.'/../modules')) {
+ echo '<font color="green">Good</font>';
+} else {
+ echo '<font color="red">Bad</font>';
+}
+?>
+  </td>
+</tr>
+
+<tr>
+  <td colspan="2">/templates/</td>
+  <td>
+<?php
+if (is_writeable(SITE_ROOT.'/../templates')) {
  echo '<font color="green">Good</font>';
 } else {
  echo '<font color="red">Bad</font>';
