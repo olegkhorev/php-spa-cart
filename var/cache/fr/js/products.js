@@ -129,13 +129,13 @@ function load_quick_look(product_id) {
       $(".product_popup").css("top", top + "px");
       $(".product_popup").css(
         "left",
-        $(window).width() / 2 - $(".product_popup").width() / 2 - 10 + "px",
+        $(window).width() / 2 - $(".product_popup").outerWidth() / 2 + "px",
       );
     });
 
     $(".product_popup").css(
       "left",
-      $(window).width() / 2 - $(".product_popup").width() / 2 - 10 + "px",
+      $(window).width() / 2 - $(".product_popup").outerWidth() / 2 + "px",
     );
     $(".product_popup")
       .css("opacity", 0)
@@ -161,7 +161,7 @@ function load_quick_look(product_id) {
       $(".product_popup").css("top", top + "px");
       $(".product_popup").css(
         "left",
-        $(window).width() / 2 - $(".product_popup").width() / 2 - 10 + "px",
+        $(window).width() / 2 - $(".product_popup").outerWidth() / 2 + "px",
       );
     });
 

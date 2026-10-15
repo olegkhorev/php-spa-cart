@@ -51,7 +51,7 @@ function profile_popup(url_add) {
           $(".profile_popup").css("top", top + "px");
           $(".profile_popup").css(
             "left",
-            $(window).width() / 2 - $(".profile_popup").width() / 2 - 10 + "px",
+            $(window).width() / 2 - $(".profile_popup").outerWidth() / 2 + "px",
           );
           $(".profile_popup")
             .css("opacity", 0)
@@ -78,8 +78,7 @@ function profile_popup(url_add) {
             $(".profile_popup").css(
               "left",
               $(window).width() / 2 -
-                $(".profile_popup").width() / 2 -
-                10 +
+                $(".profile_popup").outerWidth() / 2 +
                 "px",
             );
           });

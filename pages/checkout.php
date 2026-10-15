@@ -385,11 +385,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 'mode' => 'payment',
                 'line_items' => $items,
                 'success_url' => $current_location.'/stripe/'.$orderid.'/'.$stripe_key,
-                'cancel_url' => $current_location.'/invoice/'.$orderid,
+                'cancel_url' => $current_location.'/invoice/'.$orderid.'/cancelled',
             ]);
 
             $stripe_session = $session->id;
             $db->query("UPDATE orders SET stripe_session='".addslashes($stripe_session)."' WHERE orderid='".$orderid."'");
+            $_SESSION['cart_saved'] = $_SESSION['cart'];
             $_SESSION['cart'] = array();
             func_remove_cart();
             exit($stripe_session);
@@ -414,7 +415,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
   <input type="text" name="amount" value="<?php echo price_format($cart['total']); ?>" />
     <br>
     <input name="currency_code" type="hidden" value="<?php echo strtoupper($payment_currency); ?>">
-    <input name="cancel_return" type="hidden" value="<?php echo $current_location; ?>/invoice/<?php echo $orderid; ?>/failed">
+    <input name="cancel_return" type="hidden" value="<?php echo $current_location; ?>/invoice/<?php echo $orderid; ?>/cancelled">
     <input name="notify_url" type="hidden" value="<?php echo $current_location; ?>/paypal/<?php echo $orderid; ?>">
     <input name="return" type="hidden" value="<?php echo $current_location; ?>/invoice/<?php echo $orderid; ?>/success">
     <input name="cmd" type="hidden" value="_xclick">
@@ -427,6 +428,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <img alt="" border="0" src="https://www.paypalobjects.com/fr_FR/i/scr/pixel.gif" width="1" height="1">
     </form>
 <?php
+            $_SESSION['cart_saved'] = $_SESSION['cart'];
             $_SESSION['cart'] = array();
             func_remove_cart();
             exit;

@@ -7,8 +7,6 @@
 * https://github.com/olegkhorev/php-spa-cart
 */
 ?>
-<div id="dcart"><img src="{$current_location}/images/dcart.png" alt="" /><br />{lng[Move product here]}</div>
-
 <h1>{$category['title']}</h1>
 {if $banners}
 {php $categoryid = $category['categoryid'];}

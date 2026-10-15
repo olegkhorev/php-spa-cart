@@ -9,6 +9,15 @@
 ?>
 <?php
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    if (DEMO) {
+        $_SESSION['alerts'][] = array(
+            'type'      => 'e',
+            'content'	=> lng('Payment methods cannot be updated on Demo')
+        );
+
+        redirect('admin/payment');
+    }
+
     extract($_POST);
     foreach ($data as $k => $v) {
         $v['enabled'] = $v['enabled'] ? 1 : 0;
@@ -22,7 +31,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     }
 
     $_SESSION['alerts'][] = array(
-        'content'	=> 'Payment methods has been successfully updated'
+        'content'	=> lng('Payment methods have been successfully updated')
     );
 
     redirect('admin/payment');

@@ -148,10 +148,10 @@
 <input type='button' value='{if !$ticket}{lng[Add|escape]}{else}{lng[Save|escape]}{/if}' onclick="javascript: submitForm(this, '');">
 {if $ticket}
 &nbsp;
-<input type='button' value='{lng[Delete]}' onclick="if (confirm('Are you sure?', $(this)) || confirmed) submitForm(this, 'delete');">
+<input type='button' value='{lng[Delete]}' onclick="if (confirm('{lng[Are you sure?]}', $(this)) || confirmed) submitForm(this, 'delete');">
 {if $messages}
 &nbsp;
-<input type='button' value='{lng[Delete all messages]}' onclick="if (confirm('Are you sure?', $(this)) || confirmed) submitForm(this, 'delete_messages');">
+<input type='button' value='{lng[Delete all messages]}' onclick="if (confirm('{lng[Are you sure?]}', $(this)) || confirmed) submitForm(this, 'delete_messages');">
 {/if}
 {/if}
  </td>
@@ -169,7 +169,7 @@
 <option value="{$i['ticketid']}">{$i['ticketid']} - {$i['subject']}</option>
 {/foreach}
 </select>
-<button onclick="if (!$('#move_to').val()) return false; if (confirm('Are you sure?', $(this)) || confirmed) self.location='/admin/ticket/{$ticket['ticketid']}?mode=move&to='+$('#move_to').val();">Move</button>
+<button onclick="if (!$('#move_to').val()) return false; if (confirm('{lng[Are you sure?]}', $(this)) || confirmed) self.location='/admin/ticket/{$ticket['ticketid']}?mode=move&to='+$('#move_to').val();">Move</button>
 {/if}
 
 {if $ticket}
@@ -197,7 +197,7 @@ function edit_message(id) {
 <tr>
  <td align='left'><label>{lng[Customer]}</label><a name="m{$i['messageid']}"></a>&nbsp;<a href="/admin/user/{$i['userid']}">{$i['firstname']} {$i['lastname']} ({$i['email']})</a>{if $i['ip']} (IP: {$i['ip']}){/if}</td>
  <td align='right' width="150"><label>{lng[Date]}</label>{php echo date($datetime_format, $i['date']);}</td>
- <td align='right' width='200'><a href="#add_new" onclick="javascript: edit_message('{$i['messageid']}')">Edit</a> / <a href="javascript: void(0);" onclick="javascript: if (confirm('Delete this message?')) self.location='/admin/ticket/{$ticket['ticketid']}?mode=delete_message&messageid={$i['messageid']}';">Delete</a>&nbsp;</td>
+ <td align='right' width='200'><a href="#add_new" onclick="javascript: edit_message('{$i['messageid']}')">Edit</a> / <a href="javascript: void(0);" onclick="javascript: confirm('{lng[Delete this message?]}', $(this), '/admin/ticket/{$ticket['ticketid']}?mode=delete_message&messageid={$i['messageid']}');">Delete</a>&nbsp;</td>
 </tr>
 <tr>
  <td><hr /><label>{lng[Message]}</label>{php echo func_eol2br($i['message']);}
@@ -219,7 +219,7 @@ Clone message to:
 <option value="{$t['ticketid']}">{$t['ticketid']} - {$t['subject']}</option>
 {/foreach}
 </select>
-<button onclick="if (!$('#move_to_{$i['messageid']}').val()) return false; if (confirm('Are you sure?', $(this)) || confirmed) self.location='/admin/ticket/{$ticket['ticketid']}?messageid={$i['messageid']}&mode=clone_message&to='+$('#move_to_{$i['messageid']}').val();">Clone</button>
+<button onclick="if (!$('#move_to_{$i['messageid']}').val()) return false; if (confirm('{lng[Are you sure?]}', $(this)) || confirmed) self.location='/admin/ticket/{$ticket['ticketid']}?messageid={$i['messageid']}&mode=clone_message&to='+$('#move_to_{$i['messageid']}').val();">Clone</button>
 {/if}
  </td>
 </tr>

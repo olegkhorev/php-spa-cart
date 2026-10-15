@@ -27,7 +27,6 @@ Sample template theme
 	<div id="center" class="no_left_menu">
 {/if}
 {/if}
-<div id="dcart"><img src="{$current_location}/images/dcart.png" alt="" /><br />{lng[Move product here]}</div>
 <?php
 if (lng("Site title")) {
     echo "<br /><h1>" . lng("Site title") . "</h1>";

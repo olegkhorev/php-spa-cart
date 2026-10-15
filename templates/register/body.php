@@ -55,42 +55,13 @@
 {/if}
 
 {if $config['General']['recaptcha_key']}
+<br />
 <div id="recaptcha_register" data-sitekey="{$config['General']['recaptcha_key']}"></div>
+<br />
 {/if}
 
 <div align="center"><button type="button">{lng[Register]}</button> &nbsp; <a href="/login" onclick="return login_popup();" class="ajax_mobile_link main-button login-link">{lng[Login]}</a></div>
 
-{*
-<table class="login-table">
-<tr>
- <td class="name">{lng[Fisrtname]}:</td>
- <td><input class="firstname" maxlength="32" type="text" name="firstname" value="{php echo escape($userinfo['firstname'], 2);}" /></td>
-</tr>
-<tr>
- <td class="name">{lng[Lastname]}:</td>
- <td><input maxlength="32" type="text" name="lastname" value="{php echo escape($userinfo['lastname'], 2);}" /></td>
-</tr>
-<tr>
- <td class="name">{lng[Email]}:</td>
- <td><input type="text" name="email" value="{php echo escape($userinfo['email'], 2);}" /></td>
-</tr>
-<tr>
- <td class="name">{lng[Password]}:</td>
- <td><input type="password" name="password" value="" autocomplete="off" /></td>
-</tr>
-{if $memberships}
-{php $name="pending_membershipid"; $value = 0;}
-<tr>
- <td class="name">{lng[Sign up for membership]}:</td>
- <td>{include="common/membership.php"}</td>
-</tr>
-{/if}
-<tr>
- <td></td>
- <td><br /><button type="button">{lng[Register]}</button> &nbsp; <a href="/login" onclick="javascript: return login_popup();" class="main-button login-link">{lng[Login]}</a></td>
-</tr>
-</table>
-*}
 </form>
  </td>
 </tr>

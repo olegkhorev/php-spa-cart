@@ -153,7 +153,7 @@ echo '<a href="javascript: void(0);" onclick="javascript: confirm(\'\', $(\'#del
 <tr>
   <td colspan="4" class="var-wh-100 background-transparent">
 <br />
-  <button type="button" onclick="javascript: document.fpform.mode.value = 'delete'; document.fpform.submit();">{lng[Delete selected]}</button> &nbsp; <button type="submit">{lng[Update]}</button>
+  <button type="button" onclick="javascript: document.fpform.mode.value = 'delete'; $(document.fpform).submit();">{lng[Delete selected]}</button> &nbsp; <button type="submit">{lng[Update]}</button>
   </td>
 </tr>
 
@@ -190,7 +190,7 @@ var popup_product_pid = document.fpform.newproductid,
 <tr>
   <td colspan="4" class="var-wh-100 background-transparent">
 <br />
-  <button type="button" onclick="javascript: document.fpform.mode.value = 'add'; document.fpform.submit();">{lng[Add new]}</button>
+  <button type="button" onclick="javascript: document.fpform.mode.value = 'add'; $(document.fpform).submit();">{lng[Add new]}</button>
   </td>
 </tr>
 

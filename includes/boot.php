@@ -83,7 +83,7 @@ if (!is_dir($var_dir)) {
     mkdir($var_dir, 0777) || die('Cannot create '.$var_dir.' directory. Please, check permissions.');
     copy(SITE_ROOT.'/includes/index_file', $var_dir.'/index.php');
 
-    $dirs = array('cache', 'log', 'photo', 'photo/blog', 'photo/brand', 'photo/category', 'photo/product', 'photo/variant', 'cache/other', 'cache/other/css', 'cache/other/images', 'cache/en', 'cache/en/js', 'cache/ru', 'cache/ru/js');
+    $dirs = array('cache', 'log', 'photo', 'photo/blog', 'photo/brand', 'photo/category', 'photo/product', 'photo/variant', 'cache/other', 'cache/other/css', 'cache/other/images', 'cache/en', 'cache/en/js', 'cache/ru', 'cache/ru/js', 'tmp');
     foreach ($dirs as $v) {
         $dir = $var_dir.'/'.$v;
         mkdir($dir, 0777) || die('Cannot create '.$dir.' directory. Please, check permissions.');

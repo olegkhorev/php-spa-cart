@@ -50,7 +50,7 @@ if ($get['0'] != 'admin') {
         }
     }
 
-    $fp = fopen(SITE_ROOT . '/var/cache/css_modules.css', 'w');
+    $fp = fopen(SITE_ROOT . '/var/cache/css_modules.css', 'w+');
     fputs($fp, $modules_css_cache);
     fclose($fp);
     if (!DEVELOPMENT) {

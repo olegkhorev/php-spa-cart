@@ -49,6 +49,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $email_replyto = $email;
     func_mail($config['Company']['company_name'], $config['Company']['support_department'], '', $subject, $message, $email);
 
+    $_SESSION['saved_contact'] = [];
     $_SESSION['alerts'][] = array(
         'content'	=> lng('Your letter has been sent. We will contact you as soon as possible.')
     );

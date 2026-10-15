@@ -112,6 +112,7 @@ if ($file) {
 
         $result[$product_id] = $word;
         if (count($result) > 20) {
+            $template['total_items'] = 100;
             break;
         }
     }

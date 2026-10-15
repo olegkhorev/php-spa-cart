@@ -22,7 +22,7 @@
 <tr>
  <td class="photo"><a class="ajax_link" href="{$current_location}/{if $v['cleanurl']}{$v['cleanurl']}.html{else}product/{$v['productid']}{/if}">
 {if $v['photo']}
-{product_image image=`$v['photo']` class=`"product-image"` id=`"pid-".$v["productid"]` new_width=40 new_height=40 center=1}
+{product_image image=`$v['photo']` class=`"product-image"` id=`"pid-".$v["productid"]` new_width=80 new_height=80 center=1}
 {/if}
 </a>
  </td>
@@ -33,7 +33,7 @@
 {/foreach}
 </table>
 {if $total_items > 10}
-<div class="more-no-search">{lng[And more]}</div>
+<div class="more-no-search load-more-products">{lng[And more]}</div>
 {/if}
 {else}
 <div class="more-no-search">{lng[No products found]}</div>

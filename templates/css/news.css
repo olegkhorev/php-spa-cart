@@ -1,10 +1,13 @@
+.news-list {
+  margin-top: -15px;
+}
 .news-list h2 {
   font-size: 22px;
   padding: 15px 0;
   margin: -10px 0 5px 0;
 }
 .news-list h5 {
-  font-size: 16px;
+  font-size: 18px;
   font-weight: 500;
   padding: 5px 0 10px 0;
   margin: 10px 0 5px 0;
@@ -19,10 +22,6 @@
 }
 .news-content {
   position: relative;
-}
-.news-content h1 {
-  padding: 5px 0 20px 0 !important;
-  margin: 0 0 0px 0 !important;
 }
 .news-content .nav-pages {
   margin: 20px 0 0 0;

@@ -92,7 +92,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
                 $images = $db->all("SELECT * FROM products_photos WHERE productid='".$productid."'");
                 if ($images) {
-                    $dir = SITE_ROOT . '/photos/product/';
+                    $dir = SITE_ROOT . '/photos/product';
                     foreach ($images as $i) {
                         $new_image = $i;
                         unset($new_image['photoid']);
@@ -111,6 +111,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
                         copy($old_path, $new_path.'/'.$i['file']);
                     }
+
+                    func_optimize_photo($new_productid);
                 }
 
                 $old_options = array();

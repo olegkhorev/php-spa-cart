@@ -12,9 +12,9 @@
 login_popup();
 </script>
 {/if}
-<br />
-<button class="button_ajax_link" href="{$current_location}/testimonials/new">{lng[Write testimonial]}</button>
-<br /><br />
+<h1>{lng[Testimonials]}</h1>
+<button class="button_ajax_link new-testimonial-link" href="{$current_location}/testimonials/new">{lng[Write testimonial]}</button>
+<div class="clear"></div>
 <hr size="1" />
 {if $total_pages > 2}
 <br />

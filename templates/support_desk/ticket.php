@@ -12,18 +12,20 @@
 {/if}
 {if $ticket}
 <h1>{lng[Ticket]} #{$ticket['ticketid']} (<span id="ticket-status-{$ticket['ticketid']}">{php $mode = "static"; $status=$ticket['status'];}{include="common/ticket_status.php"}</span>)</h1>
-{else}
-<h1>{lng[New ticket]}</h1>
-{/if}
 <br />
+{/if}
+
 {if !$ticket}
 {if $config['General']['recaptcha_key']}
 <script src='https://www.google.com/recaptcha/api.js?onload=recaptchaOnload&render=explicit' async defer></script>
 {/if}
 
-<form action="/ticket{if $_GET['productid']}?productid={$_GET['productid']}{/if}" method="POST" name="ticketform" enctype="multipart/form-data">
+<form action="/ticket{if $_GET['productid']}?productid={$_GET['productid']}{/if}" method="POST" name="ticketform" enctype="multipart/form-data" class="ajax-form">
 <input type="hidden" name="mode" value="">
 <input type="hidden" name="productid" value="{$product['productid']}">
+
+<h1>{lng[New ticket]}</h1>
+<br />
 
 <div class="ticket-div">
 {if !$login}
@@ -66,6 +68,7 @@
  <div class="error-cc3300"><b id="error_mes">{lng[Please, select all categories, enter your subject and message]}</b></div>
 
 {if $config['General']['recaptcha_key']}
+<br />
 <div id="recaptcha_ticket" data-sitekey="{$config['General']['recaptcha_key']}"></div><br />
 {/if}
 
@@ -169,7 +172,7 @@ Message:<br />
 <br />
 <h3>{lng[Post new message]}</h3>
 <a name="create_new"></a>
-<form method="POST" name="mesform" id="ticketmesform" action="/ticket/{$ticket['ticketid']}" enctype="multipart/form-data">
+<form method="POST" name="mesform" id="ticketmesform" action="/ticket/{$ticket['ticketid']}" enctype="multipart/form-data" class="ajax-form">
 <input type="hidden" name="mode" value="create_new">
 
 <table cellspacing="0" cellpadding="0" width="100%">
@@ -180,7 +183,7 @@ Message:<br />
  </td>
 </tr>
 <tr>
- <td><div id="error_mes"><b>{lng[err_ticket_message]}</b></div></td>
+ <td><div id="error_mes"><b>{lng[Please, enter ticket message]}</b></div></td>
  <td align="right"><button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored">{lng[Send message]}</button>&nbsp;</td>
 </tr>
 </table>

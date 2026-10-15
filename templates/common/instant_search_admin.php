@@ -14,7 +14,7 @@
 <tr>
  <td class="photo"><a class="ajax_link" href="{$current_location}/admin/products/{$v['productid']}">
 {if $v['photo']}
-{product_image image=`$v['photo']` class=`"product-image"` id=`"pid-".$v["productid"]` new_width=40 new_height=40}
+{product_image image=`$v['photo']` class=`"product-image"` id=`"pid-".$v["productid"]` new_width=80 new_height=80}
 {/if}
 </a>
  </td>

@@ -11,7 +11,6 @@
 <script src='https://www.google.com/recaptcha/api.js?onload=recaptchaOnload&render=explicit' async defer></script>
 {/if}
 
-<div id="dcart"><img src="{$current_location}/images/dcart.png" alt="" /><br />{lng[Move product here]}</div>
 {if !$oid}
  <h1 class="fn title product-title">{$product['name']}</h1>
  <h1 class="fntitle hidden">{$product['name']}</h1>

@@ -10,13 +10,22 @@
 <?php
 func_load('modules');
 $module = $db->row("SELECT * FROM modules WHERE code='".$get['2']."'");
+if (!$module['enabled']) {
+    $_SESSION['alerts'][] = array(
+        'type'		=> 'e',
+        'content'	=> lng('This module disabled')
+    );
+
+    redirect('admin/modules');
+}
+
 if (!file_exists(SITE_ROOT . '/includes/func/func.'.$module['code'].'.php')) {
     $_SESSION['alerts'][] = array(
         'type'		=> 'e',
         'content'	=> lng('This module does not have functions file')
     );
 
-    redirect('admin');
+    redirect('admin/modules');
 }
 
 func_load($module['code']);

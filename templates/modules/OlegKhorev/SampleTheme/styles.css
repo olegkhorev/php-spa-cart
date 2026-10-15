@@ -369,6 +369,15 @@ table.product-options input,
 .add-to-wl-product svg {
   fill: #fff;
 }
+#newrecord {
+  border: 1px solid #333;
+}
+table#blog_bb_buttons button {
+  background: transparent;
+}
+.profile_popup table tr:nth-child(2n) td {
+  background: #222;
+}
 @media only screen and (max-width: 850px) {
   #head {
     background: #fff !important;

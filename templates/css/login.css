@@ -1,3 +1,7 @@
+.alert_message.register_alert, .alert_message.login_alert {
+    width: 400px;
+    margin-left: -200px;
+}
 .login_error,
 .register_error {
   display: none;

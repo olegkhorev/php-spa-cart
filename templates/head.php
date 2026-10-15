@@ -110,13 +110,6 @@
 {/if}
   </li>
   <li class="search-dd"><svg><use xlink:href="/images/sprite.svg#search"></use></svg>
-<form method="POST" action="/search" class="searchform searchform_desktop">
-<div class="search">
-<input type="text" name="substring" value="{if $substring}{php echo escape($substring, 2);}{/if}" placeholder="{lng[Search|escape]}" autocomplete="off" />
-<button type="submit"><svg><use xlink:href="/images/sprite.svg#search"></use></svg></button>
-<div class="instant-search"><div class='enter-3-chars'>{lng[Enter at least 2 characters]}</div></div>
-</div>
-</form>
   </li>
 </ul>
 </div>
@@ -186,8 +179,22 @@
 <div class="search">
 <input type="text" name="substring" value="{if $substring}{php echo escape($substring, 2);}{/if}" placeholder="{lng[Search|escape]}" autocomplete="off" />
 <button type="submit"><svg><use xlink:href="/images/sprite.svg#search"></use></svg></button>
-<div class="instant-search"><div class='enter-3-chars'>{lng[Enter at least 2 characters]}</div></div>
 </div>
 </form>
 
 </div>
+
+<form method="POST" action="/search" class="searchform searchform_desktop">
+<div class="search-popup">
+ <h2>{lng[Product search]}</h2>
+ <div class="search">
+  <input type="text" name="substring" value="{if $substring}{php echo escape($substring, 2);}{/if}" placeholder="{lng[Enter at least 2 characters|escape]}" autocomplete="off" />
+  <button type="submit"><svg><use xlink:href="/images/sprite.svg#search"></use></svg></button>
+ </div>
+ <div class="instant-search">
+  <div class="instant-search-loader"></div>
+  <div class="instant-search-results"></div>
+ </div>
+</div>
+<div class="search-fade"></div>
+</form>

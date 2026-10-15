@@ -134,8 +134,6 @@ const gradientTooltipPlugin = {
   },
 };
 
-var agencyLineChart, agencyBarChart, agencyDoughnutChart;
-
 function init_chart_line() {
   const canvas = document.getElementById("chart-line");
   const ctx = canvas.getContext("2d");
@@ -248,6 +246,119 @@ function init_chart_line() {
     },
   };
 
-  agencyLineChart = new Chart(ctx, chartConfig);
-  return agencyLineChart;
+  new Chart(ctx, chartConfig);
+}
+
+function init_statistics_charts(canvas, chart_id) {
+  const ctx = canvas.getContext("2d");
+  var labels = [],
+    values = [],
+    json = $.parseJSON($('.'+chart_id).html());
+
+  for (var x in json) {
+    labels[labels.length] = x;
+    values[values.length] = json[x];
+  }
+  //console.log(labels);
+  //console.log(values);
+  const chartConfig = {
+    type: "line",
+    data: {
+      labels: labels,
+      datasets: [
+        {
+          label: "",
+          data: values,
+          borderColor: LINE_CHART_CONFIG.display.lineColor,
+          backgroundColor: function (context) {
+            const chart = context.chart;
+            const { ctx, chartArea } = chart;
+            return chartArea ? createGradient(ctx, chartArea) : null;
+          },
+          fill: true,
+          tension: LINE_CHART_CONFIG.display.tension,
+          pointBackgroundColor: "transparent",
+          pointBorderColor: "transparent",
+          pointHoverBackgroundColor: LINE_CHART_CONFIG.display.pointHoverColor,
+          pointHoverBorderColor:
+            LINE_CHART_CONFIG.display.pointHoverBorderColor,
+          pointHoverRadius: LINE_CHART_CONFIG.display.pointHoverRadius,
+        },
+      ],
+    },
+    plugins: [verticalLinePlugin, gradientTooltipPlugin],
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+      scales: {
+        y: {
+          min: LINE_CHART_CONFIG.scaleY.min,
+          max: LINE_CHART_CONFIG.scaleY.max,
+          ticks: {
+            callback: function (value) {
+              const allowedValues = LINE_CHART_CONFIG.scaleY.allowedValues;
+
+              if (!allowedValues) {
+                return LINE_CHART_CONFIG.scaleY.format(value);
+              } else if (allowedValues.includes(value)) {
+                return LINE_CHART_CONFIG.scaleY.format(value);
+              } else {
+                return null;
+              }
+            },
+            stepSize: LINE_CHART_CONFIG.scaleY.stepSize,
+            color: CHART_COLORS.white,
+          },
+          grid: { color: GRID_SETTINGS.color },
+        },
+        x: {
+          grid: { color: GRID_SETTINGS.color },
+          ticks: { color: CHART_COLORS.white, autoSkip: false },
+        },
+      },
+      plugins: {
+        tooltip: {
+          titleFont: { size: TOOLTIP_SETTINGS.titleFontSize },
+          titleAlign: "center",
+          bodyFont: {
+            size: TOOLTIP_SETTINGS.bodyFontSize,
+            weight: TOOLTIP_SETTINGS.bodyWeight,
+          },
+          bodyAlign: "center",
+          callbacks: {
+            title: function (context) {
+              const fullDate = new Date(
+                LINE_CHART_CONFIG.data.labels[context[0].dataIndex],
+              );
+              return "";
+              return fullDate.toLocaleDateString("en", {
+                day: "numeric",
+                month: "long",
+              });
+            },
+            label: function (context) {
+              return LINE_CHART_CONFIG.scaleY.format(context.parsed.y);
+            },
+          },
+          backgroundColor: function (context) {
+            return context.chart.tooltip.gradientBackground;
+          },
+          titleColor: TOOLTIP_SETTINGS.titleColor,
+          bodyColor: TOOLTIP_SETTINGS.bodyColor,
+          borderColor: TOOLTIP_SETTINGS.borderColor,
+          borderWidth: TOOLTIP_SETTINGS.borderWidth,
+          displayColors: false,
+          cornerRadius: TOOLTIP_SETTINGS.borderRadius,
+          padding: TOOLTIP_SETTINGS.padding,
+        },
+        legend: { display: false },
+      },
+      interaction: {
+        intersect: false,
+        mode: "index",
+      },
+    },
+  };
+
+  new Chart(ctx, chartConfig);
 }

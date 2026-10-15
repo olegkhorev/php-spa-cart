@@ -32,7 +32,7 @@ function redirect($location, $specified = false, $is_301 = false)
         $location = $current_location.'/'.$location;
     }
 
-    if (ADMIN_AREA && $is_ajax) {
+    if ($is_ajax) {
         header('where_redirect: '.$location);
         exit;
     }

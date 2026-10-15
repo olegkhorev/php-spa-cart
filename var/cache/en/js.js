@@ -274,6 +274,7 @@ function ajax_clicks() {
   $window.trigger("scroll");
   mobile_menu_clicked = true;
   mobile_menu_open();
+  wl_actions();
 
   try {
     ga("set", "page", window.location.pathname);
@@ -782,7 +783,11 @@ function wl_actions() {
   $(".remove-wl-link").on("click", function () {
     var url = $(this).attr("href");
     $.ajax({ url: url }).done(function (r) {
-      $(".wishlist-link").click();
+      if ($(window).width() < 850) {
+        $('.mobile_wishlist_link').click();
+      } else {
+        $('.wishlist-link').click();
+      }
     });
 
     return false;
@@ -4398,6 +4403,10 @@ function add_wishlist(id) {
   $.ajax({
     url: current_location + "/wishlist?add=" + id,
   }).done(function (r) {
+    if ($(window).width() < 850 && $('#body-wishlist').length) {
+      $('.mobile_wishlist_link').click();
+    }
+
     alert("Product has been added to your Wishlist");
   });
 }

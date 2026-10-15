@@ -13,6 +13,11 @@ $('.fade').click();
 </script>
 
 {if !$pdf_invoice}
+{if $get['2'] == 'payment_error'}
+{lng[There was an error processing your order. Please, try checkout again.]}
+<br /><br />
+{/if}
+
 {if $get['2'] != 'print' && !$is_mail}
 {if $userinfo['usertype'] == 'A' && $order['gift_card']}
 <b>Gift Card order: {$order['gift_card']}</b><br /><br />
@@ -23,8 +28,7 @@ $('.fade').click();
 <div class="checkout-fail-message">{lng[We are unable to process your order.]}</div>
  {/if}
 <div class="print-invoice-button">
-<a href="/invoice/{$order['orderid']}/print" target="_blank" onclick="javascript: return print_invoice($(this));">{lng[Print invoice]}</a>
-<a href="/invoice_pdf/{$order['orderid']}" target="_blank">{lng[Download PDF invoice]}</a>
+<a class="link-button" href="/invoice/{$order['orderid']}/print" target="_blank" onclick="javascript: return print_invoice($(this));">{lng[Print invoice]}</a> &nbsp; &nbsp; <a class="link-button" href="/invoice_pdf/{$order['orderid']}" target="_blank">{lng[Download PDF invoice]}</a>
 <br /><br />
 </div>
 {/if}

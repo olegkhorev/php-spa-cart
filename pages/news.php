@@ -37,7 +37,7 @@ if (!empty($get['1'])) {
     $template['bread_crumbs'][] = array('', $news['title']);
     $db->query("UPDATE news SET counter='".($news['counter'] + 1)."' WHERE newsid='$news[newsid]'");
     $news["fulldescr"] = func_eol2br($news["fulldescr"]);
-    $template["news"] = $news;
+    $template["news_data"] = $news;
     $template['js'][] = 'news';
 } else {
     if ($_SESSION['news_substring']) {
@@ -52,12 +52,12 @@ if (!empty($get['1'])) {
 
         $template["navigation_script"] = $current_location."/news/?";
 
-        $newss = $db->all("SELECT b.*, i.imageid, i.file, i.x, i.y, u.firstname, u.lastname FROM news b LEFT JOIN users u ON u.id=b.author LEFT JOIN news_images i ON b.newsid=i.newsid WHERE b.active='Y'$substring_condition ORDER BY b.newsid DESC LIMIT $first_page, $objects_per_page");
-        foreach ($newss as $k => $v) {
-            $newss[$k]["descr"] = strip_tags($v["descr"]);
+        $news = $db->all("SELECT b.*, i.imageid, i.file, i.x, i.y, u.firstname, u.lastname FROM news b LEFT JOIN users u ON u.id=b.author LEFT JOIN news_images i ON b.newsid=i.newsid WHERE b.active='Y'$substring_condition ORDER BY b.newsid DESC LIMIT $first_page, $objects_per_page");
+        foreach ($news as $k => $v) {
+            $news[$k]["descr"] = strip_tags($v["descr"]);
         }
 
-        $template["newss"] = $newss;
+        $template["news"] = $news;
     }
 }
 

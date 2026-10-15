@@ -2,3 +2,5 @@
 {"mode":"add1","sku":"test2","price":"102.00","date":1791917748}
 {"mode":"add","sku":"test","price":"10.00","date":1791917750}
 {"mode":"add","sku":"test","price":"10.00","date":1791918746}
+{"mode":"add","sku":"test","price":"10.00","date":1791986224}
+{"mode":"add2","sku":"test2","price":"120.00","date":1791986233}

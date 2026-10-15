@@ -698,6 +698,7 @@ img.mark-red {
 #product-details {
   width: 100%;
   margin-bottom: 10px;
+  font-size: 16px;
 }
 #product-details td {
   padding: 5px 15px 15px 0;

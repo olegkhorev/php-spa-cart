@@ -17,7 +17,7 @@
       echo '<div class="alerts admin-alerts"><span class="close-alerts"><b>X</b> Close</span>';
       foreach ($alerts as $v) {
           if ($v["type"] == "e") { ?>
-<div class="error">{lng[Error]}:
+<div class="error"><b>{lng[Error]}:</b>
 <?php echo " " . $v["content"] . "</div>";} else {echo " " .
                   $v["content"] .
                   "<br>";}

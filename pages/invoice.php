@@ -10,6 +10,11 @@
 <?php
 session_start();
 func_load('product', 'order');
+if ($get['2'] == 'cancelled') {
+    $_SESSION['cart'] = $_SESSION['cart_saved'];
+    redirect('invoice/'.$get['1'].'/payment_error');
+}
+
 if (!$_SESSION['invoices']) {
     $_SESSION['invoices'] = array();
 }

@@ -21,7 +21,6 @@ New installed template is here
 </center>
 <div class="clear"></div>
 {/if}
-<div id="dcart"><img src="{$current_location}/images/dcart.png" alt="" /><br />{lng[Move product here]}</div>
 
 {* Start page container *}
 <div class="page-container page-container-2">

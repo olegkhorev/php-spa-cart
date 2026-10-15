@@ -233,7 +233,7 @@ function checkout_actions() {
               $(".checkout_popup").css("pointer-events", "none");
               $("body").append(data);
               document.paypalform.submit();
-              alert("{lng[Please, wait we are connecting you to PayPal]}");
+              alert("{lng[Please, wait while we are connecting you to PayPal]}");
             } else {
               self.location = "/invoice/" + data + "/success";
             }
