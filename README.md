@@ -98,6 +98,8 @@ it will the generate images cache.
 
 ## 4. Major update
 
+I have tested SPA-Cart with over 15.000 products. It works quick - for filters etc. You don't need Redis or Elastic Search for filters, etc. All is quick.
+
 I have added modules & themes support to SPA-Cart.
 
 Custom module:
