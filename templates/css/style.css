@@ -660,6 +660,9 @@ box-shadow:         none;
     top: -7px;
     right: -5px;
 }
+.search-popup .search button {
+    padding: 10px;
+}
 .instant-search-loader {
 	display: none;
 	margin: 10px auto;
