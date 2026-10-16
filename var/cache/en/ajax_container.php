@@ -86,9 +86,13 @@
 </div>
 <?php if ($alerts) {?>
  <div class="alerts"><span onclick="javascript: $('.alerts').slideUp(); unfade();" class="close_alert"><b></b></span>
+ <?php $already = array();; ?>
  <?php foreach ($alerts as $v) {?>
-  <?php if ($v['type'] == 'e') {?><div class="error">Error: <?php echo $v['content'];?></div><?php } else  { ?><?php echo $v['content'];?><br><?php } ?><br>
- <?php } ?>
+	 <?php if (!in_array($v['content'], $already)) {?>
+  <?php if ($v['type'] == 'e') {?><div class="error"><?php if ($lng == 'en') {?>Error alert<?php } ?>: <?php echo $v['content'];?></div><?php } else  { ?><?php echo $v['content'];?><br><?php } ?><br>
+		<?php $already[] = $v['content'];; ?>
+		<?php } ?>
+	<?php } ?>
  </div>
 	<div class="fade" style="display: block;"></div>
 <?php } ?>

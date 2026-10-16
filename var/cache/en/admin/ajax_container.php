@@ -13,21 +13,17 @@
 <?php } ?>
 </div>
 <hr />
-  <?php  if ($alerts) {
-      echo '<div class="alerts admin-alerts"><span class="close-alerts"><b>X</b> Close</span>';
-      foreach ($alerts as $v) {
-          if ($v["type"] == "e") { ?>
-<div class="error"><b>Error:</b>
-<?php  echo " " . $v["content"] . "</div>";} else  {echo " " .
-                  $v["content"] .
-                  "<br>";}
-
-          echo "<br>";
-      }
-
-      echo "</div>";
-  } ?>
-
+<?php if ($alerts) {?>
+ <div class="alerts admin-alerts"><span class="close-alerts"><b>X</b> Close</span>
+ <?php $already = array();; ?>
+ <?php foreach ($alerts as $v) {?>
+	 <?php if (!in_array($v['content'], $already)) {?>
+  <?php if ($v['type'] == 'e') {?><div class="error"><?php if ($lng == 'en') {?>Error<?php } ?>: <?php echo $v['content'];?></div><?php } else  { ?><?php echo $v['content'];?><br><?php } ?><br>
+		<?php $already[] = $v['content'];; ?>
+		<?php } ?>
+	<?php } ?>
+ </div>
+<?php } ?>
 <br />
 <?php echo $page;?>
 <div class="clear"></div>

@@ -1681,7 +1681,7 @@ table.lines-table.resp-table textarea {
   padding: 15px 20px;
 }
 .search_table select {
-  padding: 15px 20px;
+  padding: 15px 40px 15px 20px;
 }
 .search_table td {
   line-height: 35px;
