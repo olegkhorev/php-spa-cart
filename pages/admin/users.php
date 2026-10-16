@@ -9,6 +9,11 @@
 ?>
 <?php
 func_load('user');
+if ($get['2'] == 'reset') {
+    $_SESSION['users_search'] = array();
+    $get['2'] = '';
+    $template['get'] = $get;
+}
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     extract($_POST);
@@ -94,8 +99,9 @@ if ($get['2'] == 'search') {
     } else {
         $_SESSION['alerts'][] = array(
             'type'		=> 'i',
-            'content'	=> 'No users found'
+            'content'	=> lng('Users not found')
         );
+
         redirect('admin/users');
     }
 } else {

@@ -1116,6 +1116,15 @@
   }
 }
 @media only screen and (max-width: 600px) {
+  td.photo {
+    padding-right: 0;
+  }
+  .more-details {
+    padding-left: 0;
+  }
+  .more-details-border {
+    padding: 0;
+  }
   .searchform_desktop .search-popup {
     top: 20px;
   }

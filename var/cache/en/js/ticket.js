@@ -53,19 +53,6 @@ function make_ticket_form() {
         document.getElementById("error_mes").style.display = "none";
     });
 
-  $("#ticketmesform")
-    .unbind("submit")
-    .on("submit", function () {
-      if (document.mesform.message.value == "") {
-        document.getElementById("error_mes").style.display = "block";
-        return false;
-      } else {
-        document.getElementById("error_mes").style.display = "none";
-        this.disabled = true;
-        submitForm(this, "create_new");
-      }
-    });
-
   var html =
       '<select id="ticket_cat_1" name="ticket_cat_1"><option value=""></option>',
     array = [];
@@ -380,6 +367,6 @@ function submit_ticket() {
   }
 
   if (!error) {
-    document.ticketform.submit();
+    $(document.ticketform).submit();
   }
 }

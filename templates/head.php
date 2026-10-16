@@ -109,7 +109,7 @@
 </ul>
 {/if}
   </li>
-  <li class="search-dd"><svg><use xlink:href="/images/sprite.svg#search"></use></svg>
+  <li class="search-dd"><button><svg><use xlink:href="/images/sprite.svg#search"></use></button></svg>
   </li>
 </ul>
 </div>

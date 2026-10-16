@@ -21,7 +21,6 @@ New installed template is here
 </center>
 <div class="clear"></div>
 <?php } ?>
-<div id="dcart"><img src="<?php echo $current_location;?>/images/dcart.png" alt="" /><br />Move product here</div>
 
 <?php /* ?> Start page container <?php */ ?>
 <div class="page-container page-container-2">

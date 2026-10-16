@@ -87,7 +87,7 @@ h2 {
   font-size: 16px;
 }
 h3 {
-  font-size: 14px;
+  font-size: 16px;
   padding: 5px 0 5px 10px;
   margin: 0 0 20px 0;
   color: top: 10px;;
@@ -118,6 +118,11 @@ input[type="password"]:hover,
 input[type="file"]:hover,
 textarea:hover {
   border: 2px solid var(--blue);
+}
+select {
+  appearance: none;
+  padding-right: 30px;
+  background: url(/images/select.png) right 8px center no-repeat;
 }
 #popup_product select {
   border-radius: 10px;
@@ -400,7 +405,7 @@ div.logo {
 }
 .bread_crumbs {
   padding: 15px 15px 0px 15px;
-  font-size: 12px;
+  font-size: 16px;
   margin: 0 auto;
   width: 970px;
 }
@@ -969,6 +974,10 @@ input[disabled] {
   border-radius: 0px !important;
   position: relative;
   overflow: hidden;
+  background: transparent;
+  padding: 0 !important;
+  cursor: auto;
+  vertical-align: top !important;
 }
 .db-stats-3 h3 {
   padding: 10px 10px;
@@ -978,12 +987,6 @@ input[disabled] {
   background: #f8f8f8;
   border-bottom: 0;
   border-radius: 16px 16px 0 0;
-}
-.db-stats-3 td {
-  background: transparent;
-  padding: 0 !important;
-  cursor: auto;
-  vertical-align: top;
 }
 .db-stats-3 td table td {
   padding: 15px 10px !important;
@@ -1115,7 +1118,7 @@ table.category img {
 .configuration input[type="text"],
 .configuration input[type="password"],
 .configuration select {
-  width: 300px;
+
 }
 .configuration textarea {
   width: 300px;
@@ -1496,7 +1499,7 @@ table.states {
   color: #fff;
 }
 .admin-area .alerts div.error {
-  color: #fea3a0;
+  color: #fff;
 }
 .admin-area .alerts {
   border: 0;
@@ -1564,14 +1567,22 @@ table.states {
   margin-left: -180px;
 }
 .admin-area .instant-search {
-  width: 363px;
-  border: 1px solid var(--blue);
-  border-top: 0;
-  padding: 5px 10px;
-  top: 40px;
+  display: none;
+  top: 49px !important;
+  position: absolute;
+    width: 375px;
+    border: 1px solid var(--blue);
+    border-top: 0;
+    padding: 5px 10px;
+    top: 40px;
+    background: #fff;
 }
 .admin-area .instant-search * {
   font-weight: 400;
+  line-height: 28px;
+}
+.admin-area .instant-search .more-no-search {
+  cursor: default;
 }
 .payment_methods .mdl-textfield {
   max-width: 200px;
@@ -1582,12 +1593,17 @@ body.admin-area .allow-cookies {
 #quick_search_form {
   display: inline-block;
   margin-right: 30px;
+  font-size: 16px;
 }
 #quick_search_form input {
   width: 200px;
 }
 .admin-location {
   max-width: calc(100% - 650px);
+  font-size: 16px;
+}
+.admin-location a {
+  font-size: 16px;
 }
 .db-stats-3 td {
   max-width: 25%;
@@ -1605,9 +1621,7 @@ body.admin-area .allow-cookies {
   max-width: 100%;
   text-overflow: ellipsis;
 }
-.link-button {
-}
-canvas#chart-line {
+#chart-line, .statistics_charts {
   min-height: 300px;
 }
 .chart-container.chart-container--line {
@@ -1639,17 +1653,16 @@ table.new_variant select, .border-radius-25 {
 }
 .link-button {
   line-height: 20px;
-  padding: 5px 30px 5px 10px;
+  padding: 10px 30px 10px 15px;
   color: var(--blue) !important;
   border: 1px solid var(--blue) !important;
-  font-size: 14px;
 }
 .link-button:before, .link-button:after {
   background: var(--blue) !important;
-  top: 11px;
+  top: 16px;
 }
 .link-button:after {
-  top: 18px;
+  top: 24px;
 }
 table.lines-table.resp-table textarea {
     padding: 7px 15px;
@@ -1663,4 +1676,16 @@ table.lines-table.resp-table textarea {
 .statistics-totals {
   text-align: right;
   padding: 20px 0;
+}
+.lines-table input[type="text"], .lines-table select {
+  padding: 15px 20px;
+}
+.search_table select {
+  padding: 15px 20px;
+}
+.search_table td {
+  line-height: 35px;
+}
+.search-from-to-sep {
+  padding: 0 15px;
 }

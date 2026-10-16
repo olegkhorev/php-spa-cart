@@ -41,7 +41,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
         $_SESSION['alerts'][] = array(
             'type'		=> 'e',
-            'content'	=> lng('login_incorrect')
+            'content'	=> lng('Email or password is incorrect.')
         );
         redirect('login');
     }

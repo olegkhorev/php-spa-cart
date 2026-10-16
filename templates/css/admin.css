@@ -1118,7 +1118,7 @@ table.category img {
 .configuration input[type="text"],
 .configuration input[type="password"],
 .configuration select {
-  width: 300px;
+
 }
 .configuration textarea {
   width: 300px;
@@ -1621,8 +1621,6 @@ body.admin-area .allow-cookies {
   max-width: 100%;
   text-overflow: ellipsis;
 }
-.link-button {
-}
 #chart-line, .statistics_charts {
   min-height: 300px;
 }
@@ -1655,17 +1653,16 @@ table.new_variant select, .border-radius-25 {
 }
 .link-button {
   line-height: 20px;
-  padding: 5px 30px 5px 10px;
+  padding: 10px 30px 10px 15px;
   color: var(--blue) !important;
   border: 1px solid var(--blue) !important;
-  font-size: 14px;
 }
 .link-button:before, .link-button:after {
   background: var(--blue) !important;
-  top: 11px;
+  top: 16px;
 }
 .link-button:after {
-  top: 18px;
+  top: 24px;
 }
 table.lines-table.resp-table textarea {
     padding: 7px 15px;
@@ -1679,4 +1676,16 @@ table.lines-table.resp-table textarea {
 .statistics-totals {
   text-align: right;
   padding: 20px 0;
+}
+.lines-table input[type="text"], .lines-table select {
+  padding: 15px 20px;
+}
+.search_table select {
+  padding: 15px 40px 15px 20px;
+}
+.search_table td {
+  line-height: 35px;
+}
+.search-from-to-sep {
+  padding: 0 15px;
 }

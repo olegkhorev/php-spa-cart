@@ -583,8 +583,10 @@ function alert(message, nook, h, classes, noshake, alert2, nofade) {
       if (
         othis.closest(".login_alert").length ||
         othis.closest(".register_alert").length
-      )
+      ) {
         unfade();
+        $('.popup').removeClass('popup_pointer_events');
+      }
 
       if (
         !$(".popup").length &&
@@ -1119,7 +1121,7 @@ function func_disable_button(btn, enable) {
 }
 
 function search_form_init() {
-  $('.searchform_mobile, .search-dd svg').on('click', function() {
+  $('.searchform_mobile, .search-dd button').on('click', function() {
     $('body').addClass('search-form-shown');
     $('.search input[type="text"]').focus();
   });

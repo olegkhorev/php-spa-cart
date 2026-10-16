@@ -49,3 +49,6 @@
 .res-item:hover .photo img {
   transform: scale(1.05);
 }
+.left_filter, .left_filter * {
+    font-size: 18px !important;
+}

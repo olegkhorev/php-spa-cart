@@ -86,9 +86,13 @@
 </div>
 {if $alerts}
  <div class="alerts"><span onclick="javascript: $('.alerts').slideUp(); unfade();" class="close_alert"><b></b></span>
+ {php $already = array();}
  {foreach $alerts as $v}
-  {if $v['type'] == 'e'}<div class="error">Error: {$v['content']}</div>{else}{$v['content']}<br>{/if}<br>
- {/foreach}
+	 {if !in_array($v['content'], $already)}
+  {if $v['type'] == 'e'}<div class="error">{if $lng == 'en'}{lng[Error alert]}{/if}: {$v['content']}</div>{else}{$v['content']}<br>{/if}<br>
+		{php $already[] = $v['content'];}
+		{/if}
+	{/foreach}
  </div>
 	<div class="fade" style="display: block;"></div>
 {/if}

@@ -13,6 +13,11 @@ $('.fade').click();
 </script>
 
 <?php if (!$pdf_invoice) {?>
+<?php if ($get['2'] == 'payment_error') {?>
+There was an error processing your order. Please, try checkout again.
+<br /><br />
+<?php } ?>
+
 <?php if ($get['2'] != 'print' && !$is_mail) {?>
 <?php if ($userinfo['usertype'] == 'A' && $order['gift_card']) {?>
 <b>Gift Card order: <?php echo $order['gift_card'];?></b><br /><br />
@@ -23,8 +28,7 @@ $('.fade').click();
 <div class="checkout-fail-message">We are unable to process your order.</div>
  <?php } ?>
 <div class="print-invoice-button">
-<a href="/invoice/<?php echo $order['orderid'];?>/print" target="_blank" onclick="javascript: return print_invoice($(this));">Print invoice</a>
-<a href="/invoice_pdf/<?php echo $order['orderid'];?>" target="_blank">Download PDF invoice</a>
+<a class="link-button" href="/invoice/<?php echo $order['orderid'];?>/print" target="_blank" onclick="javascript: return print_invoice($(this));">Print invoice</a> &nbsp; &nbsp; <a class="link-button" href="/invoice_pdf/<?php echo $order['orderid'];?>" target="_blank">Download PDF invoice</a>
 <br /><br />
 </div>
 <?php } ?>

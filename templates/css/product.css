@@ -149,7 +149,7 @@ table.product-options input {
   float: left;
   min-width: 24px;
   min-height: 24px;
-  padding: 10px 15px;
+  padding: 15px 25px;
   line-height: 24px;
   border: 1px solid var(--theme-color);
   border-radius: 100px;
@@ -828,6 +828,11 @@ table#product-details td.product-list-price b {
 }
 .add-to-wl-product {
   margin-left: 15px;
+}
+.add-to-wl-product-button button {
+  padding: 0 !important;
+  margin: 0 0 0 15px !important;
+  background: transparent !important;
 }
 .add-to-wl-product svg {
   width: 36px;

@@ -7,38 +7,26 @@
 * https://github.com/olegkhorev/php-spa-cart
 */
 ?>
-<div class="news-content">
-<h1>News</h1>
-
-<?php  if ($news) { ?>
-
+<?php if ($news_data) {?>
 <div class="news">
-<div class="date"><?php  echo date($date_format, $news["date"]); ?></div>
-<h1 class="title"><?php  echo $news["title"]; ?></h1>
-<?php if ($news['imageid']) {?>
+<div class="date"><?php  echo date($date_format, $news_data["date"]); ?></div>
+<h1 class="title"><?php  echo $news_data["title"]; ?></h1>
+<?php if ($news_data['imageid']) {?>
 <div class="image">
-<?php $image = $news['image']; $image['new_width'] = 700; $image['new_height'] = 400; include SITE_ROOT . "/includes/news_image.php"; ?>
+<?php $image = $news_data; $image['new_width'] = 700; $image['new_height'] = 400; include SITE_ROOT . "/includes/news_image.php"; ?>
 </div>
 <?php } ?>
-<div class="fulldescr"><?php echo $news['fulldescr'];?></div>
+<div class="fulldescr"><?php echo $news_data['fulldescr'];?></div>
 <div class="back"><a href="/news" class="ajax_link">Back to News mainpage</a></div>
 </div>
 
-<?php  } else  { ?>
-<?php 
-if (!$newss) {
-    echo "<br /><br />No news found<br />";
-    return;
-}
-if ($news_substring) {
-    echo '<br /><a href="/news?nosearch=1">Reset search condition</a><br /><br />';
-}
-?>
+<?php } else  { ?>
 
-<?php if ($newss) {?>
-<div class="news-list">
+<?php if ($news) {?>
+<h1>News</h1>
 <br />
-<?php foreach ($newss as $b) {?>
+<div class="news-list">
+<?php foreach ($news as $b) {?>
 <?php $url = $current_location.'/news/'.($b['cleanurl'] ? $b['cleanurl'].'.html' : $b['newsid']);; ?>
 <a class="ajax_link" href="<?php echo $url;?>"><h5><?php echo $b['title'];?> (<span class="date"><?php  echo date(
     $date_format,
@@ -57,11 +45,11 @@ if ($news_substring) {
 <div class="clear"></div>
 <?php } ?>
 </div>
-<?php } ?>
-
-<?php  if ($total_pages > 2) { ?>
+<?php if ($total_pages > 2) {?>
 <?php include SITE_ROOT."/var/cache/en/common/navigation.php";?>
-<br />
-<?php  }} ?>
-</div>
+<?php } ?>
+<?php } else  { ?>
+No news found
+<?php } ?>
+<?php } ?>
 <div class="clear"></div>

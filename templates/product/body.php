@@ -274,7 +274,7 @@ options[{$oid}] = [];
 <tr>
  <td colspan="4"><a class="main-button" onclick="javascript: return {if $login}add_wishlist({$product['productid']});{else}login_popup('W');{/if}" href="javascript: void(0);">{lng[Add to wishlist]}</a></td>
 {else}
- <td><a class="add-to-wl-product" onclick="javascript: return {if $login}add_wishlist({$product['productid']});{else}login_popup('W');{/if}" href="javascript: void(0);"><svg><use xlink:href="/images/sprite.svg#favorite"></use></svg></a></td>
+ <td><a class="add-to-wl-product add-to-wl-product-button" onclick="javascript: return {if $login}add_wishlist({$product['productid']});{else}login_popup('W');{/if}" href="javascript: void(0);"><button type="button"><svg><use xlink:href="/images/sprite.svg#favorite"></use></svg></button></a></td>
 {/if}
 </tr>
 </table>

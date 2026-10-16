@@ -65,6 +65,7 @@ function register_actions() {
 function register_popup() {
   if (mobile_screen > $(window).width()) return false;
 
+  $('.popup').addClass('popup_pointer_events');
   if (page != "register") {
     $(".login_alert")
       .css("opacity", 1)

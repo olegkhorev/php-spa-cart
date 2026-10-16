@@ -153,7 +153,7 @@ Delete category
 <tr>
   <td colspan="4" class="var-wh-100 background-transparent">
 <br />
-  <button type="button" onclick="javascript: document.fpform.mode.value = 'delete'; document.fpform.submit();">Delete selected</button> &nbsp; <button type="submit">Update</button>
+  <button type="button" onclick="javascript: document.fpform.mode.value = 'delete'; $(document.fpform).submit();">Delete selected</button> &nbsp; <button type="submit">Update</button>
   </td>
 </tr>
 
@@ -190,7 +190,7 @@ var popup_product_pid = document.fpform.newproductid,
 <tr>
   <td colspan="4" class="var-wh-100 background-transparent">
 <br />
-  <button type="button" onclick="javascript: document.fpform.mode.value = 'add'; document.fpform.submit();">Add new</button>
+  <button type="button" onclick="javascript: document.fpform.mode.value = 'add'; $(document.fpform).submit();">Add new</button>
   </td>
 </tr>
 

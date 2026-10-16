@@ -12,9 +12,9 @@
 login_popup();
 </script>
 <?php } ?>
-<br />
-<button class="button_ajax_link" href="<?php echo $current_location;?>/testimonials/new">Write testimonial</button>
-<br /><br />
+<h1>Testimonials</h1>
+<button class="button_ajax_link new-testimonial-link" href="<?php echo $current_location;?>/testimonials/new">Write testimonial</button>
+<div class="clear"></div>
 <hr size="1" />
 <?php if ($total_pages > 2) {?>
 <br />

@@ -83,7 +83,7 @@ if ($get["2"] != "recent") { ?>
 </tr>
 <tr>
  <td></td>
- <td><br /><button>{lng[Search]}</button> &nbsp; &nbsp; <a class="ajax_link" href="{$current_location}/admin/orders/reset">{lng[Reset filter]}</a></td>
+ <td><br /><button>{lng[Search]}</button> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <a class="ajax_link" href="{$current_location}/admin/orders/reset">{lng[Reset filter]}</a></td>
 </tr>
 </table>
 </form>

@@ -132,7 +132,7 @@ if ($memberships)
 
 <tr>
   <td></td>
-  <td><br /><button type="submit">Search</button></td>
+  <td><br /><button type="submit">Search</button> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <a class="ajax_link" href="<?php echo $current_location;?>/admin/users/reset">Reset filter</a></td>
 </tr>
 
 </table>

@@ -13,21 +13,17 @@
 {/if}
 </div>
 <hr />
-  <?php if ($alerts) {
-      echo '<div class="alerts admin-alerts"><span class="close-alerts"><b>X</b> Close</span>';
-      foreach ($alerts as $v) {
-          if ($v["type"] == "e") { ?>
-<div class="error"><b>{lng[Error]}:</b>
-<?php echo " " . $v["content"] . "</div>";} else {echo " " .
-                  $v["content"] .
-                  "<br>";}
-
-          echo "<br>";
-      }
-
-      echo "</div>";
-  } ?>
-
+{if $alerts}
+ <div class="alerts admin-alerts"><span class="close-alerts"><b>X</b> Close</span>
+ {php $already = array();}
+ {foreach $alerts as $v}
+	 {if !in_array($v['content'], $already)}
+  {if $v['type'] == 'e'}<div class="error">{if $lng == 'en'}{lng[Error]}{/if}: {$v['content']}</div>{else}{$v['content']}<br>{/if}<br>
+		{php $already[] = $v['content'];}
+		{/if}
+	{/foreach}
+ </div>
+{/if}
 <br />
 {$page}
 <div class="clear"></div>

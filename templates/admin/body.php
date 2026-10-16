@@ -90,21 +90,19 @@ CKEDITOR.disableAutoInline = true;
 <script src="/images/jquery.flot.time.js"></script>
 </head>
 <body class="admin-area{if !$login || $userinfo['usertype'] != 'A'} no-logged{/if}">
-  <?php if ($alerts) {
-      echo '<div class="alerts"><span class="close-alerts"><b>X</b> Close</span>';
-      foreach ($alerts as $v) {
-          if ($v["type"] == "e") { ?>
-<div class="error">{lng[Error]}:
-<?php echo " " . $v["content"] . "</div>";} else {echo " " .
-                  $v["content"] .
-                  "<br>";}
-
-          echo "<br>";
-      }
-
-      echo "</div>";
-  } ?>
 {if !$login || $userinfo['usertype'] != 'A'}
+{if $alerts}
+ <div class="alerts admin-alerts"><span class="close-alerts"><b>X</b> Close</span>
+ {php $already = array();}
+ {foreach $alerts as $v}
+	 {if !in_array($v['content'], $already)}
+  {if $v['type'] == 'e'}<div class="error">{if $lng == 'en'}{lng[Error]}{/if}: {$v['content']}</div>{else}{$v['content']}<br>{/if}<br>
+		{php $already[] = $v['content'];}
+		{/if}
+	{/foreach}
+ </div>
+{/if}
+
 {include="admin/pages/login_new.php"}
 {else}
 	<div class="container">

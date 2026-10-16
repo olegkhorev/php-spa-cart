@@ -109,14 +109,7 @@
 </ul>
 <?php } ?>
   </li>
-  <li class="search-dd"><svg><use xlink:href="/images/sprite.svg#search"></use></svg>
-<form method="POST" action="/search" class="searchform searchform_desktop">
-<div class="search">
-<input type="text" name="substring" value="<?php if ($substring) {?><?php echo escape($substring, 2);; ?><?php } ?>" placeholder="Search" autocomplete="off" />
-<button type="submit"><svg><use xlink:href="/images/sprite.svg#search"></use></svg></button>
-<div class="instant-search"><div class='enter-3-chars'>Enter at least 2 characters</div></div>
-</div>
-</form>
+  <li class="search-dd"><button><svg><use xlink:href="/images/sprite.svg#search"></use></button></svg>
   </li>
 </ul>
 </div>
@@ -186,8 +179,22 @@
 <div class="search">
 <input type="text" name="substring" value="<?php if ($substring) {?><?php echo escape($substring, 2);; ?><?php } ?>" placeholder="Search" autocomplete="off" />
 <button type="submit"><svg><use xlink:href="/images/sprite.svg#search"></use></svg></button>
-<div class="instant-search"><div class='enter-3-chars'>Enter at least 2 characters</div></div>
 </div>
 </form>
 
 </div>
+
+<form method="POST" action="/search" class="searchform searchform_desktop">
+<div class="search-popup">
+ <h2>Product search</h2>
+ <div class="search">
+  <input type="text" name="substring" value="<?php if ($substring) {?><?php echo escape($substring, 2);; ?><?php } ?>" placeholder="Enter at least 2 characters" autocomplete="off" />
+  <button type="submit"><svg><use xlink:href="/images/sprite.svg#search"></use></svg></button>
+ </div>
+ <div class="instant-search">
+  <div class="instant-search-loader"></div>
+  <div class="instant-search-results"></div>
+ </div>
+</div>
+<div class="search-fade"></div>
+</form>

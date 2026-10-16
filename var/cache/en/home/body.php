@@ -39,7 +39,7 @@
 <?php if ($config['Visual']['visual_boxes_below_banner'] == 'Y') {?>
 <div class="boxes-homepage-line">
 <div class="boxes-homepage">
- <div><h2>Admin area</h2><p>Admin: a@a.com<br />Pass: 01230<br /><a href="https://demo.spa-cart.com/admin" target="_blank">https://demo.spa-cart.com/admin</a></p></div>
+ <div><h2>Admin area</h2><p>Admin: a@a.com<br />Pass: 01230<br /><a href="https://demoadmin.spa-cart.com/admin" target="_blank">https://demoadmin.spa-cart.com/admin</a></p></div>
  <div><h2>Ajaxfied pages</h2><p>All pages are clean URLs, even in the admin area</p></div>
  <div><h2>Language labels</h2><p>Easy to Update and Translate. Translate mode for easy and quick translation.</p></div>
  <div><h2>Design versatility</h2><p>This is a framework. Any design can be applied</p></div>
@@ -56,7 +56,6 @@
 	<div id="center" class="no_left_menu">
 <?php } ?>
 <?php } ?>
-<div id="dcart"><img src="<?php echo $current_location;?>/images/dcart.png" alt="" /><br />Move product here</div>
 <?php 
 if (lng("Site title")) {
     echo "<br /><h1>" . lng("Site title") . "</h1>";

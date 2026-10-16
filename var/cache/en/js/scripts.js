@@ -168,6 +168,7 @@ $(document).on("keyup", function (e) {
 
     cart_clicks();
     original_pageid = pageid;
+    search_form_init();
     instant_search();
     responsive_init();
     scrolltop();
@@ -206,6 +207,7 @@ function ajax_clicks() {
       var substring = $(this).find('input[type="text"]').val();
       if (!substring) return false;
 
+      $('body').removeClass('search-form-shown');
       if (mobile_design) {
         $("html, body").animate(
           {
@@ -266,6 +268,90 @@ function ajax_clicks() {
     eval($(".exec_page_js").html());
   }
 
+  $("form.ajax-form").unbind('submit').on('submit', function (event) {
+    event.preventDefault();
+    // Fix for blog post comment
+    if ($("#newrecord").length)
+      document.blogform.comment.value = $("#newrecord").html();
+
+    // New ticket message processing
+    if ($('#post_new_message').length && !$('#post_new_message').val()) {
+      $('#error_mes').fadeIn();
+      return false;
+    } else {
+      $('#error_mes').fadeOut();
+    }
+
+    // Email us form processing
+    if ($('#body-help').length) {
+      if (!document.help.subject.value || !document.help.message.value || !document.help.email.value) {
+        $('#error_mes').fadeIn();
+        return false;
+      } else {
+        $('#error_mes').fadeOut();
+      }
+    }
+
+    var form_data = new FormData($(this)[0]),
+      files = [];
+
+    if ($(this).attr("href")) var h = $(this).attr("href");
+    else if ($(this).attr("action")) var h = $(this).attr("action");
+    else var h = window.location.href;
+
+    $(this)
+      .find("input")
+      .each(function () {
+        if ($(this).attr("type") == "file") {
+          if (!$(this).val()) {
+            files[files.length] = $(this).attr("name");
+            form_data.delete($(this).attr("name"));
+          }
+        }
+      });
+
+    func_disable_button($('button'));
+    var site_loader_to = setTimeout(function () {
+      $("body").append(
+        '<div id="content-loading"><div class="cssload-container"><div class="cssload-speeding-wheel"></div></div></div>',
+      );
+    }, 1000);
+
+    $.ajax({
+      url: h,
+      type: "POST",
+      data: form_data,
+      cache: false,
+      contentType: false,
+      processData: false,
+      error: function () {
+        self.location = h;
+      },
+      success: function (r, textStatus, request) {
+        func_disable_button($('button'), 1);
+        clearTimeout(site_loader_to);
+        $("#content-loading").remove();
+        if (request.getResponseHeader("where_redirect")) {
+          $("body").append(
+            '<a class="ajax_link hidden click_history" href="' +
+              request.getResponseHeader("where_redirect") +
+            '"></a>',
+          );
+
+          ajax_clicks();
+          $(".click_history").click();
+          $(".click_history").remove();
+          return false;
+        }
+
+        $("#content-loading").remove();
+        self.location = h;
+      },
+    });
+
+    return false;
+  });
+
   $(
     "#menu a, a.ajax_link, .account-invoices-list a, .button_ajax_link, .ajax_mobile_link, .logo-link, .bread_crumbs a, #subcategories a, .brands a, .test-links a, .foot a",
   )
@@ -275,6 +361,7 @@ function ajax_clicks() {
 
       if ($(this).closest(".product_popup").length) $(".fade").click();
 
+      $('body').removeClass('search-form-shown');
       if (mobile_design) {
         $("html, body").animate(
           {
@@ -364,21 +451,22 @@ function contact_form() {
     .unbind("click")
     .on("click", function () {
       var allgood = true;
-      $("#help_form input").each(function () {
+      $('#help_form .group input').each(function () {
         if (!$(this).val()) {
           $(this).addClass("error");
           allgood = false;
         }
       });
 
-      $("#help_form textarea").each(function () {
+      $("#help_form .group textarea").each(function () {
         if (!$(this).val()) {
           $(this).addClass("error");
           allgood = false;
         }
       });
 
-      if (allgood) document.help.submit();
+      if (allgood)
+        $(document.help).submit();
     });
 }
 
@@ -495,8 +583,10 @@ function alert(message, nook, h, classes, noshake, alert2, nofade) {
       if (
         othis.closest(".login_alert").length ||
         othis.closest(".register_alert").length
-      )
+      ) {
         unfade();
+        $('.popup').removeClass('popup_pointer_events');
+      }
 
       if (
         !$(".popup").length &&
@@ -813,9 +903,6 @@ function instant_search() {
     .on("focus", function () {
       var val = $(this).val();
       if (val.length < 2) {
-        $(".instant-search").html(
-          "<div class='enter-3-chars'>Enter at least 2 characters</div>",
-        );
         return;
       }
 
@@ -824,17 +911,8 @@ function instant_search() {
       }, 300);
     });
 
-  $(".search")
-    .unbind("mouseleave")
-    .mouseleave(function () {
-      $(".instant-search").fadeOut();
-    });
-
   $(".search input").on("keyup", function () {
     if ($(this).val().length < 2) {
-      $(".instant-search").html(
-        "<div class='enter-3-chars'>Enter 2 characters</div>",
-      );
       return;
     }
 
@@ -847,23 +925,25 @@ function search_instant(val) {
     instant_search_ajax.abort();
   } catch (err) {}
 
+  $(".instant-search-results").hide();
+  $('.instant-search-loader').show();
   instant_search_ajax = $.ajax({
     url: "/instant_search?q=" + encodeURIComponent(val),
   }).done(function (r) {
-    $(".instant-search").html(r);
-    $(".instant-search").show();
+    $('.instant-search-loader').hide();
+    $(".instant-search-results").html(r);
+    $(".instant-search-results").show();
     ajax_clicks();
     $(".did-you-mean span").on("click", function () {
+      $(".instant-search-results").hide();
       $('#searchform input[type="text"]').val($(this).text());
       search_instant($(this).text());
     });
 
-    $(".more-no-search").on("click", function () {
-      if (mobile_screen > $(window).width()) {
-        $(".searchform_desktop").submit();
-      } else $(".searchform_mobile").submit();
-
-      $(".instant-search").hide();
+    $(".load-more-products").on("click", function () {
+      $(".searchform_desktop").submit();
+      $(".instant-search-results").hide();
+      $('body').removeClass('search-form-shown');
     });
   });
 }
@@ -1038,4 +1118,15 @@ function func_disable_button(btn, enable) {
   } else {
     btn.addClass("button_disabled");
   }
+}
+
+function search_form_init() {
+  $('.searchform_mobile, .search-dd button').on('click', function() {
+    $('body').addClass('search-form-shown');
+    $('.search input[type="text"]').focus();
+  });
+
+  $('.search-fade').on('click', function() {
+    $('body').removeClass('search-form-shown');
+  });
 }

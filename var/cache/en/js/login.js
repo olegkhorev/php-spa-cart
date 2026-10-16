@@ -14,6 +14,7 @@ function login_popup(what) {
     return false;
   }
 
+  $('.popup').addClass('popup_pointer_events');
   if (page != "login") {
     $(".register_alert")
       .css("opacity", 1)

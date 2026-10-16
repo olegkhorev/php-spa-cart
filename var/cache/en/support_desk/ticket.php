@@ -12,18 +12,20 @@
 <?php } ?>
 <?php if ($ticket) {?>
 <h1>Ticket #<?php echo $ticket['ticketid'];?> (<span id="ticket-status-<?php echo $ticket['ticketid'];?>"><?php $mode = "static"; $status=$ticket['status'];; ?><?php include SITE_ROOT."/var/cache/en/common/ticket_status.php";?></span>)</h1>
-<?php } else  { ?>
-<h1>New ticket</h1>
-<?php } ?>
 <br />
+<?php } ?>
+
 <?php if (!$ticket) {?>
 <?php if ($config['General']['recaptcha_key']) {?>
 <script src='https://www.google.com/recaptcha/api.js?onload=recaptchaOnload&render=explicit' async defer></script>
 <?php } ?>
 
-<form action="/ticket<?php if ($_GET['productid']) {?>?productid=<?php echo $_GET['productid'];?><?php } ?>" method="POST" name="ticketform" enctype="multipart/form-data">
+<form action="/ticket<?php if ($_GET['productid']) {?>?productid=<?php echo $_GET['productid'];?><?php } ?>" method="POST" name="ticketform" enctype="multipart/form-data" class="ajax-form">
 <input type="hidden" name="mode" value="">
 <input type="hidden" name="productid" value="<?php echo $product['productid'];?>">
+
+<h1>New ticket</h1>
+<br />
 
 <div class="ticket-div">
 <?php if (!$login) {?>
@@ -66,6 +68,7 @@
  <div class="error-cc3300"><b id="error_mes">Please, select all categories, enter your subject and message</b></div>
 
 <?php if ($config['General']['recaptcha_key']) {?>
+<br />
 <div id="recaptcha_ticket" data-sitekey="<?php echo $config['General']['recaptcha_key'];?>"></div><br />
 <?php } ?>
 
@@ -169,7 +172,7 @@ Message:<br />
 <br />
 <h3>Post new message</h3>
 <a name="create_new"></a>
-<form method="POST" name="mesform" id="ticketmesform" action="/ticket/<?php echo $ticket['ticketid'];?>" enctype="multipart/form-data">
+<form method="POST" name="mesform" id="ticketmesform" action="/ticket/<?php echo $ticket['ticketid'];?>" enctype="multipart/form-data" class="ajax-form">
 <input type="hidden" name="mode" value="create_new">
 
 <table cellspacing="0" cellpadding="0" width="100%">
@@ -180,7 +183,7 @@ Message:<br />
  </td>
 </tr>
 <tr>
- <td><div id="error_mes"><b>err_ticket_message</b></div></td>
+ <td><div id="error_mes"><b>Please, enter ticket message</b></div></td>
  <td align="right"><button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored">Send message</button>&nbsp;</td>
 </tr>
 </table>

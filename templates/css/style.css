@@ -230,7 +230,7 @@ button, input[type=button], input[type=submit] {
 	position: relative;
 	cursor: pointer;
 	margin: 2px 0;
-	padding: 10px 15px;
+	padding: 20px 30px;
 	color: var(--theme-color);
 	border: 0px;
 	background: transparent;
@@ -238,7 +238,7 @@ button, input[type=button], input[type=submit] {
 	font-size: 17px;
 	font-weight: 500;
 	line-height: 18px;
-	text-transform: uppercase;
+	text-transform: none;
 	border-radius: 100px;
 	transition-property: background color;
 	transition-duration: 0.5s;
@@ -258,7 +258,7 @@ button:hover, input[type=button]:hover, input[type=submit]:hover {
 	font-size: 17px;
 	font-weight: 500;
 	line-height: 18px;
-	text-transform: uppercase;
+	text-transform: none;
 	border-radius: 100px;
 	display: inline-block;
 	text-decoration: none;
@@ -344,6 +344,10 @@ button.big {
 	backdrop-filter: saturate(180%) blur(20px);
 	background: rgba(0, 0, 0, 0.4) !important;
 	z-index: 300;
+}
+.popup.popup_pointer_events {
+	opacity: 0.8 !important;
+	pointer-events: none;
 }
 .alert_message, .note {
 	position: fixed;
@@ -640,7 +644,7 @@ box-shadow:         none;
 	padding: 6px 7px 6px 10px;
 	border: 0px;
 	font-size: 17px;
-	width: 225px;
+	width: 100%;
 	float: left;
 	color: #574e4e;
 }
@@ -841,6 +845,11 @@ box-shadow:         0px 0px 10px 0px rgba(50, 50, 50, 0.15);
 }
 #menu > li.search-dd:before, #menu > li.search-dd:after {
 	display: none;
+}
+#menu > li.search-dd button {
+	background: transparent !important;
+	padding: 5px !important;
+	margin: -5px !important;
 }
 #menu > li.search-dd .search {
 	display: none;
@@ -2498,11 +2507,14 @@ div.print_div {
 	padding-left: 0 !important;
 	text-transform: none;
 }
-#body-help .main-container, form[name="ticketform"], form[name="testimonialform"] {
+#body-login .main-container, #body-register .main-container, #body-invoice .main-container, #body-help .main-container, form[name="ticketform"], form[name="testimonialform"] {
     margin: 0 auto;
     display: block;
     width: 600px;
 		max-width: 100%;
+}
+#body-invoice .main-container {
+	width: 695px;
 }
 #body-help .main-container .content {
 	padding: 0;
@@ -2510,10 +2522,10 @@ div.print_div {
 #body-help .main-container .padding-page {
 	padding: 20px 0 0 0;
 }
-#body-help .main-container .group, form[name="ticketform"] .group, form[name="testimonialform"] .group {
+#body-login .main-container .group, #body-register .main-container .group, #body-help .main-container .group, form[name="ticketform"] .group, form[name="testimonialform"] .group {
 	max-width: none;
 }
-#body-ticket .main-container, #body-testimonials .new-testimonial-page-container .main-container {
+#body-login .main-container, #body-register .main-container, #body-ticket .main-container, #body-testimonials .new-testimonial-page-container .main-container {
     display: block;
 }
 .product_popup table.product-options {

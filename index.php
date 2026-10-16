@@ -1,4 +1,13 @@
 <?php
+/**
+* SPA-Cart
+* Copyright (c) Oleg Khorev
+*
+* Released under the MIT License.
+* https://github.com/olegkhorev/php-spa-cart
+*/
+?>
+<?php
 /*
 Enable this to redirect to HTTPS always
 */
@@ -77,7 +86,7 @@ if ($get['0'] == 'set_language') {
 }
 
 
-$template['bread_crumbs'][] = array('/', $company_name.' '.lng('home page'));
+$template['bread_crumbs'][] = array('/', lng('Homepage'));
 
 if (!$_SESSION['countries']) {
 	$countries = $db->all("SELECT *, IF(code='US',0,1) as US, IF(code='CA',0,1) as CA FROM countries ORDER BY US, CA, country");
@@ -212,7 +221,7 @@ if ($get['0'] == 'admin') {
 	if ($_GET['its_ajax_page'])
 		$_SESSION['alerts'] = array();
 } else {
-	if ($https_domain == 'demoadmin.spa-cart.com' && $get['0'] != 'module') {
+	if ($https_domain == 'demoadmin.spa-cart.com') {
 	    redirect('https://demo.spa-cart.com', 1);
     }
 

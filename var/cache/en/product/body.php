@@ -11,7 +11,6 @@
 <script src='https://www.google.com/recaptcha/api.js?onload=recaptchaOnload&render=explicit' async defer></script>
 <?php } ?>
 
-<div id="dcart"><img src="<?php echo $current_location;?>/images/dcart.png" alt="" /><br />Move product here</div>
 <?php if (!$oid) {?>
  <h1 class="fn title product-title"><?php echo $product['name'];?></h1>
  <h1 class="fntitle hidden"><?php echo $product['name'];?></h1>
@@ -275,7 +274,7 @@ options[<?php echo $oid;?>] = [];
 <tr>
  <td colspan="4"><a class="main-button" onclick="javascript: return <?php if ($login) {?>add_wishlist(<?php echo $product['productid'];?>);<?php } else  { ?>login_popup('W');<?php } ?>" href="javascript: void(0);">Add to wishlist</a></td>
 <?php } else  { ?>
- <td><a class="add-to-wl-product" onclick="javascript: return <?php if ($login) {?>add_wishlist(<?php echo $product['productid'];?>);<?php } else  { ?>login_popup('W');<?php } ?>" href="javascript: void(0);"><svg><use xlink:href="/images/sprite.svg#favorite"></use></svg></a></td>
+ <td><a class="add-to-wl-product add-to-wl-product-button" onclick="javascript: return <?php if ($login) {?>add_wishlist(<?php echo $product['productid'];?>);<?php } else  { ?>login_popup('W');<?php } ?>" href="javascript: void(0);"><button type="button"><svg><use xlink:href="/images/sprite.svg#favorite"></use></svg></button></a></td>
 <?php } ?>
 </tr>
 </table>

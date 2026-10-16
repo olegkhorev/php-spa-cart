@@ -7,7 +7,7 @@
 * https://github.com/olegkhorev/php-spa-cart
 */
 ?>
-<div class="page-container">
+<div class="page-container<?php if ($get['0'] == 'testimonials' && $get['1'] == 'new') {?> new-testimonial-page-container<?php } ?>">
 <div class="withleftmenu">
 <div class="left_filter">
 <h2>Narrow selection</h2>

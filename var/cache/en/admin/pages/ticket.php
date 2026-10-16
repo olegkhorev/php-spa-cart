@@ -197,7 +197,7 @@ function edit_message(id) {
 <tr>
  <td align='left'><label>Customer</label><a name="m<?php echo $i['messageid'];?>"></a>&nbsp;<a href="/admin/user/<?php echo $i['userid'];?>"><?php echo $i['firstname'];?> <?php echo $i['lastname'];?> (<?php echo $i['email'];?>)</a><?php if ($i['ip']) {?> (IP: <?php echo $i['ip'];?>)<?php } ?></td>
  <td align='right' width="150"><label>Date</label><?php echo date($datetime_format, $i['date']);; ?></td>
- <td align='right' width='200'><a href="#add_new" onclick="javascript: edit_message('<?php echo $i['messageid'];?>')">Edit</a> / <a href="javascript: void(0);" onclick="javascript: if (confirm('Delete this message?')) self.location='/admin/ticket/<?php echo $ticket['ticketid'];?>?mode=delete_message&messageid=<?php echo $i['messageid'];?>';">Delete</a>&nbsp;</td>
+ <td align='right' width='200'><a href="#add_new" onclick="javascript: edit_message('<?php echo $i['messageid'];?>')">Edit</a> / <a href="javascript: void(0);" onclick="javascript: confirm('Delete this message?', $(this), '/admin/ticket/<?php echo $ticket['ticketid'];?>?mode=delete_message&messageid=<?php echo $i['messageid'];?>');">Delete</a>&nbsp;</td>
 </tr>
 <tr>
  <td><hr /><label>Message</label><?php echo func_eol2br($i['message']);; ?>

@@ -1,4 +1,13 @@
 <?php
+/**
+* SPA-Cart
+* Copyright (c) Oleg Khorev
+*
+* Released under the MIT License.
+* https://github.com/olegkhorev/php-spa-cart
+*/
+?>
+<?php
 error_reporting(0);
 header("Content-type: text/html;charset=utf-8");
 define('SITE_ROOT', dirname(__FILE__));

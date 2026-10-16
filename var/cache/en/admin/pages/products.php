@@ -25,7 +25,7 @@
      2,
  ); ?>" size="40" />
 &nbsp;
-<button>Search</button> &nbsp; &nbsp; <a class="ajax_link" href="<?php echo $current_location;?>/admin/products/reset">Reset filter</a>
+<button>Search</button> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <a class="ajax_link" href="<?php echo $current_location;?>/admin/products/reset">Reset filter</a>
  </td>
 </tr>
 <tr>
@@ -94,7 +94,7 @@
  <td><input type="text" size="8" name="price_min" value="<?php  echo escape(
      $search_products["price_min"],
      2,
- ); ?>" /> - <input type="text" size="8" name="price_max" value="<?php  echo escape(
+ ); ?>" /><span class="search-from-to-sep">-</span><input type="text" size="8" name="price_max" value="<?php  echo escape(
     $search_products["price_max"],
     2,
 ); ?>" /></td>
@@ -104,7 +104,7 @@
  <td><input type="text" size="8" name="list_price_min" value="<?php  echo escape(
      $search_products["list_price_min"],
      2,
- ); ?>" /> - <input type="text" size="8" name="list_price_max" value="<?php  echo escape(
+ ); ?>" /><span class="search-from-to-sep">-</span><input type="text" size="8" name="list_price_max" value="<?php  echo escape(
     $search_products["list_price_max"],
     2,
 ); ?>" /></td>
@@ -114,7 +114,7 @@
  <td><input type="text" size="8" name="avail_min" value="<?php  echo escape(
      $search_products["avail_min"],
      2,
- ); ?>" /> - <input type="text" size="8" name="avail_max" value="<?php  echo escape(
+ ); ?>" /><span class="search-from-to-sep">-</span><input type="text" size="8" name="avail_max" value="<?php  echo escape(
     $search_products["avail_max"],
     2,
 ); ?>" /></td>
@@ -124,7 +124,7 @@
  <td><input type="text" size="8" name="weight_min" value="<?php  echo escape(
      $search_products["weight_min"],
      2,
- ); ?>" /> - <input type="text" size="8" name="weight_max" value="<?php  echo escape(
+ ); ?>" /><span class="search-from-to-sep">-</span><input type="text" size="8" name="weight_max" value="<?php  echo escape(
     $search_products["weight_max"],
     2,
 ); ?>" /></td>

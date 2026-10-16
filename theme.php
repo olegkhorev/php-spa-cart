@@ -1,4 +1,17 @@
 <?php
+/**
+* SPA-Cart
+* Copyright (c) Oleg Khorev
+*
+* Released under the MIT License.
+* https://github.com/olegkhorev/php-spa-cart
+*/
+?>
+<?php
+error_reporting(0);
+if (!SITE_ROOT)
+	exit;
+
 $admin_theme_color = htmlspecialchars($_GET['theme_color']);
 $theme_color = htmlspecialchars($_GET['theme_color']);
 $theme_color_2 = htmlspecialchars($_GET['theme_color_2']);

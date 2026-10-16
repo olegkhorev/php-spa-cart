@@ -378,6 +378,9 @@ table#blog_bb_buttons button {
 .profile_popup table tr:nth-child(2n) td {
   background: #222;
 }
+.mrp-title {
+  color: #000;
+}
 @media only screen and (max-width: 850px) {
   #head {
     background: #fff !important;

@@ -55,42 +55,13 @@
 <?php } ?>
 
 <?php if ($config['General']['recaptcha_key']) {?>
+<br />
 <div id="recaptcha_register" data-sitekey="<?php echo $config['General']['recaptcha_key'];?>"></div>
+<br />
 <?php } ?>
 
 <div align="center"><button type="button">Register</button> &nbsp; <a href="/login" onclick="return login_popup();" class="ajax_mobile_link main-button login-link">Login</a></div>
 
-<?php /* ?>
-<table class="login-table">
-<tr>
- <td class="name">Fisrtname:</td>
- <td><input class="firstname" maxlength="32" type="text" name="firstname" value="<?php echo escape($userinfo['firstname'], 2);; ?>" /></td>
-</tr>
-<tr>
- <td class="name">Lastname:</td>
- <td><input maxlength="32" type="text" name="lastname" value="<?php echo escape($userinfo['lastname'], 2);; ?>" /></td>
-</tr>
-<tr>
- <td class="name">Email:</td>
- <td><input type="text" name="email" value="<?php echo escape($userinfo['email'], 2);; ?>" /></td>
-</tr>
-<tr>
- <td class="name">Password:</td>
- <td><input type="password" name="password" value="" autocomplete="off" /></td>
-</tr>
-<?php if ($memberships) {?>
-<?php $name="pending_membershipid"; $value = 0;; ?>
-<tr>
- <td class="name">Sign up for membership:</td>
- <td><?php include SITE_ROOT."/var/cache/en/common/membership.php";?></td>
-</tr>
-<?php } ?>
-<tr>
- <td></td>
- <td><br /><button type="button">Register</button> &nbsp; <a href="/login" onclick="javascript: return login_popup();" class="main-button login-link">Login</a></td>
-</tr>
-</table>
-<?php */ ?>
 </form>
  </td>
 </tr>
