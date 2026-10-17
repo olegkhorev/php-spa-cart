@@ -1,3 +1,10 @@
+/**
+* SPA-Cart
+* Copyright (c) Oleg Khorev
+*
+* Released under the MIT License.
+* https://github.com/olegkhorev/php-spa-cart
+*/
 (function ($) {
   "use strict";
   $(document).ready(function () {
@@ -14,6 +21,7 @@ function login_popup(what) {
     return false;
   }
 
+  $('.popup').addClass('popup_pointer_events');
   if (page != "login") {
     $(".register_alert")
       .css("opacity", 1)

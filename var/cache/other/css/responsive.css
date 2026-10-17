@@ -1,3 +1,10 @@
+/**
+* SPA-Cart
+* Copyright (c) Oleg Khorev
+*
+* Released under the MIT License.
+* https://github.com/olegkhorev/php-spa-cart
+*/
 .visible-mobile {
   display: none;
 }
@@ -1116,6 +1123,67 @@
   }
 }
 @media only screen and (max-width: 600px) {
+	.category-details td:first-child {
+		text-align: center;
+		padding-bottom: 20px;
+	}
+	.search button {
+    		padding: 10px 15px;
+	}
+	#body-wishlist .image img, #body-cart .image img, #body-checkout .image img, .wl_popup .image img, .cart_popup .image img, .checkout_products .image img{
+		float: left;
+	}
+	#body-wishlist .main-container .image {
+		text-align: center;
+	}
+        #body-wishlist .main-container .image img {
+		max-width: 50px;
+	}
+	#body-cart .main-container .image, #body-checkout .main-container .image, .cart_popup .image, .checkout_products .image {
+		text-align: left;
+	}
+	#body-cart .carttable tbody > tr:first-child {
+		display: none;
+	}
+	#body-cart .carttable tr {
+		display: flex;
+		flex-wrap: wrap;
+	}
+	#body-cart .carttable tr td.image {
+		display: block;
+		width: 100%;
+	}
+	#body-cart .carttable tr td[align="center"] {
+		width: 33%;
+	}
+	#cartform .cart4mobile {
+		max-width: none;
+	}
+	#body-cart .image img {
+		margin: 0 10px;
+	}
+	.cart-mobile-title-line {
+		width: 100%;
+	}
+	.cart-mobile-title-line hr {
+		clear: both;
+	}
+	.cart_popup, .wl_popup {
+        	min-width: calc(100% - 40px) !important;
+        	box-sizing: border-box;
+	}
+	table.product-added-table button.close_popup {
+		padding: 10px 15px;
+	}
+	table.product-added-table a.main-button {
+		float: right;
+	}
+	table.product-added-table a.main-button:nth-child(2n) {
+		display: none;
+	}
+	table.product-added-table * {
+		white-space: nowrap !important;
+	}
   td.photo {
     padding-right: 0;
   }
@@ -1171,7 +1239,7 @@
     left: 20px;
   }
   #head_mobile .logo-link img {
-    width: 100px;
+    width: 120px;
   }
   .navigation-toggle {
     margin-top: 30px;

@@ -1,3 +1,10 @@
+/**
+* SPA-Cart
+* Copyright (c) Oleg Khorev
+*
+* Released under the MIT License.
+* https://github.com/olegkhorev/php-spa-cart
+*/
 var current_banner = 1,
   banners_count,
   banners_delay = 5000,

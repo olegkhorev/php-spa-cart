@@ -1,3 +1,10 @@
+/**
+* SPA-Cart
+* Copyright (c) Oleg Khorev
+*
+* Released under the MIT License.
+* https://github.com/olegkhorev/php-spa-cart
+*/
 var register_form = [];
 register_form["firstname"] = "Имя";
 register_form["lastname"] = "Фамилия";
@@ -233,7 +240,7 @@ function checkout_actions() {
               $(".checkout_popup").css("pointer-events", "none");
               $("body").append(data);
               document.paypalform.submit();
-              alert("Пожалуйста, подождите, мы подключаем вас к PayPal");
+              alert("Please, wait while we are connecting you to PayPal");
             } else {
               self.location = "/invoice/" + data + "/success";
             }

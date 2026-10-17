@@ -1,3 +1,10 @@
+/**
+* SPA-Cart
+* Copyright (c) Oleg Khorev
+*
+* Released under the MIT License.
+* https://github.com/olegkhorev/php-spa-cart
+*/
 var matched, browser;
 jQuery.uaMatch = function (ua) {
   ua = ua.toLowerCase();

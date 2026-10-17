@@ -1,3 +1,10 @@
+/**
+* SPA-Cart
+* Copyright (c) Oleg Khorev
+*
+* Released under the MIT License.
+* https://github.com/olegkhorev/php-spa-cart
+*/
 var helptext = [];
 helptext["b"] = "blog_bbcode_b";
 helptext["i"] = "blog_bbcode_i";

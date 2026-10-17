@@ -1,3 +1,10 @@
+/**
+* SPA-Cart
+* Copyright (c) Oleg Khorev
+*
+* Released under the MIT License.
+* https://github.com/olegkhorev/php-spa-cart
+*/
 * {
 	outline-style: none;
 }
@@ -659,6 +666,9 @@ box-shadow:         none;
     position: absolute;
     top: -7px;
     right: -5px;
+}
+.search-popup .search button {
+    padding: 10px;
 }
 .instant-search-loader {
 	display: none;

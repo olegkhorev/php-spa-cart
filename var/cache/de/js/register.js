@@ -1,3 +1,10 @@
+/**
+* SPA-Cart
+* Copyright (c) Oleg Khorev
+*
+* Released under the MIT License.
+* https://github.com/olegkhorev/php-spa-cart
+*/
 var register_form = [];
 register_form["firstname"] = "Vorname";
 register_form["lastname"] = "Nachname";
@@ -65,6 +72,7 @@ function register_actions() {
 function register_popup() {
   if (mobile_screen > $(window).width()) return false;
 
+  $('.popup').addClass('popup_pointer_events');
   if (page != "register") {
     $(".login_alert")
       .css("opacity", 1)

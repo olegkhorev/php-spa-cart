@@ -54,7 +54,7 @@
 <br /><br />
 <h3>Installation instructions:</h3>
 You need to upload the ZIP archive with the following files and folders:<br />
-<b>func.[code].php"</b> - functions file<br />
+<b>"func.[code].php"</b> - functions file<br />
 "pages/*.php"<br />
 "templates/*.php", "templates/styles.css", "templates/scripts.js"<br />
 "themes/images/*", "themes/templates/*"<br />

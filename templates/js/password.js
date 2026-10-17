@@ -1,3 +1,10 @@
+/**
+* SPA-Cart
+* Copyright (c) Oleg Khorev
+*
+* Released under the MIT License.
+* https://github.com/olegkhorev/php-spa-cart
+*/
 var pw_form = [];
 pw_form["new_pswd"] = "{lng[New password]}";
 pw_form["con_pswd"] = "{lng[Confirm password]}";

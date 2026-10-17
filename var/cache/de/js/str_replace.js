@@ -1,3 +1,10 @@
+/**
+* SPA-Cart
+* Copyright (c) Oleg Khorev
+*
+* Released under the MIT License.
+* https://github.com/olegkhorev/php-spa-cart
+*/
 function str_replace(search, replace, subject) {
   if (!(replace instanceof Array)) {
     replace = new Array(replace);

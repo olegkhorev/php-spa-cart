@@ -1,3 +1,10 @@
+/**
+* SPA-Cart
+* Copyright (c) Oleg Khorev
+*
+* Released under the MIT License.
+* https://github.com/olegkhorev/php-spa-cart
+*/
 var current_multirow = 0;
 function createGradient(ctx, chartArea) {
   const gradient = ctx.createLinearGradient(

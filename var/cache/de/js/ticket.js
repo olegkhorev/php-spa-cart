@@ -1,3 +1,10 @@
+/**
+* SPA-Cart
+* Copyright (c) Oleg Khorev
+*
+* Released under the MIT License.
+* https://github.com/olegkhorev/php-spa-cart
+*/
 var ticket_cats = [],
   ticket_cat1 = "",
   ticket_cat2 = "",
@@ -51,19 +58,6 @@ function make_ticket_form() {
         document.getElementById("error_mes").style.display == "block"
       )
         document.getElementById("error_mes").style.display = "none";
-    });
-
-  $("#ticketmesform")
-    .unbind("submit")
-    .on("submit", function () {
-      if (document.mesform.message.value == "") {
-        document.getElementById("error_mes").style.display = "block";
-        return false;
-      } else {
-        document.getElementById("error_mes").style.display = "none";
-        this.disabled = true;
-        submitForm(this, "create_new");
-      }
     });
 
   var html =
@@ -380,6 +374,6 @@ function submit_ticket() {
   }
 
   if (!error) {
-    document.ticketform.submit();
+    $(document.ticketform).submit();
   }
 }

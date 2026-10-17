@@ -1,3 +1,10 @@
+/**
+* SPA-Cart
+* Copyright (c) Oleg Khorev
+*
+* Released under the MIT License.
+* https://github.com/olegkhorev/php-spa-cart
+*/
 @media only screen and (max-width: 800px) {
   table.admin-area > tbody > tr > td.left-admin-menu {
     min-width: 200px;
