@@ -141,7 +141,7 @@ Themes files - for example this file
 templates/home/body.php
 ```
 
-[Check it here]([https://github.com](https://github.com/olegkhorev/php-spa-cart/blob/main/templates/home/body.php))
+https://github.com/olegkhorev/php-spa-cart/blob/main/templates/modules/OlegKhorev/SampleTheme/styles.css
 
 
 you copy to
@@ -150,7 +150,7 @@ you copy to
 templates/themes/OlegKhorev/SampleTheme/home/body.php
 ```
 
-[Check it here]([https://github.com/olegkhorev/php-spa-cart/blob/main/templates/themes/OlegKhorev/SampleTheme/home/body.php))
+https://github.com/olegkhorev/php-spa-cart/blob/main/templates/themes/OlegKhorev/SampleTheme/home/body.php
 
 and change it any way. That thing will allow you easy create new theme.
 
@@ -160,7 +160,7 @@ Style for this theme will be under
 templates/modules/OlegKhorev/SampleTheme/styles.css
 ```
 
-[Check it here]([https://github.com/olegkhorev/php-spa-cart/blob/main/templates/modules/OlegKhorev/SampleTheme/styles.css))
+https://github.com/olegkhorev/php-spa-cart/blob/main/templates/modules/OlegKhorev/SampleTheme/styles.css
 
 -----------
 
