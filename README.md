@@ -1,4 +1,4 @@
-Hi,
+Hello,
 
 I’m Oleg.
 
@@ -13,6 +13,7 @@ https://spa-cart.com/
 * [Remove demo content](#2-remove-demo-content)
 * [Helpful scripts](#3-helpful-scripts)
 * [Major update](#4-major-update)
+* [How to create custom themes](#5-how-to-create-custom-themes)
 
 ## 1. Installation
 
@@ -131,6 +132,28 @@ Modules are automatic installation, don't touch the core.
 Just add a link to module in your design.
 
 **Example** of custom module is in the "new_module.zip" archive.
+
+
+## 5. How to create custom themes
+Themes files - for example this file
+
+```php
+templates/home/body.php
+```
+
+you copy to
+
+```php
+templates/themes/OlegKhorev/SampleTheme/home/body.php
+```
+
+and change it any way. That thing will allow you easy create new theme.
+
+Style for this theme will be under
+
+```php
+templates/modules/OlegKhorev/SampleTheme/style.css
+```
 
 -----------
 
