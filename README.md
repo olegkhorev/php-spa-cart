@@ -141,7 +141,7 @@ Themes files - for example this file
 templates/home/body.php
 ```
 
-https://github.com/olegkhorev/php-spa-cart/blob/main/templates/modules/OlegKhorev/SampleTheme/styles.css
+https://github.com/olegkhorev/php-spa-cart/blob/main/templates/home/body.php
 
 
 you copy to
