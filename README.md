@@ -164,7 +164,7 @@ https://github.com/olegkhorev/php-spa-cart/blob/main/templates/modules/OlegKhore
 
 -----------
 
-Upload and extract the '**well-known.zip**' archive to your root SPA-CArt folder. You can generate this file using Google AI. This will help you gain an extra point on your PageSpeed Insights score.
+Upload and extract the **'well-known.zip'** archive to your root SPA-CArt folder. You can generate this file using Google AI. This will help you gain an extra point on your PageSpeed Insights score.
 
 -----------
 
