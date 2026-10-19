@@ -164,6 +164,10 @@ https://github.com/olegkhorev/php-spa-cart/blob/main/templates/modules/OlegKhore
 
 -----------
 
+Upload and extract the **'well-known.zip'** archive to your root SPA-CArt folder. You can generate this file using Google AI. This will help you gain an extra point on your PageSpeed Insights score.
+
+-----------
+
 Right now, SPA-Cart is focused on being a highly stable, lightweight engine in its current form. I am doing some long-term R&D in the background regarding future extensibility, but my priority is keeping the core stable.
 
 *I recommend to check this article:*
