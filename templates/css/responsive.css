@@ -1463,11 +1463,12 @@
     left: 7px;
   }
   #subscribe input[type="text"] {
-    width: 250px;
-    margin-left: 30px;
+    width: 230px;
+    margin-left: 40px;
+    padding-right: 0;
   }
   #subscribe button {
-    width: 40px;
+    width: 43px;
     padding: 0;
     margin-right: 0;
     position: relative;
