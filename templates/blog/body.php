@@ -79,13 +79,16 @@
 <div id="newrecord" contenteditable="true"></div>
 <textarea name="comment" cols="80" rows="15">{if $new_comment}{$new_comment['comment']}{/if}</textarea>
 
+{if $login}
 <br />
-
-{if !$login}
-{lng[Name]} <font color='#880000'>*</font>: <input type="text" size="30" name="new_name"{if $new_comment} value="{php echo escape($new_comment['new_name'], 2);}"{/if}>
-<br />
+{else}
+<div class="group">
+  <input type="text" size="30" name="new_name"{if $new_comment} value="{php echo escape($new_comment['new_name'], 2);}"{/if}>
+  <span class="highlight"></span>
+  <span class="bar"></span>
+  <label>{lng[Your name]}</label>
+</div>
 {if $config['General']['recaptcha_key']}
-<br />
 <div class="g-recaptcha" data-sitekey="{$config['General']['recaptcha_key']}"></div>
 {/if}
 <br />
@@ -120,7 +123,7 @@
 <div class="descr">
 <div class="message-box">{$b['descr']}</div>
 <div align="right">
-<a class="ajax_link link-button" href="{$url}">{lng[Read blog]}</a>&nbsp;
+<a class="ajax_link link-button" href="{$url}">{lng[See full post]}</a>&nbsp;
 </div>
 </div>
 <div class="clear"></div>

@@ -1,0 +1,88 @@
+{
+  "specVersion": "1.0",
+  "host": {
+    "displayName": "SPA-Cart Demo Store",
+    "identifier": "demo.spa-cart.com"
+  },
+  "entries": [
+    {
+      "identifier": "urn:air:demo.spa-cart.com:web:storefront",
+      "displayName": "SPA-Cart Demo Storefront",
+      "type": "text/html",
+      "url": "https://demo.spa-cart.com/",
+      "description": "Online store for clothing (T-shirts, topwear, bottomwear, footwear, accessories), jewelry (rings, earrings, bracelets, necklaces, beads) and electronics (phones, TVs, tablets, game consoles, laptops), with brands such as Samsung, Apple and Sony. Free shipping on orders over $99 and a 30-day money-back guarantee.",
+      "capabilities": ["BrowseCategories", "ViewProduct", "AddToCart", "Checkout", "Wishlist", "GiftCards"],
+      "tags": ["ecommerce", "shopping", "clothing", "jewelry", "electronics"],
+      "representativeQueries": [
+        "where can I buy a Samsung phone online",
+        "shop for gold rings and earrings",
+        "buy a PlayStation or Nintendo Switch console",
+        "online store for men's t-shirts and hoodies"
+      ]
+    },
+    {
+      "identifier": "urn:air:demo.spa-cart.com:web:product-search",
+      "displayName": "Product Search",
+      "type": "text/html",
+      "url": "https://spa-cart.com",
+      "description": "Keyword search across the store's product catalog. Replace {query} with URL-encoded search terms; results link to product pages with prices and discounts.",
+      "capabilities": ["ProductSearch"],
+      "tags": ["search", "products"],
+      "representativeQueries": [
+        "search for laptops under $600",
+        "find crystal beads for jewelry making",
+        "look up iPad Pro prices"
+      ]
+    },
+    {
+      "identifier": "urn:air:demo.spa-cart.com:web:all-products",
+      "displayName": "Full Product Catalog",
+      "type": "text/html",
+      "url": "https://spa-cart.com",
+      "description": "Paginated listing of every product in the store across all categories, with current and original prices.",
+      "capabilities": ["ListProducts"],
+      "tags": ["catalog", "products"],
+      "representativeQueries": [
+        "list everything this store sells",
+        "show all products with current discounts"
+      ]
+    },
+    {
+      "identifier": "urn:air:demo.spa-cart.com:knowledge:llms-txt",
+      "displayName": "SPA-Cart Demo llms.txt",
+      "type": "text/plain",
+      "url": "https://spa-cart.com",
+      "description": "Index of key site sections (blog, search, news) formatted for AI readers.",
+      "tags": ["knowledge", "llms-txt"],
+      "representativeQueries": [
+        "what sections does the SPA-Cart demo site have",
+        "find SPA-Cart blog and news pages"
+      ]
+    },
+    {
+      "identifier": "urn:air:demo.spa-cart.com:knowledge:sitemap",
+      "displayName": "XML Sitemap",
+      "type": "application/xml",
+      "url": "https://spa-cart.com",
+      "description": "Machine-readable list of all category, product, brand, blog, news and info page URLs on the store.",
+      "tags": ["sitemap", "crawling"],
+      "representativeQueries": [
+        "get every product page URL on demo.spa-cart.com",
+        "crawl the SPA-Cart demo store catalog"
+      ]
+    },
+    {
+      "identifier": "urn:air:demo.spa-cart.com:web:support",
+      "displayName": "Customer Support & Contact",
+      "type": "text/html",
+      "url": "https://spa-cart.com",
+      "description": "Contact form for customer questions. Phone support: 1-800-555-5555 (24/7). Terms and conditions at https://spa-cart.com.",
+      "capabilities": ["ContactSupport"],
+      "tags": ["support", "contact"],
+      "representativeQueries": [
+        "how do I contact SPA-Cart demo store support",
+        "what is the return policy at the SPA-Cart demo store"
+      ]
+    }
+  ]
+}

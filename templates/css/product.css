@@ -39,6 +39,11 @@ td.photo td,
 .product table td {
   vertical-align: middle;
 }
+#zoom {
+    display: inline-block;
+    position: relative;
+    overflow: hidden;
+}
 #zoom img {
   width: 450px;
 }
@@ -747,6 +752,9 @@ img.mark-red {
 #send_message_box {
   padding: 15px 0;
 }
+#send_message_box > label > input {
+    margin-right: 15px;
+}
 #send_message_box textarea {
   width: 300px;
   height: 70px;
@@ -840,6 +848,7 @@ table#product-details td.product-list-price b {
   padding: 0 !important;
   margin: 0 0 0 15px !important;
   background: transparent !important;
+  box-shadow: none !important;
 }
 .add-to-wl-product svg {
   width: 36px;

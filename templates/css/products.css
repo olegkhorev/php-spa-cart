@@ -300,6 +300,23 @@ table.product-options {
   opacity: 1;
   top: 0px;
   right: 0px;
+  overflow: hidden;
+}
+.res-item:hover .save2wl:after {
+	content: " ";
+	position: absolute;
+	left: -100px;
+	top: -30px;
+	width: 20px;
+	height: 150px;
+	background: rgba(255,255,255,.3);
+-webkit-transform: rotate(45deg);
+-ms-transform: rotate(45deg);
+transform: rotate(45deg);
+}
+.res-item .save2wl:hover:after {
+	left: 30px;
+  animation: add2cart 1.4s infinite ease-in-out;
 }
 .res-item:hover .res-rating {
   margin-top: 5px;

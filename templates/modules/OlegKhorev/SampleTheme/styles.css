@@ -160,15 +160,8 @@ tr.product-details-tr *,
 #subscribe {
   background: #111;
 }
-#subscribe input[type="text"],
-#foot-subscribe button {
+#subscribe input[type="text"] {
   color: #fff;
-}
-#foot-subscribe button {
-  background: #333 !important;
-  border-radius: 100px;
-  margin: 5px;
-  height: 40px;
 }
 .left_filter h2 {
   background: #333;
@@ -387,6 +380,9 @@ table#blog_bb_buttons button {
 }
 .mrp-title {
   color: #000;
+}
+#subscribe svg {
+  fill: #fff;
 }
 @media only screen and (max-width: 850px) {
   #head {

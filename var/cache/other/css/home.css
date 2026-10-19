@@ -213,3 +213,8 @@
   clear: none !important;
   max-width: 234px;
 }
+@media only screen and (max-width: 1600px) {
+  .testimonial div.name, .testimonial div.url, .testimonial div.test-links {
+    padding-right: 10px;
+  }
+}

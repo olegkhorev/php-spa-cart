@@ -79,13 +79,16 @@ Comment from <b><?php echo $v['name'] ? $v['name'] : $v['firstname'].' '.$v['las
 <div id="newrecord" contenteditable="true"></div>
 <textarea name="comment" cols="80" rows="15"><?php if ($new_comment) {?><?php echo $new_comment['comment'];?><?php } ?></textarea>
 
+<?php if ($login) {?>
 <br />
-
-<?php if (!$login) {?>
-Name <font color='#880000'>*</font>: <input type="text" size="30" name="new_name"<?php if ($new_comment) {?> value="<?php echo escape($new_comment['new_name'], 2);; ?>"<?php } ?>>
-<br />
+<?php } else  { ?>
+<div class="group">
+  <input type="text" size="30" name="new_name"<?php if ($new_comment) {?> value="<?php echo escape($new_comment['new_name'], 2);; ?>"<?php } ?>>
+  <span class="highlight"></span>
+  <span class="bar"></span>
+  <label>Your name</label>
+</div>
 <?php if ($config['General']['recaptcha_key']) {?>
-<br />
 <div class="g-recaptcha" data-sitekey="<?php echo $config['General']['recaptcha_key'];?>"></div>
 <?php } ?>
 <br />
@@ -120,7 +123,7 @@ Name <font color='#880000'>*</font>: <input type="text" size="30" name="new_name
 <div class="descr">
 <div class="message-box"><?php echo $b['descr'];?></div>
 <div align="right">
-<a class="ajax_link link-button" href="<?php echo $url;?>">Read blog</a>&nbsp;
+<a class="ajax_link link-button" href="<?php echo $url;?>">See full post</a>&nbsp;
 </div>
 </div>
 <div class="clear"></div>

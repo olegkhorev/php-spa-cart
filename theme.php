@@ -1,17 +1,4 @@
 <?php
-/**
-* SPA-Cart
-* Copyright (c) Oleg Khorev
-*
-* Released under the MIT License.
-* https://github.com/olegkhorev/php-spa-cart
-*/
-?>
-<?php
-error_reporting(0);
-if (!SITE_ROOT)
-	exit;
-
 $admin_theme_color = htmlspecialchars($_GET['theme_color']);
 $theme_color = htmlspecialchars($_GET['theme_color']);
 $theme_color_2 = htmlspecialchars($_GET['theme_color_2']);
@@ -28,13 +15,13 @@ if (!$theme_color) {
 }
 .theme_color {
 	width: 400px;
-	height: 280px;
+	height: 320px;
 	padding: 10px;
 	background: #fff;
 	border-radius: 10px 10px 0px 0px;
 	position: fixed;
 	right: 90px;
-	bottom: -260px;
+	bottom: -297px;
 	z-index: 100;
 	border: 1px solid #ccc;
 	border-bottom: 0;
@@ -64,8 +51,23 @@ if (!$theme_color) {
 	margin: -10px -10px 0 -10px;
 	padding: 10px;
     color: #fff;
-border-radius: 10px 10px 0px 0px;
-background: var(--theme-color); /* Old browsers */
+	border-radius: 10px 10px 0px 0px;
+	background: var(--theme-color);
+	position: relative;
+	overflow: hidden;
+}
+.theme_color h2:hover:after {
+    content: " ";
+    position: absolute;
+    left: -100px;
+    top: -30px;
+    width: 20px;
+    height: 150px;
+    background: rgba(255, 255, 255, .3);
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+	animation: add2cart 1.4s infinite ease-in-out;
 }
 .admin-area .theme_color h2 {
 	background: var(--blue);
@@ -151,12 +153,16 @@ foreach ($colors as $v) {
 <br />
 <style>
 #theme_color, #theme_color_2 {
-	width: 175px;
-	margin: 5px 0 5px 0;
+    width: 175px;
+    margin: 5px 0 4px 0;
+    border-radius: 100px;
+    font-size: 20px;
+    padding: 5px 10px;
 }
 .theme_button {
 	float: left;
-	margin: 5px 0 0 0;
+	margin: 5px 15px 0 0;
+	box-shadow: none;
 }
 </style>
 <?php

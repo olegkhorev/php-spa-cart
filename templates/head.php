@@ -77,7 +77,11 @@
 
 
 <div class="header desktop_head">
-<a href="/" class="logo-link"><img src="/images/logo_new.png" alt="" /></a>
+{if $bot}
+<a href="/" class="logo-link"><svg><use xlink:href="/images/logo_bot.svg"></use></svg></a>
+{else}
+<a href="/" class="logo-link"><svg><use xlink:href="/images/logo.svg"></use></svg></a>
+{/if}
 <div class="menu-container">
 <ul id="menu">
 {if $categories_top_menu}
@@ -165,7 +169,6 @@
 {/if}
 
 <div id="head_mobile">
-{*<div class="header-phone">{lng[Call Us]} {$config['Company']['company_phone']}</div>*}
 <div id="minicart">
 {$minicart}
 </div>

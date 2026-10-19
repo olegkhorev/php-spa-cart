@@ -77,7 +77,11 @@
 
 
 <div class="header desktop_head">
-<a href="/" class="logo-link"><img src="/images/logo_new.png" alt="" /></a>
+<?php if ($bot) {?>
+<a href="/" class="logo-link"><svg><use xlink:href="/images/logo_bot.svg"></use></svg></a>
+<?php } else  { ?>
+<a href="/" class="logo-link"><svg><use xlink:href="/images/logo.svg"></use></svg></a>
+<?php } ?>
 <div class="menu-container">
 <ul id="menu">
 <?php if ($categories_top_menu) {?>
@@ -165,7 +169,6 @@
 <?php } ?>
 
 <div id="head_mobile">
-<?php /* ?><div class="header-phone">Call us <?php echo $config['Company']['company_phone'];?></div><?php */ ?>
 <div id="minicart">
 <?php echo $minicart;?>
 </div>

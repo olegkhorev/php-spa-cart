@@ -904,6 +904,9 @@
   }
 }
 @media only screen and (max-width: 850px) {
+  html body.search-form-shown .filter_switcher {
+    display: none !important;
+  }
   div#head:before {
     display: none;
   }
@@ -934,7 +937,7 @@
   html body .res-name {
     white-space: normal;
   }
-  html body.withfilter.filteropen .left_filter {
+  html body.withfilter.filteropen:not(.search-form-shown) .left_filter {
     display: block !important;
     padding: 0 20px;
     box-sizing: border-box;
@@ -975,9 +978,13 @@
     max-height: 50px;
   }
   #head_mobile .search {
+    width: 300px;
     top: 40px;
     right: 20px;
   }
+	.search button {
+    		padding: 10px 15px;
+	}
   .navigation-toggle {
     margin: 10px 20px;
   }
@@ -1126,9 +1133,6 @@
 	.category-details td:first-child {
 		text-align: center;
 		padding-bottom: 20px;
-	}
-	.search button {
-    		padding: 10px 15px;
 	}
 	#body-wishlist .image img, #body-cart .image img, #body-checkout .image img, .wl_popup .image img, .cart_popup .image img, .checkout_products .image img{
 		float: left;
@@ -1452,12 +1456,19 @@
   #subscribe {
     width: 320px;
   }
+  #subscribe > svg:first-child {
+    left: 7px;
+  }
   #subscribe input[type="text"] {
-    width: 215px;
+    width: 250px;
+    margin-left: 30px;
   }
   #subscribe button {
-    font-size: 13px;
-    padding: 0 6px;
+    width: 40px;
+    padding: 0;
+    margin-right: 0;
+    position: relative;
+    left: -12px;
   }
   .news-item img,
   .blogs .image {
@@ -1498,7 +1509,15 @@
     max-width: 130px;
   }
 }
+@media only screen and (max-width: 450px) {
+  #head_mobile .search {
+    width: 280px;
+  }
+}
 @media only screen and (max-width: 400px) {
+  #head_mobile .search {
+    width: 260px;
+  }
   .brands .brand {
     width: 205px;
     margin: 0 auto 20px auto;
@@ -1533,6 +1552,9 @@
   }
 }
 @media only screen and (max-width: 350px) {
+  #head_mobile .search {
+    width: 240px;
+  }
   .instant-search, .search {
     width: 260px;
   }
@@ -1565,5 +1587,10 @@
   }
   .banners-homepage * {
     max-height: 120px;
+  }
+}
+@media only screen and (max-width: 340px) {
+  #head_mobile .search {
+    width: 220px;
   }
 }

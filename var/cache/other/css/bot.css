@@ -1,1 +1,11 @@
-#lng_ru, #lng_en{display:block}
+/**
+* SPA-Cart
+* Copyright (c) Oleg Khorev
+*
+* Released under the MIT License.
+* https://github.com/olegkhorev/php-spa-cart
+*/
+#lng_ru,
+#lng_en {
+  display: block;
+}

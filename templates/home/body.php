@@ -325,11 +325,11 @@ if (lng("Site description")) {
 ); ?></span>)</h5></a>
 <div class="short-descr message-box">{$last_blog['descr']}</div>
 <br />
-<a class="news-more ajax_link link-button" href="{$url}">{lng[See full blog]}</a>
+<a class="news-more ajax_link link-button" href="{$url}">{lng[See full post]}</a>
 </div>
 <div class="clear"></div>
 
-<a href="/blog" class="ajax_link link-button">{lng[All blogs]}</a>
+<a href="/blog" class="ajax_link link-button">{lng[All posts]}</a>
 <br /><br />
 </div>
 {/if}

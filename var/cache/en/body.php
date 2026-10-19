@@ -171,8 +171,9 @@ $(function() {
 <div class="foot-subscribe">
 <form method="POST" action="/subscribe" id="subsform">
 <div id="subscribe">
-<input placeholder="Enter email to subscribe" type="text" id="sub-email" name="email" />
-<button>Subscribe</button>
+<svg><use xlink:href="/images/sprite.svg#letter"></use></svg>
+<input placeholder="Subscribe to our newsletter" type="text" id="sub-email" name="email" />
+<button><svg><use xlink:href="/images/sprite.svg#subscribe"></use></button>
 </div>
 </form>
 </div>
