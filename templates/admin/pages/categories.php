@@ -16,7 +16,7 @@
 if ($category) {
 ?>
 {if $category["enabled"] != 1}
-<font color="#c60">{lng[Category disabled|escape]}</font>
+<span style="color:#c60">{lng[Category disabled|escape]}</span>
 {/if}
 <?php
 echo '<a href="/admin/category/' . $category["categoryid"] . '">';
@@ -44,33 +44,33 @@ echo '<a href="javascript: void(0);" onclick="javascript: confirm(\'\', $(\'#del
 ]; ?>" method="post" name="categories_form">
 <input type="hidden" name="mode" value="" />
 
-<table cellpadding="2" cellspacing="1" class="categories lines-table resp-table">
+<table class="categories lines-table resp-table">
 <thead>
 <tr>
   <th>{lng[Enabled]}</th>
   <th>{lng[Pos]}</th>
   <th colspan="2">{lng[Category name]}</th>
-  <th align="center">{lng[Products]}</th>
-  <th align="center">{lng[Subcategories]}</th>
+  <th style="text-align:center">{lng[Products]}</th>
+  <th style="text-align:center">{lng[Subcategories]}</th>
 </tr>
 </thead>
 <?php if (empty($categories)) { ?>
 <tr>
- <td colspan="6" align="center" class="var-wh-100 submit-row"><br />{lng[No categories]}<br /><br /></td>
+ <td colspan="6" class="var-wh-100 submit-row td-align-center"><br />{lng[No categories]}<br /><br /></td>
 </tr>
 <?php } else {foreach ($categories as $v) {
         echo '<tr>
-  <td width="1%" class="td-align-center"><label>{lng[Enabled]}</label><input type="checkbox" size="3" name="posted_data[' .
+  <td class="td-align-center td-w-1pct"><label>{lng[Enabled]}</label><input type="checkbox" name="posted_data[' .
             $v["categoryid"] .
-            '][enabled]" maxlength="3" value="1"' .
+            '][enabled]" value="1"' .
             ($v["enabled"] ? ' checked="checked"' : "") .
-            '" /></td>
-  <td width="1%"><label>{lng[Pos]}</label><input type="text" size="3" name="posted_data[' .
+            ' /></td>
+  <td class="td-w-1pct"><label>{lng[Pos]}</label><input type="text" size="3" name="posted_data[' .
             $v["categoryid"] .
             '][orderby]" maxlength="3" value="' .
             $v["orderby"] .
             '" /></td>
-  <td width="1%"><label>&nbsp;</label><input type="radio" name="cat" value="' .
+  <td class="td-w-1pct"><label>&nbsp;</label><input type="radio" name="cat" value="' .
             $v["categoryid"] .
             '" /></td>
   <td><label>{lng[Category name]}</label><a href="/admin/categories/' .
@@ -80,14 +80,14 @@ echo '<a href="javascript: void(0);" onclick="javascript: confirm(\'\', $(\'#del
             '</a> (<a href="/admin/category/' .
             $v["categoryid"] .
             '">{lng[Edit|escape]}</a>)</td>
-  <td align="center"><label>{lng[Products]}</label><a href="/admin/category/' .
+  <td class="td-align-center"><label>{lng[Products]}</label><a href="/admin/category/' .
             $v["categoryid"] .
             '/products">' .
             $v["products"] .
             "</a> (" .
             $v["products_global"] .
             ')</td>
-  <td align="center"><label>{lng[Subcategories]}</label><a href="/admin/categories/' .
+  <td class="td-align-center"><label>{lng[Subcategories]}</label><a href="/admin/categories/' .
             $v["categoryid"] .
             '">' .
             $v["subcategories"] .
@@ -99,7 +99,7 @@ echo '<a href="javascript: void(0);" onclick="javascript: confirm(\'\', $(\'#del
 <button type="button" onclick="javascript: submitForm(this, '');">{lng[Update]}</button>
 <br /><br />
 <button type="button" onclick="javascript: self.location='/admin/category/'+document.categories_form.cat.value;">{lng[Modify selected]}</button>
-<button type="button" onclick="javascript: submitForm(this, 'delete');">{lng[Delete selected]}</button>
+<button type="button" onclick="javascript: if (confirm('', $(this)) || confirmed) submitForm(this, 'delete');">{lng[Delete selected]}</button>
 <?php } ?>
 <button type="button" onclick="self.location='/admin/category?parentid=<?php echo $category[
     "categoryid"
@@ -108,7 +108,7 @@ echo '<a href="javascript: void(0);" onclick="javascript: confirm(\'\', $(\'#del
 
 <br /><br />
 
-<a name="featured"></a>
+<a id="featured"></a>
 
 <h3>{lng[Featured products]}</h3>
 
@@ -122,13 +122,13 @@ echo '<a href="javascript: void(0);" onclick="javascript: confirm(\'\', $(\'#del
 <input type="hidden" name="mode" value="update" />
 <input type="hidden" name="action" value="featured_products" />
 
-<table cellpadding="3" cellspacing="1" width="100%" class="lines-table resp-table">
+<table class="lines-table resp-table">
 <thead>
 <tr>
-  <th width="10">&nbsp;</th>
-  <th width="70%">{lng[Product name]}</th>
-  <th width="15%" align="center">{lng[Pos]}</th>
-  <th width="15%" align="center">{lng[Active]}</th>
+  <th style="width:10px">&nbsp;</th>
+  <th style="width:70%">{lng[Product name]}</th>
+  <th style="width:15%;text-align:center">{lng[Pos]}</th>
+  <th style="width:15%;text-align:center">{lng[Active]}</th>
 </tr>
 </thead>
 <?php if ($featured_products) {
@@ -140,10 +140,10 @@ echo '<a href="javascript: void(0);" onclick="javascript: confirm(\'\', $(\'#del
   <td><label>{lng[Product name]}</label><b><a href="{$current_location}/admin/products/<?php echo $v[
       "productid"
   ]; ?>" target="_blank"><?php echo $v["name"]; ?></a></b></td>
-  <td align="center"><label>{lng[Pos]}</label><input type="text" name="posted_data[<?php echo $v[
+  <td class="td-align-center"><label>{lng[Pos]}</label><input type="text" name="posted_data[<?php echo $v[
       "productid"
   ]; ?>][orderby]" size="5" value="<?php echo $v["orderby"]; ?>" /></td>
-  <td align="center"><label>{lng[Active]}</label><input type="checkbox" name="posted_data[<?php echo $v[
+  <td class="td-align-center"><label>{lng[Active]}</label><input type="checkbox" name="posted_data[<?php echo $v[
       "productid"
   ]; ?>][enabled]"<?php if ($v["enabled"]) {
     echo ' checked="checked"';
@@ -152,8 +152,9 @@ echo '<a href="javascript: void(0);" onclick="javascript: confirm(\'\', $(\'#del
 <?php } ?>
 <tr>
   <td colspan="4" class="var-wh-100 background-transparent">
-<br />
-  <button type="button" onclick="javascript: document.fpform.mode.value = 'delete'; $(document.fpform).submit();">{lng[Delete selected]}</button> &nbsp; <button type="submit">{lng[Update]}</button>
+    <br />
+    <button type="submit">{lng[Update]}</button>
+    &nbsp; &nbsp; &nbsp;<button type="button" onclick="javascript: if (confirm('', $(this)) || confirmed) { document.fpform.mode.value = 'delete'; $(document.fpform).submit(); }">{lng[Delete selected]}</button>
   </td>
 </tr>
 
@@ -162,14 +163,14 @@ echo '<a href="javascript: void(0);" onclick="javascript: confirm(\'\', $(\'#del
      ?>
 
 <tr>
-	<td colspan="4" align="center" class="var-wh-100 background-transparent">{lng[No featured products in this category]}</td>
+	<td colspan="4" class="var-wh-100 background-transparent td-align-center">{lng[No featured products in this category]}</td>
 </tr>
 
 <?php
 } ?>
 
 <tr>
-<td colspan="4" class="var-wh-100 background-transparent"><br /><h3>{lng[Add product]}</td>
+<td colspan="4" class="var-wh-100 background-transparent"><br /><h3>{lng[Add product]}</h3></td>
 </tr>
 
 <tr>
@@ -183,8 +184,8 @@ var popup_product_pid = document.fpform.newproductid,
 </script>
     <button type="button" onclick="javascript: popup_product();">{lng[Browse...]}</button>
   </td>
-  <td class="background-transparent" align="center"><label>{lng[Pos]}</label><input type="text" name="neworderby" size="5" /></td>
-  <td class="background-transparent" align="center"><label>{lng[Active]}</label><input type="checkbox" name="newenabled" checked="checked" /></td>
+  <td class="background-transparent td-align-center"><label>{lng[Pos]}</label><input type="text" name="neworderby" size="5" /></td>
+  <td class="background-transparent td-align-center"><label>{lng[Active]}</label><input type="checkbox" name="newenabled" checked="checked" /></td>
 </tr>
 
 <tr>

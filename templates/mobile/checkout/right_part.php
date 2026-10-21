@@ -33,7 +33,7 @@
 <table>
 {foreach $cart['warehouses'] as $k=>$w}
 <tr{if !$k} class="active"{/if}>
- <td width="10"><input type="radio" id="wid-{$w['wid']}" name="wid" value="{$w['wid']}"{if !$k} checked{/if} /></td>
+ <td style="width:10px"><input type="radio" id="wid-{$w['wid']}" name="wid" value="{$w['wid']}"{if !$k} checked{/if} /></td>
  <td><label for="wid-{$w['wid']}">{$w['title']}, {$w['address']}</label> <a href="http://maps.google.com/?q={php echo escape($w['address'], 2);}" target="_blank">{lng[Open in map]}</a></td>
 </tr>
 {/foreach}
@@ -63,42 +63,42 @@ Free
 
 {*<textarea style="width: 100%;" placeholder="{lng[Your comments]}" cols="30" rows="4" name="notes"></textarea>*}
 <br /><br />
-<div align="right">
-<table class="subtotal" cellspacing="0" cellpadding="0" width="100%">
+<div style="text-align:right">
+<table class="subtotal" style="border-collapse:collapse;width:100%">
 <tr>
- <td align="right">{lng[Subtotal]}:</td>
- <td width="50" align="right">{price $cart['subtotal']}</td>
+ <td style="text-align:right">{lng[Subtotal]}:</td>
+ <td style="width:50px;text-align:right">{price $cart['subtotal']}</td>
 </tr>
 {if $cart['coupon']}
 <tr>
- <td align="right">{lng[Coupon discount]}({$cart['coupon']['coupon']}) <span class="remove_coupon">(x)</span>:</td>
- <td align="right">{price $cart['coupon_discount']}</td>
+ <td style="text-align:right">{lng[Coupon discount]}({$cart['coupon']['coupon']}) <span class="remove_coupon">(x)</span>:</td>
+ <td style="text-align:right">{price $cart['coupon_discount']}</td>
 </tr>
 {*{php $discounted_subtotal = $cart['subtotal'] - $cart['coupon_discount'];}*}
 <tr>
- <td align="right">{lng[Discounted subtotal]}:</td>
- <td width="50" align="right">{price $cart['discounted_subtotal']}</td>
+ <td style="text-align:right">{lng[Discounted subtotal]}:</td>
+ <td style="width:50px;text-align:right">{price $cart['discounted_subtotal']}</td>
 </tr>
 {/if}
 <tr>
- <td align="right">{lng[Shipping]}:</td>
- <td align="right">{price $cart['shipping_cost']}</td>
+ <td style="text-align:right">{lng[Shipping]}:</td>
+ <td style="text-align:right">{price $cart['shipping_cost']}</td>
 </tr>
 {if $cart['tax_details']}
 <tr>
- <td align="right">{lng[Tax]}({$cart['tax_details']['tax_name']}):</td>
- <td align="right">{price $cart['tax']}</td>
+ <td style="text-align:right">{lng[Tax]}({$cart['tax_details']['tax_name']}):</td>
+ <td style="text-align:right">{price $cart['tax']}</td>
 </tr>
 {/if}
 {if $cart['gift_card']}
 <tr>
- <td align="right">{lng[Paid with Gift Card]} <span class="remove_gc">(x)</span>:</td>
- <td align="right">{price $cart['gc_discount']}</td>
+ <td style="text-align:right">{lng[Paid with Gift Card]} <span class="remove_gc">(x)</span>:</td>
+ <td style="text-align:right">{price $cart['gc_discount']}</td>
 </tr>
 {/if}
 <tr class="totals">
- <td align="right">{lng[Total]}:</td>
- <td align="right">{price $cart['total']}</td>
+ <td style="text-align:right">{lng[Total]}:</td>
+ <td style="text-align:right">{price $cart['total']}</td>
 </tr>
 </table>
 </div>
@@ -112,8 +112,8 @@ Free
 <br />
 <div class="register_error"></div>
 {if $shipping_methods || (!$cart['need_shipping'] && $get['1'] == 'user_form')}
-<center>
+<div style="text-align:center">
 <button type="button" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored">{lng[Place order]}</button>
-</center>
+</div>
 {/if}
 </form>

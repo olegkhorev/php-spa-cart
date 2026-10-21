@@ -15,16 +15,16 @@
 </div>
 </div></div>
 
-<center>
+<div style="text-align:center">
 <br /><br />
 Sample template theme
-</center>
+</div>
 <div class="clear"></div>
 
 <?php if (lng('Site title') || lng('Site description')) {?>
 <div class="page-container page-container-afterbanner">
 <div class="content">
-	<div id="center" class="no_left_menu">
+	<div class="center-column no_left_menu">
 <?php } ?>
 <?php } ?>
 <?php 
@@ -48,7 +48,7 @@ if (lng("Site description")) {
 <?php if ($config['Visual']['visual_testimonials'] == 'Y') {?>
 <div class="page-container page-container-testimonials">
 <div class="content">
-	<div id="center" class="no_left_menu">
+	<div class="center-column no_left_menu">
 
 <div class="testimonial">
 <img src="/images/testimonial.jpg" class="test-image" alt="Our testimonials" />
@@ -71,7 +71,7 @@ if (lng("Site description")) {
 </div>
 <?php } ?>
 
-<div id="home-tabs">
+<div class="home-tabs-wrap">
 <ul class="home-tabs">
  <li class="tab-1 active" data-tab="1">Featured products</li>
 </ul>
@@ -80,7 +80,7 @@ if (lng("Site description")) {
 <?php /* ?> Start page container <?php */ ?>
 <div class="page-container page-container-2">
 <div class="content">
-	<div id="center" class="no_left_menu">
+	<div class="center-column no_left_menu">
 
 <?php if ($featured_products) {?>
  <?php $tag_id = "featured_products"; $products = $featured_products; $per_row = 4;; ?>

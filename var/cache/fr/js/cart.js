@@ -15,7 +15,7 @@ function cart_actions() {
   $(".clear-cart").on("click", function () {
     $.ajax({ url: "/cart/clear" }).done(function (r) {
       $("#minicart").html(r);
-      $("#head_mobile #minicart").html(r);
+      $("#head_mobile #minicart, #minicart-mobile").html(r);
       cart_clicks();
     });
     removePopups();
@@ -40,7 +40,7 @@ function cart_actions() {
     var url = $(this).attr("href");
     $.ajax({ url: url }).done(function (r) {
       $("#minicart").html(r);
-      $("#head_mobile #minicart").html(r);
+      $("#head_mobile #minicart, #minicart-mobile").html(r);
       if ($("#minicart .cart-link").length) {
         cart_clicks();
         $(".cart-link").click();
@@ -213,31 +213,7 @@ function cart_clicks() {
               $(".wl_popup").css("transform", "matrix(1, 0, 0, 1, 0, 0)");
             }, 200);
           }, 200);
-/*
-          var top =
-            $(window).scrollTop() +
-            $(window).height() / 2 -
-            $(".wl_popup").height() / 2 -
-            50;
-          if (top < $(window).scrollTop()) top = $(window).scrollTop() + 30;
 
-          $(".wl_popup").css("top", top + "px");
-          $(".wl_popup").css(
-            "left",
-            $(window).width() / 2 - $(".wl_popup").outerWidth() / 2 + "px",
-          );
-          $(".wl_popup")
-            .css("opacity", 0)
-            .css("transform", "matrix(0.1, 0, 0, 0.1, 0, 0)");
-          setTimeout(function () {
-            $(".wl_popup")
-              .css("opacity", 1)
-              .css("transform", "matrix(1.1, 0, 0, 1.1, 0, 70)");
-            setTimeout(function () {
-              $(".wl_popup").css("transform", "matrix(1, 0, 0, 1, 0, 0)");
-            }, 200);
-          }, 200);
-*/
           $(".wl_popup").show();
           $(window).resize(function () {
             var top =

@@ -7,11 +7,12 @@
 * https://github.com/olegkhorev/php-spa-cart
 */
 ?>
-<html class="itsinvoicepage">
+<!DOCTYPE html>
+<html lang="en" class="itsinvoicepage">
 <head>
 <meta charset="utf-8" />
 <title>{lng[Invoice]} #<?php echo $order["orderid"]; ?></title>
-<style type="text/css" media="all">
+<style media="all">
 {include_css}
 body {
     font-family: sans-serif;

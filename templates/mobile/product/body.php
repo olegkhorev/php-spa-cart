@@ -27,7 +27,9 @@
   {/if}
  {/foreach}
 
+{if $k != 2 && $k != 6}
 </tr>
+{/if}
 {/if}
 </table>
 <script>
@@ -105,7 +107,7 @@ exceptions[{$oid}] = [];
 {/if}
 
 {if $variants}<div class="variants-data" style="display: none;">
-<table><tbody><tr></tr></tbody></table>
+<table></table>
 </div>
 <span id="hasVariants"></span>
 <script>
@@ -119,7 +121,7 @@ variants[{$oid}][{$k}][4][{$v2['groupid']}] = {$v2['optionid']};
  {if $v['images']}
   {foreach $v['images'] as $k2=>$v2}
 {variant_image image=`$v2` new_width=95 new_height=95 only_url="Y" ob_variant_fix="Y"}
-variants[{$oid}][{$k}][5][{$k2}] = "<a href='{$current_location}/photos/variant/{$v2['variantid']}/{$v2['imageid']}/{$v2['file']}' onclick='javascript: return switch_photo($(this));' rev='width: {$v2['x']}, height: {$v2['y']}'><img src='{$image_url}' alt='{php echo escape($v2['alt'], 3);}' /></a>";
+variants[{$oid}][{$k}][5][{$k2}] = "<a href='{$current_location}/photos/variant/{$v2['variantid']}/{$v2['imageid']}/{$v2['file']}' onclick='javascript: return switch_photo($(this));' data-rev='width: {$v2['x']}, height: {$v2['y']}'><img src='{$image_url}' alt='{php echo escape($v2['alt'], 3);}' /></a>";
   {/foreach}
  {/if}
 
@@ -147,7 +149,7 @@ groups[{$oid}][{$v['groupid']}][3][{$o['optionid']}] = [{$o['price_modifier']}, 
 
  <td class="product-option"><strong class="subtitle">{php echo $v['fullname'] ? $v['fullname'] : $v['name'];}<span id="pot-{$v['groupid']}"></span> <a href="javascript: void(0);" class="clear_option" id="poa-{$v['groupid']}">{lng[Clear]}</a></strong><br />
  {if $v['view_type'] == 's' && $v['options']}<select name="product_options[{$v['groupid']}]" id="po-{$v['groupid']}" class="product_options{if !$v['variant']} novar{/if}">
- <option></option>
+ <option value="">&nbsp;</option>
 {foreach $v['options'] as $o}
  <option value="{$o['optionid']}"{if $preselected[$v['groupid']] == $o['optionid']} selected{/if}>{$o['name']}
  {if !$v['variant']}
@@ -224,10 +226,10 @@ options[{$oid}] = [];
 <br />
 <table class="product-to-cart">
 <tr class="options-error">
- <td colspan="5" align="left">{lng[Please, select all options.]}</td>
+ <td colspan="5" style="text-align:left">{lng[Please, select all options.]}</td>
 </tr>
 <tr>
- <td nowrap>
+ <td style="white-space:nowrap">
 <input type="hidden" name="nongstprice" value="{$product['price']}" />
 {lng[Price]}: <span class="product-details-price">{price $product['price']}</span>
  </td>
@@ -261,7 +263,7 @@ options[{$oid}] = [];
 <div class="social-buttons">
 {assign $href = $http_location.'/'.$_SERVER['REQUEST_URI']}
 	<div class="soc-item">
-		<div class="fb-like" data-href="{$href}" data-send="true" data-layout="button_count" data-show-faces="false"></div>{*<div class="fb-send" data-href="{$href}"></div>*}
+		<div class="fb-like" href="{$href}" data-send="true" data-layout="button_count" data-show-faces="false"></div>{*<div class="fb-send" href="{$href}"></div>*}
 	</div>
 
 	<div class="soc-item">
@@ -269,8 +271,8 @@ options[{$oid}] = [];
 	</div>
 </div>
 {/if}
- </div>
 </form>
+ </div>
 {if $oid == 0}
 <br />
 <h2>{lng[Description]}</h2>
@@ -366,7 +368,7 @@ options[{$oid}] = [];
 
     <tr>
       <td colspan="2"></td>
-      <td id="send_message_box"><label><input type="checkbox" id="is_msg" name="is_msg" value="1" onclick="javascript: $('.message-box').toggle();" value="Y"{if $send_to_friend['is_msg']} checked{/if} />{lng[Add personal message]}</label>
+      <td id="send_message_box"><label><input type="checkbox" id="is_msg" name="is_msg" value="1" onclick="javascript: $('.message-box').toggle();"{if $send_to_friend['is_msg']} checked{/if} />{lng[Add personal message]}</label>
         <div class="message-box{if !$send_to_friend['is_msg']} hidden{/if}">
 <br /><br />
     <div class="group">
@@ -387,7 +389,7 @@ options[{$oid}] = [];
 
     <tr>
       <td colspan="2">&nbsp;</td>
-      <td><br /><button type="button" onclick="javascript: send_to_friend();">{lng[Send to friend]}</td>
+      <td><br /><button type="button" onclick="javascript: send_to_friend();">{lng[Send to friend]}</button></td>
     </tr>
   </table>
 </form>
@@ -416,7 +418,7 @@ options[{$oid}] = [];
 <input type="hidden" name="mode" value="add_review" />
 <input type="hidden" id="review_rating" name="rating" />
 <input type="hidden" name="review_productid" value="{$product['productid']}" />
-<table cellspacing="10">
+<table style="border-spacing:10px">
     <tr>
       <td class="name"></td>
       <td class="star">*</td>
@@ -456,7 +458,7 @@ options[{$oid}] = [];
 {/if}
     <tr>
       <td colspan="2"></td>
-      <td><br /><button type="button" onclick="javascript: add_review();">{lng[Add review]}</td>
+      <td><br /><button type="button" onclick="javascript: add_review();">{lng[Add review]}</button></td>
     </tr>
 </table>
 </form>

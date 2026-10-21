@@ -9,8 +9,8 @@
 ?>
 <div class="checkout-container">
 <h1><a href="{$current_location}/cart" class="cart-link back-to-cart"><img src="/images/spacer.gif" alt="" /></a>{lng[Checkout]}</h1>
-<div align="left">
-<table width="100%" cellspacing="0" class="checkout_products">
+<div style="text-align:left">
+<table style="width:100%;border-spacing:0" class="checkout_products">
 {foreach $products as $v}
 {php $url = $v['cleanurl'] ? $v['cleanurl'].'.html' : 'product/'.$v['productid'];}
 	<tr>
@@ -22,7 +22,7 @@
 {/if}
 
 	  </a></td>
-	  <td width="100%" class="line" align="left">
+	  <td style="width:100%;text-align:left" class="line">
 {if $v['gift_card']}
 <b>Gift Card</b>
 {else}
@@ -35,17 +35,17 @@
 {if $v['product_options']}
 <hr />
 <b>{lng[Selected options]}:</b><br />
-<table width="100%">
+<table style="width:100%">
 {foreach $v['product_options'] as $o}
 <tr>
-	<td valign="top" width="100">{if $o['fullname']}{$o['fullname']}{else}{$o['name']}{/if}:</td>
+	<td style="vertical-align:top;width:100px">{if $o['fullname']}{$o['fullname']}{else}{$o['name']}{/if}:</td>
 	<td>{$o['option']['name']}</td>
 </tr>
 {/foreach}
 </table>
 {/if}
  </td>
- <td class="line" nowrap align="right">
+ <td class="line" style="white-space:nowrap;text-align:right">
 {if $v['gift_card']}
 {price $v['amount']}
 {else}
@@ -73,7 +73,7 @@ You can checkout as guest. Or <a href="/login" onclick="return login_popup();">{
 {if $checkout_reason == 1}
 <table id="checkout_table">
 <tr>
- <td width="340" id="custom_details">
+ <td id="custom_details">
 <form method="post" action="/checkout/user_form" id="checkout_user_form">
     <div class="group">
       <input type="text" name="posted_data[firstname]" required value="{php echo escape($userinfo['firstname'], 2);}" />
@@ -250,9 +250,8 @@ states.{$v['code']}.states[{$k}] = {code: "{$s['code']}", state: "{php echo esca
 
 <button>{lng[Continue]}</button>
 </form>
-</div>
  </td>
- <td width="260" id="place_order" class="opacity-03">
+ <td id="place_order" class="opacity-03">
 {include="checkout/right_part.php"}
  </td>
 </tr>
@@ -261,4 +260,5 @@ states.{$v['code']}.states[{$k}] = {code: "{$s['code']}", state: "{php echo esca
 {lng[Subtotal]}: {price $cart['subtotal']}<br /><br />
 {$checkout_reason}
 {/if}
+</div>
 </div>

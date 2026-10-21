@@ -20,16 +20,17 @@
 </p>
 {/if}
 
-<p />A new message on your ticket #{$ticket['ticketid']}
+<p>A new message on your ticket #{$ticket['ticketid']}</p>
 
 {*{if $ticket['userid']}*}
-<p />{lng[Full ticket]}<br />
+<p>{lng[Full ticket]}<br />
 <a href="{$http_location}/ticket/{$ticket['ticketid']}?authkey={$ticket['authkey']}">{$http_location}/ticket/{$ticket['ticketid']}?authkey={$ticket['authkey']}</a>
 {*{/if}*}
+</p>
 
-<p />{lng[Ticket subject]}: {$ticket['subject']}
+<p>{lng[Ticket subject]}: {$ticket['subject']}</p>
 
-<hr size='1' />
+<hr style="border-bottom-width: 0;" />
 
 {if $product}
 {lng[Our answer]}:
@@ -37,9 +38,10 @@
 {lng[Replied Message]}:
 {/if}
 
-<p />{$message['message']}
+<div style="margin: 1em 0;">{$message['message']}
 
 <br /><br />
 
 {$signature}
+</div>
 {include="mail/footer.php"}

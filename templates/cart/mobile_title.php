@@ -19,10 +19,10 @@
 {if $v['product_options']}
 <hr />
 <b>{lng[Selected options]}:</b><br />
-<table width="100%">
+<table style="width:100%">
 {foreach $v['product_options'] as $o}
 <tr>
-	<td width="100" valign="top">{$o['name']}:</td>
+	<td style="width:100px;vertical-align:top">{$o['name']}:</td>
 	<td>{$o['option']['name']}</td>
 </tr>
 {/foreach}

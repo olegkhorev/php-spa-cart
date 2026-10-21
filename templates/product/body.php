@@ -24,7 +24,9 @@
 {product_image image=`$photos[0]` new_width=2000 new_height=4000 link='Y' only_url='Y' ob_product_fix='Y'}
 </div>
 <table>
-{if count($photos) > 1} {foreach $photos as $k=>$v}  {if $k == 0 || $k == 4 || $k == 9}
+{if count($photos) > 1}
+ {foreach $photos as $k=>$v}
+  {if $k == 0 || $k == 4 || $k == 9}
 <tr>
 {/if}
  <td>
@@ -34,8 +36,9 @@
 </tr>
   {/if}
  {/foreach}
-
+{if $k != 3 && $k != 8}
 </tr>
+{/if}
 {/if}
 </table>
 <script>
@@ -56,7 +59,8 @@ product_avail[{$oid}] = {$product['avail']};
 </script>
  </td>
  <td class="details">
-{if $oid == 1} <div class="see_all"><a class="ajax_link" href="{$current_location}/{php echo $product['cleanurl'] ? $product['cleanurl'].'.html' : 'product/'.$product['productid'];}">{lng[See more details]}</a></div>
+{if $oid == 1}
+ <div class="see_all"><a class="ajax_link" href="{$current_location}/{php echo $product['cleanurl'] ? $product['cleanurl'].'.html' : 'product/'.$product['productid'];}">{lng[See more details]}</a></div>
 {/if}
 
 {if $oid}
@@ -73,12 +77,14 @@ product_avail[{$oid}] = {$product['avail']};
 w_prices[{$oid}] = [];
  {foreach $wholesale as $k=>$v}
 w_prices[{$oid}][{$k}] = [{$v['quantity']}, {$v['price']}];
- {/foreach}{else}
+ {/foreach}
+{else}
 w_prices[{$oid}] = [];
 {/if}
 
 {if $options_ex}
- {foreach $options_ex as $k=>$v}exceptions[{$oid}][{$k}] = [];
+ {foreach $options_ex as $k=>$v}
+exceptions[{$oid}][{$k}] = [];
   {foreach $v as $g=>$o}
 exceptions[{$oid}][{$k}][{$g}] = {$o};
   {/foreach}
@@ -114,15 +120,19 @@ exceptions[{$oid}] = [];
 </tr>
 </table>
 
-{if $option_groups}<h3>{lng[Product options]}</h3>
+{if $option_groups}
+<h3>{lng[Product options]}</h3>
 {/if}
 
-{if $variants}<div class="variants-data display-none">
-<table><tbody><tr></tr></tbody></table>
+{if $variants}
+<div class="variants-data display-none">
+<table></table>
 </div>
 <span id="hasVariants"></span>
 <script>
-{foreach $variants as $k=>$v} {php $k = $v['variantid'];}variants[{$oid}][{$k}] = ["{php echo escape($v['sku'], 2);}", {php echo price_format_currency($v['price'])}, {$v['weight']}, {$v['avail']}, {ldelim}{rdelim}, [], {$v['variantid']}, [], "{php echo escape($v['title'], 2);}"];
+{foreach $variants as $k=>$v}
+ {php $k = $v['variantid'];}
+variants[{$oid}][{$k}] = ["{php echo escape($v['sku'], 2);}", {php echo price_format_currency($v['price'])}, {$v['weight']}, {$v['avail']}, {ldelim}{rdelim}, [], {$v['variantid']}, [], "{php echo escape($v['title'], 2);}"];
  {if $v['options']}
   {foreach $v['options'] as $k2=>$v2}
 variants[{$oid}][{$k}][4][{$v2['groupid']}] = {$v2['optionid']};
@@ -132,7 +142,7 @@ variants[{$oid}][{$k}][4][{$v2['groupid']}] = {$v2['optionid']};
  {if $v['images']}
   {foreach $v['images'] as $k2=>$v2}
 {variant_image image=`$v2` new_width=95 new_height=95 only_url="Y" only_url="Y" ob_variant_fix='Y'}
-variants[{$oid}][{$k}][5][{$k2}] = "<a href='{$current_location}/photos/variant/{$v2['variantid']}/{$v2['imageid']}/{$v2['file']}' onclick='javascript: return switch_photo($(this));' rev='width: {$v2['x']}, height: {$v2['y']}'><img src='{$image_url}' alt='{php echo escape($v2['alt'], 3);}' /></a>";
+variants[{$oid}][{$k}][5][{$k2}] = "<a href='{$current_location}/photos/variant/{$v2['variantid']}/{$v2['imageid']}/{$v2['file']}' onclick='javascript: return switch_photo($(this));' data-rev='width: {$v2['x']}, height: {$v2['y']}'><img src='{$image_url}' alt='{php echo escape($v2['alt'], 3);}' /></a>";
   {/foreach}
  {/if}
 
@@ -143,43 +153,59 @@ variants[{$oid}][{$k}][7][{$k2}] = [{$v2['quantity']}, {php echo price_format_cu
  {/if}
 {/foreach}
 </script>
-{else}<script>
+{else}
+<script>
 variants[{$oid}] = [];
 </script>
 {/if}
 
-{if $option_groups}<script>
-{foreach $option_groups as $k=>$v}groups[{$oid}][{$v['groupid']}] = [{$v['groupid']}, {$v['variant']}, "{$v['type']}", {ldelim}{rdelim}];
- {if $v['options']}  {foreach $v['options'] as $o}options[{$oid}][{$o['optionid']}] = "{php echo escape($o['name'], 2);}";
+{if $option_groups}
+<script>
+{foreach $option_groups as $k=>$v}
+groups[{$oid}][{$v['groupid']}] = [{$v['groupid']}, {$v['variant']}, "{$v['type']}", {ldelim}{rdelim}];
+ {if $v['options']}
+  {foreach $v['options'] as $o}
+options[{$oid}][{$o['optionid']}] = "{php echo escape($o['name'], 2);}";
 groups[{$oid}][{$v['groupid']}][3][{$o['optionid']}] = [{php} if ($o['price_modifier_type'] == '$') echo price_format_currency($o['price_modifier']); else echo $o['price_modifier']; {/php}, "{$o['price_modifier_type']}", {$o['weight_modifier']}, "{$o['weight_modifier_type']}"];
-  {/foreach} {/if}{/foreach}
+  {/foreach}
+ {/if}
+{/foreach}
 </script>
 <table class="product-options">
 {php $cnt = 0;}
-{foreach $option_groups as $k=>$v} {if $cnt == 0}
+{foreach $option_groups as $k=>$v}
+ {if $cnt == 0}
 <tr>
  {/if}
 
  <td class="product-option"><strong class="subtitle">{php echo $v['fullname'] ? $v['fullname'] : $v['name'];}<span id="pot-{$v['groupid']}"></span> <a href="javascript: void(0);" class="clear_option" id="poa-{$v['groupid']}">{lng[Clear]}</a></strong><br />
- {if $v['view_type'] == 's' && $v['options']}<select name="product_options[{$v['groupid']}]" id="po-{$v['groupid']}" class="product_options{if !$v['variant']} novar{/if}">
- <option></option>
+ {if $v['view_type'] == 's' && $v['options']}
+<select name="product_options[{$v['groupid']}]" id="po-{$v['groupid']}" class="product_options{if !$v['variant']} novar{/if}">
+ <option label=" "></option>
 {foreach $v['options'] as $o}
  <option value="{$o['optionid']}"{if $preselected[$v['groupid']] == $o['optionid']} selected{/if}>{$o['name']}
  {if !$v['variant']}
-  {if $o['price_modifier'] != "0.00"}	{if $o['price_modifier_type'] == '%'}
-{php $modifier = $o['price_modifier'] * $product["price"] / 100;}(+{price $modifier})
-    {elseif $o['price_modifier_type'] == '$'}(+{price $o['price_modifier']})
-    {/if}   {/if}
+  {if $o['price_modifier'] != "0.00"}
+	{if $o['price_modifier_type'] == '%'}
+{php $modifier = $o['price_modifier'] * $product["price"] / 100;}
+(+{price $modifier})
+    {elseif $o['price_modifier_type'] == '$'}
+(+{price $o['price_modifier']})
+    {/if}
+   {/if}
   {/if}
   </option>
 {/foreach}
 </select>
 
-{elseif $v['view_type'] == 'p' && $v['options']}<div class="options_container{if !$v['variant']} novar{/if}" id="pog-{$v['groupid']}">
- {foreach $v['options'] as $o}<div class="option-name" id="poi-{$o['optionid']}" data-title="{php echo escape($o['name'], 2);}">{$o['name']}
+{elseif $v['view_type'] == 'p' && $v['options']}
+<div class="options_container{if !$v['variant']} novar{/if}" id="pog-{$v['groupid']}">
+ {foreach $v['options'] as $o}
+<div class="option-name" id="poi-{$o['optionid']}" data-title="{php echo escape($o['name'], 2);}">{$o['name']}
   {if !$v['variant']}
    {if $o['price_modifier'] != "0.00"}
-	{if $o['price_modifier_type'] == '%'}{php $modifier = $o['price_modifier'] * $product["price"] / 100;}
+	{if $o['price_modifier_type'] == '%'}
+{php $modifier = $o['price_modifier'] * $product["price"] / 100;}
 (+{price $modifier})
     {elseif $o['price_modifier_type'] == '$'}
 (+{price $o['price_modifier']})
@@ -193,7 +219,8 @@ groups[{$oid}][{$v['groupid']}][3][{$o['optionid']}] = [{php} if ($o['price_modi
 <input type="hidden" name="product_options[{$v['groupid']}]" value="{php echo $preselected[$v['groupid']] ? $preselected[$v['groupid']] : "";}" id="po-{$v['groupid']}" />
 {*
 <?php
-		} elseif ($v['view_type'] == 'r' && $v['options']) {?>
+		} elseif ($v['view_type'] == 'r' && $v['options']) {
+?>
 <ul id="po-{$v['groupid']}">
 <?php
 			foreach ($v['options'] as $k2=>$o) {
@@ -220,13 +247,15 @@ groups[{$oid}][{$v['groupid']}][3][{$o['optionid']}] = [{php} if ($o['price_modi
 ?>
 </ul>
 *}
-{elseif $v['view_type'] == 't'}<textarea name="product_options[{$v['groupid']}]">{$preselected[$v['groupid']]}</textarea>
+{elseif $v['view_type'] == 't'}
+<textarea name="product_options[{$v['groupid']}]">{$preselected[$v['groupid']]}</textarea>
 {elseif $v['view_type'] == 'i'}
 <input type="text" name="product_options[{$v['groupid']}]" value="{php echo escape($preselected[$v['groupid']], 2);}" />
 {/if}
 </td>
  {php $cnt++;}
- {if $cnt == 2}  {php $cnt = 0;}
+ {if $cnt == 2}
+  {php $cnt = 0;}
 </tr>
  {/if}
 {/foreach}
@@ -242,11 +271,11 @@ options[{$oid}] = [];
 <br />
 <table class="product-to-cart">
 <tr class="options-error">
- <td colspan="7" align="left">{lng[Please, select all options.]}</td>
+ <td colspan="{if $oid}3{else}7{/if}" style="text-align:left">{lng[Please, select all options.]}</td>
 </tr>
 
 <tr class="product-details-tr">
- <td colspan="4" class="product-details-price" nowrap>
+ <td colspan="{if $oid}3{else}4{/if}" class="product-details-price" style="white-space:nowrap">
 <input type="hidden" name="nongstprice" value="{$product['price']}" />
 <span class="product-details-price">{price $product['price']}</span>
 {if $product['list_price'] > $product['price']}
@@ -272,12 +301,13 @@ options[{$oid}] = [];
 {if $oid}
 </tr>
 <tr>
- <td colspan="4"><a class="main-button" onclick="javascript: return {if $login}add_wishlist({$product['productid']});{else}login_popup('W');{/if}" href="javascript: void(0);">{lng[Add to wishlist]}</a></td>
+ <td colspan="3"><a class="main-button" onclick="javascript: return {if $login}add_wishlist({$product['productid']});{else}login_popup('W');{/if}" href="javascript: void(0);">{lng[Add to wishlist]}</a></td>
 {else}
- <td><a class="add-to-wl-product add-to-wl-product-button" onclick="javascript: return {if $login}add_wishlist({$product['productid']});{else}login_popup('W');{/if}" href="javascript: void(0);"><button type="button"><svg><use xlink:href="/images/sprite.svg#favorite"></use></svg></button></a></td>
+ <td><span class="add-to-wl-product add-to-wl-product-button"><button type="button" onclick="javascript: return {if $login}add_wishlist({$product['productid']});{else}login_popup('W');{/if}"><svg><use xlink:href="/images/sprite.svg#favorite"></use></svg></button></span></td>
 {/if}
 </tr>
 </table>
+</form>
  </td>
 {if !$oid}
  <td class="more-details">
@@ -305,7 +335,7 @@ options[{$oid}] = [];
 <div class="social-buttons">
 {assign $href = $http_location.'/'.$_SERVER['REQUEST_URI']}
 	<div class="soc-item">
-		<div class="fb-like" data-href="{$href}" data-send="true" data-layout="button_count" data-show-faces="false"></div>{*<div class="fb-send" data-href="{$href}"></div>*}
+		<div class="fb-like" href="{$href}" data-send="true" data-layout="button_count" data-show-faces="false"></div>{*<div class="fb-send" href="{$href}"></div>*}
 	</div>
 
 	<div class="soc-item">
@@ -318,7 +348,6 @@ options[{$oid}] = [];
 {/if}
 </tr>
 </table>
-</form>
 {if $oid == 0}
 
 {* Page container assign *}
@@ -345,7 +374,7 @@ options[{$oid}] = [];
 
 <div class="page-container page-container-product">
 <div class="content">
-	<div id="center" class="no_left_menu">
+	<div class="center-column no_left_menu">
 
 <div class="tab-content tab-description product-tab" id="tab-1">
 <h3 class="its4mobile">{lng[Description]}</h3>
@@ -374,52 +403,26 @@ options[{$oid}] = [];
 <h3>Add your review</h3>
 <br />
 <form method="POST">
-<input type="hidden" name="mode" value="add_review" />
-<input type="hidden" id="review_rating" name="rating" />
-<input type="hidden" name="review_productid" value="{$product['productid']}" />
-<table cellspacing="10">
-    <tr>
-      <td class="name"></td>
-      <td class="star">*</td>
-      <td><div class="rating"><span class="r1"></span><span class="r2"></span><span class="r3"></span><span class="r4"></span><span class="r5"></span></div></td>
-    </tr>
-
-    <tr>
-      <td class="name"></td>
-      <td class="star">*</td>
-      <td>
+  <input type="hidden" name="mode" value="add_review" />
+  <input type="hidden" id="review_rating" name="rating" />
+  <input type="hidden" name="review_productid" value="{$product['productid']}" />
+    <div class="rating"><span class="r1"></span><span class="r2"></span><span class="r3"></span><span class="r4"></span><span class="r5"></span></div>
     <div class="group">
       <input type="text" name="name" required />
       <span class="highlight"></span>
       <span class="bar"></span>
       <label>{lng[Your name]}</label>
     </div>
-      </td>
-    </tr>
-
-    <tr>
-      <td class="name"></td>
-      <td class="star">*</td>
-      <td>
     <div class="group">
       <textarea cols="40" rows="4" name="message"></textarea>
       <span class="highlight"></span>
       <span class="bar"></span>
       <label>{lng[Your message]}</label>
     </div>
-      </td>
-    </tr>
 {if $config['General']['recaptcha_key']}
-	<tr>
-		<td colspan="2"></td>
-		<td><div id="recaptcha_reviews" data-sitekey="{$config['General']['recaptcha_key']}"></div></td>
-	</tr>
+		<div id="recaptcha_reviews" data-sitekey="{$config['General']['recaptcha_key']}"></div>
 {/if}
-    <tr>
-      <td colspan="2"></td>
-      <td><br /><button type="button" onclick="javascript: add_review();">{lng[Add review]}</td>
-    </tr>
-</table>
+    <br /><button type="button" onclick="javascript: add_review();">{lng[Add review]}</button>
 </form>
 </div>
 </div>
@@ -437,76 +440,42 @@ options[{$oid}] = [];
 <form method="POST" id="send_to_friend">
 <input type="hidden" name="mode" value="send_to_friend" />
 
-  <table>
-    <tr>
-      <td class="name" width="170"></td>
-      <td class="star">*</td>
-      <td>
     <div class="group">
       <input type="text" name="name" required value="{php echo escape($send_to_friend['name'], 2);}" />
       <span class="highlight"></span>
       <span class="bar"></span>
       <label>{lng[Your name]}</label>
     </div>
-      </td>
-    </tr>
-
-    <tr>
-      <td class="name"></td>
-      <td class="star">*</td>
-      <td>
     <div class="group">
       <input type="text" name="email" required value="{php echo escape($send_to_friend['email'], 2);}" />
       <span class="highlight"></span>
       <span class="bar"></span>
       <label>{lng[Your E-mail]}</label>
     </div>
-      </td>
-    </tr>
-
-    <tr>
-      <td class="name"></td>
-      <td class="star">*</td>
-      <td>
     <div class="group">
       <input type="text" name="friend" required value="{php echo escape($send_to_friend['friend'], 2);}" />
       <span class="highlight"></span>
       <span class="bar"></span>
       <label>{lng[Friend E-mail]}</label>
     </div>
-
-      </td>
-    </tr>
-
-    <tr>
-      <td colspan="2"></td>
-      <td id="send_message_box"><label><input type="checkbox" id="is_msg" name="is_msg" value="1" onclick="javascript: $('.message-box').toggle();" value="Y"{if $send_to_friend['is_msg']} checked{/if} />{lng[Add personal message]}</label>
+      <div id="send_message_box">
+        <label><input type="checkbox" id="is_msg" name="is_msg" value="1" onclick="javascript: $('.message-box').toggle();"{if $send_to_friend['is_msg']} checked{/if} />{lng[Add personal message]}</label>
         <div class="message-box{if !$send_to_friend['is_msg']} hidden{/if}">
-<br /><br />
-    <div class="group">
-      <textarea name="message">{$send_to_friend['message']}</textarea>
-      <span class="highlight"></span>
-      <span class="bar"></span>
-      <label>{lng[Your message]}</label>
+        <br /><br />
+        <div class="group">
+          <textarea name="message">{$send_to_friend['message']}</textarea>
+          <span class="highlight"></span>
+         <span class="bar"></span>
+          <label>{lng[Your message]}</label>
+        </div>
+      </div>
     </div>
 
+    {if $config['General']['recaptcha_key']}
+    <div id="recaptcha_s2f" data-sitekey="{$config['General']['recaptcha_key']}"></div>
+    {/if}
 
-        </div>
-      </td>
-    </tr>
-
-{if $config['General']['recaptcha_key']}
-	<tr>
-		<td colspan="2"></td>
-		<td><div id="recaptcha_s2f" data-sitekey="{$config['General']['recaptcha_key']}"></div></td>
-	</tr>
-{/if}
-
-    <tr>
-      <td colspan="2">&nbsp;</td>
-      <td><br /><button type="button" onclick="javascript: send_to_friend();">{lng[Send to friend]}</td>
-    </tr>
-  </table>
+    <br /><button type="button" onclick="javascript: send_to_friend();">{lng[Send to friend]}</button>
 </form>
 </div>
 {/if}
@@ -519,7 +488,7 @@ options[{$oid}] = [];
 <div class="clear"></div>
 </div>
 
-<div id="home-tabs">
+<div class="home-tabs-wrap">
 <ul class="home-tabs">
  <li class="tab-1 active" data-tab="1">{lng[You may also like]}</li>
 </ul>
@@ -528,7 +497,7 @@ options[{$oid}] = [];
 {* Start page container *}
 <div class="page-container page-container-2">
 <div class="content">
-	<div id="center" class="no_left_menu">
+	<div class="center-column no_left_menu">
 <div class="carousel-pr" id="carousel-4">
   <div class="controls">
     <div class="button-left">

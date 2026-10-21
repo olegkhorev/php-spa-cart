@@ -7,7 +7,7 @@
 * https://github.com/olegkhorev/php-spa-cart
 */
 ?>
-<table class="db-stats-1" cellspacing="30">
+<table class="db-stats-1">
 <tr>
  <td class="ajax_link td-1" href='/admin/products'><span><?php echo $products;?></span><h2>Products</h2></td>
  <td class="ajax_link td-2" href='/admin/orders'><span><?php echo $orders_count;?></span><h2>Orders</h2></td>
@@ -16,7 +16,7 @@
 </tr>
 </table>
 
-<table class="db-stats-2" cellspacing="30">
+<table class="db-stats-2">
 <tr>
  <td class="ajax_link td-1" href='/admin/news'><span><?php echo $news;?></span><h2>News</h2></td>
  <td class="ajax_link td-2" href='/admin/subscribtions'><span><?php echo $subscribers;?></span><h2>Subscribers</h2></td>
@@ -39,7 +39,7 @@
 </div>
 <br /><br />
 
-<table class="db-stats-3" cellspacing="30">
+<table class="db-stats-3">
 <tr>
  <td>
 <h3>Featured products<a class="float-right" target="_blank" href="/admin/categories">(Manage)</a></h3>

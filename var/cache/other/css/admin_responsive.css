@@ -46,9 +46,40 @@
 .td-align-center {
   text-align: center;
 }
+.td-align-right {
+  text-align: right;
+}
+.td-nowrap {
+  white-space: nowrap;
+}
+.td-w-10 {
+  width: 10px;
+}
+.td-w-100 {
+  width: 100px;
+}
+.td-w-130 {
+  width: 130px;
+}
+.td-w-100p {
+  width: 100%;
+}
+.td-w-150 {
+  width: 150px;
+}
+.table-w-1000 {
+  width: 1000px;
+}
 @media only screen and (max-width: 650px) {
-  .search_table [align="right"] {
+  .lines-table.shipping-charges-table td, .lines-table.shipping-charges-table th {
+    border-radius: 0 !important;
+  }
+  .search_table [align="right"],
+  .search_table .td-align-right {
     text-align: left;
+  }
+  .search_table [style*="text-align:right"] {
+    text-align: left !important;
   }
   .td-align-center {
     text-align: left;
@@ -96,8 +127,11 @@
     margin-left: 0;
   }
   .admin-area .alerts {
-    max-width: 100%;
-    top: 60px;
+        max-width: 90%;
+        top: 50px !important;
+        left: 50% !important;
+        margin: 0 !important;
+        transform: translate(-50%, 0px);
   }
   .admin-area .theme_color {
     display: none;
@@ -192,7 +226,6 @@
     display: block;
   }
   .print-invoice-button a {
-    padding: 6px 13px !important;
     display: block;
   }
   .invoice {
@@ -208,9 +241,11 @@
     min-width: 100px;
   }
   #invoice-table-td-1,
-  #invoice-table-td-2 {
+  #invoice-table-td-2,
+  .invoice-table-td-1,
+  .invoice-table-td-2 {
     display: block;
-    width: 100%;
+    width: 100% !important;
   }
   .toggle.toggle-left {
     display: block;
@@ -824,7 +859,7 @@ tr.two-inputs .mdl-textfield {
     text-align: left;
   }
   .mobile-zone_edit-table {
-    width: 100%;
+    width: 100% !important;
   }
   .mobile-zone_edit-table select {
     width: 100%;
@@ -836,7 +871,8 @@ tr.two-inputs .mdl-textfield {
   .search_table-support-desk * {
     text-align: left;
   }
-  .search_table-support-desk td[width="10"]:nth-child(2) {
+  .search_table-support-desk td[width="10"]:nth-child(2),
+  .search_table-support-desk td.td-spacer:nth-child(2) {
     display: none;
   }
   .search_table-support-desk table td {

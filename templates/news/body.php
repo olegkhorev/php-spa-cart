@@ -17,7 +17,7 @@
 </div>
 {/if}
 <div class="fulldescr">{$news_data['fulldescr']}</div>
-<div class="back"><a href="/news" class="ajax_link">{lng[Back to News mainpage]}</a></div>
+<div class="back"><a href="/news" class="link-button ajax_link">{lng[Back to the News page]}</a></div>
 </div>
 
 {else}
@@ -28,16 +28,18 @@
 <div class="news-list">
 {foreach $news as $b}
 {php $url = $current_location.'/news/'.($b['cleanurl'] ? $b['cleanurl'].'.html' : $b['newsid']);}
-<a class="ajax_link" href="{$url}"><h5>{$b['title']} (<span class="date"><?php echo date(
-    $date_format,
-    $b["date"],
-); ?></span>)</h5></a>
 <div class="news-item">
 {if $b['imageid']}
-<a class="ajax_link" href="{$url}">
+<a class="ajax_link news_image" href="{$url}">
 {news_image image=`$b` new_width=250 new_height=200}
 </a>
 {/if}
+<a class="ajax_link" href="{$url}"><h5>
+<span class="date"><?php echo date(
+    $date_format,
+    $b["date"],
+); ?></span>    
+{$b['title']}</h5></a>
 <div class="short-descr message-box">{$b['descr']}</div>
 <br />
 <a class="news-more ajax_link link-button" href="{$url}">{lng[See full article]}</a>

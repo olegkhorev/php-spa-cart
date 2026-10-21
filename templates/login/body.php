@@ -10,7 +10,7 @@
 <h1>{lng[Login]}</h1>
 <table class="login_table">
 <tr>
- <td valign="top">
+ <td style="vertical-align:top">
 <form name="login" method="POST" action="/login">
 
     <div class="group">
@@ -30,7 +30,7 @@
 
 <button type="button">{lng[Login]}</button> &nbsp; <a href="/register" onclick="return register_popup();" class="main-button register ajax_mobile_link">{lng[Register]}</a>
 <br /><br />
-<a href="javascript: void(0);" class="main-button nowrap" onclick="return restore_password()">{lng[Password recovery]}</a></td>
+<a href="javascript: void(0);" class="main-button nowrap" onclick="return restore_password()">{lng[Password recovery]}</a>
 </form>
  </td>
 </tr>

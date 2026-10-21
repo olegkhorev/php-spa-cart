@@ -15,13 +15,13 @@
 {if $section == 'orders'}
 <h1 class="visible-mobile">{lng[Orders history]}</h1>
  {if $orders}
-<table cellspacing="0" cellpadding="15" class="account-invoices-list">
+<table style="border-spacing:0" class="account-invoices-list">
   {foreach $orders as $k=>$v}
 <tr>
- <td><a href="/invoice/{$v['orderid']}">#{$v['orderid']}</a></td>
- <td><a href="/invoice/{$v['orderid']}">{$order_statuses[$v['status']]}</a></td>
- <td><a href="/invoice/{$v['orderid']}">{php echo date($datetime_format, $v['date']);}</a></td>
- <td><a href="/invoice/{$v['orderid']}">{price $v['total']}</a></td>
+ <td style="padding:15px"><a href="/invoice/{$v['orderid']}">#{$v['orderid']}</a></td>
+ <td style="padding:15px"><a href="/invoice/{$v['orderid']}">{$order_statuses[$v['status']]}</a></td>
+ <td style="padding:15px"><a href="/invoice/{$v['orderid']}">{php echo date($datetime_format, $v['date']);}</a></td>
+ <td style="padding:15px"><a href="/invoice/{$v['orderid']}">{price $v['total']}</a></td>
 </tr>
   {/foreach}
 </table>
@@ -29,8 +29,8 @@
 {lng[You have no orders yet.]}
  {/if}
 {else}
-<center>
-<form method="post" action="/profile" name="user_form" class="material-form">
+<div style="text-align:center">
+<form method="post" action="/profile" name="user_form" class="material-form" style="display:table;margin-left:auto;margin-right:auto">
     <div class="group">
       <input type="text" name="posted_data[firstname]" required value="{php echo escape($userinfo['firstname'], 2);}" />
       <span class="highlight"></span>
@@ -129,7 +129,7 @@
     </div>
 {/if}
 
-<div align="center"><button>{lng[Save]}</button></div>
+<div style="text-align:center"><button>{lng[Save]}</button></div>
 {*
 <table cellpadding="2" class="user_table textinputs">
 <tr>
@@ -223,4 +223,5 @@
 </table>
 *}
 </form>
+</div>
 {/if}

@@ -10,14 +10,14 @@
 <h1>{lng[Your cart]}</h1>
 {if $products}
 <form action="/cart" id="cartform" method="POST">
-<table width="100%" class="carttable">
+<table style="width:100%" class="carttable">
 <tbody>
 <tr>
- <th width="50%" align="left" colspan="2">{lng[Product]}</th>
- <th width="20%">{lng[Price]}</th>
+ <th style="width:50%;text-align:left" colspan="2">{lng[Product]}</th>
+ <th style="width:20%">{lng[Price]}</th>
  <th>{lng[Quantity]}</th>
- <th width="20%">{lng[Total]}</th>
- <td width="10%"></td>
+ <th style="width:20%">{lng[Total]}</th>
+ <td style="width:10%"></td>
 </tr>
 {foreach $products as $v}
 {php $url = $v['cleanurl'] ? $v['cleanurl'].'.html' : 'product/'.$v['productid'];}
@@ -37,20 +37,20 @@
 <div class="cart-mobile-title-line">{include="cart/mobile_title.php"}</div></div>
 	  </td>
 	  <td>{include="cart/mobile_title.php"}</td>
-	<td align="center" valign="middle">
+	<td class="td-center" style="text-align:center;vertical-align:middle">
 {if $v['gift_card']}
 	{price $v['amount']}
 {else}
 	{price $v['price']}
 {/if}
 	</td>
-	<td align="center">
+	<td class="td-center" style="text-align:center">
 {if !$v['gift_card']}
 <input type="text" size="4" data-max="{$v['avail']}" class="cart-quantity" name="quantity[{$v['cartid']}]" value="{$v['quantity']}" />
 {/if}
 	</td>
 {php $product_subtotal = $v['price'] * $v['quantity']}
-	<td align="center" nowrap>
+	<td class="td-center" style="text-align:center;white-space:nowrap">
 {if !$v['gift_card']}
 {price $product_subtotal}
 {/if}
@@ -63,7 +63,7 @@
 <br />
 <hr />
 <br />
-<table width="100%">
+<table style="width:100%">
 <tr>
  <td><button<?php if ($is_ajax) {
      echo ' type="button"';
@@ -72,12 +72,12 @@
  ) {
      echo ' onclick="self.location=\'cart/clear\'"';
  } ?>>{lng[Clear cart]}</button></td>
- <td align="right" class="cart-line-height">
+ <td style="text-align:right" class="cart-line-height">
  {lng[Subtotal]}: {price $cart['subtotal']}<br />
 {if $cart['coupon']}
-{lng[Coupon discount]}({$cart['coupon']['coupon']}) <span class="remove_coupon">(x)</span>: {price $cart['coupon_discount']}</br>
+{lng[Coupon discount]}({$cart['coupon']['coupon']}) <span class="remove_coupon">(x)</span>: {price $cart['coupon_discount']}<br />
 {php $discounted_subtotal = $cart['subtotal'] - $cart['coupon_discount'];}
-{lng[Discounted subtotal]}: {price $cart['discounted_subtotal']}</br>{* {price $discounted_subtotal} *}
+{lng[Discounted subtotal]}: {price $cart['discounted_subtotal']}<br />{* {price $discounted_subtotal} *}
 {/if}
 {lng[Shipping]}: {price $cart['shipping_cost']}<br />
 {if $cart['tax_details']}

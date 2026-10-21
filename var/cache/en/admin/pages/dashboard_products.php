@@ -7,7 +7,7 @@
 * https://github.com/olegkhorev/php-spa-cart
 */
 ?>
-<table cellspacing="0">
+<table>
 <?php foreach ($products as $v) {?>
 <tr>
  <td class="photo"><a target="_blank" href="/admin/products/<?php echo $v['productid'];?>">

@@ -31,7 +31,7 @@
 <h3>{lng[Category products]}</h3>
 <?php if ($products) { ?>
 
-<table width="100%" class="lines-table">
+<table class="lines-table">
 <tr>
  <th>{lng[SKU]}</th>
  <th>{lng[Product name]}</th>
@@ -40,7 +40,7 @@
 <?php foreach ($products as $v) {
     echo '
 <tr>
- <td nowrap><a href="/admin/products/' .
+ <td style="white-space:nowrap"><a href="/admin/products/' .
         $v["productid"] .
         '">' .
         $v["sku"] .
@@ -61,7 +61,7 @@
 </table>
 <br />
 <button>{lng[Save]}</button>
-</form>
 <?php } else { ?>
-<center>{lng[No products in this category]}</center>
+<div style="text-align:center">{lng[No products in this category]}</div>
 <?php } ?>
+</form>

@@ -7,7 +7,7 @@
 * https://github.com/olegkhorev/php-spa-cart
 */
 ?>
-<form id="checkoutform" method="POST" stripeid="{$stripe_id}">
+<form id="checkoutform" method="POST" data-stripeid="{$stripe_id}">
 <input type="hidden" name="stripe_token" id="stripe_token" />
 <input type="hidden" name="order_total" id="order_total" value="<?php echo price_format(
     $cart["total"],
@@ -33,7 +33,7 @@
 <table>
 {foreach $cart['warehouses'] as $k=>$w}
 <tr{if !$k} class="active"{/if}>
- <td width="10"><input type="radio" id="wid-{$w['wid']}" name="wid" value="{$w['wid']}"{if !$k} checked{/if} /></td>
+ <td style="width:10px"><input type="radio" id="wid-{$w['wid']}" name="wid" value="{$w['wid']}"{if !$k} checked{/if} /></td>
  <td><label for="wid-{$w['wid']}">{$w['title']}, {$w['address']}</label> <a href="http://maps.google.com/?q={php echo escape($w['address'], 2);}" target="_blank">{lng[Open in map]}</a></td>
 </tr>
 {/foreach}
@@ -66,7 +66,7 @@ Free
 </tr>
 <tr>
  <td><label>{lng[Expiration]}</label>
-      <div class="cc-input" id="ex_date">
+      <div class="cc-input" id="ex_date"></div>
  </td>
  <td><label>{lng[CVV]}</label>
       <div class="cc-input" id="cv_code"></div>
@@ -84,42 +84,42 @@ Free
 </div>
 
 <br /><br />
-<div align="right">
-<table class="subtotal" cellspacing="0" cellpadding="0" width="100%">
+<div style="text-align:right">
+<table class="subtotal" style="border-collapse:collapse;width:100%">
 <tr>
- <td align="right">{lng[Subtotal]}:</td>
- <td width="50" align="right">{price $cart['subtotal']}</td>
+ <td style="text-align:right">{lng[Subtotal]}:</td>
+ <td style="width:50px;text-align:right">{price $cart['subtotal']}</td>
 </tr>
 {if $cart['coupon']}
 <tr>
- <td align="right">{lng[Coupon discount]}({$cart['coupon']['coupon']}) <span class="remove_coupon">(x)</span>:</td>
- <td align="right">{price $cart['coupon_discount']}</td>
+ <td style="text-align:right">{lng[Coupon discount]}({$cart['coupon']['coupon']}) <span class="remove_coupon">(x)</span>:</td>
+ <td style="text-align:right">{price $cart['coupon_discount']}</td>
 </tr>
 {*{php $discounted_subtotal = $cart['subtotal'] - $cart['coupon_discount'];}*}
 <tr>
- <td align="right">{lng[Discounted subtotal]}:</td>
- <td width="50" align="right">{price $cart['discounted_subtotal']}</td>
+ <td style="text-align:right">{lng[Discounted subtotal]}:</td>
+ <td style="width:50px;text-align:right">{price $cart['discounted_subtotal']}</td>
 </tr>
 {/if}
 <tr>
- <td align="right">{lng[Shipping]}:</td>
- <td align="right">{price $cart['shipping_cost']}</td>
+ <td style="text-align:right">{lng[Shipping]}:</td>
+ <td style="text-align:right">{price $cart['shipping_cost']}</td>
 </tr>
 {if $cart['tax_details']}
 <tr>
- <td align="right">{lng[Tax]}({$cart['tax_details']['tax_name']}):</td>
- <td align="right">{price $cart['tax']}</td>
+ <td style="text-align:right">{lng[Tax]}({$cart['tax_details']['tax_name']}):</td>
+ <td style="text-align:right">{price $cart['tax']}</td>
 </tr>
 {/if}
 {if $cart['gift_card']}
 <tr>
- <td align="right">{lng[Paid with Gift Card]} <span class="remove_gc">(x)</span>:</td>
- <td align="right">{price $cart['gc_discount']}</td>
+ <td style="text-align:right">{lng[Paid with Gift Card]} <span class="remove_gc">(x)</span>:</td>
+ <td style="text-align:right">{price $cart['gc_discount']}</td>
 </tr>
 {/if}
 <tr class="totals">
- <td align="right">{lng[Total]}:</td>
- <td align="right">{price $cart['total']}</td>
+ <td style="text-align:right">{lng[Total]}:</td>
+ <td style="text-align:right">{price $cart['total']}</td>
 </tr>
 </table>
 </div>
@@ -133,9 +133,9 @@ Free
 <br />
 <div class="register_error"></div>
 {if $shipping_methods || (!$cart['need_shipping'] && $get['1'] == 'user_form')}
-<center>
+<div style="text-align:center">
 <button type="button" id="card-submit">{lng[Place order]}</button>
-</center>
+</div>
 {/if}
 </form>
 

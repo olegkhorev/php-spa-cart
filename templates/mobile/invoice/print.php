@@ -7,8 +7,8 @@
 * https://github.com/olegkhorev/php-spa-cart
 */
 ?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<!DOCTYPE html>
+<html lang="en">
 <head>
 <meta charset="utf-8" />
 <meta name="keywords" content="<?php if (
@@ -51,11 +51,11 @@
 <link rel="shortcut icon" href="/favicon2.png" type="image/vnd.microsoft.icon" />
 <title>{lng[Invoice]} #<?php echo $order["orderid"]; ?></title>
 
-<style type="text/css" media="all">
+<style media="all">
 {include_css}
 </style>
 
-<script type="text/javascript">
+<script>
 var current_area = 'A',
 	page = '<?php echo $get["0"]; ?>',
 	current_location = '{$current_location}',

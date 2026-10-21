@@ -7,7 +7,7 @@
 */
 .alert_message.register_alert, .alert_message.login_alert {
     width: 400px;
-    margin-left: -200px;
+    margin-left: -230px;
 }
 .login_error,
 .register_error {

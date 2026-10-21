@@ -75,7 +75,9 @@ if ($is_mysqli) {
 $db->query("SET sql_mode = '';");
 
 # Start session
-session_start();
+session_start([
+    'cookie_samesite' => 'Lax'
+]);
 
 # Recovery var directory
 $var_dir = SITE_ROOT.'/var';

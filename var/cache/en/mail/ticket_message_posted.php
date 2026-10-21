@@ -20,16 +20,17 @@ Hello,
 </p>
 <?php } ?>
 
-<p />A new message on your ticket #<?php echo $ticket['ticketid'];?>
+<p>A new message on your ticket #<?php echo $ticket['ticketid'];?></p>
 
 <?php /* ?><?php if ($ticket['userid']) {?><?php */ ?>
-<p />Full ticket<br />
+<p>Full ticket<br />
 <a href="<?php echo $http_location;?>/ticket/<?php echo $ticket['ticketid'];?>?authkey=<?php echo $ticket['authkey'];?>"><?php echo $http_location;?>/ticket/<?php echo $ticket['ticketid'];?>?authkey=<?php echo $ticket['authkey'];?></a>
 <?php /* ?><?php } ?><?php */ ?>
+</p>
 
-<p />Ticket subject: <?php echo $ticket['subject'];?>
+<p>Ticket subject: <?php echo $ticket['subject'];?></p>
 
-<hr size='1' />
+<hr style="border-bottom-width: 0;" />
 
 <?php if ($product) {?>
 Our answer:
@@ -37,9 +38,10 @@ Our answer:
 Replied Message:
 <?php } ?>
 
-<p /><?php echo $message['message'];?>
+<div style="margin: 1em 0;"><?php echo $message['message'];?>
 
 <br /><br />
 
 <?php echo $signature;?>
+</div>
 <?php include SITE_ROOT."/var/cache/en/mail/footer.php";?>

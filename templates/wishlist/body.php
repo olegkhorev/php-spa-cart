@@ -9,11 +9,11 @@
 ?>
 <h1>{lng[Wishlist]}</h1>
 {if $wishlist}
-<table width="100%">
+<table style="width:100%">
 <tr>
- <th width="70%" align="left" colspan="2">{lng[Product]}</th>
- <th width="20%">{lng[Price]}</th>
- <td width="10%"></td>
+ <th style="width:70%;text-align:left" colspan="2">{lng[Product]}</th>
+ <th style="width:20%">{lng[Price]}</th>
+ <td style="width:10%"></td>
 </tr>
 {foreach $wishlist as $v}
 {php $url = $v['product']['cleanurl'] ? $v['product']['cleanurl'].'.html' : 'product/'.$v['product']['productid'];}
@@ -24,7 +24,7 @@
 	{/if}
 	 </a></td>
 	 <td><a href="{$current_location}/{$url}">{$v['product']['name']}</a></td>
-	 <td align="center" valign="middle">{price $v['product']['price']}</td>
+	 <td style="text-align:center;vertical-align:middle">{price $v['product']['price']}</td>
 	 <td><a href="{$current_location}/wishlist/remove/{$v['wlid']}" class="remove-wl-link">{lng[Delete]}</a></td>
 	</tr>
 {/foreach}
@@ -35,7 +35,6 @@
 <button type="button" class="clear-wl"<?php if (!$is_ajax) {
     echo ' onclick="self.location=\'wishlist/clear\'"';
 } ?>>{lng[Clear wishlist]}</button>
-</form>
 {else}
 <br />
 {lng[Wishlist is empty]}

@@ -11,7 +11,7 @@
 <?php if ($gift_cards) {?>
 <form method="POST">
 <h3>Earlier purchased gift cards</h3>
-<table cellspacing="1" class="lines-table">
+<table class="lines-table">
 <tr>
  <th></th>
  <th>Card number</th>
@@ -49,3 +49,4 @@
 <br /><br />
 <button>Add</button>
 </form>
+</div>

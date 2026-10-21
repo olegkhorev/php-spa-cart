@@ -26,10 +26,10 @@
 {if $v['product_options']}
 <hr />
 <b>{lng[Selected options]}:</b><br />
-<table width="100%">
+<table style="width:100%">
 {foreach $v['product_options'] as $o}
 <tr>
-	<td width="100" valign="top">{$o['name']}:</td>
+	<td style="width:100px;vertical-align:top">{$o['name']}:</td>
 	<td>{$o['option']['name']}</td>
 </tr>
 {/foreach}
@@ -49,14 +49,14 @@
 </div>
 <hr />
 <br />
-<table width="100%">
+<table style="width:100%">
 <tr>
- <td align="right" style="line-height: 23px;">
+ <td style="text-align:right;line-height: 23px;">
  {lng[Subtotal]}: {price $cart['subtotal']}<br />
 {if $cart['coupon']}
-{lng[Coupon discount]}({$cart['coupon']['coupon']}) <span class="remove_coupon">(x)</span>: {price $cart['coupon_discount']}</br>
+{lng[Coupon discount]}({$cart['coupon']['coupon']}) <span class="remove_coupon">(x)</span>: {price $cart['coupon_discount']}<br />
 {php $discounted_subtotal = $cart['subtotal'] - $cart['coupon_discount'];}
-{lng[Discounted subtotal]}: {price $discounted_subtotal}</br>
+{lng[Discounted subtotal]}: {price $discounted_subtotal}<br />
 {/if}
 {lng[Shipping]}: {price $shipping_fee}<br />
 {if $cart['tax_details']}
@@ -65,7 +65,7 @@
  <b>{lng[Total]}: {price $cart['total']}</b><br />
  <br />
 <button style="float: left;" type="button" class="clear-cart mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored" onclick="self.location='cart/clear'">{lng[Clear cart]}</button>
- <a href="/checkout" class="ajax_link"><button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored" type="button"{if !$is_ajax} onclick="self.location='/checkout'"{/if}>{lng[Checkout]}</button></a></td>
+ <button class="button_ajax_link mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored" type="button" href="/checkout"{if !$is_ajax} onclick="self.location='/checkout'"{/if}>{lng[Checkout]}</button></td>
 </tr>
 </table>
 </form>

@@ -1,4 +1,17 @@
 <?php
+/**
+* SPA-Cart
+* Copyright (c) Oleg Khorev
+*
+* Released under the MIT License.
+* https://github.com/olegkhorev/php-spa-cart
+*/
+?>
+<?php
+error_reporting(0);
+if (!SITE_ROOT)
+	exit;
+
 $admin_theme_color = htmlspecialchars($_GET['theme_color']);
 $theme_color = htmlspecialchars($_GET['theme_color']);
 $theme_color_2 = htmlspecialchars($_GET['theme_color_2']);
@@ -18,21 +31,23 @@ if (!$theme_color) {
 	height: 320px;
 	padding: 10px;
 	background: #fff;
-	border-radius: 10px 10px 0px 0px;
+	border-radius: 15px 15px 0px 0px;
 	position: fixed;
 	right: 90px;
 	bottom: -297px;
+	overflow: hidden;
 	z-index: 100;
-	border: 1px solid #ccc;
-	border-bottom: 0;
 	transition: all .4s ease 0s;
+	box-shadow: 0 1px 5px 3px rgba(0, 0, 0, .1);
 }
 .admin-area .theme_color {
-	bottom: -240px;
-	width: 222px;
+	bottom: -276px;
+	width: 300px;
 }
 .admin-area .theme_color h2 {
-	line-height: 20px;
+	line-height: 24px;
+	font-weight: 400;
+	padding-left: 10px;
 }
 .admin-area .theme_color h3 {
 	line-height: 20px;
@@ -41,10 +56,6 @@ if (!$theme_color) {
 }
 .theme_color.active {
 	bottom: 0;
-}
-.admin-area .theme_color.active {
-	bottom: 0px;
-	height: 300px;
 }
 .theme_color h2 {
 	cursor: pointer;
@@ -70,7 +81,7 @@ if (!$theme_color) {
 	animation: add2cart 1.4s infinite ease-in-out;
 }
 .admin-area .theme_color h2 {
-	background: var(--blue);
+	background: var(--theme-color-admin);
 }
 .admin-area .theme_color table tr:last-child > td:last-child {
 	display: none;
@@ -301,7 +312,7 @@ $('.theme_color button').on('click', function() {
 	}).done(function(r) {
 		$('#custom_style').remove();
 		if ($('.admin-area').length) {
-			$('body').append('<style id="custom_style">:root {--blue: #'+$('#theme_color').val()+'}</style>');
+			$('body').append('<style id="custom_style">:root {--theme-color-admin: #'+$('#theme_color').val()+'}</style>');
 		} else
 			$('body').append('<style id="custom_style">:root {--theme-color: #'+$('#theme_color').val()+';--theme-color-2: #'+$('#theme_color_2').val()+';}</style>');
 	});

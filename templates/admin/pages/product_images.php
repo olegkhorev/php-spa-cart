@@ -8,7 +8,7 @@
 */
 ?>
 <div class="drag">
-<center><div class="pbar"><img src="/images/spacer.gif" /></div></center>
+<div style="text-align:center"><div class="pbar" style="margin-left:auto;margin-right:auto"><img src="/images/spacer.gif" alt="" /></div></div>
 <form name="upload" method="POST" enctype='multipart/form-data' class="noajax">
 <input type="hidden" name="albumid" value="<?php echo $album["albumid"]; ?>" />
 <div class="upsec">
@@ -31,6 +31,7 @@
         echo "</div>";
     }
 } ?>
+</div>
 
 
 {*

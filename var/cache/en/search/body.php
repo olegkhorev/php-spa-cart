@@ -15,5 +15,5 @@
 </div>
 <?php } else  { ?>
 <br />
-<center>No products found</center>
+<div style="text-align:center">No products found</div>
 <?php } ?>

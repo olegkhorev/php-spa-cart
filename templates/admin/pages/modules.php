@@ -16,16 +16,16 @@
 {include="common/navigation.php"}
 <?php echo "<br />";} ?>
 
-<table cellpadding="3" cellspacing="1" width="600" class="lines-table resp-table">
+<table class="lines-table resp-table">
 <thead>
 <tr>
-	<th width="10%">{lng[Logo]}</th>
-	<th width="10%">{lng[Code]}</th>
-	<th width="10%">{lng[Author]}</th>
-	<th width="10%">{lng[Name]}</th>
-	<th width="20%">{lng[Comment]}</th>
-	<th width="20%">{lng[Pos]}</th>
-	<th width="20%">{lng[Enabled]}</th>
+	<th style="width:10%">{lng[Logo]}</th>
+	<th style="width:10%">{lng[Code]}</th>
+	<th style="width:10%">{lng[Author]}</th>
+	<th style="width:10%">{lng[Name]}</th>
+	<th style="width:20%">{lng[Comment]}</th>
+	<th style="width:20%">{lng[Pos]}</th>
+	<th style="width:20%">{lng[Enabled]}</th>
 </tr>
 </thead>
 {foreach $modules as $v}

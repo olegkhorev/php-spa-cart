@@ -7,20 +7,24 @@
 * https://github.com/olegkhorev/php-spa-cart
 */
 ?>
-<table width="1000" class="invoice-top-box">
+<table class="invoice-top-box table-w-1000">
 <tr>
- <td width="50%">
+ <td class="td-w-50pct">
 <h1>Shipping info</h1>
+<br />
 <form method="POST">
 <input type="text" name="tracking" placeholder="{lng[Tracking number]}" value="{php echo escape($order['tracking'], 2)}" />
-<br >
+<br /><br />
 <input type="text" name="tracking_url" placeholder="{lng[Tracking URL]}" value="{php echo escape($order['tracking_url'], 2)}" />
-<br >
+<br />
+<br />
 <button type="submit">{lng[Save]}</button>
 </form>
  </td>
  <td>
-<h1>{lng[Order]} #<?php echo $order["orderid"]; ?> <select id="status">
+<h1>{lng[Order]} #<?php echo $order["orderid"]; ?></h1>
+<div class="order-invoice-right">
+<select id="status">
 <?php foreach ($order_statuses as $k => $v) {
     echo '<option value="' .
         $k .
@@ -34,9 +38,9 @@
 <button onclick="javascript: self.location='/admin/invoice/<?php echo $order[
     "orderid"
 ]; ?>/status/'+$('#status').val();">{lng[Save]}</button>
-</h1>
+</div>
 <small>{lng[Chagned status will be sent to customer]}</small>
-<br /><br />
+<br /
 <div>{lng[Order date]}: <?php echo date(
     $datetime_format,
     $order["date"],

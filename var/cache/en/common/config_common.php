@@ -87,7 +87,7 @@ if ($v["type"] == "separator") {
 <input type="text" name="posted_data[state]" id="state" value="<?php  echo escape(
  $config["General"]["default_state"],
  2,
-); ?>" /></td>
+); ?>" />
 <?php  }
     } else if ($v["name"] == "location_country") {
         echo '<select name="location_country" id="country">';
@@ -131,7 +131,7 @@ if ($v["type"] == "separator") {
 <input type="text" name="posted_data[location_state]" id="state" value="<?php  echo escape(
  $config["Company"]["location_state"],
  2,
-); ?>" /></td>
+); ?>" />
 <?php  }
     }
 

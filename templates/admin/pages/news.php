@@ -22,12 +22,12 @@
 
 <br /><br />
 
-<table cellpadding="3" cellspacing="1" width="600" class="lines-table resp-table">
+<table class="lines-table resp-table">
 <thead>
 <tr>
-	<th width="10">&nbsp;</th>
-	<th width="90%">{lng[Title]}</th>
-	<th width="5%">{lng[Active]}</th>
+	<th style="width:10px">&nbsp;</th>
+	<th style="width:90%">{lng[Title]}</th>
+	<th style="width:5%">{lng[Active]}</th>
 </tr>
 </thead>
 <?php foreach ($newss as $b) {
@@ -52,7 +52,7 @@
 </table>
 <div class="fixed_save_button">
 <button type="button" onclick="javascript: submitForm(this, 'update');">{lng[Update]}</button> &nbsp;
-<button type="button" onclick="javascript: if (confirmed || confirm('{lng[This operation will delete selected news.|escape]}', $(this))) submitForm(this, 'delete');">{lng[Delete selected]}</button>
+<button type="button" onclick="javascript: if (confirmed || confirm('', $(this))) submitForm(this, 'delete');">{lng[Delete selected]}</button>
 </div>
 </form>
 <?php } else { ?>
@@ -65,16 +65,16 @@
 <h3>{$news['title']}</h3>
 {/if}
 
-<table cellpadding="3" cellspacing="1" width="90%" class="normal-table">
+<table style="width:90%" class="normal-table">
 {if $news['date']}
 <tr>
- <td valign="top" class="hide-td-for-mdl"></td>
+ <td class="hide-td-for-mdl"></td>
  <td><div class="select-title">{lng[Added]}</div>
 	<?php echo date("m/d/Y", $news["date"]); ?></td>
 </tr>
 {/if}
 <tr>
- <td valign="top" class="hide-td-for-mdl"></td>
+ <td class="hide-td-for-mdl"></td>
  <td><div class="select-title">{lng[Image]}</div>
 {if $news['image']}
 {news_image image=`$news['image']` new_width=400 new_height=100 link="Y" blank="Y"}
@@ -105,7 +105,7 @@
 </tr>
 
 <tr>
- <td valign="top" class="hide-td-for-mdl"></td>
+ <td class="hide-td-for-mdl"></td>
  <td>
  <div class="select-title">{lng[Short description]}</div>
 		<textarea class="ckeditor" id="ck_editor" cols="65" rows="7" name="descr"><?php echo $news[
@@ -115,7 +115,7 @@
 </tr>
 
 <tr>
- <td valign="top" class="hide-td-for-mdl"></td>
+ <td class="hide-td-for-mdl"></td>
  <td>
  <div class="select-title">{lng[Detailed description]}</div>
 	<script>
@@ -134,7 +134,7 @@
 </tr>
 
 <tr>
- <td valign="top"><b>{lng[Meta title]}</b></td>
+ <td><b>{lng[Meta title]}</b></td>
  <td><br /><input type="text" size="80" name="meta_title" value="<?php echo escape(
      $news["meta_title"],
      2,
@@ -142,21 +142,21 @@
 </tr>
 
 <tr>
- <td valign="top"><b>{lng[Meta keywords]}</b></td>
+ <td><b>{lng[Meta keywords]}</b></td>
  <td><textarea cols="80" rows="5" name="meta_keywords"><?php echo $news[
      "meta_keywords"
  ]; ?></textarea></td>
 </tr>
 
 <tr>
- <td valign="top"><b>{lng[Meta description]}</b></td>
+ <td><b>{lng[Meta description]}</b></td>
  <td><textarea cols="80" rows="5" name="meta_descr"><?php echo $news[
      "meta_descr"
  ]; ?></textarea></td>
 </tr>
 
 <tr>
- <td><b>{lng[Active]}</b></td>
+ <td>{lng[Active]}</td>
  <td><input type="checkbox" name="active" value="Y"<?php echo !$news ||
  $news["active"] == "Y"
      ? ' checked="checked"'

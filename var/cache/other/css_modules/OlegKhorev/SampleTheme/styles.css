@@ -50,6 +50,9 @@ body .message-box,
 .mrp-subtitle {
   color: #000;
 }
+.search input[type="text"] {
+  border: 0 !important;
+}
 .res-item,
 .res-sub-item,
 body .res-item:hover {
@@ -111,7 +114,7 @@ tr.product-details-tr *,
 }
 .more-details-border,
 .buy-with-one-click {
-  border: 1px solid #fff;
+  border: 1px solid #777;
   color: #fff;
 }
 .link-button {
@@ -189,12 +192,12 @@ body.scrolled .left_filter h2 {
 }
 .products-nav .second a.direction-1 {
   color: #fff !important;
-  background: url(/images/themes/OlegKhorev/SampleTheme/darrow.png) right 5px
+  background: url(/images/themes/OlegKhorev/SampleTheme/sort_arrow_up.gif) right 9px
     no-repeat;
 }
 .products-nav .second a.direction-2 {
   color: #fff !important;
-  background: url(/images/themes/OlegKhorev/SampleTheme/uarrow.png) right 5px
+  background: url(/images/themes/OlegKhorev/SampleTheme/sort_arrow_down.gif) right 9px
     no-repeat;
 }
 .navigation-larrow img {
@@ -383,6 +386,16 @@ table#blog_bb_buttons button {
 }
 #subscribe svg {
   fill: #fff;
+}
+.content-pr .res-item button {
+  border: 1px solid #777 !important;
+}
+#body-category .res-item button:hover, #body-search .res-item button:hover, #body-brands .res-item button:hover {
+  border: 1px solid #777 !important;
+}
+.options-error {
+  background: transparent;
+  color: #fff;
 }
 @media only screen and (max-width: 850px) {
   #head {

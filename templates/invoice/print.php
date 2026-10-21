@@ -7,8 +7,8 @@
 * https://github.com/olegkhorev/php-spa-cart
 */
 ?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" class="itsinvoicepage">
+<!DOCTYPE html>
+<html lang="en" class="itsinvoicepage">
 <head>
 <meta charset="utf-8" />
 <meta name="keywords" content="<?php if (
@@ -51,12 +51,12 @@
 <link rel="shortcut icon" href="/favicon2.png" type="image/vnd.microsoft.icon" />
 <title>{lng[Invoice]} #<?php echo $order["orderid"]; ?></title>
 
-<style type="text/css" media="all">
+<style media="all">
 
 {include_css}
 
 </style>
-<script type="text/javascript">
+<script>
 var current_area = 'A',
 	page = '<?php echo $get["0"]; ?>',
 	pageid = '{$brand['brandid']}',
@@ -77,7 +77,7 @@ var current_area = 'A',
 </div>
 <script src="//code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
 <script src="//code.jquery.com/ui/1.14.1/jquery-ui.min.js" integrity="sha256-AlTido85uXPlSyyaZNsjJXeCs07eSv3r43kyCVc8ChI=" crossorigin="anonymous"></script>
-<link rel="stylesheet" href="//code.jquery.com/ui/1.14.1/themes/base/jquery-ui.css" type="text/css" />
+<link rel="stylesheet" href="//code.jquery.com/ui/1.14.1/themes/base/jquery-ui.css" />
 
 {include_js}
 

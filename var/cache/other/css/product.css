@@ -70,8 +70,8 @@ table.product-options input {
   font-size: 17px;
   color: #6c6c6c;
   width: 213px;
-  padding: 12px 18px !important;
-  margin: 10px 0 0 0;
+  padding: 15px 25px 16px 25px !important;
+  margin: 10px 0 7px 0;
   border: 1px solid #c9c9c9;
   border-radius: 100px;
 }
@@ -230,7 +230,6 @@ table.product-options input {
   left: 65px;
   width: 19px;
   height: 12px;
-  background: url(../images/help-darrow.png);
 }
 .error-options {
   text-align: center;
@@ -640,7 +639,6 @@ ul.sorting li.sep {
   left: 65px;
   width: 19px;
   height: 12px;
-  background: url(../images/help-darrow.png);
 }
 .price-breaks {
   padding: 0 0 10px 0;
@@ -657,12 +655,10 @@ ul.sorting li.sep {
   display: none;
 }
 .product-qty .price-breaks div img {
-  background: url(../images/help-uarrow.png);
   position: absolute;
   top: -12px;
 }
 .product-quicklook .product-qty .price-breaks div img {
-  background: url(../images/help-darrow.png);
   position: absolute;
   top: auto;
   bottom: -12px;
@@ -670,13 +666,11 @@ ul.sorting li.sep {
 img.mark-green {
   width: 20px;
   height: 20px;
-  background: url(../images/mark_green.png);
   margin: 0 0 -4px 8px;
 }
 img.mark-red {
   width: 20px;
   height: 20px;
-  background: url(../images/mark_red.png);
   margin: 0 0 -4px 8px;
 }
 .input-correct {
@@ -703,6 +697,7 @@ img.mark-red {
   background: #ffffff;
   color: #f36731;
   display: none;
+  font-style: Italic;
 }
 .options-error td {
   padding: 0 0 15px 0;
@@ -736,7 +731,7 @@ img.mark-red {
   margin-left: 4px;
 }
 #send_to_friend table {
-  width: 300px;
+  width: 100%;
   margin: 10px;
 }
 #send_to_friend table td {
@@ -745,16 +740,19 @@ img.mark-red {
 #send_to_friend table td.name {
   text-align: right;
   padding: 10px 0;
+  width: 0;
 }
 #send_to_friend input[type="text"] {
   width: 300px;
 }
 #send_message_box {
-  padding: 15px 0;
+  padding: 5px 0 22px 0;
+}
+#send_message_box > label > input {
+  margin-right: 15px;
 }
 #send_message_box textarea {
-  width: 300px;
-  height: 70px;
+  height: 150px;
 }
 .product-details-price {
   color: var(--theme-color);
@@ -770,8 +768,8 @@ img.mark-red {
   display: inline-block;
   margin-right: 7px;
   width: 32px;
-  height: 30px;
-  background: url(/images/star.png) left bottom no-repeat;
+  height: 32px;
+  background: url(/images/star_big.svg) left center no-repeat;
   cursor: pointer;
 }
 .rating.r1 span.r1,
@@ -779,17 +777,17 @@ img.mark-red {
 .rating.r3 span.r3,
 .rating.r4 span.r4,
 .rating.r5 span.r5 {
-  background: url(/images/star.png) left top no-repeat;
+  background: url(/images/star_orange_big.svg) left center no-repeat;
 }
 .rating-votes {
-  width: 105px;
-  height: 20px;
-  background: url(/images/star_small.png) left bottom repeat-x;
+  width: 120px;
+  height: 24px;
+  background: url(/images/star.svg) left center repeat-x;
   display: inline-block;
 }
 .rating-votes div {
-  height: 20px;
-  background: url(/images/star_small.png) left top repeat-x;
+  height: 24px;
+  background: url(/images/star_orange.svg) left center repeat-x;
 }
 .reviews-list {
   max-width: 100%;
@@ -822,8 +820,9 @@ form#send_to_friend {
 .tab-content td.star {
   padding-top: 20px;
 }
-.tab-content td .group {
+.tab-content .group {
   margin-top: 25px;
+  max-width: none;
 }
 table#product-details * {
   color: #888;
@@ -850,7 +849,7 @@ table#product-details td.product-list-price b {
 .add-to-wl-product svg {
   width: 36px;
   height: 36px;
-  margin-left: 10px;
+  margin: 10px;
 }
 .buy-with-one-click {
   border: 1px solid var(--theme-color-2);
@@ -891,4 +890,7 @@ table#product-details td.product-list-price b {
 .prod-md-brand a {
   display: block;
   text-decoration: none;
+}
+#send_message_box .message-box {
+  padding: 0;
 }

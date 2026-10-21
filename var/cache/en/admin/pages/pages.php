@@ -16,12 +16,12 @@
 <h1 class="products-title-h3">Pages <a class="ajax_link link-button" href="/admin/pages/new">Add new</a></h1>
 <br />
 
-<table cellpadding="3" width="600" cellspacing="1" class="lines-table resp-table">
+<table class="lines-table resp-table">
 <thead>
 <tr>
-	<th width="10">&nbsp;</th>
-	<th width="100%">Page</th>
-	<th width="100">Pos</th>
+	<th style="width:10px">&nbsp;</th>
+	<th style="width:100%">Page</th>
+	<th style="width:100px">Pos</th>
 </tr>
 </thead>
 <?php  if ($pages) {
@@ -36,13 +36,15 @@
  ]; ?>][orderby]" value="<?php  echo $p["orderby"]; ?>"></td>
 </tr>
 <?php  } ?>
+<?php } else  { ?>
+<tr><td colspan="3">No pages found</td></tr>
+<?php } ?>
 </table>
+<?php if ($pages) {?>
 <div class="fixed_save_button">
 <button type="button" onclick="javascript: submitForm(this, 'update');">Update</button>
-<button type="button" onclick="javascript: submitForm(this, 'delete');">Delete selected</button>
+<button type="button" onclick="javascript: if (confirm('', $(this)) || confirmed) submitForm(this, 'delete');">Delete selected</button>
 </div>
-<?php } else  { ?>
-No pages found
 <?php } ?>
 <?php } else  { ?>
 
@@ -56,11 +58,11 @@ No pages found
 <script>
 CKEDITOR.config.protectedSource.push( /<\?[\s\S]*?\?>/g );   // PHP Code
 </script>
-<table cellpadding="3" cellspacing="1" class="category normal-table">
+<table class="category normal-table">
 <tr>
-	<td height="10" nowrap="nowrap">Page title</td>
-	<td width="10" height="10"></td>
-	<td height="10">
+	<td style="height:10px;white-space:nowrap">Page title</td>
+	<td style="width:10px;height:10px"></td>
+	<td style="height:10px">
 		<input type="text" name="title" maxlength="255" size="80" value="<?php  echo escape(
       $page["title"],
       2,
@@ -69,9 +71,9 @@ CKEDITOR.config.protectedSource.push( /<\?[\s\S]*?\?>/g );   // PHP Code
 </tr>
 
 <tr>
-	<td height="10" nowrap="nowrap">Clean URL</td>
-	<td width="10" height="10"></td>
-	<td height="10">
+	<td style="height:10px;white-space:nowrap">Clean URL</td>
+	<td style="width:10px;height:10px"></td>
+	<td style="height:10px">
 		<input type="text" name="cleanurl" maxlength="255" size="80" value="<?php  echo escape(
       $page["cleanurl"],
       2,
@@ -80,8 +82,8 @@ CKEDITOR.config.protectedSource.push( /<\?[\s\S]*?\?>/g );   // PHP Code
 </tr>
 
 <tr>
- <td valign="top" class="hide-td-for-mdl"></td>
-	<td width="10" height="10">&nbsp;</td>
+ <td class="hide-td-for-mdl"></td>
+	<td style="width:10px;height:10px">&nbsp;</td>
  <td><div class="select-title">Page content</div>
 	<script>
 		var editor;
@@ -99,9 +101,9 @@ CKEDITOR.config.protectedSource.push( /<\?[\s\S]*?\?>/g );   // PHP Code
 </tr>
 
 <tr>
-	<td height="10" nowrap="nowrap">Title tag</td>
-	<td width="10" height="10"></td>
-	<td height="10">
+	<td style="height:10px;white-space:nowrap">Title tag</td>
+	<td style="width:10px;height:10px"></td>
+	<td style="height:10px">
 		<input type="text" size="65" name="meta_title" value="<?php  echo escape(
       $page["meta_title"],
       2,
@@ -110,9 +112,9 @@ CKEDITOR.config.protectedSource.push( /<\?[\s\S]*?\?>/g );   // PHP Code
 </tr>
 
 <tr>
-	<td height="10" nowrap="nowrap">Meta keywords</td>
-	<td width="10" height="10"></td>
-	<td height="10">
+	<td style="height:10px;white-space:nowrap">Meta keywords</td>
+	<td style="width:10px;height:10px"></td>
+	<td style="height:10px">
 		<textarea cols="65" rows="4" name="meta_keywords"><?php  echo $page[
       "meta_keywords"
   ]; ?></textarea>
@@ -120,9 +122,9 @@ CKEDITOR.config.protectedSource.push( /<\?[\s\S]*?\?>/g );   // PHP Code
 </tr>
 
 <tr>
-	<td height="10" nowrap="nowrap">Meta description</td>
-	<td width="10" height="10"></td>
-	<td height="10">
+	<td style="height:10px;white-space:nowrap">Meta description</td>
+	<td style="width:10px;height:10px"></td>
+	<td style="height:10px">
 		<textarea cols="65" rows="4" name="meta_description"><?php  echo $page[
       "meta_description"
   ]; ?></textarea>

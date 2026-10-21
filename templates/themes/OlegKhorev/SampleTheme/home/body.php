@@ -15,16 +15,16 @@
 </div>
 </div></div>
 
-<center>
+<div style="text-align:center">
 <br /><br />
 Sample template theme
-</center>
+</div>
 <div class="clear"></div>
 
 {if lng('Site title') || lng('Site description')}
 <div class="page-container page-container-afterbanner">
 <div class="content">
-	<div id="center" class="no_left_menu">
+	<div class="center-column no_left_menu">
 {/if}
 {/if}
 <?php
@@ -48,7 +48,7 @@ if (lng("Site description")) {
 {if $config['Visual']['visual_testimonials'] == 'Y'}
 <div class="page-container page-container-testimonials">
 <div class="content">
-	<div id="center" class="no_left_menu">
+	<div class="center-column no_left_menu">
 
 <div class="testimonial">
 <img src="/images/testimonial.jpg" class="test-image" alt="{lng[Our testimonials|escape]}" />
@@ -71,7 +71,7 @@ if (lng("Site description")) {
 </div>
 {/if}
 
-<div id="home-tabs">
+<div class="home-tabs-wrap">
 <ul class="home-tabs">
  <li class="tab-1 active" data-tab="1">{lng[Featured products]}</li>
 </ul>
@@ -80,7 +80,7 @@ if (lng("Site description")) {
 {* Start page container *}
 <div class="page-container page-container-2">
 <div class="content">
-	<div id="center" class="no_left_menu">
+	<div class="center-column no_left_menu">
 
 {if $featured_products}
  {php $tag_id = "featured_products"; $products = $featured_products; $per_row = 4;}

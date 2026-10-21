@@ -15,5 +15,5 @@
 </div>
 {else}
 <br />
-<center>{lng[No products found]}</center>
+<div style="text-align:center">{lng[No products found]}</div>
 {/if}

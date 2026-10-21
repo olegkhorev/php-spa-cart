@@ -7,8 +7,8 @@
 * https://github.com/olegkhorev/php-spa-cart
 */
 ?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xmlns:g="http://base.google.com/ns/1.0" xmlns:og="http://ogp.me/ns#" xmlns:fb="http://ogp.me/ns/fb#">
+<!DOCTYPE html>
+<html lang="en">
 <head>
 <meta charset="utf-8" />
 <meta name="keywords" content="<?php if (
@@ -52,10 +52,10 @@
 
 <link rel="shortcut icon" href="/favicon.png" type="image/vnd.microsoft.icon" />
 <title>{$page_title}</title>
-<style type="text/css" media="all">
+<style media="all">
 {include_css}
 </style>
-<script type="text/javascript">
+<script>
 var current_area = 'C',
 	page = '{$get['0']}',
 	pageid = '',

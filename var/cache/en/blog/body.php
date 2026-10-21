@@ -18,7 +18,7 @@
 <?php if ($comments) {?>
 <img src="<?php echo $current_location;?>/images/comments.gif" alt="" /> <a href="javascript: void(0);" onclick="javascript: go_to_comments();">Go to comments</a>&nbsp;
 <?php } ?>
-<img src="<?php echo $current_location;?>/images/leave_comment.gif" alt="" /> <a href="avascript: void(0);" onclick="javascript: leave_comments();">Leave a comment</a>
+<img src="<?php echo $current_location;?>/images/leave_comment.gif" alt="" /> <a href="javascript: void(0);" onclick="javascript: leave_comments();">Leave a comment</a>
 </div>
 <h1><?php echo $blog['title'];?></h1>
 <br />
@@ -35,7 +35,7 @@
     ? $blog["comments"]
     : "0"; ?> Blog comments</h3>
 
-<div align="right"><?php include SITE_ROOT."/var/cache/en/common/navigation.php";?></div>
+<div style="text-align:right"><?php include SITE_ROOT."/var/cache/en/common/navigation.php";?></div>
 
 <div class="blog_comments">
 <?php foreach ($comments as $k=>$v) {?>
@@ -52,15 +52,15 @@ Comment from <b><?php echo $v['name'] ? $v['name'] : $v['firstname'].' '.$v['las
 <?php } ?>
 </div>
 <?php } else  { ?>
-<br /><center>No comments yet</center><br /><br />
+<br /><div style="text-align:center">No comments yet</div><br /><br />
 <?php } ?>
 
-<a name="leave_comment"></a>
+<a id="leave_comment"></a>
 <h3>Leave a comment</h3>
 
 <?php if (!$login && $config['Blog']['blog_guests'] != "Y") {?>
 <br />
-<center>You should be a registered user to leave a comment.</center>
+<div style="text-align:center">You should be a registered user to leave a comment.</div>
 <br /><br />
 <?php } else  { ?>
 <form method="post" name="blogform">
@@ -101,18 +101,12 @@ Comment from <b><?php echo $v['name'] ? $v['name'] : $v['firstname'].' '.$v['las
 <?php } else if ($blogs) {?>
 <h1>Blog</h1><br />
 <?php if ($total_pages > 2) {?>
-<div align="right"><?php include SITE_ROOT."/var/cache/en/common/navigation.php";?></div>
+<div style="text-align:right"><?php include SITE_ROOT."/var/cache/en/common/navigation.php";?></div>
 <br />
 <?php } ?>
 <div class="blogs news-item news-item-page">
 <?php foreach ($blogs as $b) {?>
 <?php $url = $current_location.'/blog/'.($b['cleanurl'] ? $b['cleanurl'].'.html' : $b['blogid']);; ?>
-<div class="author">
-<i><?php echo $b['firstname'];?> <?php echo $b['lastname'];?>, <?php echo $b['comments'] ? $b['comments'] : '0';; ?> Comments</i>
-<h2><a href="<?php echo $url;?>" class="ajax_link simple-button"><?php  echo $b[
-    "title"
-]; ?></a></h2>
-</div>
 <div class="image">
 <?php if ($b['imageid']) {?>
 <a href="<?php echo $url;?>" class="ajax_link">
@@ -121,20 +115,24 @@ Comment from <b><?php echo $v['name'] ? $v['name'] : $v['firstname'].' '.$v['las
 <?php } ?>
 </div>
 <div class="descr">
-<div class="message-box"><?php echo $b['descr'];?></div>
-<div align="right">
-<a class="ajax_link link-button" href="<?php echo $url;?>">See full post</a>&nbsp;
-</div>
+ <h2>
+<span class="date"><?php  echo date(
+    $date_format,
+    $b["date"],
+); ?></span> 
+ <a href="<?php echo $url;?>" class="ajax_link simple-button"><?php echo $b['title'];?></a></h2>
+ <div class="message-box"><?php echo $b['descr'];?></div>
+ <div style="text-align:right"><a class="ajax_link link-button" href="<?php echo $url;?>">See full post</a>&nbsp;</div>
 </div>
 <div class="clear"></div>
 <br />
 <?php } ?>
 </div>
 <?php if ($total_pages > 2) {?>
-<div align="right"><?php include SITE_ROOT."/var/cache/en/common/navigation.php";?></div>
+<div style="text-align:right"><?php include SITE_ROOT."/var/cache/en/common/navigation.php";?></div>
 <br />
 <?php } ?>
 <?php } else  { ?>
 <br />
-<center>No topics yet</center>
+<div style="text-align:center">No topics yet</div>
 <?php } ?>

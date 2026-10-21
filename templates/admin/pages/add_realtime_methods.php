@@ -24,7 +24,7 @@
 <input type="hidden" name="carrier" value="<?php echo $carrier; ?>" />
 <input type="hidden" name="mode" value="add_realtime_methods" />
 
-<script type="text/javascript">//<![CDATA[
+<script>//<![CDATA[
 var expands = new Array(<?php foreach ($carriers as $v) {
     echo "'" . $v["code"] . "',";
 } ?>'');
@@ -46,11 +46,11 @@ function expand_all(flag) {
 }
 //]]></script>
 
-<table cellpadding="2" cellspacing="1" width="100%">
+<table style="width:100%">
 
 <tr>
   <td>
-  <div align="right" style="line-height:170%"><a href="javascript:expand_all(true);">{lng[Expand all]}</a> / <a href="javascript:expand_all(false);">{lng[Collapse all]}</a></div>
+  <div style="text-align:right;line-height:170%"><a href="javascript:expand_all(true);">{lng[Expand all]}</a> / <a href="javascript:expand_all(false);">{lng[Collapse all]}</a></div>
   </td>
 </tr>
 
@@ -69,9 +69,9 @@ function expand_all(flag) {
         '" class="hidden">
   <td>
 
-<table cellpadding="2" cellspacing="1" width="100%">
+<table style="width:100%">
 <tr>
-  <th width="50" style="cursor: pointer; text-decoration: underline;" onclick="javascript: change_state(\'.methods_' .
+  <th style="width:50px;cursor: pointer; text-decoration: underline;" onclick="javascript: change_state(\'.methods_' .
         $c["code"] .
         '\');">{lng[Active]}</th>
   <th>{lng[Shipping method]}</th>
@@ -80,7 +80,7 @@ function expand_all(flag) {
     foreach ($shipping as $s) {
         if ($s["code"] == $c["code"] && $s["is_new"] != "Y") {
             echo '<tr>
-  <td align="center"><input class="methods_' .
+  <td style="text-align:center"><input class="methods_' .
                 $c["code"] .
                 '" type="checkbox" name="data[' .
                 $s["shippingid"] .
@@ -90,7 +90,7 @@ function expand_all(flag) {
   <td>' .
                 func_trademark($s["shipping"]) .
                 '</td>
-  <td align="center">' .
+  <td style="text-align:center">' .
                 ($s["destination"] == "N"
                     ? "{lng[National|escape]}"
                     : "{lng[International|escape]}") .

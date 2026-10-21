@@ -16,7 +16,7 @@
 <form method="post" name="roleform">
 <input type="hidden" name="mode" value="{if $role}save{else}add{/if}" />
 
-<table cellpadding="3" cellspacing="1" width="90%" class="normal-table">
+<table style="width:90%" class="normal-table">
 
 <tr>
  <td><b>{lng[Title]}</b></td>

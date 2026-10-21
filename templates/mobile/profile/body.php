@@ -14,7 +14,7 @@
 <br />
 {if $section == 'orders'}
  {if $orders}
-<table cellspacing="15">
+<table style="border-spacing:15px">
   {foreach $orders as $k=>$v}
 <tr>
  <td><a href="/invoice/{$v['orderid']}">#{$v['orderid']}</a></td>
@@ -28,8 +28,8 @@
 {lng[You have no orders yet.]}
  {/if}
 {else}
-<center>
-<form method="post" action="/profile" name="user_form" class="material-form">
+<div style="text-align:center">
+<form method="post" action="/profile" name="user_form" class="material-form" style="display:table;margin-left:auto;margin-right:auto">
     <div class="group">
       <input type="text" name="posted_data[firstname]" required value="{php echo escape($userinfo['firstname'], 2);}" />
       <span class="highlight"></span>
@@ -128,7 +128,7 @@
     </div>
 {/if}
 
-<div align="center"><button>{lng[Save]}</button></div>
+<div style="text-align:center"><button>{lng[Save]}</button></div>
 {*
 <table cellpadding="2" class="user_table textinputs">
 <tr>
@@ -222,4 +222,5 @@
 </table>
 *}
 </form>
+</div>
 {/if}

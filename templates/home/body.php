@@ -53,7 +53,7 @@
 {if lng('Site title') || lng('Site description')}
 <div class="page-container page-container-afterbanner">
 <div class="content">
-	<div id="center" class="no_left_menu">
+	<div class="center-column no_left_menu">
 {/if}
 {/if}
 <?php
@@ -77,7 +77,7 @@ if (lng("Site description")) {
 {if $config['Visual']['visual_testimonials'] == 'Y'}
 <div class="page-container page-container-testimonials">
 <div class="content">
-	<div id="center" class="no_left_menu">
+	<div class="center-column no_left_menu">
 
 <div class="testimonial">
 <img src="/images/testimonial.jpg" class="test-image" alt="{lng[Our testimonials|escape]}" />
@@ -100,7 +100,7 @@ if (lng("Site description")) {
 </div>
 {/if}
 
-<div id="home-tabs">
+<div class="home-tabs-wrap">
 <ul class="home-tabs">
  <li class="tab-1 active" data-tab="1">{lng[Featured products]}</li>
 </ul>
@@ -109,7 +109,7 @@ if (lng("Site description")) {
 {* Start page container *}
 <div class="page-container page-container-2">
 <div class="content">
-	<div id="center" class="no_left_menu">
+	<div class="center-column no_left_menu">
 
 {if $featured_products}
  {php $tag_id = "featured_products"; $products = $featured_products; $per_row = 4;}
@@ -144,7 +144,7 @@ if (lng("Site description")) {
 <div class="clear"></div>
 </div>
 
-<div id="home-tabs">
+<div class="home-tabs-wrap">
 <ul class="home-tabs">
  <li class="tab-1 active" data-tab="1">{lng[Bestsellers]}</li>
 </ul>
@@ -153,7 +153,7 @@ if (lng("Site description")) {
 {* Start page container *}
 <div class="page-container page-container-2">
 <div class="content">
-	<div id="center" class="no_left_menu">
+	<div class="center-column no_left_menu">
 
  {php $tag_id = "bestsellers_products"; $products = $bestsellers; $per_row = 4;}
 <div class="tab-content" id="tab-2">
@@ -186,7 +186,7 @@ if (lng("Site description")) {
 <div class="clear"></div>
 </div>
 
-<div id="home-tabs">
+<div class="home-tabs-wrap">
 <ul class="home-tabs">
  <li class="tab-1 active" data-tab="1">{lng[Most viewed]}</li>
 </ul>
@@ -195,7 +195,7 @@ if (lng("Site description")) {
 {* Start page container *}
 <div class="page-container page-container-2">
 <div class="content">
-	<div id="center" class="no_left_menu">
+	<div class="center-column no_left_menu">
 
  {php $tag_id = "most_viewed"; $products = $most_viewed; $per_row = 4;}
 <div class="tab-content" id="tab-3">
@@ -228,7 +228,7 @@ if (lng("Site description")) {
 <div class="clear"></div>
 </div>
 
-<div id="home-tabs">
+<div class="home-tabs-wrap">
 <ul class="home-tabs">
  <li class="tab-1 active" data-tab="1">{lng[New arrivals]}</li>
 </ul>
@@ -237,7 +237,7 @@ if (lng("Site description")) {
 {* Start page container *}
 <div class="page-container page-container-2">
 <div class="content">
-	<div id="center" class="no_left_menu">
+	<div class="center-column no_left_menu">
 
  {php $tag_id = "new_arrivals"; $products = $new_arrivals; $per_row = 4;}
 <div class="tab-content" id="tab-4">
@@ -272,7 +272,7 @@ if (lng("Site description")) {
 
 <div class="page-container page-container-news">
 <div class="content">
-	<div id="center" class="no_left_menu">
+	<div class="center-column no_left_menu">
 
 <div class="news-list">
 <h2>{lng[Browse our news]}</h2>
@@ -284,10 +284,10 @@ if (lng("Site description")) {
 {news_image image=`$b` new_width=250 new_height=200}
 </a>
 {/if}
-<a class="ajax_link" href="{$url}"><h5>{$b['title']} (<span class="date"><?php echo date(
+<a class="ajax_link" href="{$url}"><h5>{$b['title']} <span class="date"><?php echo date(
     $date_format,
     $b["date"],
-); ?></span>)</h5></a>
+); ?></span></h5></a>
 <div class="short-descr message-box">{$b['descr']}</div>
 <br />
 <a class="news-more ajax_link link-button" href="{$url}">{lng[See full article]}</a>
@@ -308,7 +308,7 @@ if (lng("Site description")) {
 
 <div class="page-container page-container-blog">
 <div class="content">
-	<div id="center" class="no_left_menu">
+	<div class="center-column no_left_menu">
 
 <div class="news-list">
 <h2>{lng[Browse our blog]}</h2>
@@ -319,10 +319,10 @@ if (lng("Site description")) {
 {blog_image image=`$last_blog` new_width=250 new_height=200}
 </a>
 {/if}
-<a class="ajax_link" href="{$url}"><h5>{$last_blog['title']} (<span class="date"><?php echo date(
+<a class="ajax_link" href="{$url}"><h5>{$last_blog['title']} <span class="date"><?php echo date(
     $date_format,
     $last_blog["date"],
-); ?></span>)</h5></a>
+); ?></span></h5></a>
 <div class="short-descr message-box">{$last_blog['descr']}</div>
 <br />
 <a class="news-more ajax_link link-button" href="{$url}">{lng[See full post]}</a>

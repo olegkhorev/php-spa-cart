@@ -15,12 +15,12 @@
     "taxid"
 ]; ?>" />
 
-<table cellpadding="3" cellspacing="1" width="600" class="normal-table">
+<table style="width:600px" class="normal-table">
 
 <tr>
-  <td width="20%">Name:</td>
-  <td width="10" class="star">*</td>
-  <td width="80%"><input type="text" size="15" maxlength="10" name="tax_service_name" value="<?php  echo escape(
+  <td style="width:20%">Name:</td>
+  <td class="star">*</td>
+  <td style="width:80%"><input type="text" size="15" maxlength="10" name="tax_service_name" value="<?php  echo escape(
       $tax_details["tax_name"],
       2,
   ); ?>" /></td>
@@ -51,7 +51,7 @@
 <?php  if ($tax_details["taxid"] && $tax_details["taxid"] != "add") { ?>
 <br />
 <h3>Tax rates</h3>
-<a name="rates"></a>
+<a id="rates"></a>
 
 <a href="javascript: void(0);" onclick="javascript: check_all(document.taxratesform, 'to_delete', true);">Check all</a> / <a href="javascript: void(0);" onclick="javascript: check_all(document.taxratesform, 'to_delete', false);">Uncheck all</a>
 
@@ -61,14 +61,14 @@
     "taxid"
 ]; ?>" />
 
-<table cellpadding="3" cellspacing="1" width="100%" class="lines-table resp-table">
+<table style="width:100%" class="lines-table resp-table">
 <thead>
 <tr>
-  <th width="10">&nbsp;</th>
-  <th width="30%">Zone</th>
-  <th width="20%" align="center">Membership</th>
-  <th width="30%" align="center">Tax rate value</th>
-  <th width="20%" align="center">Tax apply to</th>
+  <th style="width:10px">&nbsp;</th>
+  <th style="width:30%">Zone</th>
+  <th style="width:20%;text-align:center">Membership</th>
+  <th style="width:30%;text-align:center">Tax rate value</th>
+  <th style="width:20%;text-align:center">Tax apply to</th>
 </tr>
 </thead>
 <?php  if ($tax_rates) {
@@ -79,7 +79,7 @@
             ']" /></td>
   <td><label>Zone</label>'; ?>
 <?php if ($t['zoneid'] == 0) {?>Default zone<?php } else  { ?><a href='<?php echo $current_location;?>/admin/zones/<?php echo $t['zoneid'];?>'><?php echo $t['zone_name'];?></a><?php } ?>
-<?php  echo '</td><td align="center"><label>Membership</label>
+<?php  echo '</td><td style="text-align:center"><label>Membership</label>
 <a href="/admin/taxes/' .
     $tax_details["taxid"] .
     "?rateid=" .
@@ -95,7 +95,7 @@ All
 <?php } ?>
 <?php  echo '</a>
 </td>
-  <td align="center" nowrap="nowrap" class="no-word-break"><label>Tax rate value</label>
+  <td style="text-align:center;white-space:nowrap" class="no-word-break"><label>Tax rate value</label>
 <input type="text" size="10" maxlength="13" name="posted_data[' .
     $t["rateid"] .
     '][rate_value]" value="' .
@@ -114,7 +114,7 @@ All
     '</option>
 </select>
   </td>
-  <td align="center"><label>Tax apply to</label><a href="/admin/taxes/' .
+  <td style="text-align:center"><label>Tax apply to</label><a href="/admin/taxes/' .
     $tax_details["taxid"] .
     "?rateid=" .
     $t["rateid"] .
@@ -131,7 +131,7 @@ All
      ?>
 
 <tr>
-  <td colspan="5" align="center">No tax rates defined</td>
+  <td style="text-align:center" colspan="5">No tax rates defined</td>
 </tr>
 
 <?php 
@@ -139,13 +139,12 @@ All
 </table>
 <?php if ($tax_rates) {?>
 <br />
-  <button type="button" onclick="javascript: submitForm(this, 'delete_rates');">Delete selected</button>
+  <button type="button" onclick="javascript:if (confirm('', $(this)) || confirmed) submitForm(this, 'delete_rates');">Delete selected</button>
   <button type="submit">Update</button>
 <?php } ?>
 </form>
 
 <br />
-<a name="rates"></a>
 
 <form method="post" name="tax_rate_edit" onsubmit="javascript: return submitTaxForm('rate');">
 <input type="hidden" name="mode" value="rate_details" />
@@ -163,12 +162,12 @@ All
 
 <br />
 
-<table cellpadding="3" cellspacing="1" width="600" class="normal-table">
+<table style="width:600px" class="normal-table">
 
 <tr>
-  <td width="15%" class="display-none">Tax rate value:</td>
+  <td style="width:15%" class="display-none">Tax rate value:</td>
   <td class="star">*</td>
-  <td width="85%">
+  <td style="width:85%">
   <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
     <input class="mdl-textfield__input custom-element" type="text" size="20" maxlength="13" name="rate_value" value="<?php  echo $rate_details[
         "rate_value"

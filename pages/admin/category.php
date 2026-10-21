@@ -205,7 +205,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     $_SESSION['alerts'][] = array(
         'type'		=> 'i',
-        'content'	=> 'Category has been successfully saved'
+        'content'	=> 'Category saved'
     );
 
     redirect('admin/category/'.$categoryid);

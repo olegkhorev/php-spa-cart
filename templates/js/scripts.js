@@ -15,7 +15,7 @@ var $window = $(window),
   $animation_elements = $(
     ".page-container-2, .page-container-news, .page-container-blog",
   ),
-  are_you_sure = "{lng[are_you_sure]}",
+  are_you_sure = "{lng[Are you sure?]}",
   mobile_screen = 850,
   instant_search_ajax,
   yes = "{lng[Yes]}",
@@ -63,6 +63,9 @@ $(document).on("keyup", function (e) {
   $(document).ready(function () {
     if ($("html.itsinvoicepage").length) return;
 
+    console.log("#");
+    console.log("# {lng[This is development tools. Please, never share any info from here to anyone.]}");
+    console.log("#");
     if (!getCookie("allow_cookies") && !$("html.area-a").length) {
       $("body").append(
         '<div class="allow-cookies"><p>{lng[We use cookies for a better user experience]}</p><button>{lng[Accept]}</button></div>',
@@ -387,7 +390,7 @@ function ajax_clicks() {
         );
       }
 
-      var h = $(this).attr("href");
+      var h = $(this).attr("href") || $(this).attr("href");
       if (!pushed) {
         pushed = true;
       }
@@ -579,14 +582,19 @@ function alert(message, nook, h, classes, noshake, alert2, nofade) {
   }
 
   $("#a" + id + " .close_alert").on("click", function () {
+    var transform_add = '';
+    if ($(this).closest('.alert_message.res_p').length) {
+      transform_add = 'translate(-50%, -50%) ';
+    }
+
     var othis = $(this);
     bc = false;
     if (alert2) var e = $(this).parent().parent();
     else var e = $(this).parent();
 
-    e.css("opacity", 1).css("transform", "matrix(1.1, 0, 0, 1.1, 0, 70)");
+    e.css("opacity", 1).css("transform", transform_add + "matrix(1.1, 0, 0, 1.1, 0, 70)");
     setTimeout(function () {
-      e.css("transform", "matrix(1, 0, 0, 1, 0, 0)");
+      e.css("transform", transform_add + "matrix(1, 0, 0, 1, 0, 0)");
       if (
         othis.closest(".login_alert").length ||
         othis.closest(".register_alert").length
@@ -715,14 +723,24 @@ function removePopups(no_unfade) {
     return;
   }
 
-  $(".popup, .alert, .alert_message")
+  $(".popup, .alert, .alert_message:not(.res_p)")
     .css("opacity", 1)
     .css("transform", "matrix(1.1, 0, 0, 1.1, 0, 70)");
+  
+  $(".alert_message.res_p")
+    .css("opacity", 1)
+    .css("transform", "translate(-50%, -50%) matrix(1.1, 0, 0, 1.1, 0, 70)");
+
   setTimeout(function () {
-    $(".popup, .alert, .alert_message").css(
+    $(".popup, .alert, .alert_message:not(.res_p)").css(
       "transform",
       "matrix(1, 0, 0, 1, 0, 0)",
     );
+    $(".alert_message.res_p").css(
+      "transform",
+      "translate(-50%, -50%) matrix(1, 0, 0, 1, 0, 0)",
+    );
+
     unfade();
 
     setTimeout(function () {
@@ -1130,10 +1148,36 @@ function func_disable_button(btn, enable) {
 function search_form_init() {
   $('.searchform_mobile, .search-dd button').on('click', function() {
     $('body').addClass('search-form-shown');
-    $('.search input[type="text"]').focus();
+    var el = $(".search-popup");
+    el
+      .css("opacity", 0)
+      .css("transform", "translate(-50%, 0) matrix(0.1, 0, 0, 0.1, 0, 0)");
+    setTimeout(function () {
+      el
+        .css("opacity", 1)
+        .css("transform", "translate(-50%, 0) matrix(1.1, 0, 0, 1.1, 0, 70)");
+      setTimeout(function () {
+        el.css("transform", "translate(-50%, 0) matrix(1, 0, 0, 1, 0, 0)");
+        setTimeout(function () {
+          $('.search input[type="text"]').focus();
+        }, 200);
+      }, 200);
+    }, 200);
+
   });
 
   $('.search-fade').on('click', function() {
-    $('body').removeClass('search-form-shown');
+    var el = $(".search-popup");
+    el.css("opacity", 1).css("transform", "translate(-50%, 0) matrix(1.1, 0, 0, 1.1, 0, 70)");
+    setTimeout(function () {
+      el.css("transform", "translate(-50%, 0) matrix(1, 0, 0, 1, 0, 0)");
+      setTimeout(function () {
+        $('body').removeClass('search-form-shown');
+      }, 200);
+    }, 200);
+  });
+
+  $('.search-popup .close-popup').on('click', function() {
+    $('.search-fade').click();
   });
 }

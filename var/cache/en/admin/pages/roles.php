@@ -14,22 +14,22 @@
 
 <a href="/admin/roles/new" class="ajax_link link-button">New role</a><br /><br />
 
-<table cellpadding="3" cellspacing="1" width="600" class="lines-table resp-table">
+<table class="lines-table resp-table">
 <?php  if ($roles) { ?>
 <thead>
 <tr>
-	<th width="10">&nbsp;</th>
-	<th width="80%">Title</th>
-	<th width="15%" align="center">Pos</th>
+	<th style="width:10px">&nbsp;</th>
+	<th style="width:80%">Title</th>
+	<th style="width:15%;text-align:center">Pos</th>
 </tr>
 </thead>
 <?php  foreach ($roles as $v) { ?>
 <tr>
-	<td width="10"><input type="checkbox" name="to_delete[]" value="<?php  echo $v[
+	<td><input type="checkbox" name="to_delete[]" value="<?php  echo $v[
      "roleid"
  ]; ?>" /></td>
 	<td><label>Title</label><a href="/admin/roles/<?php echo $v['roleid'];?>" class="ajax_link"><?php echo $v['title'];?></a></td>
-	<td align="center"><label>Pos</label><input type="text" size="5" name="posted_data[<?php  echo $v[
+	<td class="td-align-center"><label>Pos</label><input type="text" size="5" name="posted_data[<?php  echo $v[
      "roleid"
  ]; ?>][pos]" value="<?php  echo $v["pos"]; ?>" /></td>
 </tr>
@@ -37,7 +37,7 @@
 <?php  } else  { ?>
 
 <tr>
-	<td colspan="3" align="center"><br />No Roles defined</td>
+	<td colspan="3" class="td-align-center"><br />No Roles defined</td>
 </tr>
 
 <?php  } ?>
@@ -47,7 +47,7 @@
 <?php if ($roles) {?>
 <div class="fixed_save_button">
 	<button>Update</button>
-	<button type="button" onclick="submitForm(this, 'delete')">Delete selected</button>
+	<button type="button" onclick="javascript: if (confirm('', $(this)) || confirmed) submitForm(this, 'delete')">Delete selected</button>
 </div>
 <?php } ?>
 </form>

@@ -1,0 +1,132 @@
+
+.subheader {
+    background: rgba(0,217,255,.06);
+}
+.alert_message, .note, .popup {
+	border: 10px solid rgba(0,217,255,.6);
+}
+.close_alert, .close-popup {
+	background: #00d9ff !important;
+}
+.save2wl {
+	background: #00d9ff;
+}
+button, input[type=button], input[type=submit] {
+	color: #00d9ff;
+}
+button:hover, input[type=button]:hover, input[type=submit]:hover {
+	background: #00d9ff;
+}
+.search {
+	border-bottom: 1px solid #00d9ff;
+}
+.header .links a {
+	color: #00d9ff;
+}
+.banners-homepage .slide img {
+	border-top: 24px solid #00d9ff;
+	border-bottom: 24px solid #00d9ff;
+}
+#menu > li:hover {
+	border-bottom: 0px solid #00d9ff;
+}
+#menu > li.active {
+	border-bottom: 3px solid #00d9ff;
+}
+#menu > li:after, #menu > li:before {
+	background: #00d9ff;
+}
+.indicators li.active {
+	background:#00d9ff
+}
+.indicators li:hover {
+	background-color:#00d9ff
+}
+.arrow:hover span {
+	border-color:#00d9ff
+}
+body svg {
+	fill: #00d9ff;
+}
+h2 {
+	color: #00d9ff;
+}
+h3 {
+	color: #00d9ff;
+	border-bottom: 1px solid #00d9ff;
+}
+.mobile-version {
+	color: #00d9ff;
+}
+.instant-search {
+	border: 1px solid #00d9ff;
+}
+.mobile-left_menu {
+	border: 1px solid #00d9ff;
+}
+#left_menu hr {
+	border-top: 1px solid #00d9ff;
+}
+.mobile-menu-links a {
+	color: #00d9ff;
+}
+.product-details-price {
+	color: #00d9ff;
+}
+#home-tabs, #product-tabs {
+    border-bottom: 3px solid #00d9ff;
+}
+.price-breaks span {
+	color: #00d9ff;
+}
+.product-details-price {
+	color: #00d9ff;
+}
+.left_filter h4 {
+	color: #00d9ff;
+}
+.res-item .discount {
+	background: #00d9ff;
+}
+.res-item button, .add2cart-product {
+    background: #00d9ff;
+}
+.home-tabs li.active, .product-tabs li.active {
+	color: #00d9ff;
+}
+h1 {
+	color: #00d9ff;
+}
+#menu li a.parent-link {
+	color: #00d9ff;
+}
+#menu > li.search-dd div.search {
+	border: 1px solid #00d9ff;
+}
+.mrp-rounded-box {
+	background: #00d9ff;
+}
+.mrp-subtitle-2 {
+	color: #00d9ff;
+}
+.mrp-row-cart > div:last-child a {
+	color: #00d9ff !important;
+}
+.sh-rounded-box {
+	border: 2px solid #00d9ff;
+}
+.sh-rounded-box svg {
+	fill: #00d9ff;
+}
+.subheader table td h4 {
+	color: #00d9ff;
+}
+.subheader table td span {
+	color: #00d9ff;
+}
+.see_all a {
+	color: #00d9ff;
+}
+.more-no-search {
+	color: #00d9ff;
+}

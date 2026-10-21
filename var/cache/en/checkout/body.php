@@ -9,8 +9,8 @@
 ?>
 <div class="checkout-container">
 <h1><a href="<?php echo $current_location;?>/cart" class="cart-link back-to-cart"><img src="/images/spacer.gif" alt="" /></a>Checkout</h1>
-<div align="left">
-<table width="100%" cellspacing="0" class="checkout_products">
+<div style="text-align:left">
+<table style="width:100%;border-spacing:0" class="checkout_products">
 <?php foreach ($products as $v) {?>
 <?php $url = $v['cleanurl'] ? $v['cleanurl'].'.html' : 'product/'.$v['productid'];; ?>
 	<tr>
@@ -22,7 +22,7 @@
 <?php } ?>
 
 	  </a></td>
-	  <td width="100%" class="line" align="left">
+	  <td style="width:100%;text-align:left" class="line">
 <?php if ($v['gift_card']) {?>
 <b>Gift Card</b>
 <?php } else  { ?>
@@ -35,17 +35,17 @@
 <?php if ($v['product_options']) {?>
 <hr />
 <b>Selected options:</b><br />
-<table width="100%">
+<table style="width:100%">
 <?php foreach ($v['product_options'] as $o) {?>
 <tr>
-	<td valign="top" width="100"><?php if ($o['fullname']) {?><?php echo $o['fullname'];?><?php } else  { ?><?php echo $o['name'];?><?php } ?>:</td>
+	<td style="vertical-align:top;width:100px"><?php if ($o['fullname']) {?><?php echo $o['fullname'];?><?php } else  { ?><?php echo $o['name'];?><?php } ?>:</td>
 	<td><?php echo $o['option']['name'];?></td>
 </tr>
 <?php } ?>
 </table>
 <?php } ?>
  </td>
- <td class="line" nowrap align="right">
+ <td class="line" style="white-space:nowrap;text-align:right">
 <?php if ($v['gift_card']) {?>
 <?php echo '<span class="currency">'.currency_symbol().'</span>'.price_format_currency($v['amount']); ?>
 <?php } else  { ?>
@@ -73,7 +73,7 @@ You can checkout as guest. Or <a href="/login" onclick="return login_popup();">L
 <?php if ($checkout_reason == 1) {?>
 <table id="checkout_table">
 <tr>
- <td width="340" id="custom_details">
+ <td id="custom_details">
 <form method="post" action="/checkout/user_form" id="checkout_user_form">
     <div class="group">
       <input type="text" name="posted_data[firstname]" required value="<?php echo escape($userinfo['firstname'], 2);; ?>" />
@@ -250,9 +250,8 @@ states.<?php echo $v['code'];?>.states[<?php echo $k;?>] = {code: "<?php echo $s
 
 <button>Continue</button>
 </form>
-</div>
  </td>
- <td width="260" id="place_order" class="opacity-03">
+ <td id="place_order" class="opacity-03">
 <?php include SITE_ROOT."/var/cache/en/checkout/right_part.php";?>
  </td>
 </tr>
@@ -261,4 +260,5 @@ states.<?php echo $v['code'];?>.states[<?php echo $k;?>] = {code: "<?php echo $s
 Subtotal: <?php echo '<span class="currency">'.currency_symbol().'</span>'.price_format_currency($cart['subtotal']); ?><br /><br />
 <?php echo $checkout_reason;?>
 <?php } ?>
+</div>
 </div>

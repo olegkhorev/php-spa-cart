@@ -15,13 +15,13 @@
 <?php if ($section == 'orders') {?>
 <h1 class="visible-mobile">Orders history</h1>
  <?php if ($orders) {?>
-<table cellspacing="0" cellpadding="15" class="account-invoices-list">
+<table style="border-spacing:0" class="account-invoices-list">
   <?php foreach ($orders as $k=>$v) {?>
 <tr>
- <td><a href="/invoice/<?php echo $v['orderid'];?>">#<?php echo $v['orderid'];?></a></td>
- <td><a href="/invoice/<?php echo $v['orderid'];?>"><?php echo $order_statuses[$v['status']];?></a></td>
- <td><a href="/invoice/<?php echo $v['orderid'];?>"><?php echo date($datetime_format, $v['date']);; ?></a></td>
- <td><a href="/invoice/<?php echo $v['orderid'];?>"><?php echo '<span class="currency">'.currency_symbol().'</span>'.price_format_currency($v['total']); ?></a></td>
+ <td style="padding:15px"><a href="/invoice/<?php echo $v['orderid'];?>">#<?php echo $v['orderid'];?></a></td>
+ <td style="padding:15px"><a href="/invoice/<?php echo $v['orderid'];?>"><?php echo $order_statuses[$v['status']];?></a></td>
+ <td style="padding:15px"><a href="/invoice/<?php echo $v['orderid'];?>"><?php echo date($datetime_format, $v['date']);; ?></a></td>
+ <td style="padding:15px"><a href="/invoice/<?php echo $v['orderid'];?>"><?php echo '<span class="currency">'.currency_symbol().'</span>'.price_format_currency($v['total']); ?></a></td>
 </tr>
   <?php } ?>
 </table>
@@ -29,8 +29,8 @@
 You have no orders yet.
  <?php } ?>
 <?php } else  { ?>
-<center>
-<form method="post" action="/profile" name="user_form" class="material-form">
+<div style="text-align:center">
+<form method="post" action="/profile" name="user_form" class="material-form" style="display:table;margin-left:auto;margin-right:auto">
     <div class="group">
       <input type="text" name="posted_data[firstname]" required value="<?php echo escape($userinfo['firstname'], 2);; ?>" />
       <span class="highlight"></span>
@@ -129,7 +129,7 @@ You have no orders yet.
     </div>
 <?php } ?>
 
-<div align="center"><button>Save</button></div>
+<div style="text-align:center"><button>Save</button></div>
 <?php /* ?>
 <table cellpadding="2" class="user_table textinputs">
 <tr>
@@ -223,4 +223,5 @@ You have no orders yet.
 </table>
 <?php */ ?>
 </form>
+</div>
 <?php } ?>

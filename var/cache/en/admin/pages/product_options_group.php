@@ -10,14 +10,14 @@
 <form method="POST" name="poform">
 <input type="hidden" name="section" value="options">
 <input type="hidden" name="mode" value="update">
-  <table cellspacing="1" cellpadding="3" width="400" class="normal-table">
+  <table style="width:400px" class="normal-table">
 
     <tr>
       <td>Name</td>
       <td class="star">*</td>
       <td><input type="text" name="posted_data[name]" value="<?php  echo $option_group[
           "name"
-      ]; ?>" />
+      ]; ?>" /></td>
     </tr>
 
     <tr>
@@ -25,7 +25,7 @@
       <td></td>
       <td><input type="text" size="40" name="posted_data[fullname]" value="<?php  echo $option_group[
           "fullname"
-      ]; ?>" />
+      ]; ?>" /></td>
     </tr>
 
     <tr>
@@ -42,7 +42,7 @@
     </tr>
 
     <tr>
-      <td nowrap>Display type</td>
+      <td style="white-space:nowrap">Display type</td>
       <td></td>
       <td>
       <select name="posted_data[view_type]" id="data_view_type">
@@ -101,11 +101,11 @@
 <?php  if ($options) { ?>
 <a href="javascript: void(0);" onclick="javascript: check_all(document.poform, 'to_delete', true);">Check all</a> / <a href="javascript: void(0);" onclick="javascript: check_all(document.poform, 'to_delete', false);">Uncheck all</a>
 <?php  } ?>
-<table cellspacing="1" width="100%" class="resp-table resp-table-100 options-group-table" style="margin-bottom: 0px;">
+<table class="resp-table resp-table-100 options-group-table" style="width:100%;margin-bottom: 0px;">
 <thead>
 <tr>
- <th width="10"></th>
- <th width="100%">Name</th>
+ <th style="width:10px"></th>
+ <th style="width:100%">Name</th>
  <th colspan="2">Price modifier</th>
  <th colspan="2">Weight modifier</th>
  <th>Pos</th>
@@ -158,7 +158,7 @@
             '][orderby]" value="' .
             $v["orderby"] .
             '" /></td>
- <td align="center"><label>Enabled</label><input type="checkbox" name="options_data[' .
+ <td class="td-align-center"><label>Enabled</label><input type="checkbox" name="options_data[' .
             $v["optionid"] .
             '][enabled]" value="1" ' .
             ($v["enabled"] ? " checked" : "") .
@@ -184,12 +184,12 @@
   </select>
  </td>
  <td><label>Pos</label><input size="5" type="text" name="new_option[0][orderby]" /></td>
- <td align="center"><label>Enabled</label><input type="checkbox" name="new_option[0][enabled]" checked value="1" /></td>
+ <td class="td-align-center"><label>Enabled</label><input type="checkbox" name="new_option[0][enabled]" checked value="1" /></td>
 </tr>
 </table>
 <br />
 <?php  if ($option_group) { ?>
-<button type="submit">Update</button> <button type="button" onclick="submitForm(this, 'delete');">Delete selected</button>
+<button type="submit">Update</button> <button type="button" onclick="javascript: if (confirm('', $(this)) || confirmed) submitForm(this, 'delete');">Delete selected</button>
 <?php  } else  { ?>
 <button type="submit">Add option group</button>
 <?php  } ?>

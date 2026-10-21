@@ -21,7 +21,7 @@
 <form method="POST" action="/search" id="searchform">
 <div class="homepage-search mobile-search search">
 <input type="text" name="substring" value="{if $substring}{$substring}{/if}" placeholder="Search here..." autocomplete="off" />
-<input type="image" src="{$current_location}/images/mobile/search_mobile.png"/>
+<input type="image" src="{$current_location}/images/mobile/search_mobile.png" alt="Search" />
 <div class="instant-search"></div>
 </div>
 </form>

@@ -107,7 +107,7 @@ if ($mode == "clone_message") {
 
     $_SESSION['alerts'][] = array(
         'type'		=> 'i',
-        'content'	=> 'Message has been successfully cloned'
+        'content'	=> 'Message cloned'
     );
 
     redirect("admin/ticket/".$ticketid);
@@ -149,7 +149,7 @@ if ($mode == "move") {
 
     $_SESSION['alerts'][] = array(
         'type'		=> 'i',
-        'content'	=> 'Ticket has been successfully moved'
+        'content'	=> 'Ticket moved'
     );
 
     redirect("admin/ticket/".$to);
@@ -178,7 +178,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
                 $ticketids[] = func_create_ticket($to_insert, $attachments);
             }
 
-            $top_message['content'] = 'New tickets has been successfully created.<br />';
+            $top_message['content'] = 'New tickets created.<br />';
             foreach ($ticketids as $k => $v) {
                 $top_message['content'] .= '<a href="ticket.php?ticketid='.$v.'">#'.$v.'</a><br />';
             }
@@ -197,7 +197,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
         $arg = "#messages";
     } elseif ($mode == 'update_message' && $messageid) {
         $db->query("UPDATE tickets_messages SET message='".addslashes($message)."' WHERE messageid='$messageid'");
-        $top_message['content'] = 'Message has been successfully updated.';
+        $top_message['content'] = 'Message updated.';
         $arg = "#messages";
     } elseif ($mode == 'add_message' && !empty($message)) {
         if ($ticket['status'] == 'O' && $config['Tickets']['tickets_close'] == 'Y') {
@@ -218,7 +218,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 
         $_SESSION['alerts'][] = array(
             'type'		=> 'i',
-            'content'	=> 'New message has been successfully created.'
+            'content'	=> 'New message created.'
         );
 
         $arg = "#messages";
@@ -262,7 +262,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
         $db->array2update("tickets", $to_update, "ticketid='$ticketid'");
         $_SESSION['alerts'][] = array(
             'type'		=> 'i',
-            'content'	=> 'Ticket has been successfully updated.'
+            'content'	=> 'Ticket updated.'
         );
 
         $arg = '#';

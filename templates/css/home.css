@@ -14,9 +14,6 @@
 .page-container.page-container-testimonials {
   margin-top: 40px;
 }
-.page-container.page-container-afterbanner {
-  margin-bottom: -40px;
-}
 .testimonial {
   width: 100%;
   padding: 10px 0;
@@ -29,7 +26,7 @@
   border-radius: 200px;
 }
 .testimonial h2 {
-  margin: 20px 0 0px 345px;
+  margin: 20px 0 0px 355px;
   font-size: 16px;
   font-style: Italic;
   font-weight: 500;
@@ -167,7 +164,7 @@
 }
 .carousel-wrapper {
   margin: 0;
-  height: 400px;
+  height: 410px;
   position: relative;
   display: block;
   overflow: hidden;
@@ -211,10 +208,32 @@
   .res-item:nth-child(5n)
   + div.res-item {
   clear: none !important;
-  max-width: 234px;
+  width: 234px;
+  max-width: 100%;
+}
+.page-container.page-container-afterbanner {
+  margin: 0 215px -40px 215px;
+}
+.page-container.page-container-afterbanner p {
+    font-size: 16px;
+}
+@media only screen and (max-width: 1800px) {
+  .page-container.page-container-afterbanner {
+    margin: 0 90px -40px 90px;
+  }
 }
 @media only screen and (max-width: 1600px) {
   .testimonial div.name, .testimonial div.url, .testimonial div.test-links {
     padding-right: 10px;
+  }
+  .page-container.page-container-afterbanner {
+    margin: 0 40px -40px 40px;
+    width: calc(100% - 220px);
+  }
+}
+@media only screen and (max-width: 1000px) {
+  .page-container.page-container-afterbanner {
+    margin: 0 20px -40px 20px;
+    width: calc(100% - 40px);
   }
 }

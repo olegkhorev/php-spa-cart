@@ -13,16 +13,16 @@
 <form method="post" name="currenciesform">
 <input type="hidden" name="mode" value="update" />
 
-<table cellpadding="3" cellspacing="1" width="600" class="lines-table resp-table">
+<table class="lines-table resp-table">
 <thead>
 <tr>
-	<th width="10">&nbsp;</th>
-	<th width="15%">Currency code</th>
-	<th width="10%">Rate</th>
-	<th width="15%">Symbol</th>
-	<th width="20%">Active</th>
-	<th width="20%">Pos</th>
-	<th width="20%">Main</th>
+	<th style="width:10px">&nbsp;</th>
+	<th style="width:15%">Currency code</th>
+	<th style="width:10%">Rate</th>
+	<th style="width:15%">Symbol</th>
+	<th style="width:20%">Active</th>
+	<th style="width:20%">Pos</th>
+	<th style="width:20%">Main</th>
 </tr>
 </thead>
 <?php if ($currencies) {?>
@@ -31,32 +31,32 @@
 	<td><input type="checkbox" name="to_delete[' .
         $b["id"] .
         ']" value="Y" /></td>
-	<td align="center"><label>Currency code</label><input type="text" size="20" name="to_update[' .
+	<td class="td-align-center"><label>Currency code</label><input type="text" size="20" name="to_update[' .
         $b["id"] .
         '][code]" value="' .
         $b["code"] .
         '" /></td>
-	<td align="center"><label>Rate</label><input type="text" size="20" name="to_update[' .
+	<td class="td-align-center"><label>Rate</label><input type="text" size="20" name="to_update[' .
         $b["id"] .
         '][rate]" value="' .
         $b["rate"] .
         '" /></td>
-	<td align="center"><label>Symbol</label><input type="text" size="20" name="to_update[' .
+	<td class="td-align-center"><label>Symbol</label><input type="text" size="20" name="to_update[' .
         $b["id"] .
         '][symbol]" value="' .
         $b["symbol"] .
         '" /></td>
-	<td align="center"><label>Active</label><input type="checkbox" name="to_update[' .
+	<td class="td-align-center"><label>Active</label><input type="checkbox" name="to_update[' .
         $b["id"] .
         '][active]" value="1"' .
         ($b["active"] ? ' checked="checked"' : "") .
         ' /></td>
-	<td align="center"><label>Pos</label><input type="text" size="5" name="to_update[' .
+	<td class="td-align-center"><label>Pos</label><input type="text" size="5" name="to_update[' .
         $b["id"] .
         '][orderby]" value="' .
         $b["orderby"] .
         '" /></td>
-	<td align="center"><label>Main</label><input type="radio" name="main_currency" value="' .
+	<td class="td-align-center"><label>Main</label><input type="radio" name="main_currency" value="' .
         $b["id"] .
         '"' .
         ($b["main"] ? ' checked="checked"' : "") .
@@ -66,7 +66,7 @@
 
 <tr>
 	<td colspan="7" class="var-wh-100 background-transparent">
-<button type="button" onclick="javascript: submitForm(this, 'update');">Update</button> &nbsp; <button type="button" onclick="javascript: submitForm(this, 'delete');">Delete selected</button>
+<button type="button" onclick="javascript: submitForm(this, 'update');">Update</button> &nbsp; <button type="button" onclick="javascript: if (confirm('', $(this)) || confirmed) submitForm(this, 'delete');">Delete selected</button>
 	</td>
 </tr>
 <?php } ?>
@@ -76,11 +76,11 @@
 </tr>
 <tr>
 	<td class="background-transparent"></td>
-	<td class="background-transparent" align="center"><label>Currency code</label><input type="text" size="20" name="new_currency[code]" value="" /></td>
-	<td class="background-transparent" align="center"><label>Rate</label><input type="text" size="20" name="new_currency[rate]" value="" /></td>
-	<td class="background-transparent" align="center"><label>Symbol</label><input type="text" size="20" name="new_currency[symbol]" value="" /></td>
-	<td class="background-transparent" align="center"><label>Active</label><input type="checkbox" name="new_currency[active]" value="1" checked="checked" /></td>
-	<td class="background-transparent" align="center"><label>Pos</label><input type="text" size="5" name="new_currency[orderby]" value="" /></td>
+	<td class="background-transparent td-align-center"><label>Currency code</label><input type="text" size="20" name="new_currency[code]" value="" /></td>
+	<td class="background-transparent td-align-center"><label>Rate</label><input type="text" size="20" name="new_currency[rate]" value="" /></td>
+	<td class="background-transparent td-align-center"><label>Symbol</label><input type="text" size="20" name="new_currency[symbol]" value="" /></td>
+	<td class="background-transparent td-align-center"><label>Active</label><input type="checkbox" name="new_currency[active]" value="1" checked="checked" /></td>
+	<td class="background-transparent td-align-center"><label>Pos</label><input type="text" size="5" name="new_currency[orderby]" value="" /></td>
 	<td class="background-transparent"></td>
 </tr>
 

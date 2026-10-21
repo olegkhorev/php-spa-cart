@@ -10,14 +10,14 @@
 <h1>Your cart</h1>
 <?php if ($products) {?>
 <form action="/cart" id="cartform" method="POST">
-<table width="100%" class="carttable">
+<table style="width:100%" class="carttable">
 <tbody>
 <tr>
- <th width="50%" align="left" colspan="2">Product</th>
- <th width="20%">Price</th>
+ <th style="width:50%;text-align:left" colspan="2">Product</th>
+ <th style="width:20%">Price</th>
  <th>Quantity</th>
- <th width="20%">Total</th>
- <td width="10%"></td>
+ <th style="width:20%">Total</th>
+ <td style="width:10%"></td>
 </tr>
 <?php foreach ($products as $v) {?>
 <?php $url = $v['cleanurl'] ? $v['cleanurl'].'.html' : 'product/'.$v['productid'];; ?>
@@ -37,20 +37,20 @@
 <div class="cart-mobile-title-line"><?php include SITE_ROOT."/var/cache/en/cart/mobile_title.php";?></div></div>
 	  </td>
 	  <td><?php include SITE_ROOT."/var/cache/en/cart/mobile_title.php";?></td>
-	<td align="center" valign="middle">
+	<td class="td-center" style="text-align:center;vertical-align:middle">
 <?php if ($v['gift_card']) {?>
 	<?php echo '<span class="currency">'.currency_symbol().'</span>'.price_format_currency($v['amount']); ?>
 <?php } else  { ?>
 	<?php echo '<span class="currency">'.currency_symbol().'</span>'.price_format_currency($v['price']); ?>
 <?php } ?>
 	</td>
-	<td align="center">
+	<td class="td-center" style="text-align:center">
 <?php if (!$v['gift_card']) {?>
 <input type="text" size="4" data-max="<?php echo $v['avail'];?>" class="cart-quantity" name="quantity[<?php echo $v['cartid'];?>]" value="<?php echo $v['quantity'];?>" />
 <?php } ?>
 	</td>
 <?php $product_subtotal = $v['price'] * $v['quantity']; ?>
-	<td align="center" nowrap>
+	<td class="td-center" style="text-align:center;white-space:nowrap">
 <?php if (!$v['gift_card']) {?>
 <?php echo '<span class="currency">'.currency_symbol().'</span>'.price_format_currency($product_subtotal); ?>
 <?php } ?>
@@ -63,7 +63,7 @@
 <br />
 <hr />
 <br />
-<table width="100%">
+<table style="width:100%">
 <tr>
  <td><button<?php  if ($is_ajax) {
      echo ' type="button"';
@@ -72,12 +72,12 @@
  ) {
      echo ' onclick="self.location=\'cart/clear\'"';
  } ?>>Clear cart</button></td>
- <td align="right" class="cart-line-height">
+ <td style="text-align:right" class="cart-line-height">
  Subtotal: <?php echo '<span class="currency">'.currency_symbol().'</span>'.price_format_currency($cart['subtotal']); ?><br />
 <?php if ($cart['coupon']) {?>
-Coupon discount(<?php echo $cart['coupon']['coupon'];?>) <span class="remove_coupon">(x)</span>: <?php echo '<span class="currency">'.currency_symbol().'</span>'.price_format_currency($cart['coupon_discount']); ?></br>
+Coupon discount(<?php echo $cart['coupon']['coupon'];?>) <span class="remove_coupon">(x)</span>: <?php echo '<span class="currency">'.currency_symbol().'</span>'.price_format_currency($cart['coupon_discount']); ?><br />
 <?php $discounted_subtotal = $cart['subtotal'] - $cart['coupon_discount'];; ?>
-Discounted subtotal: <?php echo '<span class="currency">'.currency_symbol().'</span>'.price_format_currency($cart['discounted_subtotal']); ?></br><?php /* ?> <?php echo '<span class="currency">'.currency_symbol().'</span>'.price_format_currency($discounted_subtotal); ?> <?php */ ?>
+Discounted subtotal: <?php echo '<span class="currency">'.currency_symbol().'</span>'.price_format_currency($cart['discounted_subtotal']); ?><br /><?php /* ?> <?php echo '<span class="currency">'.currency_symbol().'</span>'.price_format_currency($discounted_subtotal); ?> <?php */ ?>
 <?php } ?>
 Shipping: <?php echo '<span class="currency">'.currency_symbol().'</span>'.price_format_currency($cart['shipping_cost']); ?><br />
 <?php if ($cart['tax_details']) {?>

@@ -11,7 +11,7 @@
 <div class="withleftmenu">
 
 <div class="main-container">
-<div class="content" align="left">
+<div class="content" style="text-align:left">
 	<div id="center" class="no_left_menu">
 {include="wishlist/body.php"}
  </div>

@@ -19,10 +19,10 @@ You will see the Gift Card key phrase on paid invoice
 <?php if ($v['product_options']) {?>
 <hr />
 <b>Selected options:</b><br />
-<table width="100%">
+<table style="width:100%">
 <?php foreach ($v['product_options'] as $o) {?>
 <tr>
-	<td width="100" valign="top"><?php echo $o['name'];?>:</td>
+	<td style="width:100px;vertical-align:top"><?php echo $o['name'];?>:</td>
 	<td><?php echo $o['option']['name'];?></td>
 </tr>
 <?php } ?>

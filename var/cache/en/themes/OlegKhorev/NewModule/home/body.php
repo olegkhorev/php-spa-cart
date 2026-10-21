@@ -15,14 +15,14 @@
 </div>
 </div></div>
 
-<center>
+<div style="text-align:center">
 <br /><br />
 New installed template is here
-</center>
+</div>
 <div class="clear"></div>
 <?php } ?>
 
 <?php /* ?> Start page container <?php */ ?>
 <div class="page-container page-container-2">
 <div class="content">
-	<div id="center" class="no_left_menu">
+	<div class="center-column no_left_menu">

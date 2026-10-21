@@ -132,10 +132,10 @@ table.product-options {
   padding-right: 15px;
 }
 .products-nav .second a.direction-1 {
-  background: url(/images/darrow.png) right 5px no-repeat;
+  background: url(/images/sort_arrow_down.gif) right 9px no-repeat;
 }
 .products-nav .second a.direction-2 {
-  background: url(/images/uarrow.png) right 5px no-repeat;
+  background: url(/images/sort_arrow_up.gif) right 9px no-repeat;
 }
 .out-of-stock {
   color: #f36731;
@@ -194,14 +194,14 @@ table.product-options {
   width: 1px;
   height: 10px;
   position: absolute;
-  top: 15px;
+  top: 16px;
   right: 21px;
   background: #000;
   transform: rotate(45deg);
 }
 .left_filter h4.pointer:after {
   transform: rotate(315deg);
-  top: 15px;
+  top: 16px;
   right: 14px;
 }
 .left_filter h4.pointer.opened:before {
@@ -358,7 +358,7 @@ transform: rotate(45deg);
 */
 .res-rating {
   text-align: center;
-  margin: 10px 0 0 0;
+  margin: 8px 0 -2px 0;
   z-index: 5;
   position: relative;
   transition: 0.45s;

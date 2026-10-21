@@ -16,11 +16,11 @@
 <form method="post" name="zonesform">
 <input type="hidden" name="mode" value="delete" />
 
-<table cellpadding="3" cellspacing="1" width="100%" class="lines-table resp-table">
+<table style="width:100%" class="lines-table resp-table">
 <thead>
 <tr>
-  <th width="10">&nbsp;</th>
-  <th width="100%">{lng[Zone name]}</th>
+  <th style="width:10px">&nbsp;</th>
+  <th style="width:100%">{lng[Zone name]}</th>
 </tr>
 </thead>
 <tr>

@@ -24,19 +24,23 @@ if ($users) {
 if ($total_pages > 2) {
 ?>
 <?php include SITE_ROOT."/var/cache/en/common/navigation.php";?>
+<br />
 <?php 
-	echo '<br />';
 }
 ?>
 
-<table cellpadding="2" class="users_list lines-table resp-table">
+<a href="javascript: void(0);" onclick="javascript: check_all(document.users_form, 'to_delete', true);">Check all</a> / <a href="javascript: void(0);" onclick="javascript: check_all(document.users_form, 'to_delete', false);">Uncheck all</a>
+
+<br /><br />
+
+<table class="users_list lines-table resp-table">
 <thead>
 <tr>
- <th width="10">&nbsp;</th>
- <th width="40%">User name</th>
- <th width="40%">User email</th>
- <th width="10%">User role</th>
- <th width="10%">Status</th>
+ <th style="width:10px">&nbsp;</th>
+ <th style="width:40%">User name</th>
+ <th style="width:40%">User email</th>
+ <th style="width:10%">User role</th>
+ <th style="width:10%">Status</th>
 </tr>
 </thead>
 <?php 
@@ -45,8 +49,8 @@ foreach ($users as $k=>$v) {
 <tr>
  <td><input type="checkbox" name="to_delete[<?php  echo $v['id']; ?>]" /></td>
  <td><label>User name</label><a href="<?php echo $current_location;?>/admin/user/<?php  echo $v['id']; ?>"><?php  echo $v['firstname'].' '.$v['lastname']; ?></a></td>
- <td><label>User email</label><?php  echo $v['email']; ?></a></td>
- <td align="center"><label>User role</label><?php  if ($v['usertype'] == 'A') {?>Administrator<?php } else  {?>Customer<?php } ?></a></td>
+ <td><label>User email</label><?php  echo $v['email']; ?></td>
+ <td style="text-align:center"><label>User role</label><?php  if ($v['usertype'] == 'A') {?>Administrator<?php  } else  {?>Customer<?php  } ?></td>
  <td class="no-word-break td-align-center"><label>Status</label>
 <select name="status[<?php  echo $v['id']; ?>]">
 <option value="1"<?php  if ($v['status'] == 1) echo ' selected="selected"'; ?>>Active</option>
@@ -59,9 +63,9 @@ foreach ($users as $k=>$v) {
 ?>
 </table>
 <div class="fixed_save_button">
-<button type="button" onclick="submitForm(document.users_form, 'update');">Update</button>
+<button type="button" onclick="javascript: submitForm(document.users_form, 'update');">Update</button>
 &nbsp;
-<button type="button" onclick="submitForm(document.users_form, 'delete');">Delete selected</button>
+<button type="button" onclick="javascript: if (confirm('', $(this)) || confirmed) submitForm(document.users_form, 'delete');">Delete selected</button>
 </div>
 <?php 
 } else  {
@@ -71,7 +75,7 @@ No users found
 }
 } else  {
 ?>
-<table cellpadding="2" cellspacing="1" class="users_management search_table">
+<table class="users_management search_table">
 <tr>
  <td class="name">Search for</td>
  <td><input type="text" name="substring" value="<?php  echo escape($users_search['substring']); ?>" size="80" /></td>
@@ -121,7 +125,7 @@ if ($memberships)
 ?>
 </select>
  </td>
-</td>
+</tr>
 
 <tr>
  <td class="name">Pending membership</td>
@@ -132,7 +136,7 @@ if ($memberships)
 
 <tr>
   <td></td>
-  <td><br /><button type="submit">Search</button> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <a class="ajax_link" href="<?php echo $current_location;?>/admin/users/reset">Reset filter</a></td>
+  <td><br /><button type="submit">Search</button> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <a class="ajax_link" href="<?php echo $current_location;?>/admin/users/reset">Reset</a></td>
 </tr>
 
 </table>

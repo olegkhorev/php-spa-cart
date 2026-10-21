@@ -15,20 +15,20 @@ login_popup();
 <h1>Testimonials</h1>
 <button class="button_ajax_link new-testimonial-link" href="<?php echo $current_location;?>/testimonials/new">Write testimonial</button>
 <div class="clear"></div>
-<hr size="1" />
+<hr />
 <?php if ($total_pages > 2) {?>
 <br />
 <?php include SITE_ROOT."/var/cache/en/common/navigation.php";?>
 <br />
 <?php } ?>
-<table cellspacing="0" cellpadding="0" class="testimonials-list">
+<table style="border-collapse:collapse" class="testimonials-list">
 <?php foreach ($testimonials as $t) {?>
 <tr>
- <th align="left"><?php echo $t['name'];?><?php if ($t['url']) {?> (<a rel="nofollow" href="<?php echo $t['url'];?>" target="_blank"><?php echo $t['url'];?></a>)<?php } ?></th>
- <th align="right"><?php echo date($date_format, $t['date']);; ?></th>
+ <th style="text-align:left"><?php echo $t['name'];?><?php if ($t['url']) {?> (<a rel="nofollow" href="<?php echo $t['url'];?>" target="_blank"><?php echo $t['url'];?></a>)<?php } ?></th>
+ <th style="text-align:right"><?php echo date($date_format, $t['date']);; ?></th>
 </tr>
 <tr>
- <td colspan="2" class="message" align="left"><div class="message-box"><?php echo $t['message'];?></div></td>
+ <td colspan="2" class="message" style="text-align:left"><div class="message-box"><?php echo $t['message'];?></div></td>
 </tr>
 <?php } ?>
 </table>

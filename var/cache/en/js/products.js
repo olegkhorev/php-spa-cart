@@ -336,7 +336,7 @@ function filter_clicks() {
           encodeURIComponent($(this).closest("li").data("oid"));
       });
 
-      filter_box = $(this).closest("ul").attr("groupid");
+      filter_box = $(this).closest("ul").attr("data-groupid");
       filter_box_html = $(this).closest("ul").html();
       load_filter_process(url, url_params);
     });

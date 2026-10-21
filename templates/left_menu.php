@@ -52,9 +52,9 @@
 <hr />
 <?php $categories_menu = $categories_top_menu; ?>
 {foreach $categories_menu as $k=>$v}
-<?php echo '<a class="ajax_link" href="/' .
+<?php echo '<a class="ajax_link root-link" href="/' .
     ($v["cleanurl"] ? $v["cleanurl"] : $v["categoryid"]) .
-    '" class="root-link">' .
+    '">' .
     $v["title"] .
     "</a>"; ?>
 {/foreach}

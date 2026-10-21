@@ -51,7 +51,7 @@
 {/if}
 <a class="parent-link ajax_link" href="{$current_location}/blog">{lng[Blog]}</a>
 <a class="parent-link ajax_link" href="/news">{lng[News]}</a>
-<a class="header-email ajax_link" class="parent-link" href="{if $config['Tickets']['use_tickets']}/support_desk{else}/help{/if}"><svg><use xlink:href="/images/sprite.svg#email"></use></svg>{*<img src="/images/icons/email.png" alt="{lng[Email us|escape]}" />*} {lng[Email us]}</a>
+<a class="header-email ajax_link parent-link" href="{if $config['Tickets']['use_tickets']}/support_desk{else}/help{/if}"><svg><use xlink:href="/images/sprite.svg#email"></use></svg>{*<img src="/images/icons/email.png" alt="{lng[Email us|escape]}" />*} {lng[Email us]}</a>
 <div>
 <a class="parent-link no-ajax" href="/page/about.html">{lng[Modules]}</a>
 <ul>
@@ -77,8 +77,8 @@
 
 
 <div class="header desktop_head">
-{if $bot}
-<a href="/" class="logo-link"><svg><use xlink:href="/images/logo_bot.svg"></use></svg></a>
+{if $bot || (stripos($_SERVER['HTTP_USER_AGENT'], 'Safari') !== false && !preg_match('/Chrome|Chromium|Edg|OPR|Android/i', $_SERVER['HTTP_USER_AGENT']))}
+<a href="/" class="logo-link"><img src="/images/logo_bot.svg" alt="" /></a>
 {else}
 <a href="/" class="logo-link"><svg><use xlink:href="/images/logo.svg"></use></svg></a>
 {/if}
@@ -113,7 +113,7 @@
 </ul>
 {/if}
   </li>
-  <li class="search-dd"><button><svg><use xlink:href="/images/sprite.svg#search"></use></button></svg>
+  <li class="search-dd"><button><svg><use xlink:href="/images/sprite.svg#search"></use></svg></button>
   </li>
 </ul>
 </div>
@@ -169,7 +169,7 @@
 {/if}
 
 <div id="head_mobile">
-<div id="minicart">
+<div id="minicart-mobile">
 {$minicart}
 </div>
 
@@ -187,17 +187,3 @@
 
 </div>
 
-<form method="POST" action="/search" class="searchform searchform_desktop">
-<div class="search-popup">
- <h2>{lng[Product search]}</h2>
- <div class="search">
-  <input type="text" name="substring" value="{if $substring}{php echo escape($substring, 2);}{/if}" placeholder="{lng[Enter at least 2 characters|escape]}" autocomplete="off" />
-  <button type="submit"><svg><use xlink:href="/images/sprite.svg#search"></use></svg></button>
- </div>
- <div class="instant-search">
-  <div class="instant-search-loader"></div>
-  <div class="instant-search-results"></div>
- </div>
-</div>
-<div class="search-fade"></div>
-</form>

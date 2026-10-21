@@ -10,23 +10,23 @@
 <h1>Countries</h1>
 <br />
 
-<table cellpadding="2" cellspacing="1" class="lines-table resp-table">
+<table class="lines-table resp-table">
 <thead>
 <tr>
-  <th width="50">Code</th>
+  <th style="width:50px">Code</th>
   <th>Country</th>
-  <th width="150">States</th>
+  <th style="width:150px">States</th>
 </tr>
 </thead>
 <?php  foreach ($countries as $v) {
     echo '<tr>
-  <td align="center"><label>Code</label>' .
+  <td class="td-align-center"><label>Code</label>' .
         $v["code"] .
         '</td>
   <td><label>Country</label>' .
         $v["country"] .
         '</td>
-  <td align="center"><label>States</label><a href="/admin/countries/' .
+  <td class="td-align-center"><label>States</label><a href="/admin/countries/' .
         $v["code"] .
         '">Manage</a> ' .
         ($v["states"] ? "(" . $v["states"] . ")" : "") .

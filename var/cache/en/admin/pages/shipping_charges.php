@@ -19,14 +19,16 @@
 
 <input type="hidden" name="type" value="<?php echo $type;?>" />
 
-<b>Edit rates for</b><br />
+<b>Edit rates for:</b><br /><br />
 
 <select name="shippingid" onchange="document.zoneform.submit()">
   <option value="">All methods</option>
 <?php foreach ($shipping as $s) {?>
-<option value="<?php echo $s['shippingid'];?>"<?php if ($_GET['shippingid'] != "" && $_GET['shippingid'] == $s['shippingid']) {?> selected="selected"<?php } ?>'><?php echo func_trademark($s['shipping']); ?> (<?php if ($s['destination'] == "I") {?>International<?php } else  { ?>National<?php } ?>))</option>';
+<option value="<?php echo $s['shippingid'];?>"<?php if ($_GET['shippingid'] != "" && $_GET['shippingid'] == $s['shippingid']) {?> selected="selected"<?php } ?>><?php echo func_trademark($s['shipping']); ?> (<?php if ($s['destination'] == "I") {?>International<?php } else  { ?>National<?php } ?>)</option>
 <?php } ?>
 </select>
+
+&nbsp;
 
 <select name="zoneid" onchange="document.zoneform.submit()">
   <option value="">All zones</option>
@@ -48,7 +50,7 @@
 <br /><br />
 
 <?php  if ($shipping_rates_avail > 0) { ?>
-<div align="right" class="mobile-text-left"><a href="javascript: void(0);" onclick="javascript: add_shipping_rates_values();" class="link-button">Add shipping rates values</a></div>
+<div class="td-align-right mobile-text-left"><a href="javascript: void(0);" onclick="javascript: add_shipping_rates_values();" class="link-button">Add shipping rates values</a></div>
 
 <br /><br />
 
@@ -60,7 +62,7 @@
 ]; ?>" />
 <input type="hidden" name="type" value="<?php  echo $type; ?>" />
 
-<table cellpadding="0" cellspacing="1" width="1000" class="lines-table shipping-charges-table">
+<table class="lines-table shipping-charges-table">
 
 <?php  foreach ($zones_list as $z) {
     if ($z["shipping_methods"]) {
@@ -74,7 +76,7 @@
                 echo '
 <tr>
   <th>
-<table cellpadding="2" cellspacing="0" width="100%">
+<table style="width:100%">
 <tr>
   <th><input type="checkbox" id="sm_' .
                     $z["zone"]["zoneid"] .
@@ -88,11 +90,11 @@
                     $z["zone"]["zoneid"] .
                     "_" .
                     $shipid .
-                    '\')[0].checked = true; }else  $(\'.checkboxes_' .
+                    '\').prop(\'checked\', true).attr(\'checked\', true); }else  $(\'.checkboxes_' .
                     $z["zone"]["zoneid"] .
                     "_" .
                     $shipid .
-                    '\')[0].checked = false; " /></th>
+                    '\').prop(\'checked\', false).attr(\'checked\', false); " /></th>
   <th><b><label for="sm_' .
                     $z["zone"]["zoneid"] .
                     "_" .
@@ -103,7 +105,7 @@
 <?php if ($shipping_method['destination'] == "I") {?>International<?php } else  { ?>National<?php } ?>
 <?php 
 echo ')</label></b></th>
-  <th align="right">
+  <th style="text-align:right">
   </th>
 </tr>
 </table>
@@ -114,10 +116,10 @@ echo ')</label></b></th>
   <td>
 ';
 if ($shipping_method["rates"]) {
-    echo '<table cellpadding="0" cellspacing="3" width="100%" class="resp-table resp-table-shipping-charges">';
+    echo '<table style="width:100%" class="resp-table resp-table-shipping-charges">';
     foreach ($shipping_method["rates"] as $shipping_rate) {
         echo '<tr>
-  <td rowspan="2" nowrap="nowrap"> &nbsp; <input type="checkbox" name="posted_data[' .
+  <td rowspan="2" class="td-nowrap"> &nbsp; <input type="checkbox" name="posted_data[' .
             $shipping_rate["rateid"] .
             '][to_delete]" class="checkboxes_' .
             $z["zone"]["zoneid"] .
@@ -125,7 +127,7 @@ if ($shipping_method["rates"]) {
             $shipid .
             '" /></td>
   <td>Weight range:</td>
-  <td nowrap="nowrap"><input type="text" name="posted_data[' .
+  <td class="td-nowrap"><input type="text" name="posted_data[' .
             $shipping_rate["rateid"] .
             '][minweight]" size="9" value="' .
             $shipping_rate["minweight"] .
@@ -140,7 +142,7 @@ if ($shipping_method["rates"]) {
   <td>Flat charge (' .
             $config["General"]["currency_symbol"] .
             '):</td>
-  <td nowrap="nowrap"><input type="text" name="posted_data[' .
+  <td class="td-nowrap"><input type="text" name="posted_data[' .
             $shipping_rate["rateid"] .
             '][rate]" size="5" value="' .
             $shipping_rate["rate"] .
@@ -155,7 +157,7 @@ if ($shipping_method["rates"]) {
 
 <tr>
   <td>Subtotal range:</td>
-  <td nowrap="nowrap"><input type="text" name="posted_data[' .
+  <td class="td-nowrap"><input type="text" name="posted_data[' .
             $shipping_rate["rateid"] .
             '][mintotal]" size="9" value="' .
             $shipping_rate["mintotal"] .
@@ -170,7 +172,7 @@ if ($shipping_method["rates"]) {
   <td>Per item charge (' .
             $config["General"]["currency_symbol"] .
             '):</td>
-  <td nowrap="nowrap"><input type="text" name="posted_data[' .
+  <td class="td-nowrap"><input type="text" name="posted_data[' .
             $shipping_rate["rateid"] .
             '][item_rate]" size="5" value="' .
             $shipping_rate["item_rate"] .
@@ -180,7 +182,7 @@ if ($shipping_method["rates"]) {
             " charge (" .
             $config["General"]["currency_symbol"] .
             '):</td>
-  <td nowrap="nowrap"><input type="text" name="posted_data[' .
+  <td class="td-nowrap"><input type="text" name="posted_data[' .
             $shipping_rate["rateid"] .
             '][weight_rate]" size="5" value="' .
             $shipping_rate["weight_rate"] .
@@ -189,10 +191,11 @@ if ($shipping_method["rates"]) {
 ';
     }
     echo '</table>
-  </td>
-</tr>
 ';
 }
+echo '  </td>
+</tr>
+';
 
             }
         }
@@ -201,7 +204,7 @@ if ($shipping_method["rates"]) {
 } ?>
 </table>
 <div class="fixed_save_button">
-<button type="button" onclick="javascript: submitForm(this, 'delete');">Delete selected</button>
+<button type="button" onclick="javascript: if (confirm('', $(this)) || confirmed) submitForm(this, 'delete');">Delete selected</button>
 &nbsp;&nbsp;&nbsp;&nbsp;
 <button type="submit">Update</button>
 </div>
@@ -219,15 +222,15 @@ if ($shipping_method["rates"]) {
 <input type="hidden" name="shippingid" value="<?php  echo $shippingid; ?>" />
 <input type="hidden" name="type" value="<?php  echo $type; ?>" />
 
-<table cellpadding="0" cellspacing="3">
+<table>
 
 <tr>
-  <td width="150"><b>Shipping method:</b></td>
+  <td style="width:150px"><b>Shipping method:</b></td>
   <td>
   <select name="shippingid_new">
     <option value="">Select one</option>
 <?php foreach ($shipping as $s) {?>
-<option value="<?php echo $s['shippingid'];?>"'><?php echo func_trademark($s['shipping']); ?> (<?php if ($s['destination'] == "I") {?>International<?php } else  { ?>National<?php } ?>))</option>';
+<option value="<?php echo $s['shippingid'];?>"><?php echo func_trademark($s['shipping']); ?> (<?php if ($s['destination'] == "I") {?>International<?php } else  { ?>National<?php } ?>)</option>
 <?php } ?>
   </select>
   </td>
@@ -252,11 +255,11 @@ if ($shipping_method["rates"]) {
 
 </table>
 
-<table cellpadding="0" cellspacing="3" width="1000" class="resp-table resp-table-no-margin">
+<table class="table-w-1000 resp-table resp-table-no-margin">
 
 <tr>
   <td><b>Weight range:</b></td>
-  <td nowrap="nowrap"><input type="text" name="minweight_new" size="9" value="0.00" />
+  <td class="td-nowrap"><input type="text" name="minweight_new" size="9" value="0.00" />
 -
 <input type="text" name="maxweight_new" size="9" value="<?php  echo price_format(
     $maxvalue,
@@ -265,14 +268,14 @@ if ($shipping_method["rates"]) {
   <td><b>Flat charge (<?php  echo $config["General"][
       "currency_symbol"
   ]; ?>):</b></td>
-  <td nowrap="nowrap"><input type="text" name="rate_new" size="5" value="0.00" /></td>
+  <td class="td-nowrap"><input type="text" name="rate_new" size="5" value="0.00" /></td>
   <td><b>Percent charge:</b></td>
   <td><input type="text" name="rate_p_new" size="5" value="0.00" /></td>
 </tr>
 
 <tr>
-  <td width="150"><b>Subtotal range:</b></td>
-  <td nowrap="nowrap"><input type="text" name="mintotal_new" size="9" value="0.00" />
+  <td class="td-w-150"><b>Subtotal range:</b></td>
+  <td class="td-nowrap"><input type="text" name="mintotal_new" size="9" value="0.00" />
 -
 <input type="text" name="maxtotal_new" size="9" value="<?php  echo price_format(
     $maxvalue,
@@ -281,11 +284,11 @@ if ($shipping_method["rates"]) {
   <td><b>Per item charge (<?php  echo $config["General"][
       "currency_symbol"
   ]; ?>):</b></td>
-  <td nowrap="nowrap"><input type="text" name="item_rate_new" size="5" value="0.00" /></td>
+  <td class="td-nowrap"><input type="text" name="item_rate_new" size="5" value="0.00" /></td>
   <td><b>Per <?php  echo $config["General"][
       "weight_symbol"
   ]; ?> charge (<?php  echo $config["General"]["currency_symbol"]; ?>):</b></td>
-  <td nowrap="nowrap"><input type="text" name="weight_rate_new" size="5" value="0.00" /></td>
+  <td class="td-nowrap"><input type="text" name="weight_rate_new" size="5" value="0.00" /></td>
 </tr>
 
 </table>

@@ -10,9 +10,9 @@
 <form method="POST" name="prform">
 <input type="hidden" name="section" value="inventory">
 <?php if ($warehouses) {?>
-<table width="500" class="lines-table">
+<table class="lines-table">
 <tr>
- <th width="100%">Warehouse</th>
+ <th style="width:100%">Warehouse</th>
  <th>Avail</th>
 </tr>
 <?php foreach ($warehouses as $w) {?>

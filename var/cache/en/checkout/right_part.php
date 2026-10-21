@@ -7,7 +7,7 @@
 * https://github.com/olegkhorev/php-spa-cart
 */
 ?>
-<form id="checkoutform" method="POST" stripeid="<?php echo $stripe_id;?>">
+<form id="checkoutform" method="POST" data-stripeid="<?php echo $stripe_id;?>">
 <input type="hidden" name="stripe_token" id="stripe_token" />
 <input type="hidden" name="order_total" id="order_total" value="<?php  echo price_format(
     $cart["total"],
@@ -33,7 +33,7 @@ No shipping methods to your location available
 <table>
 <?php foreach ($cart['warehouses'] as $k=>$w) {?>
 <tr<?php if (!$k) {?> class="active"<?php } ?>>
- <td width="10"><input type="radio" id="wid-<?php echo $w['wid'];?>" name="wid" value="<?php echo $w['wid'];?>"<?php if (!$k) {?> checked<?php } ?> /></td>
+ <td style="width:10px"><input type="radio" id="wid-<?php echo $w['wid'];?>" name="wid" value="<?php echo $w['wid'];?>"<?php if (!$k) {?> checked<?php } ?> /></td>
  <td><label for="wid-<?php echo $w['wid'];?>"><?php echo $w['title'];?>, <?php echo $w['address'];?></label> <a href="http://maps.google.com/?q=<?php echo escape($w['address'], 2);; ?>" target="_blank">Open in map</a></td>
 </tr>
 <?php } ?>
@@ -66,7 +66,7 @@ Free
 </tr>
 <tr>
  <td><label>Expiration</label>
-      <div class="cc-input" id="ex_date">
+      <div class="cc-input" id="ex_date"></div>
  </td>
  <td><label>CVV</label>
       <div class="cc-input" id="cv_code"></div>
@@ -84,42 +84,42 @@ Free
 </div>
 
 <br /><br />
-<div align="right">
-<table class="subtotal" cellspacing="0" cellpadding="0" width="100%">
+<div style="text-align:right">
+<table class="subtotal" style="border-collapse:collapse;width:100%">
 <tr>
- <td align="right">Subtotal:</td>
- <td width="50" align="right"><?php echo '<span class="currency">'.currency_symbol().'</span>'.price_format_currency($cart['subtotal']); ?></td>
+ <td style="text-align:right">Subtotal:</td>
+ <td style="width:50px;text-align:right"><?php echo '<span class="currency">'.currency_symbol().'</span>'.price_format_currency($cart['subtotal']); ?></td>
 </tr>
 <?php if ($cart['coupon']) {?>
 <tr>
- <td align="right">Coupon discount(<?php echo $cart['coupon']['coupon'];?>) <span class="remove_coupon">(x)</span>:</td>
- <td align="right"><?php echo '<span class="currency">'.currency_symbol().'</span>'.price_format_currency($cart['coupon_discount']); ?></td>
+ <td style="text-align:right">Coupon discount(<?php echo $cart['coupon']['coupon'];?>) <span class="remove_coupon">(x)</span>:</td>
+ <td style="text-align:right"><?php echo '<span class="currency">'.currency_symbol().'</span>'.price_format_currency($cart['coupon_discount']); ?></td>
 </tr>
 <?php /* ?><?php $discounted_subtotal = $cart['subtotal'] - $cart['coupon_discount'];; ?><?php */ ?>
 <tr>
- <td align="right">Discounted subtotal:</td>
- <td width="50" align="right"><?php echo '<span class="currency">'.currency_symbol().'</span>'.price_format_currency($cart['discounted_subtotal']); ?></td>
+ <td style="text-align:right">Discounted subtotal:</td>
+ <td style="width:50px;text-align:right"><?php echo '<span class="currency">'.currency_symbol().'</span>'.price_format_currency($cart['discounted_subtotal']); ?></td>
 </tr>
 <?php } ?>
 <tr>
- <td align="right">Shipping:</td>
- <td align="right"><?php echo '<span class="currency">'.currency_symbol().'</span>'.price_format_currency($cart['shipping_cost']); ?></td>
+ <td style="text-align:right">Shipping:</td>
+ <td style="text-align:right"><?php echo '<span class="currency">'.currency_symbol().'</span>'.price_format_currency($cart['shipping_cost']); ?></td>
 </tr>
 <?php if ($cart['tax_details']) {?>
 <tr>
- <td align="right">Tax(<?php echo $cart['tax_details']['tax_name'];?>):</td>
- <td align="right"><?php echo '<span class="currency">'.currency_symbol().'</span>'.price_format_currency($cart['tax']); ?></td>
+ <td style="text-align:right">Tax(<?php echo $cart['tax_details']['tax_name'];?>):</td>
+ <td style="text-align:right"><?php echo '<span class="currency">'.currency_symbol().'</span>'.price_format_currency($cart['tax']); ?></td>
 </tr>
 <?php } ?>
 <?php if ($cart['gift_card']) {?>
 <tr>
- <td align="right">Paid with Gift Card <span class="remove_gc">(x)</span>:</td>
- <td align="right"><?php echo '<span class="currency">'.currency_symbol().'</span>'.price_format_currency($cart['gc_discount']); ?></td>
+ <td style="text-align:right">Paid with Gift Card <span class="remove_gc">(x)</span>:</td>
+ <td style="text-align:right"><?php echo '<span class="currency">'.currency_symbol().'</span>'.price_format_currency($cart['gc_discount']); ?></td>
 </tr>
 <?php } ?>
 <tr class="totals">
- <td align="right">Total:</td>
- <td align="right"><?php echo '<span class="currency">'.currency_symbol().'</span>'.price_format_currency($cart['total']); ?></td>
+ <td style="text-align:right">Total:</td>
+ <td style="text-align:right"><?php echo '<span class="currency">'.currency_symbol().'</span>'.price_format_currency($cart['total']); ?></td>
 </tr>
 </table>
 </div>
@@ -133,9 +133,9 @@ Free
 <br />
 <div class="register_error"></div>
 <?php if ($shipping_methods || (!$cart['need_shipping'] && $get['1'] == 'user_form')) {?>
-<center>
+<div style="text-align:center">
 <button type="button" id="card-submit">Place order</button>
-</center>
+</div>
 <?php } ?>
 </form>
 

@@ -16,16 +16,16 @@
 <?php include SITE_ROOT."/var/cache/en/common/navigation.php";?>
 <?php  echo "<br />";} ?>
 
-<table cellpadding="3" cellspacing="1" width="600" class="lines-table resp-table">
+<table class="lines-table resp-table">
 <thead>
 <tr>
-	<th width="10%">Logo</th>
-	<th width="10%">Code</th>
-	<th width="10%">Author</th>
-	<th width="10%">Name</th>
-	<th width="20%">Comment</th>
-	<th width="20%">Pos</th>
-	<th width="20%">Enabled</th>
+	<th style="width:10%">Logo</th>
+	<th style="width:10%">Code</th>
+	<th style="width:10%">Author</th>
+	<th style="width:10%">Name</th>
+	<th style="width:20%">Comment</th>
+	<th style="width:20%">Pos</th>
+	<th style="width:20%">Enabled</th>
 </tr>
 </thead>
 <?php foreach ($modules as $v) {?>

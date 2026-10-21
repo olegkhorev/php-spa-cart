@@ -1,0 +1,138 @@
+
+.subheader {
+    background: rgba(34,60,189,.06);
+}
+.alert_message, .note, .popup {
+	border: 10px solid rgba(34,60,189,.6);
+}
+.close_alert, .close-popup {
+	background: #223cbd !important;
+}
+.save2wl {
+	background: #223cbd;
+}
+button, input[type=button], input[type=submit] {
+	color: #223cbd;
+}
+button:hover, input[type=button]:hover, input[type=submit]:hover {
+	background: #223cbd;
+}
+.left_filter h4.pointer:before, .left_filter h4.pointer:after {
+	background: #223cbd;
+}
+.left_filter h4.pointer {
+	border-bottom: 1px solid #223cbd;
+}
+.search {
+	border-bottom: 1px solid #223cbd;
+}
+.header .links a {
+	color: #223cbd;
+}
+.banners-homepage .slide img {
+	border-top: 24px solid #223cbd;
+	border-bottom: 24px solid #223cbd;
+}
+#menu > li:hover {
+	border-bottom: 0px solid #223cbd;
+}
+#menu > li.active {
+	border-bottom: 3px solid #223cbd;
+}
+#menu > li:after, #menu > li:before {
+	background: #223cbd;
+}
+.indicators li.active {
+	background:#223cbd
+}
+.indicators li:hover {
+	background-color:#223cbd
+}
+.arrow:hover span {
+	border-color:#223cbd
+}
+body svg {
+	fill: #223cbd;
+}
+h2 {
+	color: #223cbd;
+}
+h3 {
+	color: #223cbd;
+	border-bottom: 1px solid #223cbd;
+}
+.mobile-version {
+	color: #223cbd;
+}
+.instant-search {
+	border: 1px solid #223cbd;
+}
+.mobile-left_menu {
+	border: 1px solid #223cbd;
+}
+#left_menu hr {
+	border-top: 1px solid #223cbd;
+}
+.mobile-menu-links a {
+	color: #223cbd;
+}
+.product-details-price {
+	color: #223cbd;
+}
+#home-tabs, #product-tabs {
+    border-bottom: 3px solid #223cbd;
+}
+.price-breaks span {
+	color: #223cbd;
+}
+.product-details-price {
+	color: #223cbd;
+}
+.left_filter h4 {
+	color: #223cbd;
+}
+.res-item .discount {
+	background: #223cbd;
+}
+.res-item button, .add2cart-product {
+    background: #223cbd;
+}
+.home-tabs li.active, .product-tabs li.active {
+	color: #223cbd;
+}
+h1 {
+	color: #223cbd;
+}
+#menu li a.parent-link {
+	color: #223cbd;
+}
+#menu > li.search-dd div.search {
+	border: 1px solid #223cbd;
+}
+.mrp-rounded-box {
+	background: #223cbd;
+}
+.mrp-subtitle-2 {
+	color: #223cbd;
+}
+.mrp-row-cart > div:last-child a {
+	color: #223cbd !important;
+}
+.sh-rounded-box {
+	border: 2px solid #223cbd;
+}
+.sh-rounded-box svg {
+	fill: #223cbd;
+}
+.subheader table td h4 {
+	color: #223cbd;
+}
+.subheader table td span {
+	color: #223cbd;
+}
+.see_all a {
+	color: #223cbd;
+}
+.more-no-search {
+	color: #223cbd;
+}

@@ -1,0 +1,138 @@
+
+.subheader {
+    background: rgba(244,67,54,.06);
+}
+.alert_message, .note, .popup {
+	border: 10px solid rgba(244,67,54,.6);
+}
+.close_alert, .close-popup {
+	background: #f44336 !important;
+}
+.save2wl {
+	background: #f44336;
+}
+button, input[type=button], input[type=submit] {
+	color: #f44336;
+}
+button:hover, input[type=button]:hover, input[type=submit]:hover {
+	background: #f44336;
+}
+.left_filter h4.pointer:before, .left_filter h4.pointer:after {
+	background: #f44336;
+}
+.left_filter h4.pointer {
+	border-bottom: 1px solid #f44336;
+}
+.search {
+	border-bottom: 1px solid #f44336;
+}
+.header .links a {
+	color: #f44336;
+}
+.banners-homepage .slide img {
+	border-top: 24px solid #f44336;
+	border-bottom: 24px solid #f44336;
+}
+#menu > li:hover {
+	border-bottom: 0px solid #f44336;
+}
+#menu > li.active {
+	border-bottom: 3px solid #f44336;
+}
+#menu > li:after, #menu > li:before {
+	background: #f44336;
+}
+.indicators li.active {
+	background:#f44336
+}
+.indicators li:hover {
+	background-color:#f44336
+}
+.arrow:hover span {
+	border-color:#f44336
+}
+body svg {
+	fill: #f44336;
+}
+h2 {
+	color: #f44336;
+}
+h3 {
+	color: #f44336;
+	border-bottom: 1px solid #f44336;
+}
+.mobile-version {
+	color: #f44336;
+}
+.instant-search {
+	border: 1px solid #f44336;
+}
+.mobile-left_menu {
+	border: 1px solid #f44336;
+}
+#left_menu hr {
+	border-top: 1px solid #f44336;
+}
+.mobile-menu-links a {
+	color: #f44336;
+}
+.product-details-price {
+	color: #f44336;
+}
+#home-tabs, #product-tabs {
+    border-bottom: 3px solid #f44336;
+}
+.price-breaks span {
+	color: #f44336;
+}
+.product-details-price {
+	color: #f44336;
+}
+.left_filter h4 {
+	color: #f44336;
+}
+.res-item .discount {
+	background: #f44336;
+}
+.res-item button, .add2cart-product {
+    background: #f44336;
+}
+.home-tabs li.active, .product-tabs li.active {
+	color: #f44336;
+}
+h1 {
+	color: #f44336;
+}
+#menu li a.parent-link {
+	color: #f44336;
+}
+#menu > li.search-dd div.search {
+	border: 1px solid #f44336;
+}
+.mrp-rounded-box {
+	background: #f44336;
+}
+.mrp-subtitle-2 {
+	color: #f44336;
+}
+.mrp-row-cart > div:last-child a {
+	color: #f44336 !important;
+}
+.sh-rounded-box {
+	border: 2px solid #f44336;
+}
+.sh-rounded-box svg {
+	fill: #f44336;
+}
+.subheader table td h4 {
+	color: #f44336;
+}
+.subheader table td span {
+	color: #f44336;
+}
+.see_all a {
+	color: #f44336;
+}
+.more-no-search {
+	color: #f44336;
+}

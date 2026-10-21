@@ -12,25 +12,27 @@
 
 {lng[Hello]},
 
-<p />{$userinfo['firstname']} {$userinfo['lastname']} has been placed a new ticket.
+<p>{$userinfo['firstname']} {$userinfo['lastname']} has been placed a new ticket.</p>
 
-<p />New ticket #{$ticket['ticketid']}
+<p>New ticket #{$ticket['ticketid']}</p>
 
-<p />Priority: {php $mode='static'; $value=$ticket['priority'];}{include="common/ticket_priority.php"}
+<p>Priority: {php $mode='static'; $value=$ticket['priority'];}{include="common/ticket_priority.php"}</p>
 
-<p />{lng[Full ticket]}<br />
+<p>{lng[Full ticket]}<br />
 
 <a href="{$http_location}/admin/ticket/{$ticket['ticketid']}">{$http_location}/admin/ticket/{$ticket['ticketid']}</a>
+</p>
 
-<p />{lng[Ticket subject]}: {$ticket['subject']}
+<p>{lng[Ticket subject]}: {$ticket['subject']}</p>
 
-<hr size='1' />
+<hr style="border-bottom-width: 0;" />
 
 {lng[Ticket message]}:
 
-<p />{$ticket['message']}
+<div style="margin: 1em 0;">{$ticket['message']}
 
 <br /><br />
 
 {$signature}
+</div>
 {include="mail/footer.php"}

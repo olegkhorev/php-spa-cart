@@ -25,7 +25,7 @@
     2,
 ); ?>" />
 
-<script type="text/javascript">//<![CDATA[
+<script>//<![CDATA[
 var expands = new Array(<?php  foreach ($carriers as $v) {
     echo "'" . $v["code"] . "',";
 } ?>'');
@@ -43,7 +43,7 @@ function expand_all(flag) {
 }
 //]]></script>
 
-<table cellpadding="2" cellspacing="1" width="900" class="lines-table resp-table">
+<table class="lines-table resp-table">
 <thead>
 <tr>
   <th>Shipping method</th>
@@ -63,12 +63,12 @@ function expand_all(flag) {
             '][shipping]" size="27" value="' .
             escape($s["shipping"], 2) .
             '" /></td>
-  <td align="center"><label>Delivery time</label><input type="text" name="data[' .
+  <td class="td-align-center"><label>Delivery time</label><input type="text" name="data[' .
             $s["shippingid"] .
             '][shipping_time]" size="8" value="' .
             escape($s["shipping_time"], 2) .
             '" /></td>
-  <td align="center" class="no-word-break"><label>Destination</label><select name="data[' .
+  <td class="no-word-break td-align-center"><label>Destination</label><select name="data[' .
             $s["shippingid"] .
             '][destination]">
     <option value="I"' .
@@ -78,12 +78,12 @@ function expand_all(flag) {
             ($s["destination"] == "N" ? ' selected="selected"' : "") .
             '>National</option>
   </select></td>
-  <td align="center"><label>Pos</label><input type="text" name="data[' .
+  <td class="td-align-center"><label>Pos</label><input type="text" name="data[' .
             $s["shippingid"] .
             '][orderby]" size="4" value="' .
             $s["orderby"] .
             '" /></td>
-  <td nowrap="nowrap" align="center"><label>Active</label><input type="checkbox" name="data[' .
+  <td class="td-nowrap td-align-center"><label>Active</label><input type="checkbox" name="data[' .
             $s["shippingid"] .
             '][active]" value="Y"' .
             ($s["active"] == "Y" ? ' checked="checked"' : "") .
@@ -98,18 +98,18 @@ function expand_all(flag) {
 } ?>
 
 <tr>
-  <td colspan="7" class="var-wh-100 background-transparent"><br /><h3>Add shipping method</td>
+  <td colspan="6" class="var-wh-100 background-transparent"><br /><h3>Add shipping method</h3></td>
 </tr>
 
 <tr>
   <td class="background-transparent"><label>Shipping method</label><input type="text" name="add[shipping]" size="27" /></td>
-  <td align="center" class="background-transparent"><label>Delivery time</label><input type="text" name="add[shipping_time]" size="10" /></td>
-  <td align="center" class="background-transparent no-word-break"><label>Destination</label><select name="add[destination]">
+  <td class="background-transparent td-align-center"><label>Delivery time</label><input type="text" name="add[shipping_time]" size="10" /></td>
+  <td class="background-transparent no-word-break td-align-center"><label>Destination</label><select name="add[destination]">
     <option value="I">International</option>
     <option value="N">National</option>
   </select></td>
-  <td align="center" class="background-transparent"><label>Pos</label><input type="text" name="add[orderby]" size="4" value="0" /></td>
-  <td align="center" class="background-transparent"><label>Active</label><input type="checkbox" name="add[active]" value="Y" checked="checked" /></td>
+  <td class="background-transparent td-align-center"><label>Pos</label><input type="text" name="add[orderby]" size="4" value="0" /></td>
+  <td class="background-transparent td-align-center"><label>Active</label><input type="checkbox" name="add[active]" value="Y" checked="checked" /></td>
   <td class="background-transparent"></td>
 </tr>
 

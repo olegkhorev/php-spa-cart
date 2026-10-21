@@ -170,14 +170,14 @@ html,
   left: -300px;
   z-index: 40 !important;
 }
-#minicart {
+#minicart, #minicart-mobile {
   position: absolute;
   float: none;
   padding: 0;
   right: 5px;
   top: 40px;
 }
-#minicart * {
+#minicart *, #minicart-mobile * {
   font-size: 17px;
   text-decoration: none;
 }

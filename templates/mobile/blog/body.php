@@ -31,12 +31,12 @@
 <div class="fulldescr">{$blog['fulldescr']}</div>
 
 <?php if ($comments) { ?>
-<a name="comments"></a>
+<a id="comments"></a>
 <h3><?php echo $blog["comments"]
     ? $blog["comments"]
     : "0"; ?> {lng[Blog comments]}</h3>
 
-<div align="right">{include="common/navigation.php"}</div>
+<div style="text-align:right">{include="common/navigation.php"}</div>
 
 <div class="blog_comments">
 {foreach $comments as $k=>$v}
@@ -53,40 +53,40 @@
 {/foreach}
 </div>
 {else}
-<br /><center>{lng[No comments yet]}</center><br /><br />
+<br /><div style="text-align:center">{lng[No comments yet]}</div><br /><br />
 {/if}
 
-<a name="leave_comment"></a>
+<a id="leave_comment"></a>
 <h3>{lng[Leave a comment]}</h3>
 
 {if !$login && $config['Blog']['blog_guests'] != "Y"}
 <br />
-<center>{lng[You should be a registered user to leave a comment.]}</center>
+<div style="text-align:center">{lng[You should be a registered user to leave a comment.]}</div>
 <br /><br />
 {else}
 <form method="post" name="blogform">
 <input type="hidden" name="blogid" value="<?php echo $blog["blogid"]; ?>">
-<a onmouseover="javascript: bbhelp('b');" onmouseout="javascript: bbhelp();" href="javascript: bbcode('[b]','[/b]');"><img alt="" src="{$current_location}/images/bbcodes/b.png" tabindex="-1"></a>
-<a onmouseover="javascript: bbhelp('i');" onmouseout="javascript: bbhelp();" href="javascript: bbcode('[i]','[/i]')"><img alt="" src="{$current_location}/images/bbcodes/i.png" tabindex="-2"></a>
-<a onmouseover="javascript: bbhelp('u');" onmouseout="javascript: bbhelp();" href="javascript: bbcode('[u]','[/u]')"><img alt="" src="{$current_location}/images/bbcodes/u.png" tabindex="-3"></a>
-<a onmouseover="javascript: bbhelp('s');" onmouseout="javascript: bbhelp();" href="javascript: bbcode('[s]','[/s]')"><img alt="" src="{$current_location}/images/bbcodes/s.png" tabindex="-3"></a>
-<a onmouseover="javascript: bbhelp('url');" onmouseout="javascript: bbhelp();" href="javascript: bbcode('[url]','[/url]')"><img alt="" src="{$current_location}/images/bbcodes/url.png" tabindex="-4"></a>
-<a onmouseover="javascript: bbhelp('email');" onmouseout="javascript: bbhelp();" href="javascript: bbcode('[email]','[/email]')"><img alt="" src="{$current_location}/images/bbcodes/email.png" tabindex="-5"></a>
-<a onmouseover="javascript: bbhelp('img');" onmouseout="javascript: bbhelp();" href="javascript: bbcode('[img]','[/img]')"><img alt="" src="{$current_location}/images/bbcodes/img.png" tabindex="-6"></a>
-<a onmouseover="javascript: bbhelp('list');" onmouseout="javascript: bbhelp();" href="javascript: bbcode('[list][*]','[/*][/list]')"><img alt="" src="{$current_location}/images/bbcodes/list.png" tabindex="-7"></a>
-<a onmouseover="javascript: bbhelp('li');" onmouseout="javascript: bbhelp();" href="javascript: bbcode('[*]','[/*]')"><img alt="" src="{$current_location}/images/bbcodes/li.png" tabindex="-8"></a>
-<a onmouseover="javascript: bbhelp('quote');" onmouseout="javascript: bbhelp();" href="javascript: bbcode('[quote]','[/quote]')"><img alt="" src="{$current_location}/images/bbcodes/quote.png" tabindex="-9"></a>
-<a onmouseover="javascript: bbhelp('code');" onmouseout="javascript: bbhelp();" href="javascript: bbcode('[code]','[/code]')"><img alt="" src="{$current_location}/images/bbcodes/code.png" tabindex="-10"></a>
+<a onmouseover="javascript: bbhelp('b');" onmouseout="javascript: bbhelp();" href="javascript: bbcode('[b]','[/b]');"><img alt="" src="{$current_location}/images/bbcodes/b.png"></a>
+<a onmouseover="javascript: bbhelp('i');" onmouseout="javascript: bbhelp();" href="javascript: bbcode('[i]','[/i]')"><img alt="" src="{$current_location}/images/bbcodes/i.png"></a>
+<a onmouseover="javascript: bbhelp('u');" onmouseout="javascript: bbhelp();" href="javascript: bbcode('[u]','[/u]')"><img alt="" src="{$current_location}/images/bbcodes/u.png"></a>
+<a onmouseover="javascript: bbhelp('s');" onmouseout="javascript: bbhelp();" href="javascript: bbcode('[s]','[/s]')"><img alt="" src="{$current_location}/images/bbcodes/s.png"></a>
+<a onmouseover="javascript: bbhelp('url');" onmouseout="javascript: bbhelp();" href="javascript: bbcode('[url]','[/url]')"><img alt="" src="{$current_location}/images/bbcodes/url.png"></a>
+<a onmouseover="javascript: bbhelp('email');" onmouseout="javascript: bbhelp();" href="javascript: bbcode('[email]','[/email]')"><img alt="" src="{$current_location}/images/bbcodes/email.png"></a>
+<a onmouseover="javascript: bbhelp('img');" onmouseout="javascript: bbhelp();" href="javascript: bbcode('[img]','[/img]')"><img alt="" src="{$current_location}/images/bbcodes/img.png"></a>
+<a onmouseover="javascript: bbhelp('list');" onmouseout="javascript: bbhelp();" href="javascript: bbcode('[list][*]','[/*][/list]')"><img alt="" src="{$current_location}/images/bbcodes/list.png"></a>
+<a onmouseover="javascript: bbhelp('li');" onmouseout="javascript: bbhelp();" href="javascript: bbcode('[*]','[/*]')"><img alt="" src="{$current_location}/images/bbcodes/li.png"></a>
+<a onmouseover="javascript: bbhelp('quote');" onmouseout="javascript: bbhelp();" href="javascript: bbcode('[quote]','[/quote]')"><img alt="" src="{$current_location}/images/bbcodes/quote.png"></a>
+<a onmouseover="javascript: bbhelp('code');" onmouseout="javascript: bbhelp();" href="javascript: bbcode('[code]','[/code]')"><img alt="" src="{$current_location}/images/bbcodes/code.png"></a>
 
 &nbsp;
-<input size="40" id="helptext" type="hidden" readonly>
+<input id="helptext" type="hidden">
 <br />
 
 <textarea name="comment" cols="80" rows="15">{$new_comment['comment']}</textarea>
 <br /><br />
 
 {if !$login}
-{lng[Name]} <font color='#880000'>*</font>: <input type="text" size="30" name="new_name" value="{php echo escape($new_comment['new_name'], 2);}">
+{lng[Name]} <span style="color:#880000">*</span>: <input type="text" size="30" name="new_name" value="{php echo escape($new_comment['new_name'], 2);}">
 <br />
 {if $config['General']['recaptcha_key']}
 <br />
@@ -99,9 +99,10 @@
 <br /><br />
 </form>
 <?php } ?>
+</div>
 {elseif $blogs}
 {if $total_pages > 2}
-<div align="right">{include="common/navigation.php"}</div>
+<div style="text-align:right">{include="common/navigation.php"}</div>
 <br />
 {/if}
 <div class="blogs">
@@ -120,7 +121,7 @@
 </div>
 <div class="descr">
 {$b['descr']}
-<div align="right">
+<div style="text-align:right">
 <img src="{$current_location}/images/read_more.gif" alt="{lng[Read blog|escape]}" /> <a href="{$url}">{lng[Read blog]}</a>&nbsp;
 <img src="{$current_location}/images/leave_comment.gif" alt="{lng[Leave a comment|escape]}" /> <a href="{$url}#leave_comment">{lng[Leave a comment]}</a>
 </div>
@@ -128,10 +129,10 @@
 {/foreach}
 </div>
 {if $total_pages > 2}
-<div align="right">{include="common/navigation.php"}</div>
+<div style="text-align:right">{include="common/navigation.php"}</div>
 <br />
 {/if}
 {else}
 <br />
-<center>{lng[No topics yet]}</center>
+<div style="text-align:center">{lng[No topics yet]}</div>
 {/if}

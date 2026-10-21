@@ -25,15 +25,27 @@
      2,
  ); ?>" size="40" />
 &nbsp;
-<button>{lng[Search]}</button> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <a class="ajax_link" href="{$current_location}/admin/products/reset">{lng[Reset filter]}</a>
+<button>{lng[Search]}</button> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <a class="ajax_link" href="{$current_location}/admin/products/reset">{lng[Reset]}</a>
  </td>
 </tr>
+<?php
+$found_advanced_search = false;
+if ($search_products) {
+    foreach ($search_products as $k=>$v) {
+        if ($v && in_array($k, array('brandid', 'sku', 'productid', 'price_min', 'price_max', 'list_price_min', 'list_price_max', 'avail_min', 'avail_max', 'weight_min', 'weight_max', 'status'))) {
+            $found_advanced_search = true;
+            break;
+        }
+    }
+}
+?>
+{if !$found_advanced_search}
 <tr>
  <td colspan="2"><a href="javascript: void(0);" onclick="$(this).hide(); $('#advanced_search').show();">{lng[Advanced search]}</a></td>
 </tr>
+{/if}
 </table>
-
-<table id="advanced_search" class="search_table">
+<table id="advanced_search" class="search_table"{if $found_advanced_search} style="display: block;"{/if}>
 <tr>
  <td class="data-name top">{lng[Search in category]}:</td>
  <td><?php echo $categories_tree; ?><br />
@@ -41,7 +53,7 @@
     !$search_products ||
     $search_products["main_category"]
 ) {
-    echo 'checked="checked"';
+    echo ' checked="checked"';
 } ?> /> {lng[Main category]}</label>
 &nbsp; <label><input type="checkbox" name="additional_category" value="1"<?php if (
     $search_products["additional_category"]
@@ -59,7 +71,7 @@
 <tr>
  <td class="data-name">{lng[Search by brand]}:</td>
  <td><select name="brandid">
- <option value=""></option>
+ <option value="">&nbsp;</option>
 <?php foreach ($brands as $b) {
     echo '<option value="' .
         $b["brandid"] .
@@ -132,7 +144,7 @@
 <tr>
  <td class="data-name">{lng[Availability]}:</td>
  <td><select name="status">
- <option value=""></option>
+ <option value="">&nbsp;</option>
  <option value="1"<?php if ($search_products["status"] == 1) {
      echo ' selected="selected"';
  } ?>>{lng[Available for sale]}</option>
@@ -146,7 +158,7 @@
 </tr>
 <tr>
  <td></td>
- <td><br /><button>{lng[Search]}</button></td>
+ <td><br /><button>{lng[Search]}</button> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <a class="ajax_link" href="{$current_location}/admin/products/reset">{lng[Reset]}</a></td>
 </tr>
 </table>
 <br />
@@ -154,7 +166,7 @@
 <br />
 {lng[No products found]}
 {else}
-<h3>{lng[Product search results]}</h3>
+<h3 class="scroll_to_products">{lng[Product search results]}</h3>
 {if $total_pages > 2}
 {include="common/navigation.php"}
 {/if}
@@ -165,12 +177,12 @@
 
 <br /><br />
 
-<table width="100%" class="lines-table resp-table products-table">
+<table class="lines-table resp-table products-table">
 <thead>
 <tr>
- <th width="10"></th>
+ <th style="width:10px"></th>
  <th><a href="/admin/products?sort=sku<?php echo $direction; ?>">{lng[SKU]}</a></th>
- <th width="100%"><a href="/admin/products?sort=name&direction={if $_GET['direction']}0{else}1{/if}">{lng[Product name]}</a></th>
+ <th style="width:100%"><a href="/admin/products?sort=name&direction={if $_GET['direction']}0{else}1{/if}">{lng[Product name]}</a></th>
  <th><a href="/admin/products?sort=price<?php echo $direction; ?>">{lng[Price]}</a></th>
  <th><a href="/admin/products?sort=avail<?php echo $direction; ?>">{lng[In stock]}</a></th>
  <th>{lng[Status]}</th>
@@ -179,12 +191,12 @@
 <?php foreach ($products as $v) {
     echo '
 <tr>
- <td><input type="checkbox" pid="' .
+ <td><input type="checkbox" data-pid="' .
         $v["productid"] .
         '" name="to_delete[' .
         $v["productid"] .
         ']" value="1" /></td>
- <td nowarp><label>{lng[SKU]}</label>' .
+ <td><label>{lng[SKU]}</label>' .
         $v["sku"] .
         '</td>
  <td><label>{lng[Product name]}</label><a href="/admin/products/' .
@@ -225,9 +237,16 @@
 <button type="button" onclick="submitForm(this, 'update');">{lng[Save]}</button>
 &nbsp; <button type="button" onclick="export_selected();">{lng[Export selected]}</button>
 &nbsp;
-<button type="button" onclick="if (confirm('Are you sure?', $(this)) || confirmed) submitForm(this, 'delete_products');">{lng[Delete selected]}</button>
+<button type="button" onclick="javascript: if (confirm('', $(this)) || confirmed) submitForm(this, 'delete_products');">{lng[Delete selected]}</button>
 </div>
 
+{if $search_products}
+<script>
+$([document.documentElement, document.body]).animate({
+    scrollTop: $('.scroll_to_products').offset().top
+}, 500);
+</script>
+{/if}
 {/if}
 </form>
 
@@ -236,7 +255,7 @@ function export_selected() {
 	var selected = '';
 	$('.lines-table input').each(function() {
 		if ($(this).is(':checked'))
-			selected += $(this).attr('pid')+',';
+			selected += $(this).attr('data-pid')+',';
 	});
 
 	if (selected)

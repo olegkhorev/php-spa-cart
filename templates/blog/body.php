@@ -18,7 +18,7 @@
 {if $comments}
 <img src="{$current_location}/images/comments.gif" alt="" /> <a href="javascript: void(0);" onclick="javascript: go_to_comments();">{lng[Go to comments|escape]}</a>&nbsp;
 {/if}
-<img src="{$current_location}/images/leave_comment.gif" alt="" /> <a href="avascript: void(0);" onclick="javascript: leave_comments();">{lng[Leave a comment]}</a>
+<img src="{$current_location}/images/leave_comment.gif" alt="" /> <a href="javascript: void(0);" onclick="javascript: leave_comments();">{lng[Leave a comment]}</a>
 </div>
 <h1>{$blog['title']}</h1>
 <br />
@@ -35,7 +35,7 @@
     ? $blog["comments"]
     : "0"; ?> {lng[Blog comments]}</h3>
 
-<div align="right">{include="common/navigation.php"}</div>
+<div style="text-align:right">{include="common/navigation.php"}</div>
 
 <div class="blog_comments">
 {foreach $comments as $k=>$v}
@@ -52,15 +52,15 @@
 {/foreach}
 </div>
 {else}
-<br /><center>{lng[No comments yet]}</center><br /><br />
+<br /><div style="text-align:center">{lng[No comments yet]}</div><br /><br />
 {/if}
 
-<a name="leave_comment"></a>
+<a id="leave_comment"></a>
 <h3>{lng[Leave a comment]}</h3>
 
 {if !$login && $config['Blog']['blog_guests'] != "Y"}
 <br />
-<center>{lng[You should be a registered user to leave a comment.]}</center>
+<div style="text-align:center">{lng[You should be a registered user to leave a comment.]}</div>
 <br /><br />
 {else}
 <form method="post" name="blogform">
@@ -101,18 +101,12 @@
 {elseif $blogs}
 <h1>{lng[Blog]}</h1><br />
 {if $total_pages > 2}
-<div align="right">{include="common/navigation.php"}</div>
+<div style="text-align:right">{include="common/navigation.php"}</div>
 <br />
 {/if}
 <div class="blogs news-item news-item-page">
 {foreach $blogs as $b}
 {php $url = $current_location.'/blog/'.($b['cleanurl'] ? $b['cleanurl'].'.html' : $b['blogid']);}
-<div class="author">
-<i>{$b['firstname']} {$b['lastname']}, {php echo $b['comments'] ? $b['comments'] : '0';} {lng[Comments]}</i>
-<h2><a href="{$url}" class="ajax_link simple-button"><?php echo $b[
-    "title"
-]; ?></a></h2>
-</div>
 <div class="image">
 {if $b['imageid']}
 <a href="{$url}" class="ajax_link">
@@ -121,20 +115,24 @@
 {/if}
 </div>
 <div class="descr">
-<div class="message-box">{$b['descr']}</div>
-<div align="right">
-<a class="ajax_link link-button" href="{$url}">{lng[See full post]}</a>&nbsp;
-</div>
+ <h2>
+<span class="date"><?php echo date(
+    $date_format,
+    $b["date"],
+); ?></span> 
+ <a href="{$url}" class="ajax_link simple-button">{$b['title']}</a></h2>
+ <div class="message-box">{$b['descr']}</div>
+ <div style="text-align:right"><a class="ajax_link link-button" href="{$url}">{lng[See full post]}</a>&nbsp;</div>
 </div>
 <div class="clear"></div>
 <br />
 {/foreach}
 </div>
 {if $total_pages > 2}
-<div align="right">{include="common/navigation.php"}</div>
+<div style="text-align:right">{include="common/navigation.php"}</div>
 <br />
 {/if}
 {else}
 <br />
-<center>{lng[No topics yet]}</center>
+<div style="text-align:center">{lng[No topics yet]}</div>
 {/if}

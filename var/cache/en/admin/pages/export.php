@@ -24,18 +24,15 @@ Export product #<?php echo $_GET['product'];?>. <a href="/admin/export">Reset</a
 <br />
 <a href="javascript: void(0);" onclick="javascript: import_checkboxes('Y');">Check all</a> / <a href="javascript: void(0);" onclick="javascript: import_checkboxes();">Uncheck all</a>
 
-<table width="400" cellspacing="1" cellpadding="2" class="lines-table export">
+<table class="lines-table export">
 <?php if (!$_GET['product']) {?>
 <tr>
- <th width="15"><input type="checkbox" name="import[categories]" /></th>
- <th colspan="2">Categories</th>
-</tr>
-<tr>
- <td colspan="3" class="sep"></td>
+ <th style="width:15px"><input type="checkbox" name="import[categories]" /></th>
+ <th>Categories</th>
 </tr>
 <tr>
  <td></td>
- <td class="second" colspan="2">
+ <td class="second">
   <table>
    <tr>
     <td><input type="checkbox" name="import[cat_banners]" /></td>
@@ -46,36 +43,27 @@ Export product #<?php echo $_GET['product'];?>. <a href="/admin/export">Reset</a
 </tr>
 
 <tr>
- <th width="15"><input type="checkbox" name="import[brands]" /></th>
- <th colspan="2">Brands</th>
+ <th style="width:15px"><input type="checkbox" name="import[brands]" /></th>
+ <th>Brands</th>
 </tr>
 <?php } ?>
-<tr>
- <td colspan="3" class="sep"></td>
-</tr>
 
 <?php if ($warehouse_enabled) {?>
 <tr>
- <th width="15"><input type="checkbox" name="import[warehouses]" /></th>
- <th colspan="2">Warehouses</th>
-</tr>
-<tr>
- <td colspan="3" class="sep"></td>
+ <th style="width:15px"><input type="checkbox" name="import[warehouses]" /></th>
+ <th>Warehouses</th>
 </tr>
 <?php } ?>
 
 <tr>
- <th width="15"><input type="checkbox" name="import[products]" /></th>
- <th colspan="2" width="100%">Products</th>
-</tr>
-<tr>
- <td colspan="3" class="sep"></td>
+ <th style="width:15px"><input type="checkbox" name="import[products]" /></th>
+ <th style="width:100%">Products</th>
 </tr>
 
 <?php if ($warehouse_enabled) {?>
 <tr>
  <td></td>
- <td class="second" colspan="2">
+ <td class="second">
   <table>
    <tr>
     <td><input type="checkbox" name="import[inventory]" /></td>
@@ -87,7 +75,7 @@ Export product #<?php echo $_GET['product'];?>. <a href="/admin/export">Reset</a
 <?php } ?>
 <tr>
  <td></td>
- <td class="second" colspan="2">
+ <td class="second">
   <table>
    <tr>
     <td><input type="checkbox" name="import[images]" /></td>
@@ -98,7 +86,7 @@ Export product #<?php echo $_GET['product'];?>. <a href="/admin/export">Reset</a
 </tr>
 <tr>
  <td></td>
- <td class="second" colspan="2">
+ <td class="second">
   <table>
    <tr>
     <td><input type="checkbox" name="import[options]" /></td>
@@ -109,7 +97,7 @@ Export product #<?php echo $_GET['product'];?>. <a href="/admin/export">Reset</a
 </tr>
 <tr>
  <td></td>
- <td class="third" colspan="2">
+ <td class="third">
   <table>
    <tr>
     <td><input type="checkbox" name="import[variants]" /></td>
@@ -120,7 +108,7 @@ Export product #<?php echo $_GET['product'];?>. <a href="/admin/export">Reset</a
 </tr>
 <tr>
  <td></td>
- <td class="third" colspan="2">
+ <td class="third">
   <table>
    <tr>
     <td><input type="checkbox" name="import[variant_images]" /></td>
@@ -132,7 +120,7 @@ Export product #<?php echo $_GET['product'];?>. <a href="/admin/export">Reset</a
 <?php if ($warehouse_enabled) {?>
 <tr>
  <td></td>
- <td class="third" colspan="2">
+ <td class="third">
   <table>
    <tr>
     <td><input type="checkbox" name="import[variant_inventory]" /></td>
@@ -144,7 +132,7 @@ Export product #<?php echo $_GET['product'];?>. <a href="/admin/export">Reset</a
 <?php } ?>
 <tr>
  <td></td>
- <td class="second" colspan="2">
+ <td class="second">
   <table>
    <tr>
     <td><input type="checkbox" name="import[wholesale]" /></td>
@@ -155,7 +143,7 @@ Export product #<?php echo $_GET['product'];?>. <a href="/admin/export">Reset</a
 </tr>
 <tr>
  <td></td>
- <td class="second" colspan="2">
+ <td class="second">
   <table>
    <tr>
     <td><input type="checkbox" name="import[related]" /></td>
@@ -167,7 +155,7 @@ Export product #<?php echo $_GET['product'];?>. <a href="/admin/export">Reset</a
 <?php /* ?>
 <tr>
  <td></td>
- <td class="second" colspan="2">
+ <td class="second">
   <table>
    <tr>
     <td><input type="checkbox" name="import[reviews]" /></td>

@@ -1,0 +1,60 @@
+button, input[type=button], input[type=submit] {
+	color: #ff5722;
+}
+button:hover, input[type=button]:hover, input[type=submit]:hover {
+	background: #ff5722;
+}
+.search {
+	border-bottom: 1px solid #ff5722;
+}
+.header .links a {
+	color: #ff5722;
+}
+#menu > li:hover {
+	border-bottom: 0px solid #ff5722;
+}
+#menu > li.active {
+	border-bottom: 3px solid #ff5722;
+}
+#menu > li:after, #menu > li:before {
+	background: #ff5722;
+}
+.indicators li.active {
+	background:#ff5722
+}
+.indicators li:hover {
+	background-color:#ff5722
+}
+.arrow:hover span {
+	border-color:#ff5722
+}
+body svg {
+	fill: #ff5722;
+}
+.home-tabs li.active, .product-tabs li.active {
+    border-bottom: 3px solid #ff5722;
+}
+h3 {
+	border-bottom: 1px solid #ff5722;
+}
+.mobile-version {
+	color: #ff5722;
+}
+.instant-search {
+	border: 1px solid #ff5722;
+}
+.mobile-left_menu {
+	border: 1px solid #ff5722;
+}
+#left_menu hr {
+	border-top: 1px solid #ff5722;
+}
+.mobile-menu-links a {
+	color: #ff5722;
+}
+#home-tabs, #product-tabs {
+    border-bottom: 1px solid #ff5722;
+}
+.home-tabs li.active, .product-tabs li.active {
+	background:#ff5722
+}

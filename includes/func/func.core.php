@@ -654,7 +654,7 @@ function is_url($url)
 function func_get_ajax_css()
 {
     $array = array();
-    $array[] = 'style';
+    $array[] = 'styles';
     $array[] = 'static';
     $array[] = 'banners';
     $array[] = 'home';

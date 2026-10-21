@@ -18,12 +18,12 @@
 <?php  foreach ($variants as $v) {
     if ($v["images"]) { ?>
 <tr>
- <td valign="top" style="vertical-align: top;" class="var-images-td-1">
+ <td style="vertical-align: top;" class="var-images-td-1">
 <table>
 <?php  foreach ($v["options"] as $o) { ?>
  <tr>
-  <td nowrap><b><?php  echo $o["group_name"]; ?>:</b></td>
-  <td nowrap><?php  echo $o["name"]; ?></td>
+  <td style="white-space:nowrap"><b><?php  echo $o["group_name"]; ?>:</b></td>
+  <td style="white-space:nowrap"><?php  echo $o["name"]; ?></td>
  </tr>
 <?php  } ?>
 </table>
@@ -44,15 +44,15 @@
     "/" .
     $img["imageid"] .
     "/" .
-    $img["file"]; ?>" height="70" alt="" /></a>
+    $img["file"]; ?>" alt="" /></a>
 <input type="checkbox" name="to_delete[<?php  echo $img["imageid"]; ?>]" />
-<br />
+<br /><br />
 Alt:<br />
 <input type="text" name="posted_data[<?php  echo $img[
     "imageid"
 ]; ?>][alt]" value="<?php  echo escape($img["alt"]); ?>" /><br />
 Pos:<br />
-<input type="text" size="5" name="posted_data[<?php  echo $img[
+<input type="text" name="posted_data[<?php  echo $img[
     "imageid"
 ]; ?>][pos]" value="<?php  echo $img["pos"]; ?>" />
 </div>
@@ -66,7 +66,7 @@ Pos:<br />
 } ?>
 </tbody>
 <tr>
- <td colspan="3"><button>Update</button> <button type="button" onclick="submitForm(this, 'delete');">Delete selected</button><br /><br /></td>
+ <td colspan="3"><button>Update</button> &nbsp; &nbsp; &nbsp; <button type="button" onclick="javascript: if (confirm('', $(this)) || confirmed) submitForm(this, 'delete');">Delete selected</button><br /><br /></td>
 </tr>
 </table>
 <?php  } ?>
@@ -77,8 +77,8 @@ Pos:<br />
 <?php  foreach ($option_groups as $v) { ?>
 
 <tr>
- <td width="150" valign="top"><?php  echo $v["name"]; ?></td>
- <td valign="top">
+ <td style="width:150px"><?php  echo $v["name"]; ?></td>
+ <td>
  <select name="new_group[<?php  echo $v["groupid"]; ?>][]" multiple size="10">
 <?php  if ($v["options"]) {
     foreach ($v["options"] as $o) { ?>

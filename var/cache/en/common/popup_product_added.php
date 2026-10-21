@@ -21,7 +21,7 @@
 <b>Selected options:</b>
 <?php foreach ($product_options as $o) {?>
 <?php if ($o['value']) {?>
-<?php echo $o['group']['name'];?>: {$o['value']<br />
+<?php echo $o['group']['name'];?>: <?php echo $o['value'];?><br />
 <?php } else  { ?>
 <?php echo $o['group']['name'];?>: <?php echo $o['option']['name'];?><br />
 <?php } ?>
@@ -30,10 +30,10 @@
 <?php } ?>
 </div>
 <br /><br />
-<table width="100%" class="product-added-table">
+<table style="width: 100%;" class="product-added-table">
 <tr>
  <td><button class="close_popup">Continue shopping</button></td>
- <td align="right">
+ <td style="text-align: right;">
 
 <a href="/cart" class="main-button">View cart</a>
 <a href="/checkout" class="main-button">Checkout</a>

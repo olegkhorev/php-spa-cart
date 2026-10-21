@@ -38,8 +38,8 @@ $('.fade').click();
 
 <table class="invoice-table" style="width: 100%; margin: 10px auto 10px auto;">
 <tr>
- <td valign="top" width="50%" id="invoice-table-td-1" style="vertical-align: top;">
-<h2 style="margin: 0; padding: 10px 0; text-align: center;">{lng[Order]} #{$order['orderid']} ({$order_statuses[$order['status']]})</h1></h2>
+ <td class="invoice-table-td-1" style="vertical-align: top; width: 50%;">
+<h2 style="margin: 0; padding: 10px 0; text-align: center;">{lng[Order]} #{$order['orderid']} ({$order_statuses[$order['status']]})</h2>
 {if $order['status'] == '1' && $order['paymentid'] == '8'}
 <i>{lng[PayPal delivers the Paid status with delay]}</i>
 <br /><br />
@@ -62,7 +62,7 @@ $('.fade').click();
 <a href="{$order['tracking_url']}" target="_blank">{lng[Track order]}</a>
 {/if}
  </td>
- <td valign="top" id="invoice-table-td-2" style="vertical-align: top;">
+ <td class="invoice-table-td-2" style="vertical-align: top;">
 <h2 style="margin: 0; padding: 10px 0; text-align: center;">{lng[Company information]}</h2>
 <b>{$config['Company']['company_name']}</b><br />
 <a href="{$http_location}" target="_blank">{$http_location}</a><br /><br />
@@ -78,9 +78,9 @@ $('.fade').click();
 </table>
 <table class="invoice-table" style="width: 100%; margin: 10px auto 10px auto;">
 <tr>
- <td valign="top" width="50%" id="invoice-table-td-1" style="vertical-align: top;">
+ <td class="invoice-table-td-1" style="vertical-align: top; width: 50%;">
  <h2 style="margin: 0; padding: 10px 0; text-align: center;">{lng[Shipping address]}</h2>
-<table width="100%">
+<table style="width: 100%;">
 <tr>
  <td><b>{lng[First name]}:</b></td>
  <td>{$order['firstname']}</td>
@@ -120,9 +120,9 @@ $('.fade').click();
 </table>
 
  </td>
- <td valign="top" id="invoice-table-td-2" style="vertical-align: top;">
+ <td class="invoice-table-td-2" style="vertical-align: top;">
  <h2 style="margin: 0; padding: 10px 0; text-align: center;">{lng[Billing address]}</h2>
-<table width="100%">
+<table style="width: 100%;">
 <tr>
  <td><b>{lng[First name]}:</b></td>
  <td>{$order['b_firstname']}</td>
@@ -161,7 +161,7 @@ $('.fade').click();
 </table>
 
 <h3>{lng[Products]}</h3>
-<table width="100%">
+<table style="width: 100%;">
 {foreach $products as $v}
 {if $admin_display}
  {php $url = '/admin/products/'.$v['productid'];}
@@ -169,14 +169,14 @@ $('.fade').click();
  {php $url = $v['cleanurl'] ? $v['cleanurl'] .'.html' : 'product/'.$v['productid'];}
 {/if}
 	<tr>
-	 <td class="image hideonmobile" valign="top" style="padding-right: 10px;"><a href="{$http_location}/{$url}">
+	 <td class="image hideonmobile" style="vertical-align: top; padding-right: 10px;"><a href="{$http_location}/{$url}">
 {if $v['variant_photo']}
 {variant_image image=`$v["variant_photo"]` new_width=100 new_height=100}
 {elseif $v['photo']}
 {product_image image=`$v['photo']` new_width=100 new_height=100}
 {/if}
 	  </a></td>
-	  <td{if $pdf_invoice} width="60%"{else} width="100%"{/if} valign="top">
+	  <td style="{if $pdf_invoice}width: 60%;{else}width: 100%;{/if} vertical-align: top;">
 {if $v['gift_card']}
 <b>{lng[Gift Card]}</b>
 {if $order['gc_generated']}
@@ -196,10 +196,10 @@ $('.fade').click();
 {if $v['product_options']}
 <hr />
 <b>{lng[Selected options]}:</b><br />
-<table width="100%">
+<table style="width: 100%;">
  {foreach $v['product_options'] as $o}
 <tr>
- <td valign="top" width="150">{if $o['fullname']}{$o['fullname']}{else}{$o['name']}{/if}:</td>
+ <td style="vertical-align: top; width: 150px;">{if $o['fullname']}{$o['fullname']}{else}{$o['name']}{/if}:</td>
  <td>{$o['option']['name']}</td>
 </tr>
  {/foreach}
@@ -208,7 +208,7 @@ $('.fade').click();
 {/if}
  </td>
 {php $product_subtotal = $v['price'] * $v['quantity'];}
- <td{if $pdf_invoice} width="25%"{else} nowrap{/if} align="right" valign="top">
+ <td style="{if $pdf_invoice}width: 25%;{else}white-space: nowrap;{/if} text-align: right; vertical-align: top;">
 {if $v['gift_card']}
 {price $v['price']}
 {else}
@@ -216,7 +216,7 @@ $('.fade').click();
 {/if}
  </td>
  {if $admin_display && !$order['local_pickup'] && $warehouse_enabled}
- <td nowrap><span class="update-whs" data-itemid="{$v['itemid']}">{lng[Update warehouses]}</span></td>
+ <td style="white-space: nowrap;"><span class="update-whs" data-itemid="{$v['itemid']}">{lng[Update warehouses]}</span></td>
  {/if}
 	</tr>
  {/foreach}
@@ -229,15 +229,15 @@ $('.fade').click();
 <form method="POST">
 <input type="hidden" name="itemid" value="{$v['itemid']}" />
 <div class="wh-list">
-<table width="100%">
+<table style="width: 100%;">
 <tr>
  <th>{lng[Warehouse]}</th>
  <th>{lng[Qty]}</th>
 </tr>
 {foreach $v['warehouses'] as $w}
 <tr>
- <td width="100%">{$w['wcode']}</td>
- <td nowrap><input type="text" size="3" name="update_wh[{$v['itemid']}][{$w['wid']}]" value="{$w['spent']}" /> ({$w['avail']})</td>
+ <td style="width: 100%;">{$w['wcode']}</td>
+ <td style="white-space: nowrap;"><input type="text" size="3" name="update_wh[{$v['itemid']}][{$w['wid']}]" value="{$w['spent']}" /> ({$w['avail']})</td>
 </tr>
 {/foreach}
 </table>
@@ -250,49 +250,49 @@ $('.fade').click();
 {/if}
 {/if}
 
-<div align="right" style="text-align: right;">
-<table width="100%">
+<div style="text-align: right;">
+<table style="width: 100%;">
 <tr>
- <td width="50%"></td>
- <td align="right">
-<table class="subtotal" style="border-top: 1px solid black;" cellspacing="0" cellpadding="0">
+ <td style="width: 50%;"></td>
+ <td style="text-align: right;">
+<table class="subtotal" style="border-top: 1px solid black; border-collapse: collapse;">
 <tr>
- <td width="250" align="right">{lng[Subtotal]}:</td>
- <td width="70" align="right">{price $order['subtotal']}</td>
+ <td style="width: 250px; text-align: right;">{lng[Subtotal]}:</td>
+ <td style="width: 70px; text-align: right;">{price $order['subtotal']}</td>
 </tr>
 {if $order['coupon']}
 {if $order['coupon']}
 <tr>
- <td align="right">{lng[Coupon discount]}({$order['coupon']}):</td>
- <td align="right">{price $order['coupon_discount']}</td>
+ <td style="text-align: right;">{lng[Coupon discount]}({$order['coupon']}):</td>
+ <td style="text-align: right;">{price $order['coupon_discount']}</td>
 </tr>
 {/if}
 {php $discounted_subtotal = $order['subtotal'] - $order['coupon_discount'];}
 <tr>
- <td align="right">{lng[Discounted subtotal]}:</td>
- <td width="50" align="right">{price $discounted_subtotal}</td>
+ <td style="text-align: right;">{lng[Discounted subtotal]}:</td>
+ <td style="width: 50px; text-align: right;">{price $discounted_subtotal}</td>
 </tr>
 {/if}
 
 <tr>
- <td align="right">{lng[Shipping]}:</td>
- <td align="right">{price $order['shipping']}</td>
+ <td style="text-align: right;">{lng[Shipping]}:</td>
+ <td style="text-align: right;">{price $order['shipping']}</td>
 </tr>
 {if $order['tax_details']['tax_name']}
 <tr class="totals">
- <td align="right">{lng[Tax]}({$order['tax_details']['tax_name']}):</td>
- <td align="right">{price $order['tax']}</td>
+ <td style="text-align: right;">{lng[Tax]}({$order['tax_details']['tax_name']}):</td>
+ <td style="text-align: right;">{price $order['tax']}</td>
 </tr>
 {/if}
 {if $order['gc_discount'] > 0}
 <tr>
- <td align="right">{lng[Gift Card]}:</td>
- <td align="right">{price $order['gc_discount']}</td>
+ <td style="text-align: right;">{lng[Gift Card]}:</td>
+ <td style="text-align: right;">{price $order['gc_discount']}</td>
 </tr>
 {/if}
 <tr class="totals">
- <td align="right">{lng[Total]}:</td>
- <td align="right">{price $order['total']}</td>
+ <td style="text-align: right;">{lng[Total]}:</td>
+ <td style="text-align: right;">{price $order['total']}</td>
 </tr>
 </table>
  </td>

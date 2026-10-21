@@ -50,7 +50,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
             $_SESSION['alerts'][] = array(
                 'type'		=> 'i',
-                'content'	=> 'Your products has been deleted successfully!'
+                'content'	=> 'Your products successfully!'
             );
         } else {
             $_SESSION['alerts'][] = array(
@@ -188,14 +188,14 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
                 $_SESSION['alerts'][] = array(
                     'type'		=> 'i',
-                    'content'	=> 'Product has been successfully cloned'
+                    'content'	=> 'Product cloned'
                 );
                 redirect('admin/products/'.$new_productid);
             } elseif ($_POST['mode'] == 'delete') {
                 func_delete_product($get['2']);
                 $_SESSION['alerts'][] = array(
                     'type'		=> 'i',
-                    'content'	=> 'Your product has been deleted successfully!'
+                    'content'	=> 'Your product successfully!'
                 );
 
                 func_recalculate_subcount();
@@ -266,7 +266,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
             $_SESSION['alerts'][] = array(
                 'type'		=> 'i',
-                'content'	=> 'Product has been successfully saved'
+                'content'	=> 'Product saved'
             );
 
             redirect('admin/products/'.$productid);
@@ -636,7 +636,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             if ($v_added) {
                 $_SESSION['alerts'][] = array(
                     'type'		=> 'i',
-                    'content'	=> lng('Variants has been added.')
+                    'content'	=> lng('Variants added.')
                 );
             }
         } elseif ($mode == 'update') {

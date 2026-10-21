@@ -33,6 +33,7 @@
 {if $v['icon']}
 <a href="{$current_location}/{$url}">
 {category_icon image=`$v['icon']` new_width=234 new_height=200}
+</a>
 {/if}
 </div>
 <div class="res-name"><a href="{$current_location}/{$url}">{$v['title']}</a></div>
@@ -51,5 +52,5 @@
 </div>
 {elseif !$subcategories}
 <br />
-<center>{lng[No products in this category]}</center>
+<div style="text-align:center">{lng[No products in this category]}</div>
 {/if}

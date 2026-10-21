@@ -51,7 +51,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
         $_SESSION['alerts'][] = array(
             'type'		=> 'i',
-            'content'	=> 'Page has been successfully saved'
+            'content'	=> lng('Page saved')
         );
 
         redirect('admin/pages/'.$pageid);

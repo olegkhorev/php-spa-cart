@@ -11,18 +11,18 @@
 <?php if ($value == "1") {?>Low<?php } else if ($value == "2") {?>Medium<?php } else if ($value == "3") {?>Normal<?php } else if ($value == "4") {?>High<?php } ?>
 <?php } else if ($mode == "static") {?>
 <?php if ($value == "1") {?>
-<font color="blue">Low</font>
+<span style="color: blue;">Low</span>
 <?php } else if ($value == "2") {?>
-<font color="black">Medium</font>
+<span style="color: black;">Medium</span>
 <?php } else if ($value == "3") {?>
-<font color="red">Normal</font>
+<span style="color: red;">Normal</span>
 <?php } else if ($value == "4") {?>
-<font color="red"><b>High</b></font>
+<span style="color: red;"><b>High</b></span>
 <?php } ?>
 <?php } else  { ?>
 <select name="<?php echo $name;?>" <?php echo $extra;?>>
 <?php if ($empty == "Y") {?>
-<option value=""<?php if ($value == "") {?> selected<?php } ?>>Select priority</option>
+<option value=""<?php if ($value == "") {?> selected<?php } ?>>All</option>
 <?php } ?>
 <option value="1"<?php if ($value == "1") {?> selected<?php } ?>>Low</option>
 <option value="2"<?php if ($value == "2" || (!$value && $empty != "Y")) {?> selected<?php } ?>>Medium</option>

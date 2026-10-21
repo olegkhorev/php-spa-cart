@@ -41,7 +41,7 @@
 <div class="selected-filter" data-id="{php echo escape($c, 2);}" data-oid="{php echo escape($filter['attr'][$c], 2);}" data-what="attr">{$filter['attr'][$c]} (x)</div>
 {else}
 <h4 class="pointer{if $filter['attr'][$c]} opened{/if}">{$c}</h4>
-<ul data-what="attr" groupid="{php echo func_filter_id($c);}" class="filter-attr filter-box-{php echo func_filter_id($c);}{if $filter['attr'][$c]} opened{/if}">
+<ul data-what="attr" data-groupid="{php echo func_filter_id($c);}" class="filter-attr filter-box-{php echo func_filter_id($c);}{if $filter['attr'][$c]} opened{/if}">
 {foreach $o as $k=>$v}
  <li data-id="{php echo escape($c, 2);}" data-oid="{php echo escape($k, 2);}"><label><input type="checkbox"{foreach $filter['attr'][$c] as $selected}{if $selected == $k} checked{/if}{/foreach} />{$k} ({$v['cnt']})</label></li>
 {/foreach}

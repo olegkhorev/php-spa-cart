@@ -22,13 +22,13 @@
 
 <br /><br />
 
-<table cellpadding="3" cellspacing="1" width="600" class="lines-table resp-table">
+<table class="lines-table resp-table">
 <thead>
 <tr>
-	<th width="10">&nbsp;</th>
-	<th width="60%">{lng[Name]}</th>
-	<th width="20%">{lng[Active]}</th>
-	<th width="20%">{lng[Pos]}</th>
+	<th style="width:10px">&nbsp;</th>
+	<th style="width:60%">{lng[Name]}</th>
+	<th style="width:20%">{lng[Active]}</th>
+	<th style="width:20%">{lng[Pos]}</th>
 </tr>
 </thead>
 <?php foreach ($brands as $b) {
@@ -43,12 +43,12 @@
         '">' .
         $b["name"] .
         '</a></td>
-	<td align="center"><label>{lng[Active]}</label><input type="checkbox" name="to_update[' .
+	<td style="text-align:center"><label>{lng[Active]}</label><input type="checkbox" name="to_update[' .
         $b["brandid"] .
         '][active]" value="Y"' .
         ($b["active"] == "Y" ? ' checked="checked"' : "") .
         ' /></td>
-	<td align="center"><label>{lng[Pos]}</label><input type="text" size="5" name="to_update[' .
+	<td style="text-align:center"><label>{lng[Pos]}</label><input type="text" size="5" name="to_update[' .
         $b["brandid"] .
         '][orderby]" value="' .
         $b["orderby"] .
@@ -58,7 +58,7 @@
 </table>
 <div class="fixed_save_button">
 <button type="button" onclick="javascript: submitForm(this, 'update');">{lng[Update]}</button> &nbsp;
-<button type="button" onclick="javascript: submitForm(this, 'delete');">{lng[Delete selected]}</button>
+<button type="button" onclick="javascript: if (confirm('', $(this)) || confirmed) submitForm(this, 'delete');">{lng[Delete selected]}</button>
 </div>
 </form>
 
@@ -72,9 +72,9 @@
 <script src="{$current_location}/ckeditor/ckeditor.js"></script>
 <form method="post" name="brandform" enctype="multipart/form-data">
 
-<table cellpadding="3" cellspacing="1" width="90%" class="normal-table">
+<table style="width:90%" class="normal-table">
 <tr>
- <td valign="top" class="hide-td-for-mdl"></td>
+ <td class="hide-td-for-mdl"></td>
  <td><div class="select-title">{lng[Image]}</div>
 {if $brand['image']}
 {brand_image image=`$brand['image']` new_width=400 new_height=100 link="Y" blank="Y"}
@@ -105,7 +105,7 @@
 </tr>
 
 <tr>
- <td valign="top" class="hide-td-for-mdl"></td>
+ <td class="hide-td-for-mdl"></td>
  <td><div class="select-title">{lng[Description]}</div>
 	<script>
 		var editor;
@@ -123,32 +123,32 @@
 </tr>
 
 <tr>
- <td valign="top"><b>{lng[Meta title]}</b></td>
+ <td><b>{lng[Meta title]}</b></td>
  <td><input type="text" size="80" name="meta_title" value="<?php echo $brand[
      "meta_title"
  ]; ?>" /></td>
 </tr>
 
 <tr>
- <td valign="top"><b>{lng[Meta keywords]}</b></td>
+ <td><b>{lng[Meta keywords]}</b></td>
  <td><textarea cols="80" rows="5" name="meta_keywords"><?php echo $brand[
      "meta_keywords"
  ]; ?></textarea></td>
 </tr>
 
 <tr>
- <td valign="top"><b>{lng[Meta description]}</b></td>
+ <td><b>{lng[Meta description]}</b></td>
  <td><textarea cols="80" rows="5" name="meta_descr"><?php echo $brand[
      "meta_descr"
  ]; ?></textarea></td>
 </tr>
 
 <tr>
- <td><b>{lng[Active]}</b></td>
+ <td>{lng[Active]}</td>
  <td><input type="checkbox" name="active" value="Y"<?php echo !$brand ||
  $brand["active"] == "Y"
      ? ' checked="checked"'
-     : ""; ?> //></td>
+     : ""; ?> /></td>
 </tr>
 
 <tr>

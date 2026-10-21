@@ -50,7 +50,7 @@ function states_actions() {
             .html(
               '<input type="text" name="posted_data[state]" id="state" value="' +
                 user_state +
-                '" /></td>',
+                '" />',
             );
         else
           $("#state")
@@ -58,7 +58,7 @@ function states_actions() {
             .html(
               '<input type="text" name="posted_data[state]" id="state" value="' +
                 user_state +
-                '" /></td>',
+                '" />',
             );
 
         $("#state")

@@ -36,7 +36,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
         $_SESSION['alerts'][] = array(
             'type'		=> 'i',
-            'content'	=> 'Brand has been successfully saved'
+            'content'	=> 'Brand saved'
         );
 
         $db->array2update("brands", $to_update, "brandid='".$get['2']."'");

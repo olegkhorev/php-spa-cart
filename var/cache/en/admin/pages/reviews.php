@@ -8,17 +8,19 @@
 */
 ?>
 <style>
+@scope {
 table td {
 	vertical-align: middle;
+}
 }
 </style>
 <h1>Reviews</h1>
 <br />
 <form method="POST" href="/admin/reviews/search">
 <input type="hidden" name="mode" value="search">
-<table width="100%" align="center" cellpadding="2" cellspacing="1"class="search_table reviews_search_table">
+<table style="width:100%;margin-left:auto;margin-right:auto" class="search_table reviews_search_table">
         <tr>
-                <td align="right">Status</td>
+                <td class="td-align-right">Status</td>
                 <td><select name="status">
                         <option value="0">Pending</option>
                         <option<?php if ($search_data['status'] == "1") {?> selected<?php } ?> value="1">Approved</option>
@@ -26,28 +28,29 @@ table td {
                         <option<?php if ($search_data['status'] == "" && $search_data) {?> selected<?php } ?> value="">All</option>
                         </select>
                 </td>
+        </tr>
         <tr>
-                <td width="170" align="right">IP Address</td>
+                <td class="td-align-right" style="width:170px">IP Address</td>
                 <td><input type="text" size="32" name="remote_ip" value="<?php echo $search_data['remote_ip'];?>"></td>
         </tr>
         <tr>
-                <td align="right">Name</td>
+                <td class="td-align-right">Name</td>
                 <td><input type="text" size="32" name="name" value="<?php echo $search_data['name'];?>"></td>
         </tr>
         <tr>
-                <td align="right">Message</td>
+                <td class="td-align-right">Message</td>
                 <td><input type="text" size=80 name="message" value="<?php echo $search_data['message'];?>"></td>
         </tr>
         <tr>
-                <td align="right">Product ID</td>
+                <td class="td-align-right">Product ID</td>
                 <td><input type="text" size="32" name="productid" value="<?php echo $search_data['productid'];?>"></td>
         </tr>
         <tr>
-                <td align="right">SKU</td>
+                <td class="td-align-right">SKU</td>
                 <td><input type="text" size="32" name="sku" value="<?php echo $search_data['sku'];?>"></td>
         </tr>
         <tr>
-                <td align="right">Rating</td>
+                <td class="td-align-right">Rating</td>
                 <td>
                                 <select name="rating">
                                 <option value="">All</option>
@@ -61,14 +64,14 @@ table td {
         </tr>
         <tr>
                 <td></td>
-                <td><button>Search</button> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <a class="ajax_link" href="<?php echo $current_location;?>/admin/reviews/reset">Reset filter</a></td>
+                <td><button>Search</button> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <a class="ajax_link" href="<?php echo $current_location;?>/admin/reviews/reset">Reset</a></td>
         </tr>
 </table>
 </form>
 
 <?php if ($reviews) {?>
 <br />
-<h3>Review search results</h3>
+<h3 class="scroll_to_reviews">Review search results</h3>
 
 <?php if ($total_pages > 2) {?>
 <?php include SITE_ROOT."/var/cache/en/common/navigation.php";?>
@@ -82,29 +85,29 @@ table td {
 
 <br /><br />
 
-<table border="0" cellpadding="5" cellspacing="0" class="lines-table resp-table">
+<table class="lines-table resp-table">
 <thead>
                 <tr>
-                        <th></th>
-                        <th>Status</th>
-                        <th>Rating</th>
-                        <th>IP</th>
-                        <th>Name</th>
-                        <th>Message</th>
-                        <th nowrap>Product ID/SKU</th>
+                        <th style="width:5%"></th>
+                        <th style="width:5%">Status</th>
+                        <th style="width:5%">Rating</th>
+                        <th style="width:15%">IP</th>
+                        <th style="width:15%">Name</th>
+                        <th style="width:45%">Message</th>
+                        <th style="width:10%;white-space:nowrap">Product ID/SKU</th>
                 </tr>
 </thead>
 <?php foreach ($reviews as $r) {?>
                 <tr>
-                        <td valign="top" width="5%"><input type="checkbox" name="to_delete[<?php echo $r['id'];?>]" value="<?php echo $r['id'];?>"></td>
-                        <td valign="top" width="5%" class="no-word-break"><label>Status</label>
+                        <td><input type="checkbox" name="to_delete[<?php echo $r['id'];?>]" value="<?php echo $r['id'];?>"></td>
+                        <td class="no-word-break"><label>Status</label>
                                 <select name="to_update[<?php echo $r['id'];?>][status]">
                                 <option value="0" >Pending</option>
                                 <option value="1" <?php if ($r['status'] == "1") {?>selected<?php } ?>>Approved</option>
                                 <option value="2" <?php if ($r['status'] == "2") {?>selected<?php } ?>>Declined</option>
                                 </select>
                         </td>
-                        <td valign="top" width="5%" class="no-word-break"><label>Rating</label>
+                        <td class="no-word-break"><label>Rating</label>
                                 <select name="to_update[<?php echo $r['id'];?>][rating]">
                                 <option value="5"<?php if ($r['rating'] == "5") {?> selected<?php } ?>>5</option>
                                 <option value="4"<?php if ($r['rating'] == "4") {?> selected<?php } ?>>4</option>
@@ -113,16 +116,17 @@ table td {
                                 <option value="1"<?php if ($r['rating'] == "1") {?> selected<?php } ?>>1</option>
                                 </select>
                         </td>
-                        <td valign="top" width="15%"><label>IP</label><?php echo $r['remote_ip'];?></td>
-                        <td valign="top" width="15%"><label>Name</label><?php echo $r['name'];?></td>
-                        <td valign="top" width="45%"><label>Message</label><textarea cols="40" rows="5" name="to_update[<?php echo $r['id'];?>][message]" class="border-radius-25"><?php echo $r['message'];?></textarea></td>
-                        <td valign="top" width="10%"><label>Product ID/SKU</label><a href="/admin/products/<?php echo $r['productid'];?>" target="_blank"><?php echo $r['productid'];?>/<?php echo $r['sku'];?></a></td>
+                        <td><label>IP</label><?php echo $r['remote_ip'];?></td>
+                        <td><label>Name</label><?php echo $r['name'];?></td>
+                        <td><label>Message</label><textarea cols="40" rows="5" name="to_update[<?php echo $r['id'];?>][message]" class="border-radius-25"><?php echo $r['message'];?></textarea></td>
+                        <td><label>Product ID/SKU</label><a href="/admin/products/<?php echo $r['productid'];?>" target="_blank"><?php echo $r['productid'];?>/<?php echo $r['sku'];?></a></td>
                 </tr>
 <?php } ?>
                 <tr>
-                        <td colspan="9"><br />
+                        <td colspan="7"><br />
 <div class="fixed_save_button">
 <button type="button" onclick="javascript: submitForm(document.reviewsform, 'update');">Update</button>
+&nbsp;
 <button type="button" onclick="javascript: if (confirmed || confirm('This operation will delete selected reviews.', $(this))) submitForm(this, 'delete');">Delete selected</button>
 </div>
                         </td>
@@ -134,6 +138,15 @@ table td {
 <?php include SITE_ROOT."/var/cache/en/common/navigation.php";?>
 <br />
 <?php } ?>
+
+<?php if ($search_data) {?>
+<script>
+$([document.documentElement, document.body]).animate({
+    scrollTop: $('.scroll_to_reviews').offset().top + 21
+}, 500);
+</script>
+<?php } ?>
+
 <?php } else if ($get['2'] == 'search') {?>
 <br />
 No reviews found

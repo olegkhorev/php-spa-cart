@@ -26,12 +26,12 @@
 
 <a href="javascript: void(0);" onclick="javascript: check_all(document.newsform, 'to_delete', true);">{lng[Check all]}</a> / <a href="javascript: void(0);" onclick="javascript: check_all(document.newsform, 'to_delete', false);">{lng[Uncheck all]}</a>
 
-<table cellpadding="3" cellspacing="1" width="600" class="lines-table resp-table">
+<table class="lines-table resp-table">
 <thead>
 <tr>
-	<th width="10">&nbsp;</th>
-	<th width="70%">{lng[Subject]}</th>
-	<th width="30%">{lng[Date]}</th>
+	<th style="width:10px">&nbsp;</th>
+	<th style="width:70%">{lng[Subject]}</th>
+	<th style="width:30%">{lng[Date]}</th>
 </tr>
 </thead>
 <?php foreach ($letters as $l) {
@@ -48,7 +48,7 @@
         '">' .
         $l["subject"] .
         '</a></td>
-	<td align="center"><label>{lng[Date]}</label>' .
+	<td class="td-align-center"><label>{lng[Date]}</label>' .
         date($datetime_format, $l["date"]) .
         "</td>
 </tr>";
@@ -56,6 +56,6 @@
 
 </table>
 <div class="fixed_save_button">
-<button type="button" onclick="javascript: if (confirmed || confirm('{lng[This operation will delete selected letters.|escape]}', $(this))) submitForm(this, 'delete');">{lng[Delete selected]}</button>
+<button type="button" onclick="javascript: if (confirmed || confirm('', $(this))) submitForm(this, 'delete');">{lng[Delete selected]}</button>
 </div>
 </form>

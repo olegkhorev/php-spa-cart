@@ -6,8 +6,8 @@
 * Released under the MIT License.
 * https://github.com/olegkhorev/php-spa-cart
 */
-?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:g="http://base.google.com/ns/1.0" xmlns:og="http://ogp.me/ns#" xmlns:fb="http://ogp.me/ns/fb#" class="area-c">
+?><!DOCTYPE html>
+<html lang="en" class="area-c">
 <head>
 <meta charset="utf-8" />
 <meta name="keywords" content="<?php if (
@@ -51,7 +51,7 @@
 <link rel="shortcut icon" href="/favicon.png" type="image/vnd.microsoft.icon" />
 <title>{$page_title}</title>
 <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
-<style type="text/css" media="all">
+<style media="all">
 {include_css}
 </style>
 {if $config['theme_color']}
@@ -62,7 +62,7 @@
 }
 </style>
 {/if}
-<script type="text/javascript">
+<script>
 var current_area = 'C',
 	page = '{$get['0']}',
 	parentid = '{$parentid}',
@@ -139,7 +139,11 @@ $(function() {
   <script src='https://js.braintreegateway.com/web/3.54.2/js/three-d-secure.js'></script>
   <script src="https://js.braintreegateway.com/web/3.54.2/js/hosted-fields.min.js"></script>
 </head>
-<body class="{if $get['0'] == 'category' || $get['0'] == 'search' || ($get['0'] == 'brands' && $get['1'])} withfilter{/if}{if $classes} {$classes}{/if}{if $config['General']['shop_closed'] == 'Y'} shop-closed{/if}" id="body-{$get['0']}{if $module}-{$module['code']}{/if}">
+<?php
+$ua = $_SERVER['HTTP_USER_AGENT'] ?? '';
+$iphone_class = (stripos($ua, 'iPhone') !== false) ? " iphone" : "";
+?>
+<body class="{if $get['0'] == 'category' || $get['0'] == 'search' || ($get['0'] == 'brands' && $get['1'])} withfilter{/if}{if $classes} {$classes}{/if}{if $config['General']['shop_closed'] == 'Y'} shop-closed{/if}{$iphone_class}" id="body-{$get['0']}{if $module}-{$module['code']}{/if}">
 
 <div class="mobile-left_menu">
 {if $config['General']['shop_closed'] != 'Y'}
@@ -171,9 +175,9 @@ $(function() {
 <div class="foot-subscribe">
 <form method="POST" action="/subscribe" id="subsform">
 <div id="subscribe">
-<svg><use xlink:href="/images/sprite.svg#letter"></use></svg>
+<svg><use xlink:href="/images/sprite_2.svg#letter"></use></svg>
 <input placeholder="{lng[Subscribe to our newsletter]}" type="text" id="sub-email" name="email" />
-<button><svg><use xlink:href="/images/sprite.svg#subscribe"></use></button>
+<button><svg><use xlink:href="/images/sprite_2.svg#subscribe"></use></svg></button>
 </div>
 </form>
 </div>
@@ -185,9 +189,25 @@ $(function() {
 </div>
 {/if}
 
+<form method="POST" action="/search" class="searchform searchform_desktop">
+<div class="search-popup">
+ <span class="close close-popup">x</span>
+ <h2>{lng[Product search]}</h2>
+ <div class="search">
+  <input type="text" name="substring" value="{if $substring}{php echo escape($substring, 2);}{/if}" placeholder="{lng[Enter at least 2 characters|escape]}" autocomplete="off" />
+  <button type="submit"><svg><use xlink:href="/images/sprite.svg#search"></use></svg></button>
+ </div>
+ <div class="instant-search">
+  <div class="instant-search-loader"></div>
+  <div class="instant-search-results"></div>
+ </div>
+</div>
+<div class="search-fade"></div>
+</form>
+
 <script src="//code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
 <script src="//code.jquery.com/ui/1.14.1/jquery-ui.min.js" integrity="sha256-AlTido85uXPlSyyaZNsjJXeCs07eSv3r43kyCVc8ChI=" crossorigin="anonymous"></script>
-<link rel="stylesheet" href="//code.jquery.com/ui/1.14.1/themes/base/jquery-ui.css" type="text/css" />
+<link rel="stylesheet" href="//code.jquery.com/ui/1.14.1/themes/base/jquery-ui.css" />
 
 {include_js}
 
@@ -195,7 +215,7 @@ $(function() {
 
 {if $config['General']['tawk_to_site_id']}
 <!--Start of Tawk.to Script-->
-<script type="text/javascript">
+<script>
 var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
 (function(){
 var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];

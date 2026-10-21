@@ -13,12 +13,12 @@
 <?php if ($option_groups) { ?>
 <a href="javascript: void(0);" onclick="javascript: check_all(document.poform, 'to_delete', true);">{lng[Check all]}</a> / <a href="javascript: void(0);" onclick="javascript: check_all(document.poform, 'to_delete', false);">{lng[Uncheck all]}</a>
 <?php } ?>
-<table width="800" class="lines-table resp-table resp-table-100">
+<table class="lines-table resp-table resp-table-100">
 <?php if ($option_groups) { ?>
 <thead>
 <tr>
- <th width="10">&nbsp;</th>
- <th width="100%" colspan="2">{lng[Option group]}</th>
+ <th style="width:10px">&nbsp;</th>
+ <th style="width:100%" colspan="2">{lng[Option group]}</th>
  <th>{lng[Pos]}</th>
  <th>{lng[Variant]}</th>
  <th>{lng[Enabled]}</th>
@@ -30,7 +30,7 @@
  <td><input type="checkbox" name="to_delete[' .
         $v["groupid"] .
         ']"></td>
- <td width="100%"><label>{lng[Name]}</label><a href="' .
+ <td class="td-w-100p"><label>{lng[Name]}</label><a href="' .
         $current_location .
         "/admin/products/" .
         $v["productid"] .
@@ -41,7 +41,7 @@
         " (" .
         ($v["options"] ? count($v["options"]) : "0") .
         ')</a></td>
- <td nowrap><label>{lng[Type]}</label>'; ?>
+ <td class="td-nowrap"><label>{lng[Type]}</label>'; ?>
 {if ($v['view_type'] == 's')}
 {lng[Select box|escape]}
 {elseif ($v['view_type'] == 'p')}
@@ -59,12 +59,12 @@
     '][orderby]" value="' .
     $v["orderby"] .
     '" /></td>
- <td align="center"><label>{lng[Variant]}</label><input type="checkbox" name="posted_data[' .
+ <td class="td-align-center"><label>{lng[Variant]}</label><input type="checkbox" name="posted_data[' .
     $v["groupid"] .
     '][variant]" value="1" ' .
     ($v["variant"] ? ' checked="checked"' : "") .
     ' /></td>
- <td align="center"><label>{lng[Enabled]}</label><input type="checkbox" name="posted_data[' .
+ <td class="td-align-center"><label>{lng[Enabled]}</label><input type="checkbox" name="posted_data[' .
     $v["groupid"] .
     '][enabled]" value="1" ' .
     ($v["enabled"] ? ' checked="checked"' : "") .
@@ -75,7 +75,7 @@
 <?php } ?>
 </table>
 {if $option_groups}
-<br><button type="submit">{lng[Update]}</button> <button type="button" onclick="submitForm(this, 'delete');">{lng[Delete selected]}</button>
+<br><button type="submit">{lng[Update]}</button> &nbsp; &nbsp; &nbsp; <button type="button" onclick="javascript: if (confirm('', $(this)) || confirmed) submitForm(this, 'delete');">{lng[Delete selected]}</button>
 <br />
 {/if}
 <br /><a href="{$current_location}/admin/products/<?php echo $get[
@@ -108,13 +108,13 @@
 } ?>
 </table>
 <br />
-<button type="button" onclick="submitForm(this, 'delete_ex');">{lng[Delete selected]}</button>
+<button type="button" onclick="javascript: if (confirm('', $(this)) || confirmed) submitForm(this, 'delete_ex');">{lng[Delete selected]}</button>
 <?php } ?>
 <br /><br />
 <h3>{lng[Add exception]}</h3>
 <table>
 <?php foreach ($option_groups as $v) {
-    echo "<tr><td nowrap>" . $v["name"] . ":</td><td>";
+    echo "<tr><td style=\"white-space:nowrap\">" . $v["name"] . ":</td><td>";
     if ($v["options"]) {
         echo '<select name="new_exception[' . $v["groupid"] . ']">';
         foreach ($v["options"] as $o) {

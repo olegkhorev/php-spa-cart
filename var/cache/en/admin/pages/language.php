@@ -11,20 +11,20 @@
 <br />
 
 <?php if ($translate_mode) {?>
-<a href="/admin/language?exit_translate_mode=1" class="mdl-button">Exit "Translate" mode</a>
+<a href="/admin/language?exit_translate_mode=1" class="mdl-button">Exit the "Translate" mode</a>
 <?php } else  { ?>
-<a href="/admin/language?translate_mode=1" class="mdl-button">Enter "Translate" mode</a>
+<a href="/admin/language?translate_mode=1" class="mdl-button">Enter the "Translate" mode</a>
 <?php } ?>
 &nbsp; (Make sure you do it in Development mode - see settings.php)
 <br /><br />
 <form method="post" enctype="multipart/form-data" name="fpform" class="noajax">
-<table width="500" cellpadding="3" cellspacing="1" class="language-edit-table">
+<table style="width:500px" class="language-edit-table">
 <tr>
- <td colspan="2"><h3>Export language labels</td>
+ <td colspan="2"><h3>Export language labels</h3></td>
 </tr>
 
 <tr>
-  <td width="100%"></td>
+  <td style="width:100%"></td>
   <td>
   <button type="button" onclick="self.location='/admin/language/<?php echo $get[2];?>?mode=export';">Export</button>
   </td>
@@ -32,14 +32,14 @@
 
 </table>
 
-<table width="500" cellpadding="3" cellspacing="1" class="language-edit-table">
+<table style="width:500px" class="language-edit-table">
 
 <tr>
- <td colspan="2"><h3>Import language labels</td>
+ <td colspan="2"><h3>Import language labels</h3></td>
 </tr>
 
 <tr>
-  <td width="100%"><input type="file" name="file" /></td>
+  <td style="width:100%"><input type="file" name="file" /></td>
   <td>
   <button type="submit">Import</button>
   </td>

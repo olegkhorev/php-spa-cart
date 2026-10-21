@@ -51,7 +51,7 @@
 <?php } ?>
 <a class="parent-link ajax_link" href="<?php echo $current_location;?>/blog">Blog</a>
 <a class="parent-link ajax_link" href="/news">News</a>
-<a class="header-email ajax_link" class="parent-link" href="<?php if ($config['Tickets']['use_tickets']) {?>/support_desk<?php } else  { ?>/help<?php } ?>"><svg><use xlink:href="/images/sprite.svg#email"></use></svg><?php /* ?><img src="/images/icons/email.png" alt="Email us" /><?php */ ?> Email us</a>
+<a class="header-email ajax_link parent-link" href="<?php if ($config['Tickets']['use_tickets']) {?>/support_desk<?php } else  { ?>/help<?php } ?>"><svg><use xlink:href="/images/sprite.svg#email"></use></svg><?php /* ?><img src="/images/icons/email.png" alt="Email us" /><?php */ ?> Email us</a>
 <div>
 <a class="parent-link no-ajax" href="/page/about.html">Modules</a>
 <ul>
@@ -77,8 +77,8 @@
 
 
 <div class="header desktop_head">
-<?php if ($bot) {?>
-<a href="/" class="logo-link"><svg><use xlink:href="/images/logo_bot.svg"></use></svg></a>
+<?php if ($bot || (stripos($_SERVER['HTTP_USER_AGENT'], 'Safari') !== false && !preg_match('/Chrome|Chromium|Edg|OPR|Android/i', $_SERVER['HTTP_USER_AGENT']))) {?>
+<a href="/" class="logo-link"><img src="/images/logo_bot.svg" alt="" /></a>
 <?php } else  { ?>
 <a href="/" class="logo-link"><svg><use xlink:href="/images/logo.svg"></use></svg></a>
 <?php } ?>
@@ -113,7 +113,7 @@
 </ul>
 <?php } ?>
   </li>
-  <li class="search-dd"><button><svg><use xlink:href="/images/sprite.svg#search"></use></button></svg>
+  <li class="search-dd"><button><svg><use xlink:href="/images/sprite.svg#search"></use></svg></button>
   </li>
 </ul>
 </div>
@@ -169,7 +169,7 @@
 <?php } ?>
 
 <div id="head_mobile">
-<div id="minicart">
+<div id="minicart-mobile">
 <?php echo $minicart;?>
 </div>
 
@@ -187,17 +187,3 @@
 
 </div>
 
-<form method="POST" action="/search" class="searchform searchform_desktop">
-<div class="search-popup">
- <h2>Product search</h2>
- <div class="search">
-  <input type="text" name="substring" value="<?php if ($substring) {?><?php echo escape($substring, 2);; ?><?php } ?>" placeholder="Enter at least 2 characters" autocomplete="off" />
-  <button type="submit"><svg><use xlink:href="/images/sprite.svg#search"></use></svg></button>
- </div>
- <div class="instant-search">
-  <div class="instant-search-loader"></div>
-  <div class="instant-search-results"></div>
- </div>
-</div>
-<div class="search-fade"></div>
-</form>

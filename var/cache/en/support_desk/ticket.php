@@ -30,7 +30,7 @@
 <div class="ticket-div">
 <?php if (!$login) {?>
  <div class="group">
-  <input type="text" name="email" id="ticket_email" value="<?php echo escape($predefined['email'], 2);; ?>"></td>
+  <input type="text" name="email" id="ticket_email" value="<?php echo escape($predefined['email'], 2);; ?>">
   <span class="highlight"></span>
   <span class="bar"></span>
   <label>Email</label>
@@ -46,14 +46,14 @@
  </div>
 
  <div class="group">
-  <input type="text" name="subject" id="ticket_subject" value="<?php echo escape($predefined['subject'], 2);; ?>"></td>
+  <input type="text" name="subject" id="ticket_subject" value="<?php echo escape($predefined['subject'], 2);; ?>">
   <span class="highlight"></span>
   <span class="bar"></span>
   <label>Subject</label>
  </div>
 
  <div class="group">
-  <textarea name="message" id="ticket_message"><?php echo $predefined['message'];?></textarea></td>
+  <textarea name="message" id="ticket_message"><?php echo $predefined['message'];?></textarea>
   <span class="highlight"></span>
   <span class="bar"></span>
   <label>Message</label>
@@ -79,21 +79,21 @@
 
 <?php } else  { ?>
 
-<a name="messages"></a>
+<a id="messages"></a>
 
-<div align="right">
-<a href="/support_desk"><button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored">Support desk</button></a>
+<div style="text-align:right">
+<button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored" onclick="self.location='/support_desk'">Support desk</button>
 &nbsp;
-<a href="/ticket"><button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored">Create request</button></a>
+<button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored" onclick="self.location='/ticket'">Create request</button>
 <span id="ticket-status-links-<?php echo $ticket['ticketid'];?>">
         <?php if ($ticket['status'] != '3' && $ticket['status'] != 'C') {?>
-    	    &nbsp; <a class="close-ticket" href="javascript: void(0);" onclick="javascript: if (confirmed || confirm('Are you sure?', $(this))) close_ticket('<?php echo $ticket['ticketid'];?>', 1);"><button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored">Close</button></a>
-	        &nbsp; <a class="close-ticket" href="javascript: void(0);" onclick="javascript: if (confirmed || confirm('Are you sure?', $(this))) close_ticket('<?php echo $ticket['ticketid'];?>', 2);"><button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored">Cancel</button></a>
+    	    &nbsp; <button type="button" class="close-ticket mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored" onclick="javascript: if (confirmed || confirm('Are you sure?', $(this))) close_ticket('<?php echo $ticket['ticketid'];?>', 1);">Close</button>
+	        &nbsp; <button type="button" class="close-ticket mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored" onclick="javascript: if (confirmed || confirm('Are you sure?', $(this))) close_ticket('<?php echo $ticket['ticketid'];?>', 2);">Cancel</button>
         <?php } ?>
 </span>
 </div>
 
-<script language="JavaScript" type="text/javascript">
+<script>
 <!--
 function original_message(id) {
 	var elm = document.getElementById('original_message');
@@ -107,12 +107,12 @@ function original_message(id) {
 <br />
 
 <?php if ($messages) {?>
-<table cellspacing="0" cellpadding="0" width="100%">
+<table style="border-collapse:collapse;width:100%">
 
 <?php foreach ($messages as $i) {?>
 <tr>
- <th align="left"><a name="m<?php echo $i['messageid'];?>"></a>&nbsp;<?php echo $i['firstname'];?> <?php echo $i['lastname'];?></th>
- <th align="right"><?php echo date($datetime_format, $i['date']);; ?>&nbsp;</th>
+ <th style="text-align:left"><a id="m<?php echo $i['messageid'];?>"></a>&nbsp;<?php echo $i['firstname'];?> <?php echo $i['lastname'];?></th>
+ <th style="text-align:right"><?php echo date($datetime_format, $i['date']);; ?>&nbsp;</th>
 </tr>
 <tr>
  <td colspan="2" class="ticket-message"><?php echo func_eol2br($i['message']);; ?><br />
@@ -121,9 +121,8 @@ function original_message(id) {
 <?php foreach ($i['attachments'] as $a) {?><a href="<?php echo $current_location;?>/ticket/attachment/<?php echo $a['attachid'];?>"><?php echo $a['file_name'];?></a> &nbsp; <?php } ?>
 <br />
 <?php } ?>
-<br /></td>
+<br /><span id="message_<?php echo $i['messageid'];?>" class="display-none"><?php echo $i['message'];?></span></td>
 </tr>
-<span id="message_<?php echo $i['messageid'];?>" class="display-none"><?php echo $i['message'];?></span>
 <?php } ?>
 
 </table>
@@ -144,11 +143,11 @@ function original_message(id) {
 <br />
 <?php if ($ticket['fields']) {?>
 <br />
-<table width="100%">
+<table style="width:100%">
  <?php foreach ($ticket['fields'] as $field=>$value) {?>
   <tr>
-   <td width="200" valign="top"><u><?php echo $field;?></u>:</td>
-   <td valign="top"><?php echo $value;?></td>
+   <td style="width:200px;vertical-align:top"><u><?php echo $field;?></u>:</td>
+   <td style="vertical-align:top"><?php echo $value;?></td>
   </tr>
  <?php } ?>
 
@@ -171,20 +170,20 @@ Message:<br />
 <?php if ($ticket['status'] != '3' && $ticket['status'] != 'C') {?>
 <br />
 <h3>Post new message</h3>
-<a name="create_new"></a>
+<a id="create_new"></a>
 <form method="POST" name="mesform" id="ticketmesform" action="/ticket/<?php echo $ticket['ticketid'];?>" enctype="multipart/form-data" class="ajax-form">
 <input type="hidden" name="mode" value="create_new">
 
-<table cellspacing="0" cellpadding="0" width="100%">
+<table style="border-collapse:collapse;width:100%">
 <tr>
- <td width="400" valign="top"><textarea cols="52" rows="7" name="message" id="post_new_message"></textarea></td>
- <td valign="top"><b>Upload file</b><br />
+ <td style="width:400px;vertical-align:top"><textarea cols="52" rows="7" name="message" id="post_new_message"></textarea></td>
+ <td style="vertical-align:top"><b>Upload file</b><br />
 <input size="40" type="file" name="attachments[]">
  </td>
 </tr>
 <tr>
  <td><div id="error_mes"><b>Please, enter ticket message</b></div></td>
- <td align="right"><button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored">Send message</button>&nbsp;</td>
+ <td style="text-align:right"><button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored">Send message</button>&nbsp;</td>
 </tr>
 </table>
 </form>

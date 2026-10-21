@@ -25,12 +25,12 @@
 <td><div><a class="ajax_link" title="Move product to cart to add it" href="{$current_location}/{if $v['cleanurl']}{$v['cleanurl']}.html{else}product/{$v['productid']}{/if}">
 {if $v['photo']}
 <?php
-$image = $v['photo'];
-$image['new_width'] = 234;
-$image['class'] = 'product-image';
-$image['id'] = 'pid-'.$v['productid'];
-$image['new_height'] = 400;
-include SITE_ROOT . '/includes/image.php';
+$image = $v["photo"];
+$image["new_width"] = 234;
+$image["class"] = "product-image";
+$image["id"] = "pid-" . $v["productid"];
+$image["new_height"] = 400;
+include SITE_ROOT . "/includes/image.php";
 ?>
 {/if}
 </a>
@@ -38,11 +38,11 @@ include SITE_ROOT . '/includes/image.php';
 </div></td>
 {/foreach}
 {if $k == 0}
- <td colspan="3" width="100%"></td>
+ <td colspan="3" style="width: 100%;"></td>
 {elseif $k == 1}
- <td colspan="2" width="100%"></td>
+ <td colspan="2" style="width: 100%;"></td>
 {elseif $k == 2 && $per_row > 3}
- <td width="100%"></td>
+ <td style="width: 100%;"></td>
 {/if}
 </tr>
 <tr>
@@ -50,23 +50,23 @@ include SITE_ROOT . '/includes/image.php';
  <td><a class="ajax_link" href="{$current_location}/{if $v['cleanurl']}{$v['cleanurl']}.html{else}product/{$v['productid']}{/if}">{$v['name']}</a></td>
 {/foreach}
 {if $k == 0}
- <td colspan="3" width="100%"></td>
+ <td colspan="3" style="width: 100%;"></td>
 {elseif $k == 1}
- <td colspan="2" width="100%"></td>
+ <td colspan="2" style="width: 100%;"></td>
 {elseif $k == 2 && $per_row > 3}
- <td width="100%"></td>
+ <td style="width: 100%;"></td>
 {/if}
 </tr>
 <tr class="price-row">
 {foreach $row as $k=>$v}
- <td>{price $v['price']}{if $v['list_price']} <span>(<s>{price $v['list_price']}</s>){/if}</span></td>
+ <td>{price $v['price']}{if $v['list_price']} <span>(<s>{price $v['list_price']}</s>)</span>{/if}</td>
 {/foreach}
 {if $k == 0}
- <td colspan="3" width="100%"></td>
+ <td colspan="3" style="width: 100%;"></td>
 {elseif $k == 1}
- <td colspan="2" width="100%"></td>
+ <td colspan="2" style="width: 100%;"></td>
 {elseif $k == 2 && $per_row > 3}
- <td width="100%"></td>
+ <td style="width: 100%;"></td>
 {/if}
 </tr>
 
@@ -85,11 +85,11 @@ Out of stock
 </td>
 {/foreach}
 {if $k == 0}
- <td colspan="3" width="100%"></td>
+ <td colspan="3" style="width: 100%;"></td>
 {elseif $k == 1}
- <td colspan="2" width="100%"></td>
+ <td colspan="2" style="width: 100%;"></td>
 {elseif $k == 2 && $per_row > 3}
- <td width="100%"></td>
+ <td style="width: 100%;"></td>
 {/if}
 </tr>
 <tr>

@@ -34,7 +34,7 @@ Payment method: {$order['payment_method']}{if $order['payment_details']} ({$orde
 </h1>
 <table class="invoice-table" style="width: 100%; margin: 10px auto 10px auto;">
 <tr>
- <td valign="top" width="50%">
+ <td style="vertical-align:top;width:50%">
 <h2 style="margin: 0; padding: 10px 0; text-align: center;">{lng[Company information]}</h2>
 <b>{$config['Company']['company_name']}</b><br />
 <a href="{$http_location}" target="_blank">{$http_location}</a><br /><br />
@@ -46,8 +46,8 @@ Payment method: {$order['payment_method']}{if $order['payment_details']} ({$orde
 {if $config['Company']['company_fax']}Fax: {$config['Company']['company_fax']}<br />{/if}
 {if $config['Company']['orders_department']}Email: {$config['Company']['orders_department']}{/if}
  </td>
- <td valign="top"><h2 style="margin: 0; padding: 10px 0; text-align: center;">{lng[Customer information]}</h2>
-<table width="100%">
+ <td style="vertical-align:top"><h2 style="margin: 0; padding: 10px 0; text-align: center;">{lng[Customer information]}</h2>
+<table style="width:100%">
 <tr>
  <td><b>{lng[First name]}:</b></td>
  <td>{$order['firstname']}</td>
@@ -90,18 +90,18 @@ Payment method: {$order['payment_method']}{if $order['payment_details']} ({$orde
 </table>
 
 <h3>{lng[Products]}</h3>
-<table width="100%">
+<table style="width:100%">
 {foreach $products as $v}
  {php $url = $v['cleanurl'] ? $v['cleanurl'] .'.html' : 'product/'.$v['productid'];}
 	<tr>
-	 <td class="image" valign="top" style="padding-right: 10px;"><a href="{$http_location}/{$url}">
+	 <td class="image" style="vertical-align:top;padding-right: 10px;"><a href="{$http_location}/{$url}">
 {if $v['variant_photo']}
 {variant_image image=`$v['variant_photo']` new_width=100 new_height=100}
 {elseif $v['photo']}
 {product_image image=`$v['photo']` new_width=100 new_height=100 link='Y'}
 {/if}
 	  </a></td>
-	  <td width="100%" valign="top">
+	  <td style="width:100%;vertical-align:top">
 {if $v['gift_card']}
 <b>{lng[Gift Card]}</b>
 {if $order['gc_generated']}
@@ -119,10 +119,10 @@ Payment method: {$order['payment_method']}{if $order['payment_details']} ({$orde
 {if $v['product_options']}
 <hr />
 <b>{lng[Selected options]}:</b><br />
-<table width="100%">
+<table style="width:100%">
  {foreach $v['product_options'] as $o}
 <tr>
- <td valign="top" width="100">{$o['name']}:</td>
+ <td style="vertical-align:top;width:100px">{$o['name']}:</td>
  <td>{$o['option']['name']}</td>
 </tr>
  {/foreach}
@@ -131,7 +131,7 @@ Payment method: {$order['payment_method']}{if $order['payment_details']} ({$orde
 {/if}
  </td>
 {php $product_subtotal = $v['price'] * $v['quantity'];}
- <td align="right" valign="top" nowrap>
+ <td style="text-align:right;vertical-align:top;white-space:nowrap">
 {if $v['gift_card']}
 {price $v['price']}
 {else}
@@ -142,46 +142,46 @@ Payment method: {$order['payment_method']}{if $order['payment_details']} ({$orde
  {/foreach}
 </table>
 
-<div align="right">
-<table class="subtotal" cellspacing="0" cellpadding="0">
+<div style="text-align:right">
+<table class="subtotal" style="border-collapse:collapse;margin-left:auto">
 <tr>
- <td width="250" align="right">{lng[Subtotal]}:</td>
- <td width="70" align="right">{price $order['subtotal']}</td>
+ <td style="width:250px;text-align:right">{lng[Subtotal]}:</td>
+ <td style="width:70px;text-align:right">{price $order['subtotal']}</td>
 </tr>
 {if $order['coupon']}
 {if $order['coupon']}
 <tr>
- <td align="right">{lng[Coupon discount]}({$order['coupon']}):</td>
- <td align="right">{price $order['coupon_discount']}</td>
+ <td style="text-align:right">{lng[Coupon discount]}({$order['coupon']}):</td>
+ <td style="text-align:right">{price $order['coupon_discount']}</td>
 </tr>
 {/if}
 {php $discounted_subtotal = $order['subtotal'] - $order['coupon_discount'];}
 <tr>
- <td align="right">{lng[Discounted subtotal]}:</td>
- <td width="50" align="right">{price $discounted_subtotal}</td>
+ <td style="text-align:right">{lng[Discounted subtotal]}:</td>
+ <td style="width:50px;text-align:right">{price $discounted_subtotal}</td>
 </tr>
 {/if}
 
 <tr>
- <td align="right">{lng[Shipping]}:</td>
- <td align="right">{price $order['shipping']}</td>
+ <td style="text-align:right">{lng[Shipping]}:</td>
+ <td style="text-align:right">{price $order['shipping']}</td>
 </tr>
 {if $order['tax_details']['tax_name']}
 <tr class="totals">
- <td align="right">{lng[Tax]}({$order['tax_details']['tax_name']}):</td>
- <td align="right">{price $order['tax']}</td>
+ <td style="text-align:right">{lng[Tax]}({$order['tax_details']['tax_name']}):</td>
+ <td style="text-align:right">{price $order['tax']}</td>
 </tr>
 {/if}
 {if $order['gc_discount'] > 0}
 <tr>
- <td align="right">{lng[Gift Card]}:</td>
- <td align="right">{price $order['gc_discount']}</td>
+ <td style="text-align:right">{lng[Gift Card]}:</td>
+ <td style="text-align:right">{price $order['gc_discount']}</td>
 </tr>
 {/if}
 
 <tr class="totals">
- <td align="right">{lng[Total]}:</td>
- <td align="right">{price $order['total']}</td>
+ <td style="text-align:right">{lng[Total]}:</td>
+ <td style="text-align:right">{price $order['total']}</td>
 </tr>
 </table>
 </div>

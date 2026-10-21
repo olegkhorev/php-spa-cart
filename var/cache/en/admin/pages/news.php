@@ -22,12 +22,12 @@
 
 <br /><br />
 
-<table cellpadding="3" cellspacing="1" width="600" class="lines-table resp-table">
+<table class="lines-table resp-table">
 <thead>
 <tr>
-	<th width="10">&nbsp;</th>
-	<th width="90%">Title</th>
-	<th width="5%">Active</th>
+	<th style="width:10px">&nbsp;</th>
+	<th style="width:90%">Title</th>
+	<th style="width:5%">Active</th>
 </tr>
 </thead>
 <?php  foreach ($newss as $b) {
@@ -52,7 +52,7 @@
 </table>
 <div class="fixed_save_button">
 <button type="button" onclick="javascript: submitForm(this, 'update');">Update</button> &nbsp;
-<button type="button" onclick="javascript: if (confirmed || confirm('This operation will delete selected news.', $(this))) submitForm(this, 'delete');">Delete selected</button>
+<button type="button" onclick="javascript: if (confirmed || confirm('', $(this))) submitForm(this, 'delete');">Delete selected</button>
 </div>
 </form>
 <?php  } else  { ?>
@@ -65,16 +65,16 @@
 <h3><?php echo $news['title'];?></h3>
 <?php } ?>
 
-<table cellpadding="3" cellspacing="1" width="90%" class="normal-table">
+<table style="width:90%" class="normal-table">
 <?php if ($news['date']) {?>
 <tr>
- <td valign="top" class="hide-td-for-mdl"></td>
+ <td class="hide-td-for-mdl"></td>
  <td><div class="select-title">Added</div>
 	<?php  echo date("m/d/Y", $news["date"]); ?></td>
 </tr>
 <?php } ?>
 <tr>
- <td valign="top" class="hide-td-for-mdl"></td>
+ <td class="hide-td-for-mdl"></td>
  <td><div class="select-title">Image</div>
 <?php if ($news['image']) {?>
 <?php $image = $news['image']; $image['new_width'] = 400; $image['new_height'] = 100; $image['link'] = "Y"; $image['blank'] = "Y"; include SITE_ROOT . "/includes/news_image.php"; ?>
@@ -105,7 +105,7 @@
 </tr>
 
 <tr>
- <td valign="top" class="hide-td-for-mdl"></td>
+ <td class="hide-td-for-mdl"></td>
  <td>
  <div class="select-title">Short description</div>
 		<textarea class="ckeditor" id="ck_editor" cols="65" rows="7" name="descr"><?php  echo $news[
@@ -115,7 +115,7 @@
 </tr>
 
 <tr>
- <td valign="top" class="hide-td-for-mdl"></td>
+ <td class="hide-td-for-mdl"></td>
  <td>
  <div class="select-title">Detailed description</div>
 	<script>
@@ -134,7 +134,7 @@
 </tr>
 
 <tr>
- <td valign="top"><b>Meta title</b></td>
+ <td><b>Meta title</b></td>
  <td><br /><input type="text" size="80" name="meta_title" value="<?php  echo escape(
      $news["meta_title"],
      2,
@@ -142,21 +142,21 @@
 </tr>
 
 <tr>
- <td valign="top"><b>Meta keywords</b></td>
+ <td><b>Meta keywords</b></td>
  <td><textarea cols="80" rows="5" name="meta_keywords"><?php  echo $news[
      "meta_keywords"
  ]; ?></textarea></td>
 </tr>
 
 <tr>
- <td valign="top"><b>Meta description</b></td>
+ <td><b>Meta description</b></td>
  <td><textarea cols="80" rows="5" name="meta_descr"><?php  echo $news[
      "meta_descr"
  ]; ?></textarea></td>
 </tr>
 
 <tr>
- <td><b>Active</b></td>
+ <td>Active</td>
  <td><input type="checkbox" name="active" value="Y"<?php  echo !$news ||
  $news["active"] == "Y"
      ? ' checked="checked"'

@@ -21,7 +21,7 @@
 <div class="filter_switcher"><svg><use xlink:href="/images/sprite.svg?1#filter_opener"></use></svg></div>
 <div id="bread_crumbs_container"><?php echo $bread_crumbs_html;?></div>
 
-<div class="content" align="left">
+<div class="content" style="text-align:left">
 <?php if (false && !$no_left_menu) {?>
 <?php echo $left_menu;;?>
 <?php } ?>
@@ -40,7 +40,7 @@
 <div class="clear"></div>
 </div>
 <br /><br />
-<div id="home-tabs">
+<div class="home-tabs-wrap">
 <ul class="home-tabs">
  <li class="tab-1 active" data-tab="1">Recently viewed</li>
 </ul>
@@ -49,9 +49,9 @@
 <?php /* ?> Start page container <?php */ ?>
 <div class="page-container page-container-2">
 <div class="content">
-	<div id="center" class="no_left_menu">
+	<div class="center-column no_left_menu">
 
- <?php $tag_id = "featured_products"; $products = $recently; $per_row = 4;; ?>
+ <?php $tag_id = "recently_products"; $products = $recently; $per_row = 4;; ?>
 <div id="tab-7">
 <div class="carousel-pr" id="carousel-5">
   <div class="controls">
@@ -74,8 +74,17 @@
 </div>
 
 </div>
-<?php } ?>
 
+	</div>
+</div>
+
+<div class="clear"></div>
+</div>
+<?php } else  { ?>
+<?php if ($get['0'] != 'product' && $get['0'] != 'home') {?>
+<?php if ($get['0'] == 'blog' && $get['1']) {?>
+</div>
+<?php } ?>
 	</div>
 </div>
 
@@ -83,7 +92,14 @@
 </div>
 </div>
 </div>
+<?php } else  { ?>
+	</div>
 </div>
+
+<div class="clear"></div>
+</div>
+<?php } ?>
+<?php } ?>
 <?php if ($alerts) {?>
  <div class="alerts"><span onclick="javascript: $('.alerts').slideUp(); unfade();" class="close_alert"><b></b></span>
  <?php $already = array();; ?>

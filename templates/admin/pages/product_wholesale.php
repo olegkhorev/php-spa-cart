@@ -13,10 +13,10 @@
 <?php if ($wholesale) { ?>
 <a href="javascript: void(0);" onclick="javascript: check_all(document.wform, 'to_delete', true);">{lng[Check all]}</a> / <a href="javascript: void(0);" onclick="javascript: check_all(document.wform, 'to_delete', false);">{lng[Uncheck all]}</a>
 <?php } ?>
-<table cellspacing="1" width="600" class="lines-table resp-table wholesale-table" style="margin-bottom: 0;">
+<table class="lines-table resp-table wholesale-table" style="margin-bottom: 0;">
 <thead>
 <tr>
- <th width="10"></th>
+ <th style="width:10px"></th>
  <th>{lng[Quantity]}</th>
  <th>{lng[Price]}</th>
  <th>{lng[Membership]}</th>
@@ -77,11 +77,10 @@
     };
 } ?>
  </select></td>
- </td>
 </tr>
 </table>
 <br />
-<button type="submit">{lng[Update]}</button><?php if (
+<button type="submit">{lng[Update]}</button> &nbsp; &nbsp; &nbsp; <?php if (
     $wholesale
-) { ?> <button type="button" onclick="submitForm(this, 'delete');">{lng[Delete selected]}</button><?php } ?>
+) { ?> <button type="button" onclick="javascript: if (confirm('', $(this)) || confirmed) submitForm(this, 'delete');">{lng[Delete selected]}</button><?php } ?>
 </form>

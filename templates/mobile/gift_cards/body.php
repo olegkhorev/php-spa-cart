@@ -23,3 +23,4 @@
 {/foreach}
 </div>
 {/if}
+</div>

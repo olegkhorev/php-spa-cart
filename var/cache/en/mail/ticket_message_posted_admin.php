@@ -12,25 +12,27 @@
 
 Hello,
 
-<p /><?php echo $userinfo['firstname'];?> <?php echo $userinfo['lastname'];?> has been placed a new message.
+<p><?php echo $userinfo['firstname'];?> <?php echo $userinfo['lastname'];?> has been placed a new message.</p>
 
-<p />Ticket #<?php echo $ticket['ticketid'];?>
+<p>Ticket #<?php echo $ticket['ticketid'];?></p>
 
-<p />Priority: <?php $mode='static'; $value=$ticket['priority'];; ?><?php include SITE_ROOT."/var/cache/en/common/ticket_priority.php";?>
+<p>Priority: <?php $mode='static'; $value=$ticket['priority'];; ?><?php include SITE_ROOT."/var/cache/en/common/ticket_priority.php";?></p>
 
-<p />Full ticket<br />
+<p>Full ticket<br />
 
 <a href="<?php echo $http_location;?>/admin/ticket/<?php echo $ticket['ticketid'];?>"><?php echo $http_location;?>/admin/ticket/<?php echo $ticket['ticketid'];?></a>
+</p>
 
-<p />Ticket subject: <?php echo $ticket['subject'];?>
+<p>Ticket subject: <?php echo $ticket['subject'];?></p>
 
-<hr size='1' />
+<hr style="border-bottom-width: 0;" />
 
 Message:
 
-<p /><?php echo $message['message'];?>
+<div style="margin: 1em 0;"><?php echo $message['message'];?>
 
 <br /><br />
 
 <?php echo $signature;?>
+</div>
 <?php include SITE_ROOT."/var/cache/en/mail/footer.php";?>

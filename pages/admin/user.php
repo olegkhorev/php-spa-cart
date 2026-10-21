@@ -26,13 +26,13 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $id = $db->array2insert('users', $insert);
         $_SESSION['alerts'][] = array(
             'type'		=> 'i',
-            'content'	=> 'New user has been successfully added'
+            'content'	=> 'New user added'
         );
     } else {
         $id = $get['2'];
         $_SESSION['alerts'][] = array(
             'type'		=> 'i',
-            'content'	=> 'User has been successfully saved'
+            'content'	=> 'User saved'
         );
     }
 

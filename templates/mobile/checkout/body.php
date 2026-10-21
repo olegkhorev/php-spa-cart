@@ -10,7 +10,7 @@
 <div class="checkout-container">
 <h1><a href="{$current_location}/cart" class="ajax_link back-to-cart"><img src="/images/back_arrow.png" alt="" /></a>{lng[Checkout]}</h1>
 
-<div align="left">
+<div style="text-align:left">
 <div class="cart-items">
 {foreach $products as $v}
 <div class="cart-item">
@@ -26,10 +26,10 @@
 {if $v['product_options']}
 <hr />
 <b>{lng[Selected options]}:</b><br />
-<table width="100%">
+<table style="width:100%">
 {foreach $v['product_options'] as $o}
 <tr>
-	<td width="100" valign="top">{$o['name']}:</td>
+	<td style="width:100px;vertical-align:top">{$o['name']}:</td>
 	<td>{$o['option']['name']}</td>
 </tr>
 {/foreach}
@@ -59,7 +59,7 @@ You can checkout as guest. Or <a href="/login">{lng[Login]}</a>, <a href="/regis
 {if $checkout_reason == 1}
 <table>
 <tr>
- <td width="300">
+ <td style="width:300px">
 <form method="post" action="/checkout/user_form" id="checkout_user_form">
     <div class="group">
       <input type="text" name="posted_data[firstname]" required value="{php echo escape($userinfo['firstname'], 2);}" />
@@ -240,11 +240,10 @@ states.{$v['code']}.states[{$k}] = {code: "{$s['code']}", state: "{php echo esca
 </table>
 *}
 </form>
-</div>
  </td>
 </tr>
 <tr>
- <td width="300" id="place_order" style="opacity: .3;">
+ <td id="place_order" style="width:300px;opacity: .3;">
 {include="checkout/right_part.php"}
  </td>
 </tr>
@@ -253,4 +252,5 @@ states.{$v['code']}.states[{$k}] = {code: "{$s['code']}", state: "{php echo esca
 {lng[Subtotal]}: {price $cart['subtotal']}<br /><br />
 {$checkout_reason}
 {/if}
+</div>
 </div>

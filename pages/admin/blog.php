@@ -61,7 +61,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
         $_SESSION['alerts'][] = array(
             'type'		=> 'i',
-            'content'	=> 'Blog has been successfully added'
+            'content'	=> 'Blog added'
         );
 
         $blogid = $db->array2insert("blog", $to_insert);
@@ -79,7 +79,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
         $_SESSION['alerts'][] = array(
             'type'		=> 'i',
-            'content'	=> 'Blog has been successfully saved'
+            'content'	=> 'Blog saved'
         );
 
         $db->array2update("blog", $to_update, "blogid='".$blogid."'");
@@ -99,7 +99,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
         $_SESSION['alerts'][] = array(
             'type'		=> 'i',
-            'content'	=> 'Blog has been successfully deleted'
+            'content'	=> 'Blog deleted'
         );
     } elseif ($mode == "update" && !empty($to_update)) {
         foreach ($to_update as $k => $v) {

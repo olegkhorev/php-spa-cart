@@ -17,7 +17,7 @@
 <li<?php if ($get["2"] == "banners") {
     echo ' class="active"';
 } ?>><a href="/admin/homepage/banners">{lng[Banners]}</a></li>
-</li>
+</ul>
 <div class="clear"></div>
 <br />
 <?php } ?>
@@ -28,14 +28,14 @@
 <input type="hidden" name="mode" value="" />
 <?php if ($get["2"] == "banners") { ?>
 
-<table cellpadding="3" cellspacing="1" class="lines-table resp-table">
+<table class="lines-table resp-table">
 <thead>
 <tr>
-	<th width="10">&nbsp;</th>
+	<th style="width:10px">&nbsp;</th>
 	<th>{lng[Banner]}</th>
 	<th>{lng[Link]}</th>
 	<th>{lng[Alt]}</th>
-	<th width="100">{lng[Pos]}</th>
+	<th style="width:100px">{lng[Pos]}</th>
 </tr>
 </thead>
 <?php if ($banners) {
@@ -44,11 +44,11 @@
 	<td><input type="checkbox" name="to_delete[<?php echo $b[
      "bannerid"
  ]; ?>]" /></td>
-	<td align="center"><label>{lng[Banner]}</label><a href="<?php echo $b[
+	<td class="td-align-center"><label>{lng[Banner]}</label><a href="<?php echo $b[
      "image_url"
  ]; ?>" target="_blank"><img src="<?php echo $b[
     "image_url"
-]; ?>" width="100"></a></td>
+]; ?>" width="100" alt="<?php echo escape($b["alt"]); ?>"></a></td>
 	<td class="td-align-center"><label>{lng[Link]}</label><input size="30" type="text" name="to_update[<?php echo $b[
      "bannerid"
  ]; ?>][url]" value="<?php echo escape($b["url"]); ?>" /></td>
@@ -62,7 +62,7 @@
 <?php } ?>
 <tr>
 	<td colspan="5" class="var-wh-100 background-transparent">
-	<button type="button" onclick="javascript: submitForm(this, 'update');">{lng[Update]}</button> &nbsp;	<button type="button" onclick="javascript: submitForm(this, 'delete');">{lng[Delete selected]}</button>
+	<button type="button" onclick="javascript: submitForm(this, 'update');">{lng[Update]}</button> &nbsp;	<button type="button" onclick="javascript: if (confirm('', $(this)) || confirmed) submitForm(this, 'delete');">{lng[Delete selected]}</button>
 	</td>
 </tr>
 
@@ -70,13 +70,13 @@
 } else {
      ?>
 <tr>
- <td colspan="5" align="center" class="var-wh-100 background-transparent">{lng[No banners for this category]}</td>
+ <td colspan="5" class="var-wh-100 background-transparent td-align-center">{lng[No banners for this category]}</td>
 </tr>
 <?php
 } ?>
 
 <tr>
-<td colspan="5" class="var-wh-100 background-transparent"><br /><h3>{lng[Add new]}</td>
+<td colspan="5" class="var-wh-100 background-transparent"><br /><h3>{lng[Add new]}</h3></td>
 </tr>
 
 <tr>
@@ -84,7 +84,7 @@
 	<td class="background-transparent"><label>{lng[Banner]}</label><input type="file" size="10" name="userfile" /></td>
 	<td class="background-transparent"><label>{lng[Link]}</label><input size="30" type="text" name="new_url"></td>
 	<td class="background-transparent"><label>{lng[Alt]}</label><input size="30" type="text" name="new_alt"></td>
-	<td class="background-transparent" align="center"><label>{lng[Pos]}</label><input type="text" size="5" name="new_pos" /></td>
+	<td class="background-transparent td-align-center"><label>{lng[Pos]}</label><input type="text" size="5" name="new_pos" /></td>
 </tr>
 
 <tr>
@@ -97,11 +97,11 @@
 
 <?php } else { ?>
 <script src="/ckeditor/ckeditor.js"></script>
-<table cellpadding="3" cellspacing="1" class="category normal-table">
+<table class="category normal-table">
 <tr>
-	<td height="10" nowrap="nowrap">{lng[Title]}</td>
-	<td width="10" height="10"></td>
-	<td height="10">
+	<td style="height:10px;white-space:nowrap">{lng[Title]}</td>
+	<td style="width:10px;height:10px"></td>
+	<td style="height:10px">
 		<input type="text" name="site_title" maxlength="255" size="80" value="<?php echo escape(
       lng("Site title"),
       2,
@@ -110,8 +110,8 @@
 </tr>
 
 <tr>
- <td valign="top" class="hide-td-for-mdl"></td>
-	<td width="10" height="10">&nbsp;</td>
+ <td class="hide-td-for-mdl"></td>
+	<td style="width:10px;height:10px">&nbsp;</td>
  <td><div class="select-title">{lng[Description]}</div>
 	<script>
 		var editor;
@@ -129,9 +129,9 @@
 </tr>
 
 <tr>
-	<td height="10" nowrap="nowrap">{lng[Title tag]}</td>
-	<td width="10" height="10"></td>
-	<td height="10">
+	<td style="height:10px;white-space:nowrap">{lng[Title tag]}</td>
+	<td style="width:10px;height:10px"></td>
+	<td style="height:10px">
 		<input type="text" size="65" name="meta_title" value="<?php echo escape(
       lng("Homepage meta title"),
       2,
@@ -140,9 +140,9 @@
 </tr>
 
 <tr>
-	<td height="10" nowrap="nowrap">{lng[Meta keywords]}</td>
-	<td width="10" height="10"></td>
-	<td height="10">
+	<td style="height:10px;white-space:nowrap">{lng[Meta keywords]}</td>
+	<td style="width:10px;height:10px"></td>
+	<td style="height:10px">
 		<textarea cols="65" rows="4" name="meta_keywords"><?php echo lng(
       "Homepage meta keywords",
   ); ?></textarea>
@@ -150,9 +150,9 @@
 </tr>
 
 <tr>
-	<td height="10" nowrap="nowrap">{lng[Meta description]}</td>
-	<td width="10" height="10"></td>
-	<td height="10">
+	<td style="height:10px;white-space:nowrap">{lng[Meta description]}</td>
+	<td style="width:10px;height:10px"></td>
+	<td style="height:10px">
 		<textarea cols="65" rows="4" name="meta_description"><?php echo lng(
       "Homepage meta description",
   ); ?></textarea>

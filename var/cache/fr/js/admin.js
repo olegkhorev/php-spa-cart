@@ -61,61 +61,33 @@ function admin_left_menu() {
 }
 
 function submitForm(formObj, formMode, e) {
-  if (!e && typeof window.event != "undefined") e = event;
+  e = e || window.event;
+  if (e) e.stopPropagation ? e.stopPropagation() : (e.cancelBubble = true);
 
-  if (e) {
-    if (e.stopPropagation) e.stopPropagation();
-    else e.cancelBubble = true;
-  }
-
+  if (formObj && formObj.tagName != "FORM") formObj = formObj.form;
   if (!formObj) return false;
 
-  if (formObj.tagName != "FORM") {
-    if (!formObj.form) return false;
-
-    formObj = formObj.form;
-  }
-
   if (formObj.mode) formObj.mode.value = formMode;
-
-  if (typeof window.$ != "undefined") {
-    var r = $(formObj).triggerHandler("submit");
-    if (r === false) return false;
-  }
+  if (window.$ && $(formObj).triggerHandler("submit") === false) return false;
 
   return formObj.submit();
 }
 
 function check_all(form, prefix, flag) {
   if (!form) return;
+  var reg = prefix && new RegExp("^" + prefix);
 
-  if (prefix) var reg = new RegExp("^" + prefix, "");
-  for (var i = 0; i < form.elements.length; i++) {
-    if (
-      form.elements[i].type == "checkbox" &&
-      (!prefix || form.elements[i].name.search(reg) == 0) &&
-      !form.elements[i].disabled
-    )
-      form.elements[i].checked = flag;
-  }
+  for (var el of form.elements)
+    if (el.type == "checkbox" && !el.disabled && (!reg || reg.test(el.name)))
+      el.checked = flag;
 }
 
 function copy_clean_url(from_field, to_field) {
-  if (
-    typeof from_field == "undefined" ||
-    typeof from_field.value == "undefined"
-  ) {
-    return;
-  }
-
-  if (typeof to_field == "undefined" || typeof to_field.value == "undefined") {
-    return;
-  }
+  if (from_field?.value === undefined || to_field?.value === undefined) return;
 
   to_field.value = from_field.value
-    .replace(/[\&]/g, "-and-")
-    .replace(/[^a-zA-Z0-9._-]/g, "-")
-    .replace(/[-]+/g, "-")
+    .replace(/&/g, "-and-")
+    .replace(/[^\w.]+/g, "-")
     .replace(/-$/, "");
 
   $(to_field).parent().addClass("is-dirty");
@@ -238,6 +210,8 @@ function ajax_clicks_admin() {
     .unbind("click")
     .on("click", function (e) {
       if ($(this).hasClass("no-ajax")) return true;
+	if (strstr($(this).attr('href'), 'javascript'))
+	    return false;
 
       if ($(".navigation-overlay").is(":visible")) {
         $(".navigation-overlay").hide();
@@ -256,7 +230,7 @@ function ajax_clicks_admin() {
         500,
       );
 
-      var h = $(this).attr("href");
+      var h = $(this).attr("href") || $(this).attr("href");
       var site_loader_to = setTimeout(function () {
         $("body").append(
           '<div id="content-loading"><div class="cssload-container"><div class="cssload-speeding-wheel"></div></div></div>',
@@ -307,7 +281,7 @@ function ajax_clicks_admin() {
       100,
     );
 
-    if ($(this).attr("href")) var h = $(this).attr("href");
+    if ($(this).attr("href") || $(this).attr("href")) var h = $(this).attr("href") || $(this).attr("href");
     else if ($(this).attr("action")) var h = $(this).attr("action");
     else var h = window.location.href;
 
@@ -351,6 +325,12 @@ function ajax_clicks_admin() {
       },
       success: function (r, textStatus, request) {
         func_disable_button($('button'), 1);
+	if ($('[name="modulesform"]').length) {
+		// Reload the page on the modules form submit
+		location.reload();
+		return;
+	}
+
         $("#content-loading").remove();
         if (request.getResponseHeader("where_redirect")) {
           $(".goback-admin").attr(
@@ -368,9 +348,92 @@ function ajax_clicks_admin() {
   });
 
   try {
-    CKEDITOR.replace("ck_editor");
-    CKEDITOR.replace("ck_editor_2");
-  } catch (err) {}
+    try {
+      CKEDITOR.instances['ck_editor'].destroy(true);
+    } catch (err) {
+
+    }
+
+    CKEDITOR.replace('ck_editor', {
+        // Define the toolbar groups as it is a more accessible solution.
+        toolbarGroups: [{
+            "name": "basicstyles",
+            "groups": ["basicstyles"]
+            },
+            {
+            "name": "links",
+            "groups": ["links"]
+            },
+            {
+            "name": "paragraph",
+            "groups": ["list", "blocks"]
+            },
+            {
+            "name": "document",
+            "groups": ["mode"]
+            },
+            {
+            "name": "insert",
+            "groups": ["insert"]
+            },
+            {
+            "name": "styles",
+            "groups": ["styles"]
+            },
+            {
+            "name": "about",
+            "groups": ["about"]
+            }
+        ],
+        // Remove the redundant buttons from toolbar groups defined above.
+        removeButtons: 'Subscript,Superscript,Anchor,Styles,Specialchar,PasteFromWord,Save,Flash,Map,iFrame,Iframe,iframe',
+        skin: 'moono-lisa'
+    });
+
+    try {
+      CKEDITOR.instances['ck_editor_2'].destroy(true);
+    } catch (err) {
+
+    }
+
+    CKEDITOR.replace('ck_editor_2', {
+        // Define the toolbar groups as it is a more accessible solution.
+        toolbarGroups: [{
+            "name": "basicstyles",
+            "groups": ["basicstyles"]
+            },
+            {
+            "name": "links",
+            "groups": ["links"]
+            },
+            {
+            "name": "paragraph",
+            "groups": ["list", "blocks"]
+            },
+            {
+            "name": "document",
+            "groups": ["mode"]
+            },
+            {
+            "name": "insert",
+            "groups": ["insert"]
+            },
+            {
+            "name": "styles",
+            "groups": ["styles"]
+            },
+            {
+            "name": "about",
+            "groups": ["about"]
+            }
+        ],
+        // Remove the redundant buttons from toolbar groups defined above.
+        removeButtons: 'Subscript,Superscript,Anchor,Styles,Specialchar,PasteFromWord,Save,Flash,Map,iFrame,Iframe,iframe',
+        skin: 'moono-lisa'
+    });
+  } catch (err) {
+    console.log(err);
+  }
 }
 
 function create_ajax_link(href) {
@@ -596,7 +659,8 @@ function saveSelects(objects) {
 
 function header_search_form() {
   $("#quick_search_form select").change(function () {
-    $("#quick_search_form input").trigger("keyup");
+    if ($("#quick_search_form input").val())
+      $("#quick_search_form input").trigger("keyup");
   });
 
   var timeout = "";

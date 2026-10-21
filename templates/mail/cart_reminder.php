@@ -15,12 +15,12 @@
 {foreach $cart['products'] as $p}
 {php $url = $current_location.($p['cleanurl'] ? '/'.$p['cleanurl'].'.html' : '/product/'.$p['productid']);}
 <tr>
- <td valign="top">
+ <td style="vertical-align: top;">
 {if $p['photo']}
 {product_image image=`$p['photo']` new_width=100 new_height=100}
 {/if}
  </td>
- <td valign="top"><a href="{$url}?{$link_add}">{$p['name']}</a></td>
+ <td style="vertical-align: top;"><a href="{$url}?{$link_add}">{$p['name']}</a></td>
 </tr>
 {/foreach}
 </table>

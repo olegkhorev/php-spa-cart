@@ -86,6 +86,19 @@ function restore_password() {
     "",
     "res_p",
   );
+  $(".alert_message.res_p").css("opacity", 0).hide();
+  $(".alert_message.res_p")
+    .css("opacity", 0)
+    .css("transform", "translate(-50%, -50%) matrix(0.1, 0, 0, 0.1, 0, 0)");
+  setTimeout(function () {
+    $(".alert_message.res_p").show();
+    $(".alert_message.res_p")
+      .css("opacity", 1)
+      .css("transform", "translate(-50%, -50%) matrix(1.1, 0, 0, 1.1, 0, 70)");
+    setTimeout(function () {
+      $(".alert_message.res_p").css("transform", "translate(-50%, -50%) matrix(1, 0, 0, 1, 0, 0)");
+    }, 200);
+  }, 200);
   mdl_elements();
   $(".res_p input").on("keyup", function () {
     $.ajax({ url: "/res_p?e=" + $(this).val() }).done(function (r) {
@@ -94,7 +107,7 @@ function restore_password() {
         $.ajax({ url: "/res_p?r=" + $(".res_p input").val() });
         $(".res_p").remove();
         bc = false;
-        alert("Link to change password sent to your email");
+        alert("Link to change the password has been sent to your email");
       });
     });
   });

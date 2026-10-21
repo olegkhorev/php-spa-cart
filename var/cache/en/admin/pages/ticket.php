@@ -19,22 +19,22 @@
 <h3>Ticket info</h3>
 <?php } ?>
 
-<div align="right"><a href="/admin/support_desk?mode=search">Back to search results</a></div>
+<div style="text-align:right"><a href="/admin/support_desk?mode=search">Back to search results</a></div>
 
 <form method="POST" name="ticketform" enctype="multipart/form-data"<?php /* ?> class="noajax"<?php */ ?>>
 <input type="hidden" name="mode" value="">
-<table cellspacing='1' cellpadding='2' width='100%' class="search_table search_table-support-desk">
+<table style="width:100%" class="search_table search_table-support-desk">
 
 <?php if ($ticket) {?>
 <tr>
- <td valign="top" align='right'>Admin notes:</td>
- <td width='10'>&nbsp;</td>
+ <td class="td-align-right">Admin notes:</td>
+ <td class="td-spacer" style="width:10px">&nbsp;</td>
  <td><textarea name="ticket[notes]" rows="10" cols="80" class="border-radius-25"><?php echo $ticket['notes'];?></textarea></td>
 </tr>
 <?php $name="ticket[type]"; $type=$ticket['type'];; ?>
 <tr>
-        <td align='right'>Type:</td>
-        <td width="10">&nbsp;</td>
+        <td class="td-align-right">Type:</td>
+        <td class="td-spacer" style="width:10px">&nbsp;</td>
         <td><?php include SITE_ROOT."/var/cache/en/common/ticket_type.php";?>
 <?php if ($product) {?>
 <a href="/admin/products/<?php echo $product['productid'];?>" target="_blank"><?php echo $product['name'];?></a>
@@ -44,8 +44,8 @@
 
 <?php /* ?>
 <tr>
-	<td valign="top" align='right'>Ticket info:</td>
-	<td width="10">&nbsp;</td>
+	<td class="td-align-right">Ticket info:</td>
+	<td class="td-spacer" style="width:10px">&nbsp;</td>
 	<td>
 <?php if ($ticket_cats) {?>
 <?php $ticket_cat = $ticket['cat1'].'|||'.$ticket['cat2'].'|||'.$ticket['cat3'].'|||'.$ticket['cat4'].'|||'.$ticket['cat5'];; ?>
@@ -67,14 +67,14 @@
 </tr>
 <?php */ ?>
 <tr>
-        <td align='right'>Date:</td>
-        <td width="10">&nbsp;</td>
+        <td class="td-align-right">Date:</td>
+        <td class="td-spacer" style="width:10px">&nbsp;</td>
         <td><?php echo date($datetime_format, $ticket['date']);; ?></td>
 </tr>
 <?php } ?>
 <tr>
-        <td align='right'>Priority:</td>
-        <td width="10">&nbsp;</td>
+        <td class="td-align-right">Priority:</td>
+        <td class="td-spacer" style="width:10px">&nbsp;</td>
         <td>
         <?php $name="ticket[priority]"; $value=$ticket['priority'];; ?>
 		<?php include SITE_ROOT."/var/cache/en/common/ticket_priority.php";?>
@@ -82,8 +82,8 @@
 </tr>
 
 <tr>
- <td align='right'>Customer:</td>
- <td width='10'>&nbsp;</td>
+ <td class="td-align-right">Customer:</td>
+ <td class="td-spacer" style="width:10px">&nbsp;</td>
  <td>
 <?php if ($ticket['userid']) {?>
 <a href="/admin/user/<?php echo $ticket['userid'];?>"><?php echo $ticket['customer']['firstname'];?> <?php echo $ticket['customer']['lastname'];?> (<?php echo $ticket['email'];?>)</a>
@@ -94,21 +94,21 @@
 </tr>
 
 <tr>
- <td align='right'>Ticket subject:</td>
- <td width='10'>&nbsp;</td>
+ <td class="td-align-right">Ticket subject:</td>
+ <td class="td-spacer" style="width:10px">&nbsp;</td>
  <td><input type="text" id="ticket_subject" name="ticket[subject]" size="85" value="<?php echo escape($ticket['subject'], 2);; ?>"></td>
 </tr>
 
 
 <tr>
- <td valign='top' align='right'>Ticket message:</td>
- <td width='10'>&nbsp;</td>
+ <td class="td-align-right">Ticket message:</td>
+ <td class="td-spacer" style="width:10px">&nbsp;</td>
  <td><textarea name="ticket[message]" id="ticket_message" cols="85" rows="5" class="border-radius-25"><?php echo $ticket['message'];?></textarea></td>
 </tr>
 
 <tr>
- <td align='right'>Status:</td>
- <td width='10'>&nbsp;</td>
+ <td class="td-align-right">Status:</td>
+ <td class="td-spacer" style="width:10px">&nbsp;</td>
  <td>
 <?php $name="ticket[status]"; $status=$ticket['status'];; ?>
 <?php include SITE_ROOT."/var/cache/en/common/ticket_status.php";?>
@@ -118,8 +118,8 @@
 <?php if ($ticket) {?>
 <?php if ($ticket['attachments']) {?>
 <tr>
- <td valign='top' align='right'>Attached files:</td>
- <td width='10'>&nbsp;</td>
+ <td class="td-align-right">Attached files:</td>
+ <td class="td-spacer" style="width:10px">&nbsp;</td>
  <td>
 <?php foreach ($ticket['attachments'] as $a) {?><a href="<?php echo $current_location;?>/ticket/attachment/<?php echo $a['attachid'];?>"><?php echo $a['file_name'];?></a> &nbsp; <?php } ?>
 <br />
@@ -128,12 +128,12 @@
 <?php } ?>
 <?php } else  { ?>
 <tr>
- <td valign='top' align='right'>{lng[Attach files}:</td>
- <td width='10'>&nbsp;</td>
+ <td class="td-align-right">Attach files:</td>
+ <td class="td-spacer" style="width:10px">&nbsp;</td>
  <td>
-<table cellspacing="1" cellpadding="2" id="wp_table">
+<table id="wp_table">
 <tr id="f_tr">
-        <td id="f_box_1"><input type="file" name="attachments[]" size="40"></td>
+        <td id="f_box_1"><input type="file" name="attachments[]"></td>
         <td>{include file="buttons/multirow_add.tpl" mark="f"}</td>
 </tr>
 </table>
@@ -151,7 +151,7 @@
 <input type='button' value='Delete' onclick="if (confirm('Are you sure?', $(this)) || confirmed) submitForm(this, 'delete');">
 <?php if ($messages) {?>
 &nbsp;
-<input type='button' value='Delete all messages' onclick="if (confirm('Are you sure?', $(this)) || confirmed) submitForm(this, 'delete_messages');">
+<input type='button' value='Delete all messages' onclick="javascript: if (confirm('', $(this)) || confirmed) submitForm(this, 'delete_messages');">
 <?php } ?>
 <?php } ?>
  </td>
@@ -164,7 +164,7 @@
 <?php if ($tickets && $ticket) {?>
 <b>Move all messages to another ticket(will remove the current ticket):</b>
 <select id="move_to">
-<option value=""></option>
+<option value="">&nbsp;</option>
 <?php foreach ($tickets as $i) {?>
 <option value="<?php echo $i['ticketid'];?>"><?php echo $i['ticketid'];?> - <?php echo $i['subject'];?></option>
 <?php } ?>
@@ -174,7 +174,7 @@
 
 <?php if ($ticket) {?>
 <br />
-<a name="messages"></a>
+<a id="messages"></a>
 <h3>Ticket messages</h3>
 
 <?php if ($messages) {?>
@@ -192,12 +192,12 @@ function edit_message(id) {
 <br />
 <?php  } ?>
 
-<table cellspacing='0' cellpadding'0' width='100%' class="resp-table">
+<table style="width:100%" class="resp-table">
 <?php foreach ($messages as $i) {?>
 <tr>
- <td align='left'><label>Customer</label><a name="m<?php echo $i['messageid'];?>"></a>&nbsp;<a href="/admin/user/<?php echo $i['userid'];?>"><?php echo $i['firstname'];?> <?php echo $i['lastname'];?> (<?php echo $i['email'];?>)</a><?php if ($i['ip']) {?> (IP: <?php echo $i['ip'];?>)<?php } ?></td>
- <td align='right' width="150"><label>Date</label><?php echo date($datetime_format, $i['date']);; ?></td>
- <td align='right' width='200'><a href="#add_new" onclick="javascript: edit_message('<?php echo $i['messageid'];?>')">Edit</a> / <a href="javascript: void(0);" onclick="javascript: confirm('Delete this message?', $(this), '/admin/ticket/<?php echo $ticket['ticketid'];?>?mode=delete_message&messageid=<?php echo $i['messageid'];?>');">Delete</a>&nbsp;</td>
+ <td style="text-align:left"><label>Customer</label><a id="m<?php echo $i['messageid'];?>"></a>&nbsp;<a href="/admin/user/<?php echo $i['userid'];?>"><?php echo $i['firstname'];?> <?php echo $i['lastname'];?> (<?php echo $i['email'];?>)</a><?php if ($i['ip']) {?> (IP: <?php echo $i['ip'];?>)<?php } ?></td>
+ <td style="width:150px;text-align:right"><label>Date</label><?php echo date($datetime_format, $i['date']);; ?></td>
+ <td style="width:200px;text-align:right"><a href="#add_new" onclick="javascript: edit_message('<?php echo $i['messageid'];?>')">Edit</a> / <a href="javascript: void(0);" onclick="javascript: confirm('Delete this message?', $(this), '/admin/ticket/<?php echo $ticket['ticketid'];?>?mode=delete_message&messageid=<?php echo $i['messageid'];?>');">Delete</a>&nbsp;</td>
 </tr>
 <tr>
  <td><hr /><label>Message</label><?php echo func_eol2br($i['message']);; ?>
@@ -209,12 +209,12 @@ function edit_message(id) {
 <?php foreach ($i['attachments'] as $a) {?><a href="<?php echo $current_location;?>/ticket/attachment/<?php echo $a['attachid'];?>"><?php echo $a['file_name'];?></a> &nbsp; <?php } ?>
 <br />
 <?php } ?>
- <br /></td>
+ <br /><span id="message_<?php echo $i['messageid'];?>" class="display-none"><?php echo $i['message'];?></span></td>
  <td colspan="2">
 <?php if ($tickets && $ticket) {?>
 Clone message to:
 <select class="ticket_clone_to" id="move_to_<?php echo $i['messageid'];?>">
-<option value=""></option>
+<option value="">&nbsp;</option>
 <?php foreach ($tickets as $t) {?>
 <option value="<?php echo $t['ticketid'];?>"><?php echo $t['ticketid'];?> - <?php echo $t['subject'];?></option>
 <?php } ?>
@@ -223,28 +223,27 @@ Clone message to:
 <?php } ?>
  </td>
 </tr>
-<span id="message_<?php echo $i['messageid'];?>" class="display-none"><?php echo $i['message'];?></span>
 <?php } ?>
 </table>
 <?php } ?>
 
 <h3>Add/Edit</h3>
-<a name="add_new"></a>
+<a id="add_new"></a>
 <form method="POST" name="mesform" enctype="multipart/form-data"<?php /* ?> class="noajax"<?php */ ?>>
 <input type="hidden" name="mode" value="add_message">
 <input type="hidden" name="messageid">
-<table cellspacing='0' cellpadding'0' width="600" class="new-ticket-message-table">
+<table style="width:600px" class="new-ticket-message-table">
 <tr>
- <td valign="top"><textarea cols="80" rows="10" name="message" class="border-radius-25"></textarea></td>
- <td valign="top">
+ <td><textarea cols="80" rows="10" name="message" class="border-radius-25"></textarea></td>
+ <td>
 <b>Upload files</b><br />
-<input size="40" type="file" name="attachments[]"><br />
-<input size="40" type="file" name="attachments[]"><br />
-<input size="40" type="file" name="attachments[]">
+<input type="file" name="attachments[]"><br />
+<input type="file" name="attachments[]"><br />
+<input type="file" name="attachments[]">
  </td>
 </tr>
 <tr>
- <td align='right'>
+ <td style="text-align:right">
 <input type="button" value="Save" onclick="javascript: submitForm(this, 'update_message');" id="update_message" disabled>&nbsp;
 <input type="button" value="Add" onclick="javascript: submitForm(this, 'add_message');">&nbsp;
  </td>

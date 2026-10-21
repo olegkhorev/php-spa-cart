@@ -11,7 +11,7 @@
 <div class="support_desk">
 <br />
 
-<div<?php if (!$can_post_ticket) {?> class="hidden1"<?php } ?> id="post_ticket" align="right"><button class="button_ajax_link" href="/ticket">New ticket</button></div>
+<div<?php if (!$can_post_ticket) {?> class="hidden1"<?php } ?> id="post_ticket" style="text-align:right"><button class="button_ajax_link" href="/ticket">New ticket</button></div>
 
 <?php if ($tickets) {?>
 
@@ -20,26 +20,26 @@
 <br />
 <?php  } ?>
 
-<table cellpadding="10" cellspacing="0" class="support-desk-table">
+<table style="border-spacing:0" class="support-desk-table">
 
 <tr>
-        <th align='center'>#</th>
-        <th align="left">&nbsp;Subject</a></th>
-        <th width="150" align='center'>Status</th>
-        <th width="150" align='center'>Date</th>
-        <th width="150" align='center'>Actions</th>
+        <th style="padding:10px;text-align:center">#</th>
+        <th style="padding:10px;text-align:left">&nbsp;Subject</th>
+        <th style="padding:10px;width:150px;text-align:center">Status</th>
+        <th style="padding:10px;width:150px;text-align:center">Date</th>
+        <th style="padding:10px;width:150px;text-align:center">Actions</th>
 </tr>
 
 <?php foreach ($tickets as $k=>$i) {?>
 
 <tr class="ticket-link<?php if ($k % 2) {?> tl-second<?php } ?>">
-        <td width='10'><a href="/ticket/<?php echo $i['ticketid'];?>"><?php echo $i['ticketid'];?></a>&nbsp;</td>
-        <td>&nbsp;<a href="/ticket/<?php echo $i['ticketid'];?>"><?php echo $i['subject'];?></a><?php if ($i['read'] == "N" || $i['mread'] == "N") {?> <font color="#00AA00">(new messages)</font><?php } ?></td>
-        <td id="ticket-status-<?php echo $i['ticketid'];?>"><?php $mode = "static"; $status=$i['status'];; ?><?php include SITE_ROOT."/var/cache/en/common/ticket_status.php";?></td>
-        <td width='150' align='center'><?php echo date($datetime_format, $i['date']);; ?></td>
-        <td align="right" id="ticket-status-links-<?php echo $i['ticketid'];?>">
+        <td style="padding:10px;width:10px"><a href="/ticket/<?php echo $i['ticketid'];?>"><?php echo $i['ticketid'];?></a>&nbsp;</td>
+        <td style="padding:10px">&nbsp;<a href="/ticket/<?php echo $i['ticketid'];?>"><?php echo $i['subject'];?></a><?php if ($i['read'] == "N" || $i['mread'] == "N") {?> <span style="color:#00AA00">(new messages)</span><?php } ?></td>
+        <td style="padding:10px" id="ticket-status-<?php echo $i['ticketid'];?>"><?php $mode = "static"; $status=$i['status'];; ?><?php include SITE_ROOT."/var/cache/en/common/ticket_status.php";?></td>
+        <td style="padding:10px;width:150px;text-align:center"><?php echo date($datetime_format, $i['date']);; ?></td>
+        <td style="padding:10px;text-align:right" id="ticket-status-links-<?php echo $i['ticketid'];?>">
         <?php if ($i['status'] != '3' && $i['status'] != 'C') {?>
-    	    &nbsp; <a class="close-ticket" href="javascript: void(0);" onclick="javascript: if (confirmed || confirm('Are you sure?', $(this))) close_ticket('<?php echo $i['ticketid'];?>', 1);"><button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored">Close</button></a>
+    	    &nbsp; <button type="button" class="close-ticket mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored" onclick="javascript: if (confirmed || confirm('Are you sure?', $(this))) close_ticket('<?php echo $i['ticketid'];?>', 1);">Close</button>
 <?php /* ?>	        &nbsp; <a class="close-ticket" href="javascript: void(0);" onclick="javascript: if (confirmed || confirm('Are you sure?', $(this))) close_ticket('<?php echo $i['ticketid'];?>', 2);"><button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored">Cancel</button></a><?php */ ?>
         <?php } ?>
         </td>

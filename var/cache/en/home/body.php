@@ -53,7 +53,7 @@
 <?php if (lng('Site title') || lng('Site description')) {?>
 <div class="page-container page-container-afterbanner">
 <div class="content">
-	<div id="center" class="no_left_menu">
+	<div class="center-column no_left_menu">
 <?php } ?>
 <?php } ?>
 <?php 
@@ -77,7 +77,7 @@ if (lng("Site description")) {
 <?php if ($config['Visual']['visual_testimonials'] == 'Y') {?>
 <div class="page-container page-container-testimonials">
 <div class="content">
-	<div id="center" class="no_left_menu">
+	<div class="center-column no_left_menu">
 
 <div class="testimonial">
 <img src="/images/testimonial.jpg" class="test-image" alt="Our testimonials" />
@@ -100,7 +100,7 @@ if (lng("Site description")) {
 </div>
 <?php } ?>
 
-<div id="home-tabs">
+<div class="home-tabs-wrap">
 <ul class="home-tabs">
  <li class="tab-1 active" data-tab="1">Featured products</li>
 </ul>
@@ -109,7 +109,7 @@ if (lng("Site description")) {
 <?php /* ?> Start page container <?php */ ?>
 <div class="page-container page-container-2">
 <div class="content">
-	<div id="center" class="no_left_menu">
+	<div class="center-column no_left_menu">
 
 <?php if ($featured_products) {?>
  <?php $tag_id = "featured_products"; $products = $featured_products; $per_row = 4;; ?>
@@ -144,7 +144,7 @@ if (lng("Site description")) {
 <div class="clear"></div>
 </div>
 
-<div id="home-tabs">
+<div class="home-tabs-wrap">
 <ul class="home-tabs">
  <li class="tab-1 active" data-tab="1">Bestsellers</li>
 </ul>
@@ -153,7 +153,7 @@ if (lng("Site description")) {
 <?php /* ?> Start page container <?php */ ?>
 <div class="page-container page-container-2">
 <div class="content">
-	<div id="center" class="no_left_menu">
+	<div class="center-column no_left_menu">
 
  <?php $tag_id = "bestsellers_products"; $products = $bestsellers; $per_row = 4;; ?>
 <div class="tab-content" id="tab-2">
@@ -186,7 +186,7 @@ if (lng("Site description")) {
 <div class="clear"></div>
 </div>
 
-<div id="home-tabs">
+<div class="home-tabs-wrap">
 <ul class="home-tabs">
  <li class="tab-1 active" data-tab="1">Most viewed</li>
 </ul>
@@ -195,7 +195,7 @@ if (lng("Site description")) {
 <?php /* ?> Start page container <?php */ ?>
 <div class="page-container page-container-2">
 <div class="content">
-	<div id="center" class="no_left_menu">
+	<div class="center-column no_left_menu">
 
  <?php $tag_id = "most_viewed"; $products = $most_viewed; $per_row = 4;; ?>
 <div class="tab-content" id="tab-3">
@@ -228,7 +228,7 @@ if (lng("Site description")) {
 <div class="clear"></div>
 </div>
 
-<div id="home-tabs">
+<div class="home-tabs-wrap">
 <ul class="home-tabs">
  <li class="tab-1 active" data-tab="1">New arrivals</li>
 </ul>
@@ -237,7 +237,7 @@ if (lng("Site description")) {
 <?php /* ?> Start page container <?php */ ?>
 <div class="page-container page-container-2">
 <div class="content">
-	<div id="center" class="no_left_menu">
+	<div class="center-column no_left_menu">
 
  <?php $tag_id = "new_arrivals"; $products = $new_arrivals; $per_row = 4;; ?>
 <div class="tab-content" id="tab-4">
@@ -272,7 +272,7 @@ if (lng("Site description")) {
 
 <div class="page-container page-container-news">
 <div class="content">
-	<div id="center" class="no_left_menu">
+	<div class="center-column no_left_menu">
 
 <div class="news-list">
 <h2>Browse our news</h2>
@@ -284,10 +284,10 @@ if (lng("Site description")) {
 <?php $image = $b; $image['new_width'] = 250; $image['new_height'] = 200; include SITE_ROOT . "/includes/news_image.php"; ?>
 </a>
 <?php } ?>
-<a class="ajax_link" href="<?php echo $url;?>"><h5><?php echo $b['title'];?> (<span class="date"><?php  echo date(
+<a class="ajax_link" href="<?php echo $url;?>"><h5><?php echo $b['title'];?> <span class="date"><?php  echo date(
     $date_format,
     $b["date"],
-); ?></span>)</h5></a>
+); ?></span></h5></a>
 <div class="short-descr message-box"><?php echo $b['descr'];?></div>
 <br />
 <a class="news-more ajax_link link-button" href="<?php echo $url;?>">See full article</a>
@@ -308,7 +308,7 @@ if (lng("Site description")) {
 
 <div class="page-container page-container-blog">
 <div class="content">
-	<div id="center" class="no_left_menu">
+	<div class="center-column no_left_menu">
 
 <div class="news-list">
 <h2>Browse our blog</h2>
@@ -319,10 +319,10 @@ if (lng("Site description")) {
 <?php $image = $last_blog; $image['new_width'] = 250; $image['new_height'] = 200; include SITE_ROOT . "/includes/blog_image.php"; ?>
 </a>
 <?php } ?>
-<a class="ajax_link" href="<?php echo $url;?>"><h5><?php echo $last_blog['title'];?> (<span class="date"><?php  echo date(
+<a class="ajax_link" href="<?php echo $url;?>"><h5><?php echo $last_blog['title'];?> <span class="date"><?php  echo date(
     $date_format,
     $last_blog["date"],
-); ?></span>)</h5></a>
+); ?></span></h5></a>
 <div class="short-descr message-box"><?php echo $last_blog['descr'];?></div>
 <br />
 <a class="news-more ajax_link link-button" href="<?php echo $url;?>">See full post</a>

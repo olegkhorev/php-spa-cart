@@ -80,7 +80,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
         $_SESSION['alerts'][] = array(
             'type'		=> 'i',
-            'content'	=> 'Homepage has been successfully saved'
+            'content'	=> 'Homepage saved'
         );
 
         redirect('admin/homepage');

@@ -32,7 +32,7 @@ Total subscribers: <?php  echo $subscribers
 Added: <?php  echo date($datetime_format, $letter["date"]); ?>
 <?php  } ?>
 
-<table cellpadding="3" cellspacing="1" width="90%" class="normal-table">
+<table style="width:90%" class="normal-table">
 <tr>
  <td><b>Subject:</b></td>
  <td><input type="text" name="subject" size="40" value="<?php  echo escape(
@@ -73,17 +73,17 @@ Added: <?php  echo date($datetime_format, $letter["date"]); ?>
 </tr>
 
 <tr>
- <td valign="top"><b>Email address #1:</b></td>
+ <td><b>Email address #1:</b></td>
  <td><input type="text" name="email1" value="<?php  echo $company_email; ?>" /></td>
 </tr>
 
 <tr>
- <td valign="top"><b>Email address #2:</b></td>
+ <td><b>Email address #2:</b></td>
  <td><input type="text" name="email2" /></td>
 </tr>
 
 <tr>
- <td valign="top"><b>Email address #3:</b></td>
+ <td><b>Email address #3:</b></td>
  <td><input type="text" name="email3" /></td>
 </tr>
 

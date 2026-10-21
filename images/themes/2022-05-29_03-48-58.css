@@ -1,0 +1,138 @@
+
+.subheader {
+    background: rgba(158,158,158,.06);
+}
+.alert_message, .note, .popup {
+	border: 10px solid rgba(158,158,158,.6);
+}
+.close_alert, .close-popup {
+	background: #9e9e9e !important;
+}
+.save2wl {
+	background: #9e9e9e;
+}
+button, input[type=button], input[type=submit] {
+	color: #9e9e9e;
+}
+button:hover, input[type=button]:hover, input[type=submit]:hover {
+	background: #9e9e9e;
+}
+.left_filter h4.pointer:before, .left_filter h4.pointer:after {
+	background: #9e9e9e;
+}
+.left_filter h4.pointer {
+	border-bottom: 1px solid #9e9e9e;
+}
+.search {
+	border-bottom: 1px solid #9e9e9e;
+}
+.header .links a {
+	color: #9e9e9e;
+}
+.banners-homepage .slide img {
+	border-top: 24px solid #9e9e9e;
+	border-bottom: 24px solid #9e9e9e;
+}
+#menu > li:hover {
+	border-bottom: 0px solid #9e9e9e;
+}
+#menu > li.active {
+	border-bottom: 3px solid #9e9e9e;
+}
+#menu > li:after, #menu > li:before {
+	background: #9e9e9e;
+}
+.indicators li.active {
+	background:#9e9e9e
+}
+.indicators li:hover {
+	background-color:#9e9e9e
+}
+.arrow:hover span {
+	border-color:#9e9e9e
+}
+body svg {
+	fill: #9e9e9e;
+}
+h2 {
+	color: #9e9e9e;
+}
+h3 {
+	color: #9e9e9e;
+	border-bottom: 1px solid #9e9e9e;
+}
+.mobile-version {
+	color: #9e9e9e;
+}
+.instant-search {
+	border: 1px solid #9e9e9e;
+}
+.mobile-left_menu {
+	border: 1px solid #9e9e9e;
+}
+#left_menu hr {
+	border-top: 1px solid #9e9e9e;
+}
+.mobile-menu-links a {
+	color: #9e9e9e;
+}
+.product-details-price {
+	color: #9e9e9e;
+}
+#home-tabs, #product-tabs {
+    border-bottom: 3px solid #9e9e9e;
+}
+.price-breaks span {
+	color: #9e9e9e;
+}
+.product-details-price {
+	color: #9e9e9e;
+}
+.left_filter h4 {
+	color: #9e9e9e;
+}
+.res-item .discount {
+	background: #9e9e9e;
+}
+.res-item button, .add2cart-product {
+    background: #9e9e9e;
+}
+.home-tabs li.active, .product-tabs li.active {
+	color: #9e9e9e;
+}
+h1 {
+	color: #9e9e9e;
+}
+#menu li a.parent-link {
+	color: #9e9e9e;
+}
+#menu > li.search-dd div.search {
+	border: 1px solid #9e9e9e;
+}
+.mrp-rounded-box {
+	background: #9e9e9e;
+}
+.mrp-subtitle-2 {
+	color: #9e9e9e;
+}
+.mrp-row-cart > div:last-child a {
+	color: #9e9e9e !important;
+}
+.sh-rounded-box {
+	border: 2px solid #9e9e9e;
+}
+.sh-rounded-box svg {
+	fill: #9e9e9e;
+}
+.subheader table td h4 {
+	color: #9e9e9e;
+}
+.subheader table td span {
+	color: #9e9e9e;
+}
+.see_all a {
+	color: #9e9e9e;
+}
+.more-no-search {
+	color: #9e9e9e;
+}

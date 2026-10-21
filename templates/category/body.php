@@ -24,12 +24,12 @@
 </td>
 {/if}
 
-<td width="100%">{php echo $category['description'] ? '<p>'.$category['description'].'</p>' : '';}</td></tr></table>
+<td style="width:100%">{php echo $category['description'] ? '<p>'.$category['description'].'</p>' : '';}</td></tr></table>
 {/if}
 
 {if $subcategories}
 <br />
-<h3></h3>
+<div style="padding:5px 0 5px 10px;margin:5px 0;border-bottom:1px solid var(--theme-color)"></div>
 <br /><br />
 <h2>{lng[Subcategories]}</h2>
 <div id='subcategories' class="responsive-sub">
@@ -65,5 +65,5 @@
 </div>
 {elseif !$subcategories}
 <br />
-<center>{lng[No products in this category]}</center>
+<div style="text-align:center">{lng[No products in this category]}</div>
 {/if}

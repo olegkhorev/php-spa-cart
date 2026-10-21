@@ -11,7 +11,7 @@
 
 <form method="POST" enctype='multipart/form-data' name="pform"<?php /* ?>if $get['2'] == 'add'} class="noajax"{/if<?php */ ?>>
 <input type="hidden" name="mode" value="" />
-<table width="800" class="normal-table">
+<table style="width:800px" class="normal-table">
 <tr>
  <td>SKU</td>
  <td><input type="text" size="10" name="sku" value="<?php  echo escape(
@@ -80,7 +80,7 @@
 <tr>
  <td class="data-name">Brand:</td>
  <td><select name="brandid">
- <option value=""></option>
+ <option value="">&nbsp;</option>
 <?php  if ($brands) {
     foreach ($brands as $b) {
         echo '<option value="' .
@@ -156,13 +156,13 @@
 <div class="fixed_save_button">
 <button>Save</button>
 <?php if ($product) {?>
-&nbsp; <button type="button" onclick="self.location='/admin/export?product=<?php echo $product['productid'];?>';">Export</button>
-&nbsp; <button type="button" onclick="if (confirm('Are you sure?', $(this)) || confirmed) { document.pform.mode.value='clone'; document.pform.submit(); }">Clone product</button>
-&nbsp; <button type="button" onclick="window.open('<?php echo $current_location;?>/product/<?php echo $product['productid'];?>', '');">View product</button>
+&nbsp; <button type="button" onclick="javascript: self.location='/admin/export?product=<?php echo $product['productid'];?>';">Export</button>
+&nbsp; <button type="button" onclick="javascript: if (confirm('', $(this)) || confirmed) { document.pform.mode.value='clone'; document.pform.submit(); }">Clone product</button>
+&nbsp; <button type="button" onclick="javascript: window.open('<?php echo $current_location;?>/product/<?php echo $product['productid'];?>', '');">View product</button>
 &nbsp; &nbsp; &nbsp; &nbsp;
 &nbsp; &nbsp; &nbsp; &nbsp;
 &nbsp; &nbsp; &nbsp; &nbsp;
-<button type="button" onclick="if (confirm('Are you sure?', $(this)) || confirmed) { document.pform.mode.value='delete'; document.pform.submit(); }">Delete</button>
+<button type="button" onclick="javascript: if (confirm('', $(this)) || confirmed) { document.pform.mode.value='delete'; document.pform.submit(); }">Delete</button>
 <?php } ?>
 </div>
  </td>

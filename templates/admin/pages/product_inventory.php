@@ -10,9 +10,9 @@
 <form method="POST" name="prform">
 <input type="hidden" name="section" value="inventory">
 {if $warehouses}
-<table width="500" class="lines-table">
+<table class="lines-table">
 <tr>
- <th width="100%">{lng[Warehouse]}</th>
+ <th style="width:100%">{lng[Warehouse]}</th>
  <th>{lng[Avail]}</th>
 </tr>
 {foreach $warehouses as $w}

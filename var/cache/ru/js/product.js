@@ -84,7 +84,7 @@ function product_clicks() {
           if (r) {
             alert("Gift Card added to cart");
             $("#minicart").html(r);
-            $("#head_mobile #minicart").html(r);
+            $("#head_mobile #minicart, #minicart-mobile").html(r);
             cart_clicks();
           } else {
             alert("Please, enter numeric value");
@@ -293,7 +293,7 @@ function postprocess(ql) {
       $(this).append(
         "<img src='" +
           current_location +
-          "/images/check-mark.png' class='checked'>",
+          "/images/check-mark.png' class='checked' alt=''>",
       );
       var optionid = $(this).attr("id").replace("poi-", "");
       $("#po-" + groupid).val(optionid);
@@ -923,7 +923,7 @@ function product_options(o) {
         if (groups[oid][x][1]) {
           if (options[oid][$("#po-" + groups[oid][x][0]).val()]) {
             html +=
-              '<td nowrap><a href="javascript: void(0);" class="clearOption" id="co-' +
+              '<td style="white-space:nowrap"><a href="javascript: void(0);" class="clearOption" id="co-' +
               groups[oid][x][0] +
               '">(x)</a> ' +
               options[oid][$("#po-" + groups[oid][x][0]).val()] +
@@ -933,7 +933,7 @@ function product_options(o) {
       }
 
       html +=
-        '<td nowrap><a href="javascript: void(0);" class="clearAll">Очистить все</a></td>';
+        '<td style="white-space:nowrap"><a href="javascript: void(0);" class="clearAll">Очистить все</a></td>';
       $(qadd + ".variants-data table").html(html);
       $(".clearOption")
         .unbind("click")
@@ -1888,7 +1888,7 @@ function add_to_cart(productid, is_quick, button) {
       '<span class="close close-popup">x</span>' + result["1"],
     );
     $("#minicart").html(result["0"]);
-    $("#head_mobile #minicart").html(result["0"]);
+    $("#head_mobile #minicart, #minicart-mobile").html(result["0"]);
     unload();
     fade();
     var top =
@@ -1982,12 +1982,12 @@ function check_exceptions() {
 
 function switch_photo(a) {
   if (mobile_design) {
-    $("#zoom-mobile").html('<img src="' + a.attr("href") + '">');
+    $("#zoom-mobile").html('<img src="' + a.attr("href") + '" alt="">');
   } else if ($(".product_popup").is(":visible")) {
-    $(".product_popup #zoom").html('<img src="' + a.attr("href") + '">');
+    $(".product_popup #zoom").html('<img src="' + a.attr("href") + '" alt="">');
     if ($(window).width() > 700) $(".product_popup #zoom").zoom();
   } else {
-    $("#zoom").html('<img src="' + a.attr("href") + '">');
+    $("#zoom").html('<img src="' + a.attr("href") + '" alt="">');
     if ($(window).width() > 700) $("#zoom").zoom();
   }
 

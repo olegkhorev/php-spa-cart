@@ -45,7 +45,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
    $templine .= $line;
    if (substr(trim($line), -1, 1) == ';') {
     // Perform the query and display error on SQL query
-    $mysqli->query($templine) or print('Error performing query \'<strong>' . $templine . '\': ' . mysqli_error($mysqli) . '<br /><br />');
+    $mysqli->query($templine) or die('Error performing query \'<strong>' . $templine . '\': ' . mysqli_error($mysqli) . '<br /><br />');
     // Reset temp variable to empty
     $templine = '';
    }
@@ -86,7 +86,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
   $fp = fopen(SITE_ROOT . '/../includes/settings.php', 'w+');
   fputs($fp, $new_file);
   fclose($fp);
-  exit('Admin area access info: a@a.com / 01230 . Don\'t forget to change this password. <a href="/">Visit site</a>');
+  exit('Admin area access info: a@a.com / 01230 . Please, don\'t forget to change the admin account access info. Please, also remove the "install" folder. <a href="/">Visit site</a>');
  }
 }
 ?>

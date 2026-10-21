@@ -17,7 +17,7 @@
 </div>
 <?php } ?>
 <div class="fulldescr"><?php echo $news_data['fulldescr'];?></div>
-<div class="back"><a href="/news" class="ajax_link">Back to News mainpage</a></div>
+<div class="back"><a href="/news" class="link-button ajax_link">Back to the News page</a></div>
 </div>
 
 <?php } else  { ?>
@@ -28,16 +28,18 @@
 <div class="news-list">
 <?php foreach ($news as $b) {?>
 <?php $url = $current_location.'/news/'.($b['cleanurl'] ? $b['cleanurl'].'.html' : $b['newsid']);; ?>
-<a class="ajax_link" href="<?php echo $url;?>"><h5><?php echo $b['title'];?> (<span class="date"><?php  echo date(
-    $date_format,
-    $b["date"],
-); ?></span>)</h5></a>
 <div class="news-item">
 <?php if ($b['imageid']) {?>
-<a class="ajax_link" href="<?php echo $url;?>">
+<a class="ajax_link news_image" href="<?php echo $url;?>">
 <?php $image = $b; $image['new_width'] = 250; $image['new_height'] = 200; include SITE_ROOT . "/includes/news_image.php"; ?>
 </a>
 <?php } ?>
+<a class="ajax_link" href="<?php echo $url;?>"><h5>
+<span class="date"><?php  echo date(
+    $date_format,
+    $b["date"],
+); ?></span>    
+<?php echo $b['title'];?></h5></a>
 <div class="short-descr message-box"><?php echo $b['descr'];?></div>
 <br />
 <a class="news-more ajax_link link-button" href="<?php echo $url;?>">See full article</a>

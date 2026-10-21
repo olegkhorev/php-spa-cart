@@ -8,31 +8,31 @@
 */
 ?>
 <?php
-if ($get["2"] != "recent") { ?>
+if ($get["2"] != 'recent') { ?>
 <h1>{lng[Orders]}</h1>
 <form method="POST" action="/admin/orders">
 <input type="hidden" name="mode" value="search" />
-<table cellspacing="1" cellpadding="3" class="orders_search search_table">
+<table class="orders_search search_table">
 <tr>
- <td align="right">{lng[Order #ID]}</td>
- <td><input type="text" name="orderid" size="5" value="<?php echo $search_orders[
+ <td class="td-align-right">{lng[Order #ID]}</td>
+ <td><input type="text" name="orderid" value="<?php echo $search_orders[
      "orderid"
  ]; ?>" /></td>
 </tr>
 <tr>
- <td align="right">{lng[Email]}</td>
+ <td class="td-align-right">{lng[Email]}</td>
  <td><input type="text" name="email" value="<?php echo $search_orders[
      "email"
  ]; ?>" /></td>
 </tr>
 <tr>
- <td align="right">{lng[Customer name]}</td>
+ <td class="td-align-right">{lng[Customer name]}</td>
  <td><input type="text" name="customer" value="<?php echo $search_orders[
      "customer"
  ]; ?>" /></td>
 </tr>
 <tr>
- <td align="right">{lng[Status]}</td>
+ <td class="td-align-right">{lng[Status]}</td>
  <td><select name="status"><option value="">{lng[All]}</option>
 <?php foreach ($order_statuses as $k2 => $v2) {
     echo '<option value="' .
@@ -47,7 +47,7 @@ if ($get["2"] != "recent") { ?>
  </td>
 </tr>
 <tr>
- <td class="search_table_date_lbl" width="170" align="right">{lng[Search by date]}</td>
+ <td class="search_table_date_lbl td-align-right" style="width:170px">{lng[Search by date]}</td>
  <td class="search_table_date_period">
 <label><input type="radio" name="date_period" value="0"<?php if (
     !$search_orders["date_period"]
@@ -76,18 +76,18 @@ if ($get["2"] != "recent") { ?>
 } ?> /> {lng[Date period]}:</label>
 <input type="text" id="date_from" name="date_from" value="<?php echo $search_orders[
     "date_from"
-]; ?>" size="7" /><div class="date_from_to"> - </div><input type="text" id="date_to" name="date_to" value="<?php echo $search_orders[
+]; ?>" size="7" autocomplete="off" /><div class="date_from_to"> - </div><input type="text" id="date_to" name="date_to" value="<?php echo $search_orders[
     "date_to"
-]; ?>" size="7" />
+]; ?>" size="7" autocomplete="off" />
  </td>
 </tr>
 <tr>
  <td></td>
- <td><br /><button>{lng[Search]}</button> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <a class="ajax_link" href="{$current_location}/admin/orders/reset">{lng[Reset filter]}</a></td>
+ <td><br /><button>{lng[Search]}</button> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <a class="ajax_link" href="{$current_location}/admin/orders/reset">{lng[Reset]}</a></td>
 </tr>
 </table>
 </form>
-<h3>{lng[Search results]}</h3>
+<h3 class="scroll_to_orders">{lng[Search results]}</h3>
 <?php } else { ?>
 <h1>{lng[Recent orders]}</h1>
 <br />
@@ -99,7 +99,7 @@ if ($total_pages > 2) { ?>
 
 <form method="POST">
 <?php if ($orders) { ?>
-<table cellspacing="1" cellpadding="14" width="900" class="lines-table resp-table">
+<table class="lines-table resp-table">
 <thead>
 <tr>
  <th>#</th>
@@ -119,12 +119,12 @@ foreach ($orders as $k => $v) {
     $total += $v["total"];
     echo '
 		<tr>
-			<td width="10" class="td-align-center"><label>#</label><a href="/admin/invoice/' .
+			<td class="td-w-10 td-align-center"><label>#</label><a href="/admin/invoice/' .
         $v["orderid"] .
         '">#' .
         $v["orderid"] .
         '</a></td>
-			<td width="100" class="no-word-break"><label>{lng[Status]}</label>
+			<td class="td-w-100 no-word-break"><label>{lng[Status]}</label>
 				<select name="status[' .
         $v["orderid"] .
         ']">';
@@ -143,7 +143,7 @@ foreach ($orders as $k => $v) {
     } #echo '<pre>';
     #exit(print_R($v));
     echo '</td>
-			<td nowrap><label>{lng[Customer]}</label><a href="/admin/user/' .
+			<td class="td-nowrap"><label>{lng[Customer]}</label><a href="/admin/user/' .
         $v["userid"] .
         '">' .
         $v["firstname"] .
@@ -152,12 +152,12 @@ foreach ($orders as $k => $v) {
         " (" .
         $v["email"] .
         ')</a></td>
-			<td width="130" nowrap class="td-align-center"><label>{lng[Date]}</label><a href="/admin/invoice/' .
+			<td class="td-w-130 td-nowrap td-align-center"><label>{lng[Date]}</label><a href="/admin/invoice/' .
         $v["orderid"] .
         '">' .
         date($datetime_format, $v["date"]) .
         '</a></td>
-			<td class="td-align-center" align="right"><label>{lng[Total]}</label><a href="/admin/invoice/' .
+			<td class="td-align-center"><label>{lng[Total]}</label><a href="/admin/invoice/' .
         $v["orderid"] .
         '">$' .
         $v["total"] .
@@ -165,10 +165,10 @@ foreach ($orders as $k => $v) {
 		</tr>
 		';
 }
-echo '<tr class="resp-width-100"><td colspan="5" align="right"><hr />{lng[Total]}: $' .
+echo '<tr class="resp-width-100"><td colspan="5" style="text-align:right" class="background-transparent"><br />{lng[Total]}: $' .
     $total .
     "</td></tr>";
-echo '<tr class="resp-width-100"><td colspan="5" align="right"><b>{lng[Total Paid]}: $' .
+echo '<tr class="resp-width-100"><td colspan="5" style="text-align:right" class="background-transparent"><b>{lng[Total Paid]}: $' .
     $total_paid .
     "</b></td></tr>";
 echo "</table>";
@@ -176,6 +176,14 @@ echo "</table>";
 <div class="fixed_save_button">
 <button>{lng[Save]}</button>
 </div>
+
+{if $search_orders && $get["2"] != 'recent'}
+<script>
+$([document.documentElement, document.body]).animate({
+    scrollTop: $('.scroll_to_orders').offset().top + 21
+}, 500);
+</script>
+{/if}
 
 <?php } else {echo "No orders found.";} ?>
 </form>

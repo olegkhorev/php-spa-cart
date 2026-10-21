@@ -11,7 +11,7 @@
 <br />
 
 <form method="post" class="payment_methods">
-<table cellpadding="2" cellspacing="1" width="900" class="lines-table resp-table">
+<table class="lines-table resp-table">
 <thead>
 <tr>
   <th>{lng[Payment method]}</th>
@@ -25,17 +25,17 @@
 <?php foreach ($payment_methods as $m) {
     echo '
 <tr>
-  <td align="center"><label>{lng[Payment method]}</label><input type="text" name="data[' .
+  <td class="td-align-center"><label>{lng[Payment method]}</label><input type="text" name="data[' .
         $m["paymentid"] .
         '][name]" size="20" value="' .
         escape($m["name"], 2) .
         '" /></td>
-  <td align="center"><label>{lng[Comment]}</label><input type="text" name="data[' .
+  <td class="td-align-center"><label>{lng[Comment]}</label><input type="text" name="data[' .
         $m["paymentid"] .
         '][details]" size="20" value="' .
         escape($m["details"], 2) .
         '" /></td>
-  <td align="center"><label>{lng[Mode]}</label>' .
+  <td class="td-align-center"><label>{lng[Mode]}</label>' .
         ($m["paymentid"] == 7 || $m["paymentid"] == 2 || $m["paymentid"] == 8
             ? '<select name="data[' .
                 $m["paymentid"] .
@@ -49,7 +49,7 @@
   </select>'
             : "Offline") .
         '</td>
-  <td align="left" nowrap><label>{lng[Params]}</label>';
+  <td class="td-nowrap"><label>{lng[Params]}</label>';
     if ($m["paymentid"] == "7") {
         echo '
 		<input type="text" name="data[' .
@@ -100,12 +100,12 @@
 		';
     }
     echo '</td>
-  <td align="center"><label>{lng[Pos]}</label><input type="text" name="data[' .
+  <td class="td-align-center"><label>{lng[Pos]}</label><input type="text" name="data[' .
         $m["paymentid"] .
         '][orderby]" size="4" value="' .
         $m["orderby"] .
         '" /></td>
-  <td nowrap="nowrap" align="center"><label>{lng[Enabled]}</label><input type="checkbox" name="data[' .
+  <td class="td-nowrap td-align-center"><label>{lng[Enabled]}</label><input type="checkbox" name="data[' .
         $m["paymentid"] .
         '][enabled]" value="1"' .
         ($m["enabled"] ? ' checked="checked"' : "") .

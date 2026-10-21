@@ -136,5 +136,3 @@ function profile_clicks() {
       return false;
     });
 }
-
-function actions() {}

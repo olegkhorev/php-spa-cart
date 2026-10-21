@@ -29,7 +29,7 @@
 <br />
 
 {if $total_pages > 2}
-<div align="right">{include="common/navigation.php"}</div>
+<div style="text-align:right">{include="common/navigation.php"}</div>
 <br />
 {/if}
 <div class="brands">
@@ -39,18 +39,18 @@
 {if $b['imageid']}
 <a href="{$url}">
 {brand_image image=`$b` new_width=205 new_height=205 center=1 valign=1}
-{/if}
 </a>
+{/if}
 <a href="{$url}">{$b['name']}</a>
 <br />
 </div>
 {/foreach}
 </div>
 {if $total_pages > 2}
-<div align="right">{include="common/navigation.php"}</div>
+<div style="text-align:right">{include="common/navigation.php"}</div>
 <br />
 {/if}
 {else}
 <br />
-<center>{lng[No brands found]}</center>
+<div style="text-align:center">{lng[No brands found]}</div>
 {/if}

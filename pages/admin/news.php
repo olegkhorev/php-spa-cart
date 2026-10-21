@@ -137,7 +137,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     $_SESSION['alerts'][] = array(
         'type'		=> 'i',
-        'content'	=> 'News has been successfully saved'
+        'content'	=> lng('News saved')
     );
 
     redirect("admin/news".(!empty($get['2']) ? "/".$get['2'] : ""));

@@ -27,18 +27,18 @@
 <h3>Example</h3>
 <form method="POST" class="noajax" action="<?php echo $current_location;?>/module/api/api?api_auth_key=<?php echo $config['api']['api_auth_key'];?>">
 <table class="normal-table">
- <tr>
-  <td>Mode:</td>
-  <td><input type="text" name="mode" value="add" /><td>
- </tr>
- <tr>
-  <td>SKU:</td>
-  <td><input type="text" name="sku" value="test" /><td>
- </tr>
- <tr>
-  <td>Price:</td>
-  <td><input type="text" name="price" value="10.00" /><td>
- </tr>
+    <tr>
+        <td>Mode:</td>
+        <td><input type="text" name="mode" value="add" /><td>
+    </tr>
+    <tr>
+        <td>SKU:</td>
+        <td><input type="text" name="sku" value="test" /><td>
+    </tr>
+    <tr>
+        <td>Price:</td>
+        <td><input type="text" name="price" value="10.00" /><td>
+    </tr>
 </table>
 <button>Make API request</button>
 </form>
@@ -46,10 +46,10 @@
 <h3>Previos requests logs</h3>
 <table cellspacing="1">
 <tr>
- <th>Mode</th>
- <th>SKU</th>
- <th>Price</th>
- <th>Date</th>
+    <th>Mode</th>
+	<th>SKU</th>
+	<th>Price</th>
+    <th>Date</th>
 </tr>
 <?php foreach ($api_requests_logs as $v) {?>
 <tr>

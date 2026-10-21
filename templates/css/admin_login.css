@@ -403,3 +403,8 @@ body.admin-area .alerts .close-alerts {
     border: 2px solid #efefef !important;
     width: 240px !important;
 }
+.alert_message.res_p button {
+    margin: 0 0 0 10px;
+    text-transform: none;
+    padding: 0 15px;
+}

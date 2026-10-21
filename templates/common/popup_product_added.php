@@ -21,7 +21,7 @@
 <b>{lng[Selected options]}:</b>
 {foreach $product_options as $o}
 {if $o['value']}
-{$o['group']['name']}: {$o['value']<br />
+{$o['group']['name']}: {$o['value']}<br />
 {else}
 {$o['group']['name']}: {$o['option']['name']}<br />
 {/if}
@@ -30,10 +30,10 @@
 {/if}
 </div>
 <br /><br />
-<table width="100%" class="product-added-table">
+<table style="width: 100%;" class="product-added-table">
 <tr>
  <td><button class="close_popup">{lng[Continue shopping]}</button></td>
- <td align="right">
+ <td style="text-align: right;">
 
 <a href="/cart" class="main-button">{lng[View cart]}</a>
 <a href="/checkout" class="main-button">{lng[Checkout]}</a>

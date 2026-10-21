@@ -1,0 +1,132 @@
+
+.subheader {
+    background: rgba(230,201,189,.06);
+}
+.alert_message, .note, .popup {
+	border: 10px solid rgba(230,201,189,.6);
+}
+.close_alert, .close-popup {
+	background: #e6c9bd !important;
+}
+.save2wl {
+	background: #e6c9bd;
+}
+button, input[type=button], input[type=submit] {
+	color: #e6c9bd;
+}
+button:hover, input[type=button]:hover, input[type=submit]:hover {
+	background: #e6c9bd;
+}
+.search {
+	border-bottom: 1px solid #e6c9bd;
+}
+.header .links a {
+	color: #e6c9bd;
+}
+.banners-homepage .slide img {
+	border-top: 24px solid #e6c9bd;
+	border-bottom: 24px solid #e6c9bd;
+}
+#menu > li:hover {
+	border-bottom: 0px solid #e6c9bd;
+}
+#menu > li.active {
+	border-bottom: 3px solid #e6c9bd;
+}
+#menu > li:after, #menu > li:before {
+	background: #e6c9bd;
+}
+.indicators li.active {
+	background:#e6c9bd
+}
+.indicators li:hover {
+	background-color:#e6c9bd
+}
+.arrow:hover span {
+	border-color:#e6c9bd
+}
+body svg {
+	fill: #e6c9bd;
+}
+h2 {
+	color: #e6c9bd;
+}
+h3 {
+	color: #e6c9bd;
+	border-bottom: 1px solid #e6c9bd;
+}
+.mobile-version {
+	color: #e6c9bd;
+}
+.instant-search {
+	border: 1px solid #e6c9bd;
+}
+.mobile-left_menu {
+	border: 1px solid #e6c9bd;
+}
+#left_menu hr {
+	border-top: 1px solid #e6c9bd;
+}
+.mobile-menu-links a {
+	color: #e6c9bd;
+}
+.product-details-price {
+	color: #e6c9bd;
+}
+#home-tabs, #product-tabs {
+    border-bottom: 3px solid #e6c9bd;
+}
+.price-breaks span {
+	color: #e6c9bd;
+}
+.product-details-price {
+	color: #e6c9bd;
+}
+.left_filter h4 {
+	color: #e6c9bd;
+}
+.res-item .discount {
+	background: #e6c9bd;
+}
+.res-item button, .add2cart-product {
+    background: #e6c9bd;
+}
+.home-tabs li.active, .product-tabs li.active {
+	color: #e6c9bd;
+}
+h1 {
+	color: #e6c9bd;
+}
+#menu li a.parent-link {
+	color: #e6c9bd;
+}
+#menu > li.search-dd div.search {
+	border: 1px solid #e6c9bd;
+}
+.mrp-rounded-box {
+	background: #e6c9bd;
+}
+.mrp-subtitle-2 {
+	color: #e6c9bd;
+}
+.mrp-row-cart > div:last-child a {
+	color: #e6c9bd !important;
+}
+.sh-rounded-box {
+	border: 2px solid #e6c9bd;
+}
+.sh-rounded-box svg {
+	fill: #e6c9bd;
+}
+.subheader table td h4 {
+	color: #e6c9bd;
+}
+.subheader table td span {
+	color: #e6c9bd;
+}
+.see_all a {
+	color: #e6c9bd;
+}
+.more-no-search {
+	color: #e6c9bd;
+}

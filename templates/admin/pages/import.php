@@ -10,13 +10,13 @@
 <h1>{lng[Import catalog]}</h1>
 <form method="post" accept-charset="utf-8" class="list-form noajax" name="exportForm" enctype="multipart/form-data">
 <br />
-<table width="800" class="import" cellspacing="1" cellpadding="2">
+<table class="import table-w-800">
 <tr>
- <td>Select import file</th>
+ <td>Select import file</td>
  <td><input type="file" name="file" size="40" /></td>
 </tr>
 <tr>
- <td>Delimiter</th>
+ <td>Delimiter</td>
  <td>
 <select name="delimiter">
   <option value=",">Comma</option>
@@ -26,7 +26,7 @@
  </td>
 </tr>
 <tr>
- <td></th>
+ <td></td>
  <td><button type="submit">Import</button></td>
 </tr>
 </table>
@@ -39,13 +39,13 @@
 
 <br /><br />
 
-<font class="star">*</font> You can use URLs as any image path in the import file. It will be downloaded and added to your collection
+<span class="star">*</span> You can use URLs as any image path in the import file. It will be downloaded and added to your collection
 <br />
 <br />
-<font class="star">*</font><font class="star">*</font> Existing images, or if you just wish, should be uploaded manually as into the "/var/import_export/" and separate folders. Folders names are:<br /><br />
+<span class="star">*</span><span class="star">*</span> Existing images, or if you just wish, should be uploaded manually as into the "/var/import_export/" and separate folders. Folders names are:<br /><br />
 <table>
 <tr>
- <td width="150">categories_banners</td>
+ <td style="width:150px">categories_banners</td>
  <td>Categories banners</td>
 </tr>
 <tr>
@@ -64,7 +64,7 @@ Categories banners, products images, variants images - if you import them for sp
 <br />
 <br />
 <br />
-<font class="star">*</font><font class="star">*</font><font class="star">*</font> You can use SKU instead of !PRODUCT_ID in the following tables:<br />
+<span class="star">*</span><span class="star">*</span><span class="star">*</span> You can use SKU instead of !PRODUCT_ID in the following tables:<br />
 <ul>
  <li>Products images</li>
  <li>Products options</li>
@@ -73,12 +73,12 @@ Categories banners, products images, variants images - if you import them for sp
 </ul>
 
 
-<font class="star">*</font><font class="star">*</font><font class="star">*</font><font class="star">*</font> You can also use SKU instead of !VARIANT_ID
+<span class="star">*</span><span class="star">*</span><span class="star">*</span><span class="star">*</span> You can also use SKU instead of !VARIANT_ID
 
 <br /><br />
 
-<font class="star">*</font><font class="star">*</font><font class="star">*</font><font class="star">*</font><font class="star">*</font> Import support importing new items. Just insert new ID's. Categories does not support to add them.
+<span class="star">*</span><span class="star">*</span><span class="star">*</span><span class="star">*</span><span class="star">*</span> Import support importing new items. Just insert new ID's. Categories does not support to add them.
 
 <br /><br />
 
-<font class="star">*</font><font class="star">*</font><font class="star">*</font><font class="star">*</font><font class="star">*</font><font class="star">*</font> Import headers are must be. Import fields header is not recognized yet so import rows must include all fields.
+<span class="star">*</span><span class="star">*</span><span class="star">*</span><span class="star">*</span><span class="star">*</span><span class="star">*</span> Import headers are must be. Import fields header is not recognized yet so import rows must include all fields.

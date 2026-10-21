@@ -8,10 +8,10 @@
 */
 ?>
 <h1>{lng[Register]}</h1>
-<center>
-<table class="login_table">
+<div style="text-align:center">
+<table class="login_table" style="margin-left:auto;margin-right:auto">
 <tr>
- <td valign="top">
+ <td style="vertical-align:top">
 <form name="register" method="POST" action="/{if $get['0'] == 'register'}register{else}profile{/if}">
     <div class="group">
       <input class="firstname" maxlength="32" required type="text" name="firstname" value="{php echo escape($userinfo['firstname'], 2);}" />
@@ -48,7 +48,7 @@
 {include="common/membership.php"}
     </div>
 {/if}
-<div align="center">
+<div style="text-align:center">
 <button type="button">{lng[Register]}</button> &nbsp; <a href="/login" class="main-button login-link">{lng[Login]}</a></div>
 {*
 <table class="login-table">
@@ -85,4 +85,4 @@
  </td>
 </tr>
 </table>
-</center>
+</div>

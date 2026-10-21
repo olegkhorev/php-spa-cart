@@ -11,18 +11,18 @@
 {if $value == "1"}{lng[Low]}{elseif $value == "2"}{lng[Medium]}{elseif $value == "3"}{lng[Normal]}{elseif $value == "4"}{lng[High]}{/if}
 {elseif $mode == "static"}
 {if $value == "1"}
-<font color="blue">{lng[Low]}</font>
+<span style="color: blue;">{lng[Low]}</span>
 {elseif $value == "2"}
-<font color="black">{lng[Medium]}</font>
+<span style="color: black;">{lng[Medium]}</span>
 {elseif $value == "3"}
-<font color="red">{lng[Normal]}</font>
+<span style="color: red;">{lng[Normal]}</span>
 {elseif $value == "4"}
-<font color="red"><b>{lng[High]}</b></font>
+<span style="color: red;"><b>{lng[High]}</b></span>
 {/if}
 {else}
 <select name="{$name}" {$extra}>
 {if $empty == "Y"}
-<option value=""{if $value == ""} selected{/if}>{lng[Select priority]}</option>
+<option value=""{if $value == ""} selected{/if}>{lng[All]}</option>
 {/if}
 <option value="1"{if $value == "1"} selected{/if}>{lng[Low]}</option>
 <option value="2"{if $value == "2" || (!$value && $empty != "Y")} selected{/if}>{lng[Medium]}</option>

@@ -15,14 +15,14 @@ Don't forget to generate Google sitemap to include search keywords and then subm
 <br /><br />
 <form method="post" enctype="multipart/form-data" name="fpform"<?php /* ?> class="noajax"<?php */ ?>>
 
-<table cellpadding="3" cellspacing="1">
+<table>
 
 <tr>
- <td colspan="2"><h3>Import search keywords</td>
+ <td colspan="2"><h3>Import search keywords</h3></td>
 </tr>
 
 <tr>
-  <td width="100"><input type="file" name="file" /></td>
+  <td style="width:100px"><input type="file" name="file" /></td>
   <td>
   <button type="submit">Import</button>
   </td>

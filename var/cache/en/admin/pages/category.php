@@ -31,7 +31,7 @@ Category path: <?php  echo $category_location; ?>
     "categoryid"
 ]; ?>/banners">Banners</a></li>
 <?php } ?>
-</li>
+</ul>
 <div class="clear"></div>
 <br />
 <?php  } ?>
@@ -42,14 +42,14 @@ Category path: <?php  echo $category_location; ?>
 <input type="hidden" name="mode" value="" />
 <?php  if ($get["3"] == "banners") { ?>
 
-<table cellpadding="3" cellspacing="1" class="lines-table resp-table">
+<table class="lines-table resp-table">
 <thead>
 <tr>
-	<th width="10">&nbsp;</th>
+	<th style="width:10px">&nbsp;</th>
 	<th>Banner</th>
 	<th>Link</th>
 	<th>Alt</th>
-	<th width="100">Pos</th>
+	<th style="width:100px">Pos</th>
 </tr>
 </thead>
 <?php  if ($banners) {
@@ -58,11 +58,11 @@ Category path: <?php  echo $category_location; ?>
 	<td><input type="checkbox" name="to_delete[<?php  echo $b[
      "bannerid"
  ]; ?>]" /></td>
-	<td align="center"><label>Banner</label><a href="<?php  echo $b[
+	<td class="td-align-center"><label>Banner</label><a href="<?php  echo $b[
      "image_url"
  ]; ?>" target="_blank"><img src="<?php  echo $b[
     "image_url"
-]; ?>" width="100"></a></td>
+]; ?>" width="100" alt="<?php  echo escape($b["alt"]); ?>"></a></td>
 	<td class="td-align-center"><label>Link</label><input size="30" type="text" name="to_update[<?php  echo $b[
      "bannerid"
  ]; ?>][url]" value="<?php  echo escape($b["url"]); ?>" /></td>
@@ -76,7 +76,7 @@ Category path: <?php  echo $category_location; ?>
 <?php  } ?>
 <tr>
 	<td colspan="5" class="var-wh-100 background-transparent">
-	<button type="button" onclick="javascript: submitForm(this, 'update');">Update</button> &nbsp;	<button type="button" onclick="javascript: submitForm(this, 'delete');">Delete selected</button>
+	<button type="button" onclick="javascript: submitForm(this, 'update');">Update</button> &nbsp;	<button type="button" onclick="javascript: if (confirm('', $(this)) || confirmed) submitForm(this, 'delete');">Delete selected</button>
 	</td>
 </tr>
 
@@ -84,13 +84,13 @@ Category path: <?php  echo $category_location; ?>
 } else  {
      ?>
 <tr>
- <td colspan="5" align="center" class="var-wh-100 background-transparent">No banners for this category</td>
+ <td colspan="5" class="var-wh-100 background-transparent td-align-center">No banners for this category</td>
 </tr>
 <?php 
 } ?>
 
 <tr>
-<td colspan="5" class="var-wh-100 background-transparent"><br /><h3>Add new</td>
+<td colspan="5" class="var-wh-100 background-transparent"><br /><h3>Add new</h3></td>
 </tr>
 
 <tr>
@@ -98,7 +98,7 @@ Category path: <?php  echo $category_location; ?>
 	<td class="background-transparent"><label>Banner</label><input type="file" size="10" name="userfile" /></td>
 	<td class="background-transparent td-align-center"><label>Link</label><input size="30" type="text" name="new_url"></td>
 	<td class="background-transparent td-align-center"><label>Alt</label><input size="30" type="text" name="new_alt"></td>
-	<td class="background-transparent" align="center"><label>Pos</label><input type="text" size="5" name="new_pos" /></td>
+	<td class="background-transparent td-align-center"><label>Pos</label><input type="text" size="5" name="new_pos" /></td>
 </tr>
 
 <tr>
@@ -114,11 +114,11 @@ Category path: <?php  echo $category_location; ?>
 <?php  if (!empty($_GET["parentid"])) { ?>
 <input type="hidden" name="parentid" value="<?php echo $_GET['parentid'];?>" />
 <?php  } ?>
-<table cellpadding="3" cellspacing="1" class="category normal-table">
+<table class="category normal-table">
 <tr>
-	<td height="10" nowrap="nowrap">Title</td>
-	<td width="10" height="10" class="star">*</td>
-	<td height="10">
+	<td style="height:10px;white-space:nowrap">Title</td>
+	<td style="height:10px" class="star">*</td>
+	<td style="height:10px">
 		<input type="text" name="title" maxlength="255" size="65" value="<?php  echo escape(
       $category["title"],
   ); ?>" onchange="javascript: if (this.form.cleanurl.value == '') copy_clean_url(this, this.form.cleanurl);" />
@@ -126,9 +126,9 @@ Category path: <?php  echo $category_location; ?>
 </tr>
 
 <tr>
-	<td height="10" nowrap="nowrap">Clean URL</td>
-	<td width="10" height="10"></td>
-	<td height="10">
+	<td style="height:10px;white-space:nowrap">Clean URL</td>
+	<td style="width:10px;height:10px"></td>
+	<td style="height:10px">
 		<input type="text" name="cleanurl" maxlength="255" size="65" value="<?php  echo $category[
       "cleanurl"
   ]; ?>" />
@@ -136,9 +136,9 @@ Category path: <?php  echo $category_location; ?>
 </tr>
 
 <tr>
-	<td height="10" nowrap="nowrap">Position</td>
-	<td width="10" height="10">&nbsp;</td>
-	<td height="10">
+	<td style="height:10px;white-space:nowrap">Position</td>
+	<td style="width:10px;height:10px">&nbsp;</td>
+	<td style="height:10px">
 		<input type="text" name="orderby" size="5" value="<?php  echo $category[
       "orderby"
   ]; ?>" />
@@ -146,9 +146,9 @@ Category path: <?php  echo $category_location; ?>
 </tr>
 
 <tr>
-	<td height="10" nowrap="nowrap">Enabled</td>
-	<td width="10" height="10"></td>
-	<td height="10">
+	<td style="height:10px;white-space:nowrap">Enabled</td>
+	<td style="width:10px;height:10px"></td>
+	<td style="height:10px">
 		<input type="checkbox" name="enabled" value="1" <?php  if (
       !$category ||
       $category["enabled"] == 1
@@ -159,8 +159,8 @@ Category path: <?php  echo $category_location; ?>
 </tr>
 
 <tr class="standard">
- <td valign="top" class="hide-td-for-mdl"></td>
-	<td width="10" height="10">&nbsp;</td>
+ <td class="hide-td-for-mdl"></td>
+	<td style="width:10px;height:10px">&nbsp;</td>
  <td><div class="select-title">Category icon</div>
 	<?php  if ($category_icon) {
 
@@ -191,8 +191,8 @@ Category path: <?php  echo $category_location; ?>
 </tr>
 
 <tr>
- <td valign="top" class="hide-td-for-mdl"></td>
-	<td width="10" height="10">&nbsp;</td>
+ <td class="hide-td-for-mdl"></td>
+	<td style="width:10px;height:10px">&nbsp;</td>
  <td><div class="select-title">Description</div>
 	<script>
 		var editor;
@@ -210,9 +210,9 @@ Category path: <?php  echo $category_location; ?>
 </tr>
 
 <tr>
-	<td height="10" nowrap="nowrap">Title tag</td>
-	<td width="10" height="10"></td>
-	<td height="10">
+	<td style="height:10px;white-space:nowrap">Title tag</td>
+	<td style="width:10px;height:10px"></td>
+	<td style="height:10px">
 		<input type="text" size="65" name="meta_title" value="<?php  echo escape(
       $category["meta_title"],
   ); ?>" />
@@ -220,9 +220,9 @@ Category path: <?php  echo $category_location; ?>
 </tr>
 
 <tr>
-	<td height="10" nowrap="nowrap">Meta keywords</td>
-	<td width="10" height="10"></td>
-	<td height="10">
+	<td style="height:10px;white-space:nowrap">Meta keywords</td>
+	<td style="width:10px;height:10px"></td>
+	<td style="height:10px">
 		<textarea cols="65" rows="4" name="meta_keywords"><?php  echo $category[
       "meta_keywords"
   ]; ?></textarea>
@@ -230,9 +230,9 @@ Category path: <?php  echo $category_location; ?>
 </tr>
 
 <tr>
-	<td height="10" nowrap="nowrap">Meta description</td>
-	<td width="10" height="10"></td>
-	<td height="10">
+	<td style="height:10px;white-space:nowrap">Meta description</td>
+	<td style="width:10px;height:10px"></td>
+	<td style="height:10px">
 		<textarea cols="65" rows="4" name="meta_description"><?php  echo $category[
       "meta_description"
   ]; ?></textarea>

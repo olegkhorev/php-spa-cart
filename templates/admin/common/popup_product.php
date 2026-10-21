@@ -7,7 +7,7 @@
 * https://github.com/olegkhorev/php-spa-cart
 */
 ?>
-<table id="popup_product" width="100%">
+<table id="popup_product" style="width:100%">
 <tr>
  <th>{lng[Category]}</th>
  <th>{lng[Product]}</th>

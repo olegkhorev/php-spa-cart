@@ -7,7 +7,7 @@ function func_module_admin_post_update($data)
 
     $_SESSION['alerts'][] = array(
         'type'		=> 'i',
-        'content'	=> 'Form has been successfully submitted'
+        'content'	=> 'Form submitted'
     );
 
     return 'test';

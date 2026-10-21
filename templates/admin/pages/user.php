@@ -13,35 +13,35 @@
 <h1>{lng[Modify user]}</h1>
 {/if}
 <form method="post" name="user_form_admin"{*{if !$user['id']} class="noajax"{/if}*}>
-<table cellpadding="2" class="user_table normal-table">
+<table class="user_table normal-table">
 <tr>
  <td class="name">{lng[First name]}</td>
  <td><input type="text" name="posted_data[firstname]" value="<?php echo escape(
      $user["firstname"],
  ); ?>" /></td>
-</td>
+</tr>
 <tr>
  <td class="name">{lng[Last name]}</td>
  <td><input type="text" name="posted_data[lastname]" value="<?php echo escape(
      $user["lastname"],
  ); ?>" /></td>
-</td>
+</tr>
 <tr>
  <td class="name">{lng[Phone]}</td>
  <td><input type="text" name="posted_data[phone]" value="<?php echo escape(
      $user["phone"],
  ); ?>" /></td>
-</td>
+</tr>
 <tr>
  <td class="name">{lng[Email]}</td>
  <td><input type="text" name="posted_data[email]" value="<?php echo escape(
      $user["email"],
  ); ?>" /></td>
-</td>
+</tr>
 <tr>
  <td class="name">{lng[Password]}</td>
  <td><input type="password" name="password" value="" autocomplete="new-password" /></td>
-</td>
+</tr>
 
 {if $userinfo['usertype'] == 'A' && $root_admin}
 <tr>
@@ -56,7 +56,7 @@
 } ?>>{lng[Administrator]}</option>
 </select>
  </td>
-</td>
+</tr>
 {/if}
 
 {if $userinfo['usertype'] == 'A' && $root_admin}
@@ -64,7 +64,7 @@
  <td class="name">{lng[Role]}</td>
  <td>
 <select name="posted_data[roleid]">
-<option value="0"></option>
+<option value="0">&nbsp;</option>
 {foreach $roles as $v}
 <option value="{$v['roleid']}"<?php if ($user["roleid"] == $v["roleid"]) {
     echo " selected";
@@ -72,7 +72,7 @@
 {/foreach}
 </select>
  </td>
-</td>
+</tr>
 {/if}
 
 <tr>
@@ -94,14 +94,14 @@
  <td><input type="text" name="posted_data[address]" value="<?php echo escape(
      $user["address"],
  ); ?>" /></td>
-</td>
+</tr>
 
 <tr>
  <td class="name">{lng[City]}</td>
  <td><input type="text" name="posted_data[city]" value="<?php echo escape(
      $user["city"],
  ); ?>" /></td>
-</td>
+</tr>
 
 <script>
 var states = {ldelim}{rdelim};
@@ -150,16 +150,17 @@ foreach ($countries as $v) {
 if (!$found) { ?>
  <input type="text" name="posted_data[state]" id="state" value="<?php echo escape(
      $user["state"],
- ); ?>" /></td>
+ ); ?>" />
 <?php }
 ?>
 </td>
+</tr>
 
 <tr>
  <td class="name">{lng[Country]}</td>
  <td>
 <select name="posted_data[country]" id="country">
-<option value=""></option>
+<option value="">&nbsp;</option>
 <?php foreach ($countries as $v) {
     echo '<option value="' .
         $v["code"] .
@@ -171,14 +172,14 @@ if (!$found) { ?>
 } ?>
 </select>
  </td>
-</td>
+</tr>
 
 <tr>
  <td class="name">{lng[Zip/Postal code]}</td>
  <td><input type="text" name="posted_data[zipcode]" value="<?php echo escape(
      $user["zipcode"],
  ); ?>" /></td>
-</td>
+</tr>
 
 <tr>
  <td class="name">{lng[Pending membership]}</td>
@@ -200,7 +201,7 @@ if (!$found) { ?>
 } ?>
 </select>
  </td>
-</td>
+</tr>
 
 <tr>
  <td class="name">{lng[Membership]}</td>
@@ -222,7 +223,7 @@ if (!$found) { ?>
 } ?>
 </select>
  </td>
-</td>
+</tr>
 </table>
 
 <div class="fixed_save_button">

@@ -342,7 +342,7 @@ function insertImage(u, i, j) {
     $(".attachments").append(
       '<div id="a' +
         i +
-        '"><img src="/images/remove.png" class="remove">' +
+        '"><img src="/images/remove.png" class="remove" alt="Remove">' +
         u +
         "</div>",
     );
@@ -350,7 +350,7 @@ function insertImage(u, i, j) {
     $(".attachments").append(
       '<div id="a' +
         i +
-        '"><img src="/images/remove.png" class="remove"><img src="' +
+        '"><img src="/images/remove.png" class="remove" alt="Remove"><img src="' +
         u +
         '" onclick="show_photo(' +
         i +

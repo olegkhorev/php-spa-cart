@@ -42,7 +42,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $update['email'] = $email;
         $_SESSION['alerts'][] = array(
             'type'		=> 'i',
-            'content'	=> 'Changes has been successfully made'
+            'content'	=> 'Changes made'
         );
     }
 

@@ -20,19 +20,33 @@
 .blogs .author i {
   float: right;
 }
+.blogs .descr h2 span {
+    font-style: italic;
+    font-size: 14px;
+    float: right;
+}
 .blogs .image {
-  margin: 10px 10px 10px 0;
-  float: left;
-  width: 300px;
-  text-align: center;
+    float: left;
+    width: 300px;
+    text-align: center;
+    display: flex;
+    width: 300px;
+    float: left;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
 }
 .blogs .image img {
   max-width: 300px;
   border-radius: 25px;
 }
 .blogs .descr {
-  padding: 10px;
+  padding: 0;
   margin-bottom: 30px;
+}
+.blogs .descr h2 {
+  font-size: 18px;
 }
 .blogs .descr div {
   padding: 10px 0 10px 0;
@@ -51,6 +65,9 @@
 }
 .blog .fulldescr {
   padding: 10px 10px 20px 10px;
+}
+.blog .fulldescr h2 {
+    padding-top: 20px;
 }
 .blog_comments .author {
   padding: 10px 0;
@@ -141,6 +158,14 @@ textarea[name="comment"] {
   }
   .blog .image img, .news .image img {
     border-radius: 15px;
+  }
+}
+@media only screen and (max-width: 600px) {
+  .blogs .descr h2 {
+    padding: 10px 15px;
+  }
+  .news-item .descr div.message-box div[align="right"] a {
+    margin-right: 10px;
   }
 }
 @media only screen and (max-width: 500px) {

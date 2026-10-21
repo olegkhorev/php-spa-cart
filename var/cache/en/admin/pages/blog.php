@@ -22,13 +22,13 @@
 
 <br /><br />
 
-<table cellpadding="3" cellspacing="1" width="600" class="lines-table resp-table">
+<table class="lines-table resp-table">
 <thead>
 <tr>
-	<th width="10">&nbsp;</th>
-	<th width="60%">Title</th>
-	<th width="5%">Active</th>
-	<th width="35%">Comments</th>
+	<th style="width:10px">&nbsp;</th>
+	<th style="width:60%">Title</th>
+	<th style="width:5%">Active</th>
+	<th style="width:35%">Comments</th>
 </tr>
 </thead>
 <?php  foreach ($blogs as $b) {
@@ -48,7 +48,7 @@
         '][active]" value="Y"' .
         ($b["active"] == "Y" ? ' checked="checked"' : "") .
         ' /></td>
-	<td align="center"><label>Comments</label><a href="' .
+	<td style="text-align:center"><label>Comments</label><a href="' .
         $current_location .
         "/admin/blog/" .
         $b["blogid"] .
@@ -60,7 +60,7 @@
 </table>
 <div class="fixed_save_button">
 <button type="button" onclick="javascript: submitForm(this, 'update');">Update</button> &nbsp;
-<button type="button" onclick="javascript: if (confirmed || confirm('This operation will delete selected blogs with all messages.', $(this))) submitForm(this, 'delete');">Delete selected</button>
+<button type="button" onclick="javascript: if (confirmed || confirm('', $(this))) submitForm(this, 'delete');">Delete selected</button>
 </div>
 </form>
 
@@ -87,10 +87,10 @@
 <h1><?php echo $blog['title'];?></h1>
 <?php } ?>
 
-<table cellpadding="3" cellspacing="1" width="90%" class="normal-table">
+<table style="width:90%" class="normal-table">
 <?php  if ($blog["date"]) { ?>
 <tr>
- <td valign="top" class="hide-td-for-mdl"></td>
+ <td class="hide-td-for-mdl"></td>
  <td><div class="select-title">Author</div>
 <a href="<?php  echo $current_location .
     "/admin/user/" .
@@ -99,14 +99,14 @@
     $blog["lastname"]; ?></a></td>
 </tr>
 <tr>
- <td valign="top" class="hide-td-for-mdl"></td>
+ <td class="hide-td-for-mdl"></td>
  <td><div class="select-title">Added</div>
 <?php  echo date($date_format, $blog["date"]); ?></td>
 </tr>
 <?php  } ?>
 
 <tr>
- <td valign="top" class="hide-td-for-mdl"></td>
+ <td class="hide-td-for-mdl"></td>
  <td><div class="select-title">Image</div>
 <?php if ($blog['image']) {?>
 <?php $image = $blog['image']; $image['new_width'] = 400; $image['new_height'] = 100; $image['link'] = "Y"; $image['blank'] = "Y"; include SITE_ROOT . "/includes/blog_image.php"; ?>
@@ -137,7 +137,7 @@
 </tr>
 
 <tr>
- <td valign="top" class="hide-td-for-mdl"></td>
+ <td class="hide-td-for-mdl"></td>
  <td><div class="select-title">Short description</div>
 		<textarea class="ckeditor" id="ck_editor" cols="65" rows="7" name="descr"><?php  echo $blog[
       "descr"
@@ -146,7 +146,7 @@
 </tr>
 
 <tr>
- <td valign="top" class="hide-td-for-mdl"></td>
+ <td class="hide-td-for-mdl"></td>
  <td><div class="select-title">Detailed description</div>
 	<script>
 		var editor;
@@ -164,28 +164,28 @@
 </tr>
 
 <tr>
- <td valign="top"><b>Meta title</b></td>
+ <td><b>Meta title</b></td>
  <td><input type="text" size="80" name="meta_title" value="<?php  echo $blog[
      "meta_title"
  ]; ?>" /></td>
 </tr>
 
 <tr>
- <td valign="top"><b>Meta keywords</b></td>
+ <td><b>Meta keywords</b></td>
  <td><textarea cols="80" rows="5" name="meta_keywords"><?php  echo $blog[
      "meta_keywords"
  ]; ?></textarea></td>
 </tr>
 
 <tr>
- <td valign="top"><b>Meta description</b></td>
+ <td><b>Meta description</b></td>
  <td><textarea cols="80" rows="5" name="meta_descr"><?php  echo $blog[
      "meta_descr"
  ]; ?></textarea></td>
 </tr>
 
 <tr>
- <td><b>Active</b></td>
+ <td>Active</td>
  <td><input type="checkbox" name="active" value="Y"<?php  echo !$blog ||
  $blog["active"] == "Y"
      ? ' checked="checked"'
@@ -208,7 +208,7 @@
 
 <?php include SITE_ROOT."/var/cache/en/admin/common/navigation.php";?>
 
-<table cellpadding="3" cellspacing="1" width="100%" class="blog_post_comments">
+<table style="width:100%" class="blog_post_comments">
 <?php 
 foreach ($comments as $i) {
     echo '<tr>
@@ -278,7 +278,7 @@ foreach ($comments as $i) {
 }
 echo "</table>";
 } else  { ?>
-<br /><center>No blog comments yet</center>
+<br /><div style="text-align:center">No blog comments yet</div>
 <?php  } ?>
 
 <br /><br />

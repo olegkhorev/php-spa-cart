@@ -16,7 +16,7 @@
 <form method="post" name="roleform">
 <input type="hidden" name="mode" value="<?php if ($role) {?>save<?php } else  { ?>add<?php } ?>" />
 
-<table cellpadding="3" cellspacing="1" width="90%" class="normal-table">
+<table style="width:90%" class="normal-table">
 
 <tr>
  <td><b>Title</b></td>

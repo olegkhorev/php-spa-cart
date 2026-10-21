@@ -11,7 +11,7 @@
 <br />
 <table class="login_table">
 <tr>
- <td valign="top">
+ <td style="vertical-align:top">
 <form name="login" method="POST" action="/login">
 
     <div class="group">

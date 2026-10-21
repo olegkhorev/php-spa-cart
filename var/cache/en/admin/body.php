@@ -6,8 +6,8 @@
 * Released under the MIT License.
 * https://github.com/olegkhorev/php-spa-cart
 */
-?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" class="area-a">
+?><!DOCTYPE html>
+<html lang="en" class="area-a">
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -19,12 +19,12 @@
 <link rel="stylesheet" href="/materialize/material.orange-amber.min.css" />
 <script src="//code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
 <script src="//code.jquery.com/ui/1.14.1/jquery-ui.min.js" integrity="sha256-AlTido85uXPlSyyaZNsjJXeCs07eSv3r43kyCVc8ChI=" crossorigin="anonymous"></script>
-<link rel="stylesheet" href="//code.jquery.com/ui/1.14.1/themes/base/jquery-ui.css" type="text/css" />
+<link rel="stylesheet" href="//code.jquery.com/ui/1.14.1/themes/base/jquery-ui.css" />
 
 <script defer src="/materialize/material.min.js"></script>
 <script defer src="/images/chart.umd.js"></script>
 
-<style type="text/css" media="all">
+<style media="all">
 <?php  if (!empty($css)) {
     include "includes/css.php";
 } ?>
@@ -32,12 +32,12 @@
 <?php if ($login && $config['admin_theme_color'] && $userinfo['usertype'] == 'A') {?>
 <style id="custom_style">
 :root {
-	--blue: #<?php echo $config['admin_theme_color'];?> !important;
+	--theme-color-admin: #<?php echo $config['admin_theme_color'];?> !important;
 }
 </style>
 <?php } ?>
 
-<script type="text/javascript">
+<script>
 var custId = 0;
 var current_area = 'A',
 	page = '<?php  echo $get["1"]; ?>',
@@ -319,7 +319,6 @@ CKEDITOR.disableAutoInline = true;
 </div>
  </li>
 <?php } ?>
- </li>
 <?php if ($allow_pages['pages_8']['allow']) {?>
  <li>
 					<a href="javascript: void(0);" class="no-ajax">
@@ -445,8 +444,6 @@ function custom_elements() {
 			oT.attr('id', id);
 		}
 
-console.log(oT.attr('name'));
-
 		if (!p) {
 			if (oT.closest('.normal-table').length) {
 				var tdFirst = oT.closest('tr').find('td:first');
@@ -458,16 +455,19 @@ console.log(oT.attr('name'));
 			}
 		}
 
-					oT.addClass('mdl-textfield__input custom-element');
-	    oT.wrap('<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label mdl-textarea" id="cusT-'+custId+'"></div>');
-	    $('#cusT-'+custId).append('<label class="mdl-textfield__label" for="'+id+'">'+p+'</label>');
-	    $('#cusT-'+custId).append('<span class="clear"></span>');
-					var box = $('#cusT-'+custId);
-					$('#cusT-'+custId+' .clear').click(function() {
-						box.find('input').val('');
-						box.find('textarea').val('');
-						box.removeClass('is-dirty');
-					});
+		oT.addClass('mdl-textfield__input custom-element');
+		oT.wrap('<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label mdl-textarea" id="cusT-'+custId+'"></div>');
+		$('#cusT-'+custId).append('<label class="mdl-textfield__label" for="'+id+'">'+p+'</label>');
+		$('#cusT-'+custId).append('<span class="clear"></span>');
+		var box = $('#cusT-'+custId);
+		if (!box.find('textarea').length) {
+			box.removeClass('mdl-textarea');
+		}
+		$('#cusT-'+custId+' .clear').click(function() {
+			box.find('input').val('');
+			box.find('textarea').val('');
+			box.removeClass('is-dirty');
+		});
 	});
 
 	$('.normal-table select:not(.custom-element)').each(function() {

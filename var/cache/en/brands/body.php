@@ -29,7 +29,7 @@
 <br />
 
 <?php if ($total_pages > 2) {?>
-<div align="right"><?php include SITE_ROOT."/var/cache/en/common/navigation.php";?></div>
+<div style="text-align:right"><?php include SITE_ROOT."/var/cache/en/common/navigation.php";?></div>
 <br />
 <?php } ?>
 <div class="brands">
@@ -39,18 +39,18 @@
 <?php if ($b['imageid']) {?>
 <a href="<?php echo $url;?>">
 <?php $image = $b; $image['new_width'] = 205; $image['new_height'] = 205; $image['center'] = 1; $image['valign'] = 1; include SITE_ROOT . "/includes/brand_image.php"; ?>
-<?php } ?>
 </a>
+<?php } ?>
 <a href="<?php echo $url;?>"><?php echo $b['name'];?></a>
 <br />
 </div>
 <?php } ?>
 </div>
 <?php if ($total_pages > 2) {?>
-<div align="right"><?php include SITE_ROOT."/var/cache/en/common/navigation.php";?></div>
+<div style="text-align:right"><?php include SITE_ROOT."/var/cache/en/common/navigation.php";?></div>
 <br />
 <?php } ?>
 <?php } else  { ?>
 <br />
-<center>No brands found</center>
+<div style="text-align:center">No brands found</div>
 <?php } ?>

@@ -12,7 +12,7 @@
 <form method="post" name="zoneform" onsubmit="javascript: if (this.zone_name.value == '') { alert('{lng[Zone name must be entered]}'); return false; } else return saveSelects(new Array('zone_countries','zone_states'));"{*{if !$zone['zoneid']} class="noajax"{/if}*}>
 <input type="hidden" name="mode" value="details" />
 
-<table cellpadding="3" cellspacing="1" width="1000" class="normal-table">
+<table style="width:1000px" class="normal-table">
 
 <tr>
   <td>{lng[Zone name]}</td>
@@ -32,15 +32,15 @@
 <br /><br />
 * {lng[Hold Ctrl and click to select]}
 
-<table cellpadding="3" cellspacing="1" width="1000" class="mobile-zone_edit-table">
+<table style="width:1000px" class="mobile-zone_edit-table">
 <tr>
-  <td colspan="3"><h3>{lng[Countries]}</td>
+  <td colspan="3"><h3>{lng[Countries]}</h3></td>
 </tr>
 
 <tr>
-  <td width="45%">{lng[Set value]}</td>
+  <td style="width:45%">{lng[Set value]}</td>
   <td> </td>
-  <td width="45%">{lng[Unset value]}</td>
+  <td style="width:45%">{lng[Unset value]}</td>
 </tr>
 
 <tr>
@@ -56,7 +56,7 @@
 normalizeSelect('zone_countries');
 </script>
   </td>
-  <td align="center">
+  <td style="text-align:center">
 <input type="button" value="&lt;&lt;" onclick="javascript: moveSelect(document.getElementById('zone_countries'), document.getElementById('rest_countries'), 'R');" />
 <br /><br />
 <input type="button" value="&gt;&gt;" onclick="javascript: moveSelect(document.getElementById('zone_countries'), document.getElementById('rest_countries'), 'L');" />
@@ -71,7 +71,7 @@ normalizeSelect('zone_countries');
 </tr>
 
 <tr>
-  <td colspan="3"><br /><br /><h3>{lng[States]}</td>
+  <td colspan="3"><br /><br /><h3>{lng[States]}</h3></td>
 </tr>
 
 <tr>
@@ -97,11 +97,11 @@ normalizeSelect('zone_countries');
 } ?>
 <option value="">&nbsp;</option>
 </select>
-<script type="text/javascript">
+<script>
 normalizeSelect('zone_states');
 </script>
   </td>
-  <td align="center">
+  <td style="text-align:center">
 <input type="button" value="&lt;&lt;" onclick="javascript: moveSelect(document.getElementById('zone_states'), document.getElementById('rest_states'), 'R');" />
 <br /><br />
 <input type="button" value="&gt;&gt;" onclick="javascript: moveSelect(document.getElementById('zone_states'), document.getElementById('rest_states'), 'L');" />
@@ -124,7 +124,7 @@ normalizeSelect('zone_states');
 </tr>
 
 <tr>
-  <td colspan="3"><br /><br /><h3>{lng[Cities]}</td>
+  <td colspan="3"><br /><br /><h3>{lng[Cities]}</h3></td>
 </tr>
 
 <tr>
@@ -144,12 +144,12 @@ normalizeSelect('zone_states');
     }
 } ?></textarea>
   </td>
-  <td align="center">&nbsp;</td>
-  <td valign="top">New Yo%<br />Washington<br />Los Angeles<br />Dallas</td>
+  <td style="text-align:center">&nbsp;</td>
+  <td>New Yo%<br />Washington<br />Los Angeles<br />Dallas</td>
 </tr>
 
 <tr>
-  <td colspan="3"><br /><br /><h3>{lng[Zip/Postal codes]}</td>
+  <td colspan="3"><br /><br /><h3>{lng[Zip/Postal codes]}</h3></td>
 </tr>
 
 <tr>
@@ -169,8 +169,8 @@ normalizeSelect('zone_states');
     }
 } ?></textarea>
   </td>
-  <td align="center">&nbsp;</td>
-  <td valign="top">1000%<br />38245<br />4320%</td>
+  <td style="text-align:center">&nbsp;</td>
+  <td>1000%<br />38245<br />4320%</td>
 </tr>
 
 </table>

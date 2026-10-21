@@ -11,7 +11,7 @@
 {if $gift_cards}
 <form method="POST">
 <h3>{lng[Earlier purchased gift cards]}</h3>
-<table cellspacing="1" class="lines-table">
+<table class="lines-table">
 <tr>
  <th></th>
  <th>{lng[Card number]}</th>
@@ -49,3 +49,4 @@
 <br /><br />
 <button>{lng[Add]}</button>
 </form>
+</div>

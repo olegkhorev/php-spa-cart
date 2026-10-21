@@ -1,0 +1,120 @@
+
+.subheader {
+    background: rgba(242,99,34,.06);
+}
+button, input[type=button], input[type=submit] {
+	color: #f26322;
+}
+button:hover, input[type=button]:hover, input[type=submit]:hover {
+	background: #f26322;
+}
+.search {
+	border-bottom: 1px solid #f26322;
+}
+.header .links a {
+	color: #f26322;
+}
+.banners-homepage .slide img {
+	border-top: 24px solid #f26322;
+	border-bottom: 24px solid #f26322;
+}
+#menu > li:hover {
+	border-bottom: 0px solid #f26322;
+}
+#menu > li.active {
+	border-bottom: 3px solid #f26322;
+}
+#menu > li:after, #menu > li:before {
+	background: #f26322;
+}
+.indicators li.active {
+	background:#f26322
+}
+.indicators li:hover {
+	background-color:#f26322
+}
+.arrow:hover span {
+	border-color:#f26322
+}
+body svg {
+	fill: #f26322;
+}
+h2 {
+	color: #f26322;
+}
+h3 {
+	color: #f26322;
+	border-bottom: 1px solid #f26322;
+}
+.mobile-version {
+	color: #f26322;
+}
+.instant-search {
+	border: 1px solid #f26322;
+}
+.mobile-left_menu {
+	border: 1px solid #f26322;
+}
+#left_menu hr {
+	border-top: 1px solid #f26322;
+}
+.mobile-menu-links a {
+	color: #f26322;
+}
+.product-details-price {
+	color: #f26322;
+}
+#home-tabs, #product-tabs {
+    border-bottom: 3px solid #f26322;
+}
+.price-breaks span {
+	color: #f26322;
+}
+.product-details-price {
+	color: #f26322;
+}
+.left_filter h4 {
+	color: #f26322;
+}
+.res-item .discount {
+	background: #f26322;
+}
+.res-item button, .add2cart-product {
+    background: #f26322;
+}
+.home-tabs li.active, .product-tabs li.active {
+	color: #f26322;
+}
+h1 {
+	color: #f26322;
+}
+#menu li a.parent-link {
+	color: #f26322;
+}
+#menu > li.search-dd div.search {
+	border: 1px solid #f26322;
+}
+.mrp-rounded-box {
+	background: #f26322;
+}
+.mrp-subtitle-2 {
+	color: #f26322;
+}
+.mrp-row-cart > div:last-child a {
+	color: #f26322 !important;
+}
+.sh-rounded-box {
+	border: 2px solid #f26322;
+}
+.sh-rounded-box svg {
+	fill: #f26322;
+}
+.subheader table td h4 {
+	color: #f26322;
+}
+.subheader table td span {
+	color: #f26322;
+}
+.see_all a {
+	color: #f26322;
+}
