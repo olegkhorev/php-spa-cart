@@ -2605,7 +2605,7 @@ div.print_div {
 	padding-left: 0 !important;
 	text-transform: none;
 }
-#body-login .main-container, #body-register .main-container, #body-invoice .main-container, #body-help .main-container, form[name="ticketform"], form[name="testimonialform"] {
+#body-password .main-container, #body-login .main-container, #body-register .main-container, #body-invoice .main-container, #body-help .main-container, form[name="ticketform"], form[name="testimonialform"] {
     margin: 0 auto;
     display: block;
     width: 600px;
@@ -2620,7 +2620,7 @@ div.print_div {
 #body-help .main-container .padding-page {
 	padding: 20px 0 0 0;
 }
-#body-login .main-container .group, #body-register .main-container .group, #body-help .main-container .group, form[name="ticketform"] .group, form[name="testimonialform"] .group {
+#body-password .main-container .group, #body-login .main-container .group, #body-register .main-container .group, #body-help .main-container .group, form[name="ticketform"] .group, form[name="testimonialform"] .group {
 	max-width: none;
 }
 #body-login .main-container, #body-register .main-container, #body-ticket .main-container, #body-testimonials .new-testimonial-page-container .main-container {

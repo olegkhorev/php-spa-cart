@@ -12,8 +12,8 @@
 <head>
 <meta charset="utf-8" />
 <title>{lng[Invoice]} #<?php echo $order["orderid"]; ?></title>
-<style media="all">
 {include_css}
+<style media="all">
 body {
     font-family: sans-serif;
     font-size: 13px;

@@ -51,9 +51,7 @@
 <link rel="shortcut icon" href="/favicon.png" type="image/vnd.microsoft.icon" />
 <title>{$page_title}</title>
 <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
-<style media="all">
 {include_css}
-</style>
 {if $config['theme_color']}
 <style id="custom_style">
 :root {
@@ -141,7 +139,7 @@ $(function() {
 </head>
 <?php
 $ua = $_SERVER['HTTP_USER_AGENT'] ?? '';
-$iphone_class = (stripos($ua, 'iPhone') !== false) ? " iphone" : "";
+$iphone_class = preg_match('/iPhone|iPod|iPad/i', $ua) ? ' iphone' : '';
 ?>
 <body class="{if $get['0'] == 'category' || $get['0'] == 'search' || ($get['0'] == 'brands' && $get['1'])} withfilter{/if}{if $classes} {$classes}{/if}{if $config['General']['shop_closed'] == 'Y'} shop-closed{/if}{$iphone_class}" id="body-{$get['0']}{if $module}-{$module['code']}{/if}">
 

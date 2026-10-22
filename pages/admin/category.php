@@ -276,6 +276,3 @@ if ($get['3'] == 'products') {
 }
 
 $_SESSION['saved_data'] = array();
-
-$template['css'][] = 'admin_category';
-$template['js'][] = 'admin_category';

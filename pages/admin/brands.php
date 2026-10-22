@@ -169,6 +169,3 @@ if ($get['2'] == 'new') {
 $template['head_title'] = lng('Brands').' :: '.$template['head_title'];
 
 $template['page'] = get_template_contents('admin/pages/brands.php');
-
-$template['css'][] = 'admin_brands';
-$template['js'][] = 'admin_brands';

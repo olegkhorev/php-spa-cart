@@ -822,9 +822,10 @@ if ($get['2']) {
         } elseif ($get['3'] == 'images') {
             $template['location'] .= '&gt; '.lng('Images');
             $template['photos'] = $db->all("SELECT * FROM products_photos WHERE productid='".$get['2']."' ORDER BY pos, photoid DESC");
-            $template['js'][] = 'jquery.ui.sortable';
-            $template['js'][] = 'admin_product_images';
-            $template['css'][] = 'admin_product_images';
+            # Restore if will have issue with different browsers
+            # $template['js'][] = 'jquery.ui.sortable';
+            # $template['js'][] = 'admin_product_images';
+            # $template['css'][] = 'admin_product_images';
         } elseif ($get['3'] == 'related') {
             $template['location'] .= '&gt; '.lng('Related products');
             $template['related_products'] = $db->all("SELECT p.productid, p.name, r.orderby FROM related_products r, products p WHERE r.productid2=p.productid AND r.productid1='".$get[2]."' ORDER BY r.orderby");
@@ -840,9 +841,6 @@ if ($get['2']) {
                 } else {
                     $template['location'] .= '&gt; '.lng('Add option group');
                 }
-
-                $template['js'][] = 'admin_product_options';
-                $template['js'][] = 'admin_duplicate_row';
             } else {
                 $template['location'] .= '&gt; '.lng('Products options');
                 $option_groups = $db->all("SELECT * FROM option_groups WHERE productid='".$get['2']."' ORDER BY orderby, name, fullname, groupid");
@@ -949,10 +947,6 @@ if ($get['2']) {
                 $template["memberships"] = $db->all("SELECT m.*, COUNT(u.id) as users FROM memberships m LEFT JOIN users u ON u.membershipid = m.membershipid GROUP BY m.membershipid ORDER BY m.orderby, m.membership");
                 $template['variants'] = $variants;
             }
-
-            $template['css'][] = 'admin_product_variants';
-            $template['js'][] = 'admin_product_variants';
-            $template['js'][] = 'admin_duplicate_row';
         } elseif ($get['3'] == 'variant_images') {
             $template['location'] .= '&gt; '.lng('Products variants images');
             $option_groups = $db->all("SELECT * FROM option_groups WHERE productid='".$get['2']."' AND variant=1 ORDER BY orderby, name, fullname, groupid");
@@ -982,13 +976,9 @@ if ($get['2']) {
                     $template['variants'] = $variants;
                 }
             }
-
-            $template['css'][] = 'admin_product_variant_images';
-            $template['js'][] = 'admin_product_variant_images';
         } elseif ($get['3'] == 'wholesale') {
             $template["wholesale"] = $db->all("SELECT * FROM wholesale_prices WHERE productid='".$get['2']."' AND variantid='0' ORDER BY membershipid, quantity");
             $template["memberships"] = $db->all("SELECT m.*, COUNT(u.id) as users FROM memberships m LEFT JOIN users u ON u.membershipid = m.membershipid GROUP BY m.membershipid ORDER BY m.orderby, m.membership");
-            $template['js'][] = 'admin_duplicate_row';
         }
 
         $template['head_title'] = $product['name'].' :: '.$template['head_title'];
@@ -1001,7 +991,7 @@ if ($get['2']) {
             $html .= '<li'.(($get['3'] == 'inventory') ? ' class="active"' : ''). '><a href="'.$url.'/inventory">'.lng('Warehouses inventory').'</a></li>';
         }
 
-        $html .= '<li'.(($get['3'] == 'images') ? ' class="active"' : ''). '><a class="no-ajax" href="'.$url.'/images">'.lng('Images').'</a></li>';
+        $html .= '<li'.(($get['3'] == 'images') ? ' class="active"' : ''). '><a href="'.$url.'/images">'.lng('Images').'</a></li>';
 
         $active_modules['Product_Options'] = $active_modules['Related_Products'] = true;
         if ($active_modules['Product_Options']) {
@@ -1150,6 +1140,3 @@ if ($get['2']) {
     $template['head_title'] = lng('Products').' :: '.$template['head_title'];
     $template['page'] = get_template_contents('admin/pages/products.php');
 }
-
-$template['css'][] = 'admin_products';
-$template['js'][] = 'admin_products';

@@ -51,7 +51,7 @@
 <?php } ?>
 <a class="parent-link ajax_link" href="<?php echo $current_location;?>/blog">Blog</a>
 <a class="parent-link ajax_link" href="/news">News</a>
-<a class="header-email ajax_link parent-link" href="<?php if ($config['Tickets']['use_tickets']) {?>/support_desk<?php } else  { ?>/help<?php } ?>"><svg><use xlink:href="/images/sprite.svg#email"></use></svg><?php /* ?><img src="/images/icons/email.png" alt="Email us" /><?php */ ?> Email us</a>
+<a class="header-email ajax_link parent-link" href="<?php if ($config['Tickets']['use_tickets']) {?>/support_desk<?php } else  { ?>/help<?php } ?>"><svg><use xlink:href="/images/sprite.svg#email"></use></svg> Email us</a>
 <div>
 <a class="parent-link no-ajax" href="/page/about.html">Modules</a>
 <ul>

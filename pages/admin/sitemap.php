@@ -26,7 +26,7 @@ if ($get['2'] == 'generate') {
         foreach ($search_keywords as $v) {
             if ($v && !strstr($v, '<') && !strstr($v, '>')) {
                 $v = str_replace("\r\n", "", $v);
-                $xml .= '<url><loc>'.$https_location.'/search?q='.$v.'</loc><lastmod>'.date('Y-m-d').'</lastmod><changefreq>weekly</changefreq><priority>1</priority></url>
+                $xml .= '<url><loc>'.$https_location.'/search?q='.$v.'</loc><lastmod>'.date('Y-m-d').'</lastmod><changefreq>monthly</changefreq><priority>1</priority></url>
 ';
                 $txt .=  $https_location.'/search?q='.$v.'
 ';
@@ -37,12 +37,12 @@ if ($get['2'] == 'generate') {
     $categories = $db->all("SELECT categoryid, cleanurl FROM categories");
     foreach ($categories as $v) {
         if ($v['cleanurl']) {
-            $xml .= '<url><loc>'.$http_location.'/'.$v['cleanurl'].'</loc><lastmod>'.date('Y-m-d').'</lastmod><changefreq>weekly</changefreq><priority>1</priority></url>
+            $xml .= '<url><loc>'.$http_location.'/'.$v['cleanurl'].'</loc><lastmod>'.date('Y-m-d').'</lastmod><changefreq>monthly</changefreq><priority>1</priority></url>
 ';
             $txt .=  $http_location.'/'.$v['cleanurl'].'
 ';
         } else {
-            $xml .= '<url><loc>'.$http_location.'/category/'.$v['categoryid'].'</loc><lastmod>'.date('Y-m-d').'</lastmod><changefreq>weekly</changefreq><priority>1</priority></url>
+            $xml .= '<url><loc>'.$http_location.'/category/'.$v['categoryid'].'</loc><lastmod>'.date('Y-m-d').'</lastmod><changefreq>monthly</changefreq><priority>1</priority></url>
 ';
             $txt .=  $http_location.'/category/'.$v['categoryid'].'
 ';
@@ -52,12 +52,12 @@ if ($get['2'] == 'generate') {
     $products = $db->all("SELECT productid , cleanurl FROM products");
     foreach ($products as $v) {
         if ($v['cleanurl']) {
-            $xml .= '<url><loc>'.$http_location.'/'.$v['cleanurl'].'.html</loc><lastmod>'.date('Y-m-d').'</lastmod><changefreq>weekly</changefreq><priority>1</priority></url>
+            $xml .= '<url><loc>'.$http_location.'/'.$v['cleanurl'].'.html</loc><lastmod>'.date('Y-m-d').'</lastmod><changefreq>monthly</changefreq><priority>1</priority></url>
 ';
             $txt .=  $http_location.'/'.$v['cleanurl'].'.html
 ';
         } else {
-            $xml .= '<url><loc>'.$http_location.'/product/'.$v['productid'].'</loc><lastmod>'.date('Y-m-d').'</lastmod><changefreq>weekly</changefreq><priority>1</priority></url>
+            $xml .= '<url><loc>'.$http_location.'/product/'.$v['productid'].'</loc><lastmod>'.date('Y-m-d').'</lastmod><changefreq>monthly</changefreq><priority>1</priority></url>
 ';
             $txt .=  $http_location.'/product/'.$v['productid'].'
 ';
@@ -66,33 +66,33 @@ if ($get['2'] == 'generate') {
 
     $brands = $db->all("SELECT brandid, cleanurl FROM brands");
     foreach ($brands as $v) {
-        $xml .= '<url><loc>'.$http_location.'/brands/'.($v['cleanurl'] ? $v['cleanurl'] : $v['brandid']).'</loc><lastmod>'.date('Y-m-d').'</lastmod><changefreq>weekly</changefreq><priority>1</priority></url>
+        $xml .= '<url><loc>'.$http_location.'/brands/'.($v['cleanurl'] ? $v['cleanurl'] : $v['brandid']).'</loc><lastmod>'.date('Y-m-d').'</lastmod><changefreq>monthly</changefreq><priority>1</priority></url>
 ';
         $txt .=  $http_location.'/brands/'.($v['cleanurl'] ? $v['cleanurl'] : $v['brandid']).'
 ';
     }
 
-    $xml .= '<url><loc>'.$http_location.'/blog</loc><lastmod>'.date('Y-m-d').'</lastmod><changefreq>daily</changefreq><priority>1</priority></url>
+    $xml .= '<url><loc>'.$http_location.'/blog</loc><lastmod>'.date('Y-m-d').'</lastmod><changefreq>monthly</changefreq><priority>1</priority></url>
 ';
     $txt .=  $http_location.'/blog
 ';
 
-    $blog = $db->all("SELECT blogid, cleanurl FROM blog ORDER BY blogid");
-    foreach ($blog as $v) {
-        $xml .= '<url><loc>'.$http_location.'/blog/'.($v['cleanurl'] ? $v['cleanurl'].'.html' : $v['blogid']).'</loc><lastmod>'.date('Y-m-d').'</lastmod><changefreq>daily</changefreq><priority>1</priority></url>
+    $posts = $db->all("SELECT blogid, cleanurl FROM blog ORDER BY blogid");
+    foreach ($posts as $v) {
+        $xml .= '<url><loc>'.$http_location.'/blog/'.($v['cleanurl'] ? $v['cleanurl'].'.html' : $v['blogid']).'</loc><lastmod>'.date('Y-m-d').'</lastmod><changefreq>monthly</changefreq><priority>1</priority></url>
 ';
         $txt .=  $http_location.'/blog/'.($v['cleanurl'] ? $v['cleanurl'].'.html' : $v['blogid']).'
 ';
     }
 
-    $xml .= '<url><loc>'.$http_location.'/news</loc><lastmod>'.date('Y-m-d').'</lastmod><changefreq>daily</changefreq><priority>1</priority></url>
+    $xml .= '<url><loc>'.$http_location.'/news</loc><lastmod>'.date('Y-m-d').'</lastmod><changefreq>monthly</changefreq><priority>1</priority></url>
 ';
     $txt .=  $http_location.'/news
 ';
 
     $news = $db->all("SELECT newsid, cleanurl FROM news ORDER BY newsid");
-    foreach ($blog as $v) {
-        $xml .= '<url><loc>'.$http_location.'/news/'.($v['cleanurl'] ? $v['cleanurl'].'.html' : $v['newsid']).'</loc><lastmod>'.date('Y-m-d').'</lastmod><changefreq>daily</changefreq><priority>1</priority></url>
+    foreach ($news as $v) {
+        $xml .= '<url><loc>'.$http_location.'/news/'.($v['cleanurl'] ? $v['cleanurl'].'.html' : $v['newsid']).'</loc><lastmod>'.date('Y-m-d').'</lastmod><changefreq>monthly</changefreq><priority>1</priority></url>
 ';
         $txt .=  $http_location.'/news/'.($v['cleanurl'] ? $v['cleanurl'].'.html' : $v['newsid']).'
 ';
@@ -100,7 +100,7 @@ if ($get['2'] == 'generate') {
 
     $pages = $db->all("SELECT pageid, cleanurl FROM pages");
     foreach ($pages as $v) {
-        $xml .= '<url><loc>'.$http_location.'/page/'.($v['cleanurl'] ? $v['cleanurl'].'.html' : $v['pageid']).'</loc><lastmod>'.date('Y-m-d').'</lastmod><changefreq>weekly</changefreq><priority>1</priority></url>
+        $xml .= '<url><loc>'.$http_location.'/page/'.($v['cleanurl'] ? $v['cleanurl'].'.html' : $v['pageid']).'</loc><lastmod>'.date('Y-m-d').'</lastmod><changefreq>monthly</changefreq><priority>1</priority></url>
 ';
         $txt .=  $http_location.'/page/'.($v['cleanurl'] ? $v['cleanurl'].'.html' : $v['pageid']).'
 ';
@@ -108,11 +108,11 @@ if ($get['2'] == 'generate') {
 
     $xml .= '</urlset>';
 
-    $fp = fopen(SITE_ROOT.'/sitemap.xml', 'w');
+    $fp = fopen(SITE_ROOT.'/sitemap.xml', 'w+');
     fputs($fp, $xml);
     fclose($fp);
 
-    $fp = fopen(SITE_ROOT.'/sitemap.txt', 'w');
+    $fp = fopen(SITE_ROOT.'/sitemap.txt', 'w+');
     fputs($fp, $txt);
     fclose($fp);
 

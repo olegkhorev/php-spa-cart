@@ -12,6 +12,9 @@ func_load('modules');
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     extract($_POST);
     if ($mode == 'update') {
+        if (DEMO)
+            return false;
+
         foreach ($to_update as $k => $v) {
             $to_update = array(
                 'pos' => $v['pos'],
@@ -26,6 +29,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         );
     } elseif ($_FILES['install_archive']['tmp_name']) {
         echo 'Installing module...<br />';
+        if (DEMO)
+            exit('You cannot install a new module on demo.');
+
         $dir = SITE_ROOT . '/var/tmp/install_module';
         mkdir($dir);
         copy($_FILES['install_archive']['tmp_name'], $dir.'/module.zip');

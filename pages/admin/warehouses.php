@@ -45,7 +45,4 @@ if ($total_items > 0) {
 $template['new_pos'] = $db->field("SELECT MAX(pos) FROM warehouses") + 10;
 $template['page'] = get_template_contents('admin/pages/warehouses.php');
 
-$template['head_title'] = 'Warehouses :: '.$template['head_title'];
-
-$template['js'][] = 'admin_warehouses';
-$template['css'][] = 'admin_warehouses';
+$template['head_title'] = lng('Warehouses').' :: '.$template['head_title'];

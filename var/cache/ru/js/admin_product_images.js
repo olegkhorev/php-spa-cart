@@ -1,146 +1,4 @@
-(function ($) {
-  "use strict";
-  $(document).ready(function () {
-    $(".add_album input").on("focus", function () {
-      if ($(this).val() == $(this).attr("def")) $(this).val("");
-
-      $(this).addClass("def");
-    });
-
-    $(".add_album input").on("blur", function () {
-      if ($(this).val() == "") {
-        $(this).val($(this).attr("def"));
-        $(this).removeClass("def");
-      }
-    });
-
-    $(".add_album button").on("click", function () {
-      var e = $(".add_album input");
-      if (e.val() != e.attr("def") && e.val()) $(".add_album form").submit();
-      else e.effect("highlight");
-    });
-
-    $(".edit_album").on("click", function () {
-      var o = $(this);
-      var i = o.attr("id");
-      var tp = o.attr("type");
-      bc = false;
-      if (page == "my_groups")
-        alert(
-          '<div id="edit_' +
-            i +
-            '"><label><input type="radio" name="type" value="0"' +
-            (tp == 0 ? " checked" : "") +
-            ">публичный</label><br><label><input type='radio' name='type' value='1'" +
-            (tp == 1 ? " checked" : "") +
-            ">частный</label><br><label><input type='radio' name='type' value='2'" +
-            (tp == 2 ? " checked" : "") +
-            ">for_subscribers</label><br><br>" +
-            '<input type="text" value="' +
-            $("." + i).html() +
-            '"><button>Сохранить</button></div>',
-          "",
-          "",
-          1,
-          "",
-          1,
-        );
-      else
-        alert(
-          '<div id="edit_' +
-            i +
-            '"><label><input type="radio" name="type" value="0"' +
-            (tp == 0 ? " checked" : "") +
-            ">публичный</label><br><label><input type='radio' name='type' value='1'" +
-            (tp == 1 ? " checked" : "") +
-            ">частный</label><br><label><input type='radio' name='type' value='2'" +
-            (tp == 2 ? " checked" : "") +
-            ">for_friends</label><br><label><input type='radio' name='type' value='3'" +
-            (tp == 3 ? " checked" : "") +
-            ">for_friends_and_their_friends</label><br><br>" +
-            '<input type="text" value="' +
-            $("." + i).html() +
-            '"><button>Сохранить</button></div>',
-          "",
-          "",
-          1,
-          "",
-          1,
-        );
-      $("#edit_" + i + " input").on("keyup", function (e) {
-        if (e.which == 13 || e.which == 10)
-          $("#edit_" + i + " button").trigger("click");
-      });
-
-      $("#edit_" + i + " button").on("click", function () {
-        var p = $(this).parent(),
-          l,
-          v,
-          t = p.find('[type="text"]');
-        p.find('[type="radio"]').each(function () {
-          if ($(this).is(":checked")) {
-            v = $(this).val();
-            l = $(this).parent().html();
-          }
-        });
-
-        if (t.val() == "") t.effect("highlight");
-        else {
-          $("#type" + i).html(l);
-          $("#type" + i + " input").remove();
-          o.attr("type", v);
-          $("." + i).html(t.val());
-          $(".alert").remove();
-          $.ajax({
-            type: "POST",
-            data:
-              "update=" +
-              i +
-              "&updated=" +
-              encodeURIComponent(t.val()) +
-              "&type=" +
-              v,
-          });
-        }
-      });
-    });
-
-    $(".remove_album").on("click", function () {
-      var o = $(this);
-      if (!confirmed) {
-        confirm(are_you_sure, o);
-        return;
-      }
-
-      o.parent().remove();
-      $.ajax({
-        type: "POST",
-        data: "remove=" + o.parent().attr("id"),
-      });
-    });
-
-    $(".albums").sortable({
-      cursor: "move",
-      update: function (e, ui) {
-        $(this).sortable("refresh");
-        sorted = "";
-        $(".album").each(function () {
-          sorted += $(this).attr("id") + ",";
-        });
-        $.ajax({
-          type: "POST",
-          data: "sa=" + sorted,
-        });
-      },
-    });
-
-    clicks();
-    sortable();
-    drag_init();
-  });
-})($);
-
-function clicks() {
+function products_photos_clicks() {
   $(".product-images img").on("click", function () {
     var huge = $(this).attr("huge");
     if (huge) {
@@ -157,7 +15,7 @@ function clicks() {
   });
 }
 
-function sortable() {
+function products_photos_sortable() {
   $(".product-images").sortable({
     cursor: "move",
     update: function (e, ui) {
@@ -175,11 +33,11 @@ function sortable() {
   });
 }
 
-var file_too_big = "file_too_big",
-  bad_image_type = "bad_image_type",
-  bad_images = "bad_images";
+var file_too_big = "File is too big",
+  bad_image_type = "Bad image type",
+  bad_images = "Bad images";
 
-function drag_init() {
+function products_photos_drag_init() {
   var dropZone = $(".drag"),
     maxFileSize = 10240000;
 
@@ -333,32 +191,4 @@ function drag_init() {
       return false;
     }
   });
-}
-
-function insertImage(u, i, j) {
-  bb = true;
-  $(".galleries_popup").remove();
-  if (j)
-    $(".attachments").append(
-      '<div id="a' +
-        i +
-        '"><img src="/images/remove.png" class="remove" alt="Remove">' +
-        u +
-        "</div>",
-    );
-  else
-    $(".attachments").append(
-      '<div id="a' +
-        i +
-        '"><img src="/images/remove.png" class="remove" alt="Remove"><img src="' +
-        u +
-        '" onclick="show_photo(' +
-        i +
-        ')"></div>',
-    );
-
-  $(".attachments").show();
-  clicks();
-  sortable();
-  return false;
 }

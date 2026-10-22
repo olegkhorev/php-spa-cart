@@ -16,13 +16,13 @@
 <div class="blog">
 <div class="actions">
 {if $comments}
-<img src="{$current_location}/images/comments.gif" alt="" /> <a href="javascript: void(0);" onclick="javascript: go_to_comments();">{lng[Go to comments|escape]}</a>&nbsp;
+<svg><use xlink:href="/images/sprite_3.svg#go_to_comments"></use></svg> <a href="javascript: void(0);" onclick="javascript: go_to_comments();">{lng[Go to comments|escape]}</a>&nbsp;
 {/if}
-<img src="{$current_location}/images/leave_comment.gif" alt="" /> <a href="javascript: void(0);" onclick="javascript: leave_comments();">{lng[Leave a comment]}</a>
+<svg><use xlink:href="/images/sprite_3.svg#leave_comment"></use></svg> <a href="javascript: void(0);" onclick="javascript: leave_comments();">{lng[Leave a comment]}</a>
 </div>
 <h1>{$blog['title']}</h1>
 <br />
-<img src="{$current_location}/images/blog_date.gif" alt="" /> {php echo date($datetime_format, $blog['date']);}
+<svg class="post_date_icon"><use xlink:href="/images/sprite_3.svg#calendar"></use></svg> &nbsp; {php echo date($datetime_format, $blog['date']);}
 {if $blog['imageid']}
 <div class="image">
 {blog_image image=`$blog` new_width=750 new_height=400}
@@ -41,7 +41,7 @@
 {foreach $comments as $k=>$v}
 <div class="author">
 <div class="quote">
-<img src="{$current_location}/images/quote.gif" alt="" /> <a href="javascript: void(0);" onclick="javascript: quote_comment_html('{$v['commentid']}', '{php $name = $v['name'] ? $v['name'] : $v['firstname'].' '.$v['lastname']; $name = escape($name, 1); echo escape($name, 2);}');">{lng[Quote]}</a>
+<svg><use xlink:href="/images/sprite_3.svg#quote"></use></svg> <a href="javascript: void(0);" onclick="javascript: quote_comment_html('{$v['commentid']}', '{php $name = $v['name'] ? $v['name'] : $v['firstname'].' '.$v['lastname']; $name = escape($name, 1); echo escape($name, 2);}');">{lng[Quote]}</a>
 </div>
 {lng[Comment from]} <b>{php echo $v['name'] ? $v['name'] : $v['firstname'].' '.$v['lastname'];}</b>. {lng[Commented on]} {php echo date($datetime_format, $v['date']);}.
 </div>

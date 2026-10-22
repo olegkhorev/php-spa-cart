@@ -102,5 +102,3 @@ if ($get['2'] == 'recent') {
 }
 
 $template['page'] = get_template_contents('admin/pages/orders.php');
-$template['css'][] = 'admin_orders';
-$template['js'][] = 'admin_orders';

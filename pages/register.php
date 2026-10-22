@@ -10,7 +10,7 @@
 <?php
 if ($login) {
     if ($is_ajax) {
-        exit(lng('You are already logged in. Please, refresh the page'));
+        exit(lng('You are already logged in. Please, refresh the page.'));
     }
 
     redirect('profile');
@@ -92,7 +92,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
         $_SESSION['alerts'][] = array(
             'type'		=> 'i',
-            'content'	=> 'Your account was created successfully'
+            'content'	=> lng('Your account has been successfully created')
         );
 
         $template['userinfo'] = $insert;

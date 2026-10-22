@@ -57,8 +57,16 @@
 .blog .actions {
   float: right;
 }
-.blog .actions img {
-  margin-bottom: -3px;
+.blog .actions svg:first-child {
+  position: relative;
+  top: 10px;
+}
+.blog .actions svg {
+  position: relative;
+  top: 7px;
+}
+.blog .actions a {
+  text-decoration: none;
 }
 .blog .image {
   margin: 10px 0 0 0;
@@ -75,6 +83,19 @@
 }
 .blog_comments .author .quote {
   float: right;
+}
+.blog_comments .author .quote svg {
+  position: relative;
+  top: 10px;
+}
+.post_date_icon {
+  fill: #fff;
+  stroke: var(--theme-color);
+  position: relative;
+  top: 4px;
+}
+.blog_comments .author .quote a {
+  text-decoration: none !important;
 }
 .blog_comments .comment {
   width: 100%;

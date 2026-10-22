@@ -18,7 +18,7 @@ foreach ($css as $v) {
 $default_css = func_get_ajax_css();
 if (DEVELOPMENT) {
     foreach ($default_css as $v) {
-        echo '@import url("/var/cache/other/css/'.$v.'.css?'.$css_js_cache.'");'."\n";
+        echo '<link rel="stylesheet" href="/var/cache/other/css/'.$v.'.css?'.$css_js_cache.'" />'."\n";
     }
 } else {
     $css_cache = '';
@@ -30,7 +30,7 @@ if (DEVELOPMENT) {
     fputs($fp, $css_cache);
     fclose($fp);
 
-    echo '@import url("/var/cache/css.css?'.$css_js_cache.'");';
+    echo '<link rel="stylesheet" href="/var/cache/css.css?'.$css_js_cache.'" />'."\n";
 }
 
 if ($get['0'] != 'admin') {
@@ -44,7 +44,7 @@ if ($get['0'] != 'admin') {
 
         func_put_css_content(SITE_ROOT.'/templates/modules/'.$v.'/styles.css', $dir.'/'.$v.'/styles.css', $v, 'css');
         if (DEVELOPMENT) {
-            echo '@import url("/var/cache/other/css_modules/'.$v.'/styles.css?'.$css_js_cache.($_SESSION['current_theme'] ? $_SESSION['current_theme']['code'] : '').'");'."\n";
+            echo '<link rel="stylesheet" href="/var/cache/other/css_modules/'.$v.'/styles.css?'.$css_js_cache.($_SESSION['current_theme'] ? $_SESSION['current_theme']['code'] : '').'" />'."\n";
         } else {
             $modules_css_cache .= file_get_contents(SITE_ROOT . '/var/cache/other/css_modules/'.$v.'/styles.css');
         }
@@ -54,7 +54,7 @@ if ($get['0'] != 'admin') {
     fputs($fp, $modules_css_cache);
     fclose($fp);
     if (!DEVELOPMENT) {
-        echo '@import url("/var/cache/css_modules.css?'.$css_js_cache.($_SESSION['current_theme'] ? $_SESSION['current_theme']['code'] : '').'");';
+        echo '<link rel="stylesheet" href="/var/cache/css_modules.css?'.$css_js_cache.($_SESSION['current_theme'] ? $_SESSION['current_theme']['code'] : '').'" />'."\n";
     }
 }
 
@@ -63,12 +63,12 @@ foreach ($css as $v) {
     if (!$already[$v]) {
         if ($v == 'overflow') {
             if ($custom_css) {
-                echo '@import url("'.$custom_css.'");';
+                echo '<link rel="stylesheet" href="'.$custom_css.'" />'."\n";
             }
         }
 
         if (!in_array($v, $default_css)) {
-            echo '@import url("/var/cache/other/css/'.$v.'.css?'.$css_js_cache.'");';
+            echo '<link rel="stylesheet" href="/var/cache/other/css/'.$v.'.css?'.$css_js_cache.'" />'."\n";
         }
 
         $already[$v] = 1;
@@ -80,7 +80,7 @@ if ($get['0'] == 'admin') {
     foreach ($modules as $v) {
         $file = '/templates/modules/'.$v['author'].'/'.$v['module'].'/admin.css';
         if (file_exists(SITE_ROOT . $file)) {
-            echo '@import url("'.$file.'?'.$css_js_cache.'");';
+            echo '<link rel="stylesheet" href="'.$file.'?'.$css_js_cache.'" />'."\n";
         }
     }
 }

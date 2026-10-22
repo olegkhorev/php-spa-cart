@@ -49,6 +49,3 @@ if ($get['2']) {
     $template['head_title'] = lng('Countries').' :: '.$template['head_title'];
     $template['page'] = get_template_contents('admin/pages/countries.php');
 }
-
-$template['css'][] = 'admin_countries';
-$template['js'][] = 'admin_countries';

@@ -86,5 +86,3 @@ if ($_POST['update_wh']) {
 
 $template['admin_display'] = 1;
 $template['page'] = get_template_contents('admin/pages/invoice.php');
-$template['css'][] = 'admin_order_invoice';
-$template['js'][] = 'admin_order_invoice';

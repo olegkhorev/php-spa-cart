@@ -6,6 +6,9 @@
 * https://github.com/olegkhorev/php-spa-cart
 */
 @import url("https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap");
+:root {
+  --theme-color-admin: #4caf50;
+}
 * {
   outline-style: none;
 }
@@ -1707,10 +1710,8 @@ body.admin-area .allow-cookies {
 }
 .chart-container.chart-container--line {
   max-width: calc(100% - 60px);
-  background:
-    linear-gradient(180deg, #4caf50, #3c9f40) padding-box,
-    linear-gradient(180deg, #3c9f30, #2c8f20) border-box;
-  border: 1px solid transparent;
+  background: var(--theme-color-admin);
+  border: 0px solid transparent;
   border-radius: 16px;
   padding: 20px 15px;
 }

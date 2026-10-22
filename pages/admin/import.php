@@ -1012,6 +1012,3 @@ $template['head_title'] = lng('Import catalog').' :: '.$template['head_title'];
 $template['location'] .= ' &gt; '.lng('Import catalog');
 
 $template['page'] = get_template_contents('admin/pages/import.php');
-
-$template['css'][] = 'admin_import';
-$template['js'][] = 'admin_import';

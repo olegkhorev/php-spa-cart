@@ -95,9 +95,3 @@ if ($categories) {
 }
 
 $template['page'] = get_template_contents('admin/pages/categories.php');
-
-$template['css'][] = 'admin_categories';
-$template['js'][] = 'admin_categories';
-$template['js'][] = 'admin_popup_product';
-
-$template['css'][] = 'admin_popup';

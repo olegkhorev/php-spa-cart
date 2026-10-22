@@ -7,7 +7,7 @@
 */
 var current_multirow = 0;
 function createGradient(ctx, chartArea) {
-  const gradient = ctx.createLinearGradient(
+  var gradient = ctx.createLinearGradient(
     0,
     chartArea.bottom,
     0,
@@ -22,8 +22,8 @@ function createGradient(ctx, chartArea) {
 }
 
 function formatMonthLabels(dates) {
-  const monthLabels = dates.map((date) => {
-    const d = new Date(date);
+  var monthLabels = dates.map((date) => {
+    var d = new Date(date);
     return d.toLocaleString("en", { month: "short" });
   });
 
@@ -32,7 +32,7 @@ function formatMonthLabels(dates) {
   });
 }
 
-const CHART_COLORS = {
+var CHART_COLORS = {
   white: "#fff",
   green: "#fff",
   purple: "#A265FF",
@@ -46,7 +46,7 @@ const CHART_COLORS = {
   lightGreen: "#32E28B",
 };
 
-const TOOLTIP_SETTINGS = {
+var TOOLTIP_SETTINGS = {
   titleColor: "rgb(255, 255, 255)",
   bodyColor: "rgb(255, 255, 255)",
   borderWidth: 1,
@@ -58,11 +58,11 @@ const TOOLTIP_SETTINGS = {
   bodyWeight: "bold",
 };
 
-const GRID_SETTINGS = {
+var GRID_SETTINGS = {
   color: "#6ccf70",
 };
 
-const LINE_CHART_CONFIG = {
+var LINE_CHART_CONFIG = {
   data: {
     labels: ["2024-05-05", "2024-06-02", "2024-07-01", "2024-08-02"],
     values: [100000, 125000, 116000, 260000],
@@ -86,19 +86,19 @@ const LINE_CHART_CONFIG = {
   },
 };
 
-const verticalLinePlugin = {
+var verticalLinePlugin = {
   id: "verticalLinePlugin",
   beforeDatasetsDraw: function (chart) {
     if (chart.tooltip._active && chart.tooltip._active.length) {
-      const ctx = chart.ctx;
-      const activePoint = chart.tooltip._active[0];
-      const x = activePoint.element.x;
-      const y = activePoint.element.y;
-      const chartArea = chart.chartArea;
+      var ctx = chart.ctx;
+      var activePoint = chart.tooltip._active[0];
+      var x = activePoint.element.x;
+      var y = activePoint.element.y;
+      var chartArea = chart.chartArea;
 
       ctx.save();
 
-      const gradient = ctx.createLinearGradient(x, chartArea.bottom, x, y);
+      var gradient = ctx.createLinearGradient(x, chartArea.bottom, x, y);
       gradient.addColorStop(1, "rgba(255, 255, 255, 1)");
       gradient.addColorStop(1, "rgba(255, 255, 255, 0.4)");
       gradient.addColorStop(1, "rgba(255, 255, 255, 1)");
@@ -118,15 +118,15 @@ const verticalLinePlugin = {
   },
 };
 
-const gradientTooltipPlugin = {
+var gradientTooltipPlugin = {
   id: "gradientTooltip",
   beforeDraw: function (chart) {
-    const tooltip = chart.tooltip;
+    var tooltip = chart.tooltip;
     if (tooltip._active && tooltip._active.length) {
-      const ctx = chart.ctx;
-      const tooltipModel = tooltip;
+      var ctx = chart.ctx;
+      var tooltipModel = tooltip;
 
-      const gradient = ctx.createLinearGradient(
+      var gradient = ctx.createLinearGradient(
         tooltipModel.x,
         tooltipModel.y - tooltipModel.height,
         tooltipModel.x,
@@ -142,8 +142,8 @@ const gradientTooltipPlugin = {
 };
 
 function init_chart_line() {
-  const canvas = document.getElementById("chart-line");
-  const ctx = canvas.getContext("2d");
+  var canvas = document.getElementById("chart-line");
+  var ctx = canvas.getContext("2d");
   var labels = [],
     values = [],
     json = $.parseJSON($(".income_all_chart").html());
@@ -154,7 +154,7 @@ function init_chart_line() {
   }
   //console.log(labels);
   //console.log(values);
-  const chartConfig = {
+  var chartConfig = {
     type: "line",
     data: {
       labels: labels,
@@ -164,8 +164,8 @@ function init_chart_line() {
           data: values,
           borderColor: LINE_CHART_CONFIG.display.lineColor,
           backgroundColor: function (context) {
-            const chart = context.chart;
-            const { ctx, chartArea } = chart;
+            var chart = context.chart;
+            var { ctx, chartArea } = chart;
             return chartArea ? createGradient(ctx, chartArea) : null;
           },
           fill: true,
@@ -189,7 +189,7 @@ function init_chart_line() {
           max: LINE_CHART_CONFIG.scaleY.max,
           ticks: {
             callback: function (value) {
-              const allowedValues = LINE_CHART_CONFIG.scaleY.allowedValues;
+              var allowedValues = LINE_CHART_CONFIG.scaleY.allowedValues;
 
               if (!allowedValues) {
                 return LINE_CHART_CONFIG.scaleY.format(value);
@@ -220,7 +220,7 @@ function init_chart_line() {
           bodyAlign: "center",
           callbacks: {
             title: function (context) {
-              const fullDate = new Date(
+              var fullDate = new Date(
                 LINE_CHART_CONFIG.data.labels[context[0].dataIndex],
               );
               return "";
@@ -257,7 +257,7 @@ function init_chart_line() {
 }
 
 function init_statistics_charts(canvas, chart_id) {
-  const ctx = canvas.getContext("2d");
+  var ctx = canvas.getContext("2d");
   var labels = [],
     values = [],
     json = $.parseJSON($('.'+chart_id).html());
@@ -268,7 +268,7 @@ function init_statistics_charts(canvas, chart_id) {
   }
   //console.log(labels);
   //console.log(values);
-  const chartConfig = {
+  var chartConfig = {
     type: "line",
     data: {
       labels: labels,
@@ -278,8 +278,8 @@ function init_statistics_charts(canvas, chart_id) {
           data: values,
           borderColor: LINE_CHART_CONFIG.display.lineColor,
           backgroundColor: function (context) {
-            const chart = context.chart;
-            const { ctx, chartArea } = chart;
+            var chart = context.chart;
+            var { ctx, chartArea } = chart;
             return chartArea ? createGradient(ctx, chartArea) : null;
           },
           fill: true,
@@ -303,7 +303,7 @@ function init_statistics_charts(canvas, chart_id) {
           max: LINE_CHART_CONFIG.scaleY.max,
           ticks: {
             callback: function (value) {
-              const allowedValues = LINE_CHART_CONFIG.scaleY.allowedValues;
+              var allowedValues = LINE_CHART_CONFIG.scaleY.allowedValues;
 
               if (!allowedValues) {
                 return LINE_CHART_CONFIG.scaleY.format(value);
@@ -334,7 +334,7 @@ function init_statistics_charts(canvas, chart_id) {
           bodyAlign: "center",
           callbacks: {
             title: function (context) {
-              const fullDate = new Date(
+              var fullDate = new Date(
                 LINE_CHART_CONFIG.data.labels[context[0].dataIndex],
               );
               return "";

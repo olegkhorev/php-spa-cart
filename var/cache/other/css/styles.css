@@ -548,6 +548,9 @@ box-shadow:         0 1px 2px rgba(0,0,0,.1);
     backdrop-filter: saturate(180%) blur(20px);
     background: rgba(255, 255, 255, 0.77) !important;
 }
+.scrolled.iphone #head {
+	background: rgba(255, 255, 255, 1) !important;
+}
 .scrolled #menu > li {
 	height: 38px;
 }
@@ -1229,6 +1232,7 @@ form .error_field {
   vertical-align: bottom;
   padding: 10px 0 15px 0;
   margin: 0px;
+  line-height: 17px;
 }
 .navigation .nav-sep {
   padding-left: 12px;
@@ -1253,14 +1257,11 @@ form .error_field {
   margin: 0px;
   font-weight: bold;
 }
-.navigation a.navigation-rarrow, .navigation a.navigation-larrow {
-	position: relative;
-	top: 2px;
-}
 .navigation-title {
   padding-right: 10px;
 }
 a.navigation-larrow, a.navigation-rarrow {
+	font-size: 19px;
 	text-decoration: none !important;
 }
 .navigation-larrow img {
@@ -2604,7 +2605,7 @@ div.print_div {
 	padding-left: 0 !important;
 	text-transform: none;
 }
-#body-login .main-container, #body-register .main-container, #body-invoice .main-container, #body-help .main-container, form[name="ticketform"], form[name="testimonialform"] {
+#body-password .main-container, #body-login .main-container, #body-register .main-container, #body-invoice .main-container, #body-help .main-container, form[name="ticketform"], form[name="testimonialform"] {
     margin: 0 auto;
     display: block;
     width: 600px;
@@ -2619,7 +2620,7 @@ div.print_div {
 #body-help .main-container .padding-page {
 	padding: 20px 0 0 0;
 }
-#body-login .main-container .group, #body-register .main-container .group, #body-help .main-container .group, form[name="ticketform"] .group, form[name="testimonialform"] .group {
+#body-password .main-container .group, #body-login .main-container .group, #body-register .main-container .group, #body-help .main-container .group, form[name="ticketform"] .group, form[name="testimonialform"] .group {
 	max-width: none;
 }
 #body-login .main-container, #body-register .main-container, #body-ticket .main-container, #body-testimonials .new-testimonial-page-container .main-container {

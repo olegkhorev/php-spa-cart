@@ -51,9 +51,7 @@
 <link rel="shortcut icon" href="/favicon.png" type="image/vnd.microsoft.icon" />
 <title><?php echo $page_title;?></title>
 <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
-<style media="all">
 <?php include SITE_ROOT . "/includes/css.php"; ?>
-</style>
 <?php if ($config['theme_color']) {?>
 <style id="custom_style">
 :root {

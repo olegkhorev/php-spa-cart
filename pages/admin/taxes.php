@@ -271,6 +271,3 @@ if ($get['2'] == 'add' || !empty($get['2'])) {
 }
 
 $template['head_title'] = lng('Taxes').' :: '.$template['head_title'];
-
-$template['css'][] = 'admin_taxes';
-$template['js'][] = 'admin_taxes';

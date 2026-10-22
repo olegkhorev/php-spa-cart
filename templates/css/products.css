@@ -334,6 +334,8 @@ transform: rotate(45deg);
 }
 .save2wl svg {
   fill: #fff;
+  position: relative;
+  top: 3px;
 }
 .category-details td:first-child img {
   border-radius: 25px;

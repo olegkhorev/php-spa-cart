@@ -24,11 +24,7 @@
 <script defer src="/materialize/material.min.js"></script>
 <script defer src="/images/chart.umd.js"></script>
 
-<style media="all">
-<?php if (!empty($css)) {
-    include "includes/css.php";
-} ?>
-</style>
+{include_css}
 {if $login && $config['admin_theme_color'] && $userinfo['usertype'] == 'A'}
 <style id="custom_style">
 :root {
@@ -518,7 +514,7 @@ $('body').show();
 		item.addEventListener('mouseout',deactiveLink));
   </script>
 
-{if false && $login && $design_mode}
+{if $login && $design_mode}
 <?php include SITE_ROOT . "/theme.php"; ?>
 {/if}
 

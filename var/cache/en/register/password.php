@@ -9,9 +9,21 @@
 ?>
 <h1>Set your password</h1><br />
 <form method="POST" name="cpform">
-<div class="logsec cpsec">
-<input type="text" name="new_pswd" value="New password" /><br /><br />
-<input type="text" name="con_pswd" value="Confirm password" /><br />
+ <div class="logsec cpsec">
+ <div class="group">
+  <input type="password" required name="new_pswd" value="" />
+  <span class="highlight"></span>
+  <span class="bar"></span>
+  <label>New password</label>
+ </div>
+
+ <div class="group">
+  <input type="password" required name="con_pswd" />
+  <span class="highlight"></span>
+  <span class="bar"></span>
+  <label>Confirm password</label>
+ </div>
+
 <div class="er">Passwords mismatch</div>
 <br />
 <button type="button">Change</button>

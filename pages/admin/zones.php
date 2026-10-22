@@ -193,6 +193,3 @@ if ($get['2'] == 'add' or !empty($get['2'])) {
     $template['zones'] = $zones;
     $template['page'] = get_template_contents('admin/pages/zones.php');
 }
-
-$template['css'][] = 'admin_zones';
-$template['js'][] = 'admin_zones';

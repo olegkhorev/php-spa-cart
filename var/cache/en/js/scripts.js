@@ -15,7 +15,7 @@ var $window = $(window),
   $animation_elements = $(
     ".page-container-2, .page-container-news, .page-container-blog",
   ),
-  are_you_sure = "are_you_sure",
+  are_you_sure = "Are you sure?",
   mobile_screen = 850,
   instant_search_ajax,
   yes = "yes",

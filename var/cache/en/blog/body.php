@@ -16,13 +16,13 @@
 <div class="blog">
 <div class="actions">
 <?php if ($comments) {?>
-<img src="<?php echo $current_location;?>/images/comments.gif" alt="" /> <a href="javascript: void(0);" onclick="javascript: go_to_comments();">Go to comments</a>&nbsp;
+<svg><use xlink:href="/images/sprite_3.svg#go_to_comments"></use></svg> <a href="javascript: void(0);" onclick="javascript: go_to_comments();">Go to comments</a>&nbsp;
 <?php } ?>
-<img src="<?php echo $current_location;?>/images/leave_comment.gif" alt="" /> <a href="javascript: void(0);" onclick="javascript: leave_comments();">Leave a comment</a>
+<svg><use xlink:href="/images/sprite_3.svg#leave_comment"></use></svg> <a href="javascript: void(0);" onclick="javascript: leave_comments();">Leave a comment</a>
 </div>
 <h1><?php echo $blog['title'];?></h1>
 <br />
-<img src="<?php echo $current_location;?>/images/blog_date.gif" alt="" /> <?php echo date($datetime_format, $blog['date']);; ?>
+<svg class="post_date_icon"><use xlink:href="/images/sprite_3.svg#calendar"></use></svg> &nbsp; <?php echo date($datetime_format, $blog['date']);; ?>
 <?php if ($blog['imageid']) {?>
 <div class="image">
 <?php $image = $blog; $image['new_width'] = 750; $image['new_height'] = 400; include SITE_ROOT . "/includes/blog_image.php"; ?>
@@ -41,7 +41,7 @@
 <?php foreach ($comments as $k=>$v) {?>
 <div class="author">
 <div class="quote">
-<img src="<?php echo $current_location;?>/images/quote.gif" alt="" /> <a href="javascript: void(0);" onclick="javascript: quote_comment_html('<?php echo $v['commentid'];?>', '<?php $name = $v['name'] ? $v['name'] : $v['firstname'].' '.$v['lastname']; $name = escape($name, 1); echo escape($name, 2);; ?>');">Quote</a>
+<svg><use xlink:href="/images/sprite_3.svg#quote"></use></svg> <a href="javascript: void(0);" onclick="javascript: quote_comment_html('<?php echo $v['commentid'];?>', '<?php $name = $v['name'] ? $v['name'] : $v['firstname'].' '.$v['lastname']; $name = escape($name, 1); echo escape($name, 2);; ?>');">Quote</a>
 </div>
 Comment from <b><?php echo $v['name'] ? $v['name'] : $v['firstname'].' '.$v['lastname'];; ?></b>. Commented on <?php echo date($datetime_format, $v['date']);; ?>.
 </div>

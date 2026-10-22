@@ -177,5 +177,3 @@ $template['total_all'] = $db->field("SELECT SUM(total) FROM orders");
 $template['total_all_paid'] = $db->field("SELECT SUM(total) FROM orders WHERE status IN ('2', '3', '6')");
 
 $template['page'] = get_template_contents('admin/pages/dashboard.php');
-$template['css'][] = 'admin_dashboard';
-$template['js'][] = 'admin_dashboard';
