@@ -11,7 +11,7 @@
 <b>{lng[Gift Card]}</b><br />
 {lng[You will see the Gift Card key phrase on paid invoice]}
 {else}
-	  <a href="{$current_location}/{$url}">{$v['name']}</a>
+	  <a href="{$current_location}/{$url}" class="cart_product_link">{$v['name']}</a>
 {/if}
 {if $v['weight'] && $v['weight'] != '0.00'}
 <br /><small>{lng[Weight]}: {weight $v['weight']}</small>

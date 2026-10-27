@@ -37,6 +37,10 @@ if ($_SERVER['REMOTE_ADDR'] == '127.0.0.1' && php_sapi_name() != 'cli') {
 
     $http_domain = '{{http_host}}';
     $https_domain = '{{http_host}}';
+} elseif ($_SERVER['HTTP_HOST'] == 'dev.domain.com') {
+    #
+    # link this domain if you have dev server. Copy any settings here
+    #
 } else {
     $sql_user = '{{sql_user}}';
     $sql_password = '{{sql_password}}';

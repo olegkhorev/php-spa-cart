@@ -60,6 +60,7 @@ Currency:
 <?php } ?>
 <hr />
 <a class="ajax_link" href="<?php echo $current_location;?>/brands">Brands</a>
+<a class="ajax_link" href="<?php echo $current_location;?>/news">News</a>
 <a class="ajax_link" href="<?php echo $current_location;?>/blog">Blog</a>
 <a class="ajax_link" href="/page/about-us.html">About us</a>
 <a class="ajax_link" href="<?php if ($config['Tickets']['use_tickets']) {?>/support_desk<?php } else  { ?>/help<?php } ?>">Contact</a>

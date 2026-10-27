@@ -73,7 +73,7 @@ function products_clicks() {
       );
       var q = photo_box.find(".view-quicklook"),
         i = photo_box.closest(".photo"),
-        product_id = i.find(".product-image").attr("id").replace("pid-", "");
+        product_id = i.find(".product-image").attr("data-id").replace("pid-", "");
 
       q.css("left", i.width() / 2 - 35 + "px");
       q.css("top", i.height() / 2 - 20 + "px");
@@ -99,7 +99,7 @@ function products_clicks() {
     .unbind("click")
     .on("click", function () {
       bc = false;
-      add_to_cart($(this).attr("id").replace("pid", ""), "Y", this);
+      add_to_cart($(this).attr("data-id").replace("pid", ""), "Y", this);
     });
 }
 

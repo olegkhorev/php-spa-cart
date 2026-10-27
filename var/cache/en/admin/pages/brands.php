@@ -128,14 +128,14 @@
      "meta_title"
  ]; ?>" /></td>
 </tr>
-
+<?php /* ?>
 <tr>
  <td><b>Meta keywords</b></td>
  <td><textarea cols="80" rows="5" name="meta_keywords"><?php  echo $brand[
      "meta_keywords"
  ]; ?></textarea></td>
 </tr>
-
+<?php */ ?>
 <tr>
  <td><b>Meta description</b></td>
  <td><textarea cols="80" rows="5" name="meta_descr"><?php  echo $brand[

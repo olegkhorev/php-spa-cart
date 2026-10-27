@@ -21,7 +21,7 @@
  </ul>
  <ul class="foot-ul-2">
   <li>{lng[Quick links]}</li>
-  <li><a href="/">{lng[Home page]}</a></li>
+  <li><a href="/">{lng[Homepage]}</a></li>
   <li><a href="/brands">{lng[Brands]}</a></li>
   <li><a href="/news">{lng[News]}</a></li>
   <li><a href="/blog">{lng[Blog]}</a></li>

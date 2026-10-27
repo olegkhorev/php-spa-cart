@@ -184,7 +184,7 @@ $template['warehouse_enabled'] = $warehouse_enabled;
 $template['ajax_delimiter'] = $ajax_delimiter;
 $template['payment_currency'] = $payment_currency;
 
-if (preg_match('/bot|andex|oogle|robot|spider|crawl|curl|search|^$/i', $_SERVER['HTTP_USER_AGENT'])) {
+if (preg_match('/bot|andex|oogle|robot|spider|crawl|curl|search|validator.w3|^$/i', $_SERVER['HTTP_USER_AGENT'])) {
     $template['bot'] = $bot = 'Y';
 }
 

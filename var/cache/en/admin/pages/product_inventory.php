@@ -22,7 +22,7 @@
 </tr>
 <?php } ?>
 <tr>
- <td colspan="2"><br><button type="submit">Update</button></td>
+ <td colspan="2"><br /><button type="submit">Update</button></td>
 </tr>
 </table>
 <?php } else  { ?>

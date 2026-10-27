@@ -141,13 +141,14 @@
  ); ?>" /></td>
 </tr>
 
+{*
 <tr>
  <td><b>{lng[Meta keywords]}</b></td>
  <td><textarea cols="80" rows="5" name="meta_keywords"><?php echo $news[
      "meta_keywords"
  ]; ?></textarea></td>
 </tr>
-
+*}
 <tr>
  <td><b>{lng[Meta description]}</b></td>
  <td><textarea cols="80" rows="5" name="meta_descr"><?php echo $news[

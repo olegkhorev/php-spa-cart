@@ -274,6 +274,12 @@ function ajax_clicks() {
       return false;
     });
 
+  // Correct back from checkout to cart link
+  if ($('.back-to-cart').length && mobile_screen > $(window).width()) {
+    $('.back-to-cart').addClass('ajax_link');
+    $('.back-to-cart').removeClass('cart-link');
+  }
+
   if ($(".exec_page_js").length) {
     eval($(".exec_page_js").html());
   }
@@ -363,7 +369,7 @@ function ajax_clicks() {
   });
 
   $(
-    "#menu a, a.ajax_link, .account-invoices-list a, .button_ajax_link, .ajax_mobile_link, .logo-link, .bread_crumbs a, #subcategories a, .brands a, .test-links a, .foot a",
+    "#menu a, a.ajax_link, .account-invoices-list a, .button_ajax_link, .ajax_mobile_link, .logo-link, .bread_crumbs a, #subcategories a, .brands a, .test-links a, .foot a, .cart_product_link",
   )
     .unbind("click")
     .on("click", function (e) {
@@ -437,6 +443,10 @@ function ajax_clicks() {
           recalc_menus(r[3], r[4]);
           proceed_clicks(r[3]);
           tabs_clicks();
+          // Close popups
+          if (!$('.alerts').length)
+            $('.close-popup').click();
+
           history_push = true;
         },
       });

@@ -53,20 +53,20 @@ if (isset($_GET['coupon'])) {
     $coupon_code = addslashes($_GET['coupon']);
     $coupon = $db->row("SELECT * FROM coupons WHERE coupon='".$coupon_code."'");
     if (!$coupon) {
-        exit('Coupon not exists');
+        exit(lng('Coupon does not exist'));
     } elseif ($coupon['status'] != 'Y') {
-        exit('Coupon is disabled');
+        exit(lng('Coupon is disabled'));
     } elseif ($coupon['per_customer']) {
         if (!$login) {
-            exit('Please, login to apply this coupon');
+            exit(lng('Please, login to apply this coupon'));
         }
 
         $used_count = $db->field("SELECT COUNT(*) FROM orders WHERE userid='$login' AND coupon='".$coupon_code."' AND status NOT IN (5, 4)");
         if ($used_count >= $coupon['times']) {
-            exit('Coupon was already used');
+            exit(lng('Coupon was already used'));
         }
     } elseif ($coupon['times_used'] >= $coupon['times']) {
-        exit('Coupon is inactive');
+        exit(lng('Coupon is inactive'));
     }
 
     $cart['coupon'] = $coupon;
@@ -83,9 +83,9 @@ if (isset($_GET['gc'])) {
     $gc_code = addslashes($_GET['gc']);
     $gc = $db->row("SELECT * FROM gift_cards WHERE gcid='".$gc_code."' AND amount_left>0");
     if (!$gc) {
-        exit('Gift Card not exists or expired');
+        exit(lng('Gift Card does not exist or expired'));
     } elseif ($gc['status'] != 'Y') {
-        exit('Gift Card is disabled');
+        exit(lng('Gift Card is disabled'));
     }
 
     $cart['gc'] = $gc;
@@ -484,8 +484,10 @@ $template['payment_methods'] = $calculations['payment_methods'];
 $template['no_left_menu'] = 'Y';
 $template['page'] = get_template_contents('checkout/body.php');
 
-if ($is_ajax) {
+if ($is_ajax && !$_GET['its_ajax_page']) {
     $page_title = lng('Checkout');
     $result = array($template['page'], $page_title, $template['bread_crumbs_html'], $get['0'], $template['parentid']);
     exit(json_encode($result));
 }
+
+$template['page'] = get_template_contents('checkout/page.php');

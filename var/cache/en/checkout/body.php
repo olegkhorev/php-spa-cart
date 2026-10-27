@@ -7,6 +7,7 @@
 * https://github.com/olegkhorev/php-spa-cart
 */
 ?>
+<div class="exec_page_js hidden">checkout_actions();checkout_changes();$("#place_order *").attr("disabled", true);coupon_actions();cart_clicks();init_translate();</div>
 <div class="checkout-container">
 <h1><a href="<?php echo $current_location;?>/cart" class="cart-link back-to-cart"><img src="/images/spacer.gif" alt="" /></a>Checkout</h1>
 <div style="text-align:left">
@@ -14,7 +15,7 @@
 <?php foreach ($products as $v) {?>
 <?php $url = $v['cleanurl'] ? $v['cleanurl'].'.html' : 'product/'.$v['productid'];; ?>
 	<tr>
-	 <td class="image"><a href="<?php echo $current_location;?>/<?php echo $url;?>">
+	 <td class="image"><a href="<?php echo $current_location;?>/<?php echo $url;?>" class="cart_product_link">
 <?php if ($v['variant_photo']) {?>
 <?php $image = $v["variant_photo"]; $image['new_width'] = 100; $image['new_height'] = 100; include SITE_ROOT . "/includes/variant_image.php"; ?>
 <?php } else if ($v['photo']) {?>
@@ -26,7 +27,7 @@
 <?php if ($v['gift_card']) {?>
 <b>Gift Card</b>
 <?php } else  { ?>
-<a href="<?php echo $current_location;?>/<?php echo $url;?>"><?php echo $v['name'];?></a>
+<a href="<?php echo $current_location;?>/<?php echo $url;?>" class="cart_product_link"><?php echo $v['name'];?></a>
 <?php } ?>
 <?php if ($v['weight'] && $v['weight'] != '0.00') {?>
 <br />

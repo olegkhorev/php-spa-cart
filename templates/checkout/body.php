@@ -7,6 +7,7 @@
 * https://github.com/olegkhorev/php-spa-cart
 */
 ?>
+<div class="exec_page_js hidden">checkout_actions();checkout_changes();$("#place_order *").attr("disabled", true);coupon_actions();cart_clicks();init_translate();</div>
 <div class="checkout-container">
 <h1><a href="{$current_location}/cart" class="cart-link back-to-cart"><img src="/images/spacer.gif" alt="" /></a>{lng[Checkout]}</h1>
 <div style="text-align:left">
@@ -14,7 +15,7 @@
 {foreach $products as $v}
 {php $url = $v['cleanurl'] ? $v['cleanurl'].'.html' : 'product/'.$v['productid'];}
 	<tr>
-	 <td class="image"><a href="{$current_location}/{$url}">
+	 <td class="image"><a href="{$current_location}/{$url}" class="cart_product_link">
 {if $v['variant_photo']}
 {variant_image image=`$v["variant_photo"]` new_width=100 new_height=100}
 {elseif $v['photo']}
@@ -24,9 +25,9 @@
 	  </a></td>
 	  <td style="width:100%;text-align:left" class="line">
 {if $v['gift_card']}
-<b>Gift Card</b>
+<b>{lng[Gift Card]}</b>
 {else}
-<a href="{$current_location}/{$url}">{$v['name']}</a>
+<a href="{$current_location}/{$url}" class="cart_product_link">{$v['name']}</a>
 {/if}
 {if $v['weight'] && $v['weight'] != '0.00'}
 <br />

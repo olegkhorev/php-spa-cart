@@ -701,7 +701,7 @@ function add_shipping_rates_values() {
 
 function products_photos_clicks() {
   $(".product-images img").on("click", function () {
-    var huge = $(this).attr("huge");
+    var huge = $(this).attr("data-huge");
     if (huge) {
       window.open(huge, "");
     }

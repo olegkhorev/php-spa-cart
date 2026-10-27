@@ -63,7 +63,7 @@ Comment from <b><?php echo $v['name'] ? $v['name'] : $v['firstname'].' '.$v['las
 <div style="text-align:center">You should be a registered user to leave a comment.</div>
 <br /><br />
 <?php } else  { ?>
-<form method="post" name="blogform">
+<form method="post" name="blogform" class="ajax-form">
 <input type="hidden" name="blogid" value="<?php  echo $blog["blogid"]; ?>">
 <table id="blog_bb_buttons">
 <tbody>
@@ -76,14 +76,14 @@ Comment from <b><?php echo $v['name'] ? $v['name'] : $v['firstname'].' '.$v['las
 </tbody>
 </table>
 
-<div id="newrecord" contenteditable="true"></div>
+<div id="newrecord" contenteditable="true"><?php if ($new_comment) {?><?php echo $new_comment['comment'];?><?php } ?></div>
 <textarea name="comment" cols="80" rows="15"><?php if ($new_comment) {?><?php echo $new_comment['comment'];?><?php } ?></textarea>
 
 <?php if ($login) {?>
 <br />
 <?php } else  { ?>
 <div class="group">
-  <input type="text" size="30" name="new_name"<?php if ($new_comment) {?> value="<?php echo escape($new_comment['new_name'], 2);; ?>"<?php } ?>>
+  <input type="text" size="30" required name="new_name"<?php if ($new_comment) {?> value="<?php echo escape($new_comment['new_name'], 2);; ?>"<?php } ?>>
   <span class="highlight"></span>
   <span class="bar"></span>
   <label>Your name</label>

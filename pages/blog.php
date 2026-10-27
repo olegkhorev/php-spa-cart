@@ -104,7 +104,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
         } else {
             $_SESSION['blog_comment'] = $comment;
 
-            redirect($_SERVER['REQUEST_URI'].'#leave_comment');
+            redirect($_SERVER['REQUEST_URI']);
         }
     }
 

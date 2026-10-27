@@ -44,7 +44,7 @@
 	';
 } ?>
 <tr>
- <td colspan="3" class="resp-td-width-100"><br><button type="submit">{lng[Update]}</button> &nbsp; &nbsp; &nbsp; <button type="button" onclick="javascript: if (confirm('', $(this)) || confirmed) submitForm(this, 'delete');">{lng[Delete selected]}</button></td>
+ <td colspan="3" class="resp-td-width-100"><br /><button type="submit">{lng[Update]}</button> &nbsp; &nbsp; &nbsp; <button type="button" onclick="javascript: if (confirm('', $(this)) || confirmed) submitForm(this, 'delete');">{lng[Delete selected]}</button></td>
 </tr>
 <?php } ?>
 <tr>
@@ -62,7 +62,7 @@ var popup_product_pid = document.prform.newproductid,
  </td>
 </tr>
 <tr>
- <td colspan="3" class="resp-td-width-100 background-transparent"><br><button>{lng[Add]}</button></td>
+ <td colspan="3" class="resp-td-width-100 background-transparent"><br /><button>{lng[Add]}</button></td>
 </tr>
 </table>
 </form>

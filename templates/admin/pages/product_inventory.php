@@ -22,7 +22,7 @@
 </tr>
 {/foreach}
 <tr>
- <td colspan="2"><br><button type="submit">{lng[Update]}</button></td>
+ <td colspan="2"><br /><button type="submit">{lng[Update]}</button></td>
 </tr>
 </table>
 {else}

@@ -18,7 +18,7 @@
  {php $already = array();}
  {foreach $alerts as $v}
 	 {if !in_array($v['content'], $already)}
-  {if $v['type'] == 'e'}<div class="error">{if $lng == 'en'}{lng[Error]}{/if}: {$v['content']}</div>{else}{$v['content']}<br>{/if}<br>
+  {if $v['type'] == 'e'}<div class="error">{if $lng == 'en'}{lng[Error]}{/if}: {$v['content']}</div>{else}{$v['content']}<br />{/if}<br />
 		{php $already[] = $v['content'];}
 		{/if}
 	{/foreach}

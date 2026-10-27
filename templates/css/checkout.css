@@ -104,7 +104,7 @@ a.back-to-cart img {
   cursor: pointer;
 }
 .coupon-error {
-  padding-top: 10px;
+  padding: 5px 0 10px 0;
   display: none;
   color: #ff3300;
 }
@@ -147,4 +147,11 @@ a.back-to-cart img {
 }
 #checkout_table #place_order {
   padding-left: 10px;
+}
+#body-cart .main-container, #body-checkout .main-container {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+#body-cart .main-container > .content, #body-checkout .main-container > .content {
+  padding: 5px 10px 0 10px;
 }

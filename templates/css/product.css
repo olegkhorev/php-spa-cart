@@ -867,7 +867,7 @@ table#product-details td.product-list-price b {
   display: inline-block;
   padding: 15px 20px 15px 20px;
   border-radius: 15px;
-  border: 1px solid var(--theme-color-2);
+  border: 1px solid var(--theme-color);
 }
 .more-details-border a,
 .more-details-border table {

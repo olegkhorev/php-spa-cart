@@ -7,6 +7,7 @@
 * https://github.com/olegkhorev/php-spa-cart
 */
 ?>
+<div class="exec_page_js hidden">cart_actions();coupon_actions();cart_clicks();checkout_actions();</div>
 <h1>{lng[Your cart]}</h1>
 {if $products}
 <form action="/cart" id="cartform" method="POST">
@@ -14,15 +15,15 @@
 <tbody>
 <tr>
  <th style="width:50%;text-align:left" colspan="2">{lng[Product]}</th>
- <th style="width:20%">{lng[Price]}</th>
- <th>{lng[Quantity]}</th>
- <th style="width:20%">{lng[Total]}</th>
+ <th style="width:20%" align="center">{lng[Price]}</th>
+ <th align="center">{lng[Quantity]}</th>
+ <th style="width:20%" align="center">{lng[Total]}</th>
  <td style="width:10%"></td>
 </tr>
 {foreach $products as $v}
 {php $url = $v['cleanurl'] ? $v['cleanurl'].'.html' : 'product/'.$v['productid'];}
 	<tr>
-	 <td class="image"><a href="{$current_location}/{$url}">
+	 <td class="image"><a href="{$current_location}/{$url}" class="cart_product_link">
 	{if $v['variant_photo']}
 {variant_image image=`$v["variant_photo"]` new_width=100 new_height=100}
 	{elseif $v['photo']}
@@ -37,7 +38,7 @@
 <div class="cart-mobile-title-line">{include="cart/mobile_title.php"}</div></div>
 	  </td>
 	  <td>{include="cart/mobile_title.php"}</td>
-	<td class="td-center" style="text-align:center;vertical-align:middle">
+	<td class="td-center" style="text-align:center;">
 {if $v['gift_card']}
 	{price $v['amount']}
 {else}

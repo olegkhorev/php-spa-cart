@@ -50,8 +50,9 @@
   transition: all 0s ease 0s;
 }
 .coupon_alert {
-  width: 350px;
-  margin-left: -175px;
+  width: 400px;
+  margin-left: -200px;
+  box-sizing: border-box;
 }
 .register_alert {
   margin-top: -300px;

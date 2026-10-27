@@ -105,7 +105,7 @@
  <?php $already = array();; ?>
  <?php foreach ($alerts as $v) {?>
 	 <?php if (!in_array($v['content'], $already)) {?>
-  <?php if ($v['type'] == 'e') {?><div class="error"><?php if ($lng == 'en') {?>Error alert<?php } ?>: <?php echo $v['content'];?></div><?php } else  { ?><?php echo $v['content'];?><br><?php } ?><br>
+  <?php if ($v['type'] == 'e') {?><div class="error"><?php if ($lng == 'en') {?>Error<?php } ?>: <?php echo $v['content'];?></div><?php } else  { ?><?php echo $v['content'];?><br /><?php } ?><br />
 		<?php $already[] = $v['content'];; ?>
 		<?php } ?>
 	<?php } ?>

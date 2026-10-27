@@ -7,11 +7,6 @@
 * https://github.com/olegkhorev/php-spa-cart
 */
 ?>
-<script>
-// Close overlay from the invoice page
-$('.fade').click();
-</script>
-
 <?php if (!$pdf_invoice) {?>
 <?php if ($get['2'] == 'payment_error') {?>
 There was an error processing your order. Please, try checkout again.
@@ -65,7 +60,7 @@ Tracking number: <?php echo $order['tracking'];?>
  <td class="invoice-table-td-2" style="vertical-align: top;">
 <h2 style="margin: 0; padding: 10px 0; text-align: center;">Company information</h2>
 <b><?php echo $config['Company']['company_name'];?></b><br />
-<a href="<?php echo $http_location;?>" target="_blank"><?php echo $http_location;?></a><br /><br />
+<a href="<?php echo $https_location;?>" target="_blank"><?php echo $https_location;?></a><br /><br />
 <?php echo $config['Company']['location_address'];?>, <?php echo $config['Company']['location_city'];?><br />
 <?php echo $config['Company']['location_zipcode'];?>, <?php echo $config['Company']['location_statename'];?><br />
 <?php echo $config['Company']['location_countryname'];?><br />
@@ -169,7 +164,7 @@ Tracking number: <?php echo $order['tracking'];?>
  <?php $url = $v['cleanurl'] ? $v['cleanurl'] .'.html' : 'product/'.$v['productid'];; ?>
 <?php } ?>
 	<tr>
-	 <td class="image hideonmobile" style="vertical-align: top; padding-right: 10px;"><a href="<?php echo $http_location;?>/<?php echo $url;?>">
+	 <td class="image hideonmobile" style="vertical-align: top; padding-right: 10px;"><a href="<?php echo $https_location;?>/<?php echo $url;?>" class="ajax_link">
 <?php if ($v['variant_photo']) {?>
 <?php $image = $v["variant_photo"]; $image['new_width'] = 100; $image['new_height'] = 100; include SITE_ROOT . "/includes/variant_image.php"; ?>
 <?php } else if ($v['photo']) {?>
@@ -186,7 +181,7 @@ Gift Card key phrase: <?php echo $v['gift_card'];?>
 <?php } ?>
 <?php } ?>
 <?php } else  { ?>
-<a href="<?php echo $http_location;?>/<?php echo $url;?>"><?php echo $v['name'];?></a>
+<a href="<?php echo $https_location;?>/<?php echo $url;?>" class="ajax_link"><?php echo $v['name'];?></a>
 <?php /* ?>
 <?php if ($v['weight']) {?>
 <br />

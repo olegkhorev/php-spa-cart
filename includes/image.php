@@ -104,9 +104,9 @@ if ($image['only_url'] == 'Y') {
             $center = 0;
         }
 
-        echo '<img style="margin: '.$valign.'px '.$center.'px;" src="'.str_replace(SITE_ROOT, $current_location, $dir).'/'.$image['file'].'" huge="'.$current_location.'/photos/product/'.$image['productid'].'/'.$image['photoid'].'/'.$image['file'].'"'.' alt="'.escape($image['alt']).'"'.($image['class'] ? ' class="'.$image['class'].'"' : '').''.($image['id'] ? ' id="'.$image['id'].'"' : '').' />';
+        echo '<img style="margin: '.$valign.'px '.$center.'px;" src="'.str_replace(SITE_ROOT, $current_location, $dir).'/'.$image['file'].'" data-huge="'.$current_location.'/photos/product/'.$image['productid'].'/'.$image['photoid'].'/'.$image['file'].'"'.' alt="'.escape($image['alt']).'"'.($image['class'] ? ' class="'.$image['class'].'"' : '').''.($image['id'] ? ' data-id="'.$image['id'].'"' : '').' />';
     } else {
-        echo '<img'.($image['link'] ? ' huge="'.$current_location.'/photos/product/'.$image['productid'].'/'.$image['photoid'].'/'.$image['file'].'"' : '').' src="'.str_replace(SITE_ROOT, $current_location, $dir).'/'.$image['file'].'" alt="'.escape($image['alt']).'"'.($image['class'] ? ' class="'.$image['class'].'"' : '').''.($image['id'] ? ' id="'.$image['id'].'"' : '').' />';
+        echo '<img'.($image['link'] ? ' data-huge="'.$current_location.'/photos/product/'.$image['productid'].'/'.$image['photoid'].'/'.$image['file'].'"' : '').' src="'.str_replace(SITE_ROOT, $current_location, $dir).'/'.$image['file'].'" alt="'.escape($image['alt']).'"'.($image['class'] ? ' class="'.$image['class'].'"' : '').''.($image['id'] ? ' data-id="'.$image['id'].'"' : '').' />';
     }
 
     if ($image['link']) {

@@ -138,12 +138,14 @@
      $product["title_tag"],
  ); ?>" /></td>
 </tr>
+{*
 <tr>
  <td>{lng[Meta keywords]}</td>
  <td><input type="text" size="80" name="meta_keywords" value="<?php echo escape(
      $product["meta_keywords"],
  ); ?>" /></td>
 </tr>
+*}
 <tr>
  <td>{lng[Meta description]}</td>
  <td><input type="text" size="80" name="meta_description" value="<?php echo escape(
@@ -151,7 +153,7 @@
  ); ?>" /></td>
 </tr>
 <tr>
- <td colspan="2"><br>
+ <td colspan="2"><br />
 
 <div class="fixed_save_button">
 <button>{lng[Save]}</button>

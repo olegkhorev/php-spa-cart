@@ -17,7 +17,10 @@
 
 <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/materialize/material.orange-amber.min.css" />
+<?php /* ?>
 <script src="//code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+<?php */ ?>
+<script src="https://code.jquery.com/jquery-4.0.0.min.js" integrity="sha256-OaVG6prZf4v69dPg6PhVattBXkcOWQB62pdZ3ORyrao=" crossorigin="anonymous"></script>
 <script src="//code.jquery.com/ui/1.14.1/jquery-ui.min.js" integrity="sha256-AlTido85uXPlSyyaZNsjJXeCs07eSv3r43kyCVc8ChI=" crossorigin="anonymous"></script>
 <link rel="stylesheet" href="//code.jquery.com/ui/1.14.1/themes/base/jquery-ui.css" />
 
@@ -92,7 +95,7 @@ CKEDITOR.disableAutoInline = true;
  <?php $already = array();; ?>
  <?php foreach ($alerts as $v) {?>
 	 <?php if (!in_array($v['content'], $already)) {?>
-  <?php if ($v['type'] == 'e') {?><div class="error"><?php if ($lng == 'en') {?>Error<?php } ?>: <?php echo $v['content'];?></div><?php } else  { ?><?php echo $v['content'];?><br><?php } ?><br>
+  <?php if ($v['type'] == 'e') {?><div class="error"><?php if ($lng == 'en') {?>Error<?php } ?>: <?php echo $v['content'];?></div><?php } else  { ?><?php echo $v['content'];?><br /><?php } ?><br />
 		<?php $already[] = $v['content'];; ?>
 		<?php } ?>
 	<?php } ?>

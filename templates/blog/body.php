@@ -63,7 +63,7 @@
 <div style="text-align:center">{lng[You should be a registered user to leave a comment.]}</div>
 <br /><br />
 {else}
-<form method="post" name="blogform">
+<form method="post" name="blogform" class="ajax-form">
 <input type="hidden" name="blogid" value="<?php echo $blog["blogid"]; ?>">
 <table id="blog_bb_buttons">
 <tbody>
@@ -76,14 +76,14 @@
 </tbody>
 </table>
 
-<div id="newrecord" contenteditable="true"></div>
+<div id="newrecord" contenteditable="true">{if $new_comment}{$new_comment['comment']}{/if}</div>
 <textarea name="comment" cols="80" rows="15">{if $new_comment}{$new_comment['comment']}{/if}</textarea>
 
 {if $login}
 <br />
 {else}
 <div class="group">
-  <input type="text" size="30" name="new_name"{if $new_comment} value="{php echo escape($new_comment['new_name'], 2);}"{/if}>
+  <input type="text" size="30" required name="new_name"{if $new_comment} value="{php echo escape($new_comment['new_name'], 2);}"{/if}>
   <span class="highlight"></span>
   <span class="bar"></span>
   <label>{lng[Your name]}</label>

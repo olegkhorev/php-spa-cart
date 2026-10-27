@@ -249,11 +249,11 @@ function checkout_actions() {
       }
     });
 
-  $(".apply_gc").on("click", function () {
+  $(".apply_gc").unbind("click").on("click", function () {
     bc = false;
     var id = alert('<div class="coupon_screen"></div>', 1, "", "coupon_alert");
     $(".coupon_screen").html(
-      '<br/><div class="group"><input type="text" size="30" required /><span class="highlight"></span><span class="bar"></span><label>Введите код для подарочной карты здесь</label></div><div class="coupon-error"></div><button>Применить</button><br/><br/>',
+      '<h3>Please, enter your gift certificate</h3><div class="group"><input type="text" size="30" required /><span class="highlight"></span><span class="bar"></span><label>Введите код для подарочной карты здесь</label></div><div class="coupon-error"></div><button>Применить</button><br/><br/>',
     );
     $(".coupon_screen input").on("keyup", function () {
       $(".coupon-error").hide();
@@ -282,11 +282,11 @@ function checkout_actions() {
     });
   });
 
-  $(".apply_coupon").on("click", function () {
+  $(".apply_coupon").unbind("click").on("click", function () {
     bc = false;
     var id = alert('<div class="coupon_screen"></div>', 1, "", "coupon_alert");
     $(".coupon_screen").html(
-      '<div class="group"><input type="text" size="30" required /><span class="highlight"></span><span class="bar"></span><label>Введите код купона здесь</label></div><div class="coupon-error"></div><button>Применить</button><br/><br/>',
+      '<h3>Please, enter your discount coupon</h3><div class="group"><input type="text" size="30" required /><span class="highlight"></span><span class="bar"></span><label>Введите код купона здесь</label></div><div class="coupon-error"></div><button>Применить</button><br/><br/>',
     );
     $(".coupon_screen input").on("keyup", function () {
       $(".coupon-error").hide();
@@ -353,13 +353,13 @@ function checkout_changes() {
 }
 
 function coupon_actions() {
-  $(".remove_coupon").on("click", function () {
+  $(".remove_coupon").unbind("click").on("click", function () {
     $.ajax({ url: "/checkout/remove_coupon" }).done(function () {
       refresh_coupon();
     });
   });
 
-  $(".remove_gc").on("click", function () {
+  $(".remove_gc").unbind("click").on("click", function () {
     $.ajax({ url: "/checkout/remove_gc" }).done(function () {
       refresh_coupon();
     });

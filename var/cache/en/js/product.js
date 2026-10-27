@@ -1777,7 +1777,6 @@ function option_selected() {
       var variantid = tmp[0];
       if (!(variantid > 0)) {
         $(qadd + ".options-error").show();
-        setTimeout("hideOptionsError()", 1000);
         return false;
       }
     }
@@ -1789,7 +1788,6 @@ function option_selected() {
 
       if (!($(qadd + "#po-" + x).val() > 0)) {
         $(qadd + ".options-error").show();
-        setTimeout("hideOptionsError()", 1000);
         return false;
       }
     }
@@ -1952,6 +1950,7 @@ function add_to_cart(productid, is_quick, button) {
     });
 
     cart_clicks();
+    ajax_clicks();
   });
 
   return false;

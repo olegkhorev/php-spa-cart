@@ -75,7 +75,7 @@ Input box
 <?php  } ?>
 </table>
 <?php if ($option_groups) {?>
-<br><button type="submit">Update</button> &nbsp; &nbsp; &nbsp; <button type="button" onclick="javascript: if (confirm('', $(this)) || confirmed) submitForm(this, 'delete');">Delete selected</button>
+<br /><button type="submit">Update</button> &nbsp; &nbsp; &nbsp; <button type="button" onclick="javascript: if (confirm('', $(this)) || confirmed) submitForm(this, 'delete');">Delete selected</button>
 <br />
 <?php } ?>
 <br /><a href="<?php echo $current_location;?>/admin/products/<?php  echo $get[

@@ -111,6 +111,7 @@ CKEDITOR.config.protectedSource.push( /<\?[\s\S]*?\?>/g );   // PHP Code
 	</td>
 </tr>
 
+<?php /* ?>
 <tr>
 	<td style="height:10px;white-space:nowrap">Meta keywords</td>
 	<td style="width:10px;height:10px"></td>
@@ -120,7 +121,7 @@ CKEDITOR.config.protectedSource.push( /<\?[\s\S]*?\?>/g );   // PHP Code
   ]; ?></textarea>
 	</td>
 </tr>
-
+<?php */ ?>
 <tr>
 	<td style="height:10px;white-space:nowrap">Meta description</td>
 	<td style="width:10px;height:10px"></td>

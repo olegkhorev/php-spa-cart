@@ -61,7 +61,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
         $_SESSION['alerts'][] = array(
             'type'		=> 'i',
-            'content'	=> 'Blog added'
+            'content'	=> lng('Post has been added.')
         );
 
         $blogid = $db->array2insert("blog", $to_insert);
@@ -79,7 +79,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
         $_SESSION['alerts'][] = array(
             'type'		=> 'i',
-            'content'	=> 'Blog saved'
+            'content'	=> lng('Post has been saved.')
         );
 
         $db->array2update("blog", $to_update, "blogid='".$blogid."'");
@@ -99,7 +99,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
         $_SESSION['alerts'][] = array(
             'type'		=> 'i',
-            'content'	=> 'Blog deleted'
+            'content'	=> lng('Post has been deleted.')
         );
     } elseif ($mode == "update" && !empty($to_update)) {
         foreach ($to_update as $k => $v) {
@@ -109,7 +109,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
         $_SESSION['alerts'][] = array(
             'type'		=> 'i',
-            'content'	=> 'Blogs have been successfully updated'
+            'content'	=> lng('Posts have been updated.')
         );
     }
 
@@ -119,7 +119,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         if ($cu_exist) {
             $_SESSION['alerts'][] = array(
                 'type'		=> 'e',
-                'content'	=> lng('This clean URL already exist for another blog.')
+                'content'	=> lng('This clean URL already exist for another post.')
             );
         } else {
             if (func_check_cleanurl($cleanurl)) {
@@ -194,7 +194,7 @@ if ($get['2'] == 'new') {
     if (empty($blog)) {
         $_SESSION['alerts'][] = array(
                 'type' => 'e',
-                'content' => lng('No post found')
+                'content' => lng('No post found.')
         );
 
         redirect("admin/blog");

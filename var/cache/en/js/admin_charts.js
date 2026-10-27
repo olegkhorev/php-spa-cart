@@ -146,7 +146,7 @@ function init_chart_line() {
   var ctx = canvas.getContext("2d");
   var labels = [],
     values = [],
-    json = $.parseJSON($(".income_all_chart").html());
+    json = JSON.parse($(".income_all_chart").html());
 
   for (var x in json) {
     labels[labels.length] = x;
@@ -260,7 +260,7 @@ function init_statistics_charts(canvas, chart_id) {
   var ctx = canvas.getContext("2d");
   var labels = [],
     values = [],
-    json = $.parseJSON($('.'+chart_id).html());
+    json = JSON.parse($('.'+chart_id).html());
 
   for (var x in json) {
     labels[labels.length] = x;

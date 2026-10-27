@@ -29,7 +29,10 @@ function redirect($location, $specified = false, $is_301 = false)
     }
 
     if (!$specified) {
-        $location = $current_location.'/'.$location;
+        if (substr($location, 0, 1) == '/')
+            $location = $current_location . $location;
+        else
+            $location = $current_location . '/' . $location;
     }
 
     if ($is_ajax) {
@@ -679,6 +682,7 @@ function func_get_ajax_js()
 {
     $array = array();
     $array[] = 'jquery.ui.touch-punch.min';
+    $array[] = 'jquery_custom';
     $array[] = 'scripts';
     $array[] = 'blog_bb';
     $array[] = 'banners';
@@ -925,4 +929,10 @@ function func_delete_directory($dirPath) {
     }
 
     return rmdir($dirPath);
+}
+
+function php_404_error() {
+    header("HTTP/1.0 404 Not Found");
+    echo file_get_contents(SITE_ROOT . '/404/index.html');
+    exit;
 }

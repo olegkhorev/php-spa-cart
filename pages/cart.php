@@ -192,8 +192,10 @@ if ($cart['products']) {
 
 $template['page'] = get_template_contents('cart/body.php');
 
-if ($is_ajax) {
+if ($is_ajax && !$_GET['its_ajax_page']) {
     $page_title = lng('Cart');
     $result = array($template['page'], $page_title, $template['bread_crumbs_html'], $get['0'], $template['parentid']);
     exit(json_encode($result));
 }
+
+$template['page'] = get_template_contents('cart/page.php');

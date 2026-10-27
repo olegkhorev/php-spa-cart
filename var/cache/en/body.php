@@ -10,6 +10,7 @@
 <html lang="en" class="area-c">
 <head>
 <meta charset="utf-8" />
+<?php /* ?>
 <meta name="keywords" content="<?php  if (
     $get["0"] == "home" &&
     lng("Homepage meta keywords")
@@ -28,6 +29,7 @@
 } else  {
     echo "";
 } ?>">
+<?php */ ?>
 <meta name="description" content="<?php  if (
     $get["0"] == "home" &&
     lng("Homepage meta description")
@@ -62,34 +64,35 @@
 <?php } ?>
 <script>
 var current_area = 'C',
-	page = '<?php echo $get['0'];?>',
-	parentid = '<?php echo $parentid;?>',
-	pageid = '<?php echo $brand['brandid'];?>',
-	current_location = '<?php echo $current_location;?>',
-	stripe_key = '<?php echo $stripe_pkey;?>',
-	ajax_delimiter = '<?php echo $ajax_delimiter;?>',
-	currency_symbol = '<?php echo $config['General']['currency_symbol'];?>',
-	weight_symbol = '<?php echo $config['General']['weight_symbol'];?>',
-	payment_currency = '<?php echo $payment_currency;?>',
-	is_ajax_page = <?php echo $is_ajax_page;; ?>,
-	facebook_api = '<?php echo $current_protocol;?>://connect.facebook.net/en-en/all.js',
-	twitter_api = '<?php echo $current_protocol;?>://platform.twitter.com/widgets.js',
-	w_prices = [],
-	qadd = '',
-	oid = 0,
-	variants = [],
-	groups = [],
-	options = [],
-	exceptions = [],
-	w_prices = [],
-	product_base,
-	product_price,
-	product_weight,
-	product_price_ql,
-	product_weight_ql,
-	default_images,
-	default_images_ql,
-	product_avail = [];
+ page = '<?php echo $get['0'];?>',
+ parentid = '<?php echo $parentid;?>',
+ pageid = '<?php echo $brand['brandid'];?>',
+ current_location = '<?php echo $current_location;?>',
+ stripe_key = '<?php echo $stripe_pkey;?>',
+ ajax_delimiter = '<?php echo $ajax_delimiter;?>',
+ currency_symbol = '<?php echo $config['General']['currency_symbol'];?>',
+ weight_symbol = '<?php echo $config['General']['weight_symbol'];?>',
+ payment_currency = '<?php echo $payment_currency;?>',
+ cart_checkout_own_page = <?php if ($config['Visual']['cart_checkout_own_page'] == 'Y') {?>1<?php } else  { ?>0<?php } ?>,
+ is_ajax_page = <?php echo $is_ajax_page;; ?>,
+ facebook_api = '<?php echo $current_protocol;?>://connect.facebook.net/en-en/all.js',
+ twitter_api = '<?php echo $current_protocol;?>://platform.twitter.com/widgets.js',
+ w_prices = [],
+ qadd = '',
+ oid = 0,
+ variants = [],
+ groups = [],
+ options = [],
+ exceptions = [],
+ w_prices = [],
+ product_base,
+ product_price,
+ product_weight,
+ product_price_ql,
+ product_weight_ql,
+ default_images,
+ default_images_ql,
+ product_avail = [];
 
 variants[0] = [];
 variants[1] = [];
@@ -137,7 +140,11 @@ $(function() {
   <script src='https://js.braintreegateway.com/web/3.54.2/js/three-d-secure.js'></script>
   <script src="https://js.braintreegateway.com/web/3.54.2/js/hosted-fields.min.js"></script>
 </head>
-<body class="<?php if ($get['0'] == 'category' || $get['0'] == 'search' || ($get['0'] == 'brands' && $get['1'])) {?> withfilter<?php } ?><?php if ($classes) {?> <?php echo $classes;?><?php } ?><?php if ($config['General']['shop_closed'] == 'Y') {?> shop-closed<?php } ?>" id="body-<?php echo $get['0'];?><?php if ($module) {?>-<?php echo $module['code'];?><?php } ?>">
+<?php 
+$ua = $_SERVER['HTTP_USER_AGENT'] ?? '';
+$iphone_class = preg_match('/iPhone|iPod|iPad/i', $ua) ? ' iphone' : '';
+?>
+<body class="<?php if ($get['0'] == 'category' || $get['0'] == 'search' || ($get['0'] == 'brands' && $get['1'])) {?> withfilter<?php } ?><?php if ($classes) {?> <?php echo $classes;?><?php } ?><?php if ($config['General']['shop_closed'] == 'Y') {?> shop-closed<?php } ?><?php echo $iphone_class;?>" id="body-<?php echo $get['0'];?><?php if ($module) {?>-<?php echo $module['code'];?><?php } ?>">
 
 <div class="mobile-left_menu">
 <?php if ($config['General']['shop_closed'] != 'Y') {?>
@@ -198,8 +205,10 @@ $(function() {
 </div>
 <div class="search-fade"></div>
 </form>
-
+<?php /* ?> Old jQuery 3.x
 <script src="//code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+<?php */ ?>
+<script src="https://code.jquery.com/jquery-4.0.0.min.js" integrity="sha256-OaVG6prZf4v69dPg6PhVattBXkcOWQB62pdZ3ORyrao=" crossorigin="anonymous"></script>
 <script src="//code.jquery.com/ui/1.14.1/jquery-ui.min.js" integrity="sha256-AlTido85uXPlSyyaZNsjJXeCs07eSv3r43kyCVc8ChI=" crossorigin="anonymous"></script>
 <link rel="stylesheet" href="//code.jquery.com/ui/1.14.1/themes/base/jquery-ui.css" />
 
@@ -226,7 +235,7 @@ Tawk_API.onLoad = function(){
 <!--End of Tawk.to Script-->
 <?php } ?>
 
-<?php if ($design_mode && $config['General']['shop_closed'] != 'Y') {?>
+<?php if ($design_mode && $config['General']['shop_closed'] != 'Y' && $bot != 'Y') {?>
 <?php  include SITE_ROOT . "/theme.php"; ?>
 <?php } ?>
 

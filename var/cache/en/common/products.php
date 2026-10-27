@@ -40,7 +40,7 @@ echo '-'.round($percent).'%';
  </div>
  <div class="res-buttons">
 <?php if ($v['avail'] > 0) {?>
-<button id="pid<?php echo $v['productid'];?>">Add to cart<span><svg><use xlink:href="/images/sprite.svg#cart"></use></svg></span></button>
+<button data-id="pid<?php echo $v['productid'];?>">Add to cart<span><svg><use xlink:href="/images/sprite.svg#cart"></use></svg></span></button>
 <?php } else  { ?>
 <div class="out-of-stock">
 Out of stock

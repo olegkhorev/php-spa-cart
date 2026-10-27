@@ -1204,6 +1204,13 @@
     text-align: center;
     margin: 20px 0 30px 0;
   }
+  .news-item img, .blogs .image {
+    display: inline !important;
+  }
+  .news-item > a:first-child, .news-item .image a {
+    display: block;
+    text-align: center;
+  }
   .blogs .author {
     padding-bottom: 30px;
   }
@@ -1326,11 +1333,11 @@
   }
   #head_mobile .logo-link {
     position: absolute;
-    top: 10px !important;
-    left: 20px;
+    top: 5px !important;
+    left: 10px;
   }
   #head_mobile .logo-link img {
-    width: 120px;
+    width: 140px;
   }
   .navigation-toggle {
     margin-top: 30px;
@@ -1419,7 +1426,7 @@
   #minicart,
   #minicart-mobile a,
   #minicart-mobile {
-    font-size: 18px;
+    font-size: 16px;
     text-decoration: none;
   }
   #minicart svg,
@@ -1468,6 +1475,11 @@
 @media only screen and (max-width: 500px) {
   .instant-search, .search {
     width: 280px;
+  }
+  .alerts {
+    width: 400px;
+    margin-left: -200px;
+    font-size: 14px;
   }
   .brands .brand {
     width: calc(50% - 45px);
@@ -1619,9 +1631,18 @@
   #head_mobile .search {
     width: 280px;
   }
+  .alerts {
+    width: 360px;
+    margin-left: -180px;
+  }
   .alert_message.res_p {
     width: 320px;
     padding: 10px 10px 15px 10px;
+  }
+  .coupon_alert {
+    max-width: 320px;
+    box-sizing: border-box;
+    margin-left: -160px;
   }
 }
 @media only screen and (max-width: 400px) {
@@ -1636,6 +1657,10 @@
   }
   .alert_message.res_p {
     width: 300px;
+  }
+  .alerts {
+    width: 320px;
+    margin-left: -160px;
   }
 }
 @media only screen and (max-width: 375px) {
@@ -1663,8 +1688,15 @@
   .gift_cards {
     padding-left: 0;
   }
+  .alerts {
+    width: 300px;
+    margin-left: -150px;
+  }
   .alert_message.res_p {
     width: 240px;
+  }
+  #newrecord {
+    max-width: 300px;
   }
 }
 @media only screen and (max-width: 350px) {

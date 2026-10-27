@@ -139,6 +139,7 @@
 	</td>
 </tr>
 
+<?php /* ?>
 <tr>
 	<td style="height:10px;white-space:nowrap">Meta keywords</td>
 	<td style="width:10px;height:10px"></td>
@@ -148,7 +149,7 @@
   ); ?></textarea>
 	</td>
 </tr>
-
+<?php */ ?>
 <tr>
 	<td style="height:10px;white-space:nowrap">Meta description</td>
 	<td style="width:10px;height:10px"></td>

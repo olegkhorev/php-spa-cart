@@ -53,7 +53,7 @@ function new_comment() {
     return false;
   }
 
-  document.blogform.submit();
+  $(document.blogform).submit();
 }
 
 var doc = document,

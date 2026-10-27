@@ -139,6 +139,7 @@
 	</td>
 </tr>
 
+{*
 <tr>
 	<td style="height:10px;white-space:nowrap">{lng[Meta keywords]}</td>
 	<td style="width:10px;height:10px"></td>
@@ -148,7 +149,7 @@
   ); ?></textarea>
 	</td>
 </tr>
-
+*}
 <tr>
 	<td style="height:10px;white-space:nowrap">{lng[Meta description]}</td>
 	<td style="width:10px;height:10px"></td>

@@ -155,10 +155,11 @@ if ($config['General']['shop_closed'] == 'Y' && $get['0'] != 'res_p') {
         			include 'pages/product.php';
         		} else {
         			$script = 'pages/'.$get['0'].'.php';
-        			if (file_exists($script))
+        			if (file_exists($script)) {
         				include $script;
-        			else
-        				redirect('/');
+        			} else {
+        				php_404_error();
+					}
                 }
 			}
 		}

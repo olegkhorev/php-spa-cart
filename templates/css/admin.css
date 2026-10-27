@@ -794,15 +794,16 @@ ul.admin_menu li a.opener img {
   margin: 0 0 10px 0;
   list-style: none;
   border-bottom: 1px solid var(--theme-color-admin);
-  height: 36px;
+  height: 56px;
 }
 .admin-tabs li a {
   transition: 0.25s;
 }
 .admin-tabs li {
-  line-height: 18px;
-  margin: 0 2px 0 0;
-  float: left;
+    line-height: 18px;
+    margin: 0 2px 0 0;
+    float: left;
+    padding: 0;
 }
 .admin-tabs li:hover {
   -webkit-border-top-left-radius: 10px;
@@ -816,21 +817,19 @@ ul.admin_menu li a.opener img {
   color: var(--theme-color-admin);
 }
 .admin-tabs li a {
-  padding: 10px 20px;
-  -webkit-border-top-left-radius: 10px;
-  -webkit-border-top-right-radius: 10px;
-  -moz-border-radius-topleft: 10px;
-  -moz-border-radius-topright: 10px;
-  border-top-left-radius: 10px;
-  border-top-right-radius: 10px;
+  display: block;
+  padding: 19px 50px;
   border: 0;
   text-decoration: none;
-  border-bottom: 0px;
+  color: var(--theme-color-admin);
+}
+.admin-tabs li.active {
+    background: var(--theme-color-admin);
+    border-radius: 10px 10px 0 0;
 }
 .admin-tabs li.active a {
   background: transparent;
-  color: var(--theme-color-admin);
-  font-weight: 700;
+  color: #fff;
 }
 a.duplicate_plus {
   text-decoration: none;

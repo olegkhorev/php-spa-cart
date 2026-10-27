@@ -35,8 +35,8 @@
  <td><button class="close_popup">Continue shopping</button></td>
  <td style="text-align: right;">
 
-<a href="/cart" class="main-button">View cart</a>
-<a href="/checkout" class="main-button">Checkout</a>
+<a href="/cart" class="main-button ajax_link">View cart</a>
+<a href="/checkout" class="main-button ajax_link">Checkout</a>
 
  <button type="button" class="cart-link">View cart</button> <button type="button" class="checkout-link">Checkout</button>
 

@@ -75,7 +75,7 @@
 <?php } ?>
 </table>
 {if $option_groups}
-<br><button type="submit">{lng[Update]}</button> &nbsp; &nbsp; &nbsp; <button type="button" onclick="javascript: if (confirm('', $(this)) || confirmed) submitForm(this, 'delete');">{lng[Delete selected]}</button>
+<br /><button type="submit">{lng[Update]}</button> &nbsp; &nbsp; &nbsp; <button type="button" onclick="javascript: if (confirm('', $(this)) || confirmed) submitForm(this, 'delete');">{lng[Delete selected]}</button>
 <br />
 {/if}
 <br /><a href="{$current_location}/admin/products/<?php echo $get[

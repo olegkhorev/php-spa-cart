@@ -13,7 +13,7 @@
 <input type="hidden" name="albumid" value="<?php echo $album["albumid"]; ?>" />
 <div class="upsec">
 <div class="fileButton">
-{lng[Drop files here to upload.<br><br>Or click to select]}
+{lng[Drop files here to upload.<br /><br />Or click to select]}
 <input type="file" name="file" multiple accept="image/*" />
 </div>
 </div>
@@ -82,15 +82,15 @@
 <tr>
  <td class="name">{lng[Upload new]}</td>
  <td>
-<input type="file" name="file1"><br>
-<input type="file" name="file2"><br>
-<input type="file" name="file3"><br>
-<input type="file" name="file4"><br>
+<input type="file" name="file1"><br />
+<input type="file" name="file2"><br />
+<input type="file" name="file3"><br />
+<input type="file" name="file4"><br />
 <input type="file" name="file5">
  </td>
 </tr>
 <tr>
- <td colspan="2"><br><button>{lng[Save]}</button></td>
+ <td colspan="2"><br /><button>{lng[Save]}</button></td>
 </tr>
 </table>
 </form>

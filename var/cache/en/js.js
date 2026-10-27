@@ -79,6 +79,13 @@
       }));
   }
 })(jQuery);
+/**
+* SPA-Cart
+* Copyright (c) Oleg Khorev
+*
+* Released under the MIT License.
+* https://github.com/olegkhorev/php-spa-cart
+*/
 var $window = $(window),
   original_content,
   original_pageid,
@@ -89,12 +96,12 @@ var $window = $(window),
   $animation_elements = $(
     ".page-container-2, .page-container-news, .page-container-blog",
   ),
-  are_you_sure = "are_you_sure",
+  are_you_sure = "Are you sure?",
   mobile_screen = 850,
   instant_search_ajax,
   yes = "yes",
   no = "no",
-  ok = "ok",
+  ok = "Ok",
   chat_w = 0,
   alerts = Math.floor(Math.random() * 10000),
   at,
@@ -137,6 +144,9 @@ $(document).on("keyup", function (e) {
   $(document).ready(function () {
     if ($("html.itsinvoicepage").length) return;
 
+    console.log("#");
+    console.log("# This is development tools. Please, never share any info from here to anyone.");
+    console.log("#");
     if (!getCookie("allow_cookies") && !$("html.area-a").length) {
       $("body").append(
         '<div class="allow-cookies"><p>We use cookies for a better user experience</p><button>Accept</button></div>',
@@ -249,6 +259,7 @@ $(document).on("keyup", function (e) {
 
     cart_clicks();
     original_pageid = pageid;
+    search_form_init();
     instant_search();
     responsive_init();
     scrolltop();
@@ -287,6 +298,7 @@ function ajax_clicks() {
       var substring = $(this).find('input[type="text"]').val();
       if (!substring) return false;
 
+      $('body').removeClass('search-form-shown');
       if (mobile_design) {
         $("html, body").animate(
           {
@@ -347,6 +359,90 @@ function ajax_clicks() {
     eval($(".exec_page_js").html());
   }
 
+  $("form.ajax-form").unbind('submit').on('submit', function (event) {
+    event.preventDefault();
+    // Fix for blog post comment
+    if ($("#newrecord").length)
+      document.blogform.comment.value = $("#newrecord").html();
+
+    // New ticket message processing
+    if ($('#post_new_message').length && !$('#post_new_message').val()) {
+      $('#error_mes').fadeIn();
+      return false;
+    } else {
+      $('#error_mes').fadeOut();
+    }
+
+    // Email us form processing
+    if ($('#body-help').length) {
+      if (!document.help.subject.value || !document.help.message.value || !document.help.email.value) {
+        $('#error_mes').fadeIn();
+        return false;
+      } else {
+        $('#error_mes').fadeOut();
+      }
+    }
+
+    var form_data = new FormData($(this)[0]),
+      files = [];
+
+    if ($(this).attr("href")) var h = $(this).attr("href");
+    else if ($(this).attr("action")) var h = $(this).attr("action");
+    else var h = window.location.href;
+
+    $(this)
+      .find("input")
+      .each(function () {
+        if ($(this).attr("type") == "file") {
+          if (!$(this).val()) {
+            files[files.length] = $(this).attr("name");
+            form_data.delete($(this).attr("name"));
+          }
+        }
+      });
+
+    func_disable_button($('button'));
+    var site_loader_to = setTimeout(function () {
+      $("body").append(
+        '<div id="content-loading"><div class="cssload-container"><div class="cssload-speeding-wheel"></div></div></div>',
+      );
+    }, 1000);
+
+    $.ajax({
+      url: h,
+      type: "POST",
+      data: form_data,
+      cache: false,
+      contentType: false,
+      processData: false,
+      error: function () {
+        self.location = h;
+      },
+      success: function (r, textStatus, request) {
+        func_disable_button($('button'), 1);
+        clearTimeout(site_loader_to);
+        $("#content-loading").remove();
+        if (request.getResponseHeader("where_redirect")) {
+          $("body").append(
+            '<a class="ajax_link hidden click_history" href="' +
+              request.getResponseHeader("where_redirect") +
+            '"></a>',
+          );
+
+          ajax_clicks();
+          $(".click_history").click();
+          $(".click_history").remove();
+          return false;
+        }
+
+        $("#content-loading").remove();
+        self.location = h;
+      },
+    });
+
+    return false;
+  });
+
   $(
     "#menu a, a.ajax_link, .account-invoices-list a, .button_ajax_link, .ajax_mobile_link, .logo-link, .bread_crumbs a, #subcategories a, .brands a, .test-links a, .foot a",
   )
@@ -356,6 +452,7 @@ function ajax_clicks() {
 
       if ($(this).closest(".product_popup").length) $(".fade").click();
 
+      $('body').removeClass('search-form-shown');
       if (mobile_design) {
         $("html, body").animate(
           {
@@ -374,7 +471,7 @@ function ajax_clicks() {
         );
       }
 
-      var h = $(this).attr("href");
+      var h = $(this).attr("href") || $(this).attr("href");
       if (!pushed) {
         pushed = true;
       }
@@ -445,21 +542,22 @@ function contact_form() {
     .unbind("click")
     .on("click", function () {
       var allgood = true;
-      $("#help_form input").each(function () {
+      $('#help_form .group input').each(function () {
         if (!$(this).val()) {
           $(this).addClass("error");
           allgood = false;
         }
       });
 
-      $("#help_form textarea").each(function () {
+      $("#help_form .group textarea").each(function () {
         if (!$(this).val()) {
           $(this).addClass("error");
           allgood = false;
         }
       });
 
-      if (allgood) document.help.submit();
+      if (allgood)
+        $(document.help).submit();
     });
 }
 
@@ -565,19 +663,26 @@ function alert(message, nook, h, classes, noshake, alert2, nofade) {
   }
 
   $("#a" + id + " .close_alert").on("click", function () {
+    var transform_add = '';
+    if ($(this).closest('.alert_message.res_p').length) {
+      transform_add = 'translate(-50%, -50%) ';
+    }
+
     var othis = $(this);
     bc = false;
     if (alert2) var e = $(this).parent().parent();
     else var e = $(this).parent();
 
-    e.css("opacity", 1).css("transform", "matrix(1.1, 0, 0, 1.1, 0, 70)");
+    e.css("opacity", 1).css("transform", transform_add + "matrix(1.1, 0, 0, 1.1, 0, 70)");
     setTimeout(function () {
-      e.css("transform", "matrix(1, 0, 0, 1, 0, 0)");
+      e.css("transform", transform_add + "matrix(1, 0, 0, 1, 0, 0)");
       if (
         othis.closest(".login_alert").length ||
         othis.closest(".register_alert").length
-      )
+      ) {
         unfade();
+        $('.popup').removeClass('popup_pointer_events');
+      }
 
       if (
         !$(".popup").length &&
@@ -699,14 +804,24 @@ function removePopups(no_unfade) {
     return;
   }
 
-  $(".popup, .alert, .alert_message")
+  $(".popup, .alert, .alert_message:not(.res_p)")
     .css("opacity", 1)
     .css("transform", "matrix(1.1, 0, 0, 1.1, 0, 70)");
+  
+  $(".alert_message.res_p")
+    .css("opacity", 1)
+    .css("transform", "translate(-50%, -50%) matrix(1.1, 0, 0, 1.1, 0, 70)");
+
   setTimeout(function () {
-    $(".popup, .alert, .alert_message").css(
+    $(".popup, .alert, .alert_message:not(.res_p)").css(
       "transform",
       "matrix(1, 0, 0, 1, 0, 0)",
     );
+    $(".alert_message.res_p").css(
+      "transform",
+      "translate(-50%, -50%) matrix(1, 0, 0, 1, 0, 0)",
+    );
+
     unfade();
 
     setTimeout(function () {
@@ -894,9 +1009,6 @@ function instant_search() {
     .on("focus", function () {
       var val = $(this).val();
       if (val.length < 2) {
-        $(".instant-search").html(
-          "<div class='enter-3-chars'>Enter at least 2 characters</div>",
-        );
         return;
       }
 
@@ -905,17 +1017,8 @@ function instant_search() {
       }, 300);
     });
 
-  $(".search")
-    .unbind("mouseleave")
-    .mouseleave(function () {
-      $(".instant-search").fadeOut();
-    });
-
   $(".search input").on("keyup", function () {
     if ($(this).val().length < 2) {
-      $(".instant-search").html(
-        "<div class='enter-3-chars'>Enter 2 characters</div>",
-      );
       return;
     }
 
@@ -928,23 +1031,25 @@ function search_instant(val) {
     instant_search_ajax.abort();
   } catch (err) {}
 
+  $(".instant-search-results").hide();
+  $('.instant-search-loader').show();
   instant_search_ajax = $.ajax({
     url: "/instant_search?q=" + encodeURIComponent(val),
   }).done(function (r) {
-    $(".instant-search").html(r);
-    $(".instant-search").show();
+    $('.instant-search-loader').hide();
+    $(".instant-search-results").html(r);
+    $(".instant-search-results").show();
     ajax_clicks();
     $(".did-you-mean span").on("click", function () {
+      $(".instant-search-results").hide();
       $('#searchform input[type="text"]').val($(this).text());
       search_instant($(this).text());
     });
 
-    $(".more-no-search").on("click", function () {
-      if (mobile_screen > $(window).width()) {
-        $(".searchform_desktop").submit();
-      } else $(".searchform_mobile").submit();
-
-      $(".instant-search").hide();
+    $(".load-more-products").on("click", function () {
+      $(".searchform_desktop").submit();
+      $(".instant-search-results").hide();
+      $('body').removeClass('search-form-shown');
     });
   });
 }
@@ -1119,7 +1224,51 @@ function func_disable_button(btn, enable) {
   } else {
     btn.addClass("button_disabled");
   }
-}var helptext = [];
+}
+
+function search_form_init() {
+  $('.searchform_mobile, .search-dd button').on('click', function() {
+    $('body').addClass('search-form-shown');
+    var el = $(".search-popup");
+    el
+      .css("opacity", 0)
+      .css("transform", "translate(-50%, 0) matrix(0.1, 0, 0, 0.1, 0, 0)");
+    setTimeout(function () {
+      el
+        .css("opacity", 1)
+        .css("transform", "translate(-50%, 0) matrix(1.1, 0, 0, 1.1, 0, 70)");
+      setTimeout(function () {
+        el.css("transform", "translate(-50%, 0) matrix(1, 0, 0, 1, 0, 0)");
+        setTimeout(function () {
+          $('.search input[type="text"]').focus();
+        }, 200);
+      }, 200);
+    }, 200);
+
+  });
+
+  $('.search-fade').on('click', function() {
+    var el = $(".search-popup");
+    el.css("opacity", 1).css("transform", "translate(-50%, 0) matrix(1.1, 0, 0, 1.1, 0, 70)");
+    setTimeout(function () {
+      el.css("transform", "translate(-50%, 0) matrix(1, 0, 0, 1, 0, 0)");
+      setTimeout(function () {
+        $('body').removeClass('search-form-shown');
+      }, 200);
+    }, 200);
+  });
+
+  $('.search-popup .close-popup').on('click', function() {
+    $('.search-fade').click();
+  });
+}/**
+* SPA-Cart
+* Copyright (c) Oleg Khorev
+*
+* Released under the MIT License.
+* https://github.com/olegkhorev/php-spa-cart
+*/
+var helptext = [];
 helptext["b"] = "blog_bbcode_b";
 helptext["i"] = "blog_bbcode_i";
 helptext["u"] = "blog_bbcode_u";
@@ -1630,6 +1779,13 @@ function rotate_banners() {
 $(document).ready(function () {
   banners();
 });
+/**
+* SPA-Cart
+* Copyright (c) Oleg Khorev
+*
+* Released under the MIT License.
+* https://github.com/olegkhorev/php-spa-cart
+*/
 (function ($) {
   "use strict";
   $(document).ready(function () {
@@ -1789,6 +1945,20 @@ function tabs_clicks() {
     $("#tab-" + $(this).data("tab")).removeClass("hidden");
   });
 }
+/**
+* SPA-Cart
+* Copyright (c) Oleg Khorev
+*
+* Released under the MIT License.
+* https://github.com/olegkhorev/php-spa-cart
+*/
+/**
+* SPA-Cart
+* Copyright (c) Oleg Khorev
+*
+* Released under the MIT License.
+* https://github.com/olegkhorev/php-spa-cart
+*/
 var put_filter_push = "";
 (function ($) {
   "use strict";
@@ -2120,7 +2290,7 @@ function filter_clicks() {
           encodeURIComponent($(this).closest("li").data("oid"));
       });
 
-      filter_box = $(this).closest("ul").attr("groupid");
+      filter_box = $(this).closest("ul").attr("data-groupid");
       filter_box_html = $(this).closest("ul").html();
       load_filter_process(url, url_params);
     });
@@ -2179,6 +2349,13 @@ function left_filter_max_height() {
     $(".withfilter .left_filter").css("max-height", max_height + "px");
   }
 }
+/**
+* SPA-Cart
+* Copyright (c) Oleg Khorev
+*
+* Released under the MIT License.
+* https://github.com/olegkhorev/php-spa-cart
+*/
 /*!
 	Zoom v1.7.11 - 2013-11-12
 	Enlarge images on click or mouseover.
@@ -2343,6 +2520,13 @@ function left_filter_max_height() {
     }),
     (o.fn.zoom.defaults = t));
 })(window.jQuery);
+/**
+* SPA-Cart
+* Copyright (c) Oleg Khorev
+*
+* Released under the MIT License.
+* https://github.com/olegkhorev/php-spa-cart
+*/
 var rate_clicked = 0,
   gst_applied = false,
   qty_clicked = false,
@@ -2422,7 +2606,7 @@ function product_clicks() {
           if (r) {
             alert("Gift Card added to cart");
             $("#minicart").html(r);
-            $("#head_mobile #minicart").html(r);
+            $("#head_mobile #minicart, #minicart-mobile").html(r);
             cart_clicks();
           } else {
             alert("Please, enter numeric value");
@@ -2631,7 +2815,7 @@ function postprocess(ql) {
       $(this).append(
         "<img src='" +
           current_location +
-          "/images/check-mark.png' class='checked'>",
+          "/images/check-mark.png' class='checked' alt=''>",
       );
       var optionid = $(this).attr("id").replace("poi-", "");
       $("#po-" + groupid).val(optionid);
@@ -3261,7 +3445,7 @@ function product_options(o) {
         if (groups[oid][x][1]) {
           if (options[oid][$("#po-" + groups[oid][x][0]).val()]) {
             html +=
-              '<td nowrap><a href="javascript: void(0);" class="clearOption" id="co-' +
+              '<td style="white-space:nowrap"><a href="javascript: void(0);" class="clearOption" id="co-' +
               groups[oid][x][0] +
               '">(x)</a> ' +
               options[oid][$("#po-" + groups[oid][x][0]).val()] +
@@ -3271,7 +3455,7 @@ function product_options(o) {
       }
 
       html +=
-        '<td nowrap><a href="javascript: void(0);" class="clearAll">Clear all</a></td>';
+        '<td style="white-space:nowrap"><a href="javascript: void(0);" class="clearAll">Clear all</a></td>';
       $(qadd + ".variants-data table").html(html);
       $(".clearOption")
         .unbind("click")
@@ -4226,7 +4410,7 @@ function add_to_cart(productid, is_quick, button) {
       '<span class="close close-popup">x</span>' + result["1"],
     );
     $("#minicart").html(result["0"]);
-    $("#head_mobile #minicart").html(result["0"]);
+    $("#head_mobile #minicart, #minicart-mobile").html(result["0"]);
     unload();
     fade();
     var top =
@@ -4320,12 +4504,12 @@ function check_exceptions() {
 
 function switch_photo(a) {
   if (mobile_design) {
-    $("#zoom-mobile").html('<img src="' + a.attr("href") + '">');
+    $("#zoom-mobile").html('<img src="' + a.attr("href") + '" alt="">');
   } else if ($(".product_popup").is(":visible")) {
-    $(".product_popup #zoom").html('<img src="' + a.attr("href") + '">');
+    $(".product_popup #zoom").html('<img src="' + a.attr("href") + '" alt="">');
     if ($(window).width() > 700) $(".product_popup #zoom").zoom();
   } else {
-    $("#zoom").html('<img src="' + a.attr("href") + '">');
+    $("#zoom").html('<img src="' + a.attr("href") + '" alt="">');
     if ($(window).width() > 700) $("#zoom").zoom();
   }
 
@@ -4524,6 +4708,13 @@ function recaptchaOnload() {
     } catch (err) {}
   }
 }
+/**
+* SPA-Cart
+* Copyright (c) Oleg Khorev
+*
+* Released under the MIT License.
+* https://github.com/olegkhorev/php-spa-cart
+*/
 function cart_actions() {
   init_translate();
   $(".cart-quantity").on("keyup", function () {
@@ -4534,7 +4725,7 @@ function cart_actions() {
   $(".clear-cart").on("click", function () {
     $.ajax({ url: "/cart/clear" }).done(function (r) {
       $("#minicart").html(r);
-      $("#head_mobile #minicart").html(r);
+      $("#head_mobile #minicart, #minicart-mobile").html(r);
       cart_clicks();
     });
     removePopups();
@@ -4559,7 +4750,7 @@ function cart_actions() {
     var url = $(this).attr("href");
     $.ajax({ url: url }).done(function (r) {
       $("#minicart").html(r);
-      $("#head_mobile #minicart").html(r);
+      $("#head_mobile #minicart, #minicart-mobile").html(r);
       if ($("#minicart .cart-link").length) {
         cart_clicks();
         $(".cart-link").click();
@@ -4732,31 +4923,7 @@ function cart_clicks() {
               $(".wl_popup").css("transform", "matrix(1, 0, 0, 1, 0, 0)");
             }, 200);
           }, 200);
-/*
-          var top =
-            $(window).scrollTop() +
-            $(window).height() / 2 -
-            $(".wl_popup").height() / 2 -
-            50;
-          if (top < $(window).scrollTop()) top = $(window).scrollTop() + 30;
 
-          $(".wl_popup").css("top", top + "px");
-          $(".wl_popup").css(
-            "left",
-            $(window).width() / 2 - $(".wl_popup").outerWidth() / 2 + "px",
-          );
-          $(".wl_popup")
-            .css("opacity", 0)
-            .css("transform", "matrix(0.1, 0, 0, 0.1, 0, 0)");
-          setTimeout(function () {
-            $(".wl_popup")
-              .css("opacity", 1)
-              .css("transform", "matrix(1.1, 0, 0, 1.1, 0, 70)");
-            setTimeout(function () {
-              $(".wl_popup").css("transform", "matrix(1, 0, 0, 1, 0, 0)");
-            }, 200);
-          }, 200);
-*/
           $(".wl_popup").show();
           $(window).resize(function () {
             var top =
@@ -4897,6 +5064,13 @@ function cart_clicks() {
       return false;
     });
 }
+/**
+* SPA-Cart
+* Copyright (c) Oleg Khorev
+*
+* Released under the MIT License.
+* https://github.com/olegkhorev/php-spa-cart
+*/
 (function ($) {
   "use strict";
   $(document).ready(function () {
@@ -4942,7 +5116,7 @@ function states_actions() {
             .html(
               '<input type="text" name="posted_data[state]" id="state" value="' +
                 user_state +
-                '" /></td>',
+                '" />',
             );
         else
           $("#state")
@@ -4950,7 +5124,7 @@ function states_actions() {
             .html(
               '<input type="text" name="posted_data[state]" id="state" value="' +
                 user_state +
-                '" /></td>',
+                '" />',
             );
 
         $("#state")
@@ -5064,6 +5238,13 @@ function states_actions() {
     $("#b_country").trigger("change");
   }, 100);
 }
+/**
+* SPA-Cart
+* Copyright (c) Oleg Khorev
+*
+* Released under the MIT License.
+* https://github.com/olegkhorev/php-spa-cart
+*/
 var register_form = [];
 register_form["firstname"] = "Firstname";
 register_form["lastname"] = "Lastname";
@@ -5299,7 +5480,7 @@ function checkout_actions() {
               $(".checkout_popup").css("pointer-events", "none");
               $("body").append(data);
               document.paypalform.submit();
-              alert("Please, wait we are connecting you to PayPal");
+              alert("Please, wait while we are connecting you to PayPal");
             } else {
               self.location = "/invoice/" + data + "/success";
             }
@@ -5446,6 +5627,13 @@ function configure_stripe() {
     },
   });
 }
+/**
+* SPA-Cart
+* Copyright (c) Oleg Khorev
+*
+* Released under the MIT License.
+* https://github.com/olegkhorev/php-spa-cart
+*/
 var register_form = [];
 register_form["firstname"] = "Firstname";
 register_form["lastname"] = "Lastname";
@@ -5681,7 +5869,7 @@ function checkout_actions() {
               $(".checkout_popup").css("pointer-events", "none");
               $("body").append(data);
               document.paypalform.submit();
-              alert("Please, wait we are connecting you to PayPal");
+              alert("Please, wait while we are connecting you to PayPal");
             } else {
               self.location = "/invoice/" + data + "/success";
             }
@@ -5828,6 +6016,13 @@ function configure_stripe() {
     },
   });
 }
+/**
+* SPA-Cart
+* Copyright (c) Oleg Khorev
+*
+* Released under the MIT License.
+* https://github.com/olegkhorev/php-spa-cart
+*/
 function check_new_testimonial() {
   var error = false;
 
@@ -5843,6 +6038,13 @@ function check_new_testimonial() {
 
   if (error) return false;
 }
+/**
+* SPA-Cart
+* Copyright (c) Oleg Khorev
+*
+* Released under the MIT License.
+* https://github.com/olegkhorev/php-spa-cart
+*/
 var ticket_cats = [],
   ticket_cat1 = "",
   ticket_cat2 = "",
@@ -5896,19 +6098,6 @@ function make_ticket_form() {
         document.getElementById("error_mes").style.display == "block"
       )
         document.getElementById("error_mes").style.display = "none";
-    });
-
-  $("#ticketmesform")
-    .unbind("submit")
-    .on("submit", function () {
-      if (document.mesform.message.value == "") {
-        document.getElementById("error_mes").style.display = "block";
-        return false;
-      } else {
-        document.getElementById("error_mes").style.display = "none";
-        this.disabled = true;
-        submitForm(this, "create_new");
-      }
     });
 
   var html =
@@ -6225,9 +6414,16 @@ function submit_ticket() {
   }
 
   if (!error) {
-    document.ticketform.submit();
+    $(document.ticketform).submit();
   }
 }
+/**
+* SPA-Cart
+* Copyright (c) Oleg Khorev
+*
+* Released under the MIT License.
+* https://github.com/olegkhorev/php-spa-cart
+*/
 function go_to_comments() {
   $("html, body").animate(
     {

@@ -11,6 +11,7 @@
 <html lang="en">
 <head>
 <meta charset="utf-8" />
+{*
 <meta name="keywords" content="<?php if (
     $get["0"] == "home" &&
     lng("Homepage meta keywords")
@@ -29,6 +30,7 @@
 } else {
     echo "";
 } ?>">
+*}
 <meta name="description" content="<?php if (
     $get["0"] == "home" &&
     lng("Homepage meta description")

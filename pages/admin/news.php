@@ -38,7 +38,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     } elseif (!empty($get['2'])) {
         $newsid = $get['2'];
         $to_update = array(
-                'date'	=> time(),
                 'title' => $title,
                 'fulldescr' => $fulldescr,
                 'descr' => $descr,

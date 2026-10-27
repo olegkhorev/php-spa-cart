@@ -7,6 +7,7 @@
 * https://github.com/olegkhorev/php-spa-cart
 */
 ?>
+<div class="exec_page_js hidden">cart_actions();coupon_actions();cart_clicks();checkout_actions();</div>
 <h1>Your cart</h1>
 <?php if ($products) {?>
 <form action="/cart" id="cartform" method="POST">
@@ -14,15 +15,15 @@
 <tbody>
 <tr>
  <th style="width:50%;text-align:left" colspan="2">Product</th>
- <th style="width:20%">Price</th>
- <th>Quantity</th>
- <th style="width:20%">Total</th>
+ <th style="width:20%" align="center">Price</th>
+ <th align="center">Quantity</th>
+ <th style="width:20%" align="center">Total</th>
  <td style="width:10%"></td>
 </tr>
 <?php foreach ($products as $v) {?>
 <?php $url = $v['cleanurl'] ? $v['cleanurl'].'.html' : 'product/'.$v['productid'];; ?>
 	<tr>
-	 <td class="image"><a href="<?php echo $current_location;?>/<?php echo $url;?>">
+	 <td class="image"><a href="<?php echo $current_location;?>/<?php echo $url;?>" class="cart_product_link">
 	<?php if ($v['variant_photo']) {?>
 <?php $image = $v["variant_photo"]; $image['new_width'] = 100; $image['new_height'] = 100; include SITE_ROOT . "/includes/variant_image.php"; ?>
 	<?php } else if ($v['photo']) {?>
@@ -37,7 +38,7 @@
 <div class="cart-mobile-title-line"><?php include SITE_ROOT."/var/cache/en/cart/mobile_title.php";?></div></div>
 	  </td>
 	  <td><?php include SITE_ROOT."/var/cache/en/cart/mobile_title.php";?></td>
-	<td class="td-center" style="text-align:center;vertical-align:middle">
+	<td class="td-center" style="text-align:center;">
 <?php if ($v['gift_card']) {?>
 	<?php echo '<span class="currency">'.currency_symbol().'</span>'.price_format_currency($v['amount']); ?>
 <?php } else  { ?>

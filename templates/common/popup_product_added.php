@@ -35,8 +35,8 @@
  <td><button class="close_popup">{lng[Continue shopping]}</button></td>
  <td style="text-align: right;">
 
-<a href="/cart" class="main-button">{lng[View cart]}</a>
-<a href="/checkout" class="main-button">{lng[Checkout]}</a>
+<a href="/cart" class="main-button ajax_link">{lng[View cart]}</a>
+<a href="/checkout" class="main-button ajax_link">{lng[Checkout]}</a>
 
  <button type="button" class="cart-link">{lng[View cart]}</button> <button type="button" class="checkout-link">{lng[Checkout]}</button>
 

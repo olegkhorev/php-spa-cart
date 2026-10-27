@@ -17,7 +17,10 @@
 
 <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/materialize/material.orange-amber.min.css" />
+{*
 <script src="//code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+*}
+<script src="https://code.jquery.com/jquery-4.0.0.min.js" integrity="sha256-OaVG6prZf4v69dPg6PhVattBXkcOWQB62pdZ3ORyrao=" crossorigin="anonymous"></script>
 <script src="//code.jquery.com/ui/1.14.1/jquery-ui.min.js" integrity="sha256-AlTido85uXPlSyyaZNsjJXeCs07eSv3r43kyCVc8ChI=" crossorigin="anonymous"></script>
 <link rel="stylesheet" href="//code.jquery.com/ui/1.14.1/themes/base/jquery-ui.css" />
 
@@ -92,7 +95,7 @@ CKEDITOR.disableAutoInline = true;
  {php $already = array();}
  {foreach $alerts as $v}
 	 {if !in_array($v['content'], $already)}
-  {if $v['type'] == 'e'}<div class="error">{if $lng == 'en'}{lng[Error]}{/if}: {$v['content']}</div>{else}{$v['content']}<br>{/if}<br>
+  {if $v['type'] == 'e'}<div class="error">{if $lng == 'en'}{lng[Error]}{/if}: {$v['content']}</div>{else}{$v['content']}<br />{/if}<br />
 		{php $already[] = $v['content'];}
 		{/if}
 	{/foreach}

@@ -60,6 +60,7 @@
 {/foreach}
 <hr />
 <a class="ajax_link" href="{$current_location}/brands">{lng[Brands]}</a>
+<a class="ajax_link" href="{$current_location}/news">{lng[News]}</a>
 <a class="ajax_link" href="{$current_location}/blog">{lng[Blog]}</a>
 <a class="ajax_link" href="/page/about-us.html">{lng[About us]}</a>
 <a class="ajax_link" href="{if $config['Tickets']['use_tickets']}/support_desk{else}/help{/if}">{lng[Contact]}</a>

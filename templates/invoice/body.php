@@ -7,11 +7,6 @@
 * https://github.com/olegkhorev/php-spa-cart
 */
 ?>
-<script>
-// Close overlay from the invoice page
-$('.fade').click();
-</script>
-
 {if !$pdf_invoice}
 {if $get['2'] == 'payment_error'}
 {lng[There was an error processing your order. Please, try checkout again.]}
@@ -65,7 +60,7 @@ $('.fade').click();
  <td class="invoice-table-td-2" style="vertical-align: top;">
 <h2 style="margin: 0; padding: 10px 0; text-align: center;">{lng[Company information]}</h2>
 <b>{$config['Company']['company_name']}</b><br />
-<a href="{$http_location}" target="_blank">{$http_location}</a><br /><br />
+<a href="{$https_location}" target="_blank">{$https_location}</a><br /><br />
 {$config['Company']['location_address']}, {$config['Company']['location_city']}<br />
 {$config['Company']['location_zipcode']}, {$config['Company']['location_statename']}<br />
 {$config['Company']['location_countryname']}<br />
@@ -169,7 +164,7 @@ $('.fade').click();
  {php $url = $v['cleanurl'] ? $v['cleanurl'] .'.html' : 'product/'.$v['productid'];}
 {/if}
 	<tr>
-	 <td class="image hideonmobile" style="vertical-align: top; padding-right: 10px;"><a href="{$http_location}/{$url}">
+	 <td class="image hideonmobile" style="vertical-align: top; padding-right: 10px;"><a href="{$https_location}/{$url}" class="ajax_link">
 {if $v['variant_photo']}
 {variant_image image=`$v["variant_photo"]` new_width=100 new_height=100}
 {elseif $v['photo']}
@@ -186,7 +181,7 @@ $('.fade').click();
 {/if}
 {/if}
 {else}
-<a href="{$http_location}/{$url}">{$v['name']}</a>
+<a href="{$https_location}/{$url}" class="ajax_link">{$v['name']}</a>
 {*
 {if $v['weight']}
 <br />

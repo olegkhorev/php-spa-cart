@@ -11,7 +11,7 @@
 {if $alerts}
  <div class="alerts"><span onclick="javascript: $('.alerts').slideUp();"><b>X</b></span>
  {foreach $alerts as $v}
-  {if $v['type'] == 'e'}<div class="error">Error: {$v['content']}</div>{else}{$v['content']}<br>{/if}<br>
+  {if $v['type'] == 'e'}<div class="error">Error: {$v['content']}</div>{else}{$v['content']}<br />{/if}<br />
  {/foreach}
  </div>
 {/if}
