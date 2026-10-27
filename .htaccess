@@ -11,7 +11,7 @@ RewriteCond %{REQUEST_URI} \.(jpe?g|png|gif|webp|svg|ico)$ [NC]
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteRule ^ - [F,L]
 
-# 2. Existing router: Send all other missing files/folders to index.php
+# 2. Parse clean URLs
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteCond %{REQUEST_FILENAME} !-l
