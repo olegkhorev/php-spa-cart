@@ -1,10 +1,10 @@
 <?php
 /**
-* SPA-Cart
-* Copyright (c) Oleg Khorev
+* Flirtle
+* Copyright (c) 2026
 *
-* Released under the MIT License.
-* https://github.com/olegkhorev/php-spa-cart
+* Copying the code is prohibited
+* https://flirtle.com
 */
 ?>
 <?php
@@ -16,6 +16,10 @@ foreach ($js as $v) {
 }
 
 $default_js = func_get_ajax_js();
+foreach ($default_js as $v) {
+    func_put_javascript_content(SITE_ROOT.'/templates/js/'.$v.'.js', $dir.'/'.$v.'.js', $v, 'js');
+}
+
 $js_cache = '';
 if (DEVELOPMENT) {
     foreach ($default_js as $v) {
