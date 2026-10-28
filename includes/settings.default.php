@@ -53,12 +53,6 @@ if ($_SERVER['REMOTE_ADDR'] == '127.0.0.1' && php_sapi_name() != 'cli') {
 # Use warehouse false or true
 $warehouse_enabled = false;
 
-# Design theme color editor
-# 1 - on
-# 0 - off
-$design_mode = '{{design_mode}}';
-
-
 # Below require advanced knowledges
 $web_dir = '';
 
@@ -94,7 +88,7 @@ $lng = 'en';
 # Design theme color editor
 # 1 - on
 # 0 - off
-$design_mode = 1;
+$design_mode = '{{design_mode}}';
 
 # Chagne that value after you edit CSS or JS and want browser cache to be updated. For example script.js will looks like script.js?1 or ?2 etc. Each new value will load CSS and JS into cache once again.
 $css_js_cache = 1;

@@ -197,8 +197,6 @@ if ($company_slogan) {
 $template['company_name'] = $company_name;
 $template['company_slogan'] = $company_slogan;
 
-$template['css'][] = 'style';
-$template['js'][] = 'scripts';
 # Get templates
 $tmp = $db->all("SELECT template, time, lng FROM templates WHERE lng IN ('".$lng."', 'css', 'js', 'css_modules', 'js_modules')");
 if (!empty($tmp)) {

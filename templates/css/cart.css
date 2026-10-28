@@ -19,6 +19,9 @@
   border-bottom: 1px solid #ccc;
   margin: 0 0 10px 0;
 }
+.carttable a, .checkout_products a {
+    text-decoration: none;
+}
 td {
   vertical-align: top;
 }

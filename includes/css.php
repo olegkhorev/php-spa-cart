@@ -11,11 +11,12 @@
 global $css_js_cache, $_SESSION;
 
 $dir = SITE_ROOT.'/var/cache/other/css';
+$default_css = func_get_ajax_css();
+$css = array_merge($default_css, $css);
 foreach ($css as $v) {
     func_put_css_content(SITE_ROOT.'/templates/css/'.$v.'.css', $dir.'/'.$v.'.css', $v, 'css');
 }
 
-$default_css = func_get_ajax_css();
 if (DEVELOPMENT) {
     foreach ($default_css as $v) {
         echo '<link rel="stylesheet" href="/var/cache/other/css/'.$v.'.css?'.$css_js_cache.'" />'."\n";

@@ -223,6 +223,9 @@ input[type="submit"] {
   color: #fff;
   background: #333;
 }
+.main-button {
+  background: transparent;
+}
 .main-button:hover,
 button:hover,
 input[type="button"]:hover,

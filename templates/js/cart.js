@@ -51,20 +51,16 @@ function cart_actions() {
     $.ajax({ url: url }).done(function (r) {
       $("#minicart").html(r);
       $("#head_mobile #minicart, #minicart-mobile").html(r);
-      if ($("#minicart .cart-link").length) {
-        $(".cart-link").click();
-      } else {
-        if (cart_checkout_own_page || mobile_screen > $(window).width()) {
-          $("body").append(
-            '<a class="ajax_link hidden click_history" href="/cart"></a>',
-          );
+      if (cart_checkout_own_page || mobile_screen > $(window).width()) {
+        $("body").append(
+          '<a class="ajax_link hidden click_history" href="/cart"></a>',
+        );
 
-          ajax_clicks();
-          $(".click_history").click();
-          $(".click_history").remove();
-        } else {
-          removePopups();
-        }
+        ajax_clicks();
+        $(".click_history").click();
+        $(".click_history").remove();
+      } else {
+        removePopups();
       }
     });
 
