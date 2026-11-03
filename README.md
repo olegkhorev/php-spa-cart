@@ -15,7 +15,7 @@ Backend and frontend development are kept strictly separate.
 
 As you grow, you can easily build your own team of developers to build modules on top of the core. Each module remains completely isolated from core and each other. Each module can have its own admin area as well.
 
-You can build custom themes for different pages and do A/B tests. Themes are also does not touch the core. They replace template with own variation. CSS/JS files are separate per module and theme too.
+You can build custom themes for different pages and do A/B tests. Themes also do not touch the core. Each theme is a module with its own templates. CSS/JS files are also kept separate for each theme/module.
 
 **Article content:**
 * [Installation](#1-installation)
