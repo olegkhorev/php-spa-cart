@@ -164,7 +164,7 @@ https://github.com/olegkhorev/php-spa-cart/blob/main/templates/themes/OlegKhorev
 
 and change it any way. That step will allow you easy create new theme.
 
-Style for this theme will be under
+Style for this theme should be under
 
 ```php
 templates/modules/OlegKhorev/SampleTheme/styles.css
