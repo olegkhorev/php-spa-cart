@@ -162,7 +162,7 @@ templates/themes/OlegKhorev/SampleTheme/home/body.php
 
 https://github.com/olegkhorev/php-spa-cart/blob/main/templates/themes/OlegKhorev/SampleTheme/home/body.php
 
-and change it any way. That thing will allow you easy create new theme.
+and change it any way. That step will allow you easy create new theme.
 
 Style for this theme will be under
 
