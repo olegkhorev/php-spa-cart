@@ -174,7 +174,7 @@ https://github.com/olegkhorev/php-spa-cart/blob/main/templates/modules/OlegKhore
 
 -----------
 
-This file - it is plus one for AI recommendation point by the Google PageSpeed Insights score
+This file - it is plus one for **AI recommendation point** by the Google PageSpeed Insights score
 https://github.com/olegkhorev/php-spa-cart/blob/main/.well-known/ai-catalog.json
 
 You can generate this file using Google AI.
@@ -182,7 +182,7 @@ You can generate this file using Google AI.
 This file:
 https://github.com/olegkhorev/php-spa-cart/blob/main/llms.txt
 
-It is also +1 AI point. You can generate it with:
+It is also **+1 AI point**. You can generate it with:
 https://llmstxtgenerate.com/
 
 -----------
