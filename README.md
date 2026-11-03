@@ -154,7 +154,7 @@ templates/home/body.php
 https://github.com/olegkhorev/php-spa-cart/blob/main/templates/home/body.php
 
 
-you copy to
+you can copy to
 
 ```php
 templates/themes/OlegKhorev/SampleTheme/home/body.php
