@@ -4,8 +4,7 @@ I’m Oleg.
 
 I am intentionally developing SPA-Cart slowly. Right now, my focus is 100% on deep thinking and slowly growing with community. If you love lightweight, vanilla PHP engineering and want to help think through architectural challenges, you are welcome here.
 
-**SPA-Cart** — e-commerce Single Page Application
-Official site of the project: https://spa-cart.com/
+**SPA-Cart** — e-commerce Single Page Application. Official site of the project: https://spa-cart.com/
 
 SPA-Cart uses jQuery 4.0. It features a headless architecture and is very easy to learn. Compared to modern frameworks, jQuery has just a few core functions. jQuery does not take a lot of RAM because it does not overload the DOM.
 
