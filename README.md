@@ -17,6 +17,7 @@ Backend and frontend development are kept strictly separate.
 You can build custom **themes** for different pages and do **A/B tests**. Themes also do not touch the core. Each theme is a module with its own templates. CSS/JS files are also kept separate for each theme/module.
 
 
+
 **Article content:**
 * [Installation](#1-installation)
 * [Remove demo content](#2-remove-demo-content)
