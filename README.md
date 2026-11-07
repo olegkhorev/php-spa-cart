@@ -145,6 +145,10 @@ Just add a link to module in your design.
 
 
 ## 5. How to create custom themes
+
+You can download completed theme module here:
+https://github.com/olegkhorev/php-spa-cart/blob/main/christmas_theme.zip
+
 Themes files - for example this file
 
 ```php
