@@ -395,12 +395,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             func_remove_cart();
             exit($stripe_session);
         } elseif ($paymentid == 8) {
-            if ($login) {
-                func_setcookie('remember_paypal_redirect', $login);
-            } else {
-                func_setcookie('remember_paypal_redirect_id', $orderid);
-            }
-
+            func_setcookie('remember_paypal_redirect_id', $orderid);
             $payment_method = $db->row("SELECT * FROM payment_methods WHERE paymentid=8");
             $paypal_email = $payment_method['param1'];
             if ($payment_method['live']) {

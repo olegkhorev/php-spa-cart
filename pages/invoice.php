@@ -19,18 +19,16 @@ if (!$_SESSION['invoices']) {
     $_SESSION['invoices'] = array();
 }
 
+if ($_COOKIE['remember_paypal_redirect_id'] && !in_array($get['1'], $_SESSION['invoices'])) {
+    $_SESSION['invoices'][] = $_COOKIE['remember_paypal_redirect_id'];
+}
+
 $found = false;
 if ($userinfo['usertype'] == 'A') {
     $found = true;
 } elseif (in_array($get['1'], $_SESSION['invoices'])) {
     $found = true;
-} elseif ($login || $_COOKIE['remember_paypal_redirect']) {
-    if (!$login) {
-        $login = $_COOKIE['remember_paypal_redirect'];
-        func_login($login);
-        redirect('invoice/'.$get['1']);
-    }
-
+} elseif ($login) {
     $check_order = $db->row("SELECT * FROM orders WHERE orderid='".addslashes($get['1'])."' AND userid='".$login."'");
     if ($check_order) {
         $found = true;
