@@ -29,6 +29,7 @@ if ($userinfo['usertype'] == 'A') {
         $login = $_COOKIE['remember_paypal_redirect'];
         func_login($login);
         func_setcookie('remember_paypal_redirect', '');
+        redirect('invoice/'.$get['1']);
     }
 
     $check_order = $db->row("SELECT * FROM orders WHERE orderid='".addslashes($get['1'])."' AND userid='".$login."'");
