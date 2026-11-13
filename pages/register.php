@@ -39,8 +39,13 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
         $context  = stream_context_create($opts);
 
-        $result = file_get_contents('https://www.google.com/recaptcha/api/siteverify', false, $context);
-        if (strstr($result, 'false') || !$_POST['g-recaptcha-response']) {
+        $result = @file_get_contents('https://www.google.com/recaptcha/api/siteverify', false, $context);
+        $data   = $result !== false ? json_decode($result, true) : null;
+        $ok = is_array($data)
+            && !empty($data['success'])
+            && ($data['hostname'] ?? '') === $https_domain;  // optional but recommended
+
+        if (!$ok || !$_POST['g-recaptcha-response']) {
             $_SESSION['user'] = $_POST;
             if ($is_ajax) {
                 exit('C');
@@ -74,7 +79,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $insert = array(
             'email'			=> $email,
             'pending_membershipid'	=> $pending_membershipid,
-            'password'		=> md5($password.$salt),
+            'password'		=> func_crypt_password($password.$salt),
             'firstname'		=> $firstname,
             'lastname'		=> $lastname,
             'address'		=> $address,

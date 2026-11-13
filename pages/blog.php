@@ -38,9 +38,13 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 
             $context  = stream_context_create($opts);
 
-            $result = file_get_contents('https://www.google.com/recaptcha/api/siteverify', false, $context);
+            $result = @file_get_contents('https://www.google.com/recaptcha/api/siteverify', false, $context);
+            $data   = $result !== false ? json_decode($result, true) : null;
+            $ok = is_array($data)
+                && !empty($data['success'])
+                && ($data['hostname'] ?? '') === $https_domain;  // optional but recommended
 
-            if (strstr($result, 'false') || !$_POST['g-recaptcha-response']) {
+            if (!$ok || !$_POST['g-recaptcha-response']) {
                 $_SESSION['alerts'][] = array(
                     'type'		=> 'e',
                     'content'	=> lng('Captcha is incorrect.')

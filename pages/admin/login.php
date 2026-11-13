@@ -24,7 +24,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     }
 
     $user = $db->row("SELECT * FROM users WHERE email='".addslashes($email)."' AND status=1");
-    if (md5($password.$user['salt']) != $user['password']) {
+    if (func_crypt_password($password.$user['salt']) != $user['password']) {
         $user = array();
     }
 

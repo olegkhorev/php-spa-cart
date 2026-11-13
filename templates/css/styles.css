@@ -752,6 +752,13 @@ box-shadow:         none;
 	max-height: 100%;
 	display: none;
 }
+.instant-search-results td.res-name {
+    word-break: break-word;
+    overflow-wrap: break-word;
+    white-space: normal;
+    text-overflow: clip;
+    overflow: visible;
+}
 .header-phone-email {
 	position: absolute;
 	top: 170px;
@@ -1761,6 +1768,8 @@ a.navigation-larrow, a.navigation-rarrow {
 	width: 100px;
 	text-align: center;
 	padding: 5px 0 !important;
+	padding-right: 10px !important;
+	box-sizing: border-box;
 }
 .instant-search p {
 	color: var(--theme-color);
@@ -2610,14 +2619,19 @@ div.print_div {
 	padding-left: 0 !important;
 	text-transform: none;
 }
-#body-password .main-container, #body-login .main-container, #body-register .main-container, #body-invoice .main-container, #body-help .main-container, form[name="ticketform"], form[name="testimonialform"] {
+#body-password .main-container, #body-login .main-container, #body-register .main-container, #body-invoice .main-container, #body-help .main-container, #body-gift_cards .main-container, form[name="ticketform"], form[name="testimonialform"] {
     margin: 0 auto;
     display: block;
     width: 600px;
 		max-width: 100%;
 }
 #body-invoice .main-container {
-	width: 695px;
+	width: 100%;
+	max-width: 890px;
+}
+#body-invoice .main-container .invoice {
+    width: 100%;
+    box-sizing: border-box;
 }
 #body-help .main-container .content {
 	padding: 0;

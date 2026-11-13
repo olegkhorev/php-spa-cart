@@ -31,7 +31,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     if ($password) {
         $salt = generateSalt();
-        $update['password'] = md5($password.$salt);
+        $update['password'] = func_crypt_password($password.$salt);
         $update['salt'] = $salt;
     }
 

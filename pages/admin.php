@@ -280,6 +280,5 @@ if ($login && $userinfo['usertype'] == 'A') {
 
 $template['js'][] = 'admin';
 $template['js'][] = 'admin_charts';
-$template['js'][] = 'jquery.ui.sortable';
 $modules = $db->all("SELECT * FROM modules WHERE enabled='1' ORDER BY pos");
 $template["modules"] = $modules;

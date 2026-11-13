@@ -28,7 +28,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     extract($_POST);
     $salt = substr(str_shuffle('abcdefghijklmnopqrstuvwxyzABCD!@#^&&*%*($)*@#($%*#%)-=.,;\'][EFGHIJKLMNOPQRSTUVWXYZ0123456789'), 0, 8);
     $key = md5(time().rand(0, 100).$_SERVER['REMOTE_ADDR'].$salt.rand(0, 100));
-    $db->query("UPDATE users SET salt='".addslashes($salt)."', password='".md5($new_pswd.$salt)."', password_key='".$key."' WHERE id='".$id."'");
+    $db->query("UPDATE users SET salt='".addslashes($salt)."', password='".func_crypt_password($new_pswd.$salt)."', password_key='".$key."' WHERE id='".$id."'");
 
     $_SESSION['login'] = $id;
     $salt = substr(str_shuffle('abcdefghijklmnopqrstuvwxyzABCD!@#^&&*%*($)*@#($%*#%)-=.,;\'][EFGHIJKLMNOPQRSTUVWXYZ0123456789'), 0, 8);

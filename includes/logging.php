@@ -49,7 +49,7 @@ function errorHandler($n, $m, $f, $l)
     $fp = fopen(SITE_ROOT.'/var/log/'.$file_name.'-'.date('Y-m-d').'.log', 'a+');
     fputs($fp, $string);
     fclose($fp);
-    if (ADMIN_AREA || DEVELOPMENT) {
+    if (DEVELOPMENT) {
         $_SESSION['alerts'][] = array(
             'type'		=> 'e',
             'content'	=> lng('PHP error happens.').'<br />'.str_replace("\n", "<br />", $error)
@@ -113,7 +113,7 @@ function log_sql($string)
     $fn = SITE_ROOT . '/var/log/sql-'.date('Y-m-d').'.log';
     $string .= file_get_contents($fn);
     file_put_contents($fn, $string);
-    if (ADMIN_AREA || DEVELOPMENT) {
+    if (DEVELOPMENT) {
         $_SESSION['alerts'][] = array(
             'type'		=> 'e',
             'content'	=> lng('MySQL error happens.').'<br />'.str_replace("\n", "<br />", $error)

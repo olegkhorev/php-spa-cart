@@ -15,10 +15,27 @@
 </div>
 </div></div>
 
-<div style="text-align:center">
-<br /><br />
-Sample template theme
+<div class="banners-homepage">
+{foreach $banners as $k=>$v}
+<div id="hp_banner_{$k}" class="slide{if !$k} active{/if}">
+{if $v['url']}
+<a href="{php echo escape($v['url'], 2);}">
+{/if}
+<img src="/images/spacer.gif" class="hp-banner" style="background: url('/images/christmas_banner.jpg');" alt="{php echo escape($v['alt'], 2);}" />
+{if $v['url']}
+</a>
+{/if}
 </div>
+{/foreach}
+
+    <div class="arrow arrow-left">
+    <span></span>
+    </div>
+    <div class="arrow arrow-right">
+    <span></span>
+    </div>
+</div>
+
 <div class="clear"></div>
 
 {if lng('Site title') || lng('Site description')}

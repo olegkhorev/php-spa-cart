@@ -53,11 +53,7 @@
 <link rel="shortcut icon" href="/favicon2.png" type="image/vnd.microsoft.icon" />
 <title>{lng[Invoice]} #<?php echo $order["orderid"]; ?></title>
 
-<style media="all">
-
 {include_css}
-
-</style>
 <script>
 var current_area = 'A',
 	page = '<?php echo $get["0"]; ?>',

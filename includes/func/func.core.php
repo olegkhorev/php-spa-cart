@@ -74,7 +74,7 @@ function get_include_contents($filename)
     return false;
 }
 
-function get_template_contents($filename, $force = false)
+function get_template_contents($filename, $force = false, $compile_only = false)
 {
     global $lng, $db, $templates, $config, $device, $warehouse_enabled, $translate_mode, $_SESSION;
 
@@ -201,7 +201,7 @@ function get_template_contents($filename, $force = false)
         if (!empty($matches['1']['0'])) {
             foreach ($matches['0'] as $k => $v) {
                 get_template_contents($matches['1'][$k], true);
-                $content = str_replace($v, '<?php include SITE_ROOT."/var/cache/'.$lng.'/'.$matches['1'][$k].'";?>', $content);
+                $content = str_replace($v, '<?php get_template_contents("'.$matches['1'][$k].'", false, true); include SITE_ROOT."/var/cache/'.$lng.'/'.$matches['1'][$k].'";?>', $content);
             }
         }
 
@@ -325,6 +325,7 @@ function get_template_contents($filename, $force = false)
         $fp = fopen($cache.'/'.$filename, 'w');
         fputs($fp, $content);
         fclose($fp);
+        $templates[$lng][$filename] = filemtime(SITE_ROOT.'/templates/'.$filename);
         $already_in_table = $db->row("SELECT * FROM templates WHERE lng='".$lng."' AND template='".$filename."'");
         if ($already_in_table) {
             $db->query("UPDATE templates SET time='".filemtime($file_path)."' WHERE lng='".$lng."' AND template='".$filename."'");
@@ -333,7 +334,7 @@ function get_template_contents($filename, $force = false)
         }
     }
 
-    if (!$force) {
+    if (!$force && !$compile_only) {
         return get_include_contents($cache.'/'.$filename);
     }
 }
@@ -935,4 +936,8 @@ function php_404_error() {
     header("HTTP/1.0 404 Not Found");
     echo file_get_contents(SITE_ROOT . '/404/index.html');
     exit;
+}
+
+function func_crypt_password($password) {
+    return hash('sha256', $password);
 }

@@ -20,11 +20,11 @@
 	<tr>
 	 <td class="image"><a href="{$current_location}/{$url}">
 	{if $v['product']['photo']}
-{product_image image=`$v['product']['photo']` new_width=100 new_height=100}
+{product_image image=`$v['product']['photo']` new_width=65 new_height=65 center="1"}
 	{/if}
 	 </a></td>
 	 <td><a href="{$current_location}/{$url}">{$v['product']['name']}</a></td>
-	 <td style="text-align:center;vertical-align:middle">{price $v['product']['price']}</td>
+	 <td align="center">{price $v['product']['price']}</td>
 	 <td><a href="{$current_location}/wishlist/remove/{$v['wlid']}" class="remove-wl-link">{lng[Delete]}</a></td>
 	</tr>
 {/foreach}

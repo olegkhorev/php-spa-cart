@@ -57,6 +57,7 @@
 <ul>
  <li><a class="ajax_link" href="{$current_location}/module/sample_page/sample_page">Custom module</a></li>
  <li><a class="no-ajax" href="{$current_location}/module/force_theme/sample_theme">Custom theme</a></li>
+ <li><a class="no-ajax" href="{$current_location}/module/force_theme/christmas_theme">Christmas theme</a></li>
  <li><a class="no-ajax" href="{$current_location}/module/force_theme/default">Default theme</a></li>
 </ul>
 </div>

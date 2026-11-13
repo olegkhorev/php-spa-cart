@@ -34,6 +34,7 @@ td {
 }
 .cart-quantity {
   width: 40px;
+  text-align: center;
 }
 #cartform table table,
 .checkout_products table {

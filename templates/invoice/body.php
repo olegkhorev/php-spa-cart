@@ -28,7 +28,7 @@
 </div>
 {/if}
 {/if}
-<div style="width: 650px; margin: 0 auto; background: #fff; padding: 10px; {if $get['2'] != 'print' && !$is_mail}border: 1px solid #ccc;{/if}" class="invoice">
+<div style="max-width: 870px; width: 100%; margin: 0 auto; background: #fff; padding: 10px; {if $get['2'] != 'print' && !$is_mail}border: 1px solid #ccc;{/if}" class="invoice">
 <h1 style="text-align: center;">{lng[Invoice]}</h1>
 
 <table class="invoice-table" style="width: 100%; margin: 10px auto 10px auto;">
@@ -60,7 +60,7 @@
  <td class="invoice-table-td-2" style="vertical-align: top;">
 <h2 style="margin: 0; padding: 10px 0; text-align: center;">{lng[Company information]}</h2>
 <b>{$config['Company']['company_name']}</b><br />
-<a href="{$https_location}" target="_blank">{$https_location}</a><br /><br />
+<a href="{$https_location}" target="_blank" style="color: black; text-decoration: none;">{$https_location}</a><br /><br />
 {$config['Company']['location_address']}, {$config['Company']['location_city']}<br />
 {$config['Company']['location_zipcode']}, {$config['Company']['location_statename']}<br />
 {$config['Company']['location_countryname']}<br />
@@ -164,7 +164,7 @@
  {php $url = $v['cleanurl'] ? $v['cleanurl'] .'.html' : 'product/'.$v['productid'];}
 {/if}
 	<tr>
-	 <td class="image hideonmobile" style="vertical-align: top; padding-right: 10px;"><a href="{$https_location}/{$url}" class="ajax_link">
+	 <td class="image hideonmobile" style="vertical-align: top; padding-right: 10px; min-width: 100px;" align="center"><a href="{$https_location}/{$url}" class="ajax_link">
 {if $v['variant_photo']}
 {variant_image image=`$v["variant_photo"]` new_width=100 new_height=100}
 {elseif $v['photo']}
@@ -181,7 +181,7 @@
 {/if}
 {/if}
 {else}
-<a href="{$https_location}/{$url}" class="ajax_link">{$v['name']}</a>
+<a href="{$https_location}/{$url}" class="ajax_link" style="color: black; text-decoration: none;">{$v['name']}</a>
 {*
 {if $v['weight']}
 <br />
@@ -250,7 +250,7 @@
 <tr>
  <td style="width: 50%;"></td>
  <td style="text-align: right;">
-<table class="subtotal" style="border-top: 1px solid black; border-collapse: collapse;">
+<table class="subtotal" style="border-top: 1px solid black; border-collapse: collapse;" width="100%">
 <tr>
  <td style="width: 250px; text-align: right;">{lng[Subtotal]}:</td>
  <td style="width: 70px; text-align: right;">{price $order['subtotal']}</td>

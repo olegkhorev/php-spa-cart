@@ -30,7 +30,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     if (!empty($password) && $password != lng('Password')) {
         $salt = generateSalt();
         $update['salt'] = $salt;
-        $update['password'] = md5($password.$salt);
+        $update['password'] = func_crypt_password($password.$salt);
     }
 
     if ($db->field("SELECT COUNT(*) as cnt FROM users WHERE id<>'".$user_id."' AND email='".addslashes($email)."'")) {

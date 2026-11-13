@@ -14,7 +14,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     extract($_POST);
     if ($password) {
         $salt = generateSalt();
-        $posted_data['password'] = md5($password.$salt);
+        $posted_data['password'] = func_crypt_password($password.$salt);
         $posted_data['salt'] = $salt;
     }
 

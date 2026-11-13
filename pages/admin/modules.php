@@ -33,13 +33,16 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             exit('You cannot install a new module on demo.');
 
         $dir = SITE_ROOT . '/var/tmp/install_module';
+        if (is_dir($dir))
+            func_delete_directory($dir);
+
         mkdir($dir);
         copy($_FILES['install_archive']['tmp_name'], $dir.'/module.zip');
         $zip = new ZipArchive();
         $zip->open($dir.'/module.zip');
         $zip->extractTo($dir);
         $zip->close();
-
+#exit;
         echo 'Gathering the module data...<br />';
         $data = array_map('trim', file($dir.'/module.data'));
         $array = [];

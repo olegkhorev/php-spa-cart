@@ -64,7 +64,7 @@ $(document).on("keyup", function (e) {
     if ($("html.itsinvoicepage").length) return;
 
     console.log("#");
-    console.log("# {lng[This is development tools. Please, never share any info from here to anyone.]}");
+    console.log("# {lng[This part is development tools. Please, never share any info from here to anyone.]}");
     console.log("#");
     if (!getCookie("allow_cookies") && !$("html.area-a").length) {
       $("body").append(
@@ -369,11 +369,13 @@ function ajax_clicks() {
   });
 
   $(
-    "#menu a, a.ajax_link, .account-invoices-list a, .button_ajax_link, .ajax_mobile_link, .logo-link, .bread_crumbs a, #subcategories a, .brands a, .test-links a, .foot a, .cart_product_link",
+    "#menu a, a.ajax_link, .account-invoices-list a, .button_ajax_link, .ajax_mobile_link, .logo-link, .bread_crumbs a, #subcategories a, .brands a, .test-links a, .foot a, .cart_product_link, .ajax_link_mobile",
   )
     .unbind("click")
     .on("click", function (e) {
       if ($(this).hasClass("no-ajax")) return true;
+
+      if ($(this).hasClass("ajax_link_mobile") && mobile_screen < $(window).width()) return false;
 
       if ($(this).closest(".product_popup").length) $(".fade").click();
 
@@ -454,6 +456,7 @@ function ajax_clicks() {
       return false;
     });
 
+  cart_clicks();
   try {
     login_clicks();
     register_actions();

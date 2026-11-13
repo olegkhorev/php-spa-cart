@@ -23,7 +23,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         exit('E');
     }
 
-    if (md5($password.$user['salt']) != $user['password']) {
+    if (func_crypt_password($password.$user['salt']) != $user['password']) {
         $user = array();
     }
 
