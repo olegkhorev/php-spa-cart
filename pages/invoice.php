@@ -28,7 +28,6 @@ if ($userinfo['usertype'] == 'A') {
     if (!$login) {
         $login = $_COOKIE['remember_paypal_redirect'];
         func_login($login);
-        func_setcookie('remember_paypal_redirect', '');
         redirect('invoice/'.$get['1']);
     }
 
