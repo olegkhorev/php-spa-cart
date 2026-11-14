@@ -182,7 +182,9 @@ https://github.com/olegkhorev/php-spa-cart/blob/main/templates/modules/OlegKhore
 This file - it is plus one for **AI recommendation point** by the Google PageSpeed Insights score
 https://github.com/olegkhorev/php-spa-cart/blob/main/.well-known/ai-catalog.json
 
-You can generate this file using Google AI.
+You can generate this file using Google AI. The query is:
+> I need to generate "ai-catalog.json" for my 
+> https://site.com/
 
 This file:
 https://github.com/olegkhorev/php-spa-cart/blob/main/llms.txt
