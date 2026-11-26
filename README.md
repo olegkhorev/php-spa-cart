@@ -24,6 +24,7 @@ You can build custom **themes** for different pages and do **A/B tests**. Themes
 * [Helpful scripts](#3-helpful-scripts)
 * [Major update](#4-major-update)
 * [How to create custom themes](#5-how-to-create-custom-themes)
+* [Additional](#6-additional)
 
 ## 1. Installation
 
@@ -146,7 +147,7 @@ Just add a link to module in your design.
 
 ## 5. How to create custom themes
 
-You can download completed theme module here:
+You can **download completed theme module** here:
 
 https://github.com/olegkhorev/php-spa-cart/blob/main/christmas_theme.zip
 
@@ -177,7 +178,7 @@ templates/modules/OlegKhorev/SampleTheme/styles.css
 
 https://github.com/olegkhorev/php-spa-cart/blob/main/templates/modules/OlegKhorev/SampleTheme/styles.css
 
------------
+## 6. Additional
 
 This file - it is plus one for **AI recommendation point** by the Google PageSpeed Insights score
 https://github.com/olegkhorev/php-spa-cart/blob/main/.well-known/ai-catalog.json
