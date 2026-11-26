@@ -24,7 +24,8 @@ You can build custom **themes** for different pages and do **A/B tests**. Themes
 * [Helpful scripts](#3-helpful-scripts)
 * [Major update](#4-major-update)
 * [How to create custom themes](#5-how-to-create-custom-themes)
-* [Additional](#6-additional)
+* [Additional info](#6-additional-info)
+* [Demo pages](#7-demo-pages)
 
 ## 1. Installation
 
@@ -178,7 +179,7 @@ templates/modules/OlegKhorev/SampleTheme/styles.css
 
 https://github.com/olegkhorev/php-spa-cart/blob/main/templates/modules/OlegKhorev/SampleTheme/styles.css
 
-## 6. Additional
+## 6. Additional info
 
 This file - it is plus one for **AI recommendation point** by the Google PageSpeed Insights score
 https://github.com/olegkhorev/php-spa-cart/blob/main/.well-known/ai-catalog.json
@@ -192,6 +193,31 @@ https://github.com/olegkhorev/php-spa-cart/blob/main/llms.txt
 
 It is also **+1 AI point**. You can generate it with:
 https://llmstxtgenerate.com/
+
+
+## 7. Demo Pages
+
+**Please, review the demo pages here:**
+
+### Customer area
+[![SPA-Cart customer area](https://spa-cart.com/images/codecanyon/customer_area.jpg)](http://demo.spa-cart.com/)
+
+---
+
+### Custom theme
+[![SPA-Cart dark theme](https://spa-cart.com/images/codecanyon/dark_theme.jpg)](https://demo.spa-cart.com/module/force_theme/sample_theme)
+
+---
+
+### Christmas theme
+*AI generated HTML*
+
+[![SPA-Cart Christmas theme](https://spa-cart.com/images/codecanyon/christmas_theme_new.jpg)](https://demo.spa-cart.com/module/force_theme/christmas_theme)
+
+---
+
+### Admin area
+[![SPA-Cart admin area](https://spa-cart.com/images/codecanyon/admin_area.jpg)](https://demoadmin.spa-cart.com/admin/login)
 
 -----------
 
