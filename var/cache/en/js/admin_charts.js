@@ -14,9 +14,9 @@ function createGradient(ctx, chartArea) {
     chartArea.top,
   );
 
-  gradient.addColorStop(0, "rgba(76, 175, 80, 0.1)");
-  gradient.addColorStop(0.5, "rgba(76, 175, 80, 0.6)");
-  gradient.addColorStop(1, "rgba(76, 175, 80, 1)");
+  gradient.addColorStop(0, "rgba(76, 175, 80, 0)");
+  gradient.addColorStop(0.5, "rgba(76, 175, 80, 0)");
+  gradient.addColorStop(1, "rgba(76, 175, 80, 0)");
 
   return gradient;
 }
@@ -47,10 +47,10 @@ var CHART_COLORS = {
 };
 
 var TOOLTIP_SETTINGS = {
-  titleColor: "rgb(255, 255, 255)",
-  bodyColor: "rgb(255, 255, 255)",
+  titleColor: "rgb(127,127,127)",
+  bodyColor: "rgb(127,127,127)",
   borderWidth: 1,
-  borderColor: "#fff",
+  borderColor: "rgb(127,127,127)",
   borderRadius: 10,
   padding: 15,
   titleFontSize: 16,
@@ -59,7 +59,7 @@ var TOOLTIP_SETTINGS = {
 };
 
 var GRID_SETTINGS = {
-  color: "#6ccf70",
+  color: "rgba(255, 255, 255, 0.3)",
 };
 
 var LINE_CHART_CONFIG = {
@@ -133,8 +133,8 @@ var gradientTooltipPlugin = {
         tooltipModel.y,
       );
 
-      gradient.addColorStop(0.5, "#0c6f10");
-      gradient.addColorStop(1, "#4caf50");
+      gradient.addColorStop(0.5, "#ffffff");
+      gradient.addColorStop(1, "#ffffff");
 
       tooltipModel.gradientBackground = gradient;
     }

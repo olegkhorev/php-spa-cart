@@ -13,7 +13,7 @@
 <div class="main-container">
 <div class="content" style="text-align:left">
 	<div id="center" class="no_left_menu">
-<?php include SITE_ROOT."/var/cache/en/checkout/body.php";?>
+<?php get_template_contents("checkout/body.php", false, true); include SITE_ROOT."/var/cache/en/checkout/body.php";?>
  </div>
 </div>
 </div>

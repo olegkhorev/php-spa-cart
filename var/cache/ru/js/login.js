@@ -18,7 +18,7 @@ function login_popup(what) {
   if (mobile_screen > $(window).width()) {
     if (what == "W")
       alert("Вы должны войти в систему, чтобы получить доступ к этой странице");
-    return false;
+    return true;
   }
 
   $('.popup').addClass('popup_pointer_events');

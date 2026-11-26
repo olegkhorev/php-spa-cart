@@ -527,6 +527,19 @@ button:not(.w-full):not(.add2cart-product) {
 .tabs {
     padding-bottom: 13px;
 }
+.prod-md-brand a img {
+    display: inline;
+}
+.alert_message {
+    min-width: 360px;
+    box-sizing: border-box;
+}
+.alert_message.buy_one_click input {
+    width: 230px;
+}
+.res-item a.save2wl {
+    height: 38px;
+}
 @media (max-width: 1800px) {
     :is(#home-tabs, .home-tabs-wrap) .home-tabs, #product-tabs .product-tabs {
         max-width: none !important;
@@ -1118,17 +1131,9 @@ abbr:where([title]) {
     -webkit-text-decoration: underline dotted;
     text-decoration: underline dotted
 }
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-    font-size: inherit;
-    font-weight: inherit
+html body.scrolled {
+    margin-top: 180px;
 }
-
 a {
     color: inherit;
     text-decoration: inherit
@@ -1297,28 +1302,12 @@ button {
     cursor: default
 }
 
-audio,
-canvas,
-embed,
-iframe,
-img,
-object,
-svg,
-video {
-    display: block;
-    vertical-align: middle
-}
-
-img,
-video {
-    max-width: 100%;
-    height: auto
-}
-
 [hidden]:where(:not([hidden=until-found])) {
     display: none
 }
-
+.responsive-columns .res-item {
+    box-sizing: unset;
+}
 .container {
     width: 100%
 }

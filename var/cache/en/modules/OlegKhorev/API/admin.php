@@ -4,7 +4,7 @@
 <h1>API configuration</h1>
 <table class="configuration normal-table">
 <?php foreach ($config_module as $v) {?>
- <?php include SITE_ROOT."/var/cache/en/common/config_common.php";?>
+ <?php get_template_contents("common/config_common.php", false, true); include SITE_ROOT."/var/cache/en/common/config_common.php";?>
 <?php } ?>
 </table>
 

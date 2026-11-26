@@ -20,7 +20,7 @@
 <table style="width:100%" class="search_table search_table-support-desk">
 <tr>
         <td class="td-align-right">Ticket type</td>
-        <td><?php include SITE_ROOT."/var/cache/en/common/ticket_type.php";?></td>
+        <td><?php get_template_contents("common/ticket_type.php", false, true); include SITE_ROOT."/var/cache/en/common/ticket_type.php";?></td>
 </tr>
 <?php if ($ticket_cats) {?>
 <tr>
@@ -38,7 +38,7 @@
 
 <tr>
         <td class="td-align-right">Priority</td>
-        <td><?php $empty='Y'; $name="posted_data[priority]"; $value=$search_prefilled['priority'];; ?><?php include SITE_ROOT."/var/cache/en/common/ticket_priority.php";?></td>
+        <td><?php $empty='Y'; $name="posted_data[priority]"; $value=$search_prefilled['priority'];; ?><?php get_template_contents("common/ticket_priority.php", false, true); include SITE_ROOT."/var/cache/en/common/ticket_priority.php";?></td>
 </tr>
 
 <tr>
@@ -57,7 +57,7 @@
 </tr>
 <tr>
         <td class="td-align-right">Status</td>
-        <td><?php $name="posted_data[status]"; $empty='Y'; $status=$search_prefilled['status'];; ?><?php include SITE_ROOT."/var/cache/en/common/ticket_status.php";?></td>
+        <td><?php $name="posted_data[status]"; $empty='Y'; $status=$search_prefilled['status'];; ?><?php get_template_contents("common/ticket_status.php", false, true); include SITE_ROOT."/var/cache/en/common/ticket_status.php";?></td>
 </tr>
 
 <tr>
@@ -129,7 +129,7 @@
 <?php if ($_GET['mode'] == "search" && $tickets) {?>
 
 <?php  if ($total_pages > 2) { ?>
-<?php include SITE_ROOT."/var/cache/en/common/navigation.php";?>
+<?php get_template_contents("common/navigation.php", false, true); include SITE_ROOT."/var/cache/en/common/navigation.php";?>
 <br />
 <?php  } ?>
 
@@ -162,8 +162,8 @@
 <tr>
         <td><input type="checkbox" name="to_delete[<?php echo $i['ticketid'];?>]" /></td>
         <td><label>#</label><a href="/admin/ticket/<?php echo $i['ticketid'];?>"><?php echo $i['ticketid'];?></a></td>
-        <td class="no-word-break td-align-center"><label>Status</label><?php $mode = ''; $name="statuses[".$i['ticketid']."]"; $status=$i['status'];; ?><?php include SITE_ROOT."/var/cache/en/common/ticket_status.php";?></td>
-        <td class="td-align-center"><label>Type</label><?php $mode='static'; $name="types[".$i['ticketid']."]"; $type=$i['type'];; ?><?php include SITE_ROOT."/var/cache/en/common/ticket_type.php";?></td>
+        <td class="no-word-break td-align-center"><label>Status</label><?php $mode = ''; $name="statuses[".$i['ticketid']."]"; $status=$i['status'];; ?><?php get_template_contents("common/ticket_status.php", false, true); include SITE_ROOT."/var/cache/en/common/ticket_status.php";?></td>
+        <td class="td-align-center"><label>Type</label><?php $mode='static'; $name="types[".$i['ticketid']."]"; $type=$i['type'];; ?><?php get_template_contents("common/ticket_type.php", false, true); include SITE_ROOT."/var/cache/en/common/ticket_type.php";?></td>
         <td><label>Subject</label><a href="/admin/ticket/<?php echo $i['ticketid'];?>"><?php echo $i['subject'];?><?php if ($i['admin_read'] == 'N') {?> <span style="color:red">(Not read)</span><?php } ?></a></td>
         <td class="td-align-center"><label>Customer</label>
 <?php if ($i['userid']) {?>
@@ -174,7 +174,7 @@
         </td>
         <td class="td-align-center"><label>Messages</label><?php echo $i['count'];?></td>
         <td class="td-align-center"><label>Date</label><a href="/admin/ticket/<?php echo $i['ticketid'];?>"><?php echo date($datetime_format, $i['date']);; ?></a></td>
-        <td class="td-align-center"><label>Priority</label><?php $mode="static"; $value=$i['priority'];; ?><?php include SITE_ROOT."/var/cache/en/common/ticket_priority.php";?></td>
+        <td class="td-align-center"><label>Priority</label><?php $mode="static"; $value=$i['priority'];; ?><?php get_template_contents("common/ticket_priority.php", false, true); include SITE_ROOT."/var/cache/en/common/ticket_priority.php";?></td>
 </tr>
 <?php } ?>
 </table>
@@ -186,7 +186,7 @@
 <br />
 
 <?php  if ($total_pages > 2) { ?>
-<?php include SITE_ROOT."/var/cache/en/common/navigation.php";?>
+<?php get_template_contents("common/navigation.php", false, true); include SITE_ROOT."/var/cache/en/common/navigation.php";?>
 <br />
 <?php  } ?>
 

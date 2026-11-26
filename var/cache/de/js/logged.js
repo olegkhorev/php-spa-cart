@@ -13,6 +13,7 @@
 })($);
 
 function profile_popup(url_add) {
+  if (mobile_screen > $(window).width()) return true;
   if (page != "profile") {
     var el = $(".profile_popup");
     el.css("opacity", 1).css("transform", "matrix(1.1, 0, 0, 1.1, 0, -70)");
@@ -23,11 +24,16 @@ function profile_popup(url_add) {
       }, 200);
     }, 200);
 
+    bc = false;
     if (url_add == "1") {
-      aload();
+      fade();
       delay = 1;
     } else {
-      delay = 350;
+      if (!$(".profile_popup").length) {
+        delay = 1;
+        fade();
+      } else
+        delay = 350;
     }
 
     setTimeout(function () {
@@ -45,8 +51,6 @@ function profile_popup(url_add) {
         },
         success: function (r) {
           $(".load").html('<span class="close close-popup">x</span>' + r[0]);
-          unload();
-          fade();
           $(".load").addClass("popup profile_popup").removeClass("load");
           var top =
             $(window).scrollTop() +

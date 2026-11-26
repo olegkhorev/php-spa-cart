@@ -17,7 +17,8 @@ function login_popup(what) {
 
   if (mobile_screen > $(window).width()) {
     if (what == "W")
-      alert("{lng[You need to be logged in to access this page]}");
+      show_notice("{lng[You need to be logged in to access this page]}");
+
     return true;
   }
 
@@ -107,7 +108,7 @@ function restore_password() {
         $.ajax({ url: "/res_p?r=" + $(".res_p input").val() });
         $(".res_p").remove();
         bc = false;
-        alert("{lng[Link to change the password has been sent to your email]}");
+        show_notice("{lng[Link to change the password has been sent to your email.]}");
       });
     });
   });

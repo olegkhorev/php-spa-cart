@@ -18,7 +18,7 @@ function login_popup(what) {
   if (mobile_screen > $(window).width()) {
     if (what == "W")
       alert("Vous devez être connecté pour accéder à cette page");
-    return false;
+    return true;
   }
 
   $('.popup').addClass('popup_pointer_events');

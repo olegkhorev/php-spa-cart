@@ -42,13 +42,13 @@ function quote_comment_html(id, name) {
 function new_comment() {
   document.blogform.comment.value = $("#newrecord").html();
   if (!document.blogform.comment.value) {
-    alert("{lng[Please, enter your comment.]}");
+    show_notice("{lng[Please, enter your comment.]}");
     document.blogform.comment.focus();
     return false;
   }
 
   if (document.blogform.new_name && !document.blogform.new_name.value) {
-    alert("{lng[Please, enter your name]}");
+    show_notice("{lng[Please, enter your name]}");
     document.blogform.new_name.focus();
     return false;
   }

@@ -15,7 +15,7 @@
 <input type="hidden" name="mode" value="update" />
 
 <?php  if ($total_pages > 2) { ?>
-<?php include SITE_ROOT."/var/cache/en/common/navigation.php";?>
+<?php get_template_contents("common/navigation.php", false, true); include SITE_ROOT."/var/cache/en/common/navigation.php";?>
 <?php  echo "<br />";} ?>
 
 <a href="javascript: void(0);" onclick="javascript: check_all(document.blogsform, 'to_delete', true);">Check all</a> / <a href="javascript: void(0);" onclick="javascript: check_all(document.blogsform, 'to_delete', false);">Uncheck all</a>
@@ -206,7 +206,7 @@
 
 <input type="hidden" name="commentid" value="" />
 
-<?php include SITE_ROOT."/var/cache/en/admin/common/navigation.php";?>
+<?php get_template_contents("admin/common/navigation.php", false, true); include SITE_ROOT."/var/cache/en/admin/common/navigation.php";?>
 
 <table style="width:100%" class="blog_post_comments">
 <?php 

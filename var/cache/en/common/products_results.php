@@ -10,7 +10,7 @@
 <table class="products-nav">
 <tr>
 <?php if ($total_pages > 2) {?>
- <td class="first"><?php include SITE_ROOT."/var/cache/en/common/navigation.php";?></td>
+ <td class="first"><?php get_template_contents("common/navigation.php", false, true); include SITE_ROOT."/var/cache/en/common/navigation.php";?></td>
 <?php } ?>
 <?php if ($device == 'mobile') {?>
 </tr>
@@ -35,13 +35,13 @@
 <?php } else  { ?>
  <?php $direction = "&direction=1";; ?>
 <?php } ?>
-<?php include SITE_ROOT."/var/cache/en/common/products.php";?>
+<?php get_template_contents("common/products.php", false, true); include SITE_ROOT."/var/cache/en/common/products.php";?>
 
 
 <?php if ($total_pages > 2) {?>
 <br />
 <div class="bottom-pagination">
-<?php include SITE_ROOT."/var/cache/en/common/navigation.php";?>
+<?php get_template_contents("common/navigation.php", false, true); include SITE_ROOT."/var/cache/en/common/navigation.php";?>
 </div>
 <br />
 <?php } ?>

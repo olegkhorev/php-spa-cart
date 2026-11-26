@@ -57,7 +57,7 @@ function register_actions() {
         success: function (data) {
           if (data == "C") {
             recaptchaOnload();
-            alert("Captcha is incorrect");
+            show_notice("{lng[Captcha is incorrect.]}");
           } else if (data == "E") {
             recaptchaOnload();
             $(".register-email-error").fadeIn();

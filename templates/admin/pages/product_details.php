@@ -161,10 +161,7 @@
 &nbsp; <button type="button" onclick="javascript: self.location='/admin/export?product={$product['productid']}';">{lng[Export]}</button>
 &nbsp; <button type="button" onclick="javascript: if (confirm('', $(this)) || confirmed) { document.pform.mode.value='clone'; document.pform.submit(); }">{lng[Clone product]}</button>
 &nbsp; <button type="button" onclick="javascript: window.open('{$current_location}/product/{$product['productid']}', '');">{lng[View product]}</button>
-&nbsp; &nbsp; &nbsp; &nbsp;
-&nbsp; &nbsp; &nbsp; &nbsp;
-&nbsp; &nbsp; &nbsp; &nbsp;
-<button type="button" onclick="javascript: if (confirm('', $(this)) || confirmed) { document.pform.mode.value='delete'; document.pform.submit(); }">{lng[Delete]}</button>
+&nbsp; <button type="button" onclick="javascript: if (confirm('', $(this)) || confirmed) { document.pform.mode.value='delete'; document.pform.submit(); }">{lng[Delete]}</button>
 {/if}
 </div>
  </td>

@@ -18,7 +18,7 @@ function login_popup(what) {
   if (mobile_screen > $(window).width()) {
     if (what == "W")
       alert("Sie müssen angemeldet sein, um auf diese Seite zuzugreifen");
-    return false;
+    return true;
   }
 
   $('.popup').addClass('popup_pointer_events');

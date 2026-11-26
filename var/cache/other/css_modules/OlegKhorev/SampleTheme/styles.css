@@ -41,6 +41,33 @@ body::-webkit-scrollbar-thumb,
 html::-webkit-scrollbar-thumb {
   background: #333;
 }
+.search-popup {
+    background: #333 !important;
+}
+.search-popup * {
+    color: #fff !important;
+}
+.search-popup .search {
+    background: #555;
+    border-radius: 30px;
+    height: 35px;
+    margin-bottom: 15px;
+    position: relative;
+    overflow: hidden;
+}
+.search-popup .search svg {
+  fill: #fff;
+}
+.search-popup input::-webkit-input-placeholder {
+  color: #fff;
+}
+.search-popup input::placeholder {
+  color: #fff;
+  opacity: 1;
+}
+.instant-search-loader {
+  --_g: no-repeat radial-gradient(circle closest-side,#ffffff 90%,#0000);
+}
 body .message-box,
 .testimonial div.name,
 .subheader table td h4,
@@ -52,6 +79,9 @@ body .message-box,
 }
 .search input[type="text"] {
   border: 0 !important;
+}
+.arrow:hover span {
+	border-color: #fff;
 }
 .res-item,
 .res-sub-item,
@@ -126,7 +156,7 @@ tr.product-details-tr *,
 .link-button:after {
   background: #777;
 }
-#home-tabs,
+:is(#home-tabs, .home-tabs-wrap),
 #product-tabs {
   border-bottom: 3px solid #333 !important;
 }
@@ -222,6 +252,9 @@ input[type="button"],
 input[type="submit"] {
   color: #fff;
   background: #333;
+}
+.main-button {
+  background: transparent;
 }
 .main-button:hover,
 button:hover,
@@ -328,7 +361,6 @@ table.product-options input,
 }
 .head-line-links > div a {
   padding-right: 30px;
-  background: #333 url(/images/down_arrow_white.png) right 10px center no-repeat;
 }
 .head-line-links > div ul,
 .head-line-links > div ul a {
@@ -396,6 +428,12 @@ table#blog_bb_buttons button {
 .options-error {
   background: transparent;
   color: #fff;
+}
+#subscribe > svg:first-child {
+  fill: #777;
+}
+.blog svg {
+    fill: #fff;
 }
 @media only screen and (max-width: 850px) {
   #head {

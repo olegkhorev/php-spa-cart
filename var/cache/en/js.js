@@ -1,85 +1,30 @@
-/*!
- * jQuery UI Touch Punch 0.2.3
- *
- * Copyright 2011–2014, Dave Furfero
- * Dual licensed under the MIT or GPL Version 2 licenses.
- *
- * Depends:
- *  jquery.ui.widget.js
- *  jquery.ui.mouse.js
- */
-!(function (a) {
-  function f(a, b) {
-    if (!(a.originalEvent.touches.length > 1)) {
-      a.preventDefault();
-      var c = a.originalEvent.changedTouches[0],
-        d = document.createEvent("MouseEvents");
-      (d.initMouseEvent(
-        b,
-        !0,
-        !0,
-        window,
-        1,
-        c.screenX,
-        c.screenY,
-        c.clientX,
-        c.clientY,
-        !1,
-        !1,
-        !1,
-        !1,
-        0,
-        null,
-      ),
-        a.target.dispatchEvent(d));
-    }
-  }
-  if (((a.support.touch = "ontouchend" in document), a.support.touch)) {
-    var e,
-      b = a.ui.mouse.prototype,
-      c = b._mouseInit,
-      d = b._mouseDestroy;
-    ((b._touchStart = function (a) {
-      var b = this;
-      !e &&
-        b._mouseCapture(a.originalEvent.changedTouches[0]) &&
-        ((e = !0),
-        (b._touchMoved = !1),
-        f(a, "mouseover"),
-        f(a, "mousemove"),
-        f(a, "mousedown"));
-    }),
-      (b._touchMove = function (a) {
-        e && ((this._touchMoved = !0), f(a, "mousemove"));
-      }),
-      (b._touchEnd = function (a) {
-        e &&
-          (f(a, "mouseup"),
-          f(a, "mouseout"),
-          this._touchMoved || f(a, "click"),
-          (e = !1));
-      }),
-      (b._mouseInit = function () {
-        var b = this;
-        (b.element.bind({
-          touchstart: a.proxy(b, "_touchStart"),
-          touchmove: a.proxy(b, "_touchMove"),
-          touchend: a.proxy(b, "_touchEnd"),
-        }),
-          c.call(b));
-      }),
-      (b._mouseDestroy = function () {
-        var b = this;
-        (b.element.unbind({
-          touchstart: a.proxy(b, "_touchStart"),
-          touchmove: a.proxy(b, "_touchMove"),
-          touchend: a.proxy(b, "_touchEnd"),
-        }),
-          d.call(b));
-      }));
-  }
-})(jQuery);
 /**
+* Flirtle
+* Copyright (c) Flirtle.com
+*
+* Released under the ... License.
+* https://flirtle.com
+*/
+(function($) {
+    const originalFocus = $.fn.focus;
+    const originalBlur  = $.fn.blur;
+    $.fn.focus = function(handler) {
+        if (typeof handler === 'function') {
+            return originalFocus.apply(this, arguments);
+        }
+
+        return originalFocus.apply(this, arguments);
+    };
+
+    $.fn.blur = function(handler) {
+        if (typeof handler === 'function') {
+            return originalBlur.apply(this, arguments);
+        }
+
+        return originalBlur.apply(this, arguments);
+    };
+
+})(jQuery);/**
 * SPA-Cart
 * Copyright (c) Oleg Khorev
 *
@@ -99,8 +44,8 @@ var $window = $(window),
   are_you_sure = "Are you sure?",
   mobile_screen = 850,
   instant_search_ajax,
-  yes = "yes",
-  no = "no",
+  yes = "Yes",
+  no = "No",
   ok = "Ok",
   chat_w = 0,
   alerts = Math.floor(Math.random() * 10000),
@@ -145,7 +90,7 @@ $(document).on("keyup", function (e) {
     if ($("html.itsinvoicepage").length) return;
 
     console.log("#");
-    console.log("# This is development tools. Please, never share any info from here to anyone.");
+    console.log("# This part is development tools. Please, never share any info from here to anyone.");
     console.log("#");
     if (!getCookie("allow_cookies") && !$("html.area-a").length) {
       $("body").append(
@@ -355,6 +300,12 @@ function ajax_clicks() {
       return false;
     });
 
+  // Correct back from checkout to cart link
+  if ($('.back-to-cart').length && mobile_screen > $(window).width()) {
+    $('.back-to-cart').addClass('ajax_link');
+    $('.back-to-cart').removeClass('cart-link');
+  }
+
   if ($(".exec_page_js").length) {
     eval($(".exec_page_js").html());
   }
@@ -444,7 +395,7 @@ function ajax_clicks() {
   });
 
   $(
-    "#menu a, a.ajax_link, .account-invoices-list a, .button_ajax_link, .ajax_mobile_link, .logo-link, .bread_crumbs a, #subcategories a, .brands a, .test-links a, .foot a",
+    "#menu a, a.ajax_link, .account-invoices-list a, .button_ajax_link, .ajax_mobile_link, .logo-link, .bread_crumbs a, #subcategories a, .brands a, .test-links a, .foot a, .cart_product_link",
   )
     .unbind("click")
     .on("click", function (e) {
@@ -518,6 +469,10 @@ function ajax_clicks() {
           recalc_menus(r[3], r[4]);
           proceed_clicks(r[3]);
           tabs_clicks();
+          // Close popups
+          if (!$('.alerts').length)
+            $('.close-popup').click();
+
           history_push = true;
         },
       });
@@ -2027,7 +1982,7 @@ function products_clicks() {
       );
       var q = photo_box.find(".view-quicklook"),
         i = photo_box.closest(".photo"),
-        product_id = i.find(".product-image").attr("id").replace("pid-", "");
+        product_id = i.find(".product-image").attr("data-id").replace("pid-", "");
 
       q.css("left", i.width() / 2 - 35 + "px");
       q.css("top", i.height() / 2 - 20 + "px");
@@ -2053,7 +2008,7 @@ function products_clicks() {
     .unbind("click")
     .on("click", function () {
       bc = false;
-      add_to_cart($(this).attr("id").replace("pid", ""), "Y", this);
+      add_to_cart($(this).attr("data-id").replace("pid", ""), "Y", this);
     });
 }
 
@@ -2448,14 +2403,14 @@ function left_filter_max_height() {
                   .fadeTo(
                     o.support.opacity ? i.duration : 0,
                     1,
-                    o.isFunction(i.onZoomIn) ? i.onZoomIn.call(a) : !1,
+                    (typeof i.onZoomIn === "function") ? i.onZoomIn.call(a) : !1,
                   ));
             }
             function n() {
               m.stop().fadeTo(
                 i.duration,
                 0,
-                o.isFunction(i.onZoomOut) ? i.onZoomOut.call(a) : !1,
+                (typeof i.onZoomOut === "function") ? i.onZoomOut.call(a) : !1,
               );
             }
             var e = o.zoom(u, c, a, i.magnify);
@@ -2510,7 +2465,7 @@ function left_filter_max_height() {
                           o.originalEvent.changedTouches[0],
                       ));
                   }),
-              o.isFunction(i.callback) && i.callback.call(a));
+              (typeof i.callback === "function") && i.callback.call(a));
           }),
           (a.src = i.url),
           o(c).one("zoom.destroy", function () {
@@ -4299,7 +4254,6 @@ function option_selected() {
       var variantid = tmp[0];
       if (!(variantid > 0)) {
         $(qadd + ".options-error").show();
-        setTimeout("hideOptionsError()", 1000);
         return false;
       }
     }
@@ -4311,7 +4265,6 @@ function option_selected() {
 
       if (!($(qadd + "#po-" + x).val() > 0)) {
         $(qadd + ".options-error").show();
-        setTimeout("hideOptionsError()", 1000);
         return false;
       }
     }
@@ -4474,6 +4427,7 @@ function add_to_cart(productid, is_quick, button) {
     });
 
     cart_clicks();
+    ajax_clicks();
   });
 
   return false;
@@ -4727,18 +4681,28 @@ function cart_actions() {
       $("#minicart").html(r);
       $("#head_mobile #minicart, #minicart-mobile").html(r);
       cart_clicks();
+      if (cart_checkout_own_page || mobile_screen > $(window).width()) {
+        $("body").append(
+          '<a class="ajax_link hidden click_history" href="/cart"></a>',
+        );
+    
+        ajax_clicks();
+        $(".click_history").click();
+        $(".click_history").remove();
+      }
     });
     removePopups();
     return false;
   });
 
-  $(".update-cart").on("click", function (e) {
+  $(".update-cart").unbind("click").on("click", function (e) {
+    func_disable_button($(".update-cart"));
     $.ajax({
       type: "POST",
       url: "/cart",
       data: $("#cartform").serialize(),
       success: function (data) {
-        $(".cart-link").click();
+        $(".cart-link").first().click();
       },
     });
 
@@ -4746,15 +4710,22 @@ function cart_actions() {
     return false;
   });
 
-  $(".remove-link").on("click", function () {
+  $(".remove-link").unbind("click").on("click", function () {
     var url = $(this).attr("href");
     $.ajax({ url: url }).done(function (r) {
       $("#minicart").html(r);
       $("#head_mobile #minicart, #minicart-mobile").html(r);
-      if ($("#minicart .cart-link").length) {
-        cart_clicks();
-        $(".cart-link").click();
-      } else removePopups();
+      if (cart_checkout_own_page || mobile_screen > $(window).width()) {
+        $("body").append(
+          '<a class="ajax_link hidden click_history" href="/cart"></a>',
+        );
+
+        ajax_clicks();
+        $(".click_history").click();
+        $(".click_history").remove();
+      } else {
+        removePopups();
+      }
     });
 
     return false;
@@ -4766,7 +4737,16 @@ function cart_clicks() {
   $(".cart-link")
     .unbind("click")
     .on("click", function () {
-      if (mobile_screen > $(window).width()) return true;
+      if (cart_checkout_own_page || mobile_screen > $(window).width()) {
+        $("body").append(
+          '<a class="ajax_link hidden click_history" href="/cart"></a>',
+        );
+
+        ajax_clicks();
+        $(".click_history").click();
+        $(".click_history").remove();
+        return false;
+      }
 
       $(".cart_popup").remove();
       if (!$(".checkout_popup").length) aload();
@@ -4863,6 +4843,7 @@ function cart_clicks() {
           cart_actions();
           coupon_actions();
           cart_clicks();
+          ajax_clicks();
         },
       });
 
@@ -4963,7 +4944,16 @@ function cart_clicks() {
   $(".checkout-link")
     .unbind("click")
     .on("click", function () {
-      if (mobile_screen > $(window).width()) return true;
+      if (cart_checkout_own_page || mobile_screen > $(window).width()) {
+        $("body").append(
+          '<a class="ajax_link hidden click_history" href="/checkout"></a>',
+        );
+
+        ajax_clicks();
+        $(".click_history").click();
+        $(".click_history").remove();
+        return false;
+      }
 
       if ($(".checkout_popup").length) {
         $(".checkout_popup").remove();
@@ -5057,7 +5047,7 @@ function cart_clicks() {
           $("#place_order *").attr("disabled", true);
           coupon_actions();
           cart_clicks();
-          init_translate();
+          ajax_clicks();
         },
       });
 
@@ -5489,11 +5479,11 @@ function checkout_actions() {
       }
     });
 
-  $(".apply_gc").on("click", function () {
+  $(".apply_gc").unbind("click").on("click", function () {
     bc = false;
     var id = alert('<div class="coupon_screen"></div>', 1, "", "coupon_alert");
     $(".coupon_screen").html(
-      '<br/><div class="group"><input type="text" size="30" required /><span class="highlight"></span><span class="bar"></span><label>Enter your Gift Card code here</label></div><div class="coupon-error"></div><button>Apply</button><br/><br/>',
+      '<h3>Please, enter your gift certificate</h3><div class="group"><input type="text" size="30" required /><span class="highlight"></span><span class="bar"></span><label>Enter your Gift Card code here</label></div><div class="coupon-error"></div><button>Apply</button><br/><br/>',
     );
     $(".coupon_screen input").on("keyup", function () {
       $(".coupon-error").hide();
@@ -5522,11 +5512,11 @@ function checkout_actions() {
     });
   });
 
-  $(".apply_coupon").on("click", function () {
+  $(".apply_coupon").unbind("click").on("click", function () {
     bc = false;
     var id = alert('<div class="coupon_screen"></div>', 1, "", "coupon_alert");
     $(".coupon_screen").html(
-      '<div class="group"><input type="text" size="30" required /><span class="highlight"></span><span class="bar"></span><label>Enter your coupon code here</label></div><div class="coupon-error"></div><button>Apply</button><br/><br/>',
+      '<h3>Please, enter your discount coupon</h3><div class="group"><input type="text" size="30" required /><span class="highlight"></span><span class="bar"></span><label>Enter your coupon code here</label></div><div class="coupon-error"></div><button>Apply</button><br/><br/>',
     );
     $(".coupon_screen input").on("keyup", function () {
       $(".coupon-error").hide();
@@ -5593,13 +5583,13 @@ function checkout_changes() {
 }
 
 function coupon_actions() {
-  $(".remove_coupon").on("click", function () {
+  $(".remove_coupon").unbind("click").on("click", function () {
     $.ajax({ url: "/checkout/remove_coupon" }).done(function () {
       refresh_coupon();
     });
   });
 
-  $(".remove_gc").on("click", function () {
+  $(".remove_gc").unbind("click").on("click", function () {
     $.ajax({ url: "/checkout/remove_gc" }).done(function () {
       refresh_coupon();
     });
@@ -5878,11 +5868,11 @@ function checkout_actions() {
       }
     });
 
-  $(".apply_gc").on("click", function () {
+  $(".apply_gc").unbind("click").on("click", function () {
     bc = false;
     var id = alert('<div class="coupon_screen"></div>', 1, "", "coupon_alert");
     $(".coupon_screen").html(
-      '<br/><div class="group"><input type="text" size="30" required /><span class="highlight"></span><span class="bar"></span><label>Enter your Gift Card code here</label></div><div class="coupon-error"></div><button>Apply</button><br/><br/>',
+      '<h3>Please, enter your gift certificate</h3><div class="group"><input type="text" size="30" required /><span class="highlight"></span><span class="bar"></span><label>Enter your Gift Card code here</label></div><div class="coupon-error"></div><button>Apply</button><br/><br/>',
     );
     $(".coupon_screen input").on("keyup", function () {
       $(".coupon-error").hide();
@@ -5911,11 +5901,11 @@ function checkout_actions() {
     });
   });
 
-  $(".apply_coupon").on("click", function () {
+  $(".apply_coupon").unbind("click").on("click", function () {
     bc = false;
     var id = alert('<div class="coupon_screen"></div>', 1, "", "coupon_alert");
     $(".coupon_screen").html(
-      '<div class="group"><input type="text" size="30" required /><span class="highlight"></span><span class="bar"></span><label>Enter your coupon code here</label></div><div class="coupon-error"></div><button>Apply</button><br/><br/>',
+      '<h3>Please, enter your discount coupon</h3><div class="group"><input type="text" size="30" required /><span class="highlight"></span><span class="bar"></span><label>Enter your coupon code here</label></div><div class="coupon-error"></div><button>Apply</button><br/><br/>',
     );
     $(".coupon_screen input").on("keyup", function () {
       $(".coupon-error").hide();
@@ -5982,13 +5972,13 @@ function checkout_changes() {
 }
 
 function coupon_actions() {
-  $(".remove_coupon").on("click", function () {
+  $(".remove_coupon").unbind("click").on("click", function () {
     $.ajax({ url: "/checkout/remove_coupon" }).done(function () {
       refresh_coupon();
     });
   });
 
-  $(".remove_gc").on("click", function () {
+  $(".remove_gc").unbind("click").on("click", function () {
     $.ajax({ url: "/checkout/remove_gc" }).done(function () {
       refresh_coupon();
     });
@@ -6472,7 +6462,7 @@ function new_comment() {
     return false;
   }
 
-  document.blogform.submit();
+  $(document.blogform).submit();
 }
 
 var doc = document,

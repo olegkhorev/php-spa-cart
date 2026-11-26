@@ -59,4 +59,4 @@ Payment Indent: <?php echo $order['payment_indent'];?>
 </tr>
 </table>
 <br /><br />
-<?php include SITE_ROOT."/var/cache/en/invoice/body.php";?>
+<?php get_template_contents("invoice/body.php", false, true); include SITE_ROOT."/var/cache/en/invoice/body.php";?>

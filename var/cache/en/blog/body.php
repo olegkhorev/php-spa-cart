@@ -35,7 +35,7 @@
     ? $blog["comments"]
     : "0"; ?> Blog comments</h3>
 
-<div style="text-align:right"><?php include SITE_ROOT."/var/cache/en/common/navigation.php";?></div>
+<div style="text-align:right"><?php get_template_contents("common/navigation.php", false, true); include SITE_ROOT."/var/cache/en/common/navigation.php";?></div>
 
 <div class="blog_comments">
 <?php foreach ($comments as $k=>$v) {?>
@@ -101,7 +101,7 @@ Comment from <b><?php echo $v['name'] ? $v['name'] : $v['firstname'].' '.$v['las
 <?php } else if ($blogs) {?>
 <h1>Blog</h1><br />
 <?php if ($total_pages > 2) {?>
-<div style="text-align:right"><?php include SITE_ROOT."/var/cache/en/common/navigation.php";?></div>
+<div style="text-align:right"><?php get_template_contents("common/navigation.php", false, true); include SITE_ROOT."/var/cache/en/common/navigation.php";?></div>
 <br />
 <?php } ?>
 <div class="blogs news-item news-item-page">
@@ -129,7 +129,7 @@ Comment from <b><?php echo $v['name'] ? $v['name'] : $v['firstname'].' '.$v['las
 <?php } ?>
 </div>
 <?php if ($total_pages > 2) {?>
-<div style="text-align:right"><?php include SITE_ROOT."/var/cache/en/common/navigation.php";?></div>
+<div style="text-align:right"><?php get_template_contents("common/navigation.php", false, true); include SITE_ROOT."/var/cache/en/common/navigation.php";?></div>
 <br />
 <?php } ?>
 <?php } else  { ?>

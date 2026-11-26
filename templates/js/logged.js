@@ -45,9 +45,7 @@ function profile_popup(url_add) {
         dataType: "json",
         url: "/profile/" + url_add,
         error: function () {
-          alert(
-            "We cannot process this request. Please, contact site administrator.",
-          );
+          show_notice("{lng[We cannot process this request. Please, contact us.]}");
         },
         success: function (r) {
           $(".load").html('<span class="close close-popup">x</span>' + r[0]);
@@ -130,9 +128,9 @@ function profile_clicks() {
         success: function (data) {
           func_disable_button($('form[name="user_form"] button'), 1);
           if (data == "Email") {
-            alert("Enterd email already registered for another user");
+            show_notice("{lng[Enterd email already registered for another user]}");
           } else {
-            alert("Your information has been successfully updated");
+            show_notice("{lng[Your information has been successfully updated]}");
           }
         },
       });

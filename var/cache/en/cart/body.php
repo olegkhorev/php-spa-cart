@@ -35,9 +35,9 @@
 	<?php if (!$v['variant_photo'] && !$v['photo']) {?>
 	<br /><br />
 	<?php } ?>
-<div class="cart-mobile-title-line"><?php include SITE_ROOT."/var/cache/en/cart/mobile_title.php";?></div></div>
+<div class="cart-mobile-title-line"><?php get_template_contents("cart/mobile_title.php", false, true); include SITE_ROOT."/var/cache/en/cart/mobile_title.php";?></div></div>
 	  </td>
-	  <td><?php include SITE_ROOT."/var/cache/en/cart/mobile_title.php";?></td>
+	  <td><?php get_template_contents("cart/mobile_title.php", false, true); include SITE_ROOT."/var/cache/en/cart/mobile_title.php";?></td>
 	<td class="td-center" style="text-align:center;">
 <?php if ($v['gift_card']) {?>
 	<?php echo '<span class="currency">'.currency_symbol().'</span>'.price_format_currency($v['amount']); ?>

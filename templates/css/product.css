@@ -743,7 +743,7 @@ img.mark-red {
   width: 0;
 }
 #send_to_friend input[type="text"] {
-  width: 300px;
+  width: 100%;
 }
 #send_message_box {
   padding: 5px 0 22px 0;

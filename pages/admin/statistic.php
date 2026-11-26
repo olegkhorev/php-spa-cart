@@ -15,7 +15,7 @@ $today = mktime(0, 0, 0, date('n'), date('j'), date('Y'));
 $orders_today = [];
 $orders = $db->all("SELECT orderid, date, total FROM orders WHERE date>=".$today);
 foreach ($orders as $k => $v) {
-    $orders_today[date('m/d', $v['date'])] += $v['total'];
+    $orders_today[date('h:00a', $v['date'])] += $v['total'];
 }
 
 $template['orders_today'] = $orders_today;

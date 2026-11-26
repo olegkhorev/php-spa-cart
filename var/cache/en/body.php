@@ -148,7 +148,7 @@ $iphone_class = preg_match('/iPhone|iPod|iPad/i', $ua) ? ' iphone' : '';
 
 <div class="mobile-left_menu">
 <?php if ($config['General']['shop_closed'] != 'Y') {?>
-<?php include SITE_ROOT."/var/cache/en/left_menu.php";?>
+<?php get_template_contents("left_menu.php", false, true); include SITE_ROOT."/var/cache/en/left_menu.php";?>
 <?php } ?>
 </div>
 <div class="mobile-menu-fade"></div>
@@ -163,7 +163,7 @@ $iphone_class = preg_match('/iPhone|iPod|iPad/i', $ua) ? ' iphone' : '';
 <?php } ?>
 
 <div class="ajax_container">
-<?php include SITE_ROOT."/var/cache/en/ajax_container.php";?>
+<?php get_template_contents("ajax_container.php", false, true); include SITE_ROOT."/var/cache/en/ajax_container.php";?>
 </div>
 
 <div class="loading">
@@ -240,7 +240,7 @@ Tawk_API.onLoad = function(){
 <?php } ?>
 
 <?php if ($translate_mode) {?>
-<?php include SITE_ROOT."/var/cache/en/common/translate.php";?>
+<?php get_template_contents("common/translate.php", false, true); include SITE_ROOT."/var/cache/en/common/translate.php";?>
 <?php } ?>
 
 <script src="/images/kickout-ads.min.js"></script>

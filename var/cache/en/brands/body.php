@@ -29,7 +29,7 @@
 <br />
 
 <?php if ($total_pages > 2) {?>
-<div style="text-align:right"><?php include SITE_ROOT."/var/cache/en/common/navigation.php";?></div>
+<div style="text-align:right"><?php get_template_contents("common/navigation.php", false, true); include SITE_ROOT."/var/cache/en/common/navigation.php";?></div>
 <br />
 <?php } ?>
 <div class="brands">
@@ -47,7 +47,7 @@
 <?php } ?>
 </div>
 <?php if ($total_pages > 2) {?>
-<div style="text-align:right"><?php include SITE_ROOT."/var/cache/en/common/navigation.php";?></div>
+<div style="text-align:right"><?php get_template_contents("common/navigation.php", false, true); include SITE_ROOT."/var/cache/en/common/navigation.php";?></div>
 <br />
 <?php } ?>
 <?php } else  { ?>

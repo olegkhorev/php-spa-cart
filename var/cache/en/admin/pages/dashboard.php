@@ -33,7 +33,7 @@
 
 
 <div class="income_all_chart hidden"><?php echo json_encode($last_30_days_all); ?></div>
-<h1>All orders</h1>
+<h1>Month's orders</h1>
 <div class="chart-container chart-container--line" style="max-width: calc(100% - 60px);">
 <canvas id="chart-line"></canvas>
 </div>
@@ -47,7 +47,7 @@
 $products = $featured_products;
 $type = "F";
 ?>
-<?php include SITE_ROOT."/var/cache/en/admin/pages/dashboard_products.php";?>
+<?php get_template_contents("admin/pages/dashboard_products.php", false, true); include SITE_ROOT."/var/cache/en/admin/pages/dashboard_products.php";?>
  </td>
  <td>
 <h3>New arrivals</h3>
@@ -55,7 +55,7 @@ $type = "F";
 $products = $new_arrivals;
 $type = "N";
 ?>
-<?php include SITE_ROOT."/var/cache/en/admin/pages/dashboard_products.php";?>
+<?php get_template_contents("admin/pages/dashboard_products.php", false, true); include SITE_ROOT."/var/cache/en/admin/pages/dashboard_products.php";?>
  </td>
  <td>
 <h3>Bestsellers</h3>
@@ -63,7 +63,7 @@ $type = "N";
 $products = $bestsellers;
 $type = "B";
 ?>
-<?php include SITE_ROOT."/var/cache/en/admin/pages/dashboard_products.php";?>
+<?php get_template_contents("admin/pages/dashboard_products.php", false, true); include SITE_ROOT."/var/cache/en/admin/pages/dashboard_products.php";?>
  </td>
  <td>
 <h3>Most viewed</h3>
@@ -71,7 +71,7 @@ $type = "B";
 $products = $most_viewed;
 $type = "M";
 ?>
-<?php include SITE_ROOT."/var/cache/en/admin/pages/dashboard_products.php";?>
+<?php get_template_contents("admin/pages/dashboard_products.php", false, true); include SITE_ROOT."/var/cache/en/admin/pages/dashboard_products.php";?>
  </td>
 </tr>
 </table>

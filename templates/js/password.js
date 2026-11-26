@@ -54,7 +54,7 @@ pw_form["con_pswd"] = "{lng[Confirm password]}";
 
       if ($("input[name=new_pswd]").val() != $("input[name=con_pswd]").val()) {
         er.show();
-        alert("{lng[Please, enter correct confirm password field]}");
+        show_notice("{lng[Please, enter correct confirm password field.]}");
         return false;
       } else e.hide();
 

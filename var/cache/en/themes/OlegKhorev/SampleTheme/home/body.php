@@ -15,10 +15,27 @@
 </div>
 </div></div>
 
-<div style="text-align:center">
-<br /><br />
-Sample template theme
+<div class="banners-homepage">
+<?php foreach ($banners as $k=>$v) {?>
+<div id="hp_banner_<?php echo $k;?>" class="slide<?php if (!$k) {?> active<?php } ?>">
+<?php if ($v['url']) {?>
+<a href="<?php echo escape($v['url'], 2);; ?>">
+<?php } ?>
+<img src="/images/spacer.gif" class="hp-banner" style="background: url('/images/christmas_banner.jpg');" alt="<?php echo escape($v['alt'], 2);; ?>" />
+<?php if ($v['url']) {?>
+</a>
+<?php } ?>
 </div>
+<?php } ?>
+
+    <div class="arrow arrow-left">
+    <span></span>
+    </div>
+    <div class="arrow arrow-right">
+    <span></span>
+    </div>
+</div>
+
 <div class="clear"></div>
 
 <?php if (lng('Site title') || lng('Site description')) {?>
@@ -100,7 +117,7 @@ if (lng("Site description")) {
   </div>
   <div class="carousel-wrapper">
     <div class="content-pr">
- <?php include SITE_ROOT."/var/cache/en/common/products.php";?>
+ <?php get_template_contents("common/products.php", false, true); include SITE_ROOT."/var/cache/en/common/products.php";?>
      </div>
   </div>
 </div>

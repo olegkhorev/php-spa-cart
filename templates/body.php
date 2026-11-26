@@ -190,6 +190,8 @@ $iphone_class = preg_match('/iPhone|iPod|iPad/i', $ua) ? ' iphone' : '';
 </div>
 {/if}
 
+<ul class="top_notifications"></ul>
+
 <form method="POST" action="/search" class="searchform searchform_desktop">
 <div class="search-popup">
  <span class="close close-popup">x</span>

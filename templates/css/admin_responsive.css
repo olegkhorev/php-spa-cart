@@ -71,6 +71,9 @@
   width: 1000px;
 }
 @media only screen and (max-width: 650px) {
+  table {
+    max-width: 100%;
+  }
   .lines-table.shipping-charges-table td, .lines-table.shipping-charges-table th {
     border-radius: 0 !important;
   }
@@ -172,6 +175,10 @@
     width: 45%;
     text-align: left !important;
     display: inline-block;
+    padding: 10px 15px;
+  }
+  .admin-tabs li.active {
+    border-radius: 10px;
   }
   .admin-tabs li a {
     width: 100%;

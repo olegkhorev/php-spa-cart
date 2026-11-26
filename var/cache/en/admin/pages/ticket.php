@@ -35,7 +35,7 @@
 <tr>
         <td class="td-align-right">Type:</td>
         <td class="td-spacer" style="width:10px">&nbsp;</td>
-        <td><?php include SITE_ROOT."/var/cache/en/common/ticket_type.php";?>
+        <td><?php get_template_contents("common/ticket_type.php", false, true); include SITE_ROOT."/var/cache/en/common/ticket_type.php";?>
 <?php if ($product) {?>
 <a href="/admin/products/<?php echo $product['productid'];?>" target="_blank"><?php echo $product['name'];?></a>
 <?php } ?>
@@ -77,7 +77,7 @@
         <td class="td-spacer" style="width:10px">&nbsp;</td>
         <td>
         <?php $name="ticket[priority]"; $value=$ticket['priority'];; ?>
-		<?php include SITE_ROOT."/var/cache/en/common/ticket_priority.php";?>
+		<?php get_template_contents("common/ticket_priority.php", false, true); include SITE_ROOT."/var/cache/en/common/ticket_priority.php";?>
         </td>
 </tr>
 
@@ -111,7 +111,7 @@
  <td class="td-spacer" style="width:10px">&nbsp;</td>
  <td>
 <?php $name="ticket[status]"; $status=$ticket['status'];; ?>
-<?php include SITE_ROOT."/var/cache/en/common/ticket_status.php";?>
+<?php get_template_contents("common/ticket_status.php", false, true); include SITE_ROOT."/var/cache/en/common/ticket_status.php";?>
  </td>
 </tr>
 
@@ -188,7 +188,7 @@ function edit_message(id) {
 </script>
 
 <?php  if ($total_pages > 2) { ?>
-<?php include SITE_ROOT."/var/cache/en/common/navigation.php";?>
+<?php get_template_contents("common/navigation.php", false, true); include SITE_ROOT."/var/cache/en/common/navigation.php";?>
 <br />
 <?php  } ?>
 

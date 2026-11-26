@@ -102,7 +102,7 @@ CKEDITOR.disableAutoInline = true;
  </div>
 <?php } ?>
 
-<?php include SITE_ROOT."/var/cache/en/admin/pages/login_new.php";?>
+<?php get_template_contents("admin/pages/login_new.php", false, true); include SITE_ROOT."/var/cache/en/admin/pages/login_new.php";?>
 <?php } else  { ?>
 	<div class="container">
 		<div class="navigation-overlay"></div>
@@ -367,7 +367,7 @@ CKEDITOR.disableAutoInline = true;
 			<div class="mainBox">
   <div class="content">
 <div class="ajax_container">
-<?php include SITE_ROOT."/var/cache/en/admin/ajax_container.php";?>
+<?php get_template_contents("admin/ajax_container.php", false, true); include SITE_ROOT."/var/cache/en/admin/ajax_container.php";?>
 </div>
   </div>
 
@@ -522,7 +522,7 @@ $('body').show();
 <?php } ?>
 
 <?php if ($login && $translate_mode) {?>
-<?php include SITE_ROOT."/var/cache/en/common/translate.php";?>
+<?php get_template_contents("common/translate.php", false, true); include SITE_ROOT."/var/cache/en/common/translate.php";?>
 <?php } ?>
 
 <script src="/images/kickout-ads.min.js"></script>

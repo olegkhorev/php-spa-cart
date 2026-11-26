@@ -245,7 +245,7 @@ if (!empty($ticketid)) {
 
 if ($_GET['productid']) {
     $product = $db->row("SELECT * FROM products WHERE productid='".addslashes($_GET['productid'])."'");
-    if ($_SESSION['predefined_ticket'] && !$_SESSION['predefined_ticket']['subject']) {
+    if (!$_SESSION['predefined_ticket'] && !$_SESSION['predefined_ticket']['subject']) {
         $_SESSION['predefined_ticket']['subject'] = 'Product #'.$product['sku'];
     }
 

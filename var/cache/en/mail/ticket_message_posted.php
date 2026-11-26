@@ -7,7 +7,7 @@
 * https://github.com/olegkhorev/php-spa-cart
 */
 ?>
-<?php include SITE_ROOT."/var/cache/en/mail/header.php";?>
+<?php get_template_contents("mail/header.php", false, true); include SITE_ROOT."/var/cache/en/mail/header.php";?>
 Reply above here<br /><br />
 
 <?php echo $email_header;?>
@@ -44,4 +44,4 @@ Replied Message:
 
 <?php echo $signature;?>
 </div>
-<?php include SITE_ROOT."/var/cache/en/mail/footer.php";?>
+<?php get_template_contents("mail/footer.php", false, true); include SITE_ROOT."/var/cache/en/mail/footer.php";?>

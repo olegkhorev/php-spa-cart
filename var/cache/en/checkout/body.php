@@ -253,7 +253,7 @@ states.<?php echo $v['code'];?>.states[<?php echo $k;?>] = {code: "<?php echo $s
 </form>
  </td>
  <td id="place_order" class="opacity-03">
-<?php include SITE_ROOT."/var/cache/en/checkout/right_part.php";?>
+<?php get_template_contents("checkout/right_part.php", false, true); include SITE_ROOT."/var/cache/en/checkout/right_part.php";?>
  </td>
 </tr>
 </table>

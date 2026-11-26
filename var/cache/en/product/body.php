@@ -431,7 +431,7 @@ options[<?php echo $oid;?>] = [];
 <div class="tab-content hidden product-tab" id="tab-2">
 <h3 class="its4mobile">Related products</h3>
 <?php $products = $related_products; $per_row = 4;; ?>
-<?php include SITE_ROOT."/var/cache/en/common/products.php";?>
+<?php get_template_contents("common/products.php", false, true); include SITE_ROOT."/var/cache/en/common/products.php";?>
 </div>
 <?php } ?>
 
@@ -514,7 +514,7 @@ options[<?php echo $oid;?>] = [];
   <div class="carousel-wrapper">
     <div class="content-pr">
 <?php $products = $recommends; $per_row = 4;; ?>
-<?php include SITE_ROOT."/var/cache/en/common/products.php";?>
+<?php get_template_contents("common/products.php", false, true); include SITE_ROOT."/var/cache/en/common/products.php";?>
      </div>
   </div>
 </div>

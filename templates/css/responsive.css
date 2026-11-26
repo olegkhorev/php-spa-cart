@@ -100,7 +100,7 @@
 .res-zoom {
   z-index: 1;
   width: 339px;
-  height: 410px;
+  height: 420px;
   background: #fff;
   position: absolute;
   top: -5px;
@@ -1482,6 +1482,14 @@
   }
 }
 @media only screen and (max-width: 500px) {
+  .top_notifications {
+    width: 80%;
+  }
+  .top_notifications .top_toast {
+    width: 100%;
+    font-size: 1rem;
+    margin-left: 20px;
+  }
   .instant-search, .search {
     width: 280px;
   }

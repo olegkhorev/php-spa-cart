@@ -8,4 +8,4 @@
 */
 ?>
 <?php $oid = 1;; ?>
-<?php include SITE_ROOT."/var/cache/en/product/body.php";?>
+<?php get_template_contents("product/body.php", false, true); include SITE_ROOT."/var/cache/en/product/body.php";?>

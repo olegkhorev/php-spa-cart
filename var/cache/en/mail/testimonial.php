@@ -7,7 +7,7 @@
 * https://github.com/olegkhorev/php-spa-cart
 */
 ?>
-<?php include SITE_ROOT."/var/cache/en/mail/header.php";?>
+<?php get_template_contents("mail/header.php", false, true); include SITE_ROOT."/var/cache/en/mail/header.php";?>
 <?php echo $email_header;?>
 Hello,
 <br /><br />
@@ -16,4 +16,4 @@ Hello,
 <a href="<?php echo $http_location;?>/admin/testimonials"><?php echo $http_location;?>/admin/testimonials</a>
 <br /><br />
 <?php echo $signature;?>;
-<?php include SITE_ROOT."/var/cache/en/mail/footer.php";?>
+<?php get_template_contents("mail/footer.php", false, true); include SITE_ROOT."/var/cache/en/mail/footer.php";?>

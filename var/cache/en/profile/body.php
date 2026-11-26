@@ -125,7 +125,7 @@ You have no orders yet.
 <?php $name="pending_membershipid"; $value = $userinfo['pending_membershipid'];; ?>
     <div class="group group-select">
  <label>Sign up for membership:</label>
-<?php include SITE_ROOT."/var/cache/en/common/membership.php";?>
+<?php get_template_contents("common/membership.php", false, true); include SITE_ROOT."/var/cache/en/common/membership.php";?>
     </div>
 <?php } ?>
 
@@ -212,7 +212,7 @@ You have no orders yet.
 <?php $name="pending_membershipid"; $value = $userinfo['pending_membershipid'];; ?>
 <tr>
  <td class="name">Sign up for membership:</td>
- <td><?php include SITE_ROOT."/var/cache/en/common/membership.php";?></td>
+ <td><?php get_template_contents("common/membership.php", false, true); include SITE_ROOT."/var/cache/en/common/membership.php";?></td>
 </tr>
 <?php } ?>
 

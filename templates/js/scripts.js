@@ -1069,10 +1069,10 @@ function close_ticket(id, what) {
   if (what == "1") {
     $("#ticket-status-" + id).html("{lng[Closed]}");
     var sid = "C";
-    alert("Ticket closed");
+    show_notice("Ticket closed");
   } else {
     $("#ticket-status-" + id).html("{lng[Cancelled]}");
-    alert("Ticket cancelled");
+    show_notice("Ticket cancelled");
     var sid = "3";
   }
 
@@ -1193,4 +1193,34 @@ function search_form_init() {
   $('.search-popup .close-popup').on('click', function() {
     $('.search-fade').click();
   });
+}
+
+var top_notifications;
+const removeTop_toast = (top_toast) => {
+  top_toast.classList.add("hide");
+  if (top_toast.timeoutId) clearTimeout(top_toast.timeoutId); // Clearing the timeout for the top_toast
+  setTimeout(() => top_toast.remove(), 500); // Removing the top_toast after 500ms
+};
+
+const createTop_toast = (text, timer, type) => {
+  if (!type) type = "";
+
+  var top_toast = document.createElement("li");
+  top_toast.className = `top_toast success ${type}`;
+  top_toast.innerHTML = `<div class="top_column">
+                        <span>${text}</span>
+                    </div>
+                    <i>×</i>`;
+
+  top_toast.style.setProperty("--duration", parseInt(timer) / 1000 + "s");
+  top_notifications = document.querySelector(".top_notifications");
+  top_notifications.append(top_toast);
+  top_toast.timeoutId = setTimeout(() => removeTop_toast(top_toast), timer);
+  top_toast.addEventListener("click", () => removeTop_toast(top_toast));
+};
+
+function show_notice(text, delay, type) {
+  if (!delay) delay = 4000;
+
+  createTop_toast(text, delay, type);
 }

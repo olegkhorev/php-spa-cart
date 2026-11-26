@@ -135,6 +135,9 @@ select {
   padding: 19px 40px 19px 20px;
   background: #fff url(/images/select.png) right 20px center no-repeat !important;
 }
+select[multiple] {
+    background-image: none !important;
+}
 #popup_product select {
   border-radius: 10px;
 }

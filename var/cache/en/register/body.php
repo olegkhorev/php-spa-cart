@@ -50,7 +50,7 @@
 <?php $name="pending_membershipid"; $value = 0;; ?>
     <div class="group group-select">
  <label>Sign up for membership:</label>
-<?php include SITE_ROOT."/var/cache/en/common/membership.php";?>
+<?php get_template_contents("common/membership.php", false, true); include SITE_ROOT."/var/cache/en/common/membership.php";?>
     </div>
 <?php } ?>
 

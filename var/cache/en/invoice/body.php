@@ -28,7 +28,7 @@ There was an error processing your order. Please, try checkout again.
 </div>
 <?php } ?>
 <?php } ?>
-<div style="width: 650px; margin: 0 auto; background: #fff; padding: 10px; <?php if ($get['2'] != 'print' && !$is_mail) {?>border: 1px solid #ccc;<?php } ?>" class="invoice">
+<div style="max-width: 870px; width: 100%; margin: 0 auto; background: #fff; padding: 10px; <?php if ($get['2'] != 'print' && !$is_mail) {?>border: 1px solid #ccc;<?php } ?>" class="invoice">
 <h1 style="text-align: center;">Invoice</h1>
 
 <table class="invoice-table" style="width: 100%; margin: 10px auto 10px auto;">
@@ -60,7 +60,7 @@ Tracking number: <?php echo $order['tracking'];?>
  <td class="invoice-table-td-2" style="vertical-align: top;">
 <h2 style="margin: 0; padding: 10px 0; text-align: center;">Company information</h2>
 <b><?php echo $config['Company']['company_name'];?></b><br />
-<a href="<?php echo $https_location;?>" target="_blank"><?php echo $https_location;?></a><br /><br />
+<a href="<?php echo $https_location;?>" target="_blank" style="color: black; text-decoration: none;"><?php echo $https_location;?></a><br /><br />
 <?php echo $config['Company']['location_address'];?>, <?php echo $config['Company']['location_city'];?><br />
 <?php echo $config['Company']['location_zipcode'];?>, <?php echo $config['Company']['location_statename'];?><br />
 <?php echo $config['Company']['location_countryname'];?><br />
@@ -164,7 +164,7 @@ Tracking number: <?php echo $order['tracking'];?>
  <?php $url = $v['cleanurl'] ? $v['cleanurl'] .'.html' : 'product/'.$v['productid'];; ?>
 <?php } ?>
 	<tr>
-	 <td class="image hideonmobile" style="vertical-align: top; padding-right: 10px;"><a href="<?php echo $https_location;?>/<?php echo $url;?>" class="ajax_link">
+	 <td class="image hideonmobile" style="vertical-align: top; padding-right: 10px; min-width: 100px;" align="center"><a href="<?php echo $https_location;?>/<?php echo $url;?>" class="ajax_link">
 <?php if ($v['variant_photo']) {?>
 <?php $image = $v["variant_photo"]; $image['new_width'] = 100; $image['new_height'] = 100; include SITE_ROOT . "/includes/variant_image.php"; ?>
 <?php } else if ($v['photo']) {?>
@@ -181,7 +181,7 @@ Gift Card key phrase: <?php echo $v['gift_card'];?>
 <?php } ?>
 <?php } ?>
 <?php } else  { ?>
-<a href="<?php echo $https_location;?>/<?php echo $url;?>" class="ajax_link"><?php echo $v['name'];?></a>
+<a href="<?php echo $https_location;?>/<?php echo $url;?>" class="ajax_link" style="color: black; text-decoration: none;"><?php echo $v['name'];?></a>
 <?php /* ?>
 <?php if ($v['weight']) {?>
 <br />
@@ -250,7 +250,7 @@ Ordered amount: <?php echo $v['quantity'];?>
 <tr>
  <td style="width: 50%;"></td>
  <td style="text-align: right;">
-<table class="subtotal" style="border-top: 1px solid black; border-collapse: collapse;">
+<table class="subtotal" style="border-top: 1px solid black; border-collapse: collapse;" width="100%">
 <tr>
  <td style="width: 250px; text-align: right;">Subtotal:</td>
  <td style="width: 70px; text-align: right;"><?php echo '<span class="currency">'.currency_symbol().'</span>'.price_format_currency($order['subtotal']); ?></td>

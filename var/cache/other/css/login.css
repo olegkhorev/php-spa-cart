@@ -6,8 +6,9 @@
 * https://github.com/olegkhorev/php-spa-cart
 */
 .alert_message.register_alert, .alert_message.login_alert {
-    width: 400px;
-    margin-left: -230px;
+    width: 560px;
+    margin-left: -280px;
+    box-sizing: border-box;
 }
 .login_error,
 .register_error {

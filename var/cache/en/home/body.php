@@ -129,7 +129,7 @@ if (lng("Site description")) {
   </div>
   <div class="carousel-wrapper">
     <div class="content-pr">
- <?php include SITE_ROOT."/var/cache/en/common/products.php";?>
+ <?php get_template_contents("common/products.php", false, true); include SITE_ROOT."/var/cache/en/common/products.php";?>
      </div>
   </div>
 </div>
@@ -172,7 +172,7 @@ if (lng("Site description")) {
   </div>
   <div class="carousel-wrapper">
     <div class="content-pr">
- <?php include SITE_ROOT."/var/cache/en/common/products.php";?>
+ <?php get_template_contents("common/products.php", false, true); include SITE_ROOT."/var/cache/en/common/products.php";?>
      </div>
   </div>
 </div>
@@ -214,7 +214,7 @@ if (lng("Site description")) {
   </div>
   <div class="carousel-wrapper">
     <div class="content-pr">
- <?php include SITE_ROOT."/var/cache/en/common/products.php";?>
+ <?php get_template_contents("common/products.php", false, true); include SITE_ROOT."/var/cache/en/common/products.php";?>
      </div>
   </div>
 </div>
@@ -256,7 +256,7 @@ if (lng("Site description")) {
   </div>
   <div class="carousel-wrapper">
     <div class="content-pr">
- <?php include SITE_ROOT."/var/cache/en/common/products.php";?>
+ <?php get_template_contents("common/products.php", false, true); include SITE_ROOT."/var/cache/en/common/products.php";?>
      </div>
   </div>
 </div>

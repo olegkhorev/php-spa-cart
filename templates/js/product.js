@@ -82,12 +82,12 @@ function product_clicks() {
         }).done(function (r) {
           func_disable_button($('.gift_cards button'), 1);
           if (r) {
-            alert("Gift Card added to cart");
+            show_notice("Gift Card added to cart");
             $("#minicart").html(r);
             $("#head_mobile #minicart, #minicart-mobile").html(r);
             cart_clicks();
           } else {
-            alert("Please, enter numeric value");
+            show_notice("Please, enter numeric value");
           }
         });
       }
@@ -1086,7 +1086,7 @@ function product_options(o) {
       if (cnt == cnt2) {
         $('[name="options_ex"]').val(1);
         bc = false;
-        alert("{lng[This options combination is not available]}");
+        show_notice("{lng[This options combination is not available]}");
       } else {
         $('[name="options_ex"]').val(0);
       }
@@ -1182,7 +1182,7 @@ function product_options(o) {
     if (!ex_ok) {
       $('[name="options_ex"]').val(1);
       bc = false;
-      alert("{lng[This options combination is not available]}");
+      show_notice("{lng[This options combination is not available]}");
     } else $('[name="options_ex"]').val(0);
   }
 
@@ -1870,7 +1870,7 @@ function add_to_cart(productid, is_quick, button) {
     unload();
     func_disable_button($(button), 1);
     if (r == "1") {
-      alert("{lng[Please, select options]}");
+      show_notice("{lng[Please, select options]}");
       return false;
     }
 
@@ -2022,7 +2022,7 @@ function send_to_friend() {
 
 function add_review() {
   if (!$('#tab-5 [name="rating"]').val()) {
-    alert("Please, select your rating.");
+    show_notice("Please, select your rating.");
     return false;
   }
 
@@ -2044,15 +2044,15 @@ function add_review() {
   }).done(function (r) {
     unload();
     if (r == "1") {
-      alert("{lng[Please, enter your name and message]}");
+      show_notice("{lng[Please, enter your name and message]}");
       return false;
     } else if (r == "2") {
       recaptchaOnload();
-      alert("{lng[Captcha is incorrect]}");
+      show_notice("{lng[Captcha is incorrect]}");
       return false;
     } else if (r == "3") {
       recaptchaOnload();
-      alert("{lng[Your review has been sent to moderation]}");
+      show_notice("{lng[Your review has been sent to moderation]}");
       $('#tab-5 [name="name"]').val("");
       $('#tab-5 [name="message"]').val("");
       return false;
@@ -2068,7 +2068,7 @@ function add_wishlist(id) {
       $('.mobile_wishlist_link').click();
     }
 
-    alert("{lng[Product has been added to your Wishlist]}");
+    show_notice("{lng[Product has been added to your Wishlist]}");
   });
 }
 
@@ -2081,6 +2081,7 @@ function buy_one_click(pid) {
     "",
     "buy_one_click",
   );
+
   $(".buy_one_click a.main-button").on("click", function () {
     var val = $(".buy_one_click input").val();
     if (!val) return false;
@@ -2089,11 +2090,11 @@ function buy_one_click(pid) {
     }).done(function (r) {
       $(".buy_one_click").remove();
       if (r == "N") {
-        alert(
+        show_notice(
           "{lng[You can require quick sale not more than once per 10 seconds]}",
         );
       } else {
-        alert("{lng[Please, allow us a few minutes to receive your request]}");
+        show_notice("{lng[Please, allow us a few minutes to receive your request]}");
       }
     });
 

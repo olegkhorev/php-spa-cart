@@ -52,7 +52,7 @@ function errorHandler($n, $m, $f, $l)
     if (DEVELOPMENT) {
         $_SESSION['alerts'][] = array(
             'type'		=> 'e',
-            'content'	=> lng('PHP error happens.').'<br />'.str_replace("\n", "<br />", $error)
+            'content'	=> lng('PHP error happened.').'<br />'.str_replace("\n", "<br />", $error)
         );
     }
 
@@ -84,10 +84,12 @@ function errorShutdown()
     $string = date('H:i:s j.n.y').': '.$error;
 
     $string .= "\nREQUEST_URI: ".$_SERVER['REQUEST_URI']."\n";
-    echo '<pre>';
-    echo $string;
-
     $string .= "\n---\n\n";
+    if (DEVELOPMENT) {
+        echo '<pre>';
+        echo $string;
+    }
+
     $fp = fopen(SITE_ROOT.'/var/log/php-'.date('Y-m-d').'.log', 'a+');
     fputs($fp, $string);
     fclose($fp);
@@ -116,7 +118,7 @@ function log_sql($string)
     if (DEVELOPMENT) {
         $_SESSION['alerts'][] = array(
             'type'		=> 'e',
-            'content'	=> lng('MySQL error happens.').'<br />'.str_replace("\n", "<br />", $error)
+            'content'	=> lng('MySQL error happened.').'<br />'.str_replace("\n", "<br />", $error)
         );
     }
 

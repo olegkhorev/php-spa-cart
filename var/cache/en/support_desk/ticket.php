@@ -11,7 +11,7 @@
 <?php $predefined = array();; ?>
 <?php } ?>
 <?php if ($ticket) {?>
-<h1>Ticket #<?php echo $ticket['ticketid'];?> (<span id="ticket-status-<?php echo $ticket['ticketid'];?>"><?php $mode = "static"; $status=$ticket['status'];; ?><?php include SITE_ROOT."/var/cache/en/common/ticket_status.php";?></span>)</h1>
+<h1>Ticket #<?php echo $ticket['ticketid'];?> (<span id="ticket-status-<?php echo $ticket['ticketid'];?>"><?php $mode = "static"; $status=$ticket['status'];; ?><?php get_template_contents("common/ticket_status.php", false, true); include SITE_ROOT."/var/cache/en/common/ticket_status.php";?></span>)</h1>
 <br />
 <?php } ?>
 
@@ -39,7 +39,7 @@
 
  <?php $name="priority"; $value=$predefined['priority'];; ?>
  <div class="group group-select">
-  <?php include SITE_ROOT."/var/cache/en/common/ticket_priority.php";?>
+  <?php get_template_contents("common/ticket_priority.php", false, true); include SITE_ROOT."/var/cache/en/common/ticket_priority.php";?>
   <span class="highlight"></span>
   <span class="bar"></span>
   <label>Ticket priority</label>
@@ -128,7 +128,7 @@ function original_message(id) {
 </table>
 <?php } ?>
 <?php  if ($total_pages > 2) { ?>
-<?php include SITE_ROOT."/var/cache/en/common/navigation.php";?>
+<?php get_template_contents("common/navigation.php", false, true); include SITE_ROOT."/var/cache/en/common/navigation.php";?>
 <br />
 <?php  } ?>
 
@@ -155,7 +155,7 @@ function original_message(id) {
 <?php } ?>
 
 Subject: <?php echo $ticket['subject'];?><br />
-Priority: <?php $mode="static"; $name="priority"; $value=$ticket['priority'];; ?><?php include SITE_ROOT."/var/cache/en/common/ticket_priority.php";?><br />
+Priority: <?php $mode="static"; $name="priority"; $value=$ticket['priority'];; ?><?php get_template_contents("common/ticket_priority.php", false, true); include SITE_ROOT."/var/cache/en/common/ticket_priority.php";?><br />
 <br />
 Message:<br />
 <?php echo func_eol2br($ticket['message']);; ?><br />

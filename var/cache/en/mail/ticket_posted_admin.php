@@ -7,7 +7,7 @@
 * https://github.com/olegkhorev/php-spa-cart
 */
 ?>
-<?php include SITE_ROOT."/var/cache/en/mail/header.php";?>
+<?php get_template_contents("mail/header.php", false, true); include SITE_ROOT."/var/cache/en/mail/header.php";?>
 <?php echo $email_header;?>
 
 Hello,
@@ -16,7 +16,7 @@ Hello,
 
 <p>New ticket #<?php echo $ticket['ticketid'];?></p>
 
-<p>Priority: <?php $mode='static'; $value=$ticket['priority'];; ?><?php include SITE_ROOT."/var/cache/en/common/ticket_priority.php";?></p>
+<p>Priority: <?php $mode='static'; $value=$ticket['priority'];; ?><?php get_template_contents("common/ticket_priority.php", false, true); include SITE_ROOT."/var/cache/en/common/ticket_priority.php";?></p>
 
 <p>Full ticket<br />
 
@@ -35,4 +35,4 @@ Ticket message:
 
 <?php echo $signature;?>
 </div>
-<?php include SITE_ROOT."/var/cache/en/mail/footer.php";?>
+<?php get_template_contents("mail/footer.php", false, true); include SITE_ROOT."/var/cache/en/mail/footer.php";?>

@@ -33,7 +33,7 @@
 
 
 <div class="income_all_chart hidden">{php echo json_encode($last_30_days_all)}</div>
-<h1>{lng[All orders]}</h1>
+<h1>{lng[Month's orders]}</h1>
 <div class="chart-container chart-container--line" style="max-width: calc(100% - 60px);">
 <canvas id="chart-line"></canvas>
 </div>

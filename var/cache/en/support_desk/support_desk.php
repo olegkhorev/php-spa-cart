@@ -16,7 +16,7 @@
 <?php if ($tickets) {?>
 
 <?php  if ($total_pages > 2) { ?>
-<?php include SITE_ROOT."/var/cache/en/common/navigation.php";?>
+<?php get_template_contents("common/navigation.php", false, true); include SITE_ROOT."/var/cache/en/common/navigation.php";?>
 <br />
 <?php  } ?>
 
@@ -35,7 +35,7 @@
 <tr class="ticket-link<?php if ($k % 2) {?> tl-second<?php } ?>">
         <td style="padding:10px;width:10px"><a href="/ticket/<?php echo $i['ticketid'];?>"><?php echo $i['ticketid'];?></a>&nbsp;</td>
         <td style="padding:10px">&nbsp;<a href="/ticket/<?php echo $i['ticketid'];?>"><?php echo $i['subject'];?></a><?php if ($i['read'] == "N" || $i['mread'] == "N") {?> <span style="color:#00AA00">(new messages)</span><?php } ?></td>
-        <td style="padding:10px" id="ticket-status-<?php echo $i['ticketid'];?>"><?php $mode = "static"; $status=$i['status'];; ?><?php include SITE_ROOT."/var/cache/en/common/ticket_status.php";?></td>
+        <td style="padding:10px" id="ticket-status-<?php echo $i['ticketid'];?>"><?php $mode = "static"; $status=$i['status'];; ?><?php get_template_contents("common/ticket_status.php", false, true); include SITE_ROOT."/var/cache/en/common/ticket_status.php";?></td>
         <td style="padding:10px;width:150px;text-align:center"><?php echo date($datetime_format, $i['date']);; ?></td>
         <td style="padding:10px;text-align:right" id="ticket-status-links-<?php echo $i['ticketid'];?>">
         <?php if ($i['status'] != '3' && $i['status'] != 'C') {?>
@@ -51,7 +51,7 @@
 <br />
 
 <?php  if ($total_pages > 2) { ?>
-<?php include SITE_ROOT."/var/cache/en/common/navigation.php";?>
+<?php get_template_contents("common/navigation.php", false, true); include SITE_ROOT."/var/cache/en/common/navigation.php";?>
 <br />
 <?php  } ?>
 

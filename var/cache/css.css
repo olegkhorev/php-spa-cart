@@ -450,9 +450,10 @@ transition: all 0.2s ease 0s;
     position: fixed;
     top: 5px;
     left: 50%;
-    width: 300px;
+    width: 500px;
+	box-sizing: border-box;
     min-height: 50px;
-    margin-left: -160px;
+    margin-left: -250px;
     padding: 5px 10px;
     border-radius: 8px;
     background: #ffffff;
@@ -1760,6 +1761,8 @@ a.navigation-larrow, a.navigation-rarrow {
 	width: 100px;
 	text-align: center;
 	padding: 5px 0 !important;
+	padding-right: 10px !important;
+	box-sizing: border-box;
 }
 .instant-search p {
 	color: var(--theme-color);
@@ -1887,7 +1890,11 @@ box-shadow:         0px 0px 10px 0px rgba(50, 50, 50, 0.15);
 	padding: 10px 0 10px 0px;
 }
 .mobile_currency_select select, .mobile_languages_select select {
-	max-width: 80px;
+	max-width: none;
+    width: 100%;
+    margin-top: 10px;
+    padding: 10px 15px;
+    border-radius: 100px;
 }
 .mobile_currency_select {
 	margin-left: 5px;
@@ -2612,7 +2619,12 @@ div.print_div {
 		max-width: 100%;
 }
 #body-invoice .main-container {
-	width: 695px;
+	width: 100%;
+	max-width: 890px;
+}
+#body-invoice .main-container .invoice {
+    width: 100%;
+    box-sizing: border-box;
 }
 #body-help .main-container .content {
 	padding: 0;
@@ -3473,8 +3485,9 @@ transform: rotate(45deg);
   transition: all 0s ease 0s;
 }
 .coupon_alert {
-  width: 350px;
-  margin-left: -175px;
+  width: 400px;
+  margin-left: -200px;
+  box-sizing: border-box;
 }
 .register_alert {
   margin-top: -300px;
@@ -4351,7 +4364,7 @@ table#product-details td.product-list-price b {
   display: inline-block;
   padding: 15px 20px 15px 20px;
   border-radius: 15px;
-  border: 1px solid var(--theme-color-2);
+  border: 1px solid var(--theme-color);
 }
 .more-details-border a,
 .more-details-border table {
@@ -4377,7 +4390,8 @@ table#product-details td.product-list-price b {
 }
 #send_message_box .message-box {
   padding: 0;
-}/**
+}
+/**
 * SPA-Cart
 * Copyright (c) Oleg Khorev
 *
@@ -4398,6 +4412,9 @@ table#product-details td.product-list-price b {
   border-bottom: 1px solid #ccc;
   margin: 0 0 10px 0;
 }
+.carttable a, .checkout_products a {
+    text-decoration: none;
+}
 td {
   vertical-align: top;
 }
@@ -4410,6 +4427,7 @@ td {
 }
 .cart-quantity {
   width: 40px;
+  text-align: center;
 }
 #cartform table table,
 .checkout_products table {
@@ -4522,7 +4540,7 @@ a.back-to-cart img {
   cursor: pointer;
 }
 .coupon-error {
-  padding-top: 10px;
+  padding: 5px 0 10px 0;
   display: none;
   color: #ff3300;
 }
@@ -4566,7 +4584,13 @@ a.back-to-cart img {
 #checkout_table #place_order {
   padding-left: 10px;
 }
-/**
+#body-cart .main-container, #body-checkout .main-container {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+#body-cart .main-container > .content, #body-checkout .main-container > .content {
+  padding: 5px 10px 0 10px;
+}/**
 * SPA-Cart
 * Copyright (c) Oleg Khorev
 *

@@ -20,11 +20,11 @@
 	<tr>
 	 <td class="image"><a href="<?php echo $current_location;?>/<?php echo $url;?>">
 	<?php if ($v['product']['photo']) {?>
-<?php $image = $v['product']['photo']; $image['new_width'] = 100; $image['new_height'] = 100; include SITE_ROOT . "/includes/image.php"; ?>
+<?php $image = $v['product']['photo']; $image['new_width'] = 65; $image['new_height'] = 65; $image['center'] = "1"; include SITE_ROOT . "/includes/image.php"; ?>
 	<?php } ?>
 	 </a></td>
 	 <td><a href="<?php echo $current_location;?>/<?php echo $url;?>"><?php echo $v['product']['name'];?></a></td>
-	 <td style="text-align:center;vertical-align:middle"><?php echo '<span class="currency">'.currency_symbol().'</span>'.price_format_currency($v['product']['price']); ?></td>
+	 <td align="center"><?php echo '<span class="currency">'.currency_symbol().'</span>'.price_format_currency($v['product']['price']); ?></td>
 	 <td><a href="<?php echo $current_location;?>/wishlist/remove/<?php echo $v['wlid'];?>" class="remove-wl-link">Delete</a></td>
 	</tr>
 <?php } ?>

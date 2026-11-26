@@ -16,7 +16,7 @@
 <br />
  <div class="group">
   <input id="testimonial_name" type="text" size="32" name="name" value="<?php echo escape(
-      $preentered["name"],
+      trim($preentered["name"]),
       2,
   ); ?>" />
   <span class="highlight"></span>

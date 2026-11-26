@@ -86,7 +86,7 @@ function checkout_actions() {
         success: function (data) {
           func_disable_button($('#checkout_user_form button'), 1);
           if (data == "Email") {
-            alert("Enterd email already registered for another user");
+            show_notice("{lng[Enterd email already registered for another user]}");
           } else {
             $("#place_order").animate({ opacity: 1 }, 200);
             $("#place_order *").attr("disabled", false);
@@ -129,7 +129,7 @@ function checkout_actions() {
               })
               .then(function (result) {
                 func_disable_button($('#place_order button'), 1);
-                alert("{lng[Unable to redirect to Stripe]}");
+                show_notice("{lng[Unable to redirect to Stripe]}");
                 // If `redirectToCheckout` fails due to a browser or network
                 // error, display the localized error message to your customer
                 // using `result.error.message`.
@@ -207,12 +207,12 @@ function checkout_actions() {
                         unload();
                         $(".checkout_popup").css("pointer-events", "auto");
                         $(".checkout_popup").css("pointer-events", "auto");
-                        alert("Please, contact site administrator");
+                        show_notice("{lng[Please, contact us.]}");
                       } else if (data == "StripeError") {
                         $("#stripe_token").val("");
                         $("#payment-method-nonce").val("");
                         $(".checkout_popup").css("opacity", 1);
-                        alert("There was error processing your credit card");
+                        show_notice("{lng[There was error processing your credit card.]}");
                       } else {
                         self.location = "/invoice/" + data + "/success";
                       }
@@ -231,11 +231,11 @@ function checkout_actions() {
           success: function (data) {
             func_disable_button($('#place_order button'), 1);
             if (data == "Error") {
-              alert("Please, contact site administrator");
+              show_notice("{lng[Please, contact us.]}");
             } else if (data == "StripeError") {
               $("#stripe_token").val("");
               $(".checkout_popup").css("opacity", 1);
-              alert("There was error processing your credit card");
+              show_notice("{lng[There was error processing your credit card.]}");
             } else if (strstr(data, "paypal.com")) {
               $(".checkout_popup").css("pointer-events", "none");
               $("body").append(data);

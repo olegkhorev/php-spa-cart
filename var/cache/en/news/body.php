@@ -48,7 +48,7 @@
 <?php } ?>
 </div>
 <?php if ($total_pages > 2) {?>
-<?php include SITE_ROOT."/var/cache/en/common/navigation.php";?>
+<?php get_template_contents("common/navigation.php", false, true); include SITE_ROOT."/var/cache/en/common/navigation.php";?>
 <?php } ?>
 <?php } else  { ?>
 No news found

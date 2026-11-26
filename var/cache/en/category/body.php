@@ -10,7 +10,7 @@
 <h1><?php echo $category['title'];?></h1>
 <?php if ($banners) {?>
 <?php $categoryid = $category['categoryid'];; ?>
-<?php include SITE_ROOT."/var/cache/en/common/banners.php";?>
+<?php get_template_contents("common/banners.php", false, true); include SITE_ROOT."/var/cache/en/common/banners.php";?>
 <div class="category-banners-descr">
 <?php echo $category['description'];;?>
 </div>
@@ -53,7 +53,7 @@
 <?php if ($featured_products) {?>
 <?php $tag_id = "featured_products"; $products = $featured_products; $per_row = 4; $sort_by = '';; ?>
 <h3>Featured products</h3>
-<?php include SITE_ROOT."/var/cache/en/common/products.php";?>
+<?php get_template_contents("common/products.php", false, true); include SITE_ROOT."/var/cache/en/common/products.php";?>
 <br />
 <?php } ?>
 

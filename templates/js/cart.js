@@ -104,8 +104,8 @@ function cart_clicks() {
         dataType: "json",
         url: "/cart",
         error: function () {
-          alert(
-            "We cannot process this request. Please, contact site administrator.",
+          show_notice(
+            "{lng[We cannot process this request. Please, contact us.]}",
           );
         },
         success: function (r) {
@@ -211,8 +211,8 @@ function cart_clicks() {
         dataType: "json",
         url: "/wishlist",
         error: function () {
-          alert(
-            "We cannot process this request. Please, contact site administrator.",
+          show_notice(
+            "{lng[We cannot process this request. Please, contact us.]}",
           );
         },
         success: function (r) {
@@ -326,8 +326,8 @@ function cart_clicks() {
         dataType: "json",
         url: "/checkout",
         error: function () {
-          alert(
-            "We cannot process this request. Please, contact site administrator.",
+          show_notice(
+            "{lng[We cannot process this request. Please, contact us.]}",
           );
         },
         success: function (r) {

@@ -2426,7 +2426,12 @@ input.error, textarea.error {
 	width: 50px;
 }
 #ticket_email, #ticket_subject, #ticket_message {
-	width: 350px;
+	width: 100%;
+}
+#body-ticket #center {
+    max-width: 800px;
+    margin: 0 auto !important;
+    float: none;
 }
 #ticket_message {
 	height: 100px;
@@ -2696,4 +2701,88 @@ table.ui-datepicker-calendar, .ui-datepicker-calendar * {
     margin: 0;
     transform: translate(-50%, -50%);
     max-width: 100%;
+}
+/* Notifications */
+.top_notifications {
+	position: fixed;
+	bottom: 30px;
+	right: 20px;
+	-webkit-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	z-index: 100000000000;
+}
+.top_notifications :where(.top_toast, .top_column) {
+  display: flex;
+  align-items: center;
+}
+.top_notifications .top_toast {
+  width: 300px;
+  position: relative;
+  overflow: hidden;
+  list-style: none;
+  border-radius: 10px;
+  padding: 16px 17px;
+  margin-bottom: 10px;
+  COLOR: #fff;
+  background: var(--theme-color-2);
+  justify-content: space-between;
+  animation: show_top_toast 0.5s ease forwards;
+}
+.top_notifications i {
+	font-size: 26px;
+	font-style: normal;
+	color: #fff;
+	cursor: pointer;
+}
+@keyframes show_top_toast {
+  0% {
+    transform: translateX(100%);
+  }
+  40% {
+    transform: translateX(-2.5%);
+  }
+  80% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-5%);
+  }
+}
+.top_notifications .top_toast.hide {
+  animation: hide_top_toast 0.5s ease forwards;
+}
+@keyframes hide_top_toast {
+  0% {
+    transform: translateX(-5%);
+  }
+  40% {
+    transform: translateX(0%);
+  }
+  80% {
+    transform: translateX(-2.5%);
+  }
+  100% {
+    transform: translateX(calc(100% + 20px));
+  }
+}
+.top_toast::before {
+  position: absolute;
+  content: "";
+  height: 3px;
+  width: 100%;
+  bottom: 0;
+  left: 0;
+  animation: top_n_progress var(--duration, 5s) linear forwards;
+  background: #fff;
+}
+.top_toast .top_column i {
+  font-size: 1.75rem;
+  color: #fff;
+  cursor: pointer;
+}
+@keyframes top_n_progress {
+  100% {
+    width: 0%;
+  }
 }

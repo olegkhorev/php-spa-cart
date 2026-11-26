@@ -25,7 +25,6 @@
 <input type="hidden" name="productid" value="{$product['productid']}">
 
 <h1>{lng[New ticket]}</h1>
-<br />
 
 <div class="ticket-div">
 {if !$login}
