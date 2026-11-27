@@ -197,7 +197,7 @@ https://llmstxtgenerate.com/
 
 ## 7. Demo Pages
 
-**Please, review the demo pages here:**
+**Please, review demo pages here:**
 
 ### Customer area
 [![SPA-Cart customer area](https://spa-cart.com/images/codecanyon/customer_area.jpg)](http://demo.spa-cart.com/)
